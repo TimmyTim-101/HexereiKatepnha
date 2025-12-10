@@ -1,0 +1,24 @@
+﻿## --- 忽略编译输出 ---
+[Bb]in/
+[Oo]bj/
+
+## --- 忽略 Visual Studio 临时文件 ---
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## --- 忽略 JetBrains Rider 临时文件 ---
+.idea/
+*.sln.iml
+
+## --- 忽略 Windows 系统文件 ---
+Thumbs.db
+Desktop.ini
+
+## --- 忽略 macOS 系统文件 ---
+.DS_Store
+
+## --- 忽略日志文件 ---
+*.log
