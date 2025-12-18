@@ -1,0 +1,20 @@
+<UserControl x:Class="HexereiKatepnha.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HexereiKatepnha.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1720"
+             FontFamily="{StaticResource MyFont}">
+    <Grid Background="#0A1432">
+        <StackPanel Margin="50">
+            <TextBlock Text="{Binding Title}" FontSize="32" FontWeight="Bold" Foreground="#333" Margin="0,0,0,30" />
+
+            <CheckBox IsChecked="{Binding IsNotificationsEnabled}" Content="启用通知" FontSize="16" Margin="0,10" />
+            <CheckBox IsChecked="{Binding IsDarkThemeEnabled}" Content="启用深色模式" FontSize="16" Margin="0,10" />
+
+            <TextBlock Text="这里是设置面板示例" FontSize="14" Foreground="#999" Margin="0,20,0,0" />
+        </StackPanel>
+    </Grid>
+</UserControl>

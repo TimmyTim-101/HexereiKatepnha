@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:HexereiKatepnha"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="MyFont">/HexereiKatepnha;Component/Resources/Font/#HYWenHei 85W</FontFamily>
+        <ControlTemplate x:Key="ListBoxNoBorder" TargetType="{x:Type ListBox}">
+            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+        </ControlTemplate>
     </Application.Resources>
 </Application>
