@@ -15,16 +15,17 @@
   <ItemGroup>
     <None Remove="Resources\Font\hywh-Regular.ttf" />
     <None Remove="Resources\Icon\Icon-maskable-512.png" />
-    <Resource Include="Resources\Font\hywh-Regular.ttf" />
-    <Resource Include="Resources\Icon\Icon-maskable-512.png" />
+    <Resource Include="Resources\Icons\Icon-maskable-512.png" />
     <None Remove="Resources\Icon\icon-192.png" />
-    <Resource Include="Resources\Icon\icon-192.png" />
+    <Resource Include="Resources\Icons\icon-192.png" />
     <None Remove="Resources\Icon\icon-512.png" />
-    <Resource Include="Resources\Icon\icon-512.png" />
+    <Resource Include="Resources\Icons\icon-512.png" />
     <None Remove="Resources\Icon\Icon-maskable-192.png" />
-    <Resource Include="Resources\Icon\Icon-maskable-192.png" />
+    <Resource Include="Resources\Icons\Icon-maskable-192.png" />
     <None Remove="Resources\Font\HYWenHei-85W.ttf" />
-    <Resource Include="Resources\Font\HYWenHei-85W.ttf" />
+    <Resource Include="Resources\Fonts\HYWenHei-85W.ttf" />
+    <None Remove="Resources\Images\KatepиHa_title.png" />
+    <Resource Include="Resources\Images\KatepиHa_title.png" />
   </ItemGroup>
 
 </Project>

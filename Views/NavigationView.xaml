@@ -1,87 +1,49 @@
 <UserControl x:Class="HexereiKatepnha.Views.NavigationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HexereiKatepnha.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="200"
              FontFamily="{StaticResource MyFont}">
-    
+
     <UserControl.Resources>
-        <!-- 导航项样式 -->
-        <Style x:Key="NavigationItemStyle" TargetType="ListBoxItem">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#A000A0"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Padding" Value="20,12"/>
-            <Setter Property="Margin" Value="0,2"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListBoxItem">
-                        <Border x:Name="border" 
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="0"
-                                CornerRadius="8"
-                                Padding="{TemplateBinding Padding}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <!-- 这里可以预留图标的位置，目前只显示文字 -->
-                                <ContentPresenter Grid.Column="1" 
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                
-                                <!-- 选中指示器 (左侧小条) -->
-                                <Rectangle x:Name="Indicator" HorizontalAlignment="Left" Width="4" Height="24" RadiusX="2" RadiusY="2" Margin="-20,0,0,0" Fill="Transparent" Visibility="Collapsed"/>
-                            </Grid>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#354060"/>
-                                <Setter Property="Foreground" Value="White"/>
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#4C5C85"/>
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="FontWeight" Value="Bold"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
     </UserControl.Resources>
 
     <Grid Background="#283250">
-        <StackPanel Margin="10,20">
-            <!-- 标题或Logo区域 -->
-            <TextBlock Text="MENU" Foreground="#606060" FontSize="12" FontWeight="Bold" Margin="20,0,0,10" FontFamily="{StaticResource MyFont}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <ListBox ItemsSource="{Binding NavigationItems}"
-                     SelectedItem="{Binding SelectedNavigationItem}"
-                     Background="Transparent"
-                     BorderThickness="0"
-                     ItemContainerStyle="{StaticResource NavigationItemStyle}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <!-- 如果以后有图标，可以加在这里 -->
-                            <TextBlock Text="{Binding Title}" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <TextBlock Text="-------以下为不灵活的导航栏------"></TextBlock>
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    
-                </StackPanel>
-            </ScrollViewer>
-        </StackPanel>
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+            <StackPanel>
+                <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="1" Style="{StaticResource ImageButton}" Height="55">
+                    <Image Source="../Resources/Images/KatepиHa_title.png" Stretch="Uniform"></Image>
+                </Button>
+                <Border Style="{StaticResource MyDivider}"></Border>
+                <TextBlock Text="账号信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Style="{StaticResource MyDivider}"></Border>
+                <TextBlock Text="背包" Style="{StaticResource MyTextBlock}" />
+                <Border Style="{StaticResource MyDivider}"></Border>
+                <TextBlock Text="计算器" Style="{StaticResource MyTextBlock}" />
+                <Border Style="{StaticResource MyDivider}"></Border>
+                <TextBlock Text="数据库" Style="{StaticResource MyTextBlock}" />
+                <Border Style="{StaticResource MyDivider}"></Border>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Grid.Row="1" Content="设置" Command="{Binding ClickOnNavigationCommand}" CommandParameter="-1">
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Position}" Value="-1">
+                            <Setter Property="Background" Value="Black"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </UserControl>

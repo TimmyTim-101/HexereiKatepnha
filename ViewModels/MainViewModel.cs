@@ -14,39 +14,33 @@ namespace HexereiKatepnha.ViewModels
 
         [ObservableProperty] private string _greetingMessage = "等待输入...";
 
-        [ObservableProperty] private ObservableObject _currentViewModel;
+        [ObservableProperty] private int _navigationFlag = 1;
+
+        [ObservableProperty] private ObservableObject _currentNavigationViewModel;
+
+        [ObservableProperty] private ObservableObject _currentContentViewModel;
 
         [ObservableProperty] private NavigationItem _selectedNavigationItem;
 
-        public ObservableCollection<NavigationItem> NavigationItems { get; } = new();
-
-        public MainViewModel()
+        public MainViewModel(int navigationFlag)
         {
-            // 初始化导航项
-            NavigationItems.Add(new NavigationItem("主页", typeof(HomeViewModel)));
-            NavigationItems.Add(new NavigationItem("数据库", typeof(DatabaseViewModel)));
-            NavigationItems.Add(new NavigationItem("设置", typeof(SettingsViewModel)));
-
-            // 默认选中第一项
-            SelectedNavigationItem = NavigationItems[0];
+            NavigationFlag = navigationFlag;
+            CurrentNavigationViewModel = new NavigationViewModel(navigationFlag, (newflag) => { NavigationFlag = newflag; });
+            UpdateContent(navigationFlag);
         }
 
-        partial void OnSelectedNavigationItemChanged(NavigationItem value)
+        partial void OnNavigationFlagChanged(int value)
         {
-            if (value != null)
+            UpdateContent(value);
+        }
+
+        private void UpdateContent(int flag)
+        {
+            switch (flag)
             {
-                if (value.TargetViewModelType == typeof(HomeViewModel))
-                {
-                    CurrentViewModel = new HomeViewModel();
-                }
-                else if (value.TargetViewModelType == typeof(SettingsViewModel))
-                {
-                    CurrentViewModel = new SettingsViewModel();
-                }
-                else if (value.TargetViewModelType == typeof(DatabaseViewModel))
-                {
-                    CurrentViewModel = new DatabaseViewModel();
-                }
+                case 1: CurrentContentViewModel = new HomeViewModel(); break;
+                case -1: CurrentContentViewModel = new SettingsViewModel(); break;
+                default: CurrentContentViewModel = new HomeViewModel(); break;
             }
         }
     }

@@ -9,9 +9,12 @@
         mc:Ignorable="d"
         Title="魔导Katep&#x438;Ha" Height="1080" Width="1920"
         WindowStartupLocation="CenterScreen"
-        Icon="Resources/Icon/Icon-maskable-512.png"
+        Icon="Resources/Icons/Icon-maskable-512.png"
         FontFamily="{StaticResource MyFont}">
     <Window.Resources>
+        <DataTemplate DataType="{x:Type ViewModels:NavigationViewModel}">
+            <Views:NavigationView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
             <Views:HomeView />
         </DataTemplate>
@@ -29,16 +32,9 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-            </Grid.RowDefinitions>
-            
-            <Views:NavigationView Grid.Row="0" />
-            <TextBlock Grid.Row="1" Text="Settings~"></TextBlock>
-        </Grid>
+        <!-- 导航栏 -->
+        <ContentControl Grid.Column="0" Content="{Binding CurrentNavigationViewModel}" Margin="0"></ContentControl>
         <!-- 内容页 -->
-        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}" Margin="0" />
+        <ContentControl Grid.Column="1" Content="{Binding CurrentContentViewModel}" Margin="0" />
     </Grid>
 </Window>

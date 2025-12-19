@@ -21,7 +21,7 @@ namespace HexereiKatepnha
         {
             InitializeComponent();
 
-            this.DataContext = new MainViewModel();
+            this.DataContext = new MainViewModel(1);
         }
     }
 }

@@ -8,8 +8,10 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="#0A1432">
-        <StackPanel Margin="50">
-            <TextBlock Text="{Binding Title}" FontSize="32" FontWeight="Bold" Foreground="#333" Margin="0,0,0,30" />
-        </StackPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+            <StackPanel Margin="50">
+                <TextBlock Text="数据库" Style="{StaticResource TodoTextBlock}"></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
