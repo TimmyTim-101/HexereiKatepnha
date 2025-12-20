@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:HexereiKatepnha.Views"
              xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="200"
              FontFamily="{StaticResource MyFont}">
-
+    
     <UserControl.Resources>
 
     </UserControl.Resources>
@@ -29,6 +28,7 @@
                 <Border Style="{StaticResource MyDivider}"></Border>
                 <TextBlock Text="账号信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
                 <Border Style="{StaticResource MyDivider}"></Border>
+                <!-- 2.背包 -->
                 <TextBlock Text="背包" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
                 <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="21" Height="40" Width="200" HorizontalContentAlignment="Left">
                     <Button.Content>
@@ -99,6 +99,7 @@
                     </Button.Style>
                 </Button>
                 <Border Style="{StaticResource MyDivider}"></Border>
+                <!-- 3.计算器 -->
                 <TextBlock Text="计算器" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
                 <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="31" Height="40" Width="200" HorizontalContentAlignment="Left">
                     <Button.Content>
@@ -203,6 +204,7 @@
                     </Button.Style>
                 </Button>
                 <Border Style="{StaticResource MyDivider}"></Border>
+                <!-- 4.数据库 -->
                 <TextBlock Text="数据库" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
                 <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="41" Height="40" Width="200" HorizontalContentAlignment="Left">
                     <Button.Content>

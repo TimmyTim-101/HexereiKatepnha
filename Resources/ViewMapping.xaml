@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ViewModels="clr-namespace:HexereiKatepnha.ViewModels"
+                    xmlns:viewModels="clr-namespace:HexereiKatepnha.ViewModels"
                     xmlns:views="clr-namespace:HexereiKatepnha.Views"
                     xmlns:backpack="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
                     xmlns:backpack1="clr-namespace:HexereiKatepnha.Views.Backpack"
@@ -9,11 +9,11 @@
                     xmlns:database="clr-namespace:HexereiKatepnha.ViewModels.Database"
                     xmlns:database1="clr-namespace:HexereiKatepnha.Views.Database">
     <!-- 0 - 其余 -->
-    <DataTemplate DataType="{x:Type ViewModels:NavigationViewModel}">
+    <DataTemplate DataType="{x:Type viewModels:NavigationViewModel}">
         <views:NavigationView />
     </DataTemplate>
     <!-- 1 - 主页 -->
-    <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
+    <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
         <views:HomeView />
     </DataTemplate>
     <!-- 2 - 背包 -->
@@ -65,7 +65,7 @@
         <database1:Database5DungeonView />
     </DataTemplate>
     <!-- -1 - 设置 -->
-    <DataTemplate DataType="{x:Type ViewModels:SettingsViewModel}">
+    <DataTemplate DataType="{x:Type viewModels:SettingsViewModel}">
         <views:SettingsView />
     </DataTemplate>
 </ResourceDictionary>

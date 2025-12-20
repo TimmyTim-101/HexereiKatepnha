@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using System.Text;
 using System.Windows;
 using HexereiKatepnha.Services;
 
@@ -8,14 +7,14 @@ namespace HexereiKatepnha
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
-        public static ThemeConfigManager ThemeConfigManagerInstance { get; private set; }
+        public static ThemeConfigManager? ThemeConfigManagerInstance { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             // 修复中文控制台输出乱码
-            System.Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
             base.OnStartup(e);
             ThemeConfigManagerInstance = new ThemeConfigManager();
             ThemeConfigManagerInstance.Load();
@@ -23,7 +22,7 @@ namespace HexereiKatepnha
 
         protected override void OnExit(ExitEventArgs e)
         {
-            ThemeConfigManagerInstance.Save();
+            ThemeConfigManagerInstance?.Save();
             base.OnExit(e);
         }
     }

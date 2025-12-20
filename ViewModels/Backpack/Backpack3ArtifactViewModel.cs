@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack3ArtifactViewModel : ObservableObject
+    public class Backpack3ArtifactViewModel : ObservableObject
     {
     }
 }

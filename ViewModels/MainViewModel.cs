@@ -1,14 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Collections.ObjectModel;
-using HexereiKatepnha.Models;
 using HexereiKatepnha.ViewModels.Backpack;
 using HexereiKatepnha.ViewModels.Calculator;
 using HexereiKatepnha.ViewModels.Database;
-using HexereiKatepnha.Views;
 
 namespace HexereiKatepnha.ViewModels
 {
@@ -22,12 +15,12 @@ namespace HexereiKatepnha.ViewModels
 
         [ObservableProperty] private ObservableObject _currentNavigationViewModel;
 
-        [ObservableProperty] private ObservableObject _currentContentViewModel;
+        [ObservableProperty] private ObservableObject? _currentContentViewModel;
 
         public MainViewModel(int navigationFlag)
         {
             NavigationFlag = navigationFlag;
-            CurrentNavigationViewModel = new NavigationViewModel(navigationFlag, (newflag) => { NavigationFlag = newflag; });
+            CurrentNavigationViewModel = new NavigationViewModel(navigationFlag, newFlag => { NavigationFlag = newFlag; });
             UpdateContent(navigationFlag);
         }
 

@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.Views.Backpack;
 
-public partial class Backpack2WeaponView : UserControl
+public partial class Backpack2WeaponView
 {
     public Backpack2WeaponView()
     {

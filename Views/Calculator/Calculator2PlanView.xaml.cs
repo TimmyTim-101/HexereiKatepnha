@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.Views.Calculator;
 
-public partial class Calculator2PlanView : UserControl
+public partial class Calculator2PlanView
 {
     public Calculator2PlanView()
     {

@@ -1,18 +1,17 @@
 ﻿using HexereiKatepnha.ViewModels;
-using System.Windows;
 
 namespace HexereiKatepnha
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            this.DataContext = new MainViewModel(1);
+            DataContext = new MainViewModel(1);
         }
     }
 }

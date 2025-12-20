@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.Views.Database;
 
-public partial class Database1CharacterView : UserControl
+public partial class Database1CharacterView
 {
     public Database1CharacterView()
     {

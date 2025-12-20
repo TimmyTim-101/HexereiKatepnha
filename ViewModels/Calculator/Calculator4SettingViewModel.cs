@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.ViewModels.Calculator
 {
-    public partial class Calculator4SettingViewModel : ObservableObject
+    public class Calculator4SettingViewModel : ObservableObject
     {
     }
 }

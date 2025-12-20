@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.Views.Backpack;
 
-public partial class Backpack4MaterialView : UserControl
+public partial class Backpack4MaterialView
 {
     public Backpack4MaterialView()
     {

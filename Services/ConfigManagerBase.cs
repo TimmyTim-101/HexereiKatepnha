@@ -7,7 +7,7 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
 {
     protected abstract string ConfigFileName { get; }
 
-    public TConfig Configuration { get; protected set; } = new TConfig();
+    public TConfig Configuration { get; private set; } = new();
 
     public void Load()
     {

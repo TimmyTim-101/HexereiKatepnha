@@ -2,5 +2,5 @@
 
 public class ThemeConfig
 {
-    public int ThemeIndex { get; set; } = 0;
+    public int ThemeIndex { get; set; }
 }

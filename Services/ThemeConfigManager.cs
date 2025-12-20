@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Media;
 using HexereiKatepnha.Constants;
 using HexereiKatepnha.Models.ConfigModels;
 
@@ -11,10 +10,10 @@ public class ThemeConfigManager : ConfigManagerBase<ThemeConfig>
 
     protected override void OnLoaded()
     {
-        int ThemeIndex = Configuration.ThemeIndex;
-        Application.Current.Resources["GlobalBackColor"] = ThemeConstants.BackColor[ThemeIndex];
-        Application.Current.Resources["GlobalFrontColor"] = ThemeConstants.FrontColor[ThemeIndex];
-        Application.Current.Resources["GlobalSelectedColor"] = ThemeConstants.SelectedColor[ThemeIndex];
+        int themeIndex = Configuration.ThemeIndex;
+        Application.Current.Resources["GlobalBackColor"] = ThemeConstants.BackColor[themeIndex];
+        Application.Current.Resources["GlobalFrontColor"] = ThemeConstants.FrontColor[themeIndex];
+        Application.Current.Resources["GlobalSelectedColor"] = ThemeConstants.SelectedColor[themeIndex];
     }
 
     public void UpdateTheme(int value)

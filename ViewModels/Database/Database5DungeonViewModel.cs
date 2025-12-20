@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.ViewModels.Database
 {
-    public partial class Database5DungeonViewModel : ObservableObject
+    public class Database5DungeonViewModel : ObservableObject
     {
     }
 }

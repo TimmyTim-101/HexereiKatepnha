@@ -20,7 +20,7 @@ namespace HexereiKatepnha.ViewModels
         {
             int valueInt = Int32.Parse(value);
             Position = valueInt;
-            _updateNavigationFlagAction?.Invoke(valueInt);
+            _updateNavigationFlagAction(valueInt);
         }
     }
 }
