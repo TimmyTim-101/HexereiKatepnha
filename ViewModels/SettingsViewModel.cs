@@ -1,18 +1,31 @@
+using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using HexereiKatepnha.Constants;
 
 namespace HexereiKatepnha.ViewModels
 {
     public partial class SettingsViewModel : ObservableObject
     {
-        [ObservableProperty] private string _title = "设置";
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(CurrentThemeName))]
+        [NotifyPropertyChangedFor(nameof(CurrentThemeColor))]
+        private int _themeIndex = App.ThemeConfigManagerInstance.Configuration.ThemeIndex;
 
-        [ObservableProperty] private bool _isNotificationsEnabled = true;
+        public string CurrentThemeName => ThemeConstants.ThemeName[ThemeIndex];
+        public SolidColorBrush? CurrentThemeColor => ThemeConstants.FrontColor[ThemeIndex];
 
-        [ObservableProperty] private bool _isDarkThemeEnabled = false;
-
-        partial void OnIsDarkThemeEnabledChanged(bool value)
+        partial void OnThemeIndexChanged(int value)
         {
-            Console.WriteLine($"现在深色模式的状态是：{value}");
+            App.ThemeConfigManagerInstance.UpdateTheme(value);
+            App.ThemeConfigManagerInstance.Save();
+        }
+
+        [RelayCommand]
+        private void ClickOnTheme(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            ThemeIndex = valueInt;
         }
     }
 }

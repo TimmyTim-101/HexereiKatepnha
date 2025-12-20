@@ -126,7 +126,7 @@
         <!-- 纯文字button -->
         <Style x:Key="TextButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" /> <!-- 默认背景 -->
-            <Setter Property="Foreground" Value="IndianRed" />       <!-- 默认文字颜色 -->
+            <Setter Property="Foreground" Value="White" />       <!-- 默认文字颜色 -->
             <Setter Property="FontSize" Value="14" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Padding" Value="10,5" />

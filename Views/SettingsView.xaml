@@ -4,13 +4,52 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HexereiKatepnha.Views"
+             xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
-    <Grid Background="#0A1432">
+    <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel Margin="50">
-                <TextBlock Text="设置" Style="{StaticResource TodoTextBlock}" />
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5"/>
+                <Border Style="{StaticResource MyDivider}"></Border>
+                <StackPanel Orientation="Horizontal" Margin="30,20,30,5">
+                    <TextBlock Text="当前主题：" Style="{StaticResource MyTextBlock}"></TextBlock>
+                    <TextBlock Text="{Binding CurrentThemeName}" Foreground="{Binding CurrentThemeColor}" Style="{StaticResource MyTextBlock}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="0" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_305.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="1" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_307.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="2" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_304.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="3" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_303.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="4" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_302.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="5" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_301.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="6" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_308.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="7" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/UI_ItemIcon_306.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="8" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/Classic.png" Stretch="Uniform"></Image>
+                    </Button>
+                    <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="9" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
+                        <Image Source="/Resources/Themes/AllBlack.png" Stretch="Uniform"></Image>
+                    </Button>
+                </StackPanel>
+                <Border Style="{StaticResource MyDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -12,17 +12,29 @@
         Icon="Resources/Icons/Icon-maskable-512.png"
         FontFamily="{StaticResource MyFont}">
     <Window.Resources>
+        <!-- 0 - 其余 -->
         <DataTemplate DataType="{x:Type ViewModels:NavigationViewModel}">
             <Views:NavigationView />
         </DataTemplate>
+        <!-- 1 - 主页 -->
         <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
             <Views:HomeView />
         </DataTemplate>
+        <!-- 2 - 背包 -->
+        <DataTemplate DataType="{x:Type ViewModels:Backpack1CharacterViewModel}">
+            <Views:Backpack1CharacterView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:Backpack2WeaponViewModel}">
+            <Views:Backpack2WeaponView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:Backpack3ArtifactsViewModel}">
+            <Views:Backpack3ArtifactsView />
+        </DataTemplate>
+        <!-- 3 - 计算器 -->
+        <!-- 4 - 数据库 -->
+        <!-- -1 - 设置 -->
         <DataTemplate DataType="{x:Type ViewModels:SettingsViewModel}">
             <Views:SettingsView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:DatabaseViewModel}">
-            <Views:DatabaseView />
         </DataTemplate>
     </Window.Resources>
 
@@ -31,7 +43,6 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
         <!-- 导航栏 -->
         <ContentControl Grid.Column="0" Content="{Binding CurrentNavigationViewModel}" Margin="0"></ContentControl>
         <!-- 内容页 -->

@@ -39,7 +39,13 @@ namespace HexereiKatepnha.ViewModels
             switch (flag)
             {
                 case 1: CurrentContentViewModel = new HomeViewModel(); break;
+
+                case 21: CurrentContentViewModel = new Backpack1CharacterViewModel(); break;
+                case 22: CurrentContentViewModel = new Backpack2WeaponViewModel(); break;
+                case 23: CurrentContentViewModel = new Backpack3ArtifactsViewModel(); break;
+
                 case -1: CurrentContentViewModel = new SettingsViewModel(); break;
+
                 default: CurrentContentViewModel = new HomeViewModel(); break;
             }
         }

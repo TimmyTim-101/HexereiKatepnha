@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HexereiKatepnha.Views"
+             xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="200"
              FontFamily="{StaticResource MyFont}">
@@ -12,10 +13,12 @@
 
     </UserControl.Resources>
 
-    <Grid Background="#283250">
+    <Grid Background="{DynamicResource GlobalFrontColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
         </Grid.RowDefinitions>
 
         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
@@ -26,24 +29,83 @@
                 <Border Style="{StaticResource MyDivider}"></Border>
                 <TextBlock Text="账号信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
                 <Border Style="{StaticResource MyDivider}"></Border>
-                <TextBlock Text="背包" Style="{StaticResource MyTextBlock}" />
+                <TextBlock Text="背包" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
+                <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="21" Height="50" Width="200" HorizontalContentAlignment="Left">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200">
+                            <Image Source="/Resources/NavigationIcons/Character1.png" Height="30" Width="30" Margin="16,0"></Image>
+                            <TextBlock Text="角色" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Position}" Value="21">
+                                    <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="22" Height="50" Width="200" HorizontalContentAlignment="Left">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200">
+                            <Image Source="/Resources/NavigationIcons/Character1.png" Height="30" Width="30" Margin="16,0"></Image>
+                            <TextBlock Text="武器" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Position}" Value="22">
+                                    <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="23" Height="50" Width="200" HorizontalContentAlignment="Left">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200">
+                            <Image Source="/Resources/NavigationIcons/Character1.png" Height="30" Width="30" Margin="16,0"></Image>
+                            <TextBlock Text="圣遗物" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Position}" Value="23">
+                                    <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Border Style="{StaticResource MyDivider}"></Border>
-                <TextBlock Text="计算器" Style="{StaticResource MyTextBlock}" />
+                <TextBlock Text="计算器" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
                 <Border Style="{StaticResource MyDivider}"></Border>
-                <TextBlock Text="数据库" Style="{StaticResource MyTextBlock}" />
+                <TextBlock Text="数据库" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>
                 <Border Style="{StaticResource MyDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
-        <Button Grid.Row="1" Content="设置" Command="{Binding ClickOnNavigationCommand}" CommandParameter="-1">
+        <Border Grid.Row="1" Style="{StaticResource MyDivider}"></Border>
+        <Button Grid.Row="2" Command="{Binding ClickOnNavigationCommand}" CommandParameter="-1" Height="50" Width="200" HorizontalContentAlignment="Left">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200">
+                    <Image Source="/Resources/NavigationIcons/Settings.png" Height="30" Width="30" Margin="16,0"></Image>
+                    <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
+                </StackPanel>
+            </Button.Content>
             <Button.Style>
                 <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Position}" Value="-1">
-                            <Setter Property="Background" Value="Black"></Setter>
+                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
+        <Border Grid.Row="3" Style="{StaticResource MyDivider}"></Border>
     </Grid>
 </UserControl>

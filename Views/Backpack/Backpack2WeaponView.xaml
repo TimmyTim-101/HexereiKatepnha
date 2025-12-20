@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HexereiKatepnha.Views.DatabaseView"
+﻿<UserControl x:Class="HexereiKatepnha.Views.Backpack2WeaponView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,10 +7,10 @@
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
-    <Grid Background="#0A1432">
+    <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel Margin="50">
-                <TextBlock Text="数据库" Style="{StaticResource TodoTextBlock}"></TextBlock>
+            <StackPanel>
+                <TextBlock Text="背包 - 武器" Style="{StaticResource TodoTextBlock}" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
