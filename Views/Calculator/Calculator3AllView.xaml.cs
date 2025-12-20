@@ -2,9 +2,9 @@
 
 namespace HexereiKatepnha.Views;
 
-public partial class Backpack3ArtifactsView : UserControl
+public partial class Calculator3AllView : UserControl
 {
-    public Backpack3ArtifactsView()
+    public Calculator3AllView()
     {
         InitializeComponent();
     }
