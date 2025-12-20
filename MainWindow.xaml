@@ -6,73 +6,17 @@
         xmlns:local="clr-namespace:HexereiKatepnha"
         xmlns:ViewModels="clr-namespace:HexereiKatepnha.ViewModels"
         xmlns:Views="clr-namespace:HexereiKatepnha.Views"
+        xmlns:backpack="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
+        xmlns:calculator="clr-namespace:HexereiKatepnha.ViewModels.Calculator"
+        xmlns:database="clr-namespace:HexereiKatepnha.ViewModels.Database"
+        xmlns:backpack1="clr-namespace:HexereiKatepnha.Views.Backpack"
+        xmlns:calculator1="clr-namespace:HexereiKatepnha.Views.Calculator"
+        xmlns:database1="clr-namespace:HexereiKatepnha.Views.Database"
         mc:Ignorable="d"
         Title="魔导Katep&#x438;Ha" Height="1080" Width="1920"
         WindowStartupLocation="CenterScreen"
         Icon="Resources/Icons/Icon-maskable-512.png"
         FontFamily="{StaticResource MyFont}">
-    <Window.Resources>
-        <!-- 0 - 其余 -->
-        <DataTemplate DataType="{x:Type ViewModels:NavigationViewModel}">
-            <Views:NavigationView />
-        </DataTemplate>
-        <!-- 1 - 主页 -->
-        <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
-            <Views:HomeView />
-        </DataTemplate>
-        <!-- 2 - 背包 -->
-        <DataTemplate DataType="{x:Type ViewModels:Backpack1CharacterViewModel}">
-            <Views:Backpack1CharacterView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Backpack2WeaponViewModel}">
-            <Views:Backpack2WeaponView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Backpack3ArtifactViewModel}">
-            <Views:Backpack3ArtifactView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Backpack4MaterialViewModel}">
-            <Views:Backpack4MaterialView />
-        </DataTemplate>
-        <!-- 3 - 计算器 -->
-        <DataTemplate DataType="{x:Type ViewModels:Calculator1ScanViewModel}">
-            <Views:Calculator1ScanView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Calculator2PlanViewModel}">
-            <Views:Calculator2PlanView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Calculator3AllViewModel}">
-            <Views:Calculator3AllView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Calculator4SettingViewModel}">
-            <Views:Calculator4SettingView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Calculator5PotentialViewModel}">
-            <Views:Calculator5PotentialView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Calculator6MatchViewModel}">
-            <Views:Calculator6MatchView />
-        </DataTemplate>
-        <!-- 4 - 数据库 -->
-        <DataTemplate DataType="{x:Type ViewModels:Database1CharacterViewModel}">
-            <Views:Database1CharacterView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Database2WeaponViewModel}">
-            <Views:Database2WeaponView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Database3ArtifactViewModel}">
-            <Views:Database3ArtifactView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Database4MaterialViewModel}">
-            <Views:Database4MaterialView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type ViewModels:Database5DungeonViewModel}">
-            <Views:Database5DungeonView />
-        </DataTemplate>
-        <!-- -1 - 设置 -->
-        <DataTemplate DataType="{x:Type ViewModels:SettingsViewModel}">
-            <Views:SettingsView />
-        </DataTemplate>
-    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>

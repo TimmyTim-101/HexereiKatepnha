@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ViewModels="clr-namespace:HexereiKatepnha.ViewModels"
+                    xmlns:views="clr-namespace:HexereiKatepnha.Views"
+                    xmlns:backpack="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
+                    xmlns:backpack1="clr-namespace:HexereiKatepnha.Views.Backpack"
+                    xmlns:calculator="clr-namespace:HexereiKatepnha.ViewModels.Calculator"
+                    xmlns:calculator1="clr-namespace:HexereiKatepnha.Views.Calculator"
+                    xmlns:database="clr-namespace:HexereiKatepnha.ViewModels.Database"
+                    xmlns:database1="clr-namespace:HexereiKatepnha.Views.Database">
+    <!-- 0 - 其余 -->
+    <DataTemplate DataType="{x:Type ViewModels:NavigationViewModel}">
+        <views:NavigationView />
+    </DataTemplate>
+    <!-- 1 - 主页 -->
+    <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
+        <views:HomeView />
+    </DataTemplate>
+    <!-- 2 - 背包 -->
+    <DataTemplate DataType="{x:Type backpack:Backpack1CharacterViewModel}">
+        <backpack1:Backpack1CharacterView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type backpack:Backpack2WeaponViewModel}">
+        <backpack1:Backpack2WeaponView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type backpack:Backpack3ArtifactViewModel}">
+        <backpack1:Backpack3ArtifactView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type backpack:Backpack4MaterialViewModel}">
+        <backpack1:Backpack4MaterialView />
+    </DataTemplate>
+    <!-- 3 - 计算器 -->
+    <DataTemplate DataType="{x:Type calculator:Calculator1ScanViewModel}">
+        <calculator1:Calculator1ScanView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator2PlanViewModel}">
+        <calculator1:Calculator2PlanView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator3AllViewModel}">
+        <calculator1:Calculator3AllView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator4SettingViewModel}">
+        <calculator1:Calculator4SettingView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator5PotentialViewModel}">
+        <calculator1:Calculator5PotentialView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator6MatchViewModel}">
+        <calculator1:Calculator6MatchView />
+    </DataTemplate>
+    <!-- 4 - 数据库 -->
+    <DataTemplate DataType="{x:Type database:Database1CharacterViewModel}">
+        <database1:Database1CharacterView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type database:Database2WeaponViewModel}">
+        <database1:Database2WeaponView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type database:Database3ArtifactViewModel}">
+        <database1:Database3ArtifactView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type database:Database4MaterialViewModel}">
+        <database1:Database4MaterialView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type database:Database5DungeonViewModel}">
+        <database1:Database5DungeonView />
+    </DataTemplate>
+    <!-- -1 - 设置 -->
+    <DataTemplate DataType="{x:Type ViewModels:SettingsViewModel}">
+        <views:SettingsView />
+    </DataTemplate>
+</ResourceDictionary>

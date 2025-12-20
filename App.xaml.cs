@@ -11,7 +11,7 @@ namespace HexereiKatepnha
     public partial class App : Application
     {
         public static ThemeConfigManager ThemeConfigManagerInstance { get; private set; }
-        
+
         protected override void OnStartup(StartupEventArgs e)
         {
             // 修复中文控制台输出乱码
@@ -23,7 +23,6 @@ namespace HexereiKatepnha
 
         protected override void OnExit(ExitEventArgs e)
         {
-
             ThemeConfigManagerInstance.Save();
             base.OnExit(e);
         }

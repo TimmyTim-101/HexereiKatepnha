@@ -7,9 +7,7 @@ namespace HexereiKatepnha.ViewModels
 {
     public partial class SettingsViewModel : ObservableObject
     {
-        [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(CurrentThemeName))]
-        [NotifyPropertyChangedFor(nameof(CurrentThemeColor))]
+        [ObservableProperty] [NotifyPropertyChangedFor(nameof(CurrentThemeName))] [NotifyPropertyChangedFor(nameof(CurrentThemeColor))]
         private int _themeIndex = App.ThemeConfigManagerInstance.Configuration.ThemeIndex;
 
         public string CurrentThemeName => ThemeConstants.ThemeName[ThemeIndex];

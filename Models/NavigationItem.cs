@@ -4,13 +4,8 @@ namespace HexereiKatepnha.Models
 {
     public class NavigationItem
     {
-        public string Title { get; set; }
-        public Type TargetViewModelType { get; set; }
-
-        public NavigationItem(string title, Type targetViewModelType)
-        {
-            Title = title;
-            TargetViewModelType = targetViewModelType;
-        }
+        public int Id { get; set; }
+        public string Title { get; set; } = "未知导航名称";
+        public string IconPath { get; set; } = "?";
     }
 }

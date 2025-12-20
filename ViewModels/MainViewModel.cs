@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
 using HexereiKatepnha.Models;
+using HexereiKatepnha.ViewModels.Backpack;
+using HexereiKatepnha.ViewModels.Calculator;
+using HexereiKatepnha.ViewModels.Database;
 using HexereiKatepnha.Views;
 
 namespace HexereiKatepnha.ViewModels
@@ -20,8 +23,6 @@ namespace HexereiKatepnha.ViewModels
         [ObservableProperty] private ObservableObject _currentNavigationViewModel;
 
         [ObservableProperty] private ObservableObject _currentContentViewModel;
-
-        [ObservableProperty] private NavigationItem _selectedNavigationItem;
 
         public MainViewModel(int navigationFlag)
         {
@@ -45,14 +46,14 @@ namespace HexereiKatepnha.ViewModels
                 case 22: CurrentContentViewModel = new Backpack2WeaponViewModel(); break;
                 case 23: CurrentContentViewModel = new Backpack3ArtifactViewModel(); break;
                 case 24: CurrentContentViewModel = new Backpack4MaterialViewModel(); break;
-                
+
                 case 31: CurrentContentViewModel = new Calculator1ScanViewModel(); break;
                 case 32: CurrentContentViewModel = new Calculator2PlanViewModel(); break;
                 case 33: CurrentContentViewModel = new Calculator3AllViewModel(); break;
                 case 34: CurrentContentViewModel = new Calculator4SettingViewModel(); break;
                 case 35: CurrentContentViewModel = new Calculator5PotentialViewModel(); break;
                 case 36: CurrentContentViewModel = new Calculator6MatchViewModel(); break;
-                
+
                 case 41: CurrentContentViewModel = new Database1CharacterViewModel(); break;
                 case 42: CurrentContentViewModel = new Database2WeaponViewModel(); break;
                 case 43: CurrentContentViewModel = new Database3ArtifactViewModel(); break;

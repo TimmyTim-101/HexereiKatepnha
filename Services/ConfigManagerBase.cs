@@ -45,6 +45,7 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
         {
             Directory.CreateDirectory(directory);
         }
+
         var options = new JsonSerializerOptions { WriteIndented = true };
         string json = JsonSerializer.Serialize(Configuration, options);
         File.WriteAllText(ConfigFileName, json);

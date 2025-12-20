@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HexereiKatepnha.Views;
+namespace HexereiKatepnha.Views.Database;
 
 public partial class Database4MaterialView : UserControl
 {

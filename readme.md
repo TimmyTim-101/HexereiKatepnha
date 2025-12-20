@@ -21,8 +21,12 @@
 * [GrasscutterCommandGenerator](https://github.com/jie65535/GrasscutterCommandGenerator)
 #### 数据类支持
 * [原神：圣遗物系统详解 V1.0](https://www.miyoushe.com/ys/article/46456656)
+#### 大语言模型相关产品
+* [Gemini](https://gemini.google.com/app)
+* [Antigravity](https://antigravity.google/)
 #### 其它
 * [Studio](https://github.com/RazTools/Studio)
+* [AnimeStudio](https://github.com/Escartem/AnimeStudio)
 
 再次感谢以上项目对本项目提供的帮助，作为本项目的管理者的我深知每一个项目背后都是个人或团队智慧、行动与时间的结晶，如有侵权或其他问题，请与我联系，感谢!
 
