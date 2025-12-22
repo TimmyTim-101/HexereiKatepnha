@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
+             Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
-                <Border Style="{StaticResource MyDivider}"></Border>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <StackPanel Orientation="Horizontal" Margin="30,20,30,5">
                     <TextBlock Text="当前主题：" Style="{StaticResource MyTextBlock}"></TextBlock>
                     <TextBlock Text="{Binding CurrentThemeName}" Foreground="{Binding CurrentThemeColor}" Style="{StaticResource MyTextBlock}"></TextBlock>
@@ -47,7 +48,7 @@
                         <Image Source="/Resources/Themes/AllBlack.png" Stretch="Uniform"></Image>
                     </Button>
                 </StackPanel>
-                <Border Style="{StaticResource MyDivider}"></Border>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

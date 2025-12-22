@@ -8,6 +8,7 @@
 * [安柏计划](https://ambr.top/)
 * [Honey Impact](https://genshin.honeyhunterworld.com/)
 * [genshin-db](https://github.com/theBowja/genshin-db)
+* [玉衡杯](https://homdgcat.wiki/home)
 #### 扫描类项目
 * [Inventory_Kamera](https://github.com/Andrewthe13th/Inventory_Kamera)
 * [yas](https://github.com/wormtql/yas)

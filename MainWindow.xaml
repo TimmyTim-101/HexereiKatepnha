@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="魔导Katep&#x438;Ha" Height="1080" Width="1920"
+        Background="#FF1E1E1E"
         WindowStartupLocation="CenterScreen"
         Icon="Resources/Icons/Icon-maskable-512.png"
         FontFamily="{StaticResource MyFont}">
