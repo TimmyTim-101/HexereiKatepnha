@@ -8,9 +8,67 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="数据库 - 材料" Style="{StaticResource TodoTextBlock}" />
+                <TextBlock Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色经验素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色与武器培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色天赋素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="武器突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="地方特产" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List7}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="250"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <Grid Width="50" Height="50">
+                                                <Grid.ToolTip>
+                                                    <ToolTip Background="Transparent" BorderThickness="0">
+                                                        <Grid Width="250" Height="250">
+                                                            <Image Source="{Binding BackgroundImagePath}" Stretch="UniformToFill"></Image>
+                                                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
+                                                        </Grid>
+                                                    </ToolTip>
+                                                </Grid.ToolTip>
+                                                <Image Source="{Binding BackgroundImagePath}" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
+                                            </Grid>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" Orientation="Vertical">
+                                            <Image Source="{Binding StarImagePath}" Height="15"></Image>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#777777">
+                                                <Run Text="ID:"></Run>
+                                                <Run Text="{Binding Vid}"></Run>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

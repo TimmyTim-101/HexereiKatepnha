@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vwp="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1720"
              Background="#FF1E1E1E"
@@ -76,6 +77,14 @@
                                                                 <ItemsControl.ItemTemplate>
                                                                     <DataTemplate>
                                                                         <Grid Width="50" Height="50">
+                                                                            <Grid.ToolTip>
+                                                                                <ToolTip Background="Transparent" BorderThickness="0">
+                                                                                    <Grid Width="250" Height="250">
+                                                                                        <Image Source="{Binding BackgroundPath}" Stretch="UniformToFill"></Image>
+                                                                                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
+                                                                                    </Grid>
+                                                                                </ToolTip>
+                                                                            </Grid.ToolTip>
                                                                             <Image Source="{Binding BackgroundPath}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
                                                                         </Grid>

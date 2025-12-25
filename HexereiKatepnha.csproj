@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="VirtualizingWrapPanel" Version="2.4.0-beta" />
   </ItemGroup>
 
   <ItemGroup>
@@ -623,6 +624,16 @@
     <Resource Include="Resources\Images\Star\5_star_background.png" />
     <None Remove="Resources\Images\Star\5C_star_background.png" />
     <Resource Include="Resources\Images\Star\5C_star_background.png" />
+    <None Remove="Resources\Images\Star\Icon_1_Star.png" />
+    <Resource Include="Resources\Images\Star\Icon_1_Star.png" />
+    <None Remove="Resources\Images\Star\Icon_2_Star.png" />
+    <Resource Include="Resources\Images\Star\Icon_2_Star.png" />
+    <None Remove="Resources\Images\Star\Icon_3_Star.png" />
+    <Resource Include="Resources\Images\Star\Icon_3_Star.png" />
+    <None Remove="Resources\Images\Star\Icon_4_Star.png" />
+    <Resource Include="Resources\Images\Star\Icon_4_Star.png" />
+    <None Remove="Resources\Images\Star\Icon_5_Star.png" />
+    <Resource Include="Resources\Images\Star\Icon_5_Star.png" />
   </ItemGroup>
 
   <ItemGroup>

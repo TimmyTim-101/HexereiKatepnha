@@ -8,7 +8,6 @@ public static class ArtifactConstants
     {
         Rid = 501,
         Vid = 10010,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "冒险家",
         RarityList = [1, 2, 3],
         PositionNameDict = new Dictionary<int, string>
@@ -34,7 +33,6 @@ public static class ArtifactConstants
     {
         Rid = 502,
         Vid = 10011,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "幸运儿",
         RarityList = [1, 2, 3],
         PositionNameDict = new Dictionary<int, string>
@@ -60,7 +58,6 @@ public static class ArtifactConstants
     {
         Rid = 503,
         Vid = 10013,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "游医",
         RarityList = [1, 2, 3],
         PositionNameDict = new Dictionary<int, string>
@@ -86,7 +83,6 @@ public static class ArtifactConstants
     {
         Rid = 504,
         Vid = 10001,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "行者之心",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -112,7 +108,6 @@ public static class ArtifactConstants
     {
         Rid = 505,
         Vid = 10004,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "奇迹",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -138,7 +133,6 @@ public static class ArtifactConstants
     {
         Rid = 506,
         Vid = 10005,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "战狂",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -164,7 +158,6 @@ public static class ArtifactConstants
     {
         Rid = 507,
         Vid = 10007,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "教官",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -190,7 +183,6 @@ public static class ArtifactConstants
     {
         Rid = 508,
         Vid = 10009,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "流放者",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -216,7 +208,6 @@ public static class ArtifactConstants
     {
         Rid = 508,
         Vid = 10003,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "守护之心",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -242,7 +233,6 @@ public static class ArtifactConstants
     {
         Rid = 510,
         Vid = 10002,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "勇士之心",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -268,7 +258,6 @@ public static class ArtifactConstants
     {
         Rid = 511,
         Vid = 10006,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "武人",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -294,7 +283,6 @@ public static class ArtifactConstants
     {
         Rid = 512,
         Vid = 10008,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "赌徒",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -320,7 +308,6 @@ public static class ArtifactConstants
     {
         Rid = 513,
         Vid = 10012,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "学士",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -346,7 +333,6 @@ public static class ArtifactConstants
     {
         Rid = 514,
         Vid = 15009,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "祭火之人",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -367,7 +353,6 @@ public static class ArtifactConstants
     {
         Rid = 515,
         Vid = 15010,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "祭水之人",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -388,7 +373,6 @@ public static class ArtifactConstants
     {
         Rid = 516,
         Vid = 15011,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "祭雷之人",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -409,7 +393,6 @@ public static class ArtifactConstants
     {
         Rid = 517,
         Vid = 15013,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "祭冰之人",
         RarityList = [3, 4],
         PositionNameDict = new Dictionary<int, string>
@@ -430,7 +413,6 @@ public static class ArtifactConstants
     {
         Rid = 518,
         Vid = 14001,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "冰风迷途的勇士",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -456,7 +438,6 @@ public static class ArtifactConstants
     {
         Rid = 519,
         Vid = 14002,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "平息鸣雷的尊者",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -482,7 +463,6 @@ public static class ArtifactConstants
     {
         Rid = 520,
         Vid = 14003,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "渡过烈火的贤人",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -508,7 +488,6 @@ public static class ArtifactConstants
     {
         Rid = 521,
         Vid = 14004,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "被怜爱的少女",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -534,7 +513,6 @@ public static class ArtifactConstants
     {
         Rid = 522,
         Vid = 15001,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "角斗士的终幕礼",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -560,7 +538,6 @@ public static class ArtifactConstants
     {
         Rid = 523,
         Vid = 15002,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "翠绿之影",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -586,7 +563,6 @@ public static class ArtifactConstants
     {
         Rid = 524,
         Vid = 15003,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "流浪大地的乐团",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -612,7 +588,6 @@ public static class ArtifactConstants
     {
         Rid = 525,
         Vid = 15005,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "如雷的盛怒",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -638,7 +613,6 @@ public static class ArtifactConstants
     {
         Rid = 526,
         Vid = 15006,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "炽烈的炎之魔女",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -664,7 +638,6 @@ public static class ArtifactConstants
     {
         Rid = 527,
         Vid = 15007,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "昔日宗室之仪",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -690,7 +663,6 @@ public static class ArtifactConstants
     {
         Rid = 528,
         Vid = 15008,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "染血的骑士道",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -716,7 +688,6 @@ public static class ArtifactConstants
     {
         Rid = 529,
         Vid = 15014,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "悠古的磐岩",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -742,7 +713,6 @@ public static class ArtifactConstants
     {
         Rid = 530,
         Vid = 15015,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "逆飞的流星",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -768,7 +738,6 @@ public static class ArtifactConstants
     {
         Rid = 531,
         Vid = 15016,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "沉沦之心",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -794,7 +763,6 @@ public static class ArtifactConstants
     {
         Rid = 532,
         Vid = 15017,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "千岩牢固",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -820,7 +788,6 @@ public static class ArtifactConstants
     {
         Rid = 533,
         Vid = 15018,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "苍白之火",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -846,7 +813,6 @@ public static class ArtifactConstants
     {
         Rid = 534,
         Vid = 15019,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "追忆之注连",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -872,7 +838,6 @@ public static class ArtifactConstants
     {
         Rid = 535,
         Vid = 15020,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "绝缘之旗印",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -898,7 +863,6 @@ public static class ArtifactConstants
     {
         Rid = 536,
         Vid = 15021,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "华馆梦醒形骸记",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -924,7 +888,6 @@ public static class ArtifactConstants
     {
         Rid = 537,
         Vid = 15022,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "海染砗磲",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -950,7 +913,6 @@ public static class ArtifactConstants
     {
         Rid = 538,
         Vid = 15023,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "辰砂往生录",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -976,7 +938,6 @@ public static class ArtifactConstants
     {
         Rid = 539,
         Vid = 15024,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "来歆余响",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1002,7 +963,6 @@ public static class ArtifactConstants
     {
         Rid = 540,
         Vid = 15025,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "深林的记忆",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1028,7 +988,6 @@ public static class ArtifactConstants
     {
         Rid = 541,
         Vid = 15026,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "饰金之梦",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1054,7 +1013,6 @@ public static class ArtifactConstants
     {
         Rid = 542,
         Vid = 15027,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "沙上楼阁史话",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1080,7 +1038,6 @@ public static class ArtifactConstants
     {
         Rid = 543,
         Vid = 15028,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "乐园遗落之花",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1106,7 +1063,6 @@ public static class ArtifactConstants
     {
         Rid = 544,
         Vid = 15029,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "水仙之梦",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1132,7 +1088,6 @@ public static class ArtifactConstants
     {
         Rid = 545,
         Vid = 15030,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "花海甘露之光",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1158,7 +1113,6 @@ public static class ArtifactConstants
     {
         Rid = 546,
         Vid = 15031,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "逐影猎人",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1184,7 +1138,6 @@ public static class ArtifactConstants
     {
         Rid = 547,
         Vid = 15032,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "黄金剧团",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1210,7 +1163,6 @@ public static class ArtifactConstants
     {
         Rid = 548,
         Vid = 15033,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "昔时之歌",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1236,7 +1188,6 @@ public static class ArtifactConstants
     {
         Rid = 549,
         Vid = 15034,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "回声之林夜话",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1262,7 +1213,6 @@ public static class ArtifactConstants
     {
         Rid = 550,
         Vid = 15035,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "谐律异想断章",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1288,7 +1238,6 @@ public static class ArtifactConstants
     {
         Rid = 551,
         Vid = 15036,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "未竟的遐思",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1314,7 +1263,6 @@ public static class ArtifactConstants
     {
         Rid = 552,
         Vid = 15037,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "烬城勇者绘卷",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1340,7 +1288,6 @@ public static class ArtifactConstants
     {
         Rid = 553,
         Vid = 15038,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "黑曜秘典",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1366,7 +1313,6 @@ public static class ArtifactConstants
     {
         Rid = 554,
         Vid = 15039,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "长夜之誓",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1392,7 +1338,6 @@ public static class ArtifactConstants
     {
         Rid = 555,
         Vid = 15040,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "深廊终曲",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1418,7 +1363,6 @@ public static class ArtifactConstants
     {
         Rid = 556,
         Vid = 15041,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "穹境示现之夜",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>
@@ -1444,7 +1388,6 @@ public static class ArtifactConstants
     {
         Rid = 557,
         Vid = 15042,
-        EntityType = Enumeration.EntityType.Artifact,
         Name = "纺月的夜歌",
         RarityList = [4, 5],
         PositionNameDict = new Dictionary<int, string>

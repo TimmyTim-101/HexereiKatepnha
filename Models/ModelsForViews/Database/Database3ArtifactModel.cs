@@ -3,7 +3,7 @@ using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;
 
-public class Database3ArtifactModels
+public class Database3ArtifactModel
 {
     public int Vid { get; set; }
     public string Name { get; set; } = "";

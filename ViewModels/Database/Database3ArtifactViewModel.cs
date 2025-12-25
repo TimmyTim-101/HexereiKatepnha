@@ -9,13 +9,13 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public partial class Database3ArtifactViewModel : ObservableObject
     {
-        [ObservableProperty] private ObservableCollection<Database3ArtifactModels> _allDatabase3ArtifactModelsList = new();
+        [ObservableProperty] private ObservableCollection<Database3ArtifactModel> _allDatabase3ArtifactModelsList = new();
 
         public Database3ArtifactViewModel()
         {
             foreach (ArtifactSetModel e in AllEntities.AllArtifactSetEntities)
             {
-                Database3ArtifactModels thisDatabase3ArtifactModels = new Database3ArtifactModels();
+                Database3ArtifactModel thisDatabase3ArtifactModels = new Database3ArtifactModel();
                 thisDatabase3ArtifactModels.Vid = e.Vid;
                 thisDatabase3ArtifactModels.Name = e.Name;
                 for (int i = 1; i <= 5; i++)
