@@ -24,6 +24,7 @@ public static class Enumeration
         CharacterAscension = 7, // 角色突破素材_钻儿块儿片儿粒儿
         CharacterTalent = 8, // 角色天赋素材
         WeaponAscension = 9, // 武器突破素材
-        LocalSpecialty = 10 // 地方特产
+        LocalSpecialty = 10, // 地方特产
+        WeaponExp = 11 // 武器强化素材
     }
 }

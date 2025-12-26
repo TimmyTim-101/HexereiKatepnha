@@ -40,6 +40,17 @@ namespace HexereiKatepnha.ViewModels.Database
                 List1.Add(thisModel);
             }
 
+            foreach (MaterialModel e in AllEntities.AllMaterialWeaponExp)
+            {
+                Database4MaterialModel thisModel = new Database4MaterialModel();
+                thisModel.Vid = e.Vid;
+                thisModel.Name = e.Name;
+                thisModel.ImagePath = e.ImagePath;
+                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
+                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
+                List1.Add(thisModel);
+            }
+
             foreach (MaterialModel e in AllEntities.AllMaterialCharacterWeaponEnhancement1)
             {
                 Database4MaterialModel thisModel = new Database4MaterialModel();

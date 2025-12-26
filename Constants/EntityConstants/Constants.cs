@@ -25,9 +25,9 @@ public static class Constants
     public static readonly Dictionary<int, string> StarImagePath = new()
     {
         { 1, "/Resources/Images/Star/Icon_1_Star.png" },
-        { 2, "/Resources/Images/Star/Icon_1_Star.png" },
-        { 3, "/Resources/Images/Star/Icon_1_Star.png" },
-        { 4, "/Resources/Images/Star/Icon_1_Star.png" },
-        { 5, "/Resources/Images/Star/Icon_1_Star.png" },
+        { 2, "/Resources/Images/Star/Icon_2_Star.png" },
+        { 3, "/Resources/Images/Star/Icon_3_Star.png" },
+        { 4, "/Resources/Images/Star/Icon_4_Star.png" },
+        { 5, "/Resources/Images/Star/Icon_5_Star.png" },
     };
 }

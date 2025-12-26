@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vwp="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1720"
              Background="#FF1E1E1E"
@@ -30,7 +29,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Margin="5" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                 <StackPanel>
                                     <Grid>
                                         <Grid.RowDefinitions>
@@ -64,7 +63,7 @@
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-                                                            <Image Source="{Binding ArtifactIconPath}" Width="50" Height="50"></Image>
+                                                            <Image Source="{Binding ArtifactIconPath, IsAsync=True}" Width="50" Height="50"></Image>
                                                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,15,0">
                                                                 <TextBlock Text="{Binding Name}" Style="{StaticResource MyTextBlock}" FontSize="16"></TextBlock>
                                                             </StackPanel>
@@ -76,17 +75,17 @@
                                                                 </ItemsControl.ItemsPanel>
                                                                 <ItemsControl.ItemTemplate>
                                                                     <DataTemplate>
-                                                                        <Grid Width="50" Height="50">
+                                                                        <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
                                                                                 <ToolTip Background="Transparent" BorderThickness="0">
                                                                                     <Grid Width="250" Height="250">
-                                                                                        <Image Source="{Binding BackgroundPath}" Stretch="UniformToFill"></Image>
-                                                                                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
+                                                                                        <Image Source="{Binding BackgroundPath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                                     </Grid>
                                                                                 </ToolTip>
                                                                             </Grid.ToolTip>
-                                                                            <Image Source="{Binding BackgroundPath}" Stretch="UniformToFill"></Image>
-                                                                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill"></Image>
+                                                                            <Image Source="{Binding BackgroundPath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                            <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                         </Grid>
                                                                     </DataTemplate>
                                                                 </ItemsControl.ItemTemplate>
