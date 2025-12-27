@@ -10,7 +10,7 @@
     <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="数据库 - 秘境" Style="{StaticResource TodoTextBlock}" />
+                <TextBlock Text="数据库 - 秘境&amp;魔物" Style="{StaticResource TodoTextBlock}" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
