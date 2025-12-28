@@ -206,7 +206,7 @@ public static class ArtifactConstants
 
     public static readonly ArtifactSetModel _509 = new()
     {
-        Rid = 508,
+        Rid = 509,
         Vid = 10003,
         Name = "守护之心",
         RarityList = [3, 4],

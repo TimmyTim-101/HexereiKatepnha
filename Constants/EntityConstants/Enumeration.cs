@@ -27,4 +27,18 @@ public static class Enumeration
         LocalSpecialty = 10, // 地方特产
         WeaponExp = 11 // 武器强化素材
     }
+
+    public enum DungeonType
+    {
+        Unknown = 0,
+        LocalSpecialty = 1, // 地方特产
+        LeyLineOutcrop = 2, // 地脉衍出
+        Easy = 3, // 普通怪物
+        Elite = 4, // 精英怪物
+        Boss = 5, // 40体力BOSS
+        Artifact = 6, // 圣遗物
+        WeaponAscension = 7, // 武器
+        CharacterTalent = 8, // 天赋
+        Trounce = 9, // 60体力BOSS
+    }
 }

@@ -7,9 +7,9 @@ using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
-    public partial class Database3ArtifactViewModel : ObservableObject
+    public class Database3ArtifactViewModel : ObservableObject
     {
-        [ObservableProperty] private ObservableCollection<Database3ArtifactModel> _allDatabase3ArtifactModelsList = new();
+        public ObservableCollection<Database3ArtifactModel> AllDatabase3ArtifactModelsList { get; } = new();
 
         public Database3ArtifactViewModel()
         {
@@ -23,14 +23,14 @@ namespace HexereiKatepnha.ViewModels.Database
                     if (e.PositionNameDict.ContainsKey(i))
                     {
                         ArtifactTableRowModel thisRow = new ArtifactTableRowModel();
-                        thisRow.ArtifactIconPath = Constants.EntityConstants.Constants.ArtifactIconPath[i];
+                        thisRow.ArtifactIconPath = StringConstants.ArtifactIconPath[i];
                         thisRow.Name = e.PositionNameDict[i];
                         for (int j = 1; j <= 5; j++)
                         {
                             if (e.RarityList.Contains(j))
                             {
                                 ArtifactImageModel thisImage = new ArtifactImageModel();
-                                thisImage.BackgroundPath = Constants.EntityConstants.Constants.StarBackgroundImagePath[j];
+                                thisImage.BackgroundPath = StringConstants.StarBackgroundImagePath[j];
                                 thisImage.ImagePath = e.PositionImagePathDict[i];
                                 thisRow.ImagePathList.Add(thisImage);
                             }

@@ -7,6 +7,7 @@ public static class AllEntities
     // 1 - 角色
 
     // 2 - 武器
+
     // 3 - 材料
     // 301 - 摩拉
     public static readonly List<MaterialModel> AllMaterialMora = [MaterialConstants._3010001];
@@ -129,6 +130,43 @@ public static class AllEntities
     public static readonly List<MaterialModel> AllMaterialWeaponExp = [MaterialConstants._3110001, MaterialConstants._3110002, MaterialConstants._3110003];
 
     // 4 - 秘境
+    // 401 - 地方特产
+    public static readonly List<DungeonModel> AllDungeonLocalSpecialty =
+    [
+        DungeonConstants._4010001, DungeonConstants._4010002, DungeonConstants._4010003, DungeonConstants._4010004, DungeonConstants._4010005, DungeonConstants._4010006, DungeonConstants._4010007,
+    ];
+
+    // 402 - 地脉衍出
+    public static readonly List<DungeonModel> AllDungeonLeyLineOutcrop = [DungeonConstants._4020001, DungeonConstants._4020002];
+
+    // 403 - 普通怪物
+    public static readonly List<DungeonModel> AllDungeonEasy = [];
+
+    // 404 - 精英怪物
+    public static readonly List<DungeonModel> AllDungeonElite = [];
+
+    // 405 - 40体力BOSS
+    public static readonly List<DungeonModel> AllDungeonBoss =
+    [
+        DungeonConstants._4050001,
+    ];
+
+    // 406 - 圣遗物
+    public static readonly List<DungeonModel> AllDungeonArtifact = [];
+
+    // 407 - 武器
+    public static readonly List<DungeonModel> AllDungeonWeaponAscension = [];
+
+    // 408 - 天赋
+    public static readonly List<DungeonModel> AllDungeonCharacterTalent = [];
+
+    // 409 - 60体力BOSS
+    public static readonly List<DungeonModel> AllDungeonTrounce =
+    [
+        DungeonConstants._4090001, DungeonConstants._4090002, DungeonConstants._4090003, DungeonConstants._4090004, DungeonConstants._4090005, DungeonConstants._4090006, DungeonConstants._4090007, DungeonConstants._4090008,
+        DungeonConstants._4090009, DungeonConstants._4090010, DungeonConstants._4090011, DungeonConstants._4090012,
+    ];
+
     // 5 - 圣遗物
     public static readonly List<ArtifactSetModel> AllArtifactSetEntities =
     [

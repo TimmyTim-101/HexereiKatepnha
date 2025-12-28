@@ -1,6 +1,6 @@
 ﻿namespace HexereiKatepnha.Constants.EntityConstants;
 
-public static class Constants
+public static class StringConstants
 {
     // 圣遗物各位置Icon路径
     public static readonly Dictionary<int, string> ArtifactIconPath = new()
@@ -30,4 +30,14 @@ public static class Constants
         { 4, "/Resources/Images/Star/Icon_4_Star.png" },
         { 5, "/Resources/Images/Star/Icon_5_Star.png" },
     };
+
+    public static readonly Dictionary<int, string> DungeonTimeString = new()
+    {
+        { 0, "全天" },
+        { 1, "周一/周四/周日" },
+        { 2, "周二/周五/周日" },
+        { 3, "周三/周六/周日" },
+    };
+
+    public static readonly string ResinImagePath = "/Resources/Images/DungeonAndMonster/UI_ItemIcon_106.png";
 }

@@ -279,7 +279,7 @@
                     <Button.Content>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200">
                             <Image Source="/Resources/Icons/NavigationIcons/Character1.png" Height="30" Width="30" Margin="16,0"></Image>
-                            <TextBlock Text="秘境&amp;魔物" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
+                            <TextBlock Text="秘境 &amp; 魔物" Style="{StaticResource MyTextBlock}" Margin="16,0" Foreground="{x:Static constants:ThemeConstants.White70}"></TextBlock>
                         </StackPanel>
                     </Button.Content>
                     <Button.Style>

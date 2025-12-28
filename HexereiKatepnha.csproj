@@ -1807,6 +1807,22 @@
     <Resource Include="Resources\Images\DungeonAndMonster\UI_MonsterIcon_WildHunt.png" />
     <None Remove="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Wyrm_Rock.png" />
     <Resource Include="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Wyrm_Rock.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_ItemIcon_106.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_ItemIcon_106.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_Fontaine.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_Fontaine.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_Inazuma.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_Inazuma.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_LiYue.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_LiYue.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_MengDe.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_MengDe.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_Natlan.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_Natlan.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_NodKrai.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_NodKrai.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_Sumeru.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_Sumeru.png" />
   </ItemGroup>
 
   <ItemGroup>

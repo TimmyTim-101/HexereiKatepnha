@@ -2345,7 +2345,7 @@ public static class MaterialConstants
     {
         Rid = 3070404,
         Vid = 104131,
-        Name = "涤净青金碎屑",
+        Name = "生长碧翡碎屑",
         Star = 2,
         MaterialType = Enumeration.MaterialType.CharacterAscension,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104131.png"

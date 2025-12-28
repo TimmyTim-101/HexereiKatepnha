@@ -6,137 +6,37 @@ using HexereiKatepnha.Models.ModelsForViews.Database;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
-    public partial class Database4MaterialViewModel : ObservableObject
+    public class Database4MaterialViewModel : ObservableObject
     {
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list1 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list2 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list3 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list4 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list5 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list6 = new();
-        [ObservableProperty] private ObservableCollection<Database4MaterialModel> _list7 = new();
+        public ObservableCollection<Database4MaterialModel> List1 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List2 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List3 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List4 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List5 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List6 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> List7 { get; } = new();
 
         public Database4MaterialViewModel()
         {
-            foreach (MaterialModel e in AllEntities.AllMaterialMora)
+            List<List<MaterialModel>> sourceList =
+            [
+                AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialWeaponExp, AllEntities.AllMaterialCharacterWeaponEnhancement1,
+                AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1, AllEntities.AllMaterialCharacterLevelUp2, AllEntities.AllMaterialCharacterAscension,
+                AllEntities.AllMaterialCharacterTalent, AllEntities.AllMaterialWeaponAscension, AllEntities.AllMaterialLocalSpecialty
+            ];
+            List<ObservableCollection<Database4MaterialModel>> destinationList = [List1, List1, List1, List2, List2, List3, List3, List4, List5, List6, List7];
+            for (int i = 0; i < sourceList.Count; i++)
             {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List1.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterExp)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List1.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialWeaponExp)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List1.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterWeaponEnhancement1)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List2.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterWeaponEnhancement2)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List2.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterLevelUp1)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List3.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterLevelUp2)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List3.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterAscension)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List4.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialCharacterTalent)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List5.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialWeaponAscension)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List6.Add(thisModel);
-            }
-
-            foreach (MaterialModel e in AllEntities.AllMaterialLocalSpecialty)
-            {
-                Database4MaterialModel thisModel = new Database4MaterialModel();
-                thisModel.Vid = e.Vid;
-                thisModel.Name = e.Name;
-                thisModel.ImagePath = e.ImagePath;
-                thisModel.BackgroundImagePath = Constants.EntityConstants.Constants.StarBackgroundImagePath[e.Star];
-                thisModel.StarImagePath = Constants.EntityConstants.Constants.StarImagePath[e.Star];
-                List7.Add(thisModel);
+                foreach (MaterialModel e in sourceList[i])
+                {
+                    Database4MaterialModel thisModel = new Database4MaterialModel();
+                    thisModel.Vid = e.Vid;
+                    thisModel.Name = e.Name;
+                    thisModel.ImagePath = e.ImagePath;
+                    thisModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                    thisModel.StarImagePath = StringConstants.StarImagePath[e.Star];
+                    destinationList[i].Add(thisModel);
+                }
             }
         }
     }

@@ -8,9 +8,490 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="数据库 - 秘境&amp;魔物" Style="{StaticResource TodoTextBlock}" />
+                <TextBlock Text="秘境 &amp; 魔物" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="地方特产" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List1}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="地脉衍出" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List2}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="讨伐 - 普通" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List3}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="讨伐 - 精英" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List4}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="讨伐 - 首领" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List5}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="秘境·圣遗物" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="秘境·武器突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="秘境·天赋突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="征讨领域" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding List9}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="235"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Height="235" Width="235">
+                                        <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2">
+                                        <Viewbox StretchDirection="DownOnly">
+                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </Viewbox>
+                                        </Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
+                                            </StackPanel>
+                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
+                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
+                                            <ItemsControl ItemsSource="{Binding DropItemList}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="2">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <StackPanel Grid.Row="0">
+                                                                <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
+                                                                    <Grid.ToolTip>
+                                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                    </Grid.ToolTip>
+                                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>
