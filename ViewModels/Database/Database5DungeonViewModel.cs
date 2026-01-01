@@ -36,15 +36,15 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.Name = e.Name;
                     thisModel.ImagePath = e.ImagePath;
                     thisModel.Cost = e.Cost;
-                    thisModel.TimeString = StringConstants.DungeonTimeString[e.Time];
+                    thisModel.TimeString = SimpleConstants.DungeonTimeString[e.Time];
                     List<DungeonDropItemModel> thisDropItemList = new List<DungeonDropItemModel>();
-                    foreach (ItemPairModel ipm in e.DropItemList)
+                    foreach (MaterialPairModel ipm in e.DropMaterialList)
                     {
                         DungeonDropItemModel thisDropItem = new DungeonDropItemModel();
                         MaterialModel? thisMaterial = ipm.MaterialModel;
                         thisDropItem.MaterialName = thisMaterial!.Name;
                         thisDropItem.MaterialImagePath = thisMaterial.ImagePath;
-                        thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
+                        thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[thisMaterial.Star];
                         thisDropItem.DropNum = ipm.DropNum;
                         thisDropItemList.Add(thisDropItem);
                     }

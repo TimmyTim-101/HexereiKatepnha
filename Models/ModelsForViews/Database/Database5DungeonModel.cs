@@ -10,5 +10,5 @@ public class Database5DungeonModel
     public int Cost { get; set; }
     public string TimeString { get; set; } = "";
     public List<DungeonDropItemModel> DropItemList { get; set; } = [];
-    public string ResinImagePath { get; set; } = StringConstants.ResinImagePath;
+    public string ResinImagePath { get; set; } = SimpleConstants.ResinImagePath;
 }

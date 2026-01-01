@@ -140,15 +140,31 @@ public static class AllEntities
     public static readonly List<DungeonModel> AllDungeonLeyLineOutcrop = [DungeonConstants._4020001, DungeonConstants._4020002];
 
     // 403 - 普通怪物
-    public static readonly List<DungeonModel> AllDungeonEasy = [];
+    public static readonly List<DungeonModel> AllDungeonEasy =
+    [
+        DungeonConstants._4030001, DungeonConstants._4030002, DungeonConstants._4030003, DungeonConstants._4030004, DungeonConstants._4030005, DungeonConstants._4030006, DungeonConstants._4030007, DungeonConstants._4030008,
+        DungeonConstants._4030009, DungeonConstants._4030010, DungeonConstants._4030011, DungeonConstants._4030012, DungeonConstants._4030013, DungeonConstants._4030014, DungeonConstants._4030015, DungeonConstants._4030016,
+        DungeonConstants._4030017,
+    ];
 
     // 404 - 精英怪物
-    public static readonly List<DungeonModel> AllDungeonElite = [];
+    public static readonly List<DungeonModel> AllDungeonElite =
+    [
+        DungeonConstants._4040001, DungeonConstants._4040002, DungeonConstants._4040003, DungeonConstants._4040004, DungeonConstants._4040005, DungeonConstants._4040006, DungeonConstants._4040007, DungeonConstants._4040008,
+        DungeonConstants._4040009, DungeonConstants._4040010, DungeonConstants._4040011, DungeonConstants._4040012, DungeonConstants._4040013, DungeonConstants._4040014, DungeonConstants._4040015, DungeonConstants._4040016,
+        DungeonConstants._4040017, DungeonConstants._4040018, DungeonConstants._4040019, DungeonConstants._4040020, DungeonConstants._4040021, DungeonConstants._4040022, DungeonConstants._4040023, DungeonConstants._4040024,
+        DungeonConstants._4040025, DungeonConstants._4040026, DungeonConstants._4040027, DungeonConstants._4040028, DungeonConstants._4040029, DungeonConstants._4040030, DungeonConstants._4040031,
+    ];
 
     // 405 - 40体力BOSS
     public static readonly List<DungeonModel> AllDungeonBoss =
     [
-        DungeonConstants._4050001,
+        DungeonConstants._4050001, DungeonConstants._4050002, DungeonConstants._4050003, DungeonConstants._4050004, DungeonConstants._4050005, DungeonConstants._4050006, DungeonConstants._4050007, DungeonConstants._4050008,
+        DungeonConstants._4050009, DungeonConstants._4050010, DungeonConstants._4050011, DungeonConstants._4050012, DungeonConstants._4050013, DungeonConstants._4050014, DungeonConstants._4050015, DungeonConstants._4050016,
+        DungeonConstants._4050017, DungeonConstants._4050018, DungeonConstants._4050019, DungeonConstants._4050020, DungeonConstants._4050021, DungeonConstants._4050022, DungeonConstants._4050023, DungeonConstants._4050024,
+        DungeonConstants._4050025, DungeonConstants._4050026, DungeonConstants._4050027, DungeonConstants._4050028, DungeonConstants._4050029, DungeonConstants._4050030, DungeonConstants._4050031, DungeonConstants._4050032,
+        DungeonConstants._4050033, DungeonConstants._4050034, DungeonConstants._4050035, DungeonConstants._4050036, DungeonConstants._4050037, DungeonConstants._4050038, DungeonConstants._4050039, DungeonConstants._4050040,
+        DungeonConstants._4050041
     ];
 
     // 406 - 圣遗物
@@ -178,5 +194,29 @@ public static class AllEntities
         ArtifactConstants._541, ArtifactConstants._542, ArtifactConstants._543, ArtifactConstants._544, ArtifactConstants._545, ArtifactConstants._546, ArtifactConstants._547, ArtifactConstants._548,
         ArtifactConstants._549, ArtifactConstants._550, ArtifactConstants._551, ArtifactConstants._552, ArtifactConstants._553, ArtifactConstants._554, ArtifactConstants._555, ArtifactConstants._556,
         ArtifactConstants._557,
+    ];
+
+    // 所有group
+    public static readonly List<MaterialGroupModel> AllGroup =
+    [
+        // 303 - 角色与武器培养素材_234
+        MaterialConstants.G3030001, MaterialConstants.G3030004, MaterialConstants.G3030007, MaterialConstants.G3030010, MaterialConstants.G3030013, MaterialConstants.G3030016, MaterialConstants.G3030019, MaterialConstants.G3030022,
+        MaterialConstants.G3030025, MaterialConstants.G3030028, MaterialConstants.G3030031, MaterialConstants.G3030034, MaterialConstants.G3030037, MaterialConstants.G3030040, MaterialConstants.G3030043, MaterialConstants.G3030046,
+        MaterialConstants.G3030049, MaterialConstants.G3030052, MaterialConstants.G3030055, MaterialConstants.G3030058, MaterialConstants.G3030061, MaterialConstants.G3030064, MaterialConstants.G3030067, MaterialConstants.G3030070,
+        MaterialConstants.G3030073, MaterialConstants.G3030076, MaterialConstants.G3030079, MaterialConstants.G3030082,
+        // 304 - 角色与武器培养素材_123
+        MaterialConstants.G3040001, MaterialConstants.G3040004, MaterialConstants.G3040007, MaterialConstants.G3040010, MaterialConstants.G3040013, MaterialConstants.G3040016, MaterialConstants.G3040019, MaterialConstants.G3040022,
+        MaterialConstants.G3040025, MaterialConstants.G3040028, MaterialConstants.G3040031, MaterialConstants.G3040034, MaterialConstants.G3040037, MaterialConstants.G3040040, MaterialConstants.G3040043, MaterialConstants.G3040046,
+        MaterialConstants.G3040049,
+        // 307 - 角色突破素材_钻儿块儿片儿粒儿
+        MaterialConstants.G3070101, MaterialConstants.G3070201, MaterialConstants.G3070301, MaterialConstants.G3070401, MaterialConstants.G3070501, MaterialConstants.G3070601, MaterialConstants.G3070701, MaterialConstants.G3070801,
+        // 308 - 角色天赋素材
+        MaterialConstants.G3080001, MaterialConstants.G3080004, MaterialConstants.G3080007, MaterialConstants.G3080010, MaterialConstants.G3080013, MaterialConstants.G3080016, MaterialConstants.G3080019, MaterialConstants.G3080022,
+        MaterialConstants.G3080025, MaterialConstants.G3080028, MaterialConstants.G3080031, MaterialConstants.G3080034, MaterialConstants.G3080037, MaterialConstants.G3080040, MaterialConstants.G3080043, MaterialConstants.G3080046,
+        MaterialConstants.G3080049, MaterialConstants.G3080052, MaterialConstants.G3080055, MaterialConstants.G3080058, MaterialConstants.G3080061,
+        // 309 - 武器突破素材
+        MaterialConstants.G3090001, MaterialConstants.G3090005, MaterialConstants.G3090009, MaterialConstants.G3090013, MaterialConstants.G3090017, MaterialConstants.G3090021, MaterialConstants.G3090025, MaterialConstants.G3090029,
+        MaterialConstants.G3090033, MaterialConstants.G3090037, MaterialConstants.G3090041, MaterialConstants.G3090045, MaterialConstants.G3090049, MaterialConstants.G3090053, MaterialConstants.G3090057, MaterialConstants.G3090061,
+        MaterialConstants.G3090065, MaterialConstants.G3090069, MaterialConstants.G3090073, MaterialConstants.G3090077, MaterialConstants.G3090081,
     ];
 }

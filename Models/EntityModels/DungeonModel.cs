@@ -12,5 +12,5 @@ public class DungeonModel : BaseEntityModel
     public override string ImagePath { get; set; } = "";
     public int Cost { get; set; }
     public int Time { get; set; } = 0;
-    public List<ItemPairModel> DropItemList = [];
+    public List<MaterialPairModel> DropMaterialList = [];
 }

@@ -8,14 +8,14 @@ namespace HexereiKatepnha.ViewModels
     public partial class SettingsViewModel : ObservableObject
     {
         [ObservableProperty] [NotifyPropertyChangedFor(nameof(CurrentThemeName))] [NotifyPropertyChangedFor(nameof(CurrentThemeColor))]
-        private int _themeIndex = App.ThemeConfigManagerInstance.Configuration.ThemeIndex;
+        private int _themeIndex = App.ThemeConfigManagerInstance!.Configuration.ThemeIndex;
 
         public string CurrentThemeName => ThemeConstants.ThemeName[ThemeIndex];
         public SolidColorBrush? CurrentThemeColor => ThemeConstants.FrontColor[ThemeIndex];
 
         partial void OnThemeIndexChanged(int value)
         {
-            App.ThemeConfigManagerInstance.UpdateTheme(value);
+            App.ThemeConfigManagerInstance!.UpdateTheme(value);
             App.ThemeConfigManagerInstance.Save();
         }
 

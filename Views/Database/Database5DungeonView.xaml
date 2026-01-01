@@ -33,26 +33,9 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
-                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
-                                            </StackPanel>
-                                        </Grid>
                                         <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
                                             <ItemsControl ItemsSource="{Binding DropItemList}">
                                                 <ItemsControl.ItemsPanel>
@@ -75,9 +58,6 @@
                                                                     <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                     <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                 </Grid>
-                                                            </StackPanel>
-                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
                                                             </StackPanel>
                                                         </Grid>
                                                     </DataTemplate>
@@ -112,22 +92,16 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Border Grid.Column="0" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
                                                 <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
                                             </StackPanel>
@@ -191,26 +165,9 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
-                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
-                                            </StackPanel>
-                                        </Grid>
                                         <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
                                             <ItemsControl ItemsSource="{Binding DropItemList}">
                                                 <ItemsControl.ItemsPanel>
@@ -233,9 +190,6 @@
                                                                     <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                     <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                 </Grid>
-                                                            </StackPanel>
-                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
                                                             </StackPanel>
                                                         </Grid>
                                                     </DataTemplate>
@@ -270,26 +224,9 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
-                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
-                                                <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
-                                            </StackPanel>
-                                        </Grid>
                                         <Border CornerRadius="5" BorderBrush="#555555" BorderThickness="1" Margin="5,5,5,5">
                                             <ItemsControl ItemsSource="{Binding DropItemList}">
                                                 <ItemsControl.ItemsPanel>
@@ -312,9 +249,6 @@
                                                                     <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                     <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                 </Grid>
-                                                            </StackPanel>
-                                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding DropNum}" FontSize="12"></TextBlock>
                                                             </StackPanel>
                                                         </Grid>
                                                     </DataTemplate>
@@ -349,22 +283,16 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Border Grid.Column="0" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
                                                 <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
                                             </StackPanel>
@@ -434,22 +362,16 @@
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2">
-                                        <Viewbox StretchDirection="DownOnly">
-                                            <Viewbox MaxWidth="220" StretchDirection="DownOnly">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                                            </Viewbox>
+                                        <Viewbox MaxWidth="220" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
                                         </Viewbox>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
                                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
-                                            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16"></TextBlock>
-                                            </StackPanel>
-                                            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Border Grid.Column="0" Style="{StaticResource VerticalDivider}"></Border>
+                                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16"></TextBlock>
                                                 <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
                                             </StackPanel>
