@@ -41,10 +41,35 @@ namespace HexereiKatepnha.ViewModels.Database
                     foreach (MaterialPairModel ipm in e.DropMaterialList)
                     {
                         DungeonDropItemModel thisDropItem = new DungeonDropItemModel();
-                        MaterialModel? thisMaterial = ipm.MaterialModel;
+                        BaseEntityModel? thisMaterial = ipm.MaterialModel;
+                        if (thisMaterial!.GetType() == typeof(ArtifactSetModel))
+                        {
+                            ArtifactSetModel asm = (ArtifactSetModel)thisMaterial;
+                            for (int j = 1; j <= 5; j++)
+                            {
+                                if (asm.PositionImagePathDict.ContainsKey(j))
+                                {
+                                    thisDropItem.MaterialImagePath = asm.PositionImagePathDict[j];
+                                    break;
+                                }
+                            }
+
+                            for (int j = 5; j >= 1; j--)
+                            {
+                                if (asm.RarityList.Contains(j))
+                                {
+                                    thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[j];
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            thisDropItem.MaterialImagePath = thisMaterial.ImagePath;
+                            thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[thisMaterial.Star];
+                        }
+
                         thisDropItem.MaterialName = thisMaterial!.Name;
-                        thisDropItem.MaterialImagePath = thisMaterial.ImagePath;
-                        thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[thisMaterial.Star];
                         thisDropItem.DropNum = ipm.DropNum;
                         thisDropItemList.Add(thisDropItem);
                     }

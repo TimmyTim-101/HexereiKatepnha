@@ -168,13 +168,28 @@ public static class AllEntities
     ];
 
     // 406 - 圣遗物
-    public static readonly List<DungeonModel> AllDungeonArtifact = [];
+    public static readonly List<DungeonModel> AllDungeonArtifact =
+    [
+        DungeonConstants._4060001, DungeonConstants._4060002, DungeonConstants._4060003, DungeonConstants._4060004, DungeonConstants._4060005, DungeonConstants._4060006, DungeonConstants._4060007, DungeonConstants._4060008,
+        DungeonConstants._4060009, DungeonConstants._4060010, DungeonConstants._4060011, DungeonConstants._4060012, DungeonConstants._4060013, DungeonConstants._4060014, DungeonConstants._4060015, DungeonConstants._4060016,
+        DungeonConstants._4060017, DungeonConstants._4060018, DungeonConstants._4060019,
+    ];
 
     // 407 - 武器
-    public static readonly List<DungeonModel> AllDungeonWeaponAscension = [];
+    public static readonly List<DungeonModel> AllDungeonWeaponAscension =
+    [
+        DungeonConstants._4070001, DungeonConstants._4070002, DungeonConstants._4070003, DungeonConstants._4070004, DungeonConstants._4070005, DungeonConstants._4070006, DungeonConstants._4070007, DungeonConstants._4070008,
+        DungeonConstants._4070009, DungeonConstants._4070010, DungeonConstants._4070011, DungeonConstants._4070012, DungeonConstants._4070013, DungeonConstants._4070014, DungeonConstants._4070015, DungeonConstants._4070016,
+        DungeonConstants._4070017, DungeonConstants._4070018, DungeonConstants._4070019, DungeonConstants._4070020, DungeonConstants._4070021,
+    ];
 
     // 408 - 天赋
-    public static readonly List<DungeonModel> AllDungeonCharacterTalent = [];
+    public static readonly List<DungeonModel> AllDungeonCharacterTalent =
+    [
+        DungeonConstants._4080001, DungeonConstants._4080002, DungeonConstants._4080003, DungeonConstants._4080004, DungeonConstants._4080005, DungeonConstants._4080006, DungeonConstants._4080007, DungeonConstants._4080008,
+        DungeonConstants._4080009, DungeonConstants._4080010, DungeonConstants._4080011, DungeonConstants._4080012, DungeonConstants._4080013, DungeonConstants._4080014, DungeonConstants._4080015, DungeonConstants._4080016,
+        DungeonConstants._4080017, DungeonConstants._4080018, DungeonConstants._4080019, DungeonConstants._4080020, DungeonConstants._4080021,
+    ];
 
     // 409 - 60体力BOSS
     public static readonly List<DungeonModel> AllDungeonTrounce =

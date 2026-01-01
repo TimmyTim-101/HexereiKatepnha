@@ -2,7 +2,7 @@
 
 public class MaterialPairModel
 {
-    public MaterialModel? MaterialModel { get; set; }
+    public BaseEntityModel? MaterialModel { get; set; }
     public double DropNum { get; set; }
 }
 
@@ -23,6 +23,13 @@ public static class MaterialPairModelTools
     {
         List<MaterialPairModel> res = [];
         res.Add(new MaterialPairModel() { MaterialModel = materialModel, DropNum = rate });
+        return res;
+    }
+
+    public static List<MaterialPairModel> GetMaterialPairList(ArtifactSetModel artifactSetModel)
+    {
+        List<MaterialPairModel> res = [];
+        res.Add(new MaterialPairModel() { MaterialModel = artifactSetModel, DropNum = 1 });
         return res;
     }
 

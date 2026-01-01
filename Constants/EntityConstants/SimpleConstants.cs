@@ -57,4 +57,8 @@ public static class SimpleConstants
         { 3, [0.0083, 0.0852, 0.6808, 1.2781] },
         { 5, [0.005, 0.0511, 0.4085, 0.7669] },
     };
+
+    public static readonly List<double> MaterialCharacterTalentRate = [0.22, 1.98, 2.2];
+
+    public static readonly List<double> MaterialWeaponAscensionRate = [0.062, 0.62, 2.418, 2.2];
 }
