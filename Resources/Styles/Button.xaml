@@ -6,7 +6,7 @@
         <Setter Property="Foreground" Value="White" />       <!-- 默认文字颜色 -->
         <Setter Property="FontSize" Value="14" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="Cursor" Value="Hand" />            <!-- 鼠标变成手型 -->
 
         <Setter Property="Template">
@@ -17,6 +17,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
                             CornerRadius="4"> <!-- 圆角 -->
 
                         <ContentPresenter HorizontalAlignment="Center"
@@ -59,6 +60,54 @@
                     <!-- 直接显示内容，不加任何 Border 或装饰 -->
                     <ContentPresenter HorizontalAlignment="Stretch"
                                       VerticalAlignment="Stretch" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- 功能button -->
+    <Style x:Key="FunctionButton" TargetType="Button">
+        <Setter Property="Background" Value="#12B981" /> <!-- 默认背景 -->
+        <Setter Property="Foreground" Value="White" />       <!-- 默认文字颜色 -->
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Black"></Setter>
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="Cursor" Value="Hand" />            <!-- 鼠标变成手型 -->
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <!-- 核心容器 -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="5"> <!-- 圆角 -->
+
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <!-- 1. 悬停状态 (IsMouseOver = True) -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <!-- 这里设置悬停时的颜色，例如一种半透明的白色覆盖层 -->
+                            <Setter TargetName="border" Property="Background" Value="#7712B981" />
+                        </Trigger>
+                        <!-- 2. 按下状态 (IsPressed = True) -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <!-- 关键点：让按下时的颜色 = 悬停时的颜色 -->
+                            <!-- 这样看起来就没有额外的"点击反应"动画了 -->
+                            <Setter TargetName="border" Property="Background" Value="#7712B981" />
+                        </Trigger>
+
+                        <!-- (可选) 如果禁用状态需要变灰 -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

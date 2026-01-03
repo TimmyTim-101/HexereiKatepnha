@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="/Resources/Styles/Button.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/Divider.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/Textblock.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Styles/TextBox.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

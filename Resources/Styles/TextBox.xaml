@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- 设置样式: ModernTextBox -->
+    <Style x:Key="ModernTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent" /> <!-- 深灰色背景 -->
+        <Setter Property="Foreground" Value="White" />     <!-- 白色文字 -->
+        <Setter Property="BorderThickness" Value="0,0,0,1" /> <!-- 只有底部有边框 -->
+        <Setter Property="BorderBrush" Value="#999999" />  <!-- 默认底部边框颜色 -->
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CaretBrush" Value="White" />     <!-- 光标颜色 -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            SnapsToDevicePixels="True"
+                            CornerRadius="5"> <!-- 加一点微圆角 -->
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- 鼠标悬停时 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#22ffffff" />
+                        </Trigger>
+                        <!-- 获得焦点时：底部边框变亮，或变为特定的主题色 -->
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource GlobalFrontColor}" />
+                            <Setter Property="BorderThickness" Value="0,0,0,2" /> <!-- 加粗底部边框 -->
+                            <Setter Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -3,14 +3,131 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+        <DataTemplate x:Key="AccountItemTemplate">
+            <Grid Margin="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <!-- 账号名称 -->
+                <Viewbox Grid.Column="0" Width="300" StretchDirection="DownOnly" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding}" VerticalAlignment="Center" Style="{StaticResource MyTextBlock}" />
+                </Viewbox>
+                <!-- 切换按钮 -->
+                <Button Grid.Column="1" Content="切换" Margin="5,0" Style="{StaticResource FunctionButton}"
+                        Command="{Binding DataContext.SwitchAccountCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                        CommandParameter="{Binding}" />
+                <!-- 删除按钮 -->
+                <Button Grid.Column="2" Content="删除" Margin="5,0" Style="{StaticResource FunctionButton}"
+                        Command="{Binding DataContext.DeleteAccountCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                        CommandParameter="{Binding}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel>
-                <TextBlock Text="主页" Style="{StaticResource TodoTextBlock}" />
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+            <StackPanel Orientation="Vertical">
+                <Grid Margin="30,30,30,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        <Image Source="/Resources/Icons/icon-512.png" Height="200" Width="200" Stretch="UniformToFill"></Image>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0" VerticalAlignment="Center">
+                        <Border BorderThickness="0" CornerRadius="10" Background="{DynamicResource GlobalFrontColor }">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
+                                    <Run Text="向着星辰与深渊～我不是凯瑟琳，我是"></Run>
+                                    <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="，一个原神养成小助手。"></Run>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
+                                    <Run Text="不知道该干点啥？有一堆角色武器要养？材料我该合成多少打多少？要多久才能攒够材料？"></Run>
+                                    <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="帮您忙！"></Run>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
+                                    <Run Text="在这里，把你的要养的角色武器还有背包里的东西都告诉我，"></Run>
+                                    <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="就会自动帮你计算出所缺材料数量，还可以给出养成顺序。"></Run>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
+                                    <Run Text="有了"></Run>
+                                    <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="，你可有事干了！"></Run>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <StackPanel Margin="30,5">
+                    <TextBlock Style="{StaticResource MyTextBlock}" Margin="5" Visibility="{Binding IsServerTimeDifferent, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Run Text="本地时间："></Run>
+                        <Run Text="{Binding LocalCurrentTime}"></Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource MyTextBlock}" Margin="5" Visibility="{Binding IsServerTimeDifferent, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Run Text="服务器时间："></Run>
+                        <Run Text="{Binding ServerCurrentTime}"></Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource MyTextBlock}" Margin="5" Visibility="{Binding IsServerTimeSame, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Run Text="当前时间："></Run>
+                        <Run Text="{Binding LocalCurrentTime}"></Run>
+                    </TextBlock>
+                </StackPanel>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <StackPanel Orientation="Vertical" Margin="30,5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{StaticResource MyTextBlock}" Margin="0,0,0,5" VerticalAlignment="Center">
+                            <Run Text="当前账号" Foreground="{x:Static constants:ThemeConstants.Red}"></Run>
+                            <Run Text=":"></Run>
+                            <Run Text="{Binding CurrentAccount}"></Run>
+                        </TextBlock>
+                        <Button Grid.Column="1" Content="重命名" Style="{StaticResource FunctionButton}" Command="{Binding RenameAccountCommand}" Margin="10,0,0,0"></Button>
+                        <TextBox Grid.Column="2" Text="{Binding RenameAccountName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" Margin="10,0,0,0"></TextBox>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="添加新账号" Style="{StaticResource FunctionButton}" Command="{Binding AddAccountCommand}"></Button>
+                        <TextBox Grid.Column="1" Text="{Binding NewAccountName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" Margin="10,0,0,0"></TextBox>
+                    </Grid>
+                    <Border Margin="30,5,0,5" HorizontalAlignment="Stretch" Background="{DynamicResource GlobalFrontColor}" BorderThickness="0" CornerRadius="10">
+                        <ItemsControl ItemsSource="{Binding AllAccountList}" ItemTemplate="{StaticResource AccountItemTemplate}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical"></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Border>
+                </StackPanel>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Style="{StaticResource TodoTextBlock}" Text="生日"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Style="{StaticResource TodoTextBlock}" Text="更新日志"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -5,7 +5,7 @@ namespace HexereiKatepnha.Services;
 
 public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig : class, new()
 {
-    protected abstract string ConfigFileName { get; }
+    protected abstract string ConfigFileName { get; set; }
 
     public TConfig Configuration { get; private set; } = new();
 
@@ -25,7 +25,6 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
             }
             catch
             {
-                /* 忽略错误，使用默认值 */
             }
         }
         else
@@ -33,7 +32,6 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
             Save();
         }
 
-        // 模板方法模式：留给子类实现具体的应用逻辑（如更新UI颜色）
         OnLoaded();
     }
 
@@ -46,7 +44,11 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
             Directory.CreateDirectory(directory);
         }
 
-        var options = new JsonSerializerOptions { WriteIndented = true };
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        };
         string json = JsonSerializer.Serialize(Configuration, options);
         File.WriteAllText(ConfigFileName, json);
     }

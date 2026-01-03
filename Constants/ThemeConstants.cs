@@ -49,4 +49,7 @@ public static class ThemeConstants
     ];
 
     public static readonly SolidColorBrush? White70 = (SolidColorBrush)new BrushConverter().ConvertFromString("#B3B3B3")!;
+
+    public static readonly SolidColorBrush? Red = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF3D00")!;
+    public static readonly SolidColorBrush? Green = (SolidColorBrush)new BrushConverter().ConvertFromString("#12B981")!;
 }

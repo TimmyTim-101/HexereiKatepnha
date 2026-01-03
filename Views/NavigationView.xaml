@@ -6,7 +6,7 @@
              xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
-             d:DesignHeight="450" d:DesignWidth="200"
+             d:DesignHeight="1080" d:DesignWidth="200"
              FontFamily="{StaticResource MyFont}">
 
     <UserControl.Resources>
@@ -27,7 +27,14 @@
                     <Image Source="../Resources/Images/KatepиHa_title.png" Stretch="Uniform"></Image>
                 </Button>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Text="账号信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border HorizontalAlignment="Stretch" CornerRadius="10" BorderThickness="1" BorderBrush="#aaaaaa" Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Style="{StaticResource MyTextBlock}" Text="当前账号" Foreground="{x:Static constants:ThemeConstants.Red}" HorizontalAlignment="Center" FontSize="24"></TextBlock>
+                        <Viewbox MaxWidth="190" StretchDirection="DownOnly" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding CurrentAccount}" HorizontalAlignment="Center"></TextBlock>
+                        </Viewbox>
+                    </StackPanel>
+                </Border>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <!-- 2.背包 -->
                 <TextBlock Text="背包" Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#dddddd" Margin="10,0,0,5"></TextBlock>

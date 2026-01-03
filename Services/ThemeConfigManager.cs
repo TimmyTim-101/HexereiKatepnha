@@ -6,7 +6,12 @@ namespace HexereiKatepnha.Services;
 
 public class ThemeConfigManager : ConfigManagerBase<ThemeConfig>
 {
-    protected override string ConfigFileName => "Configs/ThemeConfig.json";
+    protected sealed override string ConfigFileName { get; set; }
+
+    public ThemeConfigManager(Guid accountGuid)
+    {
+        ConfigFileName = "Configs/" + accountGuid + "/ThemeConfig.json";
+    }
 
     protected override void OnLoaded()
     {
