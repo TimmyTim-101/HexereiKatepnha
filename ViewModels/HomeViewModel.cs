@@ -190,6 +190,7 @@ namespace HexereiKatepnha.ViewModels
                     App.AccountConfigManagerInstance.Configuration.AccountList[i] = RenameAccountName;
                 }
             }
+
             App.AccountConfigManagerInstance.Configuration.CurrentAccount = RenameAccountName;
 
             App.AccountConfigManagerInstance.Save();

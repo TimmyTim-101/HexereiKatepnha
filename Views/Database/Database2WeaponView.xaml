@@ -7,10 +7,195 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="WeaponItemTemplate">
+            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Vertical">
+                            <Grid>
+                                <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                            </Grid>
+                            <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                            <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </Viewbox>
+                            <TextBlock Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#777777" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                                <Run Text="ID:"></Run>
+                                <Run Text="{Binding Vid}"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <Image Source="{Binding WeaponTypeImagePath}" Height="25" Width="25" Stretch="UniformToFill" Margin="10,0,10,0"></Image>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding WeaponTypeName}" Margin="0,0,0,0"></TextBlock>
+                            </StackPanel>
+                            <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                            <TextBlock Grid.Row="2" Style="{StaticResource MyTextBlock}" Text="{Binding SubAffixName}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                            <ItemsControl Grid.Row="4" ItemsSource="{Binding NeedMaterialList}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0">
+                                                <Grid Width="35" Height="35" ToolTipService.InitialShowDelay="100">
+                                                    <Grid.ToolTip>
+                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                    </Grid.ToolTip>
+                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </Grid>
+                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}" Visibility="{Binding DataContext.IsShowProgression, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                    <TabControl Grid.Row="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Height="200" Visibility="{Binding DataContext.IsShowProgression, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TabItem Header="精炼1阶">
+                            <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression1}" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="精炼2阶">
+                            <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression2}" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="精炼3阶">
+                            <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression3}" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="精炼4阶">
+                            <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression4}" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="精炼5阶">
+                            <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression5}" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                    <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                    <TextBlock Grid.Row="4" Style="{StaticResource TodoTextBlock}" Text="具体拉表"></TextBlock>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="武器" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+        <Grid Grid.Row="2" Margin="30,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <CheckBox Grid.Column="0" Content="显示精炼效果" IsChecked="{Binding IsShowProgression}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
+            <CheckBox Grid.Column="1" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
+        </Grid>
+        <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+        <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="数据库 - 武器" Style="{StaticResource TodoTextBlock}" />
+                <Expander Margin="20,5" IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="单手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AllSwordList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="双手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AllClaymoreList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="长柄武器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AllPoleList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="法器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AllCatalystList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="弓" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AllBowList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="320"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
             </StackPanel>
         </ScrollViewer>
     </Grid>

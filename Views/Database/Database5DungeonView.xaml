@@ -8,10 +8,15 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="秘境 &amp; 魔物" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="秘境 &amp; 魔物" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
-                <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <TextBlock Text="地方特产" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
                 <ItemsControl ItemsSource="{Binding List1}">
                     <ItemsControl.ItemsPanel>

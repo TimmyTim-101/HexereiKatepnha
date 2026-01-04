@@ -13,7 +13,10 @@
                 <ResourceDictionary Source="/Resources/Styles/Divider.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/Textblock.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/TextBox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Styles/TabControl.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Styles/CheckBox.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

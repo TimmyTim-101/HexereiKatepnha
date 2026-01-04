@@ -1823,6 +1823,16 @@
     <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_NodKrai.png" />
     <None Remove="Resources\Images\DungeonAndMonster\UI_LoadingPic_Sumeru.png" />
     <Resource Include="Resources\Images\DungeonAndMonster\UI_LoadingPic_Sumeru.png" />
+    <None Remove="Resources\Images\Weapon\UI_GachaTypeIcon_Bow.png" />
+    <Resource Include="Resources\Images\Weapon\UI_GachaTypeIcon_Bow.png" />
+    <None Remove="Resources\Images\Weapon\UI_GachaTypeIcon_Catalyst.png" />
+    <Resource Include="Resources\Images\Weapon\UI_GachaTypeIcon_Catalyst.png" />
+    <None Remove="Resources\Images\Weapon\UI_GachaTypeIcon_Claymore.png" />
+    <Resource Include="Resources\Images\Weapon\UI_GachaTypeIcon_Claymore.png" />
+    <None Remove="Resources\Images\Weapon\UI_GachaTypeIcon_Pole.png" />
+    <Resource Include="Resources\Images\Weapon\UI_GachaTypeIcon_Pole.png" />
+    <None Remove="Resources\Images\Weapon\UI_GachaTypeIcon_Sword.png" />
+    <Resource Include="Resources\Images\Weapon\UI_GachaTypeIcon_Sword.png" />
   </ItemGroup>
 
   <ItemGroup>

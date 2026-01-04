@@ -9,6 +9,7 @@
 * [Honey Impact](https://genshin.honeyhunterworld.com/)
 * [genshin-db](https://github.com/theBowja/genshin-db)
 * [玉衡杯](https://homdgcat.wiki/home)
+* [Fandom](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
 #### 扫描类项目
 * [Inventory_Kamera](https://github.com/Andrewthe13th/Inventory_Kamera)
 * [yas](https://github.com/wormtql/yas)

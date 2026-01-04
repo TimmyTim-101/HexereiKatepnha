@@ -950,7 +950,7 @@ public static class MaterialConstants
         Vid = 112004,
         Name = "史莱姆原浆",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112004.png"
     };
 
@@ -960,7 +960,7 @@ public static class MaterialConstants
         Vid = 112003,
         Name = "史莱姆清",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112003.png"
     };
 
@@ -970,7 +970,7 @@ public static class MaterialConstants
         Vid = 112002,
         Name = "史莱姆凝液",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112002.png"
     };
 
@@ -982,7 +982,7 @@ public static class MaterialConstants
         Vid = 112007,
         Name = "不祥的面具",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112007.png"
     };
 
@@ -992,7 +992,7 @@ public static class MaterialConstants
         Vid = 112006,
         Name = "污秽的面具",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112006.png"
     };
 
@@ -1002,7 +1002,7 @@ public static class MaterialConstants
         Vid = 112005,
         Name = "破损的面具",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112005.png"
     };
 
@@ -1014,7 +1014,7 @@ public static class MaterialConstants
         Vid = 112010,
         Name = "禁咒绘卷",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112010.png"
     };
 
@@ -1024,7 +1024,7 @@ public static class MaterialConstants
         Vid = 112009,
         Name = "封魔绘卷",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112009.png"
     };
 
@@ -1034,7 +1034,7 @@ public static class MaterialConstants
         Vid = 112008,
         Name = "导能绘卷",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112008.png"
     };
 
@@ -1046,7 +1046,7 @@ public static class MaterialConstants
         Vid = 112013,
         Name = "历战的箭簇",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112013.png"
     };
 
@@ -1056,7 +1056,7 @@ public static class MaterialConstants
         Vid = 112012,
         Name = "锐利的箭簇",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112012.png"
     };
 
@@ -1066,7 +1066,7 @@ public static class MaterialConstants
         Vid = 112011,
         Name = "牢固的箭簇",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112011.png"
     };
 
@@ -1078,7 +1078,7 @@ public static class MaterialConstants
         Vid = 112034,
         Name = "尉官的徽记",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112034.png"
     };
 
@@ -1088,7 +1088,7 @@ public static class MaterialConstants
         Vid = 112033,
         Name = "士官的徽记",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112033.png"
     };
 
@@ -1098,7 +1098,7 @@ public static class MaterialConstants
         Vid = 112032,
         Name = "新兵的徽记",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112032.png"
     };
 
@@ -1110,7 +1110,7 @@ public static class MaterialConstants
         Vid = 112037,
         Name = "攫金鸦印",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112037.png"
     };
 
@@ -1120,7 +1120,7 @@ public static class MaterialConstants
         Vid = 112036,
         Name = "藏银鸦印",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112036.png"
     };
 
@@ -1130,7 +1130,7 @@ public static class MaterialConstants
         Vid = 112035,
         Name = "寻宝鸦印",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112035.png"
     };
 
@@ -1142,7 +1142,7 @@ public static class MaterialConstants
         Vid = 112040,
         Name = "原素花蜜",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112040.png"
     };
 
@@ -1152,7 +1152,7 @@ public static class MaterialConstants
         Vid = 112039,
         Name = "微光花蜜",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112039.png"
     };
 
@@ -1162,7 +1162,7 @@ public static class MaterialConstants
         Vid = 112038,
         Name = "骗骗花蜜",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112038.png"
     };
 
@@ -1174,7 +1174,7 @@ public static class MaterialConstants
         Vid = 112046,
         Name = "名刀镡",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112046.png"
     };
 
@@ -1184,7 +1184,7 @@ public static class MaterialConstants
         Vid = 112045,
         Name = "影打刀镡",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112045.png"
     };
 
@@ -1194,7 +1194,7 @@ public static class MaterialConstants
         Vid = 112044,
         Name = "破旧的刀镡",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112044.png"
     };
 
@@ -1206,7 +1206,7 @@ public static class MaterialConstants
         Vid = 112055,
         Name = "浮游晶化核",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112055.png"
     };
 
@@ -1216,7 +1216,7 @@ public static class MaterialConstants
         Vid = 112054,
         Name = "浮游幽核",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112054.png"
     };
 
@@ -1226,7 +1226,7 @@ public static class MaterialConstants
         Vid = 112053,
         Name = "浮游干核",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112053.png"
     };
 
@@ -1238,7 +1238,7 @@ public static class MaterialConstants
         Vid = 112061,
         Name = "孢囊晶尘",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112061.png"
     };
 
@@ -1248,7 +1248,7 @@ public static class MaterialConstants
         Vid = 112060,
         Name = "荧光孢粉",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112060.png"
     };
 
@@ -1258,7 +1258,7 @@ public static class MaterialConstants
         Vid = 112059,
         Name = "蕈兽孢子",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112059.png"
     };
 
@@ -1270,7 +1270,7 @@ public static class MaterialConstants
         Vid = 112067,
         Name = "织金红绸",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112067.png"
     };
 
@@ -1280,7 +1280,7 @@ public static class MaterialConstants
         Vid = 112066,
         Name = "镶边红绸",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112066.png"
     };
 
@@ -1290,7 +1290,7 @@ public static class MaterialConstants
         Vid = 112065,
         Name = "褪色红绸",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112065.png"
     };
 
@@ -1302,7 +1302,7 @@ public static class MaterialConstants
         Vid = 112082,
         Name = "异色结晶石",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112082.png"
     };
 
@@ -1312,7 +1312,7 @@ public static class MaterialConstants
         Vid = 112081,
         Name = "异海之块",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112081.png"
     };
 
@@ -1322,7 +1322,7 @@ public static class MaterialConstants
         Vid = 112080,
         Name = "异海凝珠",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112080.png"
     };
 
@@ -1334,7 +1334,7 @@ public static class MaterialConstants
         Vid = 112085,
         Name = "奇械机芯齿轮",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112085.png"
     };
 
@@ -1344,7 +1344,7 @@ public static class MaterialConstants
         Vid = 112084,
         Name = "机关正齿轮",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112084.png"
     };
 
@@ -1354,7 +1354,7 @@ public static class MaterialConstants
         Vid = 112083,
         Name = "啮合齿轮",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112083.png"
     };
 
@@ -1366,7 +1366,7 @@ public static class MaterialConstants
         Vid = 112103,
         Name = "横行霸者的利齿",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112103.png"
     };
 
@@ -1376,7 +1376,7 @@ public static class MaterialConstants
         Vid = 112102,
         Name = "老练的坚齿",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112102.png"
     };
 
@@ -1386,7 +1386,7 @@ public static class MaterialConstants
         Vid = 112101,
         Name = "稚嫩的尖齿",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112101.png"
     };
 
@@ -1398,7 +1398,7 @@ public static class MaterialConstants
         Vid = 112106,
         Name = "龙冠武士的金哨",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112106.png"
     };
 
@@ -1408,7 +1408,7 @@ public static class MaterialConstants
         Vid = 112105,
         Name = "战士的铁哨",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112105.png"
     };
 
@@ -1418,7 +1418,7 @@ public static class MaterialConstants
         Vid = 112104,
         Name = "卫从的木哨",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112104.png"
     };
 
@@ -1430,7 +1430,7 @@ public static class MaterialConstants
         Vid = 112124,
         Name = "精制机轴",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112124.png"
     };
 
@@ -1440,7 +1440,7 @@ public static class MaterialConstants
         Vid = 112123,
         Name = "加固机轴",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112123.png"
     };
 
@@ -1450,7 +1450,7 @@ public static class MaterialConstants
         Vid = 112122,
         Name = "毁损机轴",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112122.png"
     };
 
@@ -1462,7 +1462,7 @@ public static class MaterialConstants
         Vid = 112127,
         Name = "霜镌的执凭",
         Star = 3,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112127.png"
     };
 
@@ -1472,7 +1472,7 @@ public static class MaterialConstants
         Vid = 112126,
         Name = "精致的执凭",
         Star = 2,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112126.png"
     };
 
@@ -1482,7 +1482,7 @@ public static class MaterialConstants
         Vid = 112125,
         Name = "磨损的执凭",
         Star = 1,
-        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112125.png"
     };
 
@@ -1866,7 +1866,7 @@ public static class MaterialConstants
         Vid = 113001,
         Name = "飓风之种",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113001.png"
     };
 
@@ -1876,7 +1876,7 @@ public static class MaterialConstants
         Vid = 113002,
         Name = "雷光棱镜",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113002.png"
     };
 
@@ -1886,7 +1886,7 @@ public static class MaterialConstants
         Vid = 113009,
         Name = "玄岩之塔",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113009.png"
     };
 
@@ -1896,7 +1896,7 @@ public static class MaterialConstants
         Vid = 113010,
         Name = "极寒之核",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113010.png"
     };
 
@@ -1906,7 +1906,7 @@ public static class MaterialConstants
         Vid = 113011,
         Name = "常燃火种",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113011.png"
     };
 
@@ -1916,7 +1916,7 @@ public static class MaterialConstants
         Vid = 113012,
         Name = "净水之心",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113012.png"
     };
 
@@ -1926,7 +1926,7 @@ public static class MaterialConstants
         Vid = 113016,
         Name = "未熟之玉",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113016.png"
     };
 
@@ -1936,7 +1936,7 @@ public static class MaterialConstants
         Vid = 113020,
         Name = "晶凝之华",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113020.png"
     };
 
@@ -1946,7 +1946,7 @@ public static class MaterialConstants
         Vid = 113022,
         Name = "魔偶机心",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113022.png"
     };
 
@@ -1956,7 +1956,7 @@ public static class MaterialConstants
         Vid = 113023,
         Name = "恒常机关之心",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113023.png"
     };
 
@@ -1966,7 +1966,7 @@ public static class MaterialConstants
         Vid = 113024,
         Name = "阴燃之珠",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113024.png"
     };
 
@@ -1976,7 +1976,7 @@ public static class MaterialConstants
         Vid = 113028,
         Name = "排异之露",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113028.png"
     };
 
@@ -1986,7 +1986,7 @@ public static class MaterialConstants
         Vid = 113029,
         Name = "雷霆数珠",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113029.png"
     };
 
@@ -1996,7 +1996,7 @@ public static class MaterialConstants
         Vid = 113030,
         Name = "兽境王器",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113030.png"
     };
 
@@ -2006,7 +2006,7 @@ public static class MaterialConstants
         Vid = 113031,
         Name = "龙嗣伪鳍",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113031.png"
     };
 
@@ -2016,7 +2016,7 @@ public static class MaterialConstants
         Vid = 113035,
         Name = "符纹之齿",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113035.png"
     };
 
@@ -2026,7 +2026,7 @@ public static class MaterialConstants
         Vid = 113036,
         Name = "蕈王钩喙",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113036.png"
     };
 
@@ -2036,7 +2036,7 @@ public static class MaterialConstants
         Vid = 113037,
         Name = "藏雷野实",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113037.png"
     };
 
@@ -2046,7 +2046,7 @@ public static class MaterialConstants
         Vid = 113038,
         Name = "永续机芯",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113038.png"
     };
 
@@ -2056,7 +2056,7 @@ public static class MaterialConstants
         Vid = 113039,
         Name = "导光四面体",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113039.png"
     };
 
@@ -2066,7 +2066,7 @@ public static class MaterialConstants
         Vid = 113040,
         Name = "灭诤草蔓",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113040.png"
     };
 
@@ -2076,7 +2076,7 @@ public static class MaterialConstants
         Vid = 113044,
         Name = "苍砾蕊羽",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113044.png"
     };
 
@@ -2086,7 +2086,7 @@ public static class MaterialConstants
         Vid = 113045,
         Name = "常暗圆环",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113045.png"
     };
 
@@ -2096,7 +2096,7 @@ public static class MaterialConstants
         Vid = 113049,
         Name = "奇械发条备件·歌裴莉娅",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113049.png"
     };
 
@@ -2106,7 +2106,7 @@ public static class MaterialConstants
         Vid = 113050,
         Name = "奇械发条备件·科培琉司",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113050.png"
     };
 
@@ -2116,7 +2116,7 @@ public static class MaterialConstants
         Vid = 113051,
         Name = "帝皇的决断",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113051.png"
     };
 
@@ -2126,7 +2126,7 @@ public static class MaterialConstants
         Vid = 113052,
         Name = "「图比昂装置」",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113052.png"
     };
 
@@ -2136,7 +2136,7 @@ public static class MaterialConstants
         Vid = 113053,
         Name = "原海麟角",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113053.png"
     };
 
@@ -2146,7 +2146,7 @@ public static class MaterialConstants
         Vid = 113057,
         Name = "未能达成超越之水",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113057.png"
     };
 
@@ -2156,7 +2156,7 @@ public static class MaterialConstants
         Vid = 113058,
         Name = "凝云鳞甲",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113058.png"
     };
 
@@ -2166,7 +2166,7 @@ public static class MaterialConstants
         Vid = 113059,
         Name = "金色旋律的断章",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113059.png"
     };
 
@@ -2176,7 +2176,7 @@ public static class MaterialConstants
         Vid = 113064,
         Name = "受祝所缚之印",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113064.png"
     };
 
@@ -2186,7 +2186,7 @@ public static class MaterialConstants
         Vid = 113065,
         Name = "过熟的火榴果",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113065.png"
     };
 
@@ -2196,7 +2196,7 @@ public static class MaterialConstants
         Vid = 113066,
         Name = "秘刻金纹的源核",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113066.png"
     };
 
@@ -2206,7 +2206,7 @@ public static class MaterialConstants
         Vid = 113067,
         Name = "深邃纠缠的凝视",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113067.png"
     };
 
@@ -2216,7 +2216,7 @@ public static class MaterialConstants
         Vid = 113071,
         Name = "谜土的护符",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113071.png"
     };
 
@@ -2226,7 +2226,7 @@ public static class MaterialConstants
         Vid = 113072,
         Name = "龙像的无智核",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113072.png"
     };
 
@@ -2236,7 +2236,7 @@ public static class MaterialConstants
         Vid = 113076,
         Name = "秘源积气喉",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113076.png"
     };
 
@@ -2246,7 +2246,7 @@ public static class MaterialConstants
         Vid = 113077,
         Name = "精密型月矩力冲鸭模具",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113077.png"
     };
 
@@ -2256,7 +2256,7 @@ public static class MaterialConstants
         Vid = 113078,
         Name = "承光的鳞羽",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113078.png"
     };
 
@@ -2266,7 +2266,7 @@ public static class MaterialConstants
         Vid = 113079,
         Name = "漫光的辉角",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113079.png"
     };
 
@@ -2276,7 +2276,7 @@ public static class MaterialConstants
         Vid = 113080,
         Name = "循环式军用月矩核心",
         Star = 4,
-        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113080.png"
     };
 

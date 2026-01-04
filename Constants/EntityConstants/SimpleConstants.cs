@@ -61,4 +61,44 @@ public static class SimpleConstants
     public static readonly List<double> MaterialCharacterTalentRate = [0.22, 1.98, 2.2];
 
     public static readonly List<double> MaterialWeaponAscensionRate = [0.062, 0.62, 2.418, 2.2];
+
+    public static readonly Dictionary<Enumeration.Affix, string> AffixString = new()
+    {
+        { Enumeration.Affix.HealthPercent, "生命值百分比" },
+        { Enumeration.Affix.AttackPercent, "攻击力百分比" },
+        { Enumeration.Affix.DefensePercent, "防御力百分比" },
+        { Enumeration.Affix.EnergyRecharge, "元素充能效率" },
+        { Enumeration.Affix.ElementalMastery, "元素精通" },
+        { Enumeration.Affix.Attack, "攻击力" },
+        { Enumeration.Affix.CriticalRate, "暴击率" },
+        { Enumeration.Affix.CriticalDamage, "暴击伤害" },
+        { Enumeration.Affix.AdditionalHealing, "治疗加成" },
+        { Enumeration.Affix.Health, "生命值" },
+        { Enumeration.Affix.PyroDamage, "火元素伤害加成" },
+        { Enumeration.Affix.ElectroDamage, "雷元素伤害加成" },
+        { Enumeration.Affix.CryoDamage, "冰元素伤害加成" },
+        { Enumeration.Affix.HydroDamage, "水元素伤害加成" },
+        { Enumeration.Affix.AnemoDamage, "风元素伤害加成" },
+        { Enumeration.Affix.GeoDamage, "岩元素伤害加成" },
+        { Enumeration.Affix.DendroDamage, "草元素伤害加成" },
+        { Enumeration.Affix.PhysicalDamage, "物理伤害加成" },
+    };
+
+    public static readonly Dictionary<Enumeration.WeaponType, string> WeaponTypeString = new()
+    {
+        { Enumeration.WeaponType.Sword, "单手剑" },
+        { Enumeration.WeaponType.Claymore, "双手剑" },
+        { Enumeration.WeaponType.Pole, "长柄武器" },
+        { Enumeration.WeaponType.Catalyst, "法器" },
+        { Enumeration.WeaponType.Bow, "弓" },
+    };
+
+    public static readonly Dictionary<Enumeration.WeaponType, string> WeaponTypeImagePath = new()
+    {
+        { Enumeration.WeaponType.Sword, "/Resources/Images/Weapon/UI_GachaTypeIcon_Sword.png" },
+        { Enumeration.WeaponType.Claymore, "/Resources/Images/Weapon/UI_GachaTypeIcon_Claymore.png" },
+        { Enumeration.WeaponType.Pole, "/Resources/Images/Weapon/UI_GachaTypeIcon_Pole.png" },
+        { Enumeration.WeaponType.Catalyst, "/Resources/Images/Weapon/UI_GachaTypeIcon_Catalyst.png" },
+        { Enumeration.WeaponType.Bow, "/Resources/Images/Weapon/UI_GachaTypeIcon_Bow.png" },
+    };
 }

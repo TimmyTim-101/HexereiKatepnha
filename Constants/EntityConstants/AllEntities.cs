@@ -7,6 +7,10 @@ public static class AllEntities
     // 1 - 角色
 
     // 2 - 武器
+    public static readonly List<WeaponModel> AllWeapon =
+    [
+        WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999,
+    ];
 
     // 3 - 材料
     // 301 - 摩拉
