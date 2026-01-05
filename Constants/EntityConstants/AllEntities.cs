@@ -9,7 +9,12 @@ public static class AllEntities
     // 2 - 武器
     public static readonly List<WeaponModel> AllWeapon =
     [
-        WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999, WeaponConstants._9999999,
+        // 201 - 单手剑
+        WeaponConstants._2010101,
+        // 202 - 双手剑
+        // 203 - 长柄武器
+        // 204 - 法器
+        // 205 - 弓
     ];
 
     // 3 - 材料

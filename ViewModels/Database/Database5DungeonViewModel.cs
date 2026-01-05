@@ -36,7 +36,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.Name = e.Name;
                     thisModel.ImagePath = e.ImagePath;
                     thisModel.Cost = e.Cost;
-                    thisModel.TimeString = SimpleConstants.DungeonTimeString[e.Time];
+                    thisModel.TimeString = StringConstants.DungeonTimeString[e.Time];
                     List<DungeonDropItemModel> thisDropItemList = new List<DungeonDropItemModel>();
                     foreach (MaterialPairModel ipm in e.DropMaterialList)
                     {
@@ -58,7 +58,7 @@ namespace HexereiKatepnha.ViewModels.Database
                             {
                                 if (asm.RarityList.Contains(j))
                                 {
-                                    thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[j];
+                                    thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[j];
                                     break;
                                 }
                             }
@@ -66,7 +66,7 @@ namespace HexereiKatepnha.ViewModels.Database
                         else
                         {
                             thisDropItem.MaterialImagePath = thisMaterial.ImagePath;
-                            thisDropItem.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[thisMaterial.Star];
+                            thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
                         }
 
                         thisDropItem.MaterialName = thisMaterial!.Name;

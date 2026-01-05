@@ -27,7 +27,8 @@
                         <StackPanel Grid.Column="0" Orientation="Vertical">
                             <Grid>
                                 <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowOriginalImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                <Image Source="{Binding AwakenImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowAwakenImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
                             </Grid>
                             <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
                             <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
@@ -110,7 +111,64 @@
                         </TabItem>
                     </TabControl>
                     <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                    <TextBlock Grid.Row="4" Style="{StaticResource TodoTextBlock}" Text="具体拉表"></TextBlock>
+                    <ScrollViewer Grid.Row="4" MaxHeight="200" Style="{StaticResource ModernScrollViewer}">
+                        <Grid>
+                            <ItemsControl ItemsSource="{Binding SimpleLevelStatTable}" Visibility="{Binding DataContext.IsShowLessNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Border Grid.Row="0" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s1}" FontSize="14" HorizontalAlignment="Center" Margin="5,0" Foreground="DarkOrange"></TextBlock>
+                                            </Border>
+                                            <Border Grid.Row="1" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s2}" FontSize="14" HorizontalAlignment="Center" Margin="5,0"></TextBlock>
+                                            </Border>
+                                            <Border Grid.Row="2" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s3}" FontSize="14" HorizontalAlignment="Center" Margin="5,0"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <ItemsControl ItemsSource="{Binding FullLevelStatTable}" Visibility="{Binding DataContext.IsShowMoreNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Border Grid.Row="0" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s1}" FontSize="14" HorizontalAlignment="Center" Margin="5,0" Foreground="DarkOrange"></TextBlock>
+                                            </Border>
+                                            <Border Grid.Row="1" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s2}" FontSize="14" HorizontalAlignment="Center" Margin="5,0"></TextBlock>
+                                            </Border>
+                                            <Border Grid.Row="2" BorderThickness="0.5" BorderBrush="#777777">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s3}" FontSize="14" HorizontalAlignment="Center" Margin="5,0"></TextBlock>
+                                            </Border>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </ScrollViewer>
                 </Grid>
             </Border>
         </DataTemplate>
@@ -129,9 +187,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <CheckBox Grid.Column="0" Content="显示精炼效果" IsChecked="{Binding IsShowProgression}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
             <CheckBox Grid.Column="1" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
+            <CheckBox Grid.Column="2" Content="显示突破后武器形态" IsChecked="{Binding IsShowAwakenImage}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
         </Grid>
         <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
         <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
@@ -143,7 +203,7 @@
                     <ItemsControl ItemsSource="{Binding AllSwordList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="320"></WrapPanel>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
@@ -155,7 +215,7 @@
                     <ItemsControl ItemsSource="{Binding AllClaymoreList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="320"></WrapPanel>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
@@ -167,7 +227,7 @@
                     <ItemsControl ItemsSource="{Binding AllPoleList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="320"></WrapPanel>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
@@ -179,7 +239,7 @@
                     <ItemsControl ItemsSource="{Binding AllCatalystList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="310"></WrapPanel>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="320"></WrapPanel>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>

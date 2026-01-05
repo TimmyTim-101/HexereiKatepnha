@@ -1,6 +1,6 @@
 ﻿namespace HexereiKatepnha.Constants.EntityConstants;
 
-public static class SimpleConstants
+public static class StringConstants
 {
     // 圣遗物各位置Icon路径
     public static readonly Dictionary<int, string> ArtifactIconPath = new()
@@ -41,29 +41,9 @@ public static class SimpleConstants
 
     public static readonly string ResinImagePath = "/Resources/Images/DungeonAndMonster/UI_ItemIcon_106.png";
 
-    public static readonly Dictionary<int, List<double>> MaterialCharacterAscensionRate = new()
-    {
-        { 1, [0.0141, 0.144, 1.5961, 2.1607] },
-        { 2, [0.007, 0.072, 0.7981, 1.0803] },
-        { 3, [0.0047, 0.048, 0.532, 0.7202] },
-        { 4, [0.0035, 0.036, 0.399, 0.5402] },
-        { 5, [0.0028, 0.288, 0.3192, 0.4321] },
-    };
-
-    public static readonly Dictionary<int, List<double>> MaterialCharacterLevelUp1Rate = new()
-    {
-        { 1, [0.025, 0.2556, 2.0423, 3.8343] },
-        { 2, [0.0125, 0.1278, 1.0212, 1.9171] },
-        { 3, [0.0083, 0.0852, 0.6808, 1.2781] },
-        { 5, [0.005, 0.0511, 0.4085, 0.7669] },
-    };
-
-    public static readonly List<double> MaterialCharacterTalentRate = [0.22, 1.98, 2.2];
-
-    public static readonly List<double> MaterialWeaponAscensionRate = [0.062, 0.62, 2.418, 2.2];
-
     public static readonly Dictionary<Enumeration.Affix, string> AffixString = new()
     {
+        { Enumeration.Affix.Empty, "（无）" },
         { Enumeration.Affix.HealthPercent, "生命值百分比" },
         { Enumeration.Affix.AttackPercent, "攻击力百分比" },
         { Enumeration.Affix.DefensePercent, "防御力百分比" },
@@ -82,6 +62,7 @@ public static class SimpleConstants
         { Enumeration.Affix.GeoDamage, "岩元素伤害加成" },
         { Enumeration.Affix.DendroDamage, "草元素伤害加成" },
         { Enumeration.Affix.PhysicalDamage, "物理伤害加成" },
+        { Enumeration.Affix.Defense, "防御力" },
     };
 
     public static readonly Dictionary<Enumeration.WeaponType, string> WeaponTypeString = new()
@@ -100,5 +81,29 @@ public static class SimpleConstants
         { Enumeration.WeaponType.Pole, "/Resources/Images/Weapon/UI_GachaTypeIcon_Pole.png" },
         { Enumeration.WeaponType.Catalyst, "/Resources/Images/Weapon/UI_GachaTypeIcon_Catalyst.png" },
         { Enumeration.WeaponType.Bow, "/Resources/Images/Weapon/UI_GachaTypeIcon_Bow.png" },
+    };
+
+    public static readonly Dictionary<Enumeration.Level, string> LevelString = new()
+    {
+        { Enumeration.Level.L1, "1" }, { Enumeration.Level.L2, "2" }, { Enumeration.Level.L3, "3" }, { Enumeration.Level.L4, "4" }, { Enumeration.Level.L5, "5" },
+        { Enumeration.Level.L6, "6" }, { Enumeration.Level.L7, "7" }, { Enumeration.Level.L8, "8" }, { Enumeration.Level.L9, "9" }, { Enumeration.Level.L10, "10" },
+        { Enumeration.Level.L11, "11" }, { Enumeration.Level.L12, "12" }, { Enumeration.Level.L13, "13" }, { Enumeration.Level.L14, "14" }, { Enumeration.Level.L15, "15" },
+        { Enumeration.Level.L16, "16" }, { Enumeration.Level.L17, "17" }, { Enumeration.Level.L18, "18" }, { Enumeration.Level.L19, "19" }, { Enumeration.Level.L20, "20" }, { Enumeration.Level.L20P, "20+" },
+        { Enumeration.Level.L21, "21" }, { Enumeration.Level.L22, "22" }, { Enumeration.Level.L23, "23" }, { Enumeration.Level.L24, "24" }, { Enumeration.Level.L25, "25" },
+        { Enumeration.Level.L26, "26" }, { Enumeration.Level.L27, "27" }, { Enumeration.Level.L28, "28" }, { Enumeration.Level.L29, "29" }, { Enumeration.Level.L30, "30" },
+        { Enumeration.Level.L31, "31" }, { Enumeration.Level.L32, "32" }, { Enumeration.Level.L33, "33" }, { Enumeration.Level.L34, "34" }, { Enumeration.Level.L35, "35" },
+        { Enumeration.Level.L36, "36" }, { Enumeration.Level.L37, "37" }, { Enumeration.Level.L38, "38" }, { Enumeration.Level.L39, "39" }, { Enumeration.Level.L40, "40" }, { Enumeration.Level.L40P, "40+" },
+        { Enumeration.Level.L41, "41" }, { Enumeration.Level.L42, "42" }, { Enumeration.Level.L43, "43" }, { Enumeration.Level.L44, "44" }, { Enumeration.Level.L45, "45" },
+        { Enumeration.Level.L46, "46" }, { Enumeration.Level.L47, "47" }, { Enumeration.Level.L48, "48" }, { Enumeration.Level.L49, "49" }, { Enumeration.Level.L50, "50" }, { Enumeration.Level.L50P, "50+" },
+        { Enumeration.Level.L51, "51" }, { Enumeration.Level.L52, "52" }, { Enumeration.Level.L53, "53" }, { Enumeration.Level.L54, "54" }, { Enumeration.Level.L55, "55" },
+        { Enumeration.Level.L56, "56" }, { Enumeration.Level.L57, "57" }, { Enumeration.Level.L58, "58" }, { Enumeration.Level.L59, "59" }, { Enumeration.Level.L60, "60" }, { Enumeration.Level.L60P, "60+" },
+        { Enumeration.Level.L61, "61" }, { Enumeration.Level.L62, "62" }, { Enumeration.Level.L63, "63" }, { Enumeration.Level.L64, "64" }, { Enumeration.Level.L65, "65" },
+        { Enumeration.Level.L66, "66" }, { Enumeration.Level.L67, "67" }, { Enumeration.Level.L68, "68" }, { Enumeration.Level.L69, "69" }, { Enumeration.Level.L70, "70" }, { Enumeration.Level.L70P, "70+" },
+        { Enumeration.Level.L71, "71" }, { Enumeration.Level.L72, "72" }, { Enumeration.Level.L73, "73" }, { Enumeration.Level.L74, "74" }, { Enumeration.Level.L75, "75" },
+        { Enumeration.Level.L76, "76" }, { Enumeration.Level.L77, "77" }, { Enumeration.Level.L78, "78" }, { Enumeration.Level.L79, "79" }, { Enumeration.Level.L80, "80" }, { Enumeration.Level.L80P, "80+" },
+        { Enumeration.Level.L81, "81" }, { Enumeration.Level.L82, "82" }, { Enumeration.Level.L83, "83" }, { Enumeration.Level.L84, "84" }, { Enumeration.Level.L85, "85" },
+        { Enumeration.Level.L86, "86" }, { Enumeration.Level.L87, "87" }, { Enumeration.Level.L88, "88" }, { Enumeration.Level.L89, "89" }, { Enumeration.Level.L90, "90" }, { Enumeration.Level.L90P, "90+" },
+        { Enumeration.Level.L91, "91" }, { Enumeration.Level.L92, "92" }, { Enumeration.Level.L93, "93" }, { Enumeration.Level.L94, "94" }, { Enumeration.Level.L95, "95" },
+        { Enumeration.Level.L96, "96" }, { Enumeration.Level.L97, "97" }, { Enumeration.Level.L98, "98" }, { Enumeration.Level.L99, "99" }, { Enumeration.Level.L100, "100" },
     };
 }

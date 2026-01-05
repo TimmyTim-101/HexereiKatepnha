@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Runtime.Intrinsics.X86;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Models.EntityModels;
@@ -9,9 +11,11 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public partial class Database2WeaponViewModel : ObservableObject
     {
-        [ObservableProperty] private bool _isShowProgression = true;
-        [ObservableProperty] private bool _isShowMoreNumbers = true;
-        [ObservableProperty] private bool _isShowLessNumbers = false;
+        [ObservableProperty] private bool _isShowProgression = false;
+        [ObservableProperty] private bool _isShowMoreNumbers = false;
+        [ObservableProperty] private bool _isShowLessNumbers = true;
+        [ObservableProperty] private bool _isShowAwakenImage = false;
+        [ObservableProperty] private bool _isShowOriginalImage = true;
         public ObservableCollection<Database2WeaponModel> AllSwordList { get; } = new();
         public ObservableCollection<Database2WeaponModel> AllClaymoreList { get; } = new();
         public ObservableCollection<Database2WeaponModel> AllPoleList { get; } = new();
@@ -26,24 +30,35 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.Vid = e.Vid;
                 thisDatabase2WeaponModel.Name = e.Name;
                 thisDatabase2WeaponModel.ImagePath = e.ImagePath;
-                thisDatabase2WeaponModel.BackgroundImagePath = SimpleConstants.StarBackgroundImagePath[e.Star];
-                thisDatabase2WeaponModel.StarImagePath = SimpleConstants.StarImagePath[e.Star];
-                thisDatabase2WeaponModel.WeaponTypeName = SimpleConstants.WeaponTypeString[e.WeaponType];
-                thisDatabase2WeaponModel.WeaponTypeImagePath = SimpleConstants.WeaponTypeImagePath[e.WeaponType];
-                thisDatabase2WeaponModel.SubAffixName = SimpleConstants.AffixString[e.SubAffix];
+                thisDatabase2WeaponModel.AwakenImagePath = e.AwakenImagePath;
+                thisDatabase2WeaponModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                thisDatabase2WeaponModel.StarImagePath = StringConstants.StarImagePath[e.Star];
+                thisDatabase2WeaponModel.WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType];
+                thisDatabase2WeaponModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
+                thisDatabase2WeaponModel.SubAffixName = StringConstants.AffixString[e.SubAffix];
                 thisDatabase2WeaponModel.NeedMaterialList = [];
-                // todo: 去重 + 排序
-                foreach (List<MaterialPairModel> l in e.LevelUpMaterials.Values)
+                IEnumerable<MaterialModel> allMaterials = e.LevelUpMaterials.Values.SelectMany(list => list).Select(pair => (MaterialModel)pair.MaterialModel!).Where(m => true);
+                IEnumerable<MaterialModel> uniqueMaterials = allMaterials.DistinctBy(m => m.Rid).OrderBy(m => m.Rid);
+                foreach (MaterialModel p in uniqueMaterials)
                 {
-                    foreach (MaterialPairModel p in l)
-                    {
-                        MaterialModel thisMaterial = (MaterialModel)p.MaterialModel!;
-                        DungeonDropItemModel thisDropModel = new DungeonDropItemModel();
-                        thisDropModel.MaterialName = thisMaterial.Name;
-                        thisDropModel.MaterialImagePath = thisMaterial.ImagePath;
-                        thisDropModel.MaterialStarImagePath = SimpleConstants.StarBackgroundImagePath[thisMaterial.Star];
-                        thisDatabase2WeaponModel.NeedMaterialList.Add(thisDropModel);
-                    }
+                    DungeonDropItemModel thisDropModel = new DungeonDropItemModel();
+                    thisDropModel.MaterialName = p.Name;
+                    thisDropModel.MaterialImagePath = p.ImagePath;
+                    thisDropModel.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star];
+                    thisDatabase2WeaponModel.NeedMaterialList.Add(thisDropModel);
+                }
+
+                var lastItem = thisDatabase2WeaponModel.NeedMaterialList.Last();
+                if (thisDatabase2WeaponModel.NeedMaterialList.Count == 9)
+                {
+                    thisDatabase2WeaponModel.NeedMaterialList.Insert(1, lastItem);
+                    thisDatabase2WeaponModel.NeedMaterialList.RemoveAt(thisDatabase2WeaponModel.NeedMaterialList.Count - 1);
+                }
+
+                if (thisDatabase2WeaponModel.NeedMaterialList.Count == 12)
+                {
+                    thisDatabase2WeaponModel.NeedMaterialList.Insert(4, lastItem);
+                    thisDatabase2WeaponModel.NeedMaterialList.RemoveAt(thisDatabase2WeaponModel.NeedMaterialList.Count - 1);
                 }
 
                 thisDatabase2WeaponModel.Progression1 = "·" + e.Progression[1];
@@ -51,6 +66,35 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.Progression3 = "·" + e.Progression[3];
                 thisDatabase2WeaponModel.Progression4 = "·" + e.Progression[4];
                 thisDatabase2WeaponModel.Progression5 = "·" + e.Progression[5];
+
+                thisDatabase2WeaponModel.SimpleLevelStatTable.Clear();
+                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel() { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.FullLevelStatTable.Clear();
+                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel() { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (e.MainAffixNumberDictionary.ContainsKey(thisLevel))
+                    {
+                        WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel()
+                        {
+                            s1 = StringConstants.LevelString[thisLevel],
+                            s2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
+                            s3 = e.SubAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
+                        };
+                        if (SequenceConstants.AffixPercentageSymbolList.Contains(e.SubAffix))
+                        {
+                            thisWeaponLevelStatModel.s3 += "%";
+                        }
+
+                        if (thisWeaponLevelStatModel.s3 == "0") thisWeaponLevelStatModel.s3 = "";
+                        thisDatabase2WeaponModel.FullLevelStatTable.Add(thisWeaponLevelStatModel);
+                        if (SequenceConstants.ImportantLevels.Contains(thisLevel))
+                        {
+                            thisDatabase2WeaponModel.SimpleLevelStatTable.Add(thisWeaponLevelStatModel);
+                        }
+                    }
+                }
 
                 switch (e.WeaponType)
                 {
@@ -66,6 +110,11 @@ namespace HexereiKatepnha.ViewModels.Database
         partial void OnIsShowMoreNumbersChanged(bool value)
         {
             IsShowLessNumbers = !IsShowMoreNumbers;
+        }
+
+        partial void OnIsShowAwakenImageChanged(bool value)
+        {
+            IsShowOriginalImage = !IsShowAwakenImage;
         }
     }
 }

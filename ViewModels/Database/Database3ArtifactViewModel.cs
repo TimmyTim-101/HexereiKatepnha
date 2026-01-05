@@ -23,14 +23,14 @@ namespace HexereiKatepnha.ViewModels.Database
                     if (e.PositionNameDict.ContainsKey(i))
                     {
                         ArtifactTableRowModel thisRow = new ArtifactTableRowModel();
-                        thisRow.ArtifactIconPath = SimpleConstants.ArtifactIconPath[i];
+                        thisRow.ArtifactIconPath = StringConstants.ArtifactIconPath[i];
                         thisRow.Name = e.PositionNameDict[i];
                         for (int j = 1; j <= 5; j++)
                         {
                             if (e.RarityList.Contains(j))
                             {
                                 ArtifactImageModel thisImage = new ArtifactImageModel();
-                                thisImage.BackgroundPath = SimpleConstants.StarBackgroundImagePath[j];
+                                thisImage.BackgroundPath = StringConstants.StarBackgroundImagePath[j];
                                 thisImage.ImagePath = e.PositionImagePathDict[i];
                                 thisRow.ImagePathList.Add(thisImage);
                             }

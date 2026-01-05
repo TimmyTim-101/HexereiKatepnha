@@ -11,6 +11,7 @@ public class WeaponModel : BaseEntityModel
     public override Enumeration.EntityType EntityType { get; set; } = Enumeration.EntityType.Weapon;
     public override string ImagePath { get; set; } = "";
 
+    public string AwakenImagePath { get; set; } = "";
     public Enumeration.WeaponType WeaponType = Enumeration.WeaponType.Unknown;
     public Enumeration.Affix MainAffix = Enumeration.Affix.Attack; // 主属性
     public Enumeration.Affix SubAffix = Enumeration.Affix.Unknown; // 副属性

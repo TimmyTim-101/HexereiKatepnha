@@ -54,6 +54,7 @@ public static class Enumeration
 
     public enum Affix
     {
+        Empty = -1,
         Unknown = 0,
         HealthPercent = 1, // 生命值百分比
         AttackPercent = 2, // 攻击力百分比
@@ -73,6 +74,7 @@ public static class Enumeration
         GeoDamage = 16, // 岩元素伤害加成
         DendroDamage = 17, // 草元素伤害加成
         PhysicalDamage = 18, // 物理伤害加成
+        Defense = 19, // 防御力
     }
 
     public enum Level

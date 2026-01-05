@@ -33,8 +33,8 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.Vid = e.Vid;
                     thisModel.Name = e.Name;
                     thisModel.ImagePath = e.ImagePath;
-                    thisModel.BackgroundImagePath = SimpleConstants.StarBackgroundImagePath[e.Star];
-                    thisModel.StarImagePath = SimpleConstants.StarImagePath[e.Star];
+                    thisModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                    thisModel.StarImagePath = StringConstants.StarImagePath[e.Star];
                     destinationList[i].Add(thisModel);
                 }
             }
