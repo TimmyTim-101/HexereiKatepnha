@@ -1,4 +1,5 @@
-﻿using HexereiKatepnha.Models.EntityModels;
+﻿using HexereiKatepnha.Constants.EntityConstants.WeaponConstants;
+using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants;
 
@@ -10,23 +11,26 @@ public static class AllEntities
     public static readonly List<WeaponModel> AllWeapon =
     [
         // 201 - 单手剑
-        WeaponConstants._2010101, 
-        WeaponConstants._2010201, 
-        WeaponConstants._2010301, WeaponConstants._2010302, 
-        
-        WeaponConstants._2010515,
+        Sword123Constants._2010101,
+        Sword123Constants._2010201,
+        Sword123Constants._2010301, Sword123Constants._2010302, Sword123Constants._2010303, Sword123Constants._2010304, Sword123Constants._2010305, Sword123Constants._2010306,
+        Sword4Constants._2010401, Sword4Constants._2010402, Sword4Constants._2010403, Sword4Constants._2010404, Sword4Constants._2010405, Sword4Constants._2010406, Sword4Constants._2010407, Sword4Constants._2010408,
+        Sword4Constants._2010409, Sword4Constants._2010410, Sword4Constants._2010411, Sword4Constants._2010412, Sword4Constants._2010413, Sword4Constants._2010414, Sword4Constants._2010415, Sword4Constants._2010416,
+        Sword4Constants._2010417, Sword4Constants._2010418, Sword4Constants._2010419, Sword4Constants._2010420, Sword4Constants._2010421, Sword4Constants._2010422, Sword4Constants._2010423, Sword4Constants._2010424,
+        Sword4Constants._2010425, Sword4Constants._2010426, Sword4Constants._2010427, Sword4Constants._2010428, 
+        Sword5Constants._2010515,
         // 202 - 双手剑
-        WeaponConstants._2020101, 
-        WeaponConstants._2020201,
+        Claymore123Constants._2020101,
+        Claymore123Constants._2020201,
         // 203 - 长柄武器
-        WeaponConstants._2030101,
-        WeaponConstants._2030201,
+        Pole123Constants._2030101,
+        Pole123Constants._2030201,
         // 204 - 法器
-        WeaponConstants._2040101,
-        WeaponConstants._2040201,
+        Catalyst123Constants._2040101,
+        Catalyst123Constants._2040201,
         // 205 - 弓
-        WeaponConstants._2050101,
-        WeaponConstants._2050201,
+        Bow123Constants._2050101,
+        Bow123Constants._2050201,
     ];
 
     // 3 - 材料

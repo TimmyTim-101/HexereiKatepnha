@@ -25,7 +25,16 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Orientation="Vertical">
-                            <Grid>
+                            <Grid ToolTipService.InitialShowDelay="100">
+                                <Grid.ToolTip>
+                                    <ToolTip Background="Transparent" BorderThickness="0">
+                                        <Grid Width="250" Height="250">
+                                            <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding ImagePath, IsAsync=True}" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowOriginalImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                            <Image Source="{Binding AwakenImagePath, IsAsync=True}" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowAwakenImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                        </Grid>
+                                    </ToolTip>
+                                </Grid.ToolTip>
                                 <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
                                 <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowOriginalImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
                                 <Image Source="{Binding AwakenImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill" Visibility="{Binding DataContext.IsShowAwakenImage, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
