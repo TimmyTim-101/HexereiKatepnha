@@ -1,4 +1,4 @@
-﻿using HexereiKatepnha.Constants.EntityConstants;
+﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;

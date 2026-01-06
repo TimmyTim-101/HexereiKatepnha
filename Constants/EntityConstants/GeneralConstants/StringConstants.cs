@@ -1,4 +1,4 @@
-﻿namespace HexereiKatepnha.Constants.EntityConstants;
+﻿namespace HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 
 public static class StringConstants
 {

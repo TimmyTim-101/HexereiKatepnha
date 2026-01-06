@@ -1,4 +1,5 @@
-﻿using HexereiKatepnha.Models.EntityModels;
+﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants;
 

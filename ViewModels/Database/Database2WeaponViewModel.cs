@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Runtime.Intrinsics.X86;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
+using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Database;
 using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
