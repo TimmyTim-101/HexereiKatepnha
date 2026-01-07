@@ -17,20 +17,28 @@ public static class AllEntities
         Sword4Constants._2010401, Sword4Constants._2010402, Sword4Constants._2010403, Sword4Constants._2010404, Sword4Constants._2010405, Sword4Constants._2010406, Sword4Constants._2010407, Sword4Constants._2010408,
         Sword4Constants._2010409, Sword4Constants._2010410, Sword4Constants._2010411, Sword4Constants._2010412, Sword4Constants._2010413, Sword4Constants._2010414, Sword4Constants._2010415, Sword4Constants._2010416,
         Sword4Constants._2010417, Sword4Constants._2010418, Sword4Constants._2010419, Sword4Constants._2010420, Sword4Constants._2010421, Sword4Constants._2010422, Sword4Constants._2010423, Sword4Constants._2010424,
-        Sword4Constants._2010425, Sword4Constants._2010426, Sword4Constants._2010427, Sword4Constants._2010428, 
-        Sword5Constants._2010515,
+        Sword4Constants._2010425, Sword4Constants._2010426, Sword4Constants._2010427, Sword4Constants._2010428,
+        Sword5Constants._2010501, Sword5Constants._2010502, Sword5Constants._2010503, Sword5Constants._2010504, Sword5Constants._2010505, Sword5Constants._2010506, Sword5Constants._2010507, Sword5Constants._2010508,
+        Sword5Constants._2010509, Sword5Constants._2010510, Sword5Constants._2010511, Sword5Constants._2010512, Sword5Constants._2010513, Sword5Constants._2010514, Sword5Constants._2010515,
         // 202 - 双手剑
         Claymore123Constants._2020101,
         Claymore123Constants._2020201,
+        Claymore123Constants._2020301, Claymore123Constants._2020302, Claymore123Constants._2020303, Claymore123Constants._2020304, Claymore123Constants._2020305,
+        
+        Claymore5Constants._2020501, Claymore5Constants._2020502, Claymore5Constants._2020503, Claymore5Constants._2020504, Claymore5Constants._2020505, Claymore5Constants._2020506, Claymore5Constants._2020507, Claymore5Constants._2020508,
+        Claymore5Constants._2020509, 
         // 203 - 长柄武器
         Pole123Constants._2030101,
         Pole123Constants._2030201,
+        Pole123Constants._2030301, Pole123Constants._2030302, Pole123Constants._2030303,
         // 204 - 法器
         Catalyst123Constants._2040101,
         Catalyst123Constants._2040201,
+        Catalyst123Constants._2040301, Catalyst123Constants._2040302, Catalyst123Constants._2040303, Catalyst123Constants._2040304, Catalyst123Constants._2040305,
         // 205 - 弓
         Bow123Constants._2050101,
         Bow123Constants._2050201,
+        Bow123Constants._2050301, Bow123Constants._2050302, Bow123Constants._2050303, Bow123Constants._2050304, Bow123Constants._2050305,
     ];
 
     // 3 - 材料

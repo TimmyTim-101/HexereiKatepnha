@@ -333,7 +333,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112056.png"
     };
 
-    public static readonly MaterialGroupModel G3030025 = new([_3030025, _3030026, _3030026], 3);
+    public static readonly MaterialGroupModel G3030025 = new([_3030025, _3030026, _3030027], 3);
 
     public static readonly MaterialModel _3030028 = new()
     {

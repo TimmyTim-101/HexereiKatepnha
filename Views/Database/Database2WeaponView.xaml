@@ -205,7 +205,7 @@
         <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
         <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <Expander Margin="20,5" IsExpanded="True">
+                <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
                         <TextBlock Text="单手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>
@@ -218,7 +218,7 @@
                     </ItemsControl>
                 </Expander>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <Expander Margin="20,5" IsExpanded="True">
+                <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
                         <TextBlock Text="双手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>
@@ -231,7 +231,7 @@
                     </ItemsControl>
                 </Expander>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <Expander Margin="20,5" IsExpanded="True">
+                <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
                         <TextBlock Text="长柄武器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>
@@ -244,7 +244,7 @@
                     </ItemsControl>
                 </Expander>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <Expander Margin="20,5" IsExpanded="True">
+                <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
                         <TextBlock Text="法器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>
@@ -257,7 +257,7 @@
                     </ItemsControl>
                 </Expander>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <Expander Margin="20,5" IsExpanded="True">
+                <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
                         <TextBlock Text="弓" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>

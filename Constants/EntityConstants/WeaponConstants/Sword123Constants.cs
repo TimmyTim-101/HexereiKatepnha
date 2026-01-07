@@ -228,7 +228,7 @@ public class Sword123Constants
             { Enumeration.Level.L81, 42.7 }, { Enumeration.Level.L82, 42.7 }, { Enumeration.Level.L83, 42.7 }, { Enumeration.Level.L84, 42.7 }, { Enumeration.Level.L85, 44.8 },
             { Enumeration.Level.L86, 44.8 }, { Enumeration.Level.L87, 44.8 }, { Enumeration.Level.L88, 44.8 }, { Enumeration.Level.L89, 44.8 }, { Enumeration.Level.L90, 46.9 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3030004, MaterialConstants.G3040001, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040001, MaterialConstants.G3030004, MaterialConstants.G3090005),
     };
 
     public static readonly WeaponModel _2010303 = new()
