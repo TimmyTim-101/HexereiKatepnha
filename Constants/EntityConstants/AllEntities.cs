@@ -24,21 +24,34 @@ public static class AllEntities
         Claymore123Constants._2020101,
         Claymore123Constants._2020201,
         Claymore123Constants._2020301, Claymore123Constants._2020302, Claymore123Constants._2020303, Claymore123Constants._2020304, Claymore123Constants._2020305,
-        
+
         Claymore5Constants._2020501, Claymore5Constants._2020502, Claymore5Constants._2020503, Claymore5Constants._2020504, Claymore5Constants._2020505, Claymore5Constants._2020506, Claymore5Constants._2020507, Claymore5Constants._2020508,
-        Claymore5Constants._2020509, 
+        Claymore5Constants._2020509,
         // 203 - 长柄武器
         Pole123Constants._2030101,
         Pole123Constants._2030201,
         Pole123Constants._2030301, Pole123Constants._2030302, Pole123Constants._2030303,
+
+        Pole5Constants._2030501, Pole5Constants._2030502, Pole5Constants._2030503, Pole5Constants._2030504, Pole5Constants._2030505, Pole5Constants._2030506, Pole5Constants._2030507, Pole5Constants._2030508,
+        Pole5Constants._2030509, Pole5Constants._2030510, Pole5Constants._2030511, Pole5Constants._2030512,
         // 204 - 法器
         Catalyst123Constants._2040101,
         Catalyst123Constants._2040201,
         Catalyst123Constants._2040301, Catalyst123Constants._2040302, Catalyst123Constants._2040303, Catalyst123Constants._2040304, Catalyst123Constants._2040305,
+
+        Catalyst5Constants._2040501, Catalyst5Constants._2040502, Catalyst5Constants._2040503, Catalyst5Constants._2040504, Catalyst5Constants._2040505, Catalyst5Constants._2040506, Catalyst5Constants._2040507, Catalyst5Constants._2040508,
+        Catalyst5Constants._2040509, Catalyst5Constants._2040510, Catalyst5Constants._2040511, Catalyst5Constants._2040512, Catalyst5Constants._2040513, Catalyst5Constants._2040514, Catalyst5Constants._2040515, Catalyst5Constants._2040516,
+        Catalyst5Constants._2040517,
         // 205 - 弓
         Bow123Constants._2050101,
         Bow123Constants._2050201,
         Bow123Constants._2050301, Bow123Constants._2050302, Bow123Constants._2050303, Bow123Constants._2050304, Bow123Constants._2050305,
+        Bow4Constants._2050401, Bow4Constants._2050402, Bow4Constants._2050403, Bow4Constants._2050404, Bow4Constants._2050405, Bow4Constants._2050406, Bow4Constants._2050407, Bow4Constants._2050408,
+        Bow4Constants._2050409, Bow4Constants._2050410, Bow4Constants._2050411, Bow4Constants._2050412, Bow4Constants._2050413, Bow4Constants._2050414, Bow4Constants._2050415, Bow4Constants._2050416,
+        Bow4Constants._2050417, Bow4Constants._2050418, Bow4Constants._2050419, Bow4Constants._2050420, Bow4Constants._2050421, Bow4Constants._2050422, Bow4Constants._2050423, Bow4Constants._2050424,
+        Bow4Constants._2050425, Bow4Constants._2050426, Bow4Constants._2050427, Bow4Constants._2050428,
+        Bow5Constants._2050501, Bow5Constants._2050502, Bow5Constants._2050503, Bow5Constants._2050504, Bow5Constants._2050505, Bow5Constants._2050506, Bow5Constants._2050507, Bow5Constants._2050508,
+        Bow5Constants._2050509, Bow5Constants._2050510, Bow5Constants._2050511,
     ];
 
     // 3 - 材料
