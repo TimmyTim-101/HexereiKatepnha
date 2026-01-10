@@ -24,21 +24,29 @@ public static class AllEntities
         Claymore123Constants._2020101,
         Claymore123Constants._2020201,
         Claymore123Constants._2020301, Claymore123Constants._2020302, Claymore123Constants._2020303, Claymore123Constants._2020304, Claymore123Constants._2020305,
-
+        Claymore4Constants._2020401, Claymore4Constants._2020402, Claymore4Constants._2020403, Claymore4Constants._2020404, Claymore4Constants._2020405, Claymore4Constants._2020406, Claymore4Constants._2020407, Claymore4Constants._2020408,
+        Claymore4Constants._2020409, Claymore4Constants._2020410, Claymore4Constants._2020411, Claymore4Constants._2020412, Claymore4Constants._2020413, Claymore4Constants._2020414, Claymore4Constants._2020415, Claymore4Constants._2020416,
+        Claymore4Constants._2020417, Claymore4Constants._2020418, Claymore4Constants._2020419, Claymore4Constants._2020420, Claymore4Constants._2020421, Claymore4Constants._2020422, Claymore4Constants._2020423, Claymore4Constants._2020424,
+        Claymore4Constants._2020425,
         Claymore5Constants._2020501, Claymore5Constants._2020502, Claymore5Constants._2020503, Claymore5Constants._2020504, Claymore5Constants._2020505, Claymore5Constants._2020506, Claymore5Constants._2020507, Claymore5Constants._2020508,
         Claymore5Constants._2020509,
         // 203 - 长柄武器
         Pole123Constants._2030101,
         Pole123Constants._2030201,
         Pole123Constants._2030301, Pole123Constants._2030302, Pole123Constants._2030303,
-
+        Pole4Constants._2030401, Pole4Constants._2030402, Pole4Constants._2030403, Pole4Constants._2030404, Pole4Constants._2030405, Pole4Constants._2030406, Pole4Constants._2030407, Pole4Constants._2030408,
+        Pole4Constants._2030409, Pole4Constants._2030410, Pole4Constants._2030411, Pole4Constants._2030412, Pole4Constants._2030413, Pole4Constants._2030414, Pole4Constants._2030415, Pole4Constants._2030416,
+        Pole4Constants._2030417, Pole4Constants._2030418, Pole4Constants._2030419, Pole4Constants._2030420, Pole4Constants._2030421, Pole4Constants._2030422, Pole4Constants._2030423,
         Pole5Constants._2030501, Pole5Constants._2030502, Pole5Constants._2030503, Pole5Constants._2030504, Pole5Constants._2030505, Pole5Constants._2030506, Pole5Constants._2030507, Pole5Constants._2030508,
         Pole5Constants._2030509, Pole5Constants._2030510, Pole5Constants._2030511, Pole5Constants._2030512,
         // 204 - 法器
         Catalyst123Constants._2040101,
         Catalyst123Constants._2040201,
         Catalyst123Constants._2040301, Catalyst123Constants._2040302, Catalyst123Constants._2040303, Catalyst123Constants._2040304, Catalyst123Constants._2040305,
-
+        Catalyst4Constants._2040401, Catalyst4Constants._2040402, Catalyst4Constants._2040403, Catalyst4Constants._2040404, Catalyst4Constants._2040405, Catalyst4Constants._2040406, Catalyst4Constants._2040407, Catalyst4Constants._2040408,
+        Catalyst4Constants._2040409, Catalyst4Constants._2040410, Catalyst4Constants._2040411, Catalyst4Constants._2040412, Catalyst4Constants._2040413, Catalyst4Constants._2040414, Catalyst4Constants._2040415, Catalyst4Constants._2040416,
+        Catalyst4Constants._2040417, Catalyst4Constants._2040418, Catalyst4Constants._2040419, Catalyst4Constants._2040420, Catalyst4Constants._2040421, Catalyst4Constants._2040422, Catalyst4Constants._2040423, Catalyst4Constants._2040424,
+        Catalyst4Constants._2040425,
         Catalyst5Constants._2040501, Catalyst5Constants._2040502, Catalyst5Constants._2040503, Catalyst5Constants._2040504, Catalyst5Constants._2040505, Catalyst5Constants._2040506, Catalyst5Constants._2040507, Catalyst5Constants._2040508,
         Catalyst5Constants._2040509, Catalyst5Constants._2040510, Catalyst5Constants._2040511, Catalyst5Constants._2040512, Catalyst5Constants._2040513, Catalyst5Constants._2040514, Catalyst5Constants._2040515, Catalyst5Constants._2040516,
         Catalyst5Constants._2040517,
