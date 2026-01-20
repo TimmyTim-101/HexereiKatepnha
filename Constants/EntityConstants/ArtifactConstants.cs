@@ -1408,4 +1408,54 @@ public static class ArtifactConstants
             { 4, "造成元素伤害时，获得持续8秒的「月辉明光·崇信」效果：队伍的月兆为初辉/满辉时，队伍中的所有角色的元素精通提高60点/120点。装备者处于后台时也能触发上述效果。队伍中的角色每拥有一种不同的「月辉明光」效果，队伍中的所有角色触发的月曜反应造成的伤害提升10%。由「月辉明光」产生的效果无法叠加。" }
         }
     };
+
+    public static readonly ArtifactSetModel _558 = new()
+    {
+        Rid = 558,
+        Vid = 15043,
+        Name = "晨星与月的晓歌",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "献与月的银冕" }, { 2, "献与月的离光" }, { 1, "献与月的华梦" }, { 3, "献与月的终时" }, { 4, "献与月的酹祭" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15043_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15043_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15043_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15043_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15043_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "元素精通提高80点。" },
+            { 4, "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除。" }
+        }
+    };
+
+    public static readonly ArtifactSetModel _559 = new()
+    {
+        Rid = 559,
+        Vid = 15044,
+        Name = "风起之日",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "哀慕的恋歌" }, { 2, "晨光的明誓" }, { 1, "风花的箴铭" }, { 3, "春律的片刻" }, { 4, "未言的宴话" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15044_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15044_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15044_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15044_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15044_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "攻击力提高18%。" },
+            { 4, "普通攻击、重击、元素战技或元素爆发命中敌人后，将获得持续6秒的「风与牧歌的眷怜」：攻击力提高25%。若装备者已经完成了「魔女的课业」，则「风与牧歌的眷怜」将会升级为「风与牧歌的决意」，额外使通过考验的装备者的暴击率提升20%。装备者处于队伍后台时，也能触发上述效果。" }
+        }
+    };
 }

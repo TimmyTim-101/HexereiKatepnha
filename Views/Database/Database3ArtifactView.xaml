@@ -47,7 +47,7 @@
                                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}"></TextBlock>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" FontSize="16" Foreground="#777777">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" FontSize="10" Foreground="#777777">
                                                 <Run Text="ID:"></Run>
                                                 <Run Text="{Binding Vid}"></Run>
                                             </TextBlock>

@@ -18,5 +18,5 @@ public class WeaponModel : BaseEntityModel
     public Dictionary<int, string> Progression = new(); // 精炼效果
     public Dictionary<Enumeration.Level, double> MainAffixNumberDictionary = new(); // 主属性各等级数值
     public Dictionary<Enumeration.Level, double> SubAffixNumberDictionary = new(); // 副属性各等级数值
-    public Dictionary<Enumeration.Level, List<MaterialPairModel>> LevelUpMaterials = new(); // 各升级升级需要材料
+    public Dictionary<Enumeration.Level, List<MaterialPairModel>> LevelUpMaterials = new(); // 各等级升级需要材料
 }

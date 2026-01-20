@@ -11,10 +11,10 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public partial class Database2WeaponViewModel : ObservableObject
     {
-        [ObservableProperty] private bool _isShowProgression = false;
-        [ObservableProperty] private bool _isShowMoreNumbers = false;
+        [ObservableProperty] private bool _isShowProgression;
+        [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
-        [ObservableProperty] private bool _isShowAwakenImage = false;
+        [ObservableProperty] private bool _isShowAwakenImage;
         [ObservableProperty] private bool _isShowOriginalImage = true;
         public ObservableCollection<Database2WeaponModel> AllSwordList { get; } = new();
         public ObservableCollection<Database2WeaponModel> AllClaymoreList { get; } = new();
@@ -37,7 +37,7 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
                 thisDatabase2WeaponModel.SubAffixName = StringConstants.AffixString[e.SubAffix];
                 thisDatabase2WeaponModel.NeedMaterialList = [];
-                IEnumerable<MaterialModel> allMaterials = e.LevelUpMaterials.Values.SelectMany(list => list).Select(pair => (MaterialModel)pair.MaterialModel!).Where(m => true);
+                IEnumerable<MaterialModel> allMaterials = e.LevelUpMaterials.Values.SelectMany(list => list).Select(pair => (MaterialModel)pair.MaterialModel!).Where(_ => true);
                 IEnumerable<MaterialModel> uniqueMaterials = allMaterials.DistinctBy(m => m.Rid).OrderBy(m => m.Rid);
                 foreach (MaterialModel p in uniqueMaterials)
                 {
@@ -68,15 +68,15 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.Progression5 = "·" + e.Progression[5];
 
                 thisDatabase2WeaponModel.SimpleLevelStatTable.Clear();
-                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel() { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
                 thisDatabase2WeaponModel.FullLevelStatTable.Clear();
-                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel() { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
                 for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
                 {
                     Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
                     if (e.MainAffixNumberDictionary.ContainsKey(thisLevel))
                     {
-                        WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel()
+                        WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel
                         {
                             s1 = StringConstants.LevelString[thisLevel],
                             s2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),

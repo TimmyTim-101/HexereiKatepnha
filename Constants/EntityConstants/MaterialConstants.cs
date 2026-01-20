@@ -943,6 +943,38 @@ public static class MaterialConstants
 
     public static readonly MaterialGroupModel G3030082 = new([_3030082, _3030083, _3030084], 3);
 
+    public static readonly MaterialModel _3030085 = new()
+    {
+        Rid = 3030085,
+        Vid = 112139,
+        Name = "深黯的钩喙",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112139.png"
+    };
+
+    public static readonly MaterialModel _3030086 = new()
+    {
+        Rid = 3030086,
+        Vid = 112138,
+        Name = "深黯的怪核",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112138.png"
+    };
+
+    public static readonly MaterialModel _3030087 = new()
+    {
+        Rid = 3030087,
+        Vid = 112137,
+        Name = "深黯的裂眼",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112137.png"
+    };
+
+    public static readonly MaterialGroupModel G3030085 = new([_3030085, _3030086, _3030087], 3);
+
     // 304 - 角色与武器培养素材_123
     public static readonly MaterialModel _3040001 = new()
     {
@@ -1859,6 +1891,36 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113075.png"
     };
 
+    public static readonly MaterialModel _3050038 = new()
+    {
+        Rid = 3050038,
+        Vid = 113081,
+        Name = "贤医的假面",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113081.png"
+    };
+
+    public static readonly MaterialModel _3050039 = new()
+    {
+        Rid = 3050039,
+        Vid = 113082,
+        Name = "狂人的约束",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113082.png"
+    };
+
+    public static readonly MaterialModel _3050040 = new()
+    {
+        Rid = 3050040,
+        Vid = 113083,
+        Name = "异端的瓶剂",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113083.png"
+    };
+
     // 306 - 角色培养素材_40体力BOSS
     public static readonly MaterialModel _3060001 = new()
     {
@@ -2278,6 +2340,16 @@ public static class MaterialConstants
         Star = 4,
         MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113080.png"
+    };
+
+    public static readonly MaterialModel _3060043 = new()
+    {
+        Rid = 3060043,
+        Vid = 113084,
+        Name = "魇翼枯骸",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113084.png"
     };
 
     // 307 - 角色突破素材_钻儿块儿片儿粒儿
@@ -4722,6 +4794,26 @@ public static class MaterialConstants
         Star = 1,
         MaterialType = Enumeration.MaterialType.LocalSpecialty,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101263.png"
+    };
+
+    public static readonly MaterialModel _3100704 = new()
+    {
+        Rid = 3100704,
+        Vid = 101266,
+        Name = "冬凌草",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101266.png"
+    };
+
+    public static readonly MaterialModel _3100705 = new()
+    {
+        Rid = 3100705,
+        Vid = 101269,
+        Name = "松珀香",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101269.png"
     };
 
     // 311 - 武器强化素材

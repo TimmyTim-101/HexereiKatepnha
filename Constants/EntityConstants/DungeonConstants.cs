@@ -134,6 +134,8 @@ public static class DungeonConstants
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100701, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100702, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100703, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3100704, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3100705, DropNum = 1 },
         ]
     };
 
@@ -615,6 +617,15 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Magbeast_Argali.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030079, [1, 1, 1])
+    };
+
+    public static readonly DungeonModel _4040032 = new()
+    {
+        Rid = 4040032,
+        Name = "深黯钓客",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Lloigor_Sub.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030085, [1, 1, 1])
     };
 
     // 405 - 40体力BOSS
@@ -1172,6 +1183,19 @@ public static class DungeonConstants
         ])
     };
 
+    public static readonly DungeonModel _4050042 = new()
+    {
+        Rid = 4050042,
+        Name = "深黯魇语之主",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Lloigor_Primo.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060043, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
     // 406 - 圣遗物
     public static readonly DungeonModel _4060001 = new()
     {
@@ -1417,6 +1441,19 @@ public static class DungeonConstants
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
             MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._556),
             MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._557),
+        ])
+    };
+
+    public static readonly DungeonModel _4060020 = new()
+    {
+        Rid = 4060020,
+        Name = "圣库 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle03.png",
+        Cost = 20,
+        DungeonType = Enumeration.DungeonType.Artifact,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._558),
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._559),
         ])
     };
 
@@ -2075,6 +2112,23 @@ public static class DungeonConstants
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050036, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050037, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+        ])
+    };
+
+    public static readonly DungeonModel _4090013 = new()
+    {
+        Rid = 4090013,
+        Name = "异端者的黄昏 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Dotorre_Moon.png",
+        Cost = 60,
+        DungeonType = Enumeration.DungeonType.Trounce,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050038, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050039, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050040, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])

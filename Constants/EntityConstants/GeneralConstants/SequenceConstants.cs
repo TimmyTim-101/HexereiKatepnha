@@ -29,7 +29,8 @@ public static class SequenceConstants
         Enumeration.Level.L69, Enumeration.Level.L70, Enumeration.Level.L70P, Enumeration.Level.L71, Enumeration.Level.L72, Enumeration.Level.L73, Enumeration.Level.L74, Enumeration.Level.L75,
         Enumeration.Level.L76, Enumeration.Level.L77, Enumeration.Level.L78, Enumeration.Level.L79, Enumeration.Level.L80, Enumeration.Level.L80P, Enumeration.Level.L81, Enumeration.Level.L82,
         Enumeration.Level.L83, Enumeration.Level.L84, Enumeration.Level.L85, Enumeration.Level.L86, Enumeration.Level.L87, Enumeration.Level.L88, Enumeration.Level.L89, Enumeration.Level.L90,
-        Enumeration.Level.L90P, Enumeration.Level.L91, Enumeration.Level.L92, Enumeration.Level.L93, Enumeration.Level.L94, Enumeration.Level.L95, Enumeration.Level.L96, Enumeration.Level.L97,
-        Enumeration.Level.L98, Enumeration.Level.L99, Enumeration.Level.L100
+        // Enumeration.Level.L90P, Enumeration.Level.L91, Enumeration.Level.L92, Enumeration.Level.L93, Enumeration.Level.L94, Enumeration.Level.L95, Enumeration.Level.L96, Enumeration.Level.L97,
+        // Enumeration.Level.L98, Enumeration.Level.L99, Enumeration.Level.L100,
+        Enumeration.Level.L90P, Enumeration.Level.L95, Enumeration.Level.L100,
     ];
 }

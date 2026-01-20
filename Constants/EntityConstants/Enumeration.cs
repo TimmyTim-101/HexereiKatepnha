@@ -12,6 +12,18 @@ public static class Enumeration
         Artifact = 5 // 圣遗物
     }
 
+    public enum ElementType
+    {
+        Unknown = 0,
+        Pyro = 1,
+        Hydro = 2,
+        Anemo = 3,
+        Electro = 4,
+        Dendro = 5,
+        Cryo = 6,
+        Geo = 7,
+    }
+
     public enum MaterialType
     {
         Unknown = 0,
@@ -176,15 +188,15 @@ public static class Enumeration
         L89,
         L90,
         L90P,
-        L91,
-        L92,
-        L93,
-        L94,
+        // L91,
+        // L92,
+        // L93,
+        // L94,
         L95,
-        L96,
-        L97,
-        L98,
-        L99,
+        // L96,
+        // L97,
+        // L98,
+        // L99,
         L100
     }
 }
