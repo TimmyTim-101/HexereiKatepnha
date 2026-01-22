@@ -115,11 +115,188 @@
                                 </Grid>
                             </Grid>
                             <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                            <TextBlock Grid.Row="2" Text="天赋" Style="{StaticResource MyTextBlock}"></TextBlock>
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="A" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Talent1ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Talent1ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent1Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="E" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Talent2ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Talent2ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent2Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Q" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Talent3ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Talent3ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent3Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                            <TextBlock Grid.Row="4" Text="命座" Style="{StaticResource MyTextBlock}"></TextBlock>
+                            <Grid Grid.Row="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C1" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension1ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension1ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension1Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C2" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension2ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension2ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension2Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C3" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension3ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension3ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension3Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C4" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension4ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension4ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension4Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C5" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension5ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension5ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension5Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="C6" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    <Image Grid.Column="1" Source="{Binding Ascension6ImagePath}" Height="35" Width="35" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                                        <Image.ToolTip>
+                                            <ToolTip Background="{DynamicResource GlobalBackColor}">
+                                                <Image Source="{Binding Ascension6ImagePath}" Height="100" Width="100" Stretch="UniformToFill"></Image>
+                                            </ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <Viewbox Grid.Column="2" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension6Description}" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10,0,0,0"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
                             <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                            <TextBlock Grid.Row="6" Text="数值" Style="{StaticResource MyTextBlock}"></TextBlock>
+                            <TextBlock Grid.Row="6" Text="数值" Style="{StaticResource TodoTextBlock}"></TextBlock>
                         </Grid>
                     </Border>
                 </DataTemplate>

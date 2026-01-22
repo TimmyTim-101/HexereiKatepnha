@@ -57,6 +57,26 @@ namespace HexereiKatepnha.ViewModels.Database
                     ];
                     thisDatabase1CharacterModel.NeedMaterialList = newNeedMaterialList;
                 }
+
+                thisDatabase1CharacterModel.Talent1ImagePath = e.Talent[1].ImagePath;
+                thisDatabase1CharacterModel.Talent1Description = e.Talent[1].Description;
+                thisDatabase1CharacterModel.Talent2ImagePath = e.Talent[2].ImagePath;
+                thisDatabase1CharacterModel.Talent2Description = e.Talent[2].Description;
+                thisDatabase1CharacterModel.Talent3ImagePath = e.Talent[3].ImagePath;
+                thisDatabase1CharacterModel.Talent3Description = e.Talent[3].Description;
+
+                thisDatabase1CharacterModel.Ascension1ImagePath = e.Ascension[1].ImagePath;
+                thisDatabase1CharacterModel.Ascension1Description = e.Ascension[1].Description;
+                thisDatabase1CharacterModel.Ascension2ImagePath = e.Ascension[2].ImagePath;
+                thisDatabase1CharacterModel.Ascension2Description = e.Ascension[2].Description;
+                thisDatabase1CharacterModel.Ascension3ImagePath = e.Ascension[3].ImagePath;
+                thisDatabase1CharacterModel.Ascension3Description = e.Ascension[3].Description;
+                thisDatabase1CharacterModel.Ascension4ImagePath = e.Ascension[4].ImagePath;
+                thisDatabase1CharacterModel.Ascension4Description = e.Ascension[4].Description;
+                thisDatabase1CharacterModel.Ascension5ImagePath = e.Ascension[5].ImagePath;
+                thisDatabase1CharacterModel.Ascension5Description = e.Ascension[5].Description;
+                thisDatabase1CharacterModel.Ascension6ImagePath = e.Ascension[6].ImagePath;
+                thisDatabase1CharacterModel.Ascension6Description = e.Ascension[6].Description;
                 AllCharacterList.Add(thisDatabase1CharacterModel);
             }
         }
