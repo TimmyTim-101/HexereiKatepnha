@@ -18,7 +18,7 @@ namespace HexereiKatepnha.ViewModels.Database
         public ObservableCollection<Database1CharacterModel> AnemoCharacterList { get; } = new();
         public ObservableCollection<Database1CharacterModel> ElectroCharacterList { get; } = new();
         public ObservableCollection<Database1CharacterModel> DendroCharacterList { get; } = new();
-        public ObservableCollection<Database1CharacterModel> CrroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> CryoCharacterList { get; } = new();
         public ObservableCollection<Database1CharacterModel> GeoCharacterList { get; } = new();
 
         public Database1CharacterViewModel()
@@ -178,7 +178,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     case Enumeration.ElementType.Anemo: AnemoCharacterList.Add(thisDatabase1CharacterModel); break;
                     case Enumeration.ElementType.Electro: ElectroCharacterList.Add(thisDatabase1CharacterModel); break;
                     case Enumeration.ElementType.Dendro: DendroCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Cryo: CrroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Cryo: CryoCharacterList.Add(thisDatabase1CharacterModel); break;
                     case Enumeration.ElementType.Geo: GeoCharacterList.Add(thisDatabase1CharacterModel); break;
                 }
             }

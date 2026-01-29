@@ -9,6 +9,12 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
+        CharacterConstantsPage05._1010050, CharacterConstantsPage05._1010049, CharacterConstantsPage05._1010048, CharacterConstantsPage05._1010047, CharacterConstantsPage05._1010046,
+        CharacterConstantsPage05._1010045, CharacterConstantsPage05._1010044, CharacterConstantsPage05._1010043, CharacterConstantsPage05._1010042, CharacterConstantsPage05._1010041,
+        CharacterConstantsPage04._1010040, CharacterConstantsPage04._1010039, CharacterConstantsPage04._1010038, CharacterConstantsPage04._1010037, CharacterConstantsPage04._1010036,
+        CharacterConstantsPage04._1010035, CharacterConstantsPage04._1010034, CharacterConstantsPage04._1010033, CharacterConstantsPage04._1010032, CharacterConstantsPage04._1010031,
+        CharacterConstantsPage03._1010030, CharacterConstantsPage03._1010029, CharacterConstantsPage03._1010028, CharacterConstantsPage03._1010027, CharacterConstantsPage03._1010026,
+        CharacterConstantsPage03._1010025, CharacterConstantsPage03._1010024, CharacterConstantsPage03._1010023, CharacterConstantsPage03._1010022, CharacterConstantsPage03._1010021,
         CharacterConstantsPage02._1010020, CharacterConstantsPage02._1010019, CharacterConstantsPage02._1010018, CharacterConstantsPage02._1010017, CharacterConstantsPage02._1010016,
         CharacterConstantsPage02._1010015, CharacterConstantsPage02._1010014, CharacterConstantsPage02._1010013, CharacterConstantsPage02._1010012, CharacterConstantsPage02._1010011,
         CharacterConstantsPage01._1010010, CharacterConstantsPage01._1010009, CharacterConstantsPage01._1010008, CharacterConstantsPage01._1010007, CharacterConstantsPage01._1010006,

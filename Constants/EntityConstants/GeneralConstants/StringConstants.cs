@@ -19,7 +19,7 @@ public static class StringConstants
         { 3, "/Resources/Images/Star/3_star_background.png" },
         { 4, "/Resources/Images/Star/4_star_background.png" },
         { 5, "/Resources/Images/Star/5_star_background.png" },
-        { 6, "/Resources/Images/Star/6_star_background.png" },
+        { 6, "/Resources/Images/Star/5C_star_background.png" },
     };
 
     public static readonly Dictionary<int, string> StarImagePath = new()
@@ -29,6 +29,7 @@ public static class StringConstants
         { 3, "/Resources/Images/Star/Icon_3_Star.png" },
         { 4, "/Resources/Images/Star/Icon_4_Star.png" },
         { 5, "/Resources/Images/Star/Icon_5_Star.png" },
+        { 6, "/Resources/Images/Star/Icon_5_Star.png" },
     };
 
     public static readonly Dictionary<int, string> DungeonTimeString = new()

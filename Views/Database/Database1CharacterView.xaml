@@ -322,7 +322,7 @@
                     <Expander.Header>
                         <TextBlock Text="冰" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
                     </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding CyroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                    <ItemsControl ItemsSource="{Binding CryoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
