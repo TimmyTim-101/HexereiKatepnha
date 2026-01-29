@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
+             xmlns:wpf="clr-namespace:LottieSharp.WPF;assembly=LottieSharp"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
@@ -133,24 +134,54 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Margin="5,5,0,5" CornerRadius="5" BorderBrush="White" BorderThickness="1">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid Grid.Row="0">
-                                            <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Margin="5,5,0,5" CornerRadius="5" BorderBrush="White" BorderThickness="1" Visibility="{Binding IsNotTodayBirthday, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                            </Grid>
+                                            <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                                            <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                            <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
                                         </Grid>
-                                        <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
-                                        <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
-                                        <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                    </Border>
+                                    <Grid>
+                                        <Border Margin="5,5,0,5" CornerRadius="5" BorderBrush="Goldenrod" BorderThickness="1" Visibility="{Binding IsTodayBirthday, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Row="0">
+                                                    <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                                </Grid>
+                                                <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                                                <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                                <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </Border>
+                                        <wpf:LottieAnimationView
+                                            FileName="Resources/Animations/Confetti Partyyy!!.json"
+                                            AutoPlay="True"
+                                            RepeatCount="-1"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            IsHitTestVisible="False">
+                                        </wpf:LottieAnimationView>
                                     </Grid>
-                                </Border>
+                                </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

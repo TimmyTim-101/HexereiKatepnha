@@ -73,11 +73,30 @@ namespace HexereiKatepnha.ViewModels
                         thisBirthdayCharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[cm.ElementType];
                         thisBirthdayCharacterModel.Name = cm.Name;
                         thisBirthdayCharacterModel.BirthdayString = cm.BirthMonth + "/" + cm.BirthDay;
-                        thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay;
-                        thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay;
+                        if (currentBirthday == 229)
+                        {
+                            int currentYear = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Year;
+                            if (currentYear % 4 == 0 && currentYear % 100 != 0)
+                            {
+                                thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay;
+                                thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay;
+                            }
+                            else
+                            {
+                                thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay - 1;
+                                thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay - 1;
+                            }
+                        }
+                        else
+                        {
+                            thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay;
+                            thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay;
+                        }
+
                         BirthdayList.Add(thisBirthdayCharacterModel);
                     }
                 }
+
                 currentBirthday++;
                 if (currentBirthday == 1232)
                 {

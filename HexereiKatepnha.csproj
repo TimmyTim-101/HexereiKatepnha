@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="LottieSharp" Version="2.4.3" />
     <PackageReference Include="VirtualizingWrapPanel" Version="2.4.0-beta" />
   </ItemGroup>
 
@@ -6121,6 +6122,18 @@
     <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Zibai_01.png" />
     <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_Zibai_02.png" />
     <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Zibai_02.png" />
+    <None Remove="Resources\Animation\Confetti Partyyy!!.json" />
+    <Content Include="Resources\Animations\Confetti Partyyy!!.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Resources\Animations\Confetti.json" />
+    <Content Include="Resources\Animations\Confetti.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Resources\Animations\confetti on transparent background.json" />
+    <Content Include="Resources\Animations\confetti on transparent background.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
