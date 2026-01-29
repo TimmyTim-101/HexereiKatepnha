@@ -7,6 +7,238 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="CharacterItemTemplate">
+            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Vertical">
+                            <Grid>
+                                <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                            </Grid>
+                            <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                            <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </Viewbox>
+                            <TextBlock Style="{StaticResource MyTextBlock}" FontSize="10" Foreground="#777777" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                                <Run Text="ID:"></Run>
+                                <Run Text="{Binding Vid}"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Style="{StaticResource MyTextBlock}" Text="{Binding BirthdayString}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></TextBlock>
+                            <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <Image Source="{Binding WeaponTypeImagePath, IsAsync=True}" Height="25" Width="25" Stretch="UniformToFill" Margin="10,0,10,0"></Image>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding WeaponTypeName}" Margin="0,0,0,0"></TextBlock>
+                            </StackPanel>
+                            <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                            <ItemsControl Grid.Row="4" ItemsSource="{Binding NeedMaterialList}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0">
+                                                <Grid Width="35" Height="35" ToolTipService.InitialShowDelay="100">
+                                                    <Grid.ToolTip>
+                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                    </Grid.ToolTip>
+                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </Grid>
+                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding Talent1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent1Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="1" Source="{Binding Talent2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent2Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="2" Source="{Binding Talent3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent3Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                    </Grid>
+                    <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding Ascension1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension1Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="1" Source="{Binding Ascension2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension2Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="2" Source="{Binding Ascension3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension3Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="3" Source="{Binding Ascension4ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension4Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="4" Source="{Binding Ascension5ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension5Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <Image Grid.Column="5" Source="{Binding Ascension6ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                            <Image.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension6Description}" FontSize="12" Foreground="Black"></TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                    </Grid>
+                    <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
+                    <ScrollViewer Grid.Row="6" MaxHeight="330" Style="{StaticResource ModernScrollViewer}">
+                        <Grid>
+                            <ItemsControl ItemsSource="{Binding SimpleLevelStatTable}" Visibility="{Binding DataContext.IsShowLessNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Rows="1"></UniformGrid>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                        <Viewbox StretchDirection="DownOnly">
+                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                                                        </Viewbox>
+                                                    </Border>
+                                                    <DataTemplate.Triggers>
+                                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                                            <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
+                                                        </Trigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <ItemsControl ItemsSource="{Binding FullLevelStatTable}" Visibility="{Binding DataContext.IsShowMoreNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Rows="1"></UniformGrid>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                        <Viewbox StretchDirection="DownOnly">
+                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                                                        </Viewbox>
+                                                    </Border>
+                                                    <DataTemplate.Triggers>
+                                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                                            <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
+                                                        </Trigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -25,245 +257,92 @@
         </Grid>
         <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
         <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <ItemsControl ItemsSource="{Binding AllCharacterList}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <StackPanel Grid.Column="0" Orientation="Vertical">
-                                        <Grid>
-                                            <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
-                                        </Grid>
-                                        <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
-                                        <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
-                                        </Viewbox>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" FontSize="10" Foreground="#777777" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-                                            <Run Text="ID:"></Run>
-                                            <Run Text="{Binding Vid}"></Run>
-                                        </TextBlock>
-                                    </StackPanel>
-                                    <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                                    <Grid Grid.Column="2">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Style="{StaticResource MyTextBlock}" Text="{Binding BirthdayString}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></TextBlock>
-                                        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                            <Image Source="{Binding WeaponTypeImagePath, IsAsync=True}" Height="25" Width="25" Stretch="UniformToFill" Margin="10,0,10,0"></Image>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding WeaponTypeName}" Margin="0,0,0,0"></TextBlock>
-                                        </StackPanel>
-                                        <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                                        <ItemsControl Grid.Row="4" ItemsSource="{Binding NeedMaterialList}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Grid Margin="2">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto"></RowDefinition>
-                                                        </Grid.RowDefinitions>
-                                                        <StackPanel Grid.Row="0">
-                                                            <Grid Width="35" Height="35" ToolTipService.InitialShowDelay="100">
-                                                                <Grid.ToolTip>
-                                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
-                                                                </Grid.ToolTip>
-                                                                <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
-                                                                <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
-                                                            </Grid>
-                                                        </StackPanel>
-                                                    </Grid>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </Grid>
-                                </Grid>
-                                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                                <Grid Grid.Row="2">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding Talent1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent1Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="1" Source="{Binding Talent2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent2Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="2" Source="{Binding Talent3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Talent3Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </Grid>
-                                <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                                <Grid Grid.Row="4">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding Ascension1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension1Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="1" Source="{Binding Ascension2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension2Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="2" Source="{Binding Ascension3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension3Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="3" Source="{Binding Ascension4ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension4Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="4" Source="{Binding Ascension5ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension5Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                    <Image Grid.Column="5" Source="{Binding Ascension6ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
-                                        <Image.ToolTip>
-                                            <ToolTip>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Ascension6Description}" FontSize="12" Foreground="Black"></TextBlock>
-                                            </ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </Grid>
-                                <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                                <ScrollViewer Grid.Row="6" MaxHeight="330" Style="{StaticResource ModernScrollViewer}">
-                                    <Grid>
-                                        <ItemsControl ItemsSource="{Binding SimpleLevelStatTable}" Visibility="{Binding DataContext.IsShowLessNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"></StackPanel>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
-                                                        <ItemsControl.ItemsPanel>
-                                                            <ItemsPanelTemplate>
-                                                                <UniformGrid Rows="1"></UniformGrid>
-                                                            </ItemsPanelTemplate>
-                                                        </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <Border BorderThickness="0.5" BorderBrush="#777777">
-                                                                    <Viewbox StretchDirection="DownOnly">
-                                                                        <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
-                                                                    </Viewbox>
-                                                                </Border>
-                                                                <DataTemplate.Triggers>
-                                                                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                                                        <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
-                                                                    </Trigger>
-                                                                </DataTemplate.Triggers>
-                                                            </DataTemplate>
-                                                        </ItemsControl.ItemTemplate>
-                                                    </ItemsControl>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                        <ItemsControl ItemsSource="{Binding FullLevelStatTable}" Visibility="{Binding DataContext.IsShowMoreNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"></StackPanel>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
-                                                        <ItemsControl.ItemsPanel>
-                                                            <ItemsPanelTemplate>
-                                                                <UniformGrid Rows="1"></UniformGrid>
-                                                            </ItemsPanelTemplate>
-                                                        </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <Border BorderThickness="0.5" BorderBrush="#777777">
-                                                                    <Viewbox StretchDirection="DownOnly">
-                                                                        <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
-                                                                    </Viewbox>
-                                                                </Border>
-                                                                <DataTemplate.Triggers>
-                                                                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                                                        <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
-                                                                    </Trigger>
-                                                                </DataTemplate.Triggers>
-                                                            </DataTemplate>
-                                                        </ItemsControl.ItemTemplate>
-                                                    </ItemsControl>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </Grid>
-                                </ScrollViewer>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <StackPanel>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="火" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding PyroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="水" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding HydroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="风" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding AnemoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="雷" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding ElectroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="草" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding DendroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="冰" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding CyroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+                <Expander Margin="20,5" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="岩" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding GeoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Expander>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>

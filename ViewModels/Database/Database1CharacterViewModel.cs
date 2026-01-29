@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
@@ -12,9 +11,15 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public partial class Database1CharacterViewModel : ObservableObject
     {
-        [ObservableProperty] private bool _isShowMoreNumbers = false;
+        [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
-        public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> PyroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> HydroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> AnemoCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> ElectroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> DendroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> CrroCharacterList { get; } = new();
+        public ObservableCollection<Database1CharacterModel> GeoCharacterList { get; } = new();
 
         public Database1CharacterViewModel()
         {
@@ -38,8 +43,8 @@ namespace HexereiKatepnha.ViewModels.Database
                     .SelectMany(list => list)
                     .Select(pair => pair.MaterialModel as MaterialModel)
                     .Where(m => m != null)
-                    .DistinctBy(m => m.Rid)
-                    .OrderBy(m => m.Rid);
+                    .DistinctBy(m => m!.Rid)
+                    .OrderBy(m => m!.Rid)!;
                 foreach (MaterialModel p in uniqueMaterials)
                 {
                     DungeonDropItemModel thisDropModel = new DungeonDropItemModel();
@@ -166,7 +171,16 @@ namespace HexereiKatepnha.ViewModels.Database
                     }
                 }
 
-                AllCharacterList.Add(thisDatabase1CharacterModel);
+                switch (e.ElementType)
+                {
+                    case Enumeration.ElementType.Pyro: PyroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Hydro: HydroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Anemo: AnemoCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Electro: ElectroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Dendro: DendroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Cryo: CrroCharacterList.Add(thisDatabase1CharacterModel); break;
+                    case Enumeration.ElementType.Geo: GeoCharacterList.Add(thisDatabase1CharacterModel); break;
+                }
             }
         }
 
