@@ -41,24 +41,24 @@ public static class StringConstants
 
     public static readonly Dictionary<Enumeration.ElementType, string> ElementTypeString = new()
     {
-        {Enumeration.ElementType.Pyro, "火"},
-        {Enumeration.ElementType.Hydro, "水"},
-        {Enumeration.ElementType.Anemo, "风"},
-        {Enumeration.ElementType.Electro, "雷"},
-        {Enumeration.ElementType.Dendro, "草"},
-        {Enumeration.ElementType.Cryo, "冰"},
-        {Enumeration.ElementType.Geo, "岩"},
+        { Enumeration.ElementType.Pyro, "火" },
+        { Enumeration.ElementType.Hydro, "水" },
+        { Enumeration.ElementType.Anemo, "风" },
+        { Enumeration.ElementType.Electro, "雷" },
+        { Enumeration.ElementType.Dendro, "草" },
+        { Enumeration.ElementType.Cryo, "冰" },
+        { Enumeration.ElementType.Geo, "岩" },
     };
 
     public static readonly Dictionary<Enumeration.ElementType, string> ElementTypeImagePath = new()
     {
-        {Enumeration.ElementType.Pyro, "/Resources/Images/Element/UI_Buff_Element_Fire.png"},
-        {Enumeration.ElementType.Hydro, "/Resources/Images/Element/UI_Buff_Element_Water.png"},
-        {Enumeration.ElementType.Anemo, "/Resources/Images/Element/UI_Buff_Element_Wind.png"},
-        {Enumeration.ElementType.Electro, "/Resources/Images/Element/UI_Buff_Element_Elect.png"},
-        {Enumeration.ElementType.Dendro, "/Resources/Images/Element/UI_Buff_Element_Grass.png"},
-        {Enumeration.ElementType.Cryo, "/Resources/Images/Element/UI_Buff_Element_Frost.png"},
-        {Enumeration.ElementType.Geo, "/Resources/Images/Element/UI_Buff_Element_Roach.png"},
+        { Enumeration.ElementType.Pyro, "/Resources/Images/Element/UI_Buff_Element_Fire.png" },
+        { Enumeration.ElementType.Hydro, "/Resources/Images/Element/UI_Buff_Element_Water.png" },
+        { Enumeration.ElementType.Anemo, "/Resources/Images/Element/UI_Buff_Element_Wind.png" },
+        { Enumeration.ElementType.Electro, "/Resources/Images/Element/UI_Buff_Element_Elect.png" },
+        { Enumeration.ElementType.Dendro, "/Resources/Images/Element/UI_Buff_Element_Grass.png" },
+        { Enumeration.ElementType.Cryo, "/Resources/Images/Element/UI_Buff_Element_Frost.png" },
+        { Enumeration.ElementType.Geo, "/Resources/Images/Element/UI_Buff_Element_Roach.png" },
     };
 
     public static readonly string ResinImagePath = "/Resources/Images/DungeonAndMonster/UI_ItemIcon_106.png";
@@ -125,8 +125,8 @@ public static class StringConstants
         { Enumeration.Level.L76, "76" }, { Enumeration.Level.L77, "77" }, { Enumeration.Level.L78, "78" }, { Enumeration.Level.L79, "79" }, { Enumeration.Level.L80, "80" }, { Enumeration.Level.L80P, "80+" },
         { Enumeration.Level.L81, "81" }, { Enumeration.Level.L82, "82" }, { Enumeration.Level.L83, "83" }, { Enumeration.Level.L84, "84" }, { Enumeration.Level.L85, "85" },
         { Enumeration.Level.L86, "86" }, { Enumeration.Level.L87, "87" }, { Enumeration.Level.L88, "88" }, { Enumeration.Level.L89, "89" }, { Enumeration.Level.L90, "90" }, { Enumeration.Level.L90P, "90+" },
-        // { Enumeration.Level.L91, "91" }, { Enumeration.Level.L92, "92" }, { Enumeration.Level.L93, "93" }, { Enumeration.Level.L94, "94" }, { Enumeration.Level.L95, "95" },
-        // { Enumeration.Level.L96, "96" }, { Enumeration.Level.L97, "97" }, { Enumeration.Level.L98, "98" }, { Enumeration.Level.L99, "99" }, { Enumeration.Level.L100, "100" },
-        { Enumeration.Level.L95, "95" },{ Enumeration.Level.L100, "100" },
+        { Enumeration.Level.L91, "91" }, { Enumeration.Level.L92, "92" }, { Enumeration.Level.L93, "93" }, { Enumeration.Level.L94, "94" }, { Enumeration.Level.L95, "95" },
+        { Enumeration.Level.L96, "96" }, { Enumeration.Level.L97, "97" }, { Enumeration.Level.L98, "98" }, { Enumeration.Level.L99, "99" }, { Enumeration.Level.L100, "100" },
+        // { Enumeration.Level.L95, "95" },{ Enumeration.Level.L100, "100" },
     };
 }

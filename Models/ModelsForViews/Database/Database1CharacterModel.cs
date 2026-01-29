@@ -34,4 +34,6 @@ public class Database1CharacterModel
     public string Ascension6ImagePath { get; set; } = "";
     public string Ascension6Description { get; set; } = "";
 
+    public List<List<string>> SimpleLevelStatTable { get; set; } = [];
+    public List<List<string>> FullLevelStatTable { get; set; } = [];
 }

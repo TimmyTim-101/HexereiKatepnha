@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
@@ -12,6 +13,7 @@ namespace HexereiKatepnha.ViewModels.Database
     public partial class Database1CharacterViewModel : ObservableObject
     {
         [ObservableProperty] private bool _isShowMoreNumbers = false;
+        [ObservableProperty] private bool _isShowLessNumbers = true;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
 
         public Database1CharacterViewModel()
@@ -46,6 +48,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisDropModel.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star];
                     thisDatabase1CharacterModel.NeedMaterialList.Add(thisDropModel);
                 }
+
                 if (thisDatabase1CharacterModel.NeedMaterialList.Count == 16)
                 {
                     List<DungeonDropItemModel> newNeedMaterialList =
@@ -77,8 +80,99 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase1CharacterModel.Ascension5Description = e.Ascension[5].Description;
                 thisDatabase1CharacterModel.Ascension6ImagePath = e.Ascension[6].ImagePath;
                 thisDatabase1CharacterModel.Ascension6Description = e.Ascension[6].Description;
+
+                List<string> tableBeginning = ["等级", "生命值", "攻击力", "防御力", "暴击率", "暴击伤害"];
+                foreach (Enumeration.Affix a in e.AffixDictionary[Enumeration.Level.L1].Keys)
+                {
+                    if (a != Enumeration.Affix.Health && a != Enumeration.Affix.Attack && a != Enumeration.Affix.Defense && a != Enumeration.Affix.CriticalRate && a != Enumeration.Affix.CriticalDamage)
+                    {
+                        tableBeginning.Add(StringConstants.AffixString[a]);
+                    }
+                }
+
+                thisDatabase1CharacterModel.SimpleLevelStatTable.Add(tableBeginning);
+                thisDatabase1CharacterModel.FullLevelStatTable.Add(tableBeginning);
+                for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (e.AffixDictionary.ContainsKey(thisLevel))
+                    {
+                        Dictionary<Enumeration.Affix, double> thisLevelAffixDictionary = e.AffixDictionary[thisLevel];
+                        List<string> thisStatList = [StringConstants.LevelString[thisLevel]];
+                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Health))
+                        {
+                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Health].ToString(CultureInfo.CurrentCulture));
+                        }
+                        else
+                        {
+                            thisStatList.Add("0");
+                        }
+
+                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Attack))
+                        {
+                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Attack].ToString(CultureInfo.CurrentCulture));
+                        }
+                        else
+                        {
+                            thisStatList.Add("0");
+                        }
+
+                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Defense))
+                        {
+                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Defense].ToString(CultureInfo.CurrentCulture));
+                        }
+                        else
+                        {
+                            thisStatList.Add("0");
+                        }
+
+                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.CriticalRate))
+                        {
+                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.CriticalRate].ToString(CultureInfo.CurrentCulture) + "%");
+                        }
+                        else
+                        {
+                            thisStatList.Add("0%");
+                        }
+
+                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.CriticalDamage))
+                        {
+                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.CriticalDamage].ToString(CultureInfo.CurrentCulture) + "%");
+                        }
+                        else
+                        {
+                            thisStatList.Add("0%");
+                        }
+
+                        foreach (Enumeration.Affix a in thisLevelAffixDictionary.Keys)
+                        {
+                            if (a != Enumeration.Affix.Health && a != Enumeration.Affix.Attack && a != Enumeration.Affix.Defense && a != Enumeration.Affix.CriticalRate && a != Enumeration.Affix.CriticalDamage)
+                            {
+                                string thisString = thisLevelAffixDictionary[a].ToString(CultureInfo.CurrentCulture);
+                                if (SequenceConstants.AffixPercentageSymbolList.Contains(a))
+                                {
+                                    thisString += "%";
+                                }
+
+                                thisStatList.Add(thisString);
+                            }
+                        }
+
+                        thisDatabase1CharacterModel.FullLevelStatTable.Add(thisStatList);
+                        if (SequenceConstants.ImportantLevels.Contains(thisLevel))
+                        {
+                            thisDatabase1CharacterModel.SimpleLevelStatTable.Add(thisStatList);
+                        }
+                    }
+                }
+
                 AllCharacterList.Add(thisDatabase1CharacterModel);
             }
+        }
+
+        partial void OnIsShowMoreNumbersChanged(bool value)
+        {
+            IsShowLessNumbers = !IsShowMoreNumbers;
         }
     }
 }

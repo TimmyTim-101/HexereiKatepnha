@@ -124,7 +124,37 @@
                     </Border>
                 </StackPanel>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Style="{StaticResource TodoTextBlock}" Text="生日"></TextBlock>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Style="{StaticResource ModernScrollViewer}">
+                    <ItemsControl ItemsSource="{Binding BirthdayList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="5,5,0,5" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                        </Grid>
+                                        <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                                        <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                        <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <TextBlock Style="{StaticResource TodoTextBlock}" Text="更新日志"></TextBlock>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>

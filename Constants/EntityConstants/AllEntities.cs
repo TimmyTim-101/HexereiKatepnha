@@ -7,8 +7,12 @@ namespace HexereiKatepnha.Constants.EntityConstants;
 public static class AllEntities
 {
     // 1 - 角色
-    public static readonly List<CharacterModel> AllCharacter = [
-        CharacterConstantsPage01._1010100,
+    public static readonly List<CharacterModel> AllCharacter =
+    [
+        CharacterConstantsPage02._1010020, CharacterConstantsPage02._1010019, CharacterConstantsPage02._1010018, CharacterConstantsPage02._1010017, CharacterConstantsPage02._1010016,
+        CharacterConstantsPage02._1010015, CharacterConstantsPage02._1010014, CharacterConstantsPage02._1010013, CharacterConstantsPage02._1010012, CharacterConstantsPage02._1010011,
+        CharacterConstantsPage01._1010010, CharacterConstantsPage01._1010009, CharacterConstantsPage01._1010008, CharacterConstantsPage01._1010007, CharacterConstantsPage01._1010006,
+        CharacterConstantsPage01._1010005, CharacterConstantsPage01._1010004, CharacterConstantsPage01._1010003, CharacterConstantsPage01._1010002, CharacterConstantsPage01._1010001,
     ];
 
     // 2 - 武器
@@ -53,7 +57,7 @@ public static class AllEntities
         Catalyst4Constants._2040425,
         Catalyst5Constants._2040501, Catalyst5Constants._2040502, Catalyst5Constants._2040503, Catalyst5Constants._2040504, Catalyst5Constants._2040505, Catalyst5Constants._2040506, Catalyst5Constants._2040507, Catalyst5Constants._2040508,
         Catalyst5Constants._2040509, Catalyst5Constants._2040510, Catalyst5Constants._2040511, Catalyst5Constants._2040512, Catalyst5Constants._2040513, Catalyst5Constants._2040514, Catalyst5Constants._2040515, Catalyst5Constants._2040516,
-        Catalyst5Constants._2040517, Catalyst5Constants._2040518, 
+        Catalyst5Constants._2040517, Catalyst5Constants._2040518,
         // 205 - 弓
         Bow123Constants._2050101,
         Bow123Constants._2050201,
@@ -230,7 +234,7 @@ public static class AllEntities
     [
         DungeonConstants._4060001, DungeonConstants._4060002, DungeonConstants._4060003, DungeonConstants._4060004, DungeonConstants._4060005, DungeonConstants._4060006, DungeonConstants._4060007, DungeonConstants._4060008,
         DungeonConstants._4060009, DungeonConstants._4060010, DungeonConstants._4060011, DungeonConstants._4060012, DungeonConstants._4060013, DungeonConstants._4060014, DungeonConstants._4060015, DungeonConstants._4060016,
-        DungeonConstants._4060017, DungeonConstants._4060018, DungeonConstants._4060019, DungeonConstants._4060020, 
+        DungeonConstants._4060017, DungeonConstants._4060018, DungeonConstants._4060019, DungeonConstants._4060020,
     ];
 
     // 407 - 武器
@@ -266,7 +270,7 @@ public static class AllEntities
         ArtifactConstants._533, ArtifactConstants._534, ArtifactConstants._535, ArtifactConstants._536, ArtifactConstants._537, ArtifactConstants._538, ArtifactConstants._539, ArtifactConstants._540,
         ArtifactConstants._541, ArtifactConstants._542, ArtifactConstants._543, ArtifactConstants._544, ArtifactConstants._545, ArtifactConstants._546, ArtifactConstants._547, ArtifactConstants._548,
         ArtifactConstants._549, ArtifactConstants._550, ArtifactConstants._551, ArtifactConstants._552, ArtifactConstants._553, ArtifactConstants._554, ArtifactConstants._555, ArtifactConstants._556,
-        ArtifactConstants._557, ArtifactConstants._558, ArtifactConstants._559, 
+        ArtifactConstants._557, ArtifactConstants._558, ArtifactConstants._559,
     ];
 
     // 所有group

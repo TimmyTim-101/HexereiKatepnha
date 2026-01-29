@@ -3,7 +3,7 @@ using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants.WeaponConstants;
 
-public class Bow4Constants
+public static class Bow4Constants
 {
     // 20504 - 弓4星
     public static readonly WeaponModel _2050401 = new()

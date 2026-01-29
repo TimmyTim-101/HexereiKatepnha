@@ -68,9 +68,9 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.Progression5 = "·" + e.Progression[5];
 
                 thisDatabase2WeaponModel.SimpleLevelStatTable.Clear();
-                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
                 thisDatabase2WeaponModel.FullLevelStatTable.Clear();
-                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "基础攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
                 for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
                 {
                     Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];

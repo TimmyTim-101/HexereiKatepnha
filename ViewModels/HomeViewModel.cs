@@ -4,8 +4,11 @@ using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
+using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
+using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 using HexereiKatepnha.Services;
 
 namespace HexereiKatepnha.ViewModels
@@ -14,17 +17,20 @@ namespace HexereiKatepnha.ViewModels
     {
         [ObservableProperty] private string _localCurrentTime;
         [ObservableProperty] private string _serverCurrentTime;
+        [ObservableProperty] private int _birthday;
         [ObservableProperty] private bool _isServerTimeSame;
         [ObservableProperty] private bool _isServerTimeDifferent;
         [ObservableProperty] private string _currentAccount;
         [ObservableProperty] private string _newAccountName = "";
         [ObservableProperty] private string _renameAccountName = "";
         [ObservableProperty] private ObservableCollection<string> _allAccountList = [];
+        public ObservableCollection<BirthdayCharacterModel> BirthdayList { get; set; } = [];
 
         public HomeViewModel()
         {
             LocalCurrentTime = DateTime.Now.ToString("HH:mm:ss");
             ServerCurrentTime = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).ToString("HH:mm:ss");
+            Birthday = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Month * 100 + DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Day;
             IsServerTimeSame = LocalCurrentTime == ServerCurrentTime;
             IsServerTimeDifferent = !IsServerTimeSame;
 
@@ -34,6 +40,7 @@ namespace HexereiKatepnha.ViewModels
             {
                 LocalCurrentTime = DateTime.Now.ToString("HH:mm:ss");
                 ServerCurrentTime = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).ToString("HH:mm:ss");
+                Birthday = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Month * 100 + DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Day;
                 IsServerTimeSame = LocalCurrentTime == ServerCurrentTime;
                 IsServerTimeDifferent = !IsServerTimeSame;
             };
@@ -44,6 +51,38 @@ namespace HexereiKatepnha.ViewModels
             for (int i = 0; i < App.AccountConfigManagerInstance.Configuration.AccountList.Count; i++)
             {
                 AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
+            }
+
+            UpdateBirthdayList();
+        }
+
+        private void UpdateBirthdayList()
+        {
+            BirthdayList.Clear();
+            int currentBirthday = Birthday;
+            while (BirthdayList.Count < 5)
+            {
+                if (AutoCalculateConstants.CharacterBirthdayDictionary.ContainsKey(currentBirthday))
+                {
+                    foreach (CharacterModel cm in AutoCalculateConstants.CharacterBirthdayDictionary[currentBirthday])
+                    {
+                        BirthdayCharacterModel thisBirthdayCharacterModel = new BirthdayCharacterModel();
+                        thisBirthdayCharacterModel.ImagePath = cm.ImagePath;
+                        thisBirthdayCharacterModel.BackgroundPath = StringConstants.StarBackgroundImagePath[cm.Star];
+                        thisBirthdayCharacterModel.StarImagePath = StringConstants.StarImagePath[cm.Star];
+                        thisBirthdayCharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[cm.ElementType];
+                        thisBirthdayCharacterModel.Name = cm.Name;
+                        thisBirthdayCharacterModel.BirthdayString = cm.BirthMonth + "/" + cm.BirthDay;
+                        thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay;
+                        thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay;
+                        BirthdayList.Add(thisBirthdayCharacterModel);
+                    }
+                }
+                currentBirthday++;
+                if (currentBirthday == 1232)
+                {
+                    currentBirthday = 101;
+                }
             }
         }
 
