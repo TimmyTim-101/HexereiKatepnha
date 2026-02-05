@@ -9,6 +9,18 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
+        CharacterConstantsPage11._1010110, CharacterConstantsPage11._1010109, CharacterConstantsPage11._1010108, CharacterConstantsPage11._1010107, CharacterConstantsPage11._1010106,
+        CharacterConstantsPage11._1010105, CharacterConstantsPage11._1010104, CharacterConstantsPage11._1010103, CharacterConstantsPage11._1010102, CharacterConstantsPage11._1010101,
+        CharacterConstantsPage10._1010100, CharacterConstantsPage10._1010099, CharacterConstantsPage10._1010098, CharacterConstantsPage10._1010097, CharacterConstantsPage10._1010096,
+        CharacterConstantsPage10._1010095, CharacterConstantsPage10._1010094, CharacterConstantsPage10._1010093, CharacterConstantsPage10._1010092, CharacterConstantsPage10._1010091,
+        CharacterConstantsPage09._1010090, CharacterConstantsPage09._1010089, CharacterConstantsPage09._1010088, CharacterConstantsPage09._1010087, CharacterConstantsPage09._1010086,
+        CharacterConstantsPage09._1010085, CharacterConstantsPage09._1010084, CharacterConstantsPage09._1010083, CharacterConstantsPage09._1010082, CharacterConstantsPage09._1010081,
+        CharacterConstantsPage08._1010080, CharacterConstantsPage08._1010079, CharacterConstantsPage08._1010078, CharacterConstantsPage08._1010077, CharacterConstantsPage08._1010076,
+        CharacterConstantsPage08._1010075, CharacterConstantsPage08._1010074, CharacterConstantsPage08._1010073, CharacterConstantsPage08._1010072, CharacterConstantsPage08._1010071,
+        CharacterConstantsPage07._1010070, CharacterConstantsPage07._1010069, CharacterConstantsPage07._1010068, CharacterConstantsPage07._1010067, CharacterConstantsPage07._1010066,
+        CharacterConstantsPage07._1010065, CharacterConstantsPage07._1010064, CharacterConstantsPage07._1010063, CharacterConstantsPage07._1010062, CharacterConstantsPage07._1010061,
+        CharacterConstantsPage06._1010060, CharacterConstantsPage06._1010059, CharacterConstantsPage06._1010058, CharacterConstantsPage06._1010057, CharacterConstantsPage06._1010056,
+        CharacterConstantsPage06._1010055, CharacterConstantsPage06._1010054, CharacterConstantsPage06._1010053, CharacterConstantsPage06._1010052, CharacterConstantsPage06._1010051,
         CharacterConstantsPage05._1010050, CharacterConstantsPage05._1010049, CharacterConstantsPage05._1010048, CharacterConstantsPage05._1010047, CharacterConstantsPage05._1010046,
         CharacterConstantsPage05._1010045, CharacterConstantsPage05._1010044, CharacterConstantsPage05._1010043, CharacterConstantsPage05._1010042, CharacterConstantsPage05._1010041,
         CharacterConstantsPage04._1010040, CharacterConstantsPage04._1010039, CharacterConstantsPage04._1010038, CharacterConstantsPage04._1010037, CharacterConstantsPage04._1010036,

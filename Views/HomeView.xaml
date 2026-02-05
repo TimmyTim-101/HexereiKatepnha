@@ -125,7 +125,8 @@
                     </Border>
                 </StackPanel>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Style="{StaticResource ModernScrollViewer}">
+                <TextBlock Style="{StaticResource MyTextBlock}" Text="近期寿星" Margin="30,5"></TextBlock>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Style="{StaticResource ModernScrollViewer}" Margin="30,0,30,5">
                     <ItemsControl ItemsSource="{Binding BirthdayList}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>

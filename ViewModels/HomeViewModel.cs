@@ -60,7 +60,7 @@ namespace HexereiKatepnha.ViewModels
         {
             BirthdayList.Clear();
             int currentBirthday = Birthday;
-            while (BirthdayList.Count < 5)
+            while (BirthdayList.Count < 15)
             {
                 if (AutoCalculateConstants.CharacterBirthdayDictionary.ContainsKey(currentBirthday))
                 {
