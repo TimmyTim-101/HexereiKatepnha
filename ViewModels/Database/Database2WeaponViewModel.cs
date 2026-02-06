@@ -17,10 +17,17 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowAwakenImage;
         [ObservableProperty] private bool _isShowOriginalImage = true;
         public ObservableCollection<Database2WeaponModel> AllSwordList { get; } = new();
+        public string SwordImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
         public ObservableCollection<Database2WeaponModel> AllClaymoreList { get; } = new();
+        public string ClaymoreImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
         public ObservableCollection<Database2WeaponModel> AllPoleList { get; } = new();
+        public string PoleImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
         public ObservableCollection<Database2WeaponModel> AllCatalystList { get; } = new();
+        public string CatalystImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
         public ObservableCollection<Database2WeaponModel> AllBowList { get; } = new();
+        public string BowImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
+
+
 
         public Database2WeaponViewModel()
         {

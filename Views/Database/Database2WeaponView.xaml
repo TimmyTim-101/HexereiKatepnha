@@ -207,7 +207,10 @@
             <StackPanel>
                 <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
-                        <TextBlock Text="单手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding SwordImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
+                            <TextBlock Text="单手剑" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
                     </Expander.Header>
                     <ItemsControl ItemsSource="{Binding AllSwordList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
@@ -220,7 +223,10 @@
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
-                        <TextBlock Text="双手剑" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding ClaymoreImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
+                            <TextBlock Text="双手剑" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
                     </Expander.Header>
                     <ItemsControl ItemsSource="{Binding AllClaymoreList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
@@ -233,7 +239,10 @@
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
-                        <TextBlock Text="长柄武器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding PoleImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
+                            <TextBlock Text="长柄武器" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
                     </Expander.Header>
                     <ItemsControl ItemsSource="{Binding AllPoleList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
@@ -246,7 +255,10 @@
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
-                        <TextBlock Text="法器" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding CatalystImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
+                            <TextBlock Text="法器" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
                     </Expander.Header>
                     <ItemsControl ItemsSource="{Binding AllCatalystList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>
@@ -259,7 +271,10 @@
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Expander Margin="20,5" IsExpanded="False">
                     <Expander.Header>
-                        <TextBlock Text="弓" Style="{StaticResource MyTextBlock}" Margin="10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding BowImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
+                            <TextBlock Text="弓" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
                     </Expander.Header>
                     <ItemsControl ItemsSource="{Binding AllBowList}" ItemTemplate="{StaticResource WeaponItemTemplate}">
                         <ItemsControl.ItemsPanel>

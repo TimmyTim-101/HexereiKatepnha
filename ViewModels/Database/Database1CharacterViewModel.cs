@@ -14,12 +14,20 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
         public ObservableCollection<Database1CharacterModel> PyroCharacterList { get; } = new();
+        public string PyroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
         public ObservableCollection<Database1CharacterModel> HydroCharacterList { get; } = new();
+        public string HydroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
         public ObservableCollection<Database1CharacterModel> AnemoCharacterList { get; } = new();
+        public string AnemoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Anemo];
         public ObservableCollection<Database1CharacterModel> ElectroCharacterList { get; } = new();
+        public string ElectroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Electro];
         public ObservableCollection<Database1CharacterModel> DendroCharacterList { get; } = new();
+        public string DendroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Dendro];
         public ObservableCollection<Database1CharacterModel> CryoCharacterList { get; } = new();
+        public string CryoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Cryo];
         public ObservableCollection<Database1CharacterModel> GeoCharacterList { get; } = new();
+        public string GeoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Geo];
+
 
         public Database1CharacterViewModel()
         {

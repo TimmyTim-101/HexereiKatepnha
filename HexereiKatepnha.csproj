@@ -6134,6 +6134,28 @@
     <Content Include="Resources\Animations\confetti on transparent background.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Remove="Resources\Icons\NavigationIcons\Monster.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Monster.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Plan.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Plan.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Potential.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Potential.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Match.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Match.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Material.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Material.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Backpack.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Backpack.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Goal.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Goal.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Equipment.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Equipment.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Weapon.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Weapon.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Scan.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Scan.png" />
+    <None Remove="Resources\Icons\NavigationIcons\All.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\All.png" />
   </ItemGroup>
 
   <ItemGroup>
