@@ -2352,6 +2352,16 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113084.png"
     };
 
+    public static readonly MaterialModel _3060044 = new()
+    {
+        Rid = 3060044,
+        Vid = 113085,
+        Name = "棱光的断尾",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113085.png"
+    };
+
     // 307 - 角色突破素材_钻儿块儿片儿粒儿
     public static readonly MaterialModel _3070101 = new()
     {

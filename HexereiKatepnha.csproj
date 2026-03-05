@@ -6156,6 +6156,44 @@
     <Resource Include="Resources\Icons\NavigationIcons\Scan.png" />
     <None Remove="Resources\Icons\NavigationIcons\All.png" />
     <Resource Include="Resources\Icons\NavigationIcons\All.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\Skill_E_Varka_01.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\Skill_E_Varka_01.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\Skill_E_Varka_01_HD.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\Skill_E_Varka_01_HD.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\Skill_S_Varka_01.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_Varka_01.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\Skill_S_Varka_02.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_Varka_02.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\Skill_S_Varka_03.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_Varka_03.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_01.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_01.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_02.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_02.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_03.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_03.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_04.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_04.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_05.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_05.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_06.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_06.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_07.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_07.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_08.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_Varka_08.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_Varka_01.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Varka_01.png" />
+    <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_Varka_02.png" />
+    <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Varka_02.png" />
+    <None Remove="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Magbeast_Gecko.png" />
+    <Resource Include="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Magbeast_Gecko.png" />
+    <None Remove="Resources\Images\Materials\UI_ItemIcon_113085.png" />
+    <Resource Include="Resources\Images\Materials\UI_ItemIcon_113085.png" />
+    <None Remove="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis.png" />
+    <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis.png" />
+    <None Remove="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png" />
+    <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png" />
   </ItemGroup>
 
   <ItemGroup>

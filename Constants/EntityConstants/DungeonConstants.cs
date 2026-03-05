@@ -1196,6 +1196,19 @@ public static class DungeonConstants
         ])
     };
 
+    public static readonly DungeonModel _4050043 = new()
+    {
+        Rid = 4050043,
+        Name = "蕴光月守宫",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Magbeast_Gecko.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060044, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
     // 406 - 圣遗物
     public static readonly DungeonModel _4060001 = new()
     {
