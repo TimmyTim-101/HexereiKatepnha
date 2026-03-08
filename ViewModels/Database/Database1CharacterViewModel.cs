@@ -13,20 +13,10 @@ namespace HexereiKatepnha.ViewModels.Database
     {
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
-        public ObservableCollection<Database1CharacterModel> PyroCharacterList { get; } = new();
-        public string PyroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
-        public ObservableCollection<Database1CharacterModel> HydroCharacterList { get; } = new();
-        public string HydroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
-        public ObservableCollection<Database1CharacterModel> AnemoCharacterList { get; } = new();
-        public string AnemoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Anemo];
-        public ObservableCollection<Database1CharacterModel> ElectroCharacterList { get; } = new();
-        public string ElectroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Electro];
-        public ObservableCollection<Database1CharacterModel> DendroCharacterList { get; } = new();
-        public string DendroImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Dendro];
-        public ObservableCollection<Database1CharacterModel> CryoCharacterList { get; } = new();
-        public string CryoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Cryo];
-        public ObservableCollection<Database1CharacterModel> GeoCharacterList { get; } = new();
-        public string GeoImagePath { get; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Geo];
+        public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
+        private List<Database1CharacterModel> _allCharacterBackup = new();
+        private int _currentLoadIndex = 0;
+        private const int LoadBatchSize = 5;
 
 
         public Database1CharacterViewModel()
@@ -179,22 +169,27 @@ namespace HexereiKatepnha.ViewModels.Database
                     }
                 }
 
-                switch (e.ElementType)
-                {
-                    case Enumeration.ElementType.Pyro: PyroCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Hydro: HydroCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Anemo: AnemoCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Electro: ElectroCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Dendro: DendroCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Cryo: CryoCharacterList.Add(thisDatabase1CharacterModel); break;
-                    case Enumeration.ElementType.Geo: GeoCharacterList.Add(thisDatabase1CharacterModel); break;
-                }
+                _allCharacterBackup.Add(thisDatabase1CharacterModel);
             }
+
+            LoadMoreCharacters();
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
         {
             IsShowLessNumbers = !IsShowMoreNumbers;
+        }
+
+        public void LoadMoreCharacters()
+        {
+            if (_currentLoadIndex >= _allCharacterBackup.Count) return;
+            int loadedThisBatch = 0;
+            while (loadedThisBatch < LoadBatchSize && _currentLoadIndex < _allCharacterBackup.Count)
+            {
+                AllCharacterList.Add(_allCharacterBackup[_currentLoadIndex]);
+                _currentLoadIndex += 1;
+                loadedThisBatch += 1;
+            }
         }
     }
 }

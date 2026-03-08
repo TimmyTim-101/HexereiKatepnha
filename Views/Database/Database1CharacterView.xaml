@@ -256,113 +256,15 @@
             <CheckBox Grid.Column="0" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
         </Grid>
         <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-        <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" ScrollChanged="ScrollViewer_OnScrollChanged">
             <StackPanel>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding PyroImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="火" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding PyroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding HydroImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="水" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding HydroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding AnemoImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="风" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding AnemoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding ElectroImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="雷" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding ElectroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding DendroImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="草" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding DendroCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding CryoImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="冰" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding CryoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
-                <Expander Margin="20,5" IsExpanded="False">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding GeoImagePath}" Width="30" Height="30" Stretch="UniformToFill" Margin="5,0"></Image>
-                            <TextBlock Text="岩" Style="{StaticResource MyTextBlock}" Margin="10,0" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </Expander.Header>
-                    <ItemsControl ItemsSource="{Binding GeoCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Expander>
+                <ItemsControl ItemsSource="{Binding AllCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
             </StackPanel>
         </ScrollViewer>
     </Grid>
