@@ -1,7 +1,5 @@
-﻿using System.Configuration;
-using System.Text;
+﻿using System.Text;
 using System.Windows;
-using System.Windows.Documents;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
@@ -18,6 +16,7 @@ namespace HexereiKatepnha
         public static ThemeConfigManager? ThemeConfigManagerInstance { get; set; }
         public static AccountConfigManager? AccountConfigManagerInstance { get; set; }
         public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
+        public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -32,6 +31,8 @@ namespace HexereiKatepnha
             ThemeConfigManagerInstance.Load();
             PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(currentAccountGuid);
             PrivateAccountConfigManagerInstance.Load();
+            BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(currentAccountGuid);
+            BackpackMaterialConfigManagerInstance.Load();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -39,6 +40,7 @@ namespace HexereiKatepnha
             AccountConfigManagerInstance?.Save();
             ThemeConfigManagerInstance?.Save();
             PrivateAccountConfigManagerInstance?.Save();
+            BackpackMaterialConfigManagerInstance?.Save();
             base.OnExit(e);
         }
 
@@ -53,7 +55,17 @@ namespace HexereiKatepnha
                 {
                     AutoCalculateConstants.CharacterBirthdayDictionary[thisCharacterBirthday] = new List<CharacterModel>();
                 }
+
                 AutoCalculateConstants.CharacterBirthdayDictionary[thisCharacterBirthday].Add(cm);
+            }
+
+            foreach (MaterialGroupModel g in AllEntities.AllGroup)
+            {
+                List<MaterialModel> thisGroupList = g.MaterialList;
+                for (int i = 0; i < thisGroupList.Count - 1; i++)
+                {
+                    AutoCalculateConstants.MaterialMergeRecipe[thisGroupList[i].Rid] = thisGroupList[i + 1].Rid;
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HexereiKatepnha.Views.Backpack.Backpack4MaterialView"
+<UserControl x:Class="HexereiKatepnha.Views.Backpack.Backpack4MaterialView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,10 +7,107 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="BackpackMaterialItemTemplate">
+            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ToolTip>
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" FontSize="12" Foreground="Black"></TextBlock>
+                        </Grid.ToolTip>
+                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                    </Grid>
+                    <Viewbox Grid.Row="1" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                    </Viewbox>
+                    <UniformGrid Grid.Row="2" Rows="1">
+                        <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                        <Button Content="+" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.AddOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                        <Button Content="合" Style="{StaticResource TextButton}" Margin="0,2" Visibility="{Binding IsMergeVisible}" Command="{Binding DataContext.MergeOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <TextBlock Text="背包 - 材料" Style="{StaticResource TodoTextBlock}" />
+                <TextBlock Text="基础培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllEssentialMaterial}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色与武器培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialCharacterWeaponEnhancement}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialCharacterLevelUp}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialCharacterAscension}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="角色天赋素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialCharacterTalent}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="武器突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialWeaponAscension}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Text="地方特产" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+                <ItemsControl ItemsSource="{Binding AllMaterialLocalSpecialty}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="100"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

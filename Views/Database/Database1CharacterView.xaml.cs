@@ -19,7 +19,7 @@ public partial class Database1CharacterView
                 {
                     if (this.DataContext is HexereiKatepnha.ViewModels.Database.Database1CharacterViewModel viewModel)
                     {
-                        viewModel.LoadMoreCharacters();
+                        viewModel.LoadMoreCharacters(5);
                     }
                 }
             }
