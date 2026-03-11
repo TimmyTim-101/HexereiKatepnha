@@ -17,12 +17,6 @@ namespace HexereiKatepnha.ViewModels
 
         [ObservableProperty] private ObservableObject? _currentContentViewModel;
 
-        private Database1CharacterViewModel? _database1CharacterViewModel;
-        private Database2WeaponViewModel? _database2WeaponViewModel;
-        private Database3ArtifactViewModel? _database3ArtifactViewModel;
-        private Database4MaterialViewModel? _database4MaterialViewModel;
-        private Database5DungeonViewModel? _database5DungeonViewModel;
-
         public MainViewModel(int navigationFlag)
         {
             NavigationFlag = navigationFlag;
@@ -47,42 +41,18 @@ namespace HexereiKatepnha.ViewModels
                 case 24: CurrentContentViewModel = new Backpack4MaterialViewModel(); break;
 
                 case 31: CurrentContentViewModel = new Calculator1ScanViewModel(); break;
+                case 37: CurrentContentViewModel = new Calculator7PlanSettingViewModel(); break;
                 case 32: CurrentContentViewModel = new Calculator2PlanViewModel(); break;
                 case 33: CurrentContentViewModel = new Calculator3AllViewModel(); break;
                 case 34: CurrentContentViewModel = new Calculator4SettingViewModel(); break;
                 case 35: CurrentContentViewModel = new Calculator5PotentialViewModel(); break;
                 case 36: CurrentContentViewModel = new Calculator6MatchViewModel(); break;
 
-                case 41:
-                {
-                    _database1CharacterViewModel ??= new Database1CharacterViewModel();
-                    CurrentContentViewModel = _database1CharacterViewModel;
-                    break;
-                }
-                case 42:
-                {
-                    _database2WeaponViewModel ??= new Database2WeaponViewModel();
-                    CurrentContentViewModel = _database2WeaponViewModel;
-                    break;
-                }
-                case 43:
-                {
-                    _database3ArtifactViewModel ??= new Database3ArtifactViewModel();
-                    CurrentContentViewModel = _database3ArtifactViewModel;
-                    break;
-                }
-                case 44:
-                {
-                    _database4MaterialViewModel ??= new Database4MaterialViewModel();
-                    CurrentContentViewModel = _database4MaterialViewModel;
-                    break;
-                }
-                case 45:
-                {
-                    _database5DungeonViewModel ??= new Database5DungeonViewModel();
-                    CurrentContentViewModel = _database5DungeonViewModel;
-                    break;
-                }
+                case 41: CurrentContentViewModel = new Database1CharacterViewModel(); break;
+                case 42: CurrentContentViewModel = new Database2WeaponViewModel(); break;
+                case 43: CurrentContentViewModel = new Database3ArtifactViewModel(); break;
+                case 44: CurrentContentViewModel = new Database4MaterialViewModel(); break;
+                case 45: CurrentContentViewModel = new Database5DungeonViewModel(); break;
 
                 case -1: CurrentContentViewModel = new SettingsViewModel(); break;
 

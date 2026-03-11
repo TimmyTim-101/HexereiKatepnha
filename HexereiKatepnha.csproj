@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="LottieSharp" Version="2.4.3" />
-    <PackageReference Include="VirtualizingWrapPanel" Version="2.4.0-beta" />
+    <PackageReference Include="VirtualizingWrapPanel" Version="2.5.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -6194,6 +6194,8 @@
     <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis.png" />
     <None Remove="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png" />
     <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png" />
+    <None Remove="Resources\Icons\NavigationIcons\Order.png" />
+    <Resource Include="Resources\Icons\NavigationIcons\Order.png" />
   </ItemGroup>
 
   <ItemGroup>

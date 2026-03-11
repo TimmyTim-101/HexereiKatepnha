@@ -48,6 +48,9 @@
     <DataTemplate DataType="{x:Type calculator:Calculator6MatchViewModel}">
         <calculator1:Calculator6MatchView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type calculator:Calculator7PlanSettingViewModel}">
+        <calculator1:Calculator7PlanSettingView />
+    </DataTemplate>
     <!-- 4 - 数据库 -->
     <DataTemplate DataType="{x:Type database:Database1CharacterViewModel}">
         <database1:Database1CharacterView />
