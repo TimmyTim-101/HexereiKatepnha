@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- 1. 滚动条两端透明按钮样式 (用于点击轨道翻页) -->
     <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="Transparent" />
@@ -15,7 +14,6 @@
         </Setter>
     </Style>
 
-    <!-- 2. 滚动条滑块(Thumb)样式 -->
     <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="IsTabStop" Value="false" />
@@ -37,7 +35,6 @@
         </Setter>
     </Style>
 
-    <!-- 3. ScrollBar 整体样式 (去掉了上下箭头按钮) -->
     <Style x:Key="ModernScrollBar" TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
         <Setter Property="Foreground" Value="#ADADAD" />
@@ -76,7 +73,6 @@
         </Setter>
     </Style>
 
-    <!-- 4. ScrollViewer 样式 (应用上面的 ScrollBar) -->
     <Style x:Key="ModernScrollViewer" TargetType="{x:Type ScrollViewer}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template">

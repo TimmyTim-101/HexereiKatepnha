@@ -6,6 +6,7 @@ namespace HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 public partial class Backpack4MaterialModel : ObservableObject
 {
+    public string CategoryName { get; set; } = "";
     public string ImagePath { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string Name { get; set; } = "";

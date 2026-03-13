@@ -14,8 +14,6 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-
-                        <!-- 勾选框外壳 -->
                         <Border x:Name="checkBoxBorder"
                                 Width="22" Height="22"
                                 CornerRadius="5"
@@ -24,8 +22,6 @@
                                 BorderThickness="1"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-
-                            <!-- 勾选标记 (默认隐藏) -->
                             <Path x:Name="optionMark"
                                   Data="M 3,9 L 7,13 L 15,5"
                                   Stroke="White"
@@ -35,8 +31,6 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center" />
                         </Border>
-
-                        <!-- 文字内容 -->
                         <ContentPresenter x:Name="contentPresenter"
                                           Grid.Column="1"
                                           Focusable="False"
@@ -48,27 +42,20 @@
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <!-- 鼠标悬停 -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="#FFFFFF" />
                             <Setter Property="Foreground" Value="#FFFFFF" />
                         </Trigger>
-
-                        <!-- 选中状态 -->
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="optionMark" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="checkBoxBorder" Property="Background" Value="#1E90FF" /> <!-- 选中后的主题色，可改为 {DynamicResource PrimaryColor} -->
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="#1E90FF" />
                             <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="#1E90FF" />
                         </Trigger>
-
-                        <!-- 第三状态 (半选) -->
                         <Trigger Property="IsChecked" Value="{x:Null}">
-                            <Setter TargetName="optionMark" Property="Data" Value="M 4,9 L 14,9" /> <!-- 显示一横 -->
+                            <Setter TargetName="optionMark" Property="Data" Value="M 4,9 L 14,9" />
                             <Setter TargetName="optionMark" Property="Visibility" Value="Visible" />
                             <Setter TargetName="checkBoxBorder" Property="Background" Value="#555555" />
                         </Trigger>
-
-                        <!-- 禁用状态 -->
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="checkBoxBorder" Property="Opacity" Value="0.5" />
                             <Setter TargetName="contentPresenter" Property="Opacity" Value="0.5" />

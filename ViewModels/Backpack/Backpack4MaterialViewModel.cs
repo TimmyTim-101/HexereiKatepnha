@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Configuration;
+using System.Windows.Data;
 using System.Windows.Documents;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -12,16 +14,13 @@ namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Backpack4MaterialModel> AllEssentialMaterial { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialCharacterWeaponEnhancement { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialCharacterLevelUp { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialCharacterAscension { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialCharacterTalent { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialWeaponAscension { get; } = new();
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialLocalSpecialty { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> AllMaterials { get; set; } = new();
+        public ICollectionView GroupedMaterialView { get; }
 
         public Backpack4MaterialViewModel()
         {
+            GroupedMaterialView = CollectionViewSource.GetDefaultView(AllMaterials);
+            GroupedMaterialView.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
             List<List<MaterialModel>> allLists =
             [
                 AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialCharacterWeaponEnhancement1, AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1,
@@ -41,18 +40,20 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
                     switch (e.MaterialType)
                     {
-                        case Enumeration.MaterialType.Mora: AllEssentialMaterial.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterExp: AllEssentialMaterial.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: AllMaterialCharacterWeaponEnhancement.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: AllMaterialCharacterWeaponEnhancement.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterLevelUp1: AllMaterialCharacterLevelUp.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterLevelUp2: AllMaterialCharacterLevelUp.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterAscension: AllMaterialCharacterAscension.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.CharacterTalent: AllMaterialCharacterTalent.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.WeaponAscension: AllMaterialWeaponAscension.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.LocalSpecialty: AllMaterialLocalSpecialty.Add(thisBackpack4MaterialModel); break;
-                        case Enumeration.MaterialType.WeaponExp: AllEssentialMaterial.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.Mora: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp1: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp2: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterAscension: thisBackpack4MaterialModel.CategoryName = "角色突破素材"; break;
+                        case Enumeration.MaterialType.CharacterTalent: thisBackpack4MaterialModel.CategoryName = "角色天赋素材"; break;
+                        case Enumeration.MaterialType.WeaponAscension: thisBackpack4MaterialModel.CategoryName = "武器突破素材"; break;
+                        case Enumeration.MaterialType.LocalSpecialty: thisBackpack4MaterialModel.CategoryName = "地方特产"; break;
+                        case Enumeration.MaterialType.WeaponExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
                     }
+
+                    AllMaterials.Add(thisBackpack4MaterialModel);
                 }
             }
         }
@@ -84,18 +85,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
             if (clickItem != null)
             {
                 int recipeId = AutoCalculateConstants.MaterialMergeRecipe[clickItem.Rid];
-                List<ObservableCollection<Backpack4MaterialModel>> allLists = [AllMaterialCharacterWeaponEnhancement, AllMaterialCharacterAscension, AllMaterialCharacterTalent, AllMaterialWeaponAscension,];
-                foreach (ObservableCollection<Backpack4MaterialModel> l in allLists)
+                foreach (Backpack4MaterialModel b in AllMaterials)
                 {
-                    foreach (Backpack4MaterialModel b in l)
+                    if (b.Rid == recipeId)
                     {
-                        if (b.Rid == recipeId)
+                        if (b.Number >= 3)
                         {
-                            if (b.Number >= 3)
-                            {
-                                b.Number -= 3;
-                                clickItem.Number += 1;
-                            }
+                            b.Number -= 3;
+                            clickItem.Number += 1;
                         }
                     }
                 }
