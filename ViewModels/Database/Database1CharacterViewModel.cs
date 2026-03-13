@@ -14,8 +14,6 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
-        private List<Database1CharacterModel> _allCharacterBackup = new();
-        private int _currentLoadIndex;
 
 
         public Database1CharacterViewModel()
@@ -167,28 +165,13 @@ namespace HexereiKatepnha.ViewModels.Database
                         }
                     }
                 }
-
-                _allCharacterBackup.Add(thisDatabase1CharacterModel);
+                AllCharacterList.Add(thisDatabase1CharacterModel);
             }
-
-            LoadMoreCharacters(12);
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
         {
             IsShowLessNumbers = !IsShowMoreNumbers;
-        }
-
-        public void LoadMoreCharacters(int loadNum)
-        {
-            if (_currentLoadIndex >= _allCharacterBackup.Count) return;
-            int loadedThisBatch = 0;
-            while (loadedThisBatch < loadNum && _currentLoadIndex < _allCharacterBackup.Count)
-            {
-                AllCharacterList.Add(_allCharacterBackup[_currentLoadIndex]);
-                _currentLoadIndex += 1;
-                loadedThisBatch += 1;
-            }
         }
     }
 }

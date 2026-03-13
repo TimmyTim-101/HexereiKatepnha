@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vwp="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="CharacterItemTemplate">
-            <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
-                <Grid>
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                <Grid Width="376">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -256,16 +257,13 @@
             <CheckBox Grid.Column="0" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
         </Grid>
         <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-        <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" ScrollChanged="ScrollViewer_OnScrollChanged">
-            <StackPanel>
-                <ItemsControl ItemsSource="{Binding AllCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" Margin="20,0" ItemWidth="385"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </StackPanel>
-        </ScrollViewer>
+        <ListBox Grid.Row="4" ItemsSource="{Binding AllCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}" Style="{StaticResource ModernVirtualizingListBox}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <vwp:VirtualizingWrapPanel Orientation="Horizontal" SpacingMode="None" Margin="15,0,0,0"/>
+                    <!-- <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel> -->
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </UserControl>
