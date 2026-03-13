@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
@@ -9,23 +11,19 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public class Database4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Database4MaterialModel> List1 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List2 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List3 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List4 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List5 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List6 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> List7 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> AllMaterials { get; } = new();
+        public ICollectionView GroupedMaterialView { get; }
 
         public Database4MaterialViewModel()
         {
+            GroupedMaterialView = CollectionViewSource.GetDefaultView(AllMaterials);
+            GroupedMaterialView.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
             List<List<MaterialModel>> sourceList =
             [
                 AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialWeaponExp, AllEntities.AllMaterialCharacterWeaponEnhancement1,
                 AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1, AllEntities.AllMaterialCharacterLevelUp2, AllEntities.AllMaterialCharacterAscension,
                 AllEntities.AllMaterialCharacterTalent, AllEntities.AllMaterialWeaponAscension, AllEntities.AllMaterialLocalSpecialty
             ];
-            List<ObservableCollection<Database4MaterialModel>> destinationList = [List1, List1, List1, List2, List2, List3, List3, List4, List5, List6, List7];
             for (int i = 0; i < sourceList.Count; i++)
             {
                 foreach (MaterialModel e in sourceList[i])
@@ -36,7 +34,22 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.ImagePath = e.ImagePath;
                     thisModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                     thisModel.StarImagePath = StringConstants.StarImagePath[e.Star];
-                    destinationList[i].Add(thisModel);
+                    switch (e.MaterialType)
+                    {
+                        case Enumeration.MaterialType.Mora: thisModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterExp: thisModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisModel.CategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisModel.CategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp1: thisModel.CategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp2: thisModel.CategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterAscension: thisModel.CategoryName = "角色突破素材"; break;
+                        case Enumeration.MaterialType.CharacterTalent: thisModel.CategoryName = "角色天赋素材"; break;
+                        case Enumeration.MaterialType.WeaponAscension: thisModel.CategoryName = "武器突破素材"; break;
+                        case Enumeration.MaterialType.LocalSpecialty: thisModel.CategoryName = "地方特产"; break;
+                        case Enumeration.MaterialType.WeaponExp: thisModel.CategoryName = "基础培养素材"; break;
+                    }
+
+                    AllMaterials.Add(thisModel);
                 }
             }
         }

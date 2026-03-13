@@ -21,8 +21,8 @@
                         <Grid.ToolTip>
                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" FontSize="12" Foreground="Black"></TextBlock>
                         </Grid.ToolTip>
-                        <Image Source="{Binding BackgroundImagePath, IsAsync=False}" Width="100" Height="100" Stretch="UniformToFill"></Image>
-                        <Image Source="{Binding ImagePath, IsAsync=False}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
                     </Grid>
                     <Viewbox Grid.Row="1" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                         <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>

@@ -14,7 +14,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Backpack4MaterialModel> AllMaterials { get; set; } = new();
+        public ObservableCollection<Backpack4MaterialModel> AllMaterials { get; } = new();
         public ICollectionView GroupedMaterialView { get; }
 
         public Backpack4MaterialViewModel()
