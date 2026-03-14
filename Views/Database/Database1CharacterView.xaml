@@ -11,7 +11,7 @@
     <UserControl.Resources>
         <DataTemplate x:Key="CharacterItemTemplate">
             <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
-                <Grid Width="376">
+                <Grid Width="441">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -19,7 +19,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
@@ -29,9 +29,9 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Orientation="Vertical">
                             <Grid>
-                                <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
-                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="215" Height="215" Stretch="UniformToFill"></Image>
-                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                             </Grid>
                             <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
                             <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
@@ -71,7 +71,7 @@
                                                 <RowDefinition Height="Auto"></RowDefinition>
                                             </Grid.RowDefinitions>
                                             <StackPanel Grid.Row="0">
-                                                <Grid Width="35" Height="35" ToolTipService.InitialShowDelay="100">
+                                                <Grid Width="45" Height="45" ToolTipService.InitialShowDelay="100">
                                                     <Grid.ToolTip>
                                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
                                                     </Grid.ToolTip>
@@ -168,7 +168,7 @@
                         </Image>
                     </Grid>
                     <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                    <ScrollViewer Grid.Row="6" MaxHeight="330" Style="{StaticResource ModernScrollViewer}">
+                    <ScrollViewer Grid.Row="6" Style="{StaticResource ModernScrollViewer}">
                         <Grid>
                             <ItemsControl ItemsSource="{Binding SimpleLevelStatTable}" Visibility="{Binding DataContext.IsShowLessNumbers, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ItemsControl.ItemsPanel>
@@ -188,7 +188,7 @@
                                                 <DataTemplate>
                                                     <Border BorderThickness="0.5" BorderBrush="#777777">
                                                         <Viewbox StretchDirection="DownOnly">
-                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" HorizontalAlignment="Center"></TextBlock>
                                                         </Viewbox>
                                                     </Border>
                                                     <DataTemplate.Triggers>
@@ -220,7 +220,7 @@
                                                 <DataTemplate>
                                                     <Border BorderThickness="0.5" BorderBrush="#777777">
                                                         <Viewbox StretchDirection="DownOnly">
-                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" HorizontalAlignment="Center"></TextBlock>
                                                         </Viewbox>
                                                     </Border>
                                                     <DataTemplate.Triggers>
@@ -244,26 +244,52 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="角色" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <Grid Grid.Row="2" Margin="30,5">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center"></CheckBox>
+            <ListBox Grid.Column="0" ItemsSource="{Binding AllCharacterList}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                </Grid>
+                                <TextBlock Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2" Style="{StaticResource MyTextBlock}"></TextBlock>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" Content="显示详细数据" IsChecked="{Binding IsShowMoreNumbers}" HorizontalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" VerticalAlignment="Center" Margin="0,5"></CheckBox>
+                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                <ContentControl Grid.Row="2" Content="{Binding SelectedCharacter}" ContentTemplate="{StaticResource CharacterItemTemplate}"></ContentControl>
+            </Grid>
         </Grid>
-        <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="4" ItemsSource="{Binding AllCharacterList}" ItemTemplate="{StaticResource CharacterItemTemplate}" Style="{StaticResource ModernVirtualizingListBox}">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <vwp:VirtualizingWrapPanel Orientation="Horizontal" SpacingMode="None" Margin="15,0,0,0"/>
-                    <!-- <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel> -->
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
     </Grid>
 </UserControl>

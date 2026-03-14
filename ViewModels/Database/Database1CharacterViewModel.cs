@@ -14,6 +14,7 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
+        [ObservableProperty] private Database1CharacterModel _selectedCharacter;
 
 
         public Database1CharacterViewModel()
@@ -167,6 +168,8 @@ namespace HexereiKatepnha.ViewModels.Database
                 }
                 AllCharacterList.Add(thisDatabase1CharacterModel);
             }
+
+            _selectedCharacter = AllCharacterList[0];
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
