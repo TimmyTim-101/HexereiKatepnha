@@ -53,7 +53,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="2" ItemsSource="{Binding AllMaterials}" ItemTemplate="{StaticResource MaterialItemTemplate}" Style="{StaticResource ModernListBox}">
+        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}">
             <ListBox.Items>
                 <ListBoxItem>
                     <StackPanel Orientation="Vertical">
