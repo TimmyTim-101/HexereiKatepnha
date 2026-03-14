@@ -14,13 +14,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Backpack4MaterialModel> AllMaterials { get; } = new();
-        public ICollectionView GroupedMaterialView { get; }
+        public ObservableCollection<Backpack4MaterialModel> MaterialList1 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList2 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList3 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList4 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList5 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList6 { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> MaterialList7 { get; } = new();
 
         public Backpack4MaterialViewModel()
         {
-            GroupedMaterialView = CollectionViewSource.GetDefaultView(AllMaterials);
-            GroupedMaterialView.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
             List<List<MaterialModel>> allLists =
             [
                 AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialCharacterWeaponEnhancement1, AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1,
@@ -40,20 +43,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
                     switch (e.MaterialType)
                     {
-                        case Enumeration.MaterialType.Mora: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp1: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp2: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterAscension: thisBackpack4MaterialModel.CategoryName = "角色突破素材"; break;
-                        case Enumeration.MaterialType.CharacterTalent: thisBackpack4MaterialModel.CategoryName = "角色天赋素材"; break;
-                        case Enumeration.MaterialType.WeaponAscension: thisBackpack4MaterialModel.CategoryName = "武器突破素材"; break;
-                        case Enumeration.MaterialType.LocalSpecialty: thisBackpack4MaterialModel.CategoryName = "地方特产"; break;
-                        case Enumeration.MaterialType.WeaponExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.Mora: MaterialList1.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterExp: MaterialList1.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: MaterialList2.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: MaterialList2.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterLevelUp1: MaterialList3.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterLevelUp2: MaterialList3.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterAscension: MaterialList4.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.CharacterTalent: MaterialList5.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.WeaponAscension: MaterialList6.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.LocalSpecialty: MaterialList7.Add(thisBackpack4MaterialModel); break;
+                        case Enumeration.MaterialType.WeaponExp: MaterialList1.Add(thisBackpack4MaterialModel); break;
                     }
-
-                    AllMaterials.Add(thisBackpack4MaterialModel);
                 }
             }
         }
@@ -85,14 +86,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
             if (clickItem != null)
             {
                 int recipeId = AutoCalculateConstants.MaterialMergeRecipe[clickItem.Rid];
-                foreach (Backpack4MaterialModel b in AllMaterials)
+                List<ObservableCollection<Backpack4MaterialModel>> allLists = [MaterialList2, MaterialList4, MaterialList5, MaterialList6];
+                foreach (ObservableCollection<Backpack4MaterialModel> l in allLists)
                 {
-                    if (b.Rid == recipeId)
+                    foreach (Backpack4MaterialModel b in l)
                     {
-                        if (b.Number >= 3)
+                        if (b.Rid == recipeId)
                         {
-                            b.Number -= 3;
-                            clickItem.Number += 1;
+                            if (b.Number >= 3)
+                            {
+                                b.Number -= 3;
+                                clickItem.Number += 1;
+                            }
                         }
                     }
                 }

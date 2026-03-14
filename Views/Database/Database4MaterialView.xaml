@@ -61,7 +61,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList1}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -74,7 +74,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList2}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -87,7 +87,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList3}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -100,7 +100,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList4}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -113,7 +113,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList5}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -126,7 +126,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList6}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
@@ -139,7 +139,7 @@
                         <ItemsControl ItemsSource="{Binding MaterialList7}" ItemTemplate="{StaticResource MaterialItemTemplate}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
