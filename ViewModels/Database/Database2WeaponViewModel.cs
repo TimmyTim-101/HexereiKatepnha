@@ -19,7 +19,6 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private Database2WeaponModel _selectedWeapon;
 
 
-
         public Database2WeaponViewModel()
         {
             foreach (WeaponModel e in AllEntities.AllWeapon)
@@ -93,6 +92,7 @@ namespace HexereiKatepnha.ViewModels.Database
                         }
                     }
                 }
+
                 AllWeaponList.Add(thisDatabase2WeaponModel);
             }
 

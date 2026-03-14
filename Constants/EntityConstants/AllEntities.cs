@@ -9,7 +9,7 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
-        CharacterConstantsPage12._1010111, 
+        CharacterConstantsPage12._1010111,
         CharacterConstantsPage11._1010110, CharacterConstantsPage11._1010109, CharacterConstantsPage11._1010108, CharacterConstantsPage11._1010107, CharacterConstantsPage11._1010106,
         CharacterConstantsPage11._1010105, CharacterConstantsPage11._1010104, CharacterConstantsPage11._1010103, CharacterConstantsPage11._1010102, CharacterConstantsPage11._1010101,
         CharacterConstantsPage10._1010100, CharacterConstantsPage10._1010099, CharacterConstantsPage10._1010098, CharacterConstantsPage10._1010097, CharacterConstantsPage10._1010096,
@@ -56,7 +56,7 @@ public static class AllEntities
         Claymore4Constants._2020417, Claymore4Constants._2020418, Claymore4Constants._2020419, Claymore4Constants._2020420, Claymore4Constants._2020421, Claymore4Constants._2020422, Claymore4Constants._2020423, Claymore4Constants._2020424,
         Claymore4Constants._2020425,
         Claymore5Constants._2020501, Claymore5Constants._2020502, Claymore5Constants._2020503, Claymore5Constants._2020504, Claymore5Constants._2020505, Claymore5Constants._2020506, Claymore5Constants._2020507, Claymore5Constants._2020508,
-        Claymore5Constants._2020509, Claymore5Constants._2020510, 
+        Claymore5Constants._2020509, Claymore5Constants._2020510,
         // 203 - 长柄武器
         Pole123Constants._2030101,
         Pole123Constants._2030201,
@@ -245,7 +245,7 @@ public static class AllEntities
         DungeonConstants._4050017, DungeonConstants._4050018, DungeonConstants._4050019, DungeonConstants._4050020, DungeonConstants._4050021, DungeonConstants._4050022, DungeonConstants._4050023, DungeonConstants._4050024,
         DungeonConstants._4050025, DungeonConstants._4050026, DungeonConstants._4050027, DungeonConstants._4050028, DungeonConstants._4050029, DungeonConstants._4050030, DungeonConstants._4050031, DungeonConstants._4050032,
         DungeonConstants._4050033, DungeonConstants._4050034, DungeonConstants._4050035, DungeonConstants._4050036, DungeonConstants._4050037, DungeonConstants._4050038, DungeonConstants._4050039, DungeonConstants._4050040,
-        DungeonConstants._4050041, DungeonConstants._4050042, DungeonConstants._4050043, 
+        DungeonConstants._4050041, DungeonConstants._4050042, DungeonConstants._4050043,
     ];
 
     // 406 - 圣遗物

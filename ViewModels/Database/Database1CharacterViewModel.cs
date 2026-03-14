@@ -166,6 +166,7 @@ namespace HexereiKatepnha.ViewModels.Database
                         }
                     }
                 }
+
                 AllCharacterList.Add(thisDatabase1CharacterModel);
             }
 

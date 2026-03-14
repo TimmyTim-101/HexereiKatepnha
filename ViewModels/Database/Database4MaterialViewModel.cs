@@ -11,13 +11,16 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public class Database4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Database4MaterialModel> AllMaterials { get; } = new();
-        public ICollectionView GroupedMaterialView { get; }
+        public ObservableCollection<Database4MaterialModel> MaterialList1 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList2 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList3 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList4 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList5 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList6 { get; } = new();
+        public ObservableCollection<Database4MaterialModel> MaterialList7 { get; } = new();
 
         public Database4MaterialViewModel()
         {
-            GroupedMaterialView = CollectionViewSource.GetDefaultView(AllMaterials);
-            GroupedMaterialView.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
             List<List<MaterialModel>> sourceList =
             [
                 AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialWeaponExp, AllEntities.AllMaterialCharacterWeaponEnhancement1,
@@ -36,20 +39,18 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.StarImagePath = StringConstants.StarImagePath[e.Star];
                     switch (e.MaterialType)
                     {
-                        case Enumeration.MaterialType.Mora: thisModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterExp: thisModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp1: thisModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp2: thisModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterAscension: thisModel.CategoryName = "角色突破素材"; break;
-                        case Enumeration.MaterialType.CharacterTalent: thisModel.CategoryName = "角色天赋素材"; break;
-                        case Enumeration.MaterialType.WeaponAscension: thisModel.CategoryName = "武器突破素材"; break;
-                        case Enumeration.MaterialType.LocalSpecialty: thisModel.CategoryName = "地方特产"; break;
-                        case Enumeration.MaterialType.WeaponExp: thisModel.CategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.Mora: MaterialList1.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterExp: MaterialList1.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: MaterialList2.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: MaterialList2.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterLevelUp1: MaterialList3.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterLevelUp2: MaterialList3.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterAscension: MaterialList4.Add(thisModel); break;
+                        case Enumeration.MaterialType.CharacterTalent: MaterialList5.Add(thisModel); break;
+                        case Enumeration.MaterialType.WeaponAscension: MaterialList6.Add(thisModel); break;
+                        case Enumeration.MaterialType.LocalSpecialty: MaterialList7.Add(thisModel); break;
+                        case Enumeration.MaterialType.WeaponExp: MaterialList1.Add(thisModel); break;
                     }
-
-                    AllMaterials.Add(thisModel);
                 }
             }
         }
