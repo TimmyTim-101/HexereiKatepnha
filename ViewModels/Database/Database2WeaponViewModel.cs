@@ -11,21 +11,12 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public partial class Database2WeaponViewModel : ObservableObject
     {
-        [ObservableProperty] private bool _isShowProgression;
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
         [ObservableProperty] private bool _isShowAwakenImage;
         [ObservableProperty] private bool _isShowOriginalImage = true;
-        public ObservableCollection<Database2WeaponModel> AllSwordList { get; } = new();
-        public string SwordImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
-        public ObservableCollection<Database2WeaponModel> AllClaymoreList { get; } = new();
-        public string ClaymoreImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
-        public ObservableCollection<Database2WeaponModel> AllPoleList { get; } = new();
-        public string PoleImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
-        public ObservableCollection<Database2WeaponModel> AllCatalystList { get; } = new();
-        public string CatalystImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
-        public ObservableCollection<Database2WeaponModel> AllBowList { get; } = new();
-        public string BowImagePath { get; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
+        public ObservableCollection<Database2WeaponModel> AllWeaponList { get; } = new();
+        [ObservableProperty] private Database2WeaponModel _selectedWeapon;
 
 
 
@@ -102,16 +93,10 @@ namespace HexereiKatepnha.ViewModels.Database
                         }
                     }
                 }
-
-                switch (e.WeaponType)
-                {
-                    case Enumeration.WeaponType.Sword: AllSwordList.Add(thisDatabase2WeaponModel); break;
-                    case Enumeration.WeaponType.Claymore: AllClaymoreList.Add(thisDatabase2WeaponModel); break;
-                    case Enumeration.WeaponType.Pole: AllPoleList.Add(thisDatabase2WeaponModel); break;
-                    case Enumeration.WeaponType.Catalyst: AllCatalystList.Add(thisDatabase2WeaponModel); break;
-                    case Enumeration.WeaponType.Bow: AllBowList.Add(thisDatabase2WeaponModel); break;
-                }
+                AllWeaponList.Add(thisDatabase2WeaponModel);
             }
+
+            _selectedWeapon = AllWeaponList[0];
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
