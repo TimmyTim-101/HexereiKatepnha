@@ -1,4 +1,5 @@
-﻿using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
+﻿using HexereiKatepnha.Constants.EntityConstants;
+using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;
 
@@ -9,7 +10,9 @@ public class Database2WeaponModel
     public string ImagePath { get; set; } = "";
     public string AwakenImagePath { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
+    public int Star { get; set; }
     public string StarImagePath { get; set; } = "";
+    public Enumeration.WeaponType WeaponType { get; set; } = Enumeration.WeaponType.Unknown;
     public string WeaponTypeName { get; set; } = "";
     public string WeaponTypeImagePath { get; set; } = "";
     public string SubAffixName { get; set; } = "";

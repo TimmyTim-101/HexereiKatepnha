@@ -1,6 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
@@ -15,9 +18,21 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowLessNumbers = true;
         [ObservableProperty] private bool _isShowAwakenImage;
         [ObservableProperty] private bool _isShowOriginalImage = true;
+        [ObservableProperty] private int _weaponFilter = 0;
+        [ObservableProperty] private int _starFilter = 0;
         public ObservableCollection<Database2WeaponModel> AllWeaponList { get; } = new();
         [ObservableProperty] private Database2WeaponModel _selectedWeapon;
-
+        public ICollectionView WeaponView { get; }
+        public string Weapon1ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
+        public string Weapon2ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
+        public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
+        public string Weapon4ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
+        public string Weapon5ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
+        public string Star1ImagePath { get; set; } = StringConstants.StarImagePath[1];
+        public string Star2ImagePath { get; set; } = StringConstants.StarImagePath[2];
+        public string Star3ImagePath { get; set; } = StringConstants.StarImagePath[3];
+        public string Star4ImagePath { get; set; } = StringConstants.StarImagePath[4];
+        public string Star5ImagePath { get; set; } = StringConstants.StarImagePath[5];
 
         public Database2WeaponViewModel()
         {
@@ -29,7 +44,9 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.ImagePath = e.ImagePath;
                 thisDatabase2WeaponModel.AwakenImagePath = e.AwakenImagePath;
                 thisDatabase2WeaponModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                thisDatabase2WeaponModel.Star = e.Star;
                 thisDatabase2WeaponModel.StarImagePath = StringConstants.StarImagePath[e.Star];
+                thisDatabase2WeaponModel.WeaponType = e.WeaponType;
                 thisDatabase2WeaponModel.WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType];
                 thisDatabase2WeaponModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
                 thisDatabase2WeaponModel.SubAffixName = StringConstants.AffixString[e.SubAffix];
@@ -97,6 +114,37 @@ namespace HexereiKatepnha.ViewModels.Database
             }
 
             _selectedWeapon = AllWeaponList[0];
+            WeaponView = CollectionViewSource.GetDefaultView(AllWeaponList);
+            WeaponView.Filter = WeaponsFilter;
+        }
+
+        private bool WeaponsFilter(object item)
+        {
+            if (item is Database2WeaponModel w)
+            {
+                bool isWeapon = true;
+                bool isStar = (StarFilter == w.Star) || (StarFilter == 0);
+                switch (WeaponFilter)
+                {
+                    case 1: isWeapon = w.WeaponType == Enumeration.WeaponType.Sword; break;
+                    case 2: isWeapon = w.WeaponType == Enumeration.WeaponType.Claymore; break;
+                    case 3: isWeapon = w.WeaponType == Enumeration.WeaponType.Pole; break;
+                    case 4: isWeapon = w.WeaponType == Enumeration.WeaponType.Catalyst; break;
+                    case 5: isWeapon = w.WeaponType == Enumeration.WeaponType.Bow; break;
+                }
+
+                return isWeapon && isStar;
+            }
+
+            return false;
+        }
+
+        private void UpdateSelection()
+        {
+            if (!WeaponView.Contains(SelectedWeapon))
+            {
+                SelectedWeapon = WeaponView.Cast<Database2WeaponModel>().FirstOrDefault()!;
+            }
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
@@ -107,6 +155,46 @@ namespace HexereiKatepnha.ViewModels.Database
         partial void OnIsShowAwakenImageChanged(bool value)
         {
             IsShowOriginalImage = !IsShowAwakenImage;
+        }
+
+        partial void OnWeaponFilterChanged(int value)
+        {
+            WeaponView.Refresh();
+            UpdateSelection();
+        }
+
+        partial void OnStarFilterChanged(int value)
+        {
+            WeaponView.Refresh();
+            UpdateSelection();
+        }
+
+        [RelayCommand]
+        private void ClickOnWeaponFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            if (valueInt == WeaponFilter)
+            {
+                WeaponFilter = 0;
+            }
+            else
+            {
+                WeaponFilter = valueInt;
+            }
+        }
+
+        [RelayCommand]
+        private void ClickOnStarFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            if (valueInt == StarFilter)
+            {
+                StarFilter = 0;
+            }
+            else
+            {
+                StarFilter = valueInt;
+            }
         }
     }
 }
