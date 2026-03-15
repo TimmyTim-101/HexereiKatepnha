@@ -39,9 +39,6 @@
     <DataTemplate DataType="{x:Type calculator:Calculator3AllViewModel}">
         <calculator1:Calculator3AllView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type calculator:Calculator4SettingViewModel}">
-        <calculator1:Calculator4SettingView />
-    </DataTemplate>
     <DataTemplate DataType="{x:Type calculator:Calculator5PotentialViewModel}">
         <calculator1:Calculator5PotentialView />
     </DataTemplate>

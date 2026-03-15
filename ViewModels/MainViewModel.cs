@@ -44,7 +44,6 @@ namespace HexereiKatepnha.ViewModels
                 case 37: CurrentContentViewModel = new Calculator7PlanSettingViewModel(); break;
                 case 32: CurrentContentViewModel = new Calculator2PlanViewModel(); break;
                 case 33: CurrentContentViewModel = new Calculator3AllViewModel(); break;
-                case 34: CurrentContentViewModel = new Calculator4SettingViewModel(); break;
                 case 35: CurrentContentViewModel = new Calculator5PotentialViewModel(); break;
                 case 36: CurrentContentViewModel = new Calculator6MatchViewModel(); break;
 

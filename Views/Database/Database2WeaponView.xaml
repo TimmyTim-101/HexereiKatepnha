@@ -3,12 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
+             xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database"
+             d:DataContext="{d:DesignInstance vm:Database2WeaponViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
-        <DataTemplate x:Key="WeaponItemTemplate">
+        <DataTemplate x:Key="WeaponItemTemplate" DataType="{x:Type models:Database2WeaponModel}">
             <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
                 <Grid Width="441">
                     <Grid.RowDefinitions>
@@ -83,7 +86,7 @@
                         </Grid>
                     </Grid>
                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                    <TabControl Grid.Row="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Height="200" Visibility="{Binding DataContext.IsShowProgression, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TabControl Grid.Row="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Height="190">
                         <TabItem Header="精炼1阶">
                             <ScrollViewer Style="{StaticResource ModernScrollViewer}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression1}" TextWrapping="Wrap" FontSize="16"></TextBlock>
