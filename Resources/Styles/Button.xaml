@@ -43,7 +43,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

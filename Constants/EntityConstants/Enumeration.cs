@@ -15,13 +15,13 @@ public static class Enumeration
     public enum ElementType
     {
         Unknown = 0,
-        Pyro = 1,
-        Hydro = 2,
-        Anemo = 3,
-        Electro = 4,
-        Dendro = 5,
-        Cryo = 6,
-        Geo = 7,
+        Pyro = 1, // 火
+        Hydro = 2, // 水
+        Anemo = 3, // 风
+        Electro = 4, // 雷
+        Dendro = 5, // 草
+        Cryo = 6, // 冰
+        Geo = 7, // 岩
     }
 
     public enum MaterialType

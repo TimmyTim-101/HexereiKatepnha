@@ -1,6 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
@@ -13,9 +16,23 @@ namespace HexereiKatepnha.ViewModels.Database
     {
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
+        [ObservableProperty] private int _elementFilter = 0;
+        [ObservableProperty] private int _weaponFilter = 0;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Database1CharacterModel _selectedCharacter;
-
+        public ICollectionView CharacterView { get; }
+        public string Element1ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
+        public string Element2ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
+        public string Element3ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Anemo];
+        public string Element4ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Electro];
+        public string Element5ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Dendro];
+        public string Element6ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Cryo];
+        public string Element7ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Geo];
+        public string Weapon1ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
+        public string Weapon2ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
+        public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
+        public string Weapon4ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
+        public string Weapon5ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
 
         public Database1CharacterViewModel()
         {
@@ -23,12 +40,14 @@ namespace HexereiKatepnha.ViewModels.Database
             {
                 Database1CharacterModel thisDatabase1CharacterModel = new Database1CharacterModel();
                 thisDatabase1CharacterModel.ImagePath = e.ImagePath;
+                thisDatabase1CharacterModel.ElementType = e.ElementType;
                 thisDatabase1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
                 thisDatabase1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                 thisDatabase1CharacterModel.Name = e.Name;
                 thisDatabase1CharacterModel.Vid = e.Vid;
                 thisDatabase1CharacterModel.StarImagePath = StringConstants.StarImagePath[e.Star];
                 thisDatabase1CharacterModel.BirthdayString = "生日：" + e.BirthMonth + " / " + e.BirthDay;
+                thisDatabase1CharacterModel.WeaponType = e.WeaponType;
                 thisDatabase1CharacterModel.WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType];
                 thisDatabase1CharacterModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
                 thisDatabase1CharacterModel.NeedMaterialList = [];
@@ -171,11 +190,93 @@ namespace HexereiKatepnha.ViewModels.Database
             }
 
             _selectedCharacter = AllCharacterList[0];
+            CharacterView = CollectionViewSource.GetDefaultView(AllCharacterList);
+            CharacterView.Filter = CharacterFilter;
+        }
+
+        private bool CharacterFilter(object item)
+        {
+            if (item is Database1CharacterModel c)
+            {
+                bool isElement = true;
+                bool isWeapon = true;
+                switch (ElementFilter)
+                {
+                    case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
+                    case 2: isElement = c.ElementType == Enumeration.ElementType.Hydro; break;
+                    case 3: isElement = c.ElementType == Enumeration.ElementType.Anemo; break;
+                    case 4: isElement = c.ElementType == Enumeration.ElementType.Electro; break;
+                    case 5: isElement = c.ElementType == Enumeration.ElementType.Dendro; break;
+                    case 6: isElement = c.ElementType == Enumeration.ElementType.Cryo; break;
+                    case 7: isElement = c.ElementType == Enumeration.ElementType.Geo; break;
+                }
+
+                switch (WeaponFilter)
+                {
+                    case 1: isWeapon = c.WeaponType == Enumeration.WeaponType.Sword; break;
+                    case 2: isWeapon = c.WeaponType == Enumeration.WeaponType.Claymore; break;
+                    case 3: isWeapon = c.WeaponType == Enumeration.WeaponType.Pole; break;
+                    case 4: isWeapon = c.WeaponType == Enumeration.WeaponType.Catalyst; break;
+                    case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
+                }
+
+                return isElement && isWeapon;
+            }
+
+            return false;
+        }
+
+        private void UpdateSelection()
+        {
+            if (!CharacterView.Contains(SelectedCharacter))
+            {
+                SelectedCharacter = CharacterView.Cast<Database1CharacterModel>().FirstOrDefault()!;
+            }
         }
 
         partial void OnIsShowMoreNumbersChanged(bool value)
         {
             IsShowLessNumbers = !IsShowMoreNumbers;
+        }
+
+        partial void OnElementFilterChanged(int value)
+        {
+            CharacterView.Refresh();
+            UpdateSelection();
+        }
+
+        partial void OnWeaponFilterChanged(int value)
+        {
+            CharacterView.Refresh();
+            UpdateSelection();
+        }
+
+        [RelayCommand]
+        private void ClickOnElementFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            if (valueInt == ElementFilter)
+            {
+                ElementFilter = 0;
+            }
+            else
+            {
+                ElementFilter = valueInt;
+            }
+        }
+
+        [RelayCommand]
+        private void ClickOnWeaponFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            if (valueInt == WeaponFilter)
+            {
+                WeaponFilter = 0;
+            }
+            else
+            {
+                WeaponFilter = valueInt;
+            }
         }
     }
 }

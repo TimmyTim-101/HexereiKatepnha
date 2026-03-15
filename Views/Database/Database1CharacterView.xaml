@@ -259,9 +259,230 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="筛选器" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="1" Margin="2">
+                            <Image Source="{Binding Element1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="火" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="1">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="2" Margin="2">
+                            <Image Source="{Binding Element2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="水" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="2">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="3" Margin="2">
+                            <Image Source="{Binding Element3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="风" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="3">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="4" Margin="2">
+                            <Image Source="{Binding Element4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="雷" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="4">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="5" Margin="2">
+                            <Image Source="{Binding Element5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="草" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="5">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="6" Margin="2">
+                            <Image Source="{Binding Element6ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="冰" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="6">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="7" Margin="2">
+                            <Image Source="{Binding Element7ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="岩" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementFilter}" Value="7">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
+                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="1" Margin="2">
+                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="单手剑" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="1">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="2" Margin="2">
+                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="双手剑" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="2">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="3" Margin="2">
+                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="长柄武器" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="3">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="4" Margin="2">
+                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="法器" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="4">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="5" Margin="2">
+                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                                <Image.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="弓" FontSize="12" Foreground="Black"></TextBlock>
+                                    </ToolTip>
+                                </Image.ToolTip>
+                            </Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="5">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </WrapPanel>
+                </StackPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ListBox Grid.Row="2" ItemsSource="{Binding AllCharacterList}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
+                <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
