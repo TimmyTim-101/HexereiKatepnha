@@ -14,7 +14,7 @@ namespace HexereiKatepnha
     public partial class App
     {
         public static ThemeConfigManager? ThemeConfigManagerInstance { get; set; }
-        public static AccountConfigManager? AccountConfigManagerInstance { get; set; }
+        public static AccountConfigManager? AccountConfigManagerInstance { get; private set; }
         public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
         public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
 

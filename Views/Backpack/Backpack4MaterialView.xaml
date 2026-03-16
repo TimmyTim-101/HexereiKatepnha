@@ -3,12 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
+             xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Backpack"
+             d:DataContext="{d:DesignInstance vm:Backpack4MaterialViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
-        <DataTemplate x:Key="BackpackMaterialItemTemplate">
+        <DataTemplate x:Key="BackpackMaterialItemTemplate" DataType="{x:Type models:Backpack4MaterialModel}">
             <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
                 <Grid>
                     <Grid.RowDefinitions>

@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
+             d:DataContext="{d:DesignInstance vm:Database5DungeonViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
@@ -27,7 +30,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -90,7 +93,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -165,7 +168,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -228,7 +231,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -291,7 +294,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -366,7 +369,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -438,7 +441,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -519,7 +522,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -600,7 +603,7 @@
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Database5DungeonModel}">
                                     <Border Margin="5,5,0,0" CornerRadius="5" BorderBrush="White" BorderThickness="1">
                                         <Grid>
                                             <Grid.RowDefinitions>

@@ -1,4 +1,4 @@
-﻿namespace HexereiKatepnha.Models.EntityModels;
+﻿namespace HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 public class ArtifactEffectModel
 {

@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls;
-
-namespace HexereiKatepnha.Views.Database;
+﻿namespace HexereiKatepnha.Views.Database;
 
 public partial class Database5DungeonView
 {

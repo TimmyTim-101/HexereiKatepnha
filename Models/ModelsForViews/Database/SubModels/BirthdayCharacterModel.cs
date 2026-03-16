@@ -8,6 +8,6 @@ public class BirthdayCharacterModel
     public string ElementImagePath { get; set; } = "";
     public string Name { get; set; } = "";
     public string BirthdayString { get; set; } = "";
-    public bool IsTodayBirthday { get; set; } = false;
+    public bool IsTodayBirthday { get; set; }
     public bool IsNotTodayBirthday { get; set; } = true;
 }

@@ -127,17 +127,17 @@
                                         <UniformGrid Rows="1">
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s2}" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S2}" HorizontalAlignment="Center"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s3}" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S3}" HorizontalAlignment="Center"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                         </UniformGrid>
@@ -155,17 +155,17 @@
                                         <UniformGrid Rows="1">
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s2}" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S2}" HorizontalAlignment="Center"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                             <Border BorderThickness="0.5" BorderBrush="#777777">
                                                 <Viewbox StretchDirection="DownOnly">
-                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding s3}" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S3}" HorizontalAlignment="Center"></TextBlock>
                                                 </Viewbox>
                                             </Border>
                                         </UniformGrid>

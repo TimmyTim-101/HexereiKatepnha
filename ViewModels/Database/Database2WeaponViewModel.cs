@@ -18,8 +18,8 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowLessNumbers = true;
         [ObservableProperty] private bool _isShowAwakenImage;
         [ObservableProperty] private bool _isShowOriginalImage = true;
-        [ObservableProperty] private int _weaponFilter = 0;
-        [ObservableProperty] private int _starFilter = 0;
+        [ObservableProperty] private int _weaponFilter;
+        [ObservableProperty] private int _starFilter;
         public ObservableCollection<Database2WeaponModel> AllWeaponList { get; } = new();
         [ObservableProperty] private Database2WeaponModel _selectedWeapon;
         public ICollectionView WeaponView { get; }
@@ -82,9 +82,9 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.Progression5 = "·" + e.Progression[5];
 
                 thisDatabase2WeaponModel.SimpleLevelStatTable.Clear();
-                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { S1 = "等级", S2 = "攻击力", S3 = StringConstants.AffixString[e.SubAffix] });
                 thisDatabase2WeaponModel.FullLevelStatTable.Clear();
-                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { s1 = "等级", s2 = "攻击力", s3 = StringConstants.AffixString[e.SubAffix] });
+                thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { S1 = "等级", S2 = "攻击力", S3 = StringConstants.AffixString[e.SubAffix] });
                 for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
                 {
                     Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
@@ -92,16 +92,16 @@ namespace HexereiKatepnha.ViewModels.Database
                     {
                         WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel
                         {
-                            s1 = StringConstants.LevelString[thisLevel],
-                            s2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
-                            s3 = e.SubAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
+                            S1 = StringConstants.LevelString[thisLevel],
+                            S2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
+                            S3 = e.SubAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
                         };
                         if (SequenceConstants.AffixPercentageSymbolList.Contains(e.SubAffix))
                         {
-                            thisWeaponLevelStatModel.s3 += "%";
+                            thisWeaponLevelStatModel.S3 += "%";
                         }
 
-                        if (thisWeaponLevelStatModel.s3 == "0") thisWeaponLevelStatModel.s3 = "";
+                        if (thisWeaponLevelStatModel.S3 == "0") thisWeaponLevelStatModel.S3 = "";
                         thisDatabase2WeaponModel.FullLevelStatTable.Add(thisWeaponLevelStatModel);
                         if (SequenceConstants.ImportantLevels.Contains(thisLevel))
                         {

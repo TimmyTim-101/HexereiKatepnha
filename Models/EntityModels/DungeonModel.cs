@@ -12,6 +12,6 @@ public class DungeonModel : BaseEntityModel
     public override string ImagePath { get; set; } = "";
     public Enumeration.DungeonType DungeonType = Enumeration.DungeonType.Unknown;
     public int Cost { get; set; }
-    public int Time { get; set; } = 0;
+    public int Time { get; set; }
     public List<MaterialPairModel> DropMaterialList = [];
 }

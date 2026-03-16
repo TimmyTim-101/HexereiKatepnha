@@ -1,5 +1,4 @@
-﻿using HexereiKatepnha.Models.EntityModels;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
+﻿using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;
 

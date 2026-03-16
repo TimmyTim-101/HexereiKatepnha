@@ -26,7 +26,7 @@ public partial class Backpack4MaterialView
                 textBox.Text = "0";
                 textBox.SelectAll();
             }
-            else if (textBox.Text.Length > 1 && textBox.Text.StartsWith("0"))
+            else if (textBox.Text.Length > 1 && textBox.Text.StartsWith('0'))
             {
                 textBox.Text = textBox.Text.TrimStart('0');
                 textBox.CaretIndex = textBox.Text.Length;

@@ -16,8 +16,8 @@ namespace HexereiKatepnha.ViewModels.Database
     {
         [ObservableProperty] private bool _isShowMoreNumbers;
         [ObservableProperty] private bool _isShowLessNumbers = true;
-        [ObservableProperty] private int _elementFilter = 0;
-        [ObservableProperty] private int _weaponFilter = 0;
+        [ObservableProperty] private int _elementFilter;
+        [ObservableProperty] private int _weaponFilter;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Database1CharacterModel _selectedCharacter;
         public ICollectionView CharacterView { get; }

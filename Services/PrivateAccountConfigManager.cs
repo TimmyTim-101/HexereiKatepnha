@@ -9,6 +9,5 @@ public class PrivateAccountConfigManager : ConfigManagerBase<PrivateAccountConfi
     public PrivateAccountConfigManager(Guid accountGuid)
     {
         ConfigFileName = "Configs/" + accountGuid + "/PrivateAccountConfig.json";
-        Configuration.SelfAccountName = App.AccountConfigManagerInstance!.Configuration.CurrentAccount;
     }
 }

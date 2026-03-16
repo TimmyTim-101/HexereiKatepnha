@@ -70,7 +70,7 @@ namespace HexereiKatepnha.ViewModels.Database
                             thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
                         }
 
-                        thisDropItem.MaterialName = thisMaterial!.Name;
+                        thisDropItem.MaterialName = thisMaterial.Name;
                         thisDropItem.DropNum = ipm.DropNum;
                         thisDropItemList.Add(thisDropItem);
                     }

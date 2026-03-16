@@ -12,8 +12,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack1CharacterViewModel : ObservableObject
     {
-        [ObservableProperty] private int _elementFilter = 0;
-        [ObservableProperty] private int _weaponFilter = 0;
+        [ObservableProperty] private int _elementFilter;
+        [ObservableProperty] private int _weaponFilter;
         public ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
         public ICollectionView CharacterView { get; }
@@ -40,8 +40,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
                 thisBackpack1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                 thisBackpack1CharacterModel.Name = e.Name;
-                thisBackpack1CharacterModel.Rid = e.Rid;
-                thisBackpack1CharacterModel.StarImagePath = StringConstants.StarImagePath[e.Star];
                 thisBackpack1CharacterModel.WeaponType = e.WeaponType;
                 AllCharacterList.Add(thisBackpack1CharacterModel);
             }

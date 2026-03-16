@@ -3,12 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
+             xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database"
+             d:DataContext="{d:DesignInstance vm:Database1CharacterViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
-        <DataTemplate x:Key="CharacterItemTemplate">
+        <DataTemplate x:Key="CharacterItemTemplate" DataType="{x:Type models:Database1CharacterModel}">
             <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
                 <Grid Width="441">
                     <Grid.RowDefinitions>
@@ -489,7 +492,7 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate DataType="{x:Type models:Database1CharacterModel}">
                             <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand">
                                 <Grid>
                                     <Grid.RowDefinitions>

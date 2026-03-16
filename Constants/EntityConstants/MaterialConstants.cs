@@ -77,7 +77,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112014.png"
     };
 
-    public static readonly MaterialGroupModel G3030001 = new([_3030001, _3030002, _3030003], 3);
+    public static readonly MaterialGroupModel G3030001 = new([_3030001, _3030002, _3030003]);
 
     public static readonly MaterialModel _3030004 = new()
     {
@@ -109,7 +109,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112020.png"
     };
 
-    public static readonly MaterialGroupModel G3030004 = new([_3030004, _3030005, _3030006], 3);
+    public static readonly MaterialGroupModel G3030004 = new([_3030004, _3030005, _3030006]);
 
     public static readonly MaterialModel _3030007 = new()
     {
@@ -141,7 +141,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112023.png"
     };
 
-    public static readonly MaterialGroupModel G3030007 = new([_3030007, _3030008, _3030009], 3);
+    public static readonly MaterialGroupModel G3030007 = new([_3030007, _3030008, _3030009]);
 
     public static readonly MaterialModel _3030010 = new()
     {
@@ -173,7 +173,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112026.png"
     };
 
-    public static readonly MaterialGroupModel G3030010 = new([_3030010, _3030011, _3030012], 3);
+    public static readonly MaterialGroupModel G3030010 = new([_3030010, _3030011, _3030012]);
 
     public static readonly MaterialModel _3030013 = new()
     {
@@ -205,7 +205,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112029.png"
     };
 
-    public static readonly MaterialGroupModel G3030013 = new([_3030013, _3030014, _3030015], 3);
+    public static readonly MaterialGroupModel G3030013 = new([_3030013, _3030014, _3030015]);
 
     public static readonly MaterialModel _3030016 = new()
     {
@@ -237,7 +237,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112041.png"
     };
 
-    public static readonly MaterialGroupModel G3030016 = new([_3030016, _3030017, _3030018], 3);
+    public static readonly MaterialGroupModel G3030016 = new([_3030016, _3030017, _3030018]);
 
     public static readonly MaterialModel _3030019 = new()
     {
@@ -269,7 +269,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112047.png"
     };
 
-    public static readonly MaterialGroupModel G3030019 = new([_3030019, _3030020, _3030021], 3);
+    public static readonly MaterialGroupModel G3030019 = new([_3030019, _3030020, _3030021]);
 
     public static readonly MaterialModel _3030022 = new()
     {
@@ -301,7 +301,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112050.png"
     };
 
-    public static readonly MaterialGroupModel G3030022 = new([_3030022, _3030023, _3030024], 3);
+    public static readonly MaterialGroupModel G3030022 = new([_3030022, _3030023, _3030024]);
 
     public static readonly MaterialModel _3030025 = new()
     {
@@ -333,7 +333,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112056.png"
     };
 
-    public static readonly MaterialGroupModel G3030025 = new([_3030025, _3030026, _3030027], 3);
+    public static readonly MaterialGroupModel G3030025 = new([_3030025, _3030026, _3030027]);
 
     public static readonly MaterialModel _3030028 = new()
     {
@@ -365,7 +365,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112017.png"
     };
 
-    public static readonly MaterialGroupModel G3030028 = new([_3030028, _3030029, _3030030], 3);
+    public static readonly MaterialGroupModel G3030028 = new([_3030028, _3030029, _3030030]);
 
     public static readonly MaterialModel _3030031 = new()
     {
@@ -397,7 +397,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112062.png"
     };
 
-    public static readonly MaterialGroupModel G3030031 = new([_3030031, _3030032, _3030033], 3);
+    public static readonly MaterialGroupModel G3030031 = new([_3030031, _3030032, _3030033]);
 
     public static readonly MaterialModel _3030034 = new()
     {
@@ -429,7 +429,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112068.png"
     };
 
-    public static readonly MaterialGroupModel G3030034 = new([_3030034, _3030035, _3030036], 3);
+    public static readonly MaterialGroupModel G3030034 = new([_3030034, _3030035, _3030036]);
 
     public static readonly MaterialModel _3030037 = new()
     {
@@ -461,7 +461,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112071.png"
     };
 
-    public static readonly MaterialGroupModel G3030037 = new([_3030037, _3030038, _3030039], 3);
+    public static readonly MaterialGroupModel G3030037 = new([_3030037, _3030038, _3030039]);
 
     public static readonly MaterialModel _3030040 = new()
     {
@@ -493,7 +493,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112074.png"
     };
 
-    public static readonly MaterialGroupModel G3030040 = new([_3030040, _3030041, _3030042], 3);
+    public static readonly MaterialGroupModel G3030040 = new([_3030040, _3030041, _3030042]);
 
     public static readonly MaterialModel _3030043 = new()
     {
@@ -525,7 +525,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112077.png"
     };
 
-    public static readonly MaterialGroupModel G3030043 = new([_3030043, _3030044, _3030045], 3);
+    public static readonly MaterialGroupModel G3030043 = new([_3030043, _3030044, _3030045]);
 
     public static readonly MaterialModel _3030046 = new()
     {
@@ -557,7 +557,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112086.png"
     };
 
-    public static readonly MaterialGroupModel G3030046 = new([_3030046, _3030047, _3030048], 3);
+    public static readonly MaterialGroupModel G3030046 = new([_3030046, _3030047, _3030048]);
 
     public static readonly MaterialModel _3030049 = new()
     {
@@ -589,7 +589,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112089.png"
     };
 
-    public static readonly MaterialGroupModel G3030049 = new([_3030049, _3030050, _3030051], 3);
+    public static readonly MaterialGroupModel G3030049 = new([_3030049, _3030050, _3030051]);
 
     public static readonly MaterialModel _3030052 = new()
     {
@@ -621,7 +621,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112092.png"
     };
 
-    public static readonly MaterialGroupModel G3030052 = new([_3030052, _3030053, _3030054], 3);
+    public static readonly MaterialGroupModel G3030052 = new([_3030052, _3030053, _3030054]);
 
     public static readonly MaterialModel _3030055 = new()
     {
@@ -653,7 +653,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112095.png"
     };
 
-    public static readonly MaterialGroupModel G3030055 = new([_3030055, _3030056, _3030057], 3);
+    public static readonly MaterialGroupModel G3030055 = new([_3030055, _3030056, _3030057]);
 
     public static readonly MaterialModel _3030058 = new()
     {
@@ -685,7 +685,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112098.png"
     };
 
-    public static readonly MaterialGroupModel G3030058 = new([_3030058, _3030059, _3030060], 3);
+    public static readonly MaterialGroupModel G3030058 = new([_3030058, _3030059, _3030060]);
 
     public static readonly MaterialModel _3030061 = new()
     {
@@ -717,7 +717,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112107.png"
     };
 
-    public static readonly MaterialGroupModel G3030061 = new([_3030061, _3030062, _3030063], 3);
+    public static readonly MaterialGroupModel G3030061 = new([_3030061, _3030062, _3030063]);
 
     public static readonly MaterialModel _3030064 = new()
     {
@@ -749,7 +749,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112110.png"
     };
 
-    public static readonly MaterialGroupModel G3030064 = new([_3030064, _3030065, _3030066], 3);
+    public static readonly MaterialGroupModel G3030064 = new([_3030064, _3030065, _3030066]);
 
     public static readonly MaterialModel _3030067 = new()
     {
@@ -781,7 +781,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112113.png"
     };
 
-    public static readonly MaterialGroupModel G3030067 = new([_3030067, _3030068, _3030069], 3);
+    public static readonly MaterialGroupModel G3030067 = new([_3030067, _3030068, _3030069]);
 
     public static readonly MaterialModel _3030070 = new()
     {
@@ -813,7 +813,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112116.png"
     };
 
-    public static readonly MaterialGroupModel G3030070 = new([_3030070, _3030071, _3030072], 3);
+    public static readonly MaterialGroupModel G3030070 = new([_3030070, _3030071, _3030072]);
 
     public static readonly MaterialModel _3030073 = new()
     {
@@ -845,7 +845,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112119.png"
     };
 
-    public static readonly MaterialGroupModel G3030073 = new([_3030073, _3030074, _3030075], 3);
+    public static readonly MaterialGroupModel G3030073 = new([_3030073, _3030074, _3030075]);
 
     public static readonly MaterialModel _3030076 = new()
     {
@@ -877,7 +877,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112128.png"
     };
 
-    public static readonly MaterialGroupModel G3030076 = new([_3030076, _3030077, _3030078], 3);
+    public static readonly MaterialGroupModel G3030076 = new([_3030076, _3030077, _3030078]);
 
     public static readonly MaterialModel _3030079 = new()
     {
@@ -909,7 +909,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112131.png"
     };
 
-    public static readonly MaterialGroupModel G3030079 = new([_3030079, _3030080, _3030081], 3);
+    public static readonly MaterialGroupModel G3030079 = new([_3030079, _3030080, _3030081]);
 
     public static readonly MaterialModel _3030082 = new()
     {
@@ -941,7 +941,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112134.png"
     };
 
-    public static readonly MaterialGroupModel G3030082 = new([_3030082, _3030083, _3030084], 3);
+    public static readonly MaterialGroupModel G3030082 = new([_3030082, _3030083, _3030084]);
 
     public static readonly MaterialModel _3030085 = new()
     {
@@ -973,7 +973,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112137.png"
     };
 
-    public static readonly MaterialGroupModel G3030085 = new([_3030085, _3030086, _3030087], 3);
+    public static readonly MaterialGroupModel G3030085 = new([_3030085, _3030086, _3030087]);
 
     // 304 - 角色与武器培养素材_123
     public static readonly MaterialModel _3040001 = new()
@@ -1006,7 +1006,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112002.png"
     };
 
-    public static readonly MaterialGroupModel G3040001 = new([_3040001, _3040002, _3040003], 3);
+    public static readonly MaterialGroupModel G3040001 = new([_3040001, _3040002, _3040003]);
 
     public static readonly MaterialModel _3040004 = new()
     {
@@ -1038,7 +1038,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112005.png"
     };
 
-    public static readonly MaterialGroupModel G3040004 = new([_3040004, _3040005, _3040006], 3);
+    public static readonly MaterialGroupModel G3040004 = new([_3040004, _3040005, _3040006]);
 
     public static readonly MaterialModel _3040007 = new()
     {
@@ -1070,7 +1070,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112008.png"
     };
 
-    public static readonly MaterialGroupModel G3040007 = new([_3040007, _3040008, _3040009], 3);
+    public static readonly MaterialGroupModel G3040007 = new([_3040007, _3040008, _3040009]);
 
     public static readonly MaterialModel _3040010 = new()
     {
@@ -1102,7 +1102,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112011.png"
     };
 
-    public static readonly MaterialGroupModel G3040010 = new([_3040010, _3040011, _3040012], 3);
+    public static readonly MaterialGroupModel G3040010 = new([_3040010, _3040011, _3040012]);
 
     public static readonly MaterialModel _3040013 = new()
     {
@@ -1134,7 +1134,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112032.png"
     };
 
-    public static readonly MaterialGroupModel G3040013 = new([_3040013, _3040014, _3040015], 3);
+    public static readonly MaterialGroupModel G3040013 = new([_3040013, _3040014, _3040015]);
 
     public static readonly MaterialModel _3040016 = new()
     {
@@ -1166,7 +1166,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112035.png"
     };
 
-    public static readonly MaterialGroupModel G3040016 = new([_3040016, _3040017, _3040018], 3);
+    public static readonly MaterialGroupModel G3040016 = new([_3040016, _3040017, _3040018]);
 
     public static readonly MaterialModel _3040019 = new()
     {
@@ -1198,7 +1198,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112038.png"
     };
 
-    public static readonly MaterialGroupModel G3040019 = new([_3040019, _3040020, _3040021], 3);
+    public static readonly MaterialGroupModel G3040019 = new([_3040019, _3040020, _3040021]);
 
     public static readonly MaterialModel _3040022 = new()
     {
@@ -1230,7 +1230,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112044.png"
     };
 
-    public static readonly MaterialGroupModel G3040022 = new([_3040022, _3040023, _3040024], 3);
+    public static readonly MaterialGroupModel G3040022 = new([_3040022, _3040023, _3040024]);
 
     public static readonly MaterialModel _3040025 = new()
     {
@@ -1262,7 +1262,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112053.png"
     };
 
-    public static readonly MaterialGroupModel G3040025 = new([_3040025, _3040026, _3040027], 3);
+    public static readonly MaterialGroupModel G3040025 = new([_3040025, _3040026, _3040027]);
 
     public static readonly MaterialModel _3040028 = new()
     {
@@ -1294,7 +1294,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112059.png"
     };
 
-    public static readonly MaterialGroupModel G3040028 = new([_3040028, _3040029, _3040030], 3);
+    public static readonly MaterialGroupModel G3040028 = new([_3040028, _3040029, _3040030]);
 
     public static readonly MaterialModel _3040031 = new()
     {
@@ -1326,7 +1326,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112065.png"
     };
 
-    public static readonly MaterialGroupModel G3040031 = new([_3040031, _3040032, _3040033], 3);
+    public static readonly MaterialGroupModel G3040031 = new([_3040031, _3040032, _3040033]);
 
     public static readonly MaterialModel _3040034 = new()
     {
@@ -1358,7 +1358,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112080.png"
     };
 
-    public static readonly MaterialGroupModel G3040034 = new([_3040034, _3040035, _3040036], 3);
+    public static readonly MaterialGroupModel G3040034 = new([_3040034, _3040035, _3040036]);
 
     public static readonly MaterialModel _3040037 = new()
     {
@@ -1390,7 +1390,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112083.png"
     };
 
-    public static readonly MaterialGroupModel G3040037 = new([_3040037, _3040038, _3040039], 3);
+    public static readonly MaterialGroupModel G3040037 = new([_3040037, _3040038, _3040039]);
 
     public static readonly MaterialModel _3040040 = new()
     {
@@ -1422,7 +1422,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112101.png"
     };
 
-    public static readonly MaterialGroupModel G3040040 = new([_3040040, _3040041, _3040042], 3);
+    public static readonly MaterialGroupModel G3040040 = new([_3040040, _3040041, _3040042]);
 
     public static readonly MaterialModel _3040043 = new()
     {
@@ -1454,7 +1454,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112104.png"
     };
 
-    public static readonly MaterialGroupModel G3040043 = new([_3040043, _3040044, _3040045], 3);
+    public static readonly MaterialGroupModel G3040043 = new([_3040043, _3040044, _3040045]);
 
     public static readonly MaterialModel _3040046 = new()
     {
@@ -1486,7 +1486,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112122.png"
     };
 
-    public static readonly MaterialGroupModel G3040046 = new([_3040046, _3040047, _3040048], 3);
+    public static readonly MaterialGroupModel G3040046 = new([_3040046, _3040047, _3040048]);
 
     public static readonly MaterialModel _3040049 = new()
     {
@@ -1518,7 +1518,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112125.png"
     };
 
-    public static readonly MaterialGroupModel G3040049 = new([_3040049, _3040050, _3040051], 3);
+    public static readonly MaterialGroupModel G3040049 = new([_3040049, _3040050, _3040051]);
 
     // 305 - 角色培养素材_周本
     public static readonly MaterialModel _3050001 = new()
@@ -2403,7 +2403,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104101.png"
     };
 
-    public static readonly MaterialGroupModel G3070101 = new([_3070101, _3070102, _3070103, _3070104], 3);
+    public static readonly MaterialGroupModel G3070101 = new([_3070101, _3070102, _3070103, _3070104]);
 
     public static readonly MaterialModel _3070201 = new()
     {
@@ -2445,7 +2445,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104111.png"
     };
 
-    public static readonly MaterialGroupModel G3070201 = new([_3070201, _3070202, _3070203, _3070204], 3);
+    public static readonly MaterialGroupModel G3070201 = new([_3070201, _3070202, _3070203, _3070204]);
 
     public static readonly MaterialModel _3070301 = new()
     {
@@ -2487,7 +2487,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104121.png"
     };
 
-    public static readonly MaterialGroupModel G3070301 = new([_3070301, _3070302, _3070303, _3070304], 3);
+    public static readonly MaterialGroupModel G3070301 = new([_3070301, _3070302, _3070303, _3070304]);
 
     public static readonly MaterialModel _3070401 = new()
     {
@@ -2529,7 +2529,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104131.png"
     };
 
-    public static readonly MaterialGroupModel G3070401 = new([_3070401, _3070402, _3070403, _3070404], 3);
+    public static readonly MaterialGroupModel G3070401 = new([_3070401, _3070402, _3070403, _3070404]);
 
     public static readonly MaterialModel _3070501 = new()
     {
@@ -2571,7 +2571,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104141.png"
     };
 
-    public static readonly MaterialGroupModel G3070501 = new([_3070501, _3070502, _3070503, _3070504], 3);
+    public static readonly MaterialGroupModel G3070501 = new([_3070501, _3070502, _3070503, _3070504]);
 
     public static readonly MaterialModel _3070601 = new()
     {
@@ -2613,7 +2613,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104151.png"
     };
 
-    public static readonly MaterialGroupModel G3070601 = new([_3070601, _3070602, _3070603, _3070604], 3);
+    public static readonly MaterialGroupModel G3070601 = new([_3070601, _3070602, _3070603, _3070604]);
 
     public static readonly MaterialModel _3070701 = new()
     {
@@ -2655,7 +2655,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104161.png"
     };
 
-    public static readonly MaterialGroupModel G3070701 = new([_3070701, _3070702, _3070703, _3070704], 3);
+    public static readonly MaterialGroupModel G3070701 = new([_3070701, _3070702, _3070703, _3070704]);
 
     public static readonly MaterialModel _3070801 = new()
     {
@@ -2697,7 +2697,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104171.png"
     };
 
-    public static readonly MaterialGroupModel G3070801 = new([_3070801, _3070802, _3070803, _3070804], 3);
+    public static readonly MaterialGroupModel G3070801 = new([_3070801, _3070802, _3070803, _3070804]);
 
     // 308 - 角色天赋素材
     public static readonly MaterialModel _3080000 = new()
@@ -2740,7 +2740,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104301.png"
     };
 
-    public static readonly MaterialGroupModel G3080001 = new([_3080001, _3080002, _3080003], 3);
+    public static readonly MaterialGroupModel G3080001 = new([_3080001, _3080002, _3080003]);
 
     public static readonly MaterialModel _3080004 = new()
     {
@@ -2772,7 +2772,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104304.png"
     };
 
-    public static readonly MaterialGroupModel G3080004 = new([_3080004, _3080005, _3080006], 3);
+    public static readonly MaterialGroupModel G3080004 = new([_3080004, _3080005, _3080006]);
 
     public static readonly MaterialModel _3080007 = new()
     {
@@ -2804,7 +2804,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104307.png"
     };
 
-    public static readonly MaterialGroupModel G3080007 = new([_3080007, _3080008, _3080009], 3);
+    public static readonly MaterialGroupModel G3080007 = new([_3080007, _3080008, _3080009]);
 
     public static readonly MaterialModel _3080010 = new()
     {
@@ -2836,7 +2836,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104310.png"
     };
 
-    public static readonly MaterialGroupModel G3080010 = new([_3080010, _3080011, _3080012], 3);
+    public static readonly MaterialGroupModel G3080010 = new([_3080010, _3080011, _3080012]);
 
     public static readonly MaterialModel _3080013 = new()
     {
@@ -2868,7 +2868,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104313.png"
     };
 
-    public static readonly MaterialGroupModel G3080013 = new([_3080013, _3080014, _3080015], 3);
+    public static readonly MaterialGroupModel G3080013 = new([_3080013, _3080014, _3080015]);
 
     public static readonly MaterialModel _3080016 = new()
     {
@@ -2900,7 +2900,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104316.png"
     };
 
-    public static readonly MaterialGroupModel G3080016 = new([_3080016, _3080017, _3080018], 3);
+    public static readonly MaterialGroupModel G3080016 = new([_3080016, _3080017, _3080018]);
 
     public static readonly MaterialModel _3080019 = new()
     {
@@ -2932,7 +2932,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104320.png"
     };
 
-    public static readonly MaterialGroupModel G3080019 = new([_3080019, _3080020, _3080021], 3);
+    public static readonly MaterialGroupModel G3080019 = new([_3080019, _3080020, _3080021]);
 
     public static readonly MaterialModel _3080022 = new()
     {
@@ -2964,7 +2964,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104323.png"
     };
 
-    public static readonly MaterialGroupModel G3080022 = new([_3080022, _3080023, _3080024], 3);
+    public static readonly MaterialGroupModel G3080022 = new([_3080022, _3080023, _3080024]);
 
     public static readonly MaterialModel _3080025 = new()
     {
@@ -2996,7 +2996,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104326.png"
     };
 
-    public static readonly MaterialGroupModel G3080025 = new([_3080025, _3080026, _3080027], 3);
+    public static readonly MaterialGroupModel G3080025 = new([_3080025, _3080026, _3080027]);
 
     public static readonly MaterialModel _3080028 = new()
     {
@@ -3028,7 +3028,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104329.png"
     };
 
-    public static readonly MaterialGroupModel G3080028 = new([_3080028, _3080029, _3080030], 3);
+    public static readonly MaterialGroupModel G3080028 = new([_3080028, _3080029, _3080030]);
 
     public static readonly MaterialModel _3080031 = new()
     {
@@ -3060,7 +3060,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104332.png"
     };
 
-    public static readonly MaterialGroupModel G3080031 = new([_3080031, _3080032, _3080033], 3);
+    public static readonly MaterialGroupModel G3080031 = new([_3080031, _3080032, _3080033]);
 
     public static readonly MaterialModel _3080034 = new()
     {
@@ -3092,7 +3092,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104335.png"
     };
 
-    public static readonly MaterialGroupModel G3080034 = new([_3080034, _3080035, _3080036], 3);
+    public static readonly MaterialGroupModel G3080034 = new([_3080034, _3080035, _3080036]);
 
     public static readonly MaterialModel _3080037 = new()
     {
@@ -3124,7 +3124,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104338.png"
     };
 
-    public static readonly MaterialGroupModel G3080037 = new([_3080037, _3080038, _3080039], 3);
+    public static readonly MaterialGroupModel G3080037 = new([_3080037, _3080038, _3080039]);
 
     public static readonly MaterialModel _3080040 = new()
     {
@@ -3156,7 +3156,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104341.png"
     };
 
-    public static readonly MaterialGroupModel G3080040 = new([_3080040, _3080041, _3080042], 3);
+    public static readonly MaterialGroupModel G3080040 = new([_3080040, _3080041, _3080042]);
 
     public static readonly MaterialModel _3080043 = new()
     {
@@ -3188,7 +3188,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104344.png"
     };
 
-    public static readonly MaterialGroupModel G3080043 = new([_3080043, _3080044, _3080045], 3);
+    public static readonly MaterialGroupModel G3080043 = new([_3080043, _3080044, _3080045]);
 
     public static readonly MaterialModel _3080046 = new()
     {
@@ -3220,7 +3220,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104347.png"
     };
 
-    public static readonly MaterialGroupModel G3080046 = new([_3080046, _3080047, _3080048], 3);
+    public static readonly MaterialGroupModel G3080046 = new([_3080046, _3080047, _3080048]);
 
     public static readonly MaterialModel _3080049 = new()
     {
@@ -3252,7 +3252,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104350.png"
     };
 
-    public static readonly MaterialGroupModel G3080049 = new([_3080049, _3080050, _3080051], 3);
+    public static readonly MaterialGroupModel G3080049 = new([_3080049, _3080050, _3080051]);
 
     public static readonly MaterialModel _3080052 = new()
     {
@@ -3284,7 +3284,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104353.png"
     };
 
-    public static readonly MaterialGroupModel G3080052 = new([_3080052, _3080053, _3080054], 3);
+    public static readonly MaterialGroupModel G3080052 = new([_3080052, _3080053, _3080054]);
 
     public static readonly MaterialModel _3080055 = new()
     {
@@ -3316,7 +3316,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104356.png"
     };
 
-    public static readonly MaterialGroupModel G3080055 = new([_3080055, _3080056, _3080057], 3);
+    public static readonly MaterialGroupModel G3080055 = new([_3080055, _3080056, _3080057]);
 
     public static readonly MaterialModel _3080058 = new()
     {
@@ -3348,7 +3348,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104359.png"
     };
 
-    public static readonly MaterialGroupModel G3080058 = new([_3080058, _3080059, _3080060], 3);
+    public static readonly MaterialGroupModel G3080058 = new([_3080058, _3080059, _3080060]);
 
     public static readonly MaterialModel _3080061 = new()
     {
@@ -3380,7 +3380,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104362.png"
     };
 
-    public static readonly MaterialGroupModel G3080061 = new([_3080061, _3080062, _3080063], 3);
+    public static readonly MaterialGroupModel G3080061 = new([_3080061, _3080062, _3080063]);
 
     // 309 - 武器突破素材
     public static readonly MaterialModel _3090001 = new()
@@ -3423,7 +3423,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114001.png"
     };
 
-    public static readonly MaterialGroupModel G3090001 = new([_3090001, _3090002, _3090003, _3090004], 3);
+    public static readonly MaterialGroupModel G3090001 = new([_3090001, _3090002, _3090003, _3090004]);
 
     public static readonly MaterialModel _3090005 = new()
     {
@@ -3465,7 +3465,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114005.png"
     };
 
-    public static readonly MaterialGroupModel G3090005 = new([_3090005, _3090006, _3090007, _3090008], 3);
+    public static readonly MaterialGroupModel G3090005 = new([_3090005, _3090006, _3090007, _3090008]);
 
     public static readonly MaterialModel _3090009 = new()
     {
@@ -3507,7 +3507,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114009.png"
     };
 
-    public static readonly MaterialGroupModel G3090009 = new([_3090009, _3090010, _3090011, _3090012], 3);
+    public static readonly MaterialGroupModel G3090009 = new([_3090009, _3090010, _3090011, _3090012]);
 
     public static readonly MaterialModel _3090013 = new()
     {
@@ -3549,7 +3549,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114013.png"
     };
 
-    public static readonly MaterialGroupModel G3090013 = new([_3090013, _3090014, _3090015, _3090016], 3);
+    public static readonly MaterialGroupModel G3090013 = new([_3090013, _3090014, _3090015, _3090016]);
 
     public static readonly MaterialModel _3090017 = new()
     {
@@ -3591,7 +3591,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114017.png"
     };
 
-    public static readonly MaterialGroupModel G3090017 = new([_3090017, _3090018, _3090019, _3090020], 3);
+    public static readonly MaterialGroupModel G3090017 = new([_3090017, _3090018, _3090019, _3090020]);
 
     public static readonly MaterialModel _3090021 = new()
     {
@@ -3633,7 +3633,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114021.png"
     };
 
-    public static readonly MaterialGroupModel G3090021 = new([_3090021, _3090022, _3090023, _3090024], 3);
+    public static readonly MaterialGroupModel G3090021 = new([_3090021, _3090022, _3090023, _3090024]);
 
     public static readonly MaterialModel _3090025 = new()
     {
@@ -3675,7 +3675,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114025.png"
     };
 
-    public static readonly MaterialGroupModel G3090025 = new([_3090025, _3090026, _3090027, _3090028], 3);
+    public static readonly MaterialGroupModel G3090025 = new([_3090025, _3090026, _3090027, _3090028]);
 
     public static readonly MaterialModel _3090029 = new()
     {
@@ -3717,7 +3717,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114029.png"
     };
 
-    public static readonly MaterialGroupModel G3090029 = new([_3090029, _3090030, _3090031, _3090032], 3);
+    public static readonly MaterialGroupModel G3090029 = new([_3090029, _3090030, _3090031, _3090032]);
 
     public static readonly MaterialModel _3090033 = new()
     {
@@ -3759,7 +3759,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114033.png"
     };
 
-    public static readonly MaterialGroupModel G3090033 = new([_3090033, _3090034, _3090035, _3090036], 3);
+    public static readonly MaterialGroupModel G3090033 = new([_3090033, _3090034, _3090035, _3090036]);
 
     public static readonly MaterialModel _3090037 = new()
     {
@@ -3801,7 +3801,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114037.png"
     };
 
-    public static readonly MaterialGroupModel G3090037 = new([_3090037, _3090038, _3090039, _3090040], 3);
+    public static readonly MaterialGroupModel G3090037 = new([_3090037, _3090038, _3090039, _3090040]);
 
     public static readonly MaterialModel _3090041 = new()
     {
@@ -3843,7 +3843,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114041.png"
     };
 
-    public static readonly MaterialGroupModel G3090041 = new([_3090041, _3090042, _3090043, _3090044], 3);
+    public static readonly MaterialGroupModel G3090041 = new([_3090041, _3090042, _3090043, _3090044]);
 
     public static readonly MaterialModel _3090045 = new()
     {
@@ -3885,7 +3885,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114045.png"
     };
 
-    public static readonly MaterialGroupModel G3090045 = new([_3090045, _3090046, _3090047, _3090048], 3);
+    public static readonly MaterialGroupModel G3090045 = new([_3090045, _3090046, _3090047, _3090048]);
 
     public static readonly MaterialModel _3090049 = new()
     {
@@ -3927,7 +3927,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114049.png"
     };
 
-    public static readonly MaterialGroupModel G3090049 = new([_3090049, _3090050, _3090051, _3090052], 3);
+    public static readonly MaterialGroupModel G3090049 = new([_3090049, _3090050, _3090051, _3090052]);
 
     public static readonly MaterialModel _3090053 = new()
     {
@@ -3969,7 +3969,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114053.png"
     };
 
-    public static readonly MaterialGroupModel G3090053 = new([_3090053, _3090054, _3090055, _3090056], 3);
+    public static readonly MaterialGroupModel G3090053 = new([_3090053, _3090054, _3090055, _3090056]);
 
     public static readonly MaterialModel _3090057 = new()
     {
@@ -4011,7 +4011,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114057.png"
     };
 
-    public static readonly MaterialGroupModel G3090057 = new([_3090057, _3090058, _3090059, _3090060], 3);
+    public static readonly MaterialGroupModel G3090057 = new([_3090057, _3090058, _3090059, _3090060]);
 
     public static readonly MaterialModel _3090061 = new()
     {
@@ -4053,7 +4053,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114061.png"
     };
 
-    public static readonly MaterialGroupModel G3090061 = new([_3090061, _3090062, _3090063, _3090064], 3);
+    public static readonly MaterialGroupModel G3090061 = new([_3090061, _3090062, _3090063, _3090064]);
 
     public static readonly MaterialModel _3090065 = new()
     {
@@ -4095,7 +4095,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114065.png"
     };
 
-    public static readonly MaterialGroupModel G3090065 = new([_3090065, _3090066, _3090067, _3090068], 3);
+    public static readonly MaterialGroupModel G3090065 = new([_3090065, _3090066, _3090067, _3090068]);
 
     public static readonly MaterialModel _3090069 = new()
     {
@@ -4137,7 +4137,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114069.png"
     };
 
-    public static readonly MaterialGroupModel G3090069 = new([_3090069, _3090070, _3090071, _3090072], 3);
+    public static readonly MaterialGroupModel G3090069 = new([_3090069, _3090070, _3090071, _3090072]);
 
     public static readonly MaterialModel _3090073 = new()
     {
@@ -4179,7 +4179,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114073.png"
     };
 
-    public static readonly MaterialGroupModel G3090073 = new([_3090073, _3090074, _3090075, _3090076], 3);
+    public static readonly MaterialGroupModel G3090073 = new([_3090073, _3090074, _3090075, _3090076]);
 
     public static readonly MaterialModel _3090077 = new()
     {
@@ -4221,7 +4221,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114077.png"
     };
 
-    public static readonly MaterialGroupModel G3090077 = new([_3090077, _3090078, _3090079, _3090080], 3);
+    public static readonly MaterialGroupModel G3090077 = new([_3090077, _3090078, _3090079, _3090080]);
 
     public static readonly MaterialModel _3090081 = new()
     {
@@ -4263,7 +4263,7 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114081.png"
     };
 
-    public static readonly MaterialGroupModel G3090081 = new([_3090081, _3090082, _3090083, _3090084], 3);
+    public static readonly MaterialGroupModel G3090081 = new([_3090081, _3090082, _3090083, _3090084]);
 
     // 310 - 地方特产
     public static readonly MaterialModel _3100101 = new()

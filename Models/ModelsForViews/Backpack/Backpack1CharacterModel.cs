@@ -9,7 +9,5 @@ public class Backpack1CharacterModel
     public string ElementImagePath { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string Name { get; set; } = "";
-    public int Rid { get; set; }
-    public string StarImagePath { get; set; } = "";
     public Enumeration.WeaponType WeaponType { get; set; } = Enumeration.WeaponType.Unknown;
 }

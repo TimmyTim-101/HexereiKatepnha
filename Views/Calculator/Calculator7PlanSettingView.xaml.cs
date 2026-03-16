@@ -1,8 +1,6 @@
-﻿using System.Windows.Controls;
+﻿namespace HexereiKatepnha.Views.Calculator;
 
-namespace HexereiKatepnha.Views.Calculator;
-
-public partial class Calculator7PlanSettingView : UserControl
+public partial class Calculator7PlanSettingView
 {
     public Calculator7PlanSettingView()
     {

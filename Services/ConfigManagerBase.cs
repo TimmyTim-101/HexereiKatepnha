@@ -25,6 +25,7 @@ public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig 
             }
             catch
             {
+                // ignored
             }
         }
         else
