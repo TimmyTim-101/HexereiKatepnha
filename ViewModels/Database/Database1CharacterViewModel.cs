@@ -118,7 +118,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     if (e.AffixDictionary.ContainsKey(thisLevel))
                     {
                         Dictionary<Enumeration.Affix, double> thisLevelAffixDictionary = e.AffixDictionary[thisLevel];
-                        List<string> thisStatList = [StringConstants.LevelString[thisLevel]];
+                        List<string> thisStatList = [StringConstants.LevelNumberString[thisLevel]];
                         if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Health))
                         {
                             thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Health].ToString(CultureInfo.CurrentCulture));

@@ -73,7 +73,7 @@
                                             <StackPanel Grid.Row="0">
                                                 <Grid Width="45" Height="45" ToolTipService.InitialShowDelay="100">
                                                     <Grid.ToolTip>
-                                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                     </Grid.ToolTip>
                                                     <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                     <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -201,11 +201,9 @@
                 <StackPanel Grid.Row="0" Orientation="Vertical">
                     <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="1" Margin="2">
-                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="单手剑" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="单手剑"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -219,11 +217,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="2" Margin="2">
-                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="双手剑" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="双手剑"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -237,11 +233,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="3" Margin="2">
-                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="长柄武器" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="长柄武器"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -255,11 +249,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="法器" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="法器"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -273,11 +265,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="弓" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="弓"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>

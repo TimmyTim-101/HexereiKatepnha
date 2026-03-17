@@ -33,11 +33,9 @@
                 <StackPanel Grid.Row="0" Orientation="Vertical">
                     <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="1" Margin="2">
-                            <Image Source="{Binding Element1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="火" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="火"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -51,11 +49,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="2" Margin="2">
-                            <Image Source="{Binding Element2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="水" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="水"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -69,11 +65,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="3" Margin="2">
-                            <Image Source="{Binding Element3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="风" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="风"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -87,11 +81,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Element4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="雷" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="雷"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -105,11 +97,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Element5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="草" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="草"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -123,11 +113,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="6" Margin="2">
-                            <Image Source="{Binding Element6ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element6ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="冰" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="冰"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -141,11 +129,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="7" Margin="2">
-                            <Image Source="{Binding Element7ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Element7ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="岩" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="岩"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -161,11 +147,9 @@
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="1" Margin="2">
-                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="单手剑" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="单手剑"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -179,11 +163,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="2" Margin="2">
-                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="双手剑" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="双手剑"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -197,11 +179,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="3" Margin="2">
-                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="长柄武器" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="长柄武器"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -215,11 +195,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="法器" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="法器"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -233,11 +211,9 @@
                             </Button.Style>
                         </Button>
                         <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10">
+                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
                                 <Image.ToolTip>
-                                    <ToolTip>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="弓" FontSize="12" Foreground="Black"></TextBlock>
-                                    </ToolTip>
+                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="弓"></ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Button.Style>
@@ -284,7 +260,129 @@
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <TabControl Grid.Column="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
                 <TabItem Header="面板展示">
-                    <TextBlock Style="{StaticResource TodoTextBlock}" Text="面板展示"></TextBlock>
+                    <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Image Source="{Binding SelectedCharacter.BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding SelectedCharacter.ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                </Grid>
+                                <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+                                <Grid Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="25" Height="25" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5"></Image>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                    </StackPanel>
+                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" Cursor="Hand">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="等级：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.LevelString}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                    <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[1].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentAString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[2].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentEString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[3].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentQString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="命之座：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Ascension}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                        <UniformGrid Grid.Row="1" Rows="1">
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[1].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[2]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[2].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[3]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[3].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[4]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[4].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[5]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[5].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[6]}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[6].Description}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </UniformGrid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                            <TextBlock Grid.Row="2" Style="{StaticResource TodoTextBlock}" Text="武器 &amp; 圣遗物 &amp; 评分"></TextBlock>
+                            <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                            <TextBlock Grid.Row="4" Style="{StaticResource TodoTextBlock}" Text="面板详细信息"></TextBlock>
+                        </Grid>
+                    </Border>
                 </TabItem>
                 <TabItem Header="培养目标">
                     <TextBlock Style="{StaticResource TodoTextBlock}" Text="培养目标"></TextBlock>

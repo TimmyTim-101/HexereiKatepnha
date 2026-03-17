@@ -106,7 +106,7 @@ public static class StringConstants
         { Enumeration.WeaponType.Bow, "/Resources/Images/Weapon/UI_GachaTypeIcon_Bow.png" },
     };
 
-    public static readonly Dictionary<Enumeration.Level, string> LevelString = new()
+    public static readonly Dictionary<Enumeration.Level, string> LevelNumberString = new()
     {
         { Enumeration.Level.L1, "1" }, { Enumeration.Level.L2, "2" }, { Enumeration.Level.L3, "3" }, { Enumeration.Level.L4, "4" }, { Enumeration.Level.L5, "5" },
         { Enumeration.Level.L6, "6" }, { Enumeration.Level.L7, "7" }, { Enumeration.Level.L8, "8" }, { Enumeration.Level.L9, "9" }, { Enumeration.Level.L10, "10" },
@@ -128,6 +128,30 @@ public static class StringConstants
         { Enumeration.Level.L86, "86" }, { Enumeration.Level.L87, "87" }, { Enumeration.Level.L88, "88" }, { Enumeration.Level.L89, "89" }, { Enumeration.Level.L90, "90" }, { Enumeration.Level.L90P, "90+" },
         { Enumeration.Level.L91, "91" }, { Enumeration.Level.L92, "92" }, { Enumeration.Level.L93, "93" }, { Enumeration.Level.L94, "94" }, { Enumeration.Level.L95, "95" },
         { Enumeration.Level.L96, "96" }, { Enumeration.Level.L97, "97" }, { Enumeration.Level.L98, "98" }, { Enumeration.Level.L99, "99" }, { Enumeration.Level.L100, "100" },
-        // { Enumeration.Level.L95, "95" },{ Enumeration.Level.L100, "100" },
+        // { Enumeration.Level.L95, "95" },{ Enumeration.L100, "100" },
+    };
+
+    public static readonly Dictionary<Enumeration.Level, string> LevelNameString = new()
+    {
+        { Enumeration.Level.L1, "1 / 20" }, { Enumeration.Level.L2, "2 / 20" }, { Enumeration.Level.L3, "3 / 20" }, { Enumeration.Level.L4, "4 / 20" }, { Enumeration.Level.L5, "5 / 20" },
+        { Enumeration.Level.L6, "6 / 20" }, { Enumeration.Level.L7, "7 / 20" }, { Enumeration.Level.L8, "8 / 20" }, { Enumeration.Level.L9, "9 / 20" }, { Enumeration.Level.L10, "10 / 20" },
+        { Enumeration.Level.L11, "11 / 20" }, { Enumeration.Level.L12, "12 / 20" }, { Enumeration.Level.L13, "13 / 20" }, { Enumeration.Level.L14, "14 / 20" }, { Enumeration.Level.L15, "15 / 20" },
+        { Enumeration.Level.L16, "16 / 20" }, { Enumeration.Level.L17, "17 / 20" }, { Enumeration.Level.L18, "18 / 20" }, { Enumeration.Level.L19, "19 / 20" }, { Enumeration.Level.L20, "20 / 20" }, { Enumeration.Level.L20P, "20 / 40" },
+        { Enumeration.Level.L21, "21 / 40" }, { Enumeration.Level.L22, "22 / 40" }, { Enumeration.Level.L23, "23 / 40" }, { Enumeration.Level.L24, "24 / 40" }, { Enumeration.Level.L25, "25 / 40" },
+        { Enumeration.Level.L26, "26 / 40" }, { Enumeration.Level.L27, "27 / 40" }, { Enumeration.Level.L28, "28 / 40" }, { Enumeration.Level.L29, "29 / 40" }, { Enumeration.Level.L30, "30 / 40" },
+        { Enumeration.Level.L31, "31 / 40" }, { Enumeration.Level.L32, "32 / 40" }, { Enumeration.Level.L33, "33 / 40" }, { Enumeration.Level.L34, "34 / 40" }, { Enumeration.Level.L35, "35 / 40" },
+        { Enumeration.Level.L36, "36 / 40" }, { Enumeration.Level.L37, "37 / 40" }, { Enumeration.Level.L38, "38 / 40" }, { Enumeration.Level.L39, "39 / 40" }, { Enumeration.Level.L40, "40 / 40" }, { Enumeration.Level.L40P, "40 / 50" },
+        { Enumeration.Level.L41, "41 / 50" }, { Enumeration.Level.L42, "42 / 50" }, { Enumeration.Level.L43, "43 / 50" }, { Enumeration.Level.L44, "44 / 50" }, { Enumeration.Level.L45, "45 / 50" },
+        { Enumeration.Level.L46, "46 / 50" }, { Enumeration.Level.L47, "47 / 50" }, { Enumeration.Level.L48, "48 / 50" }, { Enumeration.Level.L49, "49 / 50" }, { Enumeration.Level.L50, "50 / 50" }, { Enumeration.Level.L50P, "50 / 60" },
+        { Enumeration.Level.L51, "51 / 60" }, { Enumeration.Level.L52, "52 / 60" }, { Enumeration.Level.L53, "53 / 60" }, { Enumeration.Level.L54, "54 / 60" }, { Enumeration.Level.L55, "55 / 60" },
+        { Enumeration.Level.L56, "56 / 60" }, { Enumeration.Level.L57, "57 / 60" }, { Enumeration.Level.L58, "58 / 60" }, { Enumeration.Level.L59, "59 / 60" }, { Enumeration.Level.L60, "60 / 60" }, { Enumeration.Level.L60P, "60 / 70" },
+        { Enumeration.Level.L61, "61 / 70" }, { Enumeration.Level.L62, "62 / 70" }, { Enumeration.Level.L63, "63 / 70" }, { Enumeration.Level.L64, "64 / 70" }, { Enumeration.Level.L65, "65 / 70" },
+        { Enumeration.Level.L66, "66 / 70" }, { Enumeration.Level.L67, "67 / 70" }, { Enumeration.Level.L68, "68 / 70" }, { Enumeration.Level.L69, "69 / 70" }, { Enumeration.Level.L70, "70 / 70" }, { Enumeration.Level.L70P, "70 / 80" },
+        { Enumeration.Level.L71, "71 / 80" }, { Enumeration.Level.L72, "72 / 80" }, { Enumeration.Level.L73, "73 / 80" }, { Enumeration.Level.L74, "74 / 80" }, { Enumeration.Level.L75, "75 / 80" },
+        { Enumeration.Level.L76, "76 / 80" }, { Enumeration.Level.L77, "77 / 80" }, { Enumeration.Level.L78, "78 / 80" }, { Enumeration.Level.L79, "79 / 80" }, { Enumeration.Level.L80, "80 / 80" }, { Enumeration.Level.L80P, "80 / 90" },
+        { Enumeration.Level.L81, "81 / 90" }, { Enumeration.Level.L82, "82 / 90" }, { Enumeration.Level.L83, "83 / 90" }, { Enumeration.Level.L84, "84 / 90" }, { Enumeration.Level.L85, "85 / 90" },
+        { Enumeration.Level.L86, "86 / 90" }, { Enumeration.Level.L87, "87 / 90" }, { Enumeration.Level.L88, "88 / 90" }, { Enumeration.Level.L89, "89 / 90" }, { Enumeration.Level.L90, "90 / 90" }, { Enumeration.Level.L90P, "90 / 100" },
+        { Enumeration.Level.L91, "91 / 100" }, { Enumeration.Level.L92, "92 / 100" }, { Enumeration.Level.L93, "93 / 100" }, { Enumeration.Level.L94, "94 / 100" }, { Enumeration.Level.L95, "95 / 100" },
+        { Enumeration.Level.L96, "96 / 100" }, { Enumeration.Level.L97, "97 / 100" }, { Enumeration.Level.L98, "98 / 100" }, { Enumeration.Level.L99, "99 / 100" }, { Enumeration.Level.L100, "100 / 100" },
     };
 }

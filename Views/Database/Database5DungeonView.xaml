@@ -63,7 +63,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -135,7 +135,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -201,7 +201,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -264,7 +264,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -336,7 +336,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}" FontSize="12" Foreground="Black"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -411,7 +411,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -489,7 +489,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -570,7 +570,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
@@ -645,7 +645,7 @@
                                                                     <StackPanel Grid.Row="0">
                                                                         <Grid Width="50" Height="50" ToolTipService.InitialShowDelay="100">
                                                                             <Grid.ToolTip>
-                                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MaterialName}" FontSize="12" Foreground="Black"></TextBlock>
+                                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                                             </Grid.ToolTip>
                                                                             <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
                                                                             <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>

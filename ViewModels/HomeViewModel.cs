@@ -141,20 +141,15 @@ namespace HexereiKatepnha.ViewModels
             if (account == App.AccountConfigManagerInstance!.Configuration.CurrentAccount) return;
             // 切账号前保存
             App.AccountConfigManagerInstance.Save();
-            App.ThemeConfigManagerInstance!.Save();
-            App.PrivateAccountConfigManagerInstance!.Save();
-            App.BackpackMaterialConfigManagerInstance!.Save();
+            AccountConfigSave();
+
             // 切换账号
             App.AccountConfigManagerInstance.Configuration.CurrentAccount = account;
             App.AccountConfigManagerInstance.Save();
             Guid currentAccountGuid = AccountConfig.CalculateMd5(account);
-            App.ThemeConfigManagerInstance = new ThemeConfigManager(currentAccountGuid);
-            App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(currentAccountGuid);
-            App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(currentAccountGuid);
+            AccountConfigCreate(currentAccountGuid);
             // 重新加载配置
-            App.ThemeConfigManagerInstance.Load();
-            App.PrivateAccountConfigManagerInstance.Load();
-            App.BackpackMaterialConfigManagerInstance.Load();
+            AccountConfigLoad();
             // 更新本地变量
             CurrentAccount = account;
             AllAccountList.Clear();
@@ -171,9 +166,7 @@ namespace HexereiKatepnha.ViewModels
         {
             // 删除前保存
             App.AccountConfigManagerInstance!.Save();
-            App.ThemeConfigManagerInstance!.Save();
-            App.PrivateAccountConfigManagerInstance!.Save();
-            App.BackpackMaterialConfigManagerInstance!.Save();
+            AccountConfigSave();
             // 判断是否只有一个默认账号
             Guid accountGuid = AccountConfig.CalculateMd5(account);
             string accountConfigFolder = "Configs/" + accountGuid;
@@ -185,9 +178,7 @@ namespace HexereiKatepnha.ViewModels
                     Directory.Delete(accountConfigFolder, true);
                 }
 
-                App.ThemeConfigManagerInstance = new ThemeConfigManager(accountGuid);
-                App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(accountGuid);
-                App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(accountGuid);
+                AccountConfigCreate(accountGuid);
             }
             else
             {
@@ -233,9 +224,7 @@ namespace HexereiKatepnha.ViewModels
             if (string.IsNullOrWhiteSpace(RenameAccountName)) return;
             if (App.AccountConfigManagerInstance!.Configuration.AccountList.Contains(RenameAccountName)) return;
             App.AccountConfigManagerInstance.Save();
-            App.ThemeConfigManagerInstance!.Save();
-            App.PrivateAccountConfigManagerInstance!.Save();
-            App.BackpackMaterialConfigManagerInstance!.Save();
+            AccountConfigSave();
             Guid currentAccountGuid = AccountConfig.CalculateMd5(App.AccountConfigManagerInstance.Configuration.CurrentAccount);
             Guid newAccountGuid = AccountConfig.CalculateMd5(RenameAccountName);
             string sourceFolder = "Configs/" + currentAccountGuid;
@@ -258,9 +247,7 @@ namespace HexereiKatepnha.ViewModels
             App.AccountConfigManagerInstance.Configuration.CurrentAccount = RenameAccountName;
 
             App.AccountConfigManagerInstance.Save();
-            App.ThemeConfigManagerInstance = new ThemeConfigManager(newAccountGuid);
-            App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(newAccountGuid);
-            App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(newAccountGuid);
+            AccountConfigCreate(newAccountGuid);
             CurrentAccount = RenameAccountName;
             WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(RenameAccountName));
             AllAccountList.Clear();
@@ -269,9 +256,31 @@ namespace HexereiKatepnha.ViewModels
                 AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
             }
 
-            App.ThemeConfigManagerInstance.Load();
-            App.PrivateAccountConfigManagerInstance.Load();
-            App.BackpackMaterialConfigManagerInstance.Load();
+            AccountConfigLoad();
+        }
+
+        private void AccountConfigSave()
+        {
+            App.ThemeConfigManagerInstance!.Save();
+            App.PrivateAccountConfigManagerInstance!.Save();
+            App.BackpackMaterialConfigManagerInstance!.Save();
+            App.BackpackCharacterConfigManagerInstance!.Save();
+        }
+
+        private void AccountConfigCreate(Guid guid)
+        {
+            App.ThemeConfigManagerInstance = new ThemeConfigManager(guid);
+            App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(guid);
+            App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(guid);
+            App.BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(guid);
+        }
+
+        private void AccountConfigLoad()
+        {
+            App.ThemeConfigManagerInstance!.Load();
+            App.PrivateAccountConfigManagerInstance!.Load();
+            App.BackpackMaterialConfigManagerInstance!.Load();
+            App.BackpackCharacterConfigManagerInstance!.Load();
         }
     }
 }

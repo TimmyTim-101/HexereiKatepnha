@@ -41,6 +41,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                 thisBackpack1CharacterModel.Name = e.Name;
                 thisBackpack1CharacterModel.WeaponType = e.WeaponType;
+                thisBackpack1CharacterModel.CharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(e.Rid);
+                thisBackpack1CharacterModel.LevelString = StringConstants.LevelNameString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
+                thisBackpack1CharacterModel.TalentAString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentALevel];
+                thisBackpack1CharacterModel.TalentEString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentELevel];
+                thisBackpack1CharacterModel.TalentQString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentQLevel];
+                thisBackpack1CharacterModel.TalentPropertyDictionary = e.Talent;
+                thisBackpack1CharacterModel.AscensionPropertyDictionary = e.Ascension;
+                for (int i = 1; i <= 6; i++)
+                {
+                    thisBackpack1CharacterModel.AscensionOpacityList[i] = i <= thisBackpack1CharacterModel.CharacterConfigModel.Ascension ? 1.0 : 0.1;
+                }
+
                 AllCharacterList.Add(thisBackpack1CharacterModel);
             }
 

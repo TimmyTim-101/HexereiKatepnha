@@ -92,7 +92,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     {
                         WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel
                         {
-                            S1 = StringConstants.LevelString[thisLevel],
+                            S1 = StringConstants.LevelNumberString[thisLevel],
                             S2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
                             S3 = e.SubAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
                         };

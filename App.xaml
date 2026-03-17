@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="/Resources/Styles/TabControl.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/CheckBox.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Resources/Styles/ListBox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Resources/Styles/ToolTip.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>

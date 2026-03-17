@@ -17,6 +17,7 @@ namespace HexereiKatepnha
         public static AccountConfigManager? AccountConfigManagerInstance { get; private set; }
         public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
         public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
+        public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -33,6 +34,8 @@ namespace HexereiKatepnha
             PrivateAccountConfigManagerInstance.Load();
             BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(currentAccountGuid);
             BackpackMaterialConfigManagerInstance.Load();
+            BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(currentAccountGuid);
+            BackpackCharacterConfigManagerInstance.Load();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -41,6 +44,7 @@ namespace HexereiKatepnha
             ThemeConfigManagerInstance?.Save();
             PrivateAccountConfigManagerInstance?.Save();
             BackpackMaterialConfigManagerInstance?.Save();
+            BackpackCharacterConfigManagerInstance?.Save();
             base.OnExit(e);
         }
 
