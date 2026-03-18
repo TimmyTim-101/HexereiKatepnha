@@ -15,6 +15,7 @@ public partial class Backpack1CharacterModel : ObservableObject
     public string ElementImagePath { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string Name { get; set; } = "";
+    public int Star { get; set; }
     public Enumeration.WeaponType WeaponType { get; set; } = Enumeration.WeaponType.Unknown;
     [ObservableProperty] private SingleBackpackCharacterConfigModel _characterConfigModel = new();
     [ObservableProperty] private string _levelString = StringConstants.LevelNameString[Enumeration.Level.L1];

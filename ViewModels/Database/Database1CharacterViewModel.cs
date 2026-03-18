@@ -18,6 +18,7 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowLessNumbers = true;
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
+        [ObservableProperty] private int _starFilter;
         public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Database1CharacterModel _selectedCharacter;
         public ICollectionView CharacterView { get; }
@@ -33,6 +34,8 @@ namespace HexereiKatepnha.ViewModels.Database
         public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
         public string Weapon4ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
         public string Weapon5ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
+        public string Star4ImagePath { get; set; } = StringConstants.StarImagePath[4];
+        public string Star5ImagePath { get; set; } = StringConstants.StarImagePath[5];
 
         public Database1CharacterViewModel()
         {
@@ -45,6 +48,7 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                 thisDatabase1CharacterModel.Name = e.Name;
                 thisDatabase1CharacterModel.Vid = e.Vid;
+                thisDatabase1CharacterModel.Star = e.Star;
                 thisDatabase1CharacterModel.StarImagePath = StringConstants.StarImagePath[e.Star];
                 thisDatabase1CharacterModel.BirthdayString = "生日：" + e.BirthMonth + " / " + e.BirthDay;
                 thisDatabase1CharacterModel.WeaponType = e.WeaponType;
@@ -200,6 +204,7 @@ namespace HexereiKatepnha.ViewModels.Database
             {
                 bool isElement = true;
                 bool isWeapon = true;
+                bool isStar = true;
                 switch (ElementFilter)
                 {
                     case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
@@ -220,7 +225,13 @@ namespace HexereiKatepnha.ViewModels.Database
                     case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
                 }
 
-                return isElement && isWeapon;
+                switch (StarFilter)
+                {
+                    case 4: isStar = c.Star == 4; break;
+                    case 5: isStar = c.Star is 5 or 6; break;
+                }
+
+                return isElement && isWeapon && isStar;
             }
 
             return false;
@@ -251,6 +262,12 @@ namespace HexereiKatepnha.ViewModels.Database
             UpdateSelection();
         }
 
+        partial void OnStarFilterChanged(int value)
+        {
+            CharacterView.Refresh();
+            UpdateSelection();
+        }
+
         [RelayCommand]
         private void ClickOnElementFilter(String value)
         {
@@ -263,6 +280,13 @@ namespace HexereiKatepnha.ViewModels.Database
         {
             int valueInt = Int32.Parse(value);
             WeaponFilter = valueInt == WeaponFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnStarFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            StarFilter = valueInt == StarFilter ? 0 : valueInt;
         }
     }
 }

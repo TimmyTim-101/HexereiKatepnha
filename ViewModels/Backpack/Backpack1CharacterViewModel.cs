@@ -14,6 +14,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
     {
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
+        [ObservableProperty] private int _starFilter;
         public ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
         [ObservableProperty] private bool _isLevelPopupOpen;
@@ -34,7 +35,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
         public string Weapon4ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Catalyst];
         public string Weapon5ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
-
+        public string Star4ImagePath { get; set; } = StringConstants.StarImagePath[4];
+        public string Star5ImagePath { get; set; } = StringConstants.StarImagePath[5];
+        
         public Backpack1CharacterViewModel()
         {
             foreach (CharacterModel e in AllEntities.AllCharacter)
@@ -46,6 +49,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
                 thisBackpack1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
                 thisBackpack1CharacterModel.Name = e.Name;
+                thisBackpack1CharacterModel.Star = e.Star;
                 thisBackpack1CharacterModel.WeaponType = e.WeaponType;
                 thisBackpack1CharacterModel.CharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(e.Rid);
                 thisBackpack1CharacterModel.LevelString = StringConstants.LevelNameString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
@@ -72,6 +76,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             if (item is not Backpack1CharacterModel c) return false;
             bool isElement = true;
             bool isWeapon = true;
+            bool isStar = true;
             switch (ElementFilter)
             {
                 case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
@@ -91,8 +96,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 case 4: isWeapon = c.WeaponType == Enumeration.WeaponType.Catalyst; break;
                 case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
             }
+            
+            switch (StarFilter)
+            {
+                case 4: isStar = c.Star == 4; break;
+                case 5: isStar = c.Star is 5 or 6; break;
+            }
 
-            return isElement && isWeapon;
+            return isElement && isWeapon && isStar;
         }
 
         private void UpdateSelection()
@@ -115,6 +126,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
             UpdateSelection();
         }
 
+        partial void OnStarFilterChanged(int value)
+        {
+            CharacterView.Refresh();
+            UpdateSelection();
+        }
+
         [RelayCommand]
         private void ClickOnElementFilter(String value)
         {
@@ -127,6 +144,13 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             WeaponFilter = valueInt == WeaponFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnStarFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            StarFilter = valueInt == StarFilter ? 0 : valueInt;
         }
 
         [RelayCommand]

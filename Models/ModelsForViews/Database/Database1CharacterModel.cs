@@ -11,6 +11,7 @@ public class Database1CharacterModel
     public string BackgroundImagePath { get; set; } = "";
     public string Name { get; set; } = "";
     public int Vid { get; set; }
+    public int Star { get; set; }
     public string StarImagePath { get; set; } = "";
     public string BirthdayString { get; set; } = "";
     public Enumeration.WeaponType WeaponType { get; set; } = Enumeration.WeaponType.Unknown;

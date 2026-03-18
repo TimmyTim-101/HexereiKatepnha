@@ -227,6 +227,32 @@
                             </Button.Style>
                         </Button>
                     </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
+                        <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="4" Margin="2">
+                            <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding StarFilter}" Value="4">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="5" Margin="2">
+                            <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding StarFilter}" Value="5">
+                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </WrapPanel>
                 </StackPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                 <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
