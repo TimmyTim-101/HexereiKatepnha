@@ -255,28 +255,14 @@ namespace HexereiKatepnha.ViewModels.Database
         private void ClickOnElementFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == ElementFilter)
-            {
-                ElementFilter = 0;
-            }
-            else
-            {
-                ElementFilter = valueInt;
-            }
+            ElementFilter = valueInt == ElementFilter ? 0 : valueInt;
         }
 
         [RelayCommand]
         private void ClickOnWeaponFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == WeaponFilter)
-            {
-                WeaponFilter = 0;
-            }
-            else
-            {
-                WeaponFilter = valueInt;
-            }
+            WeaponFilter = valueInt == WeaponFilter ? 0 : valueInt;
         }
     }
 }

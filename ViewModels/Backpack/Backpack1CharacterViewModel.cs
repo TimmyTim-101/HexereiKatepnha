@@ -16,6 +16,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private int _weaponFilter;
         public ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
+        [ObservableProperty] private bool _isLevelPopupOpen;
+        [ObservableProperty] private bool _isTalentAPopupOpen;
+        [ObservableProperty] private bool _isTalentEPopupOpen;
+        [ObservableProperty] private bool _isTalentQPopupOpen;
+        [ObservableProperty] private bool _isAscensionPopupOpen;
         public ICollectionView CharacterView { get; }
         public string Element1ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
         public string Element2ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
@@ -35,6 +40,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             foreach (CharacterModel e in AllEntities.AllCharacter)
             {
                 Backpack1CharacterModel thisBackpack1CharacterModel = new Backpack1CharacterModel();
+                thisBackpack1CharacterModel.Rid = e.Rid;
                 thisBackpack1CharacterModel.ImagePath = e.ImagePath;
                 thisBackpack1CharacterModel.ElementType = e.ElementType;
                 thisBackpack1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
@@ -63,34 +69,30 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         private bool CharacterFilter(object item)
         {
-            if (item is Backpack1CharacterModel c)
+            if (item is not Backpack1CharacterModel c) return false;
+            bool isElement = true;
+            bool isWeapon = true;
+            switch (ElementFilter)
             {
-                bool isElement = true;
-                bool isWeapon = true;
-                switch (ElementFilter)
-                {
-                    case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
-                    case 2: isElement = c.ElementType == Enumeration.ElementType.Hydro; break;
-                    case 3: isElement = c.ElementType == Enumeration.ElementType.Anemo; break;
-                    case 4: isElement = c.ElementType == Enumeration.ElementType.Electro; break;
-                    case 5: isElement = c.ElementType == Enumeration.ElementType.Dendro; break;
-                    case 6: isElement = c.ElementType == Enumeration.ElementType.Cryo; break;
-                    case 7: isElement = c.ElementType == Enumeration.ElementType.Geo; break;
-                }
-
-                switch (WeaponFilter)
-                {
-                    case 1: isWeapon = c.WeaponType == Enumeration.WeaponType.Sword; break;
-                    case 2: isWeapon = c.WeaponType == Enumeration.WeaponType.Claymore; break;
-                    case 3: isWeapon = c.WeaponType == Enumeration.WeaponType.Pole; break;
-                    case 4: isWeapon = c.WeaponType == Enumeration.WeaponType.Catalyst; break;
-                    case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
-                }
-
-                return isElement && isWeapon;
+                case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
+                case 2: isElement = c.ElementType == Enumeration.ElementType.Hydro; break;
+                case 3: isElement = c.ElementType == Enumeration.ElementType.Anemo; break;
+                case 4: isElement = c.ElementType == Enumeration.ElementType.Electro; break;
+                case 5: isElement = c.ElementType == Enumeration.ElementType.Dendro; break;
+                case 6: isElement = c.ElementType == Enumeration.ElementType.Cryo; break;
+                case 7: isElement = c.ElementType == Enumeration.ElementType.Geo; break;
             }
 
-            return false;
+            switch (WeaponFilter)
+            {
+                case 1: isWeapon = c.WeaponType == Enumeration.WeaponType.Sword; break;
+                case 2: isWeapon = c.WeaponType == Enumeration.WeaponType.Claymore; break;
+                case 3: isWeapon = c.WeaponType == Enumeration.WeaponType.Pole; break;
+                case 4: isWeapon = c.WeaponType == Enumeration.WeaponType.Catalyst; break;
+                case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
+            }
+
+            return isElement && isWeapon;
         }
 
         private void UpdateSelection()
@@ -117,28 +119,72 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnElementFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == ElementFilter)
-            {
-                ElementFilter = 0;
-            }
-            else
-            {
-                ElementFilter = valueInt;
-            }
+            ElementFilter = valueInt == ElementFilter ? 0 : valueInt;
         }
 
         [RelayCommand]
         private void ClickOnWeaponFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == WeaponFilter)
+            WeaponFilter = valueInt == WeaponFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnLevelSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedCharacter.CharacterConfigModel.CharacterLevel = thisLevel;
+            SelectedCharacter.LevelString = StringConstants.LevelNameString[thisLevel];
+            App.BackpackCharacterConfigManagerInstance!.UpdateLevel(SelectedCharacter.Rid, thisLevel);
+            IsLevelPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnTalentASelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedCharacter.CharacterConfigModel.TalentALevel = thisLevel;
+            SelectedCharacter.TalentAString = StringConstants.LevelNumberString[thisLevel];
+            App.BackpackCharacterConfigManagerInstance!.UpdateTalentA(SelectedCharacter.Rid, thisLevel);
+            IsTalentAPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnTalentESelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedCharacter.CharacterConfigModel.TalentELevel = thisLevel;
+            SelectedCharacter.TalentEString = StringConstants.LevelNumberString[thisLevel];
+            App.BackpackCharacterConfigManagerInstance!.UpdateTalentE(SelectedCharacter.Rid, thisLevel);
+            IsTalentEPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnTalentQSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedCharacter.CharacterConfigModel.TalentQLevel = thisLevel;
+            SelectedCharacter.TalentQString = StringConstants.LevelNumberString[thisLevel];
+            App.BackpackCharacterConfigManagerInstance!.UpdateTalentQ(SelectedCharacter.Rid, thisLevel);
+            IsTalentQPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnAscensionSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            SelectedCharacter.CharacterConfigModel.Ascension = valueInt;
+            for (int i = 1; i <= 6; i++)
             {
-                WeaponFilter = 0;
+                SelectedCharacter.AscensionOpacityList[i] = i <= SelectedCharacter.CharacterConfigModel.Ascension ? 1.0 : 0.1;
             }
-            else
-            {
-                WeaponFilter = valueInt;
-            }
+
+            App.BackpackCharacterConfigManagerInstance!.UpdateAscension(SelectedCharacter.Rid, valueInt);
+            IsAscensionPopupOpen = false;
         }
     }
 }

@@ -296,10 +296,134 @@
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" Cursor="Hand">
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="等级：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.LevelString}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                    </StackPanel>
+                                    <ToggleButton Grid.Row="2" x:Name="LevelToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsLevelPopupOpen, Mode=TwoWay}">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border Background="Transparent">
+                                                    <ContentPresenter></ContentPresenter>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="等级：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.LevelString}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </ToggleButton>
+                                    <Popup Grid.Row="2" IsOpen="{Binding IsLevelPopupOpen}" PlacementTarget="{Binding ElementName=LevelToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                        <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                            <UniformGrid Rows="10" Columns="11">
+                                                <Button Style="{StaticResource TextButton}" Content="1" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="1"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="2" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="2"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="3" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="3"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="4" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="4"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="5" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="5"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="6" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="6"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="7" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="7"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="8" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="8"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="9" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="9"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="10" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="10"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="11" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="11"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="12" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="12"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="13" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="13"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="14" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="14"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="15" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="15"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="16" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="16"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="17" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="17"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="18" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="18"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="19" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="19"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="20-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="20"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="20+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="21"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="21" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="22"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="22" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="23"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="23" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="24"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="24" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="25"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="25" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="26"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="26" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="27"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="27" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="28"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="28" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="29"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="29" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="30"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="30" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="31"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="31" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="32"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="32" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="33"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="33" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="34"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="34" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="35"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="35" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="36"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="36" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="37"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="37" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="38"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="38" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="39"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="39" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="40"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="40-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="41"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="40+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="42"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="41" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="43"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="42" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="44"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="43" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="45"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="44" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="46"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="45" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="47"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="46" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="48"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="47" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="49"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="48" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="50"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="49" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="51"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="50-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="52"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="50+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="53"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="51" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="54"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="52" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="55"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="53" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="56"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="54" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="57"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="55" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="58"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="56" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="59"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="57" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="60"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="58" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="61"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="59" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="62"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="60-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="63"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="60+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="64"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="61" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="65"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="62" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="66"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="63" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="67"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="64" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="68"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="65" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="69"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="66" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="70"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="67" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="71"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="68" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="72"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="69" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="73"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="70-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="74"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="70+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="75"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="71" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="76"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="72" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="77"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="73" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="78"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="74" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="79"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="75" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="80"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="76" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="81"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="77" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="82"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="78" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="83"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="79" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="84"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="80-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="85"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="80+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="86"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="81" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="87"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="82" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="88"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="83" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="89"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="84" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="90"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="85" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="91"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="86" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="92"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="87" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="93"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="88" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="94"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="89" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="95"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="90-" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="96"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="90+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="97"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="91" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="98"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="92" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="99"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="93" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="100"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="94" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="101"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="95" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="102"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="96" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="103"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="97" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="104"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="98" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="105"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="99" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="106"></Button>
+                                                <Button Style="{StaticResource TextButton}" Content="100" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="107"></Button>
+                                            </UniformGrid>
+                                        </Border>
+                                    </Popup>
                                     <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -307,30 +431,105 @@
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <StackPanel Grid.Column="0" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[1].Description}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentAString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="1" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[2].Description}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentEString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="2" Orientation="Vertical" Background="Transparent" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                            <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[3].Description}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentQString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                        </StackPanel>
+                                        <ToggleButton Grid.Column="0" x:Name="TalentAToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsTalentAPopupOpen, Mode=TwoWay}">
+                                            <ToggleButton.Template>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="Transparent">
+                                                        <ContentPresenter></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </ToggleButton.Template>
+                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[1].Description}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentAString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            </StackPanel>
+                                        </ToggleButton>
+                                        <Popup Grid.Column="0" IsOpen="{Binding IsTalentAPopupOpen}" PlacementTarget="{Binding ElementName=TalentAToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <UniformGrid Rows="2" Columns="5">
+                                                    <Button Style="{StaticResource TextButton}" Content="1" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="1"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="2" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="2"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="3" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="3"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="4" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="4"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="5" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="5"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="6" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="6"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="7" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="7"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="8" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="8"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="9" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="9"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="10" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentASelectionCommand}" CommandParameter="10"></Button>
+                                                </UniformGrid>
+                                            </Border>
+                                        </Popup>
+                                        <ToggleButton Grid.Column="1" x:Name="TalentEToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsTalentEPopupOpen, Mode=TwoWay}">
+                                            <ToggleButton.Template>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="Transparent">
+                                                        <ContentPresenter></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </ToggleButton.Template>
+                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[2].Description}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentEString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            </StackPanel>
+                                        </ToggleButton>
+                                        <Popup Grid.Column="1" IsOpen="{Binding IsTalentEPopupOpen}" PlacementTarget="{Binding ElementName=TalentEToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <UniformGrid Rows="2" Columns="5">
+                                                    <Button Style="{StaticResource TextButton}" Content="1" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="1"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="2" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="2"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="3" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="3"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="4" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="4"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="5" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="5"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="6" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="6"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="7" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="7"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="8" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="8"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="9" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="9"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="10" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentESelectionCommand}" CommandParameter="10"></Button>
+                                                </UniformGrid>
+                                            </Border>
+                                        </Popup>
+                                        <ToggleButton Grid.Column="2" x:Name="TalentQToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsTalentQPopupOpen, Mode=TwoWay}">
+                                            <ToggleButton.Template>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="Transparent">
+                                                        <ContentPresenter></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </ToggleButton.Template>
+                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[3].Description}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentQString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            </StackPanel>
+                                        </ToggleButton>
+                                        <Popup Grid.Column="2" IsOpen="{Binding IsTalentQPopupOpen}" PlacementTarget="{Binding ElementName=TalentQToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <UniformGrid Rows="2" Columns="5">
+                                                    <Button Style="{StaticResource TextButton}" Content="1" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="1"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="2" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="2"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="3" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="3"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="4" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="4"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="5" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="5"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="6" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="6"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="7" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="7"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="8" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="8"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="9" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="9"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="10" Width="30" Height="30" Margin="2" Command="{Binding ClickOnTalentQSelectionCommand}" CommandParameter="10"></Button>
+                                                </UniformGrid>
+                                            </Border>
+                                        </Popup>
                                     </Grid>
                                     <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
                                     <Grid Grid.Row="6">
@@ -338,10 +537,32 @@
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="命之座：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Ascension}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                        </StackPanel>
+                                        <ToggleButton Grid.Row="0" x:Name="AscensionToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsAscensionPopupOpen, Mode=TwoWay}">
+                                            <ToggleButton.Template>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="Transparent">
+                                                        <ContentPresenter></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </ToggleButton.Template>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="命之座：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Ascension}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            </StackPanel>
+                                        </ToggleButton>
+                                        <Popup Grid.Row="0" IsOpen="{Binding IsAscensionPopupOpen}" PlacementTarget="{Binding ElementName=AscensionToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <UniformGrid Rows="1">
+                                                    <Button Style="{StaticResource TextButton}" Content="0" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="0"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="1" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="1"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="2" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="2"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="3" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="3"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="4" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="4"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="5" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="5"></Button>
+                                                    <Button Style="{StaticResource TextButton}" Content="6" Width="30" Height="30" Margin="2" Command="{Binding ClickOnAscensionSelectionCommand}" CommandParameter="6"></Button>
+                                                </UniformGrid>
+                                            </Border>
+                                        </Popup>
                                         <UniformGrid Grid.Row="1" Rows="1">
                                             <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
                                                 <Image.ToolTip>

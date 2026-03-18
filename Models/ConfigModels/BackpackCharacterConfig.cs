@@ -1,4 +1,5 @@
-﻿using HexereiKatepnha.Constants.EntityConstants;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using HexereiKatepnha.Constants.EntityConstants;
 
 namespace HexereiKatepnha.Models.ConfigModels;
 
@@ -7,11 +8,11 @@ public class BackpackCharacterConfig
     public Dictionary<int, SingleBackpackCharacterConfigModel> CharacterConfig { get; set; } = new();
 }
 
-public class SingleBackpackCharacterConfigModel
+public partial class SingleBackpackCharacterConfigModel : ObservableObject
 {
-    public Enumeration.Level CharacterLevel { get; set; } = Enumeration.Level.L1;
-    public Enumeration.Level TalentALevel { get; set; } = Enumeration.Level.L1;
-    public Enumeration.Level TalentELevel { get; set; } = Enumeration.Level.L1;
-    public Enumeration.Level TalentQLevel { get; set; } = Enumeration.Level.L1;
-    public int Ascension { get; set; } = 0;
+    [ObservableProperty] private Enumeration.Level _characterLevel = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentALevel = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentELevel = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentQLevel = Enumeration.Level.L1;
+    [ObservableProperty] private int _ascension = 0;
 }
