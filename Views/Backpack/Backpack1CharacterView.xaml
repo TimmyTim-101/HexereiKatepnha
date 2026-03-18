@@ -30,230 +30,236 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Orientation="Vertical">
-                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="1" Margin="2">
-                            <Image Source="{Binding Element1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="火"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="1">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="2" Margin="2">
-                            <Image Source="{Binding Element2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="水"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="2">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="3" Margin="2">
-                            <Image Source="{Binding Element3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="风"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="3">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Element4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="雷"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="4">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Element5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="草"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="5">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="6" Margin="2">
-                            <Image Source="{Binding Element6ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="冰"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="6">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="7" Margin="2">
-                            <Image Source="{Binding Element7ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="岩"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementFilter}" Value="7">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </WrapPanel>
-                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
-                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="1" Margin="2">
-                            <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="单手剑"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="1">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="2" Margin="2">
-                            <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="双手剑"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="2">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="3" Margin="2">
-                            <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="长柄武器"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="3">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="法器"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="4">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
-                                <Image.ToolTip>
-                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="弓"></ToolTip>
-                                </Image.ToolTip>
-                            </Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding WeaponFilter}" Value="5">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </WrapPanel>
-                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0">
-                        <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="4" Margin="2">
-                            <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding StarFilter}" Value="4">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="5" Margin="2">
-                            <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
-                            <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding StarFilter}" Value="5">
-                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </WrapPanel>
-                </StackPanel>
+                <WrapPanel Grid.Row="0" Orientation="Horizontal" Margin="15,0,0,0">
+                    <Border BorderBrush="White" BorderThickness="1" CornerRadius="5" Margin="2">
+                        <WrapPanel Orientation="Horizontal">
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="1" Margin="2">
+                                <Image Source="{Binding Element1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="火"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="1">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="2" Margin="2">
+                                <Image Source="{Binding Element2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="水"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="2">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="3" Margin="2">
+                                <Image Source="{Binding Element3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="风"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="3">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="4" Margin="2">
+                                <Image Source="{Binding Element4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="雷"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="4">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="5" Margin="2">
+                                <Image Source="{Binding Element5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="草"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="5">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="6" Margin="2">
+                                <Image Source="{Binding Element6ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="冰"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="6">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnElementFilterCommand}" CommandParameter="7" Margin="2">
+                                <Image Source="{Binding Element7ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="岩"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementFilter}" Value="7">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </WrapPanel>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="1" CornerRadius="5" Margin="2">
+                        <WrapPanel Orientation="Horizontal">
+                            <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="1" Margin="2">
+                                <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="单手剑"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeaponFilter}" Value="1">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="2" Margin="2">
+                                <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="双手剑"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeaponFilter}" Value="2">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="3" Margin="2">
+                                <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="长柄武器"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeaponFilter}" Value="3">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="4" Margin="2">
+                                <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="法器"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeaponFilter}" Value="4">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnWeaponFilterCommand}" CommandParameter="5" Margin="2">
+                                <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="55" Height="55" Margin="10" ToolTipService.InitialShowDelay="100">
+                                    <Image.ToolTip>
+                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="弓"></ToolTip>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeaponFilter}" Value="5">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </WrapPanel>
+                    </Border>
+                    <Border BorderBrush="White" BorderThickness="1" CornerRadius="5" Margin="2">
+                        <WrapPanel Orientation="Horizontal">
+                            <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="4" Margin="2">
+                                <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding StarFilter}" Value="4">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Command="{Binding ClickOnStarFilterCommand}" CommandParameter="5" Margin="2">
+                                <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="55" Height="14" Margin="10,30"></Image>
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding StarFilter}" Value="5">
+                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </WrapPanel>
+                    </Border>
+                </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                 <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
                     <ListBox.ItemsPanel>
@@ -263,9 +269,12 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate DataType="{x:Type models:Backpack1CharacterModel}">
-                            <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand">
+                            <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent">
                                 <Grid>
                                     <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
                                     </Grid.RowDefinitions>
@@ -277,6 +286,29 @@
                                     <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
                                     </Viewbox>
+                                    <TextBlock Grid.Row="2" Style="{StaticResource MyTextBlock}" Text="{Binding LevelString}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCCCCC"></TextBlock>
+                                    <UniformGrid Grid.Row="3" Rows="1">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="A" FontSize="14" Foreground="#333333"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentAString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="E" FontSize="14" Foreground="#333333"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentEString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="Q" FontSize="14" Foreground="#333333"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentQString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                    <UniformGrid Grid.Row="4" Rows="1">
+                                        <Image Source="{Binding AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[1]}"></Image>
+                                        <Image Source="{Binding AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[2]}"></Image>
+                                        <Image Source="{Binding AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[3]}"></Image>
+                                        <Image Source="{Binding AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[4]}"></Image>
+                                        <Image Source="{Binding AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[5]}"></Image>
+                                        <Image Source="{Binding AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[6]}"></Image>
+                                    </UniformGrid>
                                 </Grid>
                             </Border>
                         </DataTemplate>

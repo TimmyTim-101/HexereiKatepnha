@@ -37,7 +37,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public string Weapon5ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Bow];
         public string Star4ImagePath { get; set; } = StringConstants.StarImagePath[4];
         public string Star5ImagePath { get; set; } = StringConstants.StarImagePath[5];
-        
+
         public Backpack1CharacterViewModel()
         {
             foreach (CharacterModel e in AllEntities.AllCharacter)
@@ -96,7 +96,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 case 4: isWeapon = c.WeaponType == Enumeration.WeaponType.Catalyst; break;
                 case 5: isWeapon = c.WeaponType == Enumeration.WeaponType.Bow; break;
             }
-            
+
             switch (StarFilter)
             {
                 case 4: isStar = c.Star == 4; break;
