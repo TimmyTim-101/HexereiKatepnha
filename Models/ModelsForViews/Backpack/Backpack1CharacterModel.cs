@@ -18,10 +18,15 @@ public partial class Backpack1CharacterModel : ObservableObject
     public int Star { get; set; }
     public Enumeration.WeaponType WeaponType { get; set; } = Enumeration.WeaponType.Unknown;
     [ObservableProperty] private SingleBackpackCharacterConfigModel _characterConfigModel = new();
-    [ObservableProperty] private string _levelString = StringConstants.LevelNameString[Enumeration.Level.L1];
+    [ObservableProperty] private string _levelNameString = StringConstants.LevelNameString[Enumeration.Level.L1];
+    [ObservableProperty] private string _levelNumberString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _talentAString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _talentEString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _talentQString = StringConstants.LevelNumberString[Enumeration.Level.L1];
+    [ObservableProperty] private string _levelGoalNumberString = StringConstants.LevelNumberString[Enumeration.Level.L1];
+    [ObservableProperty] private string _talentAGoalString = StringConstants.LevelNumberString[Enumeration.Level.L1];
+    [ObservableProperty] private string _talentEGoalString = StringConstants.LevelNumberString[Enumeration.Level.L1];
+    [ObservableProperty] private string _talentQGoalString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     public Dictionary<int, ImageDescriptionPairModel> TalentPropertyDictionary { get; set; } = new();
     public Dictionary<int, ImageDescriptionPairModel> AscensionPropertyDictionary { get; set; } = new();
     [ObservableProperty] private ObservableCollection<double> _ascensionOpacityList = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0];

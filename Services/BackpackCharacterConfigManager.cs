@@ -71,4 +71,48 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         Configuration.CharacterConfig[characterId].Ascension = num;
         Save();
     }
+
+    public void UpdateLevelGoal(int characterId, Enumeration.Level l)
+    {
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        Configuration.CharacterConfig[characterId].CharacterLevelGoal = l;
+        Save();
+    }
+
+    public void UpdateTalentAGoal(int characterId, Enumeration.Level l)
+    {
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        Configuration.CharacterConfig[characterId].TalentALevelGoal = l;
+        Save();
+    }
+
+    public void UpdateTalentEGoal(int characterId, Enumeration.Level l)
+    {
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        Configuration.CharacterConfig[characterId].TalentELevelGoal = l;
+        Save();
+    }
+
+    public void UpdateTalentQGoal(int characterId, Enumeration.Level l)
+    {
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        Configuration.CharacterConfig[characterId].TalentQLevelGoal = l;
+        Save();
+    }
 }

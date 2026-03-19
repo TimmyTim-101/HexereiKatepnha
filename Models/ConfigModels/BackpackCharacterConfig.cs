@@ -14,5 +14,9 @@ public partial class SingleBackpackCharacterConfigModel : ObservableObject
     [ObservableProperty] private Enumeration.Level _talentALevel = Enumeration.Level.L1;
     [ObservableProperty] private Enumeration.Level _talentELevel = Enumeration.Level.L1;
     [ObservableProperty] private Enumeration.Level _talentQLevel = Enumeration.Level.L1;
-    [ObservableProperty] private int _ascension = 0;
+    [ObservableProperty] private int _ascension;
+    [ObservableProperty] private Enumeration.Level _characterLevelGoal = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentALevelGoal = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentELevelGoal = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _talentQLevelGoal = Enumeration.Level.L1;
 }
