@@ -25,6 +25,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].CharacterLevel = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -36,6 +37,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentALevel = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -47,6 +49,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentELevel = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -58,6 +61,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentQLevel = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -80,6 +84,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].CharacterLevelGoal = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -91,6 +96,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentALevelGoal = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -102,6 +108,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentELevelGoal = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 
@@ -113,6 +120,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentQLevelGoal = l;
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
     }
 }

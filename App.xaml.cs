@@ -18,6 +18,7 @@ namespace HexereiKatepnha
         public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
         public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
         public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
+        public static CalculatorPlanSettingConfigManager? CalculatorPlanSettingConfigManagerInstance { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -36,6 +37,8 @@ namespace HexereiKatepnha
             BackpackMaterialConfigManagerInstance.Load();
             BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(currentAccountGuid);
             BackpackCharacterConfigManagerInstance.Load();
+            CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(currentAccountGuid); // todo 依赖于BackpackCharacterConfigManagerInstance以及相应武器的config
+            CalculatorPlanSettingConfigManagerInstance.Load();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -45,6 +48,7 @@ namespace HexereiKatepnha
             PrivateAccountConfigManagerInstance?.Save();
             BackpackMaterialConfigManagerInstance?.Save();
             BackpackCharacterConfigManagerInstance?.Save();
+            CalculatorPlanSettingConfigManagerInstance?.Save();
             base.OnExit(e);
         }
 
@@ -71,6 +75,9 @@ namespace HexereiKatepnha
                     AutoCalculateConstants.MaterialMergeRecipe[thisGroupList[i].Rid] = thisGroupList[i + 1].Rid;
                 }
             }
+
+            AutoCalculateConstants.CharacterMap = AllEntities.AllCharacter.ToDictionary(c => c.Rid, c => c);
+            AutoCalculateConstants.WeaponMap = AllEntities.AllWeapon.ToDictionary(w => w.Rid, w => w);
         }
     }
 }

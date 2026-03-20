@@ -6196,6 +6196,12 @@
     <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png" />
     <None Remove="Resources\Icons\NavigationIcons\Order.png" />
     <Resource Include="Resources\Icons\NavigationIcons\Order.png" />
+    <None Remove="Resources\Icons\arrow_circle_down_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <Resource Include="Resources\Icons\arrow_circle_down_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Remove="Resources\Icons\arrow_circle_up_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <Resource Include="Resources\Icons\arrow_circle_up_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Remove="Resources\Icons\vertical_align_top_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <Resource Include="Resources\Icons\vertical_align_top_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
   </ItemGroup>
 
   <ItemGroup>

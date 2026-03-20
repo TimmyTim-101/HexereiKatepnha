@@ -265,6 +265,7 @@ namespace HexereiKatepnha.ViewModels
             App.PrivateAccountConfigManagerInstance!.Save();
             App.BackpackMaterialConfigManagerInstance!.Save();
             App.BackpackCharacterConfigManagerInstance!.Save();
+            App.CalculatorPlanSettingConfigManagerInstance!.Save();
         }
 
         private void AccountConfigCreate(Guid guid)
@@ -273,6 +274,7 @@ namespace HexereiKatepnha.ViewModels
             App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(guid);
             App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(guid);
             App.BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(guid);
+            App.CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(guid); // todo 依赖于BackpackCharacterConfigManagerInstance以及相应武器的config
         }
 
         private void AccountConfigLoad()
@@ -281,6 +283,7 @@ namespace HexereiKatepnha.ViewModels
             App.PrivateAccountConfigManagerInstance!.Load();
             App.BackpackMaterialConfigManagerInstance!.Load();
             App.BackpackCharacterConfigManagerInstance!.Load();
+            App.CalculatorPlanSettingConfigManagerInstance!.Load();
         }
     }
 }
