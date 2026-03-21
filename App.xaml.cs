@@ -18,6 +18,7 @@ namespace HexereiKatepnha
         public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
         public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
         public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
+        public static BackpackWeaponConfigManager? BackpackWeaponConfigManagerInstance { get; set; }
         public static CalculatorPlanSettingConfigManager? CalculatorPlanSettingConfigManagerInstance { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -37,7 +38,9 @@ namespace HexereiKatepnha
             BackpackMaterialConfigManagerInstance.Load();
             BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(currentAccountGuid);
             BackpackCharacterConfigManagerInstance.Load();
-            CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(currentAccountGuid); // todo 依赖于BackpackCharacterConfigManagerInstance以及相应武器的config
+            BackpackWeaponConfigManagerInstance = new BackpackWeaponConfigManager(currentAccountGuid);
+            BackpackWeaponConfigManagerInstance.Load();
+            CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(currentAccountGuid);
             CalculatorPlanSettingConfigManagerInstance.Load();
         }
 
@@ -48,6 +51,7 @@ namespace HexereiKatepnha
             PrivateAccountConfigManagerInstance?.Save();
             BackpackMaterialConfigManagerInstance?.Save();
             BackpackCharacterConfigManagerInstance?.Save();
+            BackpackWeaponConfigManagerInstance?.Save();
             CalculatorPlanSettingConfigManagerInstance?.Save();
             base.OnExit(e);
         }

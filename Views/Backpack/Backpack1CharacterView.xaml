@@ -350,8 +350,8 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="25" Height="25" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5"></Image>
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5"></Image>
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>

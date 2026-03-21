@@ -6202,6 +6202,8 @@
     <Resource Include="Resources\Icons\arrow_circle_up_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
     <None Remove="Resources\Icons\vertical_align_top_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
     <Resource Include="Resources\Icons\vertical_align_top_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Remove="Resources\Images\empty_item.png" />
+    <Resource Include="Resources\Images\empty_item.png" />
   </ItemGroup>
 
   <ItemGroup>

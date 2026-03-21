@@ -33,7 +33,11 @@
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{Binding Index}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                    <Image Grid.Column="1" Source="{Binding ImagePath}" Width="60" Height="60" Stretch="UniformToFill"></Image>
+                    <Grid Grid.Column="1">
+                        <Image Source="{Binding StarBackgroundImagePath}" Width="60" Height="60" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding ImagePath}" Width="60" Height="60" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding ElementImagePath}" Width="15" Height="15" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                    </Grid>
                     <TextBlock Grid.Column="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Border Grid.Column="3" Style="{StaticResource VerticalDivider}"></Border>
                     <TextBlock Grid.Column="4" Text="{Binding LevelString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
@@ -44,18 +48,18 @@
                     <Border Grid.Column="9" Style="{StaticResource VerticalDivider}"></Border>
                     <TextBlock Grid.Column="10" Text="{Binding TalentQString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <Border Grid.Column="11" Style="{StaticResource VerticalDivider}"></Border>
-                    <Border Grid.Column="12" CornerRadius="5" BorderThickness="0" Margin="2" Width="58">
-                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnTopCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="58" Height="58">
+                    <Border Grid.Column="12" CornerRadius="5" BorderThickness="1" BorderBrush="#1AFFFFFF" Margin="5" Width="50">
+                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnTopCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="50" Height="50">
                             <Image Source="../Calculator/../../Resources/Icons/vertical_align_top_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Stretch="Uniform" Width="30" Height="30"></Image>
                         </Button>
                     </Border>
-                    <Border Grid.Column="13" CornerRadius="5" BorderThickness="0" Margin="2" Width="58">
-                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnUpCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="58" Height="58">
+                    <Border Grid.Column="13" CornerRadius="5" BorderThickness="1" BorderBrush="#1AFFFFFF" Margin="5" Width="50">
+                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnUpCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="50" Height="50">
                             <Image Source="../Calculator/../../Resources/Icons/arrow_circle_up_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Stretch="Uniform" Width="30" Height="30"></Image>
                         </Button>
                     </Border>
-                    <Border Grid.Column="14" CornerRadius="5" BorderThickness="0" Margin="2" Width="58">
-                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnDownCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="58" Height="58">
+                    <Border Grid.Column="14" CornerRadius="5" BorderThickness="1" BorderBrush="#3AFFFFFF" Margin="5" Width="50">
+                        <Button Style="{StaticResource ImageButton}" Command="{Binding DataContext.ClickOnDownCommand, ElementName=RootControl}" CommandParameter="{Binding Id}" Width="50" Height="50">
                             <Image Source="../Calculator/../../Resources/Icons/arrow_circle_down_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Stretch="Uniform" Width="30" Height="30"></Image>
                         </Button>
                     </Border>

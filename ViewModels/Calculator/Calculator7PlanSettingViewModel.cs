@@ -33,23 +33,25 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 CharacterModel thisCharacter = AutoCalculateConstants.CharacterMap[thisRid];
                 thisCalculator7PlanSettingModel.Index = PlanList.Count + 1;
                 thisCalculator7PlanSettingModel.ImagePath = thisCharacter.ImagePath;
+                thisCalculator7PlanSettingModel.StarBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisCharacter.Star];
                 thisCalculator7PlanSettingModel.Name = thisCharacter.Name;
                 thisCalculator7PlanSettingModel.Id = thisPlanId;
                 switch (thisType)
                 {
                     case 1:
+                        thisCalculator7PlanSettingModel.ElementImagePath = StringConstants.ElementTypeImagePath[thisCharacter.ElementType];
                         Enumeration.Level level = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].CharacterLevel;
                         Enumeration.Level goalLevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].CharacterLevelGoal;
-                        if (level != goalLevel) thisCalculator7PlanSettingModel.LevelString = $"等级： {StringConstants.LevelNumberString[level]} >> {StringConstants.LevelNumberString[goalLevel]}";
+                        if (level != goalLevel) thisCalculator7PlanSettingModel.LevelString = $"等级： {StringConstants.LevelNumberString[level]} → {StringConstants.LevelNumberString[goalLevel]}";
                         Enumeration.Level talentALevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentALevel;
                         Enumeration.Level talentAGoalLevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentALevelGoal;
-                        if (talentALevel != talentAGoalLevel) thisCalculator7PlanSettingModel.TalentAString = $"A： {StringConstants.LevelNumberString[talentALevel]} >> {StringConstants.LevelNumberString[talentAGoalLevel]}";
+                        if (talentALevel != talentAGoalLevel) thisCalculator7PlanSettingModel.TalentAString = $"A： {StringConstants.LevelNumberString[talentALevel]} → {StringConstants.LevelNumberString[talentAGoalLevel]}";
                         Enumeration.Level talentELevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentELevel;
                         Enumeration.Level talentEGoalLevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentELevelGoal;
-                        if (talentELevel != talentEGoalLevel) thisCalculator7PlanSettingModel.TalentEString = $"E： {StringConstants.LevelNumberString[talentELevel]} >> {StringConstants.LevelNumberString[talentEGoalLevel]}";
+                        if (talentELevel != talentEGoalLevel) thisCalculator7PlanSettingModel.TalentEString = $"E： {StringConstants.LevelNumberString[talentELevel]} → {StringConstants.LevelNumberString[talentEGoalLevel]}";
                         Enumeration.Level talentQLevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentQLevel;
                         Enumeration.Level talentQGoalLevel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].TalentQLevelGoal;
-                        if (talentQLevel != talentQGoalLevel) thisCalculator7PlanSettingModel.TalentQString = $"Q： {StringConstants.LevelNumberString[talentQLevel]} >> {StringConstants.LevelNumberString[talentQGoalLevel]}";
+                        if (talentQLevel != talentQGoalLevel) thisCalculator7PlanSettingModel.TalentQString = $"Q： {StringConstants.LevelNumberString[talentQLevel]} → {StringConstants.LevelNumberString[talentQGoalLevel]}";
                         break;
                 }
 
