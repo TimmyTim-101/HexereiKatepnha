@@ -46,6 +46,30 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
             }
         }
 
+        foreach (SingleBackpackWeaponConfigModel thisSingleBackpackWeaponConfigModel in App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap.Values)
+        {
+            bool isLevelDone = thisSingleBackpackWeaponConfigModel.Level == thisSingleBackpackWeaponConfigModel.LevelGoal;
+            if (isLevelDone)
+            {
+                if (Configuration.OrderList.Remove(thisSingleBackpackWeaponConfigModel.Id))
+                {
+                    Configuration.PlanMap.Remove(thisSingleBackpackWeaponConfigModel.Id);
+                }
+            }
+            else
+            {
+                if (!Configuration.OrderList.Contains(thisSingleBackpackWeaponConfigModel.Id))
+                {
+                    SingleCalculatorPlanConfigModel thisConfig = new();
+                    thisConfig.Id = thisSingleBackpackWeaponConfigModel.Id;
+                    thisConfig.Type = 2;
+                    thisConfig.Rid = thisSingleBackpackWeaponConfigModel.Rid;
+                    Configuration.OrderList.Add(thisConfig.Id);
+                    Configuration.PlanMap[thisConfig.Id] = thisConfig;
+                }
+            }
+        }
+
         Save();
     }
 

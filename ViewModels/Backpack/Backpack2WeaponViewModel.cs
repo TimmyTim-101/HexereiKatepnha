@@ -1,6 +1,7 @@
 ﻿using System.CodeDom;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -34,8 +35,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public Backpack2WeaponViewModel()
         {
-            Refresh();
-            _selectedWeapon = WeaponList.Count == 0 ? null : WeaponList[0];
+            Refresh(null);
             WeaponView = CollectionViewSource.GetDefaultView(WeaponList);
             WeaponView.Filter = WeaponsFilter;
         }
@@ -64,6 +64,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             return isWeapon && isStar;
+        }
+
+        partial void OnSelectedWeaponChanged(Backpack2WeaponModel m)
+        {
+            ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
         }
 
         private void UpdateSelection()
@@ -100,7 +105,58 @@ namespace HexereiKatepnha.ViewModels.Backpack
             StarFilter = valueInt == StarFilter ? 0 : valueInt;
         }
 
-        private void Refresh()
+        [RelayCommand]
+        private void ClickOnLevelSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedWeapon!.Config.Level = thisLevel;
+            SelectedWeapon.LevelNameString = StringConstants.LevelNameString[thisLevel];
+            SelectedWeapon.LevelNumberString = StringConstants.LevelNumberString[thisLevel];
+            App.BackpackWeaponConfigManagerInstance!.UpdateLevel(SelectedWeapon.Id, thisLevel);
+            int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
+            int currentGoalLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon.Config.LevelGoal);
+            if (currentLevel > currentGoalLevel)
+            {
+                SelectedWeapon.Config.LevelGoal = thisLevel;
+                SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
+                App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
+            }
+
+            ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
+            IsLevelPopupOpen = false;
+            Refresh(SelectedWeapon);
+        }
+
+        [RelayCommand(CanExecute = nameof(CanClickOnLevelGoalSelection))]
+        private void ClickOnLevelGoalSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
+            SelectedWeapon!.Config.LevelGoal = thisLevel;
+            SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
+            App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
+            IsLevelPopupOpen = false;
+        }
+
+        private bool CanClickOnLevelGoalSelection(String value)
+        {
+            int valueInt = Int32.Parse(value) - 1;
+            int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon!.Config.Level);
+            return valueInt >= currentLevel;
+        }
+
+        [RelayCommand]
+        private void ClickOnProgressionSelection(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            SelectedWeapon!.Config.Progression = valueInt;
+            App.BackpackWeaponConfigManagerInstance!.UpdateProgression(SelectedWeapon.Id, valueInt);
+            IsProgressionPopupOpen = false;
+            Refresh(SelectedWeapon);
+        }
+
+        private void Refresh(Backpack2WeaponModel? currentWeaponModel)
         {
             WeaponList.Clear();
             Dictionary<string, SingleBackpackWeaponConfigModel> currentWeaponConfigList = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap;
@@ -124,6 +180,19 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack2WeaponModel.LevelNameString = StringConstants.LevelNameString[cm.Level];
                 thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[cm.LevelGoal];
                 thisBackpack2WeaponModel.Description = thisWeaponModel.Progression[cm.Progression];
+                thisBackpack2WeaponModel.AffixStringList.Add(new List<string>());
+                thisBackpack2WeaponModel.AffixStringList.Add(new List<string>());
+                thisBackpack2WeaponModel.AffixStringList.Add(new List<string>());
+                thisBackpack2WeaponModel.AffixStringList[0].Add(StringConstants.AffixString[Enumeration.Affix.Attack]);
+                thisBackpack2WeaponModel.AffixStringList[1].Add(":");
+                thisBackpack2WeaponModel.AffixStringList[2].Add(thisWeaponModel.MainAffixNumberDictionary[cm.Level].ToString(CultureInfo.InvariantCulture));
+                if (thisWeaponModel.SubAffix != Enumeration.Affix.Empty)
+                {
+                    thisBackpack2WeaponModel.AffixStringList[0].Add(StringConstants.AffixString[thisWeaponModel.SubAffix]);
+                    thisBackpack2WeaponModel.AffixStringList[1].Add(":");
+                    thisBackpack2WeaponModel.AffixStringList[2].Add(thisWeaponModel.SubAffixNumberDictionary[cm.Level] + ((SequenceConstants.AffixPercentageSymbolList.Contains(thisWeaponModel.SubAffix)) ? "%" : ""));
+                }
+
                 if (cm.CharacterRid != 0)
                 {
                     CharacterModel thisCharacterModel = AutoCalculateConstants.CharacterMap[cm.CharacterRid];
@@ -133,7 +202,17 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisBackpack2WeaponModel.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacterModel.ElementType];
                 }
 
+                thisBackpack2WeaponModel.Config = cm;
                 WeaponList.Add(thisBackpack2WeaponModel);
+            }
+
+            if (currentWeaponModel == null)
+            {
+                SelectedWeapon = WeaponList.Count == 0 ? null : WeaponList[0];
+            }
+            else
+            {
+                SelectedWeapon = WeaponList.FirstOrDefault(w => w.Id == currentWeaponModel.Id);
             }
         }
     }
