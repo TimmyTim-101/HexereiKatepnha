@@ -179,6 +179,175 @@
                             </Button>
                         </WrapPanel>
                     </Border>
+                    <ToggleButton x:Name="AddPanelToggleButton" Style="{StaticResource FunctionToggleButton}" Content="添加武器" Margin="10" IsChecked="{Binding IsAddPanelPopupOpen,Mode=TwoWay}"></ToggleButton>
+                    <Popup IsOpen="{Binding IsAddPanelPopupOpen}" PlacementTarget="{Binding ElementName=AddPanelToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" MaxHeight="700">
+                        <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <WrapPanel Grid.Row="0">
+                                    <Button Command="{Binding ClickOnAddWeaponFilterCommand}" CommandParameter="1" Margin="2">
+                                        <Image Source="{Binding Weapon1ImagePath}" Stretch="Uniform" Width="30" Height="30" Margin="5"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddWeaponFilter}" Value="1">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddWeaponFilterCommand}" CommandParameter="2" Margin="2">
+                                        <Image Source="{Binding Weapon2ImagePath}" Stretch="Uniform" Width="30" Height="30" Margin="5"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddWeaponFilter}" Value="2">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddWeaponFilterCommand}" CommandParameter="3" Margin="2">
+                                        <Image Source="{Binding Weapon3ImagePath}" Stretch="Uniform" Width="30" Height="30" Margin="5"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddWeaponFilter}" Value="3">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddWeaponFilterCommand}" CommandParameter="4" Margin="2">
+                                        <Image Source="{Binding Weapon4ImagePath}" Stretch="Uniform" Width="30" Height="30" Margin="5"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddWeaponFilter}" Value="4">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddWeaponFilterCommand}" CommandParameter="5" Margin="2">
+                                        <Image Source="{Binding Weapon5ImagePath}" Stretch="Uniform" Width="30" Height="30" Margin="5"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddWeaponFilter}" Value="5">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </WrapPanel>
+                                <WrapPanel Grid.Row="1">
+                                    <Button Command="{Binding ClickOnAddStarFilterCommand}" CommandParameter="1" Margin="2">
+                                        <Image Source="{Binding Star1ImagePath}" Stretch="Uniform" Width="30" Height="8" Margin="5,16"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddStarFilter}" Value="1">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddStarFilterCommand}" CommandParameter="2" Margin="2">
+                                        <Image Source="{Binding Star2ImagePath}" Stretch="Uniform" Width="30" Height="8" Margin="5,16"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddStarFilter}" Value="2">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddStarFilterCommand}" CommandParameter="3" Margin="2">
+                                        <Image Source="{Binding Star3ImagePath}" Stretch="Uniform" Width="30" Height="8" Margin="5,16"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddStarFilter}" Value="3">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddStarFilterCommand}" CommandParameter="4" Margin="2">
+                                        <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="30" Height="8" Margin="5,16"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddStarFilter}" Value="4">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding ClickOnAddStarFilterCommand}" CommandParameter="5" Margin="2">
+                                        <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="30" Height="8" Margin="5,16"></Image>
+                                        <Button.Style>
+                                            <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding AddStarFilter}" Value="5">
+                                                        <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </WrapPanel>
+                                <Border Grid.Row="2" Style="{StaticResource HorizontalDivider}"></Border>
+                                <ListBox Grid.Row="3" Tag="{Binding}" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AddPanelView}">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Columns="6"></UniformGrid>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:AddPanelModel}">
+                                            <Button BorderThickness="0" Cursor="Hand" Margin="2" Command="{Binding Tag.ClickOnAddPanelWeaponCommand, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding Rid}">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Background="Transparent">
+                                                            <ContentPresenter />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                                <Border CornerRadius="5" BorderThickness="1" BorderBrush="White">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Grid>
+                                                            <Image Source="{Binding BackgroundImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                                                            <Image Source="{Binding ImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                                                        </Grid>
+                                                        <Viewbox MaxWidth="70" StretchDirection="DownOnly">
+                                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5" TextTrimming="CharacterEllipsis" FontSize="12"></TextBlock>
+                                                        </Viewbox>
+                                                    </StackPanel>
+                                                </Border>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                        </Border>
+                    </Popup>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                 <ListBox Grid.Row="2" ItemsSource="{Binding WeaponView}" SelectedItem="{Binding SelectedWeapon, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
@@ -442,6 +611,8 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
@@ -621,6 +792,9 @@
                                 </Grid>
                             </StackPanel>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                            <StackPanel Grid.Row="5">
+                                <Button Style="{StaticResource DeleteFunctionButton}" Content="删除该武器" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10"></Button>
+                            </StackPanel>
                         </Grid>
                     </Border>
                 </TabItem>

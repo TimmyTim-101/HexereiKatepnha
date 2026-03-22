@@ -31,4 +31,15 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Configuration.WeaponConfigMap[weaponStringId].Progression = i;
         Save();
     }
+
+    public string AddWeapon(int Rid)
+    {
+        SingleBackpackWeaponConfigModel thisConfig = new();
+        thisConfig.Rid = Rid;
+        string randomUniqueSign = Guid.NewGuid().ToString("N").Substring(0, 8);
+        thisConfig.Id = $"{Rid}${randomUniqueSign}";
+        Configuration.WeaponConfigMap[thisConfig.Id] = thisConfig;
+        Save();
+        return thisConfig.Id;
+    }
 }
