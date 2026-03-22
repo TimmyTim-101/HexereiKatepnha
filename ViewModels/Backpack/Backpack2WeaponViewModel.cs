@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Data;
@@ -17,7 +16,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
-        public ObservableCollection<Backpack2WeaponModel> WeaponList { get; set; } = new();
+        private ObservableCollection<Backpack2WeaponModel> WeaponList { get; set; } = new();
         [ObservableProperty] private Backpack2WeaponModel? _selectedWeapon;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
@@ -38,6 +37,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
             Refresh(null);
             WeaponView = CollectionViewSource.GetDefaultView(WeaponList);
             WeaponView.Filter = WeaponsFilter;
+            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Star), ListSortDirection.Descending));
+            WeaponView.SortDescriptions.Add(new SortDescription("Config.Level", ListSortDirection.Descending));
+            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Rid), ListSortDirection.Ascending));
+            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Progression), ListSortDirection.Descending));
+            if (WeaponView is ICollectionViewLiveShaping liveView)
+            {
+                liveView.IsLiveSorting = true;
+                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Star));
+                liveView.LiveSortingProperties.Add("Config.Level");
+                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Rid));
+                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Progression));
+            }
         }
 
         private bool WeaponsFilter(object item)
@@ -66,7 +77,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             return isWeapon && isStar;
         }
 
-        partial void OnSelectedWeaponChanged(Backpack2WeaponModel m)
+        partial void OnSelectedWeaponChanged(Backpack2WeaponModel? value)
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
         }
@@ -120,7 +131,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 SelectedWeapon.Config.LevelGoal = thisLevel;
                 SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
-                App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
+                App.BackpackWeaponConfigManagerInstance.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             }
 
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
@@ -162,9 +173,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
             Dictionary<string, SingleBackpackWeaponConfigModel> currentWeaponConfigList = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap;
             foreach (SingleBackpackWeaponConfigModel cm in currentWeaponConfigList.Values)
             {
-                Backpack2WeaponModel thisBackpack2WeaponModel = new();
-                thisBackpack2WeaponModel.Id = cm.Id;
-                thisBackpack2WeaponModel.Rid = cm.Rid;
+                Backpack2WeaponModel thisBackpack2WeaponModel = new()
+                {
+                    Id = cm.Id,
+                    Rid = cm.Rid
+                };
                 WeaponModel thisWeaponModel = AutoCalculateConstants.WeaponMap[cm.Rid];
                 thisBackpack2WeaponModel.Name = thisWeaponModel.Name;
                 thisBackpack2WeaponModel.Star = thisWeaponModel.Star;

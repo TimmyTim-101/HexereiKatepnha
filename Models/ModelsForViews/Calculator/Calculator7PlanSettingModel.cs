@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using HexereiKatepnha.Constants.EntityConstants;
-using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Calculator;
 
