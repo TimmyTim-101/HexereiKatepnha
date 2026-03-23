@@ -15,6 +15,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
+        [ObservableProperty] private bool _isHideLowLevelCharacter;
         public ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = new();
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
         [ObservableProperty] private bool _isLevelPopupOpen;
@@ -71,9 +72,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 AllCharacterList.Add(thisBackpack1CharacterModel);
             }
 
-            _selectedCharacter = AllCharacterList[0];
             CharacterView = CollectionViewSource.GetDefaultView(AllCharacterList);
             CharacterView.Filter = CharacterFilter;
+            CharacterView.SortDescriptions.Add(new SortDescription("CharacterConfigModel.CharacterLevel", ListSortDirection.Descending));
+            CharacterView.SortDescriptions.Add(new SortDescription(nameof(Backpack1CharacterModel.Star), ListSortDirection.Descending));
+            CharacterView.SortDescriptions.Add(new SortDescription(nameof(Backpack1CharacterModel.ElementType), ListSortDirection.Ascending));
+            if (CharacterView is ICollectionViewLiveShaping liveView)
+            {
+                liveView.IsLiveSorting = true;
+                liveView.LiveSortingProperties.Add("CharacterConfigModel.CharacterLevel");
+            }
+
+            _selectedCharacter = CharacterView.Cast<Backpack1CharacterModel>().FirstOrDefault()!;
         }
 
         private bool CharacterFilter(object item)
@@ -82,6 +92,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             bool isElement = true;
             bool isWeapon = true;
             bool isStar = true;
+            bool isNotHide = true;
             switch (ElementFilter)
             {
                 case 1: isElement = c.ElementType == Enumeration.ElementType.Pyro; break;
@@ -108,7 +119,22 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 case 5: isStar = c.Star is 5 or 6; break;
             }
 
-            return isElement && isWeapon && isStar;
+            if (IsHideLowLevelCharacter)
+            {
+                bool flag = false;
+                if (c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1) flag = true;
+                if (c.CharacterConfigModel.Ascension != 0) flag = true;
+                isNotHide = flag;
+            }
+
+            return isElement && isWeapon && isStar && isNotHide;
         }
 
         partial void OnSelectedCharacterChanged(Backpack1CharacterModel m)
@@ -140,6 +166,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
         }
 
         partial void OnStarFilterChanged(int value)
+        {
+            CharacterView.Refresh();
+            UpdateSelection();
+        }
+
+        partial void OnIsHideLowLevelCharacterChanged(bool value)
         {
             CharacterView.Refresh();
             UpdateSelection();
@@ -263,6 +295,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             App.BackpackCharacterConfigManagerInstance!.UpdateAscension(SelectedCharacter.Rid, valueInt);
             IsAscensionPopupOpen = false;
+            if (valueInt == 0)
+            {
+                CharacterView.Refresh();
+                UpdateSelection();
+            }
         }
 
         [RelayCommand(CanExecute = nameof(CanClickOnLevelGoalSelection))]
@@ -274,10 +311,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateLevelGoal(SelectedCharacter.Rid, thisLevel);
             IsLevelPopupOpen = false;
+            if (valueInt == 1)
+            {
+                CharacterView.Refresh();
+                UpdateSelection();
+            }
         }
 
         private bool CanClickOnLevelGoalSelection(String value)
         {
+            if (SelectedCharacter == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.CharacterLevel);
             return valueInt >= currentLevel;
@@ -292,10 +335,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter.TalentAGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentAGoal(SelectedCharacter.Rid, thisLevel);
             IsTalentAPopupOpen = false;
+            if (valueInt == 1)
+            {
+                CharacterView.Refresh();
+                UpdateSelection();
+            }
         }
 
         private bool CanClickOnTalentAGoalSelection(String value)
         {
+            if (SelectedCharacter == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.TalentALevel);
             return valueInt >= currentLevel;
@@ -310,10 +359,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter.TalentEGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentEGoal(SelectedCharacter.Rid, thisLevel);
             IsTalentEPopupOpen = false;
+            if (valueInt == 1)
+            {
+                CharacterView.Refresh();
+                UpdateSelection();
+            }
         }
 
         private bool CanClickOnTalentEGoalSelection(String value)
         {
+            if (SelectedCharacter == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.TalentELevel);
             return valueInt >= currentLevel;
@@ -328,10 +383,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter.TalentQGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentQGoal(SelectedCharacter.Rid, thisLevel);
             IsTalentQPopupOpen = false;
+            if (valueInt == 1)
+            {
+                CharacterView.Refresh();
+                UpdateSelection();
+            }
         }
 
         private bool CanClickOnTalentQGoalSelection(String value)
         {
+            if (SelectedCharacter == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.TalentQLevel);
             return valueInt >= currentLevel;

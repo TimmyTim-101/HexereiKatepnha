@@ -259,6 +259,7 @@
                             </Button>
                         </WrapPanel>
                     </Border>
+                    <CheckBox Content="隐藏白板角色" IsChecked="{Binding IsHideLowLevelCharacter}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" Margin="5"></CheckBox>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                 <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
@@ -316,7 +317,17 @@
                 </ListBox>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-            <TabControl Grid.Column="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
+            <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
+                <TabControl.Style>
+                    <Style TargetType="TabControl" BasedOn="{StaticResource ModernTabControlStyle}">
+                        <Setter Property="Visibility" Value="Visible"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedCharacter}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabControl.Style>
                 <TabItem Header="面板展示">
                     <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
                         <Grid>
