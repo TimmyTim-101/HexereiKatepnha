@@ -391,7 +391,17 @@
                 </ListBox>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-            <TabControl Grid.Column="2" Style="{StaticResource ModernTabControlStyle}" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
+            <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
+                <TabControl.Style>
+                    <Style TargetType="TabControl" BasedOn="{StaticResource ModernTabControlStyle}">
+                        <Setter Property="Visibility" Value="Visible"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedWeapon}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabControl.Style>
                 <TabItem Header="面板展示">
                     <Border CornerRadius="5" BorderBrush="White" BorderThickness="1">
                         <Grid>
@@ -401,6 +411,8 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
@@ -605,6 +617,9 @@
                                 </ItemsControl.ItemTemplate>
                             </ListBox>
                             <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
+                            <StackPanel Grid.Row="7">
+                                <Button Style="{StaticResource DeleteFunctionButton}" Content="删除该武器" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10" Command="{Binding ClickOnDeleteWeaponCommand}" CommandParameter="{Binding SelectedWeapon.Id}"></Button>
+                            </StackPanel>
                         </Grid>
                     </Border>
                 </TabItem>
@@ -798,7 +813,7 @@
                             </StackPanel>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
                             <StackPanel Grid.Row="5">
-                                <Button Style="{StaticResource DeleteFunctionButton}" Content="删除该武器" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10"></Button>
+                                <Button Style="{StaticResource DeleteFunctionButton}" Content="删除该武器" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10" Command="{Binding ClickOnDeleteWeaponCommand}" CommandParameter="{Binding SelectedWeapon.Id}"></Button>
                             </StackPanel>
                         </Grid>
                     </Border>

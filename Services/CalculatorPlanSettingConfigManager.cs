@@ -101,4 +101,15 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
             Save();
         }
     }
+
+    public void DeleteWeapon(string? Id)
+    {
+        if (Id == null) return;
+        if (Configuration.OrderList.Remove(Id))
+        {
+            Configuration.PlanMap.Remove(Id);
+        }
+
+        Save();
+    }
 }

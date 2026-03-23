@@ -176,6 +176,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         private bool CanClickOnLevelSelection(String value)
         {
+            if (SelectedWeapon == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             return AutoCalculateConstants.WeaponMap[SelectedWeapon!.Rid].MainAffixNumberDictionary.ContainsKey(SequenceConstants.AllLevels[valueInt]);
         }
@@ -193,6 +194,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         private bool CanClickOnLevelGoalSelection(String value)
         {
+            if (SelectedWeapon == null) return false;
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon!.Config.Level);
             if (!AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].MainAffixNumberDictionary.ContainsKey(SequenceConstants.AllLevels[valueInt])) return false;
@@ -329,6 +331,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
             Refresh(null);
             SelectedWeapon = WeaponList.FirstOrDefault(w => w.Id == thisId);
             IsAddPanelPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnDeleteWeapon(string value)
+        {
+            App.BackpackWeaponConfigManagerInstance!.DeleteWeapon(value);
+            Refresh(null);
+            SelectedWeapon = WeaponView.Cast<Backpack2WeaponModel>().FirstOrDefault();
         }
     }
 }

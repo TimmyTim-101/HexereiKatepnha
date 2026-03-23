@@ -32,14 +32,24 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
     }
 
-    public string AddWeapon(int Rid)
+    public string AddWeapon(int rid)
     {
-        SingleBackpackWeaponConfigModel thisConfig = new();
-        thisConfig.Rid = Rid;
+        SingleBackpackWeaponConfigModel thisConfig = new()
+        {
+            Rid = rid
+        };
         string randomUniqueSign = Guid.NewGuid().ToString("N").Substring(0, 8);
-        thisConfig.Id = $"{Rid}${randomUniqueSign}";
+        thisConfig.Id = $"{rid}${randomUniqueSign}";
         Configuration.WeaponConfigMap[thisConfig.Id] = thisConfig;
         Save();
         return thisConfig.Id;
+    }
+
+    public void DeleteWeapon(string? id)
+    {
+        if (id == null) return;
+        Configuration.WeaponConfigMap.Remove(id);
+        App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
+        Save();
     }
 }
