@@ -8,10 +8,54 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel>
-                <TextBlock Text="计算器 - 体力规划" Style="{StaticResource TodoTextBlock}" />
-            </StackPanel>
-        </ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="体力规划" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="合计信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Grid.Row="2" Text="不消耗树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Grid.Row="4" Text="消耗20树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Grid.Row="6" Text="消耗40树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="7" Style="{StaticResource HorizontalDivider}"></Border>
+                <TextBlock Grid.Row="8" Text="消耗60树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="9" Style="{StaticResource HorizontalDivider}"></Border>
+            </Grid>
+            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+            <Grid Grid.Column="2" Width="441">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="500"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="树脂计数器" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <TextBlock Grid.Row="1" Text="材料列表" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <TextBlock Grid.Row="2" Text="BOSS周本" Style="{StaticResource TodoTextBlock}"></TextBlock>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
