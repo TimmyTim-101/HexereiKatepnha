@@ -88,7 +88,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="DeleteFunctionButton" TargetType="Button">
         <Setter Property="Background" Value="#FB7185" />
         <Setter Property="Foreground" Value="White" />
@@ -126,7 +126,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="FunctionToggleButton" TargetType="ToggleButton">
         <Setter Property="Background" Value="#12B981" />
         <Setter Property="Foreground" Value="White" />
