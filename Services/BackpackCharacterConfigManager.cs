@@ -25,8 +25,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].CharacterLevel = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentA(int characterId, Enumeration.Level l)
@@ -37,8 +37,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentALevel = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentE(int characterId, Enumeration.Level l)
@@ -49,8 +49,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentELevel = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentQ(int characterId, Enumeration.Level l)
@@ -61,8 +61,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentQLevel = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateAscension(int characterId, int num)
@@ -84,8 +84,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].CharacterLevelGoal = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentAGoal(int characterId, Enumeration.Level l)
@@ -96,8 +96,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentALevelGoal = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentEGoal(int characterId, Enumeration.Level l)
@@ -108,8 +108,8 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentELevelGoal = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateTalentQGoal(int characterId, Enumeration.Level l)
@@ -120,7 +120,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         }
 
         Configuration.CharacterConfig[characterId].TalentQLevelGoal = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 }

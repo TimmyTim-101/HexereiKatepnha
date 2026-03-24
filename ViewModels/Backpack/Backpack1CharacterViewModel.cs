@@ -3,9 +3,11 @@ using System.ComponentModel;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 namespace HexereiKatepnha.ViewModels.Backpack
@@ -16,8 +18,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
         [ObservableProperty] private bool _isHideLowLevelCharacter;
-        public ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = new();
-        [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
+        private ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; }
+        [ObservableProperty] private Backpack1CharacterModel? _selectedCharacter;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isTalentAPopupOpen;
         [ObservableProperty] private bool _isTalentEPopupOpen;
@@ -41,18 +43,21 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public Backpack1CharacterViewModel()
         {
+            ObservableCollection<Backpack1CharacterModel> tempAllCharacterList = new();
             foreach (CharacterModel e in AllEntities.AllCharacter)
             {
-                Backpack1CharacterModel thisBackpack1CharacterModel = new Backpack1CharacterModel();
-                thisBackpack1CharacterModel.Rid = e.Rid;
-                thisBackpack1CharacterModel.ImagePath = e.ImagePath;
-                thisBackpack1CharacterModel.ElementType = e.ElementType;
-                thisBackpack1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
-                thisBackpack1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                thisBackpack1CharacterModel.Name = e.Name;
-                thisBackpack1CharacterModel.Star = e.Star;
-                thisBackpack1CharacterModel.WeaponType = e.WeaponType;
-                thisBackpack1CharacterModel.CharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(e.Rid);
+                Backpack1CharacterModel thisBackpack1CharacterModel = new Backpack1CharacterModel
+                {
+                    Rid = e.Rid,
+                    ImagePath = e.ImagePath,
+                    ElementType = e.ElementType,
+                    ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType],
+                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                    Name = e.Name,
+                    Star = e.Star,
+                    WeaponType = e.WeaponType,
+                    CharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(e.Rid)
+                };
                 thisBackpack1CharacterModel.LevelNameString = StringConstants.LevelNameString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
                 thisBackpack1CharacterModel.LevelNumberString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
                 thisBackpack1CharacterModel.TalentAString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentALevel];
@@ -69,9 +74,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisBackpack1CharacterModel.AscensionOpacityList[i] = i <= thisBackpack1CharacterModel.CharacterConfigModel.Ascension ? 1.0 : 0.1;
                 }
 
-                AllCharacterList.Add(thisBackpack1CharacterModel);
+                tempAllCharacterList.Add(thisBackpack1CharacterModel);
             }
 
+            AllCharacterList = tempAllCharacterList;
             CharacterView = CollectionViewSource.GetDefaultView(AllCharacterList);
             CharacterView.Filter = CharacterFilter;
             CharacterView.SortDescriptions.Add(new SortDescription("CharacterConfigModel.CharacterLevel", ListSortDirection.Descending));
@@ -121,23 +127,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             if (IsHideLowLevelCharacter)
             {
-                bool flag = false;
-                if (c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1) flag = true;
-                if (c.CharacterConfigModel.Ascension != 0) flag = true;
+                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Ascension != 0;
                 isNotHide = flag;
             }
 
             return isElement && isWeapon && isStar && isNotHide;
         }
 
-        partial void OnSelectedCharacterChanged(Backpack1CharacterModel m)
+        partial void OnSelectedCharacterChanged(Backpack1CharacterModel? value)
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
@@ -203,7 +200,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.CharacterLevel = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.CharacterLevel = thisLevel;
             SelectedCharacter.LevelNameString = StringConstants.LevelNameString[thisLevel];
             SelectedCharacter.LevelNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateLevel(SelectedCharacter.Rid, thisLevel);
@@ -213,9 +210,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 SelectedCharacter.CharacterConfigModel.CharacterLevelGoal = thisLevel;
                 SelectedCharacter.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
-                App.BackpackCharacterConfigManagerInstance!.UpdateLevelGoal(SelectedCharacter.Rid, thisLevel);
+                App.BackpackCharacterConfigManagerInstance.UpdateLevelGoal(SelectedCharacter.Rid, thisLevel);
             }
 
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterLevelChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.CharacterLevel, SelectedCharacter.CharacterConfigModel.CharacterLevelGoal)));
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             IsLevelPopupOpen = false;
         }
@@ -225,7 +223,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentALevel = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentALevel = thisLevel;
             SelectedCharacter.TalentAString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentA(SelectedCharacter.Rid, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
@@ -234,9 +232,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 SelectedCharacter.CharacterConfigModel.TalentALevelGoal = thisLevel;
                 SelectedCharacter.TalentAGoalString = StringConstants.LevelNumberString[thisLevel];
-                App.BackpackCharacterConfigManagerInstance!.UpdateTalentAGoal(SelectedCharacter.Rid, thisLevel);
+                App.BackpackCharacterConfigManagerInstance.UpdateTalentAGoal(SelectedCharacter.Rid, thisLevel);
             }
 
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentAChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentALevel, SelectedCharacter.CharacterConfigModel.TalentALevelGoal)));
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
             IsTalentAPopupOpen = false;
         }
@@ -246,7 +245,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentELevel = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentELevel = thisLevel;
             SelectedCharacter.TalentEString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentE(SelectedCharacter.Rid, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
@@ -255,9 +254,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 SelectedCharacter.CharacterConfigModel.TalentELevelGoal = thisLevel;
                 SelectedCharacter.TalentEGoalString = StringConstants.LevelNumberString[thisLevel];
-                App.BackpackCharacterConfigManagerInstance!.UpdateTalentEGoal(SelectedCharacter.Rid, thisLevel);
+                App.BackpackCharacterConfigManagerInstance.UpdateTalentEGoal(SelectedCharacter.Rid, thisLevel);
             }
 
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentEChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentELevel, SelectedCharacter.CharacterConfigModel.TalentELevelGoal)));
             ClickOnTalentEGoalSelectionCommand.NotifyCanExecuteChanged();
             IsTalentEPopupOpen = false;
         }
@@ -267,7 +267,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentQLevel = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentQLevel = thisLevel;
             SelectedCharacter.TalentQString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentQ(SelectedCharacter.Rid, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
@@ -276,9 +276,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 SelectedCharacter.CharacterConfigModel.TalentQLevelGoal = thisLevel;
                 SelectedCharacter.TalentQGoalString = StringConstants.LevelNumberString[thisLevel];
-                App.BackpackCharacterConfigManagerInstance!.UpdateTalentQGoal(SelectedCharacter.Rid, thisLevel);
+                App.BackpackCharacterConfigManagerInstance.UpdateTalentQGoal(SelectedCharacter.Rid, thisLevel);
             }
 
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentQChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentQLevel, SelectedCharacter.CharacterConfigModel.TalentQLevelGoal)));
             ClickOnTalentQGoalSelectionCommand.NotifyCanExecuteChanged();
             IsTalentQPopupOpen = false;
         }
@@ -287,7 +288,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnAscensionSelection(String value)
         {
             int valueInt = Int32.Parse(value);
-            SelectedCharacter.CharacterConfigModel.Ascension = valueInt;
+            SelectedCharacter!.CharacterConfigModel.Ascension = valueInt;
             for (int i = 1; i <= 6; i++)
             {
                 SelectedCharacter.AscensionOpacityList[i] = i <= SelectedCharacter.CharacterConfigModel.Ascension ? 1.0 : 0.1;
@@ -307,9 +308,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.CharacterLevelGoal = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.CharacterLevelGoal = thisLevel;
             SelectedCharacter.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateLevelGoal(SelectedCharacter.Rid, thisLevel);
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterLevelChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.CharacterLevel, SelectedCharacter.CharacterConfigModel.CharacterLevelGoal)));
             IsLevelPopupOpen = false;
             if (valueInt == 1)
             {
@@ -331,9 +333,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentALevelGoal = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentALevelGoal = thisLevel;
             SelectedCharacter.TalentAGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentAGoal(SelectedCharacter.Rid, thisLevel);
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentAChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentALevel, SelectedCharacter.CharacterConfigModel.TalentALevelGoal)));
             IsTalentAPopupOpen = false;
             if (valueInt == 1)
             {
@@ -355,9 +358,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentELevelGoal = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentELevelGoal = thisLevel;
             SelectedCharacter.TalentEGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentEGoal(SelectedCharacter.Rid, thisLevel);
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentEChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentELevel, SelectedCharacter.CharacterConfigModel.TalentELevelGoal)));
             IsTalentEPopupOpen = false;
             if (valueInt == 1)
             {
@@ -379,9 +383,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedCharacter.CharacterConfigModel.TalentQLevelGoal = thisLevel;
+            SelectedCharacter!.CharacterConfigModel.TalentQLevelGoal = thisLevel;
             SelectedCharacter.TalentQGoalString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackCharacterConfigManagerInstance!.UpdateTalentQGoal(SelectedCharacter.Rid, thisLevel);
+            WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentQChangeMessage(new BackpackCharacterChangeRecord(SelectedCharacter.Rid.ToString(), SelectedCharacter.CharacterConfigModel.TalentQLevel, SelectedCharacter.CharacterConfigModel.TalentQLevelGoal)));
             IsTalentQPopupOpen = false;
             if (valueInt == 1)
             {
