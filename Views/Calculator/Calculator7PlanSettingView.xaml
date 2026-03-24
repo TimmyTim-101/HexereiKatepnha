@@ -13,7 +13,7 @@
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="PlanItemTemplate" DataType="{x:Type models:Calculator7PlanSettingModel}">
-            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Height="68">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="60"></ColumnDefinition>
@@ -75,14 +75,12 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="规划设置" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}">
-            <ItemsControl ItemsSource="{Binding PlanList}" ItemTemplate="{StaticResource PlanItemTemplate}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Vertical" Margin="15,2"></StackPanel>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
+        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}" ItemsSource="{Binding PlanList}" ItemTemplate="{StaticResource PlanItemTemplate}" ScrollViewer.CanContentScroll="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" Padding="15,2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
         </ListBox>
     </Grid>
 </UserControl>

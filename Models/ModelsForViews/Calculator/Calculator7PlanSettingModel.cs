@@ -4,7 +4,7 @@ namespace HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 public partial class Calculator7PlanSettingModel : ObservableObject
 {
-    public int Index { get; set; } = 1;
+    [ObservableProperty] private int _index = 1;
     public string ImagePath { get; set; } = "";
     public string StarBackgroundImagePath { get; set; } = "";
     public string ElementImagePath { get; set; } = "";

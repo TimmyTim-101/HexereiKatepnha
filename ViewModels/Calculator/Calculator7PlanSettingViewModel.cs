@@ -11,18 +11,13 @@ namespace HexereiKatepnha.ViewModels.Calculator
 {
     public partial class Calculator7PlanSettingViewModel : ObservableObject
     {
-        public ObservableCollection<Calculator7PlanSettingModel> PlanList { get; set; } = new();
+        public ObservableCollection<Calculator7PlanSettingModel> PlanList { get; set; }
 
         public Calculator7PlanSettingViewModel()
         {
-            Refresh();
-        }
-
-        private void Refresh()
-        {
-            PlanList.Clear();
             ObservableCollection<string> currentOrderList = App.CalculatorPlanSettingConfigManagerInstance!.Configuration.OrderList;
             Dictionary<string, SingleCalculatorPlanConfigModel> currentPlanMap = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap;
+            ObservableCollection<Calculator7PlanSettingModel> tempPlanList = new();
             for (int i = 0; i < currentOrderList.Count; i++)
             {
                 string thisPlanId = currentOrderList[i];
@@ -31,7 +26,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 int thisRid = thisConfig.Rid;
                 Calculator7PlanSettingModel thisCalculator7PlanSettingModel = new()
                 {
-                    Index = PlanList.Count + 1,
+                    Index = tempPlanList.Count + 1,
                     Id = thisPlanId
                 };
                 switch (thisType)
@@ -42,17 +37,18 @@ namespace HexereiKatepnha.ViewModels.Calculator
                         thisCalculator7PlanSettingModel.StarBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisCharacter.Star];
                         thisCalculator7PlanSettingModel.Name = thisCharacter.Name;
                         thisCalculator7PlanSettingModel.ElementImagePath = StringConstants.ElementTypeImagePath[thisCharacter.ElementType];
-                        Enumeration.Level level = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid].CharacterLevel;
-                        Enumeration.Level goalLevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].CharacterLevelGoal;
+                        SingleBackpackCharacterConfigModel thisCharacterConfig = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisRid];
+                        Enumeration.Level level = thisCharacterConfig.CharacterLevel;
+                        Enumeration.Level goalLevel = thisCharacterConfig.CharacterLevelGoal;
                         if (level != goalLevel) thisCalculator7PlanSettingModel.LevelString = $"等级： {StringConstants.LevelNumberString[level]} → {StringConstants.LevelNumberString[goalLevel]}";
-                        Enumeration.Level talentALevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentALevel;
-                        Enumeration.Level talentAGoalLevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentALevelGoal;
+                        Enumeration.Level talentALevel = thisCharacterConfig.TalentALevel;
+                        Enumeration.Level talentAGoalLevel = thisCharacterConfig.TalentALevelGoal;
                         if (talentALevel != talentAGoalLevel) thisCalculator7PlanSettingModel.TalentAString = $"A： {StringConstants.LevelNumberString[talentALevel]} → {StringConstants.LevelNumberString[talentAGoalLevel]}";
-                        Enumeration.Level talentELevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentELevel;
-                        Enumeration.Level talentEGoalLevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentELevelGoal;
+                        Enumeration.Level talentELevel = thisCharacterConfig.TalentELevel;
+                        Enumeration.Level talentEGoalLevel = thisCharacterConfig.TalentELevelGoal;
                         if (talentELevel != talentEGoalLevel) thisCalculator7PlanSettingModel.TalentEString = $"E： {StringConstants.LevelNumberString[talentELevel]} → {StringConstants.LevelNumberString[talentEGoalLevel]}";
-                        Enumeration.Level talentQLevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentQLevel;
-                        Enumeration.Level talentQGoalLevel = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisRid].TalentQLevelGoal;
+                        Enumeration.Level talentQLevel = thisCharacterConfig.TalentQLevel;
+                        Enumeration.Level talentQGoalLevel = thisCharacterConfig.TalentQLevelGoal;
                         if (talentQLevel != talentQGoalLevel) thisCalculator7PlanSettingModel.TalentQString = $"Q： {StringConstants.LevelNumberString[talentQLevel]} → {StringConstants.LevelNumberString[talentQGoalLevel]}";
                         break;
                     case 2:
@@ -68,29 +64,65 @@ namespace HexereiKatepnha.ViewModels.Calculator
                         break;
                 }
 
-                PlanList.Add(thisCalculator7PlanSettingModel);
+                tempPlanList.Add(thisCalculator7PlanSettingModel);
             }
+
+            PlanList = tempPlanList;
         }
 
         [RelayCommand]
         private void ClickOnTop(String value)
         {
             App.CalculatorPlanSettingConfigManagerInstance!.UpdateTop(value);
-            Refresh();
+            int thisIndex = FindIndex(value);
+            if (thisIndex > 0)
+            {
+                PlanList.Move(thisIndex, 0);
+                RefreshIndex();
+            }
         }
 
         [RelayCommand]
         private void ClickOnUp(String value)
         {
             App.CalculatorPlanSettingConfigManagerInstance!.UpdateUp(value);
-            Refresh();
+            int thisIndex = FindIndex(value);
+            if (thisIndex > 0)
+            {
+                PlanList.Move(thisIndex, thisIndex - 1);
+                RefreshIndex();
+            }
         }
 
         [RelayCommand]
         private void ClickOnDown(String value)
         {
             App.CalculatorPlanSettingConfigManagerInstance!.UpdateDown(value);
-            Refresh();
+            int thisIndex = FindIndex(value);
+            if (thisIndex >= 0 && thisIndex < PlanList.Count - 1)
+            {
+                PlanList.Move(thisIndex, thisIndex + 1);
+                RefreshIndex();
+            }
+        }
+
+        private int FindIndex(string id)
+        {
+            int index = -1;
+            for (int i = 0; i < PlanList.Count; i++)
+            {
+                if (PlanList[i].Id == id) return i;
+            }
+
+            return index;
+        }
+
+        private void RefreshIndex()
+        {
+            for (int i = 0; i < PlanList.Count; i++)
+            {
+                PlanList[i].Index = i + 1;
+            }
         }
     }
 }
