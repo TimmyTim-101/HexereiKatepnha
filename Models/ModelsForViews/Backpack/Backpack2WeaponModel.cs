@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
@@ -15,7 +16,7 @@ public partial class Backpack2WeaponModel : ObservableObject
     public string BackgroundImagePath { get; set; } = "";
     public string WeaponTypeImagePath { get; set; } = "";
     public Enumeration.WeaponType WeaponType = Enumeration.WeaponType.Unknown;
-    [ObservableProperty] private List<List<string>> _affixStringList = new();
+    [ObservableProperty] private ObservableCollection<ObservableCollection<string>> _affixStringList = new();
     [ObservableProperty] private int _progression;
     [ObservableProperty] private string _levelNumberString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _levelNameString = StringConstants.LevelNameString[Enumeration.Level.L1];
@@ -25,5 +26,5 @@ public partial class Backpack2WeaponModel : ObservableObject
     [ObservableProperty] private string _characterImagePath = "/Resources/Images/empty_item.png";
     [ObservableProperty] private string _characterBackgroundImagePath = "/Resources/Images/empty_item.png";
     [ObservableProperty] private string _characterElementImagePath = "/Resources/Images/empty_item.png";
-    public SingleBackpackWeaponConfigModel Config { get; set; } = new();
+    [ObservableProperty] private SingleBackpackWeaponConfigModel _config = new();
 }

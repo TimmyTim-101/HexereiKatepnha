@@ -1,10 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.ViewModels.Calculator
@@ -68,6 +70,70 @@ namespace HexereiKatepnha.ViewModels.Calculator
             }
 
             PlanList = tempPlanList;
+            WeakReferenceMessenger.Default.Register<BackpackWeaponChangeMessage>(this, (recipient, message) =>
+            {
+                string thisPlanId = message.Value.PlanId;
+                Enumeration.Level thisLevel = message.Value.Level;
+                Enumeration.Level thisGoalLevel = message.Value.GoalLevel;
+                int levelIndex = SequenceConstants.AllLevels.IndexOf(thisLevel);
+                int goalLevelIndex = SequenceConstants.AllLevels.IndexOf(thisGoalLevel);
+                if (levelIndex == goalLevelIndex)
+                {
+                    Calculator7PlanSettingModel? thisPlan = null;
+                    foreach (Calculator7PlanSettingModel p in PlanList)
+                    {
+                        if (p.Id == thisPlanId)
+                        {
+                            thisPlan = p;
+                            break;
+                        }
+                    }
+
+                    if (thisPlan != null)
+                    {
+                        PlanList.Remove(thisPlan);
+                    }
+                }
+                else
+                {
+                    Calculator7PlanSettingModel? thisPlan = null;
+                    foreach (Calculator7PlanSettingModel p in PlanList)
+                    {
+                        if (p.Id == thisPlanId)
+                        {
+                            thisPlan = p;
+                            break;
+                        }
+                    }
+
+                    if (thisPlan == null)
+                    {
+                        SingleCalculatorPlanConfigModel thisPlanConfig = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[thisPlanId];
+                        Calculator7PlanSettingModel thisCalculator7PlanSettingModel = new()
+                        {
+                            Index = PlanList.Count + 1,
+                            Id = thisPlanId
+                        };
+                        WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisPlanConfig.Rid];
+                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(thisGoalLevel);
+                        int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
+                        thisCalculator7PlanSettingModel.ImagePath = thisLevelGoalIndex > biasLevelIndex ? thisWeapon.AwakenImagePath : thisWeapon.ImagePath;
+                        thisCalculator7PlanSettingModel.StarBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisWeapon.Star];
+                        thisCalculator7PlanSettingModel.Name = thisWeapon.Name;
+                        if (thisLevel != thisGoalLevel) thisCalculator7PlanSettingModel.LevelString = $"等级： {StringConstants.LevelNumberString[thisLevel]} → {StringConstants.LevelNumberString[thisGoalLevel]}";
+                        PlanList.Add(thisCalculator7PlanSettingModel);
+                    }
+                    else
+                    {
+                        thisPlan.LevelString = $"等级： {StringConstants.LevelNumberString[thisLevel]} → {StringConstants.LevelNumberString[thisGoalLevel]}";
+                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisPlanId].LevelGoal);
+                        int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
+                        SingleCalculatorPlanConfigModel thisWeaponConfig = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[thisPlanId];
+                        WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponConfig.Rid];
+                        thisPlan.ImagePath = thisLevelGoalIndex > biasLevelIndex ? thisWeapon.AwakenImagePath : thisWeapon.ImagePath;
+                    }
+                }
+            });
         }
 
         [RelayCommand]

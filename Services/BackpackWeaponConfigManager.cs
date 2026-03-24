@@ -15,15 +15,15 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
     public void UpdateLevel(string weaponStringId, Enumeration.Level l)
     {
         Configuration.WeaponConfigMap[weaponStringId].Level = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateLevelGoal(string weaponStringId, Enumeration.Level l)
     {
         Configuration.WeaponConfigMap[weaponStringId].LevelGoal = l;
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
     }
 
     public void UpdateProgression(string weaponStringId, int i)
@@ -32,7 +32,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
     }
 
-    public string AddWeapon(int rid)
+    public SingleBackpackWeaponConfigModel AddWeapon(int rid)
     {
         SingleBackpackWeaponConfigModel thisConfig = new()
         {
@@ -42,14 +42,14 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         thisConfig.Id = $"{rid}${randomUniqueSign}";
         Configuration.WeaponConfigMap[thisConfig.Id] = thisConfig;
         Save();
-        return thisConfig.Id;
+        return thisConfig;
     }
 
     public void DeleteWeapon(string? id)
     {
         if (id == null) return;
         Configuration.WeaponConfigMap.Remove(id);
-        App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
         Save();
+        App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
     }
 }

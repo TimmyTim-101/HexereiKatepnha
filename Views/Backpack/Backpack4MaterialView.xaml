@@ -49,7 +49,7 @@
         <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AllMaterialList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.ScrollUnit="Pixel" Padding="15,0,0,0">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>
+                    <WrapPanel Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.GroupStyle>

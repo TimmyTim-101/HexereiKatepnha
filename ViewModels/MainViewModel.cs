@@ -21,6 +21,8 @@ namespace HexereiKatepnha.ViewModels
         private UserControl? _backpack2WeaponView;
         private UserControl? _backpack4MaterialView;
 
+        private UserControl? _calculator7PlanSettingView;
+
         private UserControl? _database1CharacterView;
         private UserControl? _database2WeaponView;
         private UserControl? _database3ArtifactView;
@@ -67,7 +69,15 @@ namespace HexereiKatepnha.ViewModels
                     break;
 
                 case 31: CurrentContentViewModel = new Calculator1ScanViewModel(); break;
-                case 37: CurrentContentViewModel = new Calculator7PlanSettingViewModel(); break;
+                case 37:
+                    if (_calculator7PlanSettingView == null)
+                    {
+                        _calculator7PlanSettingView = new HexereiKatepnha.Views.Calculator.Calculator7PlanSettingView();
+                        _calculator7PlanSettingView.DataContext = new Calculator7PlanSettingViewModel();
+                    }
+
+                    CurrentContentViewModel = _calculator7PlanSettingView;
+                    break;
                 case 32: CurrentContentViewModel = new Calculator2PlanViewModel(); break;
                 case 33: CurrentContentViewModel = new Calculator3AllViewModel(); break;
                 case 35: CurrentContentViewModel = new Calculator5PotentialViewModel(); break;
