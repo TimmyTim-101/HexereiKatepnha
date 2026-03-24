@@ -13,60 +13,60 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         ConfigFileName = "Configs/" + accountGuid + "/CalculatorPlanSetting.json";
     }
 
-    public void UpdatePlanSetting()
+    public void UpdateCharacterPlanSetting(int rid)
     {
-        foreach (int rid in App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig.Keys)
+        SingleBackpackCharacterConfigModel thisBackpackCharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[rid];
+        bool isLevelDone = thisBackpackCharacterConfigModel.CharacterLevel == thisBackpackCharacterConfigModel.CharacterLevelGoal;
+        bool isTalentADone = thisBackpackCharacterConfigModel.TalentALevel == thisBackpackCharacterConfigModel.TalentALevelGoal;
+        bool isTalentEDone = thisBackpackCharacterConfigModel.TalentELevel == thisBackpackCharacterConfigModel.TalentELevelGoal;
+        bool isTalentQDone = thisBackpackCharacterConfigModel.TalentQLevel == thisBackpackCharacterConfigModel.TalentQLevelGoal;
+        if (isLevelDone && isTalentADone && isTalentEDone && isTalentQDone)
         {
-            SingleBackpackCharacterConfigModel thisBackpackCharacterConfigModel = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[rid];
-            bool isLevelDone = thisBackpackCharacterConfigModel.CharacterLevel == thisBackpackCharacterConfigModel.CharacterLevelGoal;
-            bool isTalentADone = thisBackpackCharacterConfigModel.TalentALevel == thisBackpackCharacterConfigModel.TalentALevelGoal;
-            bool isTalentEDone = thisBackpackCharacterConfigModel.TalentELevel == thisBackpackCharacterConfigModel.TalentELevelGoal;
-            bool isTalentQDone = thisBackpackCharacterConfigModel.TalentQLevel == thisBackpackCharacterConfigModel.TalentQLevelGoal;
-            if (isLevelDone && isTalentADone && isTalentEDone && isTalentQDone)
+            // 已完成所有目标，尝试清除
+            if (Configuration.OrderList.Remove(rid.ToString()))
             {
-                // 已完成所有目标，尝试清除
-                if (Configuration.OrderList.Remove(rid.ToString()))
-                {
-                    Configuration.PlanMap.Remove(rid.ToString());
-                }
+                Configuration.PlanMap.Remove(rid.ToString());
             }
-            else
+        }
+        else
+        {
+            // 存在未完成目标，尝试更新
+            if (!Configuration.OrderList.Contains(rid.ToString()))
             {
-                // 存在未完成目标，尝试更新
-                if (!Configuration.OrderList.Contains(rid.ToString()))
-                {
-                    // 不存在，需要新增
-                    SingleCalculatorPlanConfigModel thisConfig = new();
-                    thisConfig.Id = rid.ToString();
-                    thisConfig.Type = 1;
-                    thisConfig.Rid = rid;
-                    Configuration.OrderList.Add(thisConfig.Id);
-                    Configuration.PlanMap[thisConfig.Id] = thisConfig;
-                }
+                // 不存在，需要新增
+                SingleCalculatorPlanConfigModel thisConfig = new();
+                thisConfig.Id = rid.ToString();
+                thisConfig.Type = 1;
+                thisConfig.Rid = rid;
+                Configuration.OrderList.Add(thisConfig.Id);
+                Configuration.PlanMap[thisConfig.Id] = thisConfig;
             }
         }
 
-        foreach (SingleBackpackWeaponConfigModel thisSingleBackpackWeaponConfigModel in App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap.Values)
+        Save();
+    }
+
+    public void UpdateWeaponPlanSetting(string planId)
+    {
+        SingleBackpackWeaponConfigModel thisSingleBackpackWeaponConfigModel = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[planId];
+        bool isLevelDone = thisSingleBackpackWeaponConfigModel.Level == thisSingleBackpackWeaponConfigModel.LevelGoal;
+        if (isLevelDone)
         {
-            bool isLevelDone = thisSingleBackpackWeaponConfigModel.Level == thisSingleBackpackWeaponConfigModel.LevelGoal;
-            if (isLevelDone)
+            if (Configuration.OrderList.Remove(thisSingleBackpackWeaponConfigModel.Id))
             {
-                if (Configuration.OrderList.Remove(thisSingleBackpackWeaponConfigModel.Id))
-                {
-                    Configuration.PlanMap.Remove(thisSingleBackpackWeaponConfigModel.Id);
-                }
+                Configuration.PlanMap.Remove(thisSingleBackpackWeaponConfigModel.Id);
             }
-            else
+        }
+        else
+        {
+            if (!Configuration.OrderList.Contains(thisSingleBackpackWeaponConfigModel.Id))
             {
-                if (!Configuration.OrderList.Contains(thisSingleBackpackWeaponConfigModel.Id))
-                {
-                    SingleCalculatorPlanConfigModel thisConfig = new();
-                    thisConfig.Id = thisSingleBackpackWeaponConfigModel.Id;
-                    thisConfig.Type = 2;
-                    thisConfig.Rid = thisSingleBackpackWeaponConfigModel.Rid;
-                    Configuration.OrderList.Add(thisConfig.Id);
-                    Configuration.PlanMap[thisConfig.Id] = thisConfig;
-                }
+                SingleCalculatorPlanConfigModel thisConfig = new();
+                thisConfig.Id = thisSingleBackpackWeaponConfigModel.Id;
+                thisConfig.Type = 2;
+                thisConfig.Rid = thisSingleBackpackWeaponConfigModel.Rid;
+                Configuration.OrderList.Add(thisConfig.Id);
+                Configuration.PlanMap[thisConfig.Id] = thisConfig;
             }
         }
 

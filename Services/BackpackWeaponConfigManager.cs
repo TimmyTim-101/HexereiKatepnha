@@ -1,5 +1,7 @@
-﻿using HexereiKatepnha.Constants.EntityConstants;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Models.ConfigModels;
+using HexereiKatepnha.Models.Messages;
 
 namespace HexereiKatepnha.Services;
 
@@ -14,16 +16,20 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
 
     public void UpdateLevel(string weaponStringId, Enumeration.Level l)
     {
-        Configuration.WeaponConfigMap[weaponStringId].Level = l;
+        SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
+        thisWeaponConfig.Level = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.LevelGoal)));
     }
 
     public void UpdateLevelGoal(string weaponStringId, Enumeration.Level l)
     {
-        Configuration.WeaponConfigMap[weaponStringId].LevelGoal = l;
+        SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
+        thisWeaponConfig.LevelGoal = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdatePlanSetting();
+        App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.LevelGoal)));
     }
 
     public void UpdateProgression(string weaponStringId, int i)
@@ -51,5 +57,6 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Configuration.WeaponConfigMap.Remove(id);
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponDeleteMessage(id));
     }
 }

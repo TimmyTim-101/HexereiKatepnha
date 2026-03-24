@@ -240,7 +240,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 App.BackpackWeaponConfigManagerInstance.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             }
 
-            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(SelectedWeapon.Id, SelectedWeapon.Config.Level, SelectedWeapon.Config.LevelGoal)));
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             IsLevelPopupOpen = false;
         }
@@ -260,7 +259,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedWeapon!.Config.LevelGoal = thisLevel;
             SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
-            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(SelectedWeapon.Id, SelectedWeapon.Config.Level, SelectedWeapon.Config.LevelGoal)));
             IsLevelPopupOpen = false;
         }
 

@@ -15,3 +15,10 @@ public class BackpackWeaponChangeMessage : ValueChangedMessage<BackpackWeaponCha
     {
     }
 }
+
+public class BackpackWeaponDeleteMessage : ValueChangedMessage<string>
+{
+    public BackpackWeaponDeleteMessage(string value) : base(value)
+    {
+    }
+}

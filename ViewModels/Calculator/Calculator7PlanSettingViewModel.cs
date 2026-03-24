@@ -92,6 +92,10 @@ namespace HexereiKatepnha.ViewModels.Calculator
                     if (thisPlan != null)
                     {
                         PlanList.Remove(thisPlan);
+                        for (int i = 0; i < PlanList.Count; i++)
+                        {
+                            PlanList[i].Index = i + 1;
+                        }
                     }
                 }
                 else
@@ -121,6 +125,28 @@ namespace HexereiKatepnha.ViewModels.Calculator
                         SingleCalculatorPlanConfigModel thisWeaponConfig = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[thisPlanId];
                         WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponConfig.Rid];
                         thisPlan.ImagePath = thisLevelGoalIndex > biasLevelIndex ? thisWeapon.AwakenImagePath : thisWeapon.ImagePath;
+                    }
+                }
+            });
+            WeakReferenceMessenger.Default.Register<BackpackWeaponDeleteMessage>(this, (recipient, message) =>
+            {
+                string thisPlanId = message.Value;
+                Calculator7PlanSettingModel? thisPlan = null;
+                foreach (Calculator7PlanSettingModel p in PlanList)
+                {
+                    if (p.Id == thisPlanId)
+                    {
+                        thisPlan = p;
+                        break;
+                    }
+                }
+
+                if (thisPlan != null)
+                {
+                    PlanList.Remove(thisPlan);
+                    for (int i = 0; i < PlanList.Count; i++)
+                    {
+                        PlanList[i].Index = i + 1;
                     }
                 }
             });
