@@ -45,8 +45,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public List<AddPanelModel> AddPanelModelList { get; set; } = new();
         [ObservableProperty] private bool _isAddPanelPopupOpen;
         public ICollectionView AddPanelView { get; }
-        [ObservableProperty] private int _addWeaponFilter = 1;
-        [ObservableProperty] private int _addStarFilter = 5;
+        [ObservableProperty] private int _addWeaponFilter = 0;
+        [ObservableProperty] private int _addStarFilter = 0;
 
         public Backpack2WeaponViewModel()
         {
@@ -80,6 +80,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 };
                 AddPanelModelList.Add(thisAddPanelModel);
             }
+
+            AddPanelModelList.Sort((w1, w2) => w2.Star.CompareTo(w1.Star));
 
             AddPanelView = CollectionViewSource.GetDefaultView(AddPanelModelList);
             AddPanelView.Filter = AddPanelFilter;

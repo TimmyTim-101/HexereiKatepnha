@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vwp="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Backpack"
              d:DataContext="{d:DesignInstance vm:Backpack4MaterialViewModel}"
@@ -47,10 +46,10 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AllMaterialList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.ScrollUnit="Pixel">
+        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AllMaterialList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.ScrollUnit="Pixel" Padding="15,0,0,0">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <vwp:VirtualizingWrapPanel Orientation="Horizontal" Margin="15,0,0,0" />
+                    <WrapPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.GroupStyle>

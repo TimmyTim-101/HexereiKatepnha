@@ -18,6 +18,7 @@ namespace HexereiKatepnha.ViewModels
 
         [ObservableProperty] private object? _currentContentViewModel;
 
+        private UserControl? _backpack2WeaponView;
         private UserControl? _backpack4MaterialView;
 
         private UserControl? _database1CharacterView;
@@ -45,7 +46,15 @@ namespace HexereiKatepnha.ViewModels
                 case 1: CurrentContentViewModel = new HomeViewModel(); break;
 
                 case 21: CurrentContentViewModel = new Backpack1CharacterViewModel(); break;
-                case 22: CurrentContentViewModel = new Backpack2WeaponViewModel(); break;
+                case 22:
+                    if (_backpack2WeaponView == null)
+                    {
+                        _backpack2WeaponView = new HexereiKatepnha.Views.Backpack.Backpack2WeaponView();
+                        _backpack2WeaponView.DataContext = new Backpack2WeaponViewModel();
+                    }
+
+                    CurrentContentViewModel = _backpack2WeaponView;
+                    break;
                 case 23: CurrentContentViewModel = new Backpack3ArtifactViewModel(); break;
                 case 24:
                     if (_backpack4MaterialView == null)
