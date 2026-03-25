@@ -34,8 +34,10 @@ namespace HexereiKatepnha.ViewModels
             IsServerTimeSame = LocalCurrentTime == ServerCurrentTime;
             IsServerTimeDifferent = !IsServerTimeSame;
 
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
             timer.Tick += (_, _) =>
             {
                 LocalCurrentTime = DateTime.Now.ToString("HH:mm:ss");

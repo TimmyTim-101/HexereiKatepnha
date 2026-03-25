@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Calculator"
+             d:DataContext="{d:DesignInstance vm:Calculator2PlanViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
@@ -52,9 +54,97 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="500"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="树脂计数器" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <TextBlock Grid.Row="1" Text="材料列表" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <TextBlock Grid.Row="2" Text="BOSS周本" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="0" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="全部恢复" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                            <TextBlock Grid.Column="1" Text=":" Style="{StaticResource MyTextBlock}" Margin="15,2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Hour, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnHourUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnHourDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                            <TextBlock Grid.Column="3" Text=":" Style="{StaticResource MyTextBlock}" Margin="2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="4" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Minute, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnMinuteUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnMinuteDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                            <TextBlock Grid.Column="5" Text=":" Style="{StaticResource MyTextBlock}" Margin="2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="6" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Second, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnSecondUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnSecondDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding ResinImagePath}" Width="40" Height="40" Stretch="UniformToFill" Margin="2"></Image>
+                            <TextBlock Grid.Column="1" Text="{Binding ResinNum}" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,2" FontSize="24"></TextBlock>
+                            <TextBlock Grid.Column="2" Text="/" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2" FontSize="24"></TextBlock>
+                            <TextBlock Grid.Column="3" Text="200" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,2" FontSize="24"></TextBlock>
+                        </Grid>
+                        <UniformGrid Grid.Row="2" Rows="1" Columns="5">
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-20" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-20" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-30" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-30" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-40" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-40" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-60" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-60" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource FunctionButton}" Content="+60" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="60" Margin="5,2" FontSize="16"></Button>
+                        </UniformGrid>
+                        <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                        <ListBox Grid.Row="4" ItemsSource="{Binding ResinHintList}" Style="{StaticResource ModernListBox}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5"></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" Style="{StaticResource MyTextBlock}" Margin="8,2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
+                    <TextBlock Text="材料列表" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                </Border>
+                <Border Grid.Row="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
+                    <TextBlock Text="BOSS周本" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

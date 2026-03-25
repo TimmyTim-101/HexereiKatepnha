@@ -6,6 +6,7 @@ public class CalculatorPlanSettingConfig
 {
     public ObservableCollection<string> OrderList { get; set; } = new();
     public Dictionary<string, SingleCalculatorPlanConfigModel> PlanMap { get; set; } = new();
+    public DateTimeOffset RecoveryTime { get; set; } = DateTimeOffset.Now;
 }
 
 public class SingleCalculatorPlanConfigModel

@@ -112,4 +112,10 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
 
         Save();
     }
+
+    public void UpdateRecoveryTime(DateTimeOffset t)
+    {
+        Configuration.RecoveryTime = t;
+        Save();
+    }
 }
