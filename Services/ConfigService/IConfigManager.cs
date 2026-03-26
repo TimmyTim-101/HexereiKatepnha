@@ -1,4 +1,4 @@
-﻿namespace HexereiKatepnha.Services;
+﻿namespace HexereiKatepnha.Services.ConfigService;
 
 public interface IConfigManager
 {

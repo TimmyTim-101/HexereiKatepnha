@@ -1,6 +1,6 @@
 ﻿using HexereiKatepnha.Models.ConfigModels;
 
-namespace HexereiKatepnha.Services;
+namespace HexereiKatepnha.Services.ConfigService;
 
 public class PrivateAccountConfigManager : ConfigManagerBase<PrivateAccountConfig>
 {

@@ -14,6 +14,7 @@ public partial class SingleBackpackWeaponConfigModel : ObservableObject
     public int Rid { get; set; }
     [ObservableProperty] private int _progression = 1;
     [ObservableProperty] private Enumeration.Level _level = Enumeration.Level.L1;
-    [ObservableProperty] private Enumeration.Level _levelGoal = Enumeration.Level.L1;
+    [ObservableProperty] private Enumeration.Level _goalLevel = Enumeration.Level.L1;
     [ObservableProperty] private int _characterRid;
+    public int SubExp { get; set; }
 }

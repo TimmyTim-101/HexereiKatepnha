@@ -4,12 +4,10 @@ using System.Globalization;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
-using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 namespace HexereiKatepnha.ViewModels.Backpack
@@ -32,6 +30,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private Backpack2WeaponModel? _selectedWeapon;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
+        [ObservableProperty] private bool _isSubExpPopupOpen;
         public ICollectionView WeaponView { get; }
         public string Weapon1ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
         public string Weapon2ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
@@ -74,7 +73,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack2WeaponModel.Progression = cm.Progression;
                 thisBackpack2WeaponModel.LevelNumberString = StringConstants.LevelNumberString[cm.Level];
                 thisBackpack2WeaponModel.LevelNameString = StringConstants.LevelNameString[cm.Level];
-                thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[cm.LevelGoal];
+                thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[cm.Level]);
+                thisBackpack2WeaponModel.SubExp = cm.SubExp;
+                thisBackpack2WeaponModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(cm.Level);
+                thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[cm.GoalLevel];
                 thisBackpack2WeaponModel.Description = thisWeaponModel.Progression[cm.Progression];
                 thisBackpack2WeaponModel.AffixStringList.Add(new ObservableCollection<string>());
                 thisBackpack2WeaponModel.AffixStringList.Add(new ObservableCollection<string>());
@@ -210,11 +212,15 @@ namespace HexereiKatepnha.ViewModels.Backpack
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
             SelectedWeapon!.Config.Level = thisLevel;
+            SelectedWeapon.Config.SubExp = 0;
+            SelectedWeapon.SubExp = 0;
             SelectedWeapon.LevelNameString = StringConstants.LevelNameString[thisLevel];
             SelectedWeapon.LevelNumberString = StringConstants.LevelNumberString[thisLevel];
+            SelectedWeapon.LevelTotalExp = GetLevelTotalExp(AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].LevelUpMaterials[thisLevel]);
+            SelectedWeapon.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisLevel);
             App.BackpackWeaponConfigManagerInstance!.UpdateLevel(SelectedWeapon.Id, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
-            int currentGoalLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon.Config.LevelGoal);
+            int currentGoalLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon.Config.GoalLevel);
             int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
             bool isAwaken = currentLevel > biasLevelIndex;
             WeaponModel thisWeaponModel = AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid];
@@ -235,7 +241,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             if (currentLevel > currentGoalLevel)
             {
-                SelectedWeapon.Config.LevelGoal = thisLevel;
+                SelectedWeapon.Config.GoalLevel = thisLevel;
                 SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
                 App.BackpackWeaponConfigManagerInstance.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             }
@@ -256,7 +262,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedWeapon!.Config.LevelGoal = thisLevel;
+            SelectedWeapon!.Config.GoalLevel = thisLevel;
             SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             IsLevelPopupOpen = false;
@@ -355,7 +361,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
             thisBackpack2WeaponModel.Progression = thisConfig.Progression;
             thisBackpack2WeaponModel.LevelNumberString = StringConstants.LevelNumberString[thisConfig.Level];
             thisBackpack2WeaponModel.LevelNameString = StringConstants.LevelNameString[thisConfig.Level];
-            thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[thisConfig.LevelGoal];
+            thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[thisConfig.Level]);
+            thisBackpack2WeaponModel.SubExp = thisConfig.SubExp;
+            thisBackpack2WeaponModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisConfig.Level);
+            thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[thisConfig.GoalLevel];
             thisBackpack2WeaponModel.Description = thisWeaponModel.Progression[thisConfig.Progression];
             thisBackpack2WeaponModel.AffixStringList.Add([]);
             thisBackpack2WeaponModel.AffixStringList.Add([]);
@@ -391,6 +400,20 @@ namespace HexereiKatepnha.ViewModels.Backpack
             App.BackpackWeaponConfigManagerInstance!.DeleteWeapon(value);
             WeaponList.Remove(WeaponList.First(w => w.Id == value));
             SelectedWeapon = WeaponView.Cast<Backpack2WeaponModel>().FirstOrDefault();
+        }
+
+        private int GetLevelTotalExp(List<MaterialPairModel> l)
+        {
+            int res = 1;
+            foreach (MaterialPairModel m in l)
+            {
+                if (m.MaterialModel!.Rid == 3110001)
+                {
+                    res = (int)m.DropNum;
+                }
+            }
+
+            return res;
         }
     }
 }

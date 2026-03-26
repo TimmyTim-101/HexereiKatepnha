@@ -55,13 +55,13 @@ namespace HexereiKatepnha.ViewModels.Calculator
                         break;
                     case 2:
                         WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisRid];
-                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisPlanId].LevelGoal);
+                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisPlanId].GoalLevel);
                         int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
                         thisCalculator7PlanSettingModel.ImagePath = thisLevelGoalIndex > biasLevelIndex ? thisWeapon.AwakenImagePath : thisWeapon.ImagePath;
                         thisCalculator7PlanSettingModel.StarBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisWeapon.Star];
                         thisCalculator7PlanSettingModel.Name = thisWeapon.Name;
                         Enumeration.Level weaponLevel = App.BackpackWeaponConfigManagerInstance.Configuration.WeaponConfigMap[thisPlanId].Level;
-                        Enumeration.Level weaponGoalLevel = App.BackpackWeaponConfigManagerInstance.Configuration.WeaponConfigMap[thisPlanId].LevelGoal;
+                        Enumeration.Level weaponGoalLevel = App.BackpackWeaponConfigManagerInstance.Configuration.WeaponConfigMap[thisPlanId].GoalLevel;
                         if (weaponLevel != weaponGoalLevel) thisCalculator7PlanSettingModel.LevelString = $"等级： {StringConstants.LevelNumberString[weaponLevel]} → {StringConstants.LevelNumberString[weaponGoalLevel]}";
                         break;
                 }
@@ -120,7 +120,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
                     else
                     {
                         thisPlan.LevelString = $"等级： {StringConstants.LevelNumberString[thisLevel]} → {StringConstants.LevelNumberString[thisGoalLevel]}";
-                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisPlanId].LevelGoal);
+                        int thisLevelGoalIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisPlanId].GoalLevel);
                         int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
                         SingleCalculatorPlanConfigModel thisWeaponConfig = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[thisPlanId];
                         WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponConfig.Rid];

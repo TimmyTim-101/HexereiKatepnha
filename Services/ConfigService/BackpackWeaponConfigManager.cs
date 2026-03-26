@@ -3,7 +3,7 @@ using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.Messages;
 
-namespace HexereiKatepnha.Services;
+namespace HexereiKatepnha.Services.ConfigService;
 
 public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfig>
 {
@@ -20,16 +20,16 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         thisWeaponConfig.Level = l;
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.LevelGoal)));
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
     }
 
     public void UpdateLevelGoal(string weaponStringId, Enumeration.Level l)
     {
         SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
-        thisWeaponConfig.LevelGoal = l;
+        thisWeaponConfig.GoalLevel = l;
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.LevelGoal)));
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
     }
 
     public void UpdateProgression(string weaponStringId, int i)
@@ -58,5 +58,11 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
         WeakReferenceMessenger.Default.Send(new BackpackWeaponDeleteMessage(id));
+    }
+
+    public void UpdateSubExp(string planId, int subExp)
+    {
+        Configuration.WeaponConfigMap[planId].SubExp = subExp;
+        Save();
     }
 }

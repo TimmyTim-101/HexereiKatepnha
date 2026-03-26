@@ -10,6 +10,7 @@ using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 using HexereiKatepnha.Services;
+using HexereiKatepnha.Services.ConfigService;
 
 namespace HexereiKatepnha.ViewModels
 {

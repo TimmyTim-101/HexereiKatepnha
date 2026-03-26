@@ -1,8 +1,6 @@
-﻿using HexereiKatepnha.Constants.EntityConstants;
-using HexereiKatepnha.Models.ConfigModels;
-using HexereiKatepnha.Models.EntityModels;
+﻿using HexereiKatepnha.Models.ConfigModels;
 
-namespace HexereiKatepnha.Services;
+namespace HexereiKatepnha.Services.ConfigService;
 
 public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPlanSettingConfig>
 {
@@ -49,7 +47,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
     public void UpdateWeaponPlanSetting(string planId)
     {
         SingleBackpackWeaponConfigModel thisSingleBackpackWeaponConfigModel = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[planId];
-        bool isLevelDone = thisSingleBackpackWeaponConfigModel.Level == thisSingleBackpackWeaponConfigModel.LevelGoal;
+        bool isLevelDone = thisSingleBackpackWeaponConfigModel.Level == thisSingleBackpackWeaponConfigModel.GoalLevel;
         if (isLevelDone)
         {
             if (Configuration.OrderList.Remove(thisSingleBackpackWeaponConfigModel.Id))

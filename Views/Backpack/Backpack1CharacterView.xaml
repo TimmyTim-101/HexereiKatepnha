@@ -357,6 +357,7 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
@@ -494,8 +495,44 @@
                                             </UniformGrid>
                                         </Border>
                                     </Popup>
-                                    <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <Grid Grid.Row="4">
+                                    <ToggleButton Grid.Row="3" x:Name="SubExpToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsSubExpPopupOpen, Mode=TwoWay}" Width="190">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border Background="Transparent">
+                                                    <ContentPresenter></ContentPresenter>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <Grid>
+                                            <Grid.Style>
+                                                <Style TargetType="Grid">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedCharacter.IsShowProgress}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <ProgressBar Grid.Row="0" Minimum="0" Maximum="{Binding SelectedCharacter.LevelTotalExp}" Value="{Binding SelectedCharacter.SubExp}" Foreground="#2ACAE8" Background="#133E83" BorderThickness="0" Margin="10,2" Height="5"></ProgressBar>
+                                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,2">
+                                                <TextBlock Text="{Binding SelectedCharacter.SubExp}" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                                <TextBlock Text="/" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                                <TextBlock Text="{Binding SelectedCharacter.LevelTotalExp}" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                            </StackPanel>
+                                        </Grid>
+                                    </ToggleButton>
+                                    <Popup Grid.Row="3" IsOpen="{Binding IsSubExpPopupOpen}" PlacementTarget="{Binding ElementName=SubExpToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+                                        <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                            <TextBox Text="{Binding SelectedCharacter.SubExp, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                                        </Border>
+                                    </Popup>
+                                    <Border Grid.Row="4" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -509,7 +546,7 @@
                                                     </Border>
                                                 </ControlTemplate>
                                             </ToggleButton.Template>
-                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                                 <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[1].Description}"></ToolTip>
@@ -542,7 +579,7 @@
                                                     </Border>
                                                 </ControlTemplate>
                                             </ToggleButton.Template>
-                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                                 <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[2].Description}"></ToolTip>
@@ -575,7 +612,7 @@
                                                     </Border>
                                                 </ControlTemplate>
                                             </ToggleButton.Template>
-                                            <StackPanel Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                                 <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[3].Description}"></ToolTip>
@@ -601,8 +638,8 @@
                                             </Border>
                                         </Popup>
                                     </Grid>
-                                    <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <Grid Grid.Row="6">
+                                    <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="7">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
@@ -703,12 +740,13 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="25" Height="25" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5"></Image>
+                                        <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5"></Image>
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
@@ -716,14 +754,36 @@
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="等级：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.LevelNameString}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                     </StackPanel>
-                                    <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <Grid Grid.Row="4">
+                                    <Grid Grid.Row="3" Width="190">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Visible"></Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding SelectedCharacter.IsShowProgress}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <ProgressBar Grid.Row="0" Minimum="0" Maximum="{Binding SelectedCharacter.LevelTotalExp}" Value="{Binding SelectedCharacter.SubExp}" Foreground="#2ACAE8" Background="#133E83" BorderThickness="0" Margin="10,2" Height="5"></ProgressBar>
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,2">
+                                            <TextBlock Text="{Binding SelectedCharacter.SubExp}" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                            <TextBlock Text="/" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                            <TextBlock Text="{Binding SelectedCharacter.LevelTotalExp}" Margin="2" Foreground="#2ACAE8" FontSize="10"></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Border Grid.Row="4" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <StackPanel Grid.Column="0" Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                 <Image.ToolTip>
                                                     <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[1].Description}"></ToolTip>
@@ -731,7 +791,7 @@
                                             </Image>
                                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentAString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                         </StackPanel>
-                                        <StackPanel Grid.Column="1" Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                 <Image.ToolTip>
                                                     <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[2].Description}"></ToolTip>
@@ -739,7 +799,7 @@
                                             </Image>
                                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentEString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                         </StackPanel>
-                                        <StackPanel Grid.Column="2" Orientation="Vertical" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Grid.Column="2" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Image Source="{Binding SelectedCharacter.TalentPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
                                                 <Image.ToolTip>
                                                     <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.TalentPropertyDictionary[3].Description}"></ToolTip>
@@ -748,8 +808,8 @@
                                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.TalentQString}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                         </StackPanel>
                                     </Grid>
-                                    <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <Grid Grid.Row="6">
+                                    <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
+                                    <Grid Grid.Row="7">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>

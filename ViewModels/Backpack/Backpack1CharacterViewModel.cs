@@ -3,11 +3,9 @@ using System.ComponentModel;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
-using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 namespace HexereiKatepnha.ViewModels.Backpack
@@ -25,6 +23,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isTalentEPopupOpen;
         [ObservableProperty] private bool _isTalentQPopupOpen;
         [ObservableProperty] private bool _isAscensionPopupOpen;
+        [ObservableProperty] private bool _isSubExpPopupOpen;
         public ICollectionView CharacterView { get; }
         public string Element1ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
         public string Element2ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
@@ -60,6 +59,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 };
                 thisBackpack1CharacterModel.LevelNameString = StringConstants.LevelNameString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
                 thisBackpack1CharacterModel.LevelNumberString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
+                thisBackpack1CharacterModel.LevelTotalExp = GetLevelTotalExp(e.LevelUpMaterials[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel]);
+                thisBackpack1CharacterModel.SubExp = thisBackpack1CharacterModel.CharacterConfigModel.SubExp;
+                thisBackpack1CharacterModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel);
                 thisBackpack1CharacterModel.TalentAString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentALevel];
                 thisBackpack1CharacterModel.TalentEString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentELevel];
                 thisBackpack1CharacterModel.TalentQString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentQLevel];
@@ -83,6 +85,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             CharacterView.SortDescriptions.Add(new SortDescription("CharacterConfigModel.CharacterLevel", ListSortDirection.Descending));
             CharacterView.SortDescriptions.Add(new SortDescription(nameof(Backpack1CharacterModel.Star), ListSortDirection.Descending));
             CharacterView.SortDescriptions.Add(new SortDescription(nameof(Backpack1CharacterModel.ElementType), ListSortDirection.Ascending));
+            CharacterView.SortDescriptions.Add(new SortDescription(nameof(Backpack1CharacterModel.Rid), ListSortDirection.Descending));
             if (CharacterView is ICollectionViewLiveShaping liveView)
             {
                 liveView.IsLiveSorting = true;
@@ -201,8 +204,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
             SelectedCharacter!.CharacterConfigModel.CharacterLevel = thisLevel;
+            SelectedCharacter.CharacterConfigModel.SubExp = 0;
+            SelectedCharacter.SubExp = 0;
             SelectedCharacter.LevelNameString = StringConstants.LevelNameString[thisLevel];
             SelectedCharacter.LevelNumberString = StringConstants.LevelNumberString[thisLevel];
+            SelectedCharacter.LevelTotalExp = GetLevelTotalExp(AutoCalculateConstants.CharacterMap[SelectedCharacter.Rid].LevelUpMaterials[thisLevel]);
+            SelectedCharacter.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisLevel);
             App.BackpackCharacterConfigManagerInstance!.UpdateLevel(SelectedCharacter.Rid, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
             int currentGoalLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.CharacterLevelGoal);
@@ -393,6 +400,20 @@ namespace HexereiKatepnha.ViewModels.Backpack
             int valueInt = Int32.Parse(value) - 1;
             int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedCharacter.CharacterConfigModel.TalentQLevel);
             return valueInt >= currentLevel;
+        }
+
+        private int GetLevelTotalExp(List<MaterialPairModel> l)
+        {
+            int res = 1;
+            foreach (MaterialPairModel m in l)
+            {
+                if (m.MaterialModel!.Rid == 3020001)
+                {
+                    res = (int)m.DropNum;
+                }
+            }
+
+            return res;
         }
     }
 }

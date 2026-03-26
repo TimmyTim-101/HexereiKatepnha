@@ -157,7 +157,16 @@ public static class CharacterLevelUpConstants
             { Enumeration.Level.L89, [new MaterialPairModel() { MaterialModel = MaterialConstants._3020001, DropNum = 547200 }] },
             { Enumeration.Level.L90, [] },
             { Enumeration.Level.L90P, [] },
+            { Enumeration.Level.L91, [] },
+            { Enumeration.Level.L92, [] },
+            { Enumeration.Level.L93, [] },
+            { Enumeration.Level.L94, [] },
             { Enumeration.Level.L95, [] },
+            { Enumeration.Level.L96, [] },
+            { Enumeration.Level.L97, [] },
+            { Enumeration.Level.L98, [] },
+            { Enumeration.Level.L99, [] },
+            { Enumeration.Level.L100, [] },
         };
     }
 

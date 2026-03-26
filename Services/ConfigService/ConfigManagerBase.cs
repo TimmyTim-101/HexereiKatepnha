@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text.Json;
 
-namespace HexereiKatepnha.Services;
+namespace HexereiKatepnha.Services.ConfigService;
 
 public abstract class ConfigManagerBase<TConfig> : IConfigManager where TConfig : class, new()
 {

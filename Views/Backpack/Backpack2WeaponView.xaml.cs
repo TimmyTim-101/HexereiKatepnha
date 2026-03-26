@@ -1,4 +1,8 @@
-﻿namespace HexereiKatepnha.Views.Backpack;
+﻿using System.Text.RegularExpressions;
+using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace HexereiKatepnha.Views.Backpack;
 
 using System;
 using System.Windows;
@@ -27,5 +31,28 @@ public partial class Backpack2WeaponView
             AddWeaponPopup.ClearValue(Popup.HorizontalOffsetProperty);
             AddWeaponPopup.ClearValue(Popup.VerticalOffsetProperty);
         }), DispatcherPriority.Loaded);
+    }
+
+    private void NumberOnlyTextBox(object sender, TextCompositionEventArgs e)
+    {
+        Regex regex = new Regex("[^0-9]+");
+        e.Handled = regex.IsMatch(e.Text);
+    }
+
+    private void NumberTextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (sender is TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "0";
+                textBox.SelectAll();
+            }
+            else if (textBox.Text.Length > 1 && textBox.Text.StartsWith('0'))
+            {
+                textBox.Text = textBox.Text.TrimStart('0');
+                textBox.CaretIndex = textBox.Text.Length;
+            }
+        }
     }
 }

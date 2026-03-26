@@ -15,6 +15,13 @@ public static class SequenceConstants
         Enumeration.Level.L60P, Enumeration.Level.L70, Enumeration.Level.L70P, Enumeration.Level.L80, Enumeration.Level.L80P, Enumeration.Level.L90, Enumeration.Level.L90P, Enumeration.Level.L100,
     ];
 
+    public static readonly List<Enumeration.Level> NoExpLevels =
+    [
+        Enumeration.Level.L20, Enumeration.Level.L40, Enumeration.Level.L50, Enumeration.Level.L60, Enumeration.Level.L70, Enumeration.Level.L80, Enumeration.Level.L90, Enumeration.Level.L90P,
+        Enumeration.Level.L91, Enumeration.Level.L92, Enumeration.Level.L93, Enumeration.Level.L94, Enumeration.Level.L95, Enumeration.Level.L96, Enumeration.Level.L97, Enumeration.Level.L98,
+        Enumeration.Level.L99, Enumeration.Level.L100,
+    ];
+
     public static readonly List<Enumeration.Level> AllLevels =
     [
         Enumeration.Level.L1, Enumeration.Level.L2, Enumeration.Level.L3, Enumeration.Level.L4, Enumeration.Level.L5, Enumeration.Level.L6, Enumeration.Level.L7, Enumeration.Level.L8,

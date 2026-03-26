@@ -27,4 +27,14 @@ public partial class Backpack2WeaponModel : ObservableObject
     [ObservableProperty] private string _characterBackgroundImagePath = "/Resources/Images/empty_item.png";
     [ObservableProperty] private string _characterElementImagePath = "/Resources/Images/empty_item.png";
     [ObservableProperty] private SingleBackpackWeaponConfigModel _config = new();
+    [ObservableProperty] private int _subExp;
+    [ObservableProperty] private int _levelTotalExp = 1;
+    [ObservableProperty] private bool _isShowProgress = true;
+
+    partial void OnSubExpChanged(int value)
+    {
+        SubExp = Math.Min(value, LevelTotalExp - 1);
+        Config.SubExp = SubExp;
+        App.BackpackWeaponConfigManagerInstance!.UpdateSubExp(Id, SubExp);
+    }
 }

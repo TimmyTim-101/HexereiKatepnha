@@ -18,41 +18,32 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public Backpack4MaterialViewModel()
         {
-            List<List<MaterialModel>> allLists =
-            [
-                AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialCharacterWeaponEnhancement1, AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1,
-                AllEntities.AllMaterialCharacterLevelUp2, AllEntities.AllMaterialCharacterAscension, AllEntities.AllMaterialCharacterTalent, AllEntities.AllMaterialWeaponAscension, AllEntities.AllMaterialLocalSpecialty,
-                AllEntities.AllMaterialWeaponExp,
-            ];
-            foreach (List<MaterialModel> d in allLists)
+            foreach (MaterialModel e in AutoCalculateConstants.MaterialMap.Values)
             {
-                foreach (MaterialModel e in d)
+                Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel();
+                thisBackpack4MaterialModel.ImagePath = e.ImagePath;
+                thisBackpack4MaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                thisBackpack4MaterialModel.Name = e.Name;
+                thisBackpack4MaterialModel.Rid = e.Rid;
+                thisBackpack4MaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
+
+                switch (e.MaterialType)
                 {
-                    Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel();
-                    thisBackpack4MaterialModel.ImagePath = e.ImagePath;
-                    thisBackpack4MaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                    thisBackpack4MaterialModel.Name = e.Name;
-                    thisBackpack4MaterialModel.Rid = e.Rid;
-                    thisBackpack4MaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
-
-                    switch (e.MaterialType)
-                    {
-                        case Enumeration.MaterialType.Mora: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp1: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterLevelUp2: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
-                        case Enumeration.MaterialType.CharacterAscension: thisBackpack4MaterialModel.CategoryName = "角色突破素材"; break;
-                        case Enumeration.MaterialType.CharacterTalent: thisBackpack4MaterialModel.CategoryName = "角色天赋素材"; break;
-                        case Enumeration.MaterialType.WeaponAscension: thisBackpack4MaterialModel.CategoryName = "武器突破素材"; break;
-                        case Enumeration.MaterialType.LocalSpecialty: thisBackpack4MaterialModel.CategoryName = "地方特产"; break;
-                        case Enumeration.MaterialType.WeaponExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
-                    }
-
-                    AllMaterialList.Add(thisBackpack4MaterialModel);
-                    MaterialRidMap[e.Rid] = thisBackpack4MaterialModel;
+                    case Enumeration.MaterialType.Mora: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
+                    case Enumeration.MaterialType.CharacterExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
+                    case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
+                    case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisBackpack4MaterialModel.CategoryName = "角色与武器培养素材"; break;
+                    case Enumeration.MaterialType.CharacterLevelUp1: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
+                    case Enumeration.MaterialType.CharacterLevelUp2: thisBackpack4MaterialModel.CategoryName = "角色培养素材"; break;
+                    case Enumeration.MaterialType.CharacterAscension: thisBackpack4MaterialModel.CategoryName = "角色突破素材"; break;
+                    case Enumeration.MaterialType.CharacterTalent: thisBackpack4MaterialModel.CategoryName = "角色天赋素材"; break;
+                    case Enumeration.MaterialType.WeaponAscension: thisBackpack4MaterialModel.CategoryName = "武器突破素材"; break;
+                    case Enumeration.MaterialType.LocalSpecialty: thisBackpack4MaterialModel.CategoryName = "地方特产"; break;
+                    case Enumeration.MaterialType.WeaponExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
                 }
+
+                AllMaterialList.Add(thisBackpack4MaterialModel);
+                MaterialRidMap[e.Rid] = thisBackpack4MaterialModel;
             }
 
             MaterialView = CollectionViewSource.GetDefaultView(AllMaterialList);

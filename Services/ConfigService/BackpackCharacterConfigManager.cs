@@ -3,7 +3,7 @@ using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.Messages;
 
-namespace HexereiKatepnha.Services;
+namespace HexereiKatepnha.Services.ConfigService;
 
 public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacterConfig>
 {
@@ -140,5 +140,11 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
         WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentQChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentQLevel, thisCharacterConfig.TalentQLevelGoal)));
+    }
+
+    public void UpdateSubExp(int characterId, int subExp)
+    {
+        Configuration.CharacterConfig[characterId].SubExp = subExp;
+        Save();
     }
 }

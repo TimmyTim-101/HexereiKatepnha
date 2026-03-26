@@ -2,6 +2,11 @@
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using HexereiKatepnha.Constants.EntityConstants;
+using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Models.ConfigModels;
+using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Services.CalculatorService;
 
 namespace HexereiKatepnha.ViewModels.Calculator
 {
@@ -23,6 +28,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
             };
             timer.Tick += (_, _) => { UpdateRecoveryCountdown(); };
             timer.Start();
+            UpdatePlanForGoal();
         }
 
         private void UpdateRecoveryCountdown()
@@ -170,11 +176,11 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 string serverTimeString = startTime.ToOffset(TimeSpan.FromHours(8)).ToString("HH:mm");
                 if (localTimeString == serverTimeString)
                 {
-                    res[1].Insert(0, $"({serverTimeString})");
+                    res[1].Insert(0, $"( {serverTimeString} )");
                 }
                 else
                 {
-                    res[1].Insert(0, $"({localTimeString} / {serverTimeString})");
+                    res[1].Insert(0, $"( {localTimeString} / {serverTimeString} )");
                 }
 
                 res[2].Add("树脂数达到");
@@ -184,6 +190,11 @@ namespace HexereiKatepnha.ViewModels.Calculator
             }
 
             return res;
+        }
+
+        private void UpdatePlanForGoal()
+        {
+            FinishSimulatorService fss = new FinishSimulatorService(false);
         }
     }
 }

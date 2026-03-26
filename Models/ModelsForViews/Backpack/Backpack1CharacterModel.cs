@@ -30,4 +30,14 @@ public partial class Backpack1CharacterModel : ObservableObject
     public Dictionary<int, ImageDescriptionPairModel> TalentPropertyDictionary { get; set; } = new();
     public Dictionary<int, ImageDescriptionPairModel> AscensionPropertyDictionary { get; set; } = new();
     [ObservableProperty] private ObservableCollection<double> _ascensionOpacityList = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0];
+    [ObservableProperty] private int _subExp;
+    [ObservableProperty] private int _levelTotalExp = 1;
+    [ObservableProperty] private bool _isShowProgress = true;
+
+    partial void OnSubExpChanged(int value)
+    {
+        SubExp = Math.Min(value, LevelTotalExp - 1);
+        CharacterConfigModel.SubExp = SubExp;
+        App.BackpackCharacterConfigManagerInstance!.UpdateSubExp(Rid, SubExp);
+    }
 }
