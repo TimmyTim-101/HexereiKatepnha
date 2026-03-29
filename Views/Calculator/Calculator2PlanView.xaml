@@ -52,9 +52,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="500"></RowDefinition>
+                    <RowDefinition Height="324"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Border Grid.Row="0" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
+                <Border Grid.Row="0" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -139,11 +139,107 @@
                         </ListBox>
                     </Grid>
                 </Border>
-                <Border Grid.Row="1" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
-                    <TextBlock Text="材料列表" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="1" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
+                    <ListBox ItemsSource="{Binding LackMaterialList}" Style="{StaticResource ModernListBox}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Image Source="{Binding BackgroundImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                        <Image Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                    </Grid>
+                                    <Viewbox Grid.Column="1" MaxWidth="130" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="2" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding BackpackNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="3" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MergeNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="4" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
                 </Border>
-                <Border Grid.Row="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2">
-                    <TextBlock Text="BOSS周本" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Grid.Row="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
+                    <ListBox ItemsSource="{Binding Boss60List}" Style="{StaticResource ModernListBox}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                    <Viewbox Grid.Column="1" MaxWidth="130" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Grid Grid.Column="2" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum1}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum1}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum2}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum2}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid Grid.Column="4" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum3}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum3}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <TextBlock Grid.Column="5" Style="{StaticResource MyTextBlock}" Text="{Binding Info}" Foreground="{Binding Color}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
                 </Border>
             </Grid>
         </Grid>

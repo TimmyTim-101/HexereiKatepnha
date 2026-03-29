@@ -13,7 +13,7 @@ public class BackpackMaterialConfigManager : ConfigManagerBase<BackpackMaterialC
 
     public int GetMaterialNumber(int materialId)
     {
-        return Configuration.MaterialNumberMap.TryGetValue(materialId, out var number) ? number : 0;
+        return Configuration.MaterialNumberMap.GetValueOrDefault(materialId, 0);
     }
 
     public void UpdateMaterialNumber(int materialId, int num)
@@ -22,6 +22,7 @@ public class BackpackMaterialConfigManager : ConfigManagerBase<BackpackMaterialC
         {
             Configuration.MaterialNumberMap[materialId] = num;
             Save();
+            App.RefreshGoalSimulation();
         }
     }
 }

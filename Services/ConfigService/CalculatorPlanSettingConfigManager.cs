@@ -42,6 +42,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
 
         Save();
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateWeaponPlanSetting(string planId)
@@ -69,6 +70,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
 
         Save();
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateTop(string planId)
@@ -77,6 +79,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Insert(0, planId);
             Save();
+            App.RefreshGoalSimulation();
         }
     }
 
@@ -87,6 +90,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Move(index, index - 1);
             Save();
+            App.RefreshGoalSimulation();
         }
     }
 
@@ -97,6 +101,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Move(index, index + 1);
             Save();
+            App.RefreshGoalSimulation();
         }
     }
 
@@ -109,6 +114,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
 
         Save();
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateRecoveryTime(DateTimeOffset t)

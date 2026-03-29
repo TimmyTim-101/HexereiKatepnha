@@ -3,14 +3,16 @@ using System.ComponentModel;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack4MaterialViewModel : ObservableObject
+    public partial class Backpack4MaterialViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
     {
         public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; } = new();
         private Dictionary<int, Backpack4MaterialModel> MaterialRidMap { get; set; } = new();
@@ -48,6 +50,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             MaterialView = CollectionViewSource.GetDefaultView(AllMaterialList);
             MaterialView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(Backpack4MaterialModel.CategoryName)));
+            WeakReferenceMessenger.Default.Register(this);
         }
 
         [RelayCommand]
@@ -84,6 +87,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     clickItem.Number += 1;
                 }
             }
+        }
+
+        public void Receive(GoalSimulatorChangeMessage message)
+        {
+            // todo 更新内容
         }
     }
 }

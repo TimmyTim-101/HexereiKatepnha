@@ -2,15 +2,13 @@
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using HexereiKatepnha.Constants.EntityConstants;
-using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
-using HexereiKatepnha.Models.ConfigModels;
-using HexereiKatepnha.Models.EntityModels;
-using HexereiKatepnha.Services.CalculatorService;
+using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Models.Messages;
+using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.ViewModels.Calculator
 {
-    public partial class Calculator2PlanViewModel : ObservableObject
+    public partial class Calculator2PlanViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
     {
         [ObservableProperty] private int _hour;
         [ObservableProperty] private int _minute;
@@ -18,6 +16,8 @@ namespace HexereiKatepnha.ViewModels.Calculator
         public string ResinImagePath { get; set; } = "/Resources/Icons/UI_ItemIcon_106.png";
         [ObservableProperty] private int _resinNum;
         [ObservableProperty] private ObservableCollection<ObservableCollection<string>> _resinHintList = new();
+        [ObservableProperty] private ObservableCollection<CalculatorPlanLackMaterialModel> _lackMaterialList = new();
+        [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
 
         public Calculator2PlanViewModel()
         {
@@ -28,6 +28,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
             };
             timer.Tick += (_, _) => { UpdateRecoveryCountdown(); };
             timer.Start();
+            WeakReferenceMessenger.Default.Register(this);
             UpdatePlanForGoal();
         }
 
@@ -194,7 +195,13 @@ namespace HexereiKatepnha.ViewModels.Calculator
 
         private void UpdatePlanForGoal()
         {
-            FinishSimulatorService fss = new FinishSimulatorService(false);
+            LackMaterialList = App.GlobalGoalSimulatorServicePart.GetAllLackMaterial();
+            Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
+        }
+
+        public void Receive(GoalSimulatorChangeMessage message)
+        {
+            UpdatePlanForGoal();
         }
     }
 }

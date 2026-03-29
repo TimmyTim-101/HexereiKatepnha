@@ -1,10 +1,13 @@
 ﻿using System.Text;
 using System.Windows;
+using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Services;
+using HexereiKatepnha.Services.CalculatorService;
 using HexereiKatepnha.Services.ConfigService;
 
 namespace HexereiKatepnha
@@ -21,6 +24,8 @@ namespace HexereiKatepnha
         public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
         public static BackpackWeaponConfigManager? BackpackWeaponConfigManagerInstance { get; set; }
         public static CalculatorPlanSettingConfigManager? CalculatorPlanSettingConfigManagerInstance { get; set; }
+        public static GoalSimulatorService GlobalGoalSimulatorServicePart { get; set; }
+        public static GoalSimulatorService GlobalGoalSimulatorServiceAll { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -43,6 +48,7 @@ namespace HexereiKatepnha
             BackpackWeaponConfigManagerInstance.Load();
             CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(currentAccountGuid);
             CalculatorPlanSettingConfigManagerInstance.Load();
+            RefreshGoalSimulation();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -110,6 +116,13 @@ namespace HexereiKatepnha
                     }
                 }
             }
+        }
+
+        public static void RefreshGoalSimulation()
+        {
+            GlobalGoalSimulatorServicePart = new GoalSimulatorService(false);
+            GlobalGoalSimulatorServiceAll = new GoalSimulatorService(true);
+            WeakReferenceMessenger.Default.Send(new GoalSimulatorChangeMessage());
         }
     }
 }

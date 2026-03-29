@@ -21,6 +21,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
         WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateLevelGoal(string weaponStringId, Enumeration.Level l)
@@ -30,6 +31,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
         WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateProgression(string weaponStringId, int i)
@@ -58,11 +60,13 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
         WeakReferenceMessenger.Default.Send(new BackpackWeaponDeleteMessage(id));
+        App.RefreshGoalSimulation();
     }
 
     public void UpdateSubExp(string planId, int subExp)
     {
         Configuration.WeaponConfigMap[planId].SubExp = subExp;
         Save();
+        App.RefreshGoalSimulation();
     }
 }
