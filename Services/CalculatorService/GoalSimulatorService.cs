@@ -316,8 +316,8 @@ public class GoalSimulatorService
         // 实施升级
         _materialNumMap[3010001] -= mora;
         _materialNeedMap[3020001] = _materialNeedMap.GetValueOrDefault(3020001, 0) + largeUseNum;
-        _materialNeedMap[3020002] = _materialNeedMap.GetValueOrDefault(3020002, 0) + largeUseNum;
-        _materialNeedMap[3020003] = _materialNeedMap.GetValueOrDefault(3020003, 0) + largeUseNum;
+        _materialNeedMap[3020002] = _materialNeedMap.GetValueOrDefault(3020002, 0) + mediumUseNum;
+        _materialNeedMap[3020003] = _materialNeedMap.GetValueOrDefault(3020003, 0) + smallUseNum;
     }
 
     private void SimulateForWeaponExp(double num)
@@ -413,8 +413,8 @@ public class GoalSimulatorService
         _materialNumMap[3110003] += extraSmallNum;
         _materialNumMap[3010001] -= mora;
         _materialNeedMap[3110001] = _materialNeedMap.GetValueOrDefault(3110001, 0) + largeUseNum;
-        _materialNeedMap[3110002] = _materialNeedMap.GetValueOrDefault(3110002, 0) + largeUseNum;
-        _materialNeedMap[3110003] = _materialNeedMap.GetValueOrDefault(3110003, 0) + largeUseNum;
+        _materialNeedMap[3110002] = _materialNeedMap.GetValueOrDefault(3110002, 0) + mediumUseNum;
+        _materialNeedMap[3110003] = _materialNeedMap.GetValueOrDefault(3110003, 0) + smallUseNum;
         _materialNeedMap[3010001] = _materialNeedMap.GetValueOrDefault(3010001) + mora;
     }
 
@@ -575,6 +575,62 @@ public class GoalSimulatorService
         res.ResinNum = _needResinNum;
         res.MergeResinNum = _needResinNum / 60;
         res.DayNum = (int)Math.Ceiling((double)_needResinNum / 180);
+        return res;
+    }
+
+    public Dictionary<int, CalculatorPlanMaterialExtraInfo> GetMaterialExtraInfo()
+    {
+        Dictionary<int, CalculatorPlanMaterialExtraInfo> res = new();
+        List<int> allMaterialList = [];
+        allMaterialList.AddRange(from l in AllEntities.AllMaterialLists from m in l select m.Rid);
+        foreach (int materialRid in allMaterialList)
+        {
+            if (res.ContainsKey(materialRid)) continue;
+            List<int> relativeMaterialList = [materialRid];
+            while (AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(relativeMaterialList[^1]))
+            {
+                relativeMaterialList.Add(AutoCalculateConstants.MaterialMergeRecipe[relativeMaterialList[^1]]);
+            }
+
+            int[] relativeHaveNumList = new int[relativeMaterialList.Count];
+            int[] relativeNeedNumList = new int[relativeMaterialList.Count];
+            for (int i = 0; i < relativeMaterialList.Count; i++)
+            {
+                relativeHaveNumList[i] = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(relativeMaterialList[i]);
+                relativeNeedNumList[i] = _materialNeedMap.GetValueOrDefault(relativeMaterialList[i], 0);
+            }
+
+            int[] relativeDemandMergeNumList = new int[relativeMaterialList.Count];
+            int[] relativeCanMergeNumList = new int[relativeMaterialList.Count];
+            int[] relativeActualMergeNumList = new int[relativeMaterialList.Count];
+            for (int i = 0; i < relativeMaterialList.Count - 1; i++)
+            {
+                relativeDemandMergeNumList[i] = Math.Max(0, relativeNeedNumList[i] - relativeHaveNumList[i] + 3 * (i == 0 ? 0 : relativeDemandMergeNumList[i - 1]));
+            }
+
+            for (int i = relativeMaterialList.Count - 1; i > 0; i--)
+            {
+                relativeCanMergeNumList[i] = Math.Min(3 * relativeDemandMergeNumList[i - 1], Math.Max(0, relativeHaveNumList[i] - relativeNeedNumList[i] + relativeActualMergeNumList[i]));
+                relativeActualMergeNumList[i - 1] = relativeCanMergeNumList[i] / 3;
+            }
+
+            int[] relativeAfterMergeNumList = new int[relativeMaterialList.Count];
+            for (int i = 0; i < relativeMaterialList.Count; i++)
+            {
+                relativeAfterMergeNumList[i] = relativeHaveNumList[i] + relativeActualMergeNumList[i] - (i == 0 ? 0 : 3 * relativeActualMergeNumList[i - 1]);
+            }
+
+            for (int i = 0; i < relativeMaterialList.Count; i++)
+            {
+                CalculatorPlanMaterialExtraInfo thisModel = new CalculatorPlanMaterialExtraInfo();
+                thisModel.Rid = relativeMaterialList[i];
+                thisModel.NeedNum = relativeNeedNumList[i];
+                thisModel.IsSatisfy = relativeAfterMergeNumList[i] >= relativeNeedNumList[i];
+                thisModel.ActionNum = thisModel.IsSatisfy ? relativeActualMergeNumList[i] : relativeNeedNumList[i] - relativeAfterMergeNumList[i];
+                res[relativeMaterialList[i]] = thisModel;
+            }
+        }
+
         return res;
     }
 }

@@ -12,10 +12,12 @@
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="BackpackMaterialItemTemplate" DataType="{x:Type models:Backpack4MaterialModel}">
-            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="106" Height="160">
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="106" Height="220">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -26,10 +28,21 @@
                         <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
                         <Image Source="{Binding ImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
                     </Grid>
-                    <Viewbox Grid.Row="1" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" BorderThickness="0" Background="{Binding Color2}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num2String}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                         <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
                     </Viewbox>
-                    <UniformGrid Grid.Row="2" Rows="1">
+                    <UniformGrid Grid.Row="4" Rows="1">
                         <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
                         <Button Content="+" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.AddOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
                         <Button Content="合" Style="{StaticResource TextButton}" Margin="0,2" Visibility="{Binding IsMergeVisible}" Command="{Binding DataContext.MergeOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>

@@ -6,7 +6,6 @@ using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
-using HexereiKatepnha.Services;
 using HexereiKatepnha.Services.CalculatorService;
 using HexereiKatepnha.Services.ConfigService;
 
@@ -89,23 +88,12 @@ namespace HexereiKatepnha
 
             AutoCalculateConstants.CharacterMap = AllEntities.AllCharacter.ToDictionary(c => c.Rid, c => c);
             AutoCalculateConstants.WeaponMap = AllEntities.AllWeapon.ToDictionary(w => w.Rid, w => w);
-            List<List<MaterialModel>> allMaterialLists =
-            [
-                AllEntities.AllMaterialMora, AllEntities.AllMaterialCharacterExp, AllEntities.AllMaterialCharacterWeaponEnhancement1, AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1,
-                AllEntities.AllMaterialCharacterLevelUp2, AllEntities.AllMaterialCharacterAscension, AllEntities.AllMaterialCharacterTalent, AllEntities.AllMaterialWeaponAscension, AllEntities.AllMaterialLocalSpecialty,
-                AllEntities.AllMaterialWeaponExp,
-            ];
-            foreach (var m in allMaterialLists.SelectMany(l => l))
+            foreach (var m in AllEntities.AllMaterialLists.SelectMany(l => l))
             {
                 AutoCalculateConstants.MaterialMap[m.Rid] = m;
             }
 
-            List<List<DungeonModel>> allDungeonLists =
-            [
-                AllEntities.AllDungeonLocalSpecialty, AllEntities.AllDungeonLeyLineOutcrop, AllEntities.AllDungeonEasy, AllEntities.AllDungeonElite, AllEntities.AllDungeonBoss,
-                AllEntities.AllDungeonWeaponAscension, AllEntities.AllDungeonCharacterTalent, AllEntities.AllDungeonTrounce
-            ];
-            foreach (List<DungeonModel> l in allDungeonLists)
+            foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
             {
                 foreach (DungeonModel m in l)
                 {

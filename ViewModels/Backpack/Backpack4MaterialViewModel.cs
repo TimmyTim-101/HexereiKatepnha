@@ -9,17 +9,19 @@ using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack4MaterialViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
     {
-        public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; } = new();
+        public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; }
         private Dictionary<int, Backpack4MaterialModel> MaterialRidMap { get; set; } = new();
         public ICollectionView MaterialView { get; }
 
         public Backpack4MaterialViewModel()
         {
+            ObservableCollection<Backpack4MaterialModel> tempList = new();
             foreach (MaterialModel e in AutoCalculateConstants.MaterialMap.Values)
             {
                 Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel();
@@ -44,10 +46,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     case Enumeration.MaterialType.WeaponExp: thisBackpack4MaterialModel.CategoryName = "基础培养素材"; break;
                 }
 
-                AllMaterialList.Add(thisBackpack4MaterialModel);
+                tempList.Add(thisBackpack4MaterialModel);
                 MaterialRidMap[e.Rid] = thisBackpack4MaterialModel;
             }
 
+            AllMaterialList = tempList;
+            UpdateExtraInfo();
             MaterialView = CollectionViewSource.GetDefaultView(AllMaterialList);
             MaterialView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(Backpack4MaterialModel.CategoryName)));
             WeakReferenceMessenger.Default.Register(this);
@@ -91,7 +95,39 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public void Receive(GoalSimulatorChangeMessage message)
         {
-            // todo 更新内容
+            UpdateExtraInfo();
+        }
+
+        private void UpdateExtraInfo()
+        {
+            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart.GetMaterialExtraInfo();
+            foreach (int materialRid in materialExtraInfoMap.Keys)
+            {
+                CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[materialRid];
+                Backpack4MaterialModel thisMaterialModel = MaterialRidMap[materialRid];
+                thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
+                if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                else thisMaterialModel.Color1 = "#Transparent";
+                thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? "/Resources/Icons/check_circle_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" : "/Resources/Icons/cancel_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
+                if (thisExtraInfo.IsSatisfy)
+                {
+                    if (thisExtraInfo.ActionNum > 0)
+                    {
+                        thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                        thisMaterialModel.Color2 = "#B98823";
+                    }
+                    else
+                    {
+                        thisMaterialModel.Num2String = "";
+                        thisMaterialModel.Color2 = "#Transparent";
+                    }
+                }
+                else
+                {
+                    thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                    thisMaterialModel.Color2 = "#FB7185";
+                }
+            }
         }
     }
 }

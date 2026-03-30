@@ -12,6 +12,11 @@ public partial class Backpack4MaterialModel : ObservableObject
     public string Name { get; set; } = "";
     public int Rid { get; set; }
     [ObservableProperty] private int _number;
+    [ObservableProperty] private int _num1;
+    [ObservableProperty] private string _color1 = "#Transparent";
+    [ObservableProperty] private string _iconPath = "";
+    [ObservableProperty] private string _num2String = "";
+    [ObservableProperty] private string _color2 = "#Transparent";
 
     public Visibility IsMergeVisible
     {

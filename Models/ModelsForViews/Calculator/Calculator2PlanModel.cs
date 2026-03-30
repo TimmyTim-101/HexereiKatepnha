@@ -39,3 +39,11 @@ public partial class CalculatorPlanStatistics : ObservableObject
     [ObservableProperty] private int _mergeResinNum;
     [ObservableProperty] private int _dayNum;
 }
+
+public partial class CalculatorPlanMaterialExtraInfo : ObservableObject
+{
+    public int Rid { get; set; }
+    [ObservableProperty] private int _needNum;
+    [ObservableProperty] private bool _isSatisfy;
+    [ObservableProperty] private int _actionNum;
+}
