@@ -1213,7 +1213,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060001 = new()
     {
         Rid = 4060001,
-        Name = "净化之炎 VI",
+        Name = "仲夏庭园",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1226,7 +1226,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060002 = new()
     {
         Rid = 4060002,
-        Name = "钢铁之舞 V",
+        Name = "铭记之谷",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal_1.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1239,7 +1239,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060003 = new()
     {
         Rid = 4060003,
-        Name = "告死之霜 IV",
+        Name = "芬德尼尔之顶",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Cold_1.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1252,7 +1252,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060004 = new()
     {
         Rid = 4060004,
-        Name = "不移 IV",
+        Name = "山脊守望",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal_1.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1265,7 +1265,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060005 = new()
     {
         Rid = 4060005,
-        Name = "惊蛰 VI",
+        Name = "孤云凌霄之处",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal_2.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1278,7 +1278,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060006 = new()
     {
         Rid = 4060006,
-        Name = "炽火 IV",
+        Name = "无妄引咎密宫",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal_3.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1291,7 +1291,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060007 = new()
     {
         Rid = 4060007,
-        Name = "岩牢 III",
+        Name = "华池岩岫",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Cubic_Normal_4.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1304,7 +1304,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060008 = new()
     {
         Rid = 4060008,
-        Name = "机巢 IV",
+        Name = "岩中幽谷",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_CycleDungeonChasm.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1317,7 +1317,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060009 = new()
     {
         Rid = 4060009,
-        Name = "椛狩 IV",
+        Name = "椛染之庭",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ThunderCave_Dq.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1330,7 +1330,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060010 = new()
     {
         Rid = 4060010,
-        Name = "骸馆 IV",
+        Name = "沉眠之庭",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ThunderCave_Dq.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1343,7 +1343,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060011 = new()
     {
         Rid = 4060011,
-        Name = "七识 IV",
+        Name = "缘觉塔",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMRelic01.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1356,7 +1356,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060012 = new()
     {
         Rid = 4060012,
-        Name = "沙中孤城 IV",
+        Name = "赤金的城墟",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMRelic02.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1369,7 +1369,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060013 = new()
     {
         Rid = 4060013,
-        Name = "遗世边垒 IV",
+        Name = "熔铁的孤塞",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMRelic02.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1382,7 +1382,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060014 = new()
     {
         Rid = 4060014,
-        Name = "谐律 IV",
+        Name = "罪祸的终末",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDRelic01.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1395,7 +1395,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060015 = new()
     {
         Rid = 4060015,
-        Name = "朽废的集所 IV",
+        Name = "临瀑之城",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDRelic01.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1408,7 +1408,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060016 = new()
     {
         Rid = 4060016,
-        Name = "变奏 IV",
+        Name = "褪色的剧场",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDRelic01.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1421,7 +1421,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060017 = new()
     {
         Rid = 4060017,
-        Name = "茹焰的炼场 IV",
+        Name = "虹灵的净土",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTCycle03.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1434,7 +1434,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060018 = new()
     {
         Rid = 4060018,
-        Name = "深火的构筑 IV",
+        Name = "荒废砌造坞",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTDungeon_Cycle01.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1447,7 +1447,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060019 = new()
     {
         Rid = 4060019,
-        Name = "深衍 IV",
+        Name = "霜凝的机枢",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle02.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1460,7 +1460,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4060020 = new()
     {
         Rid = 4060020,
-        Name = "圣库 IV",
+        Name = "月童的库藏",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle03.png",
         Cost = 20,
         DungeonType = Enumeration.DungeonType.Artifact,
@@ -1474,7 +1474,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070001 = new()
     {
         Rid = 4070001,
-        Name = "水光之城 IV",
+        Name = "塞西莉亚苗圃·水光之城 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Water.png",
         Cost = 20,
         Time = 1,
@@ -1485,7 +1485,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070002 = new()
     {
         Rid = 4070002,
-        Name = "深没之谷 IV",
+        Name = "塞西莉亚苗圃·深没之谷 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Water.png",
         Cost = 20,
         Time = 2,
@@ -1496,7 +1496,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070003 = new()
     {
         Rid = 4070003,
-        Name = "渴水的废都 IV",
+        Name = "塞西莉亚苗圃·渴水的废都 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Water.png",
         Cost = 20,
         Time = 3,
@@ -1507,7 +1507,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070004 = new()
     {
         Rid = 4070004,
-        Name = "雷云祭坛 IV",
+        Name = "震雷连山密宫·雷云祭坛 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder.png",
         Cost = 20,
         Time = 1,
@@ -1518,7 +1518,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070005 = new()
     {
         Rid = 4070005,
-        Name = "鸣雷城墟 IV",
+        Name = "震雷连山密宫·鸣雷城墟 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder.png",
         Cost = 20,
         Time = 2,
@@ -1529,7 +1529,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070006 = new()
     {
         Rid = 4070006,
-        Name = "古雷试炼场 IV",
+        Name = "震雷连山密宫·古雷试炼场 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder.png",
         Cost = 20,
         Time = 3,
@@ -1540,7 +1540,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070007 = new()
     {
         Rid = 4070007,
-        Name = "沉沙之渊 IV",
+        Name = "砂流之庭·沉沙之渊 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Rock.png",
         Cost = 20,
         Time = 1,
@@ -1551,7 +1551,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070008 = new()
     {
         Rid = 4070008,
-        Name = "砂之祭场 IV",
+        Name = "砂流之庭·砂之祭场 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Rock.png",
         Cost = 20,
         Time = 2,
@@ -1562,7 +1562,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070009 = new()
     {
         Rid = 4070009,
-        Name = "流沙之葬 IV",
+        Name = "砂流之庭·流沙之葬 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Rock.png",
         Cost = 20,
         Time = 3,
@@ -1573,7 +1573,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070010 = new()
     {
         Rid = 4070010,
-        Name = "云垢 IV",
+        Name = "有顶塔·云垢 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMWeapon01.png",
         Cost = 20,
         Time = 1,
@@ -1584,7 +1584,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070011 = new()
     {
         Rid = 4070011,
-        Name = "思惑 IV",
+        Name = "有顶塔·思惑 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMWeapon01.png",
         Cost = 20,
         Time = 2,
@@ -1595,7 +1595,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070012 = new()
     {
         Rid = 4070012,
-        Name = "引业 IV",
+        Name = "有顶塔·引业 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMWeapon01.png",
         Cost = 20,
         Time = 3,
@@ -1606,7 +1606,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070013 = new()
     {
         Rid = 4070013,
-        Name = "机思 IV",
+        Name = "深潮的余响·机思 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDWeapon01.png",
         Cost = 20,
         Time = 1,
@@ -1617,7 +1617,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070014 = new()
     {
         Rid = 4070014,
-        Name = "匠理 IV",
+        Name = "深潮的余响·匠理 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDWeapon01.png",
         Cost = 20,
         Time = 2,
@@ -1628,7 +1628,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070015 = new()
     {
         Rid = 4070015,
-        Name = "奇械 IV",
+        Name = "深潮的余响·奇械 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDWeapon01.png",
         Cost = 20,
         Time = 3,
@@ -1639,7 +1639,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070016 = new()
     {
         Rid = 4070016,
-        Name = "冥见 IV",
+        Name = "深古瞭望所·冥见 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTCycle02.png",
         Cost = 20,
         Time = 1,
@@ -1650,7 +1650,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070017 = new()
     {
         Rid = 4070017,
-        Name = "究观 IV",
+        Name = "深古瞭望所·究观 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTCycle02.png",
         Cost = 20,
         Time = 2,
@@ -1661,7 +1661,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070018 = new()
     {
         Rid = 4070018,
-        Name = "测度 IV",
+        Name = "深古瞭望所·测度 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTCycle02.png",
         Cost = 20,
         Time = 3,
@@ -1672,7 +1672,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070019 = new()
     {
         Rid = 4070019,
-        Name = "明辉 IV",
+        Name = "失落的月庭·明辉 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle03.png",
         Cost = 20,
         Time = 1,
@@ -1683,7 +1683,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070020 = new()
     {
         Rid = 4070020,
-        Name = "祷颂 IV",
+        Name = "失落的月庭·祷颂 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle03.png",
         Cost = 20,
         Time = 2,
@@ -1694,7 +1694,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4070021 = new()
     {
         Rid = 4070021,
-        Name = "祭月 IV",
+        Name = "失落的月庭·祭月 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle03.png",
         Cost = 20,
         Time = 3,
@@ -1706,7 +1706,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080001 = new()
     {
         Rid = 4080001,
-        Name = "霜凝祭坛 IV",
+        Name = "忘却之峡·霜凝祭坛 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Ice.png",
         Cost = 20,
         Time = 1,
@@ -1717,7 +1717,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080002 = new()
     {
         Rid = 4080002,
-        Name = "冰封废渊 IV",
+        Name = "忘却之峡·冰封废渊 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Ice.png",
         Cost = 20,
         Time = 2,
@@ -1728,7 +1728,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080003 = new()
     {
         Rid = 4080003,
-        Name = "沉睡之国 IV",
+        Name = "忘却之峡·沉睡之国 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Ice.png",
         Cost = 20,
         Time = 3,
@@ -1739,7 +1739,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080004 = new()
     {
         Rid = 4080004,
-        Name = "炽炎祭场 IV",
+        Name = "太山府·炽炎祭场 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Fire.png",
         Cost = 20,
         Time = 1,
@@ -1750,7 +1750,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080005 = new()
     {
         Rid = 4080005,
-        Name = "深炎之底 IV",
+        Name = "太山府·深炎之底 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Fire.png",
         Cost = 20,
         Time = 2,
@@ -1761,7 +1761,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080006 = new()
     {
         Rid = 4080006,
-        Name = "焚尽之环 IV",
+        Name = "太山府·焚尽之环 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Fire.png",
         Cost = 20,
         Time = 3,
@@ -1772,7 +1772,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080007 = new()
     {
         Rid = 4080007,
-        Name = "菫染之国 IV",
+        Name = "菫色之庭·菫染之国 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder_Dq.png",
         Cost = 20,
         Time = 1,
@@ -1783,7 +1783,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080008 = new()
     {
         Rid = 4080008,
-        Name = "初雷幽谷 IV",
+        Name = "菫色之庭·初雷幽谷 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder_Dq.png",
         Cost = 20,
         Time = 2,
@@ -1794,7 +1794,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080009 = new()
     {
         Rid = 4080009,
-        Name = "真葛废都 IV",
+        Name = "菫色之庭·真葛废都 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_Thunder_Dq.png",
         Cost = 20,
         Time = 3,
@@ -1805,7 +1805,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080010 = new()
     {
         Rid = 4080010,
-        Name = "圆镜 IV",
+        Name = "昏识塔·圆镜 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMCharacter01.png",
         Cost = 20,
         Time = 1,
@@ -1816,7 +1816,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080011 = new()
     {
         Rid = 4080011,
-        Name = "妙语 IV",
+        Name = "昏识塔·妙语 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMCharacter01.png",
         Cost = 20,
         Time = 2,
@@ -1827,7 +1827,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080012 = new()
     {
         Rid = 4080012,
-        Name = "律藏 IV",
+        Name = "昏识塔·律藏 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_XMCharacter01.png",
         Cost = 20,
         Time = 3,
@@ -1838,7 +1838,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080013 = new()
     {
         Rid = 4080013,
-        Name = "旋韵 IV",
+        Name = "苍白的遗荣·旋韵 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDCharacter01.png",
         Cost = 20,
         Time = 1,
@@ -1849,7 +1849,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080014 = new()
     {
         Rid = 4080014,
-        Name = "箴铭 IV",
+        Name = "苍白的遗荣·箴铭 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDCharacter01.png",
         Cost = 20,
         Time = 2,
@@ -1860,7 +1860,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080015 = new()
     {
         Rid = 4080015,
-        Name = "琅诵 IV",
+        Name = "苍白的遗荣·琅诵 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_FDCharacter01.png",
         Cost = 20,
         Time = 3,
@@ -1871,7 +1871,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080016 = new()
     {
         Rid = 4080016,
-        Name = "转竟 IV",
+        Name = "蕴火的幽墟·转竟 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTDungeon_Cycle01.png",
         Cost = 20,
         Time = 1,
@@ -1882,7 +1882,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080017 = new()
     {
         Rid = 4080017,
-        Name = "空华 IV",
+        Name = "蕴火的幽墟·空华 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTDungeon_Cycle01.png",
         Cost = 20,
         Time = 2,
@@ -1893,7 +1893,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080018 = new()
     {
         Rid = 4080018,
-        Name = "旋复 IV",
+        Name = "蕴火的幽墟·旋复 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NTDungeon_Cycle01.png",
         Cost = 20,
         Time = 3,
@@ -1904,7 +1904,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080019 = new()
     {
         Rid = 4080019,
-        Name = "墟都 IV",
+        Name = "无光的深都·墟都 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle01.png",
         Cost = 20,
         Time = 1,
@@ -1915,7 +1915,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080020 = new()
     {
         Rid = 4080020,
-        Name = "遗荫 IV",
+        Name = "无光的深都·遗荫 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle01.png",
         Cost = 20,
         Time = 2,
@@ -1926,7 +1926,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4080021 = new()
     {
         Rid = 4080021,
-        Name = "覆巢 IV",
+        Name = "无光的深都·覆巢 IV",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_NKDungeon_Cycle01.png",
         Cost = 20,
         Time = 3,
@@ -1938,7 +1938,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090001 = new()
     {
         Rid = 4090001,
-        Name = "暴风般狂啸之龙 Ⅵ",
+        Name = "深入风龙废墟",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Dvalin.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -1972,7 +1972,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090003 = new()
     {
         Rid = 4090003,
-        Name = "黄金与孤影 IV",
+        Name = "进入「黄金屋」",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Tartaglia.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -1989,7 +1989,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090004 = new()
     {
         Rid = 4090004,
-        Name = "摇撼山岳之龙 IV",
+        Name = "「伏龙树」之底",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Dahaka.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2008,7 +2008,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090005 = new()
     {
         Rid = 4090005,
-        Name = "红莲的真剑试合 IV",
+        Name = "鸣神岛·天守",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_LaSignora.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2024,7 +2024,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090006 = new()
     {
         Rid = 4090006,
-        Name = "永恒的守护者 IV",
+        Name = "梦想乐土之殁",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Shougun_Mitakenarukami.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2039,7 +2039,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090007 = new()
     {
         Rid = 4090007,
-        Name = "七叶中尊琉璃坛 IV",
+        Name = "净琉璃工坊",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Nada.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2056,7 +2056,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090008 = new()
     {
         Rid = 4090008,
-        Name = "「它们」也曾完美无瑕 IV",
+        Name = "肇始之乡",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Apep.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2071,7 +2071,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090009 = new()
     {
         Rid = 4090009,
-        Name = "星间的巨兽 IV",
+        Name = "异界余影",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Ptahur_Devourer.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2086,7 +2086,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090010 = new()
     {
         Rid = 4090010,
-        Name = "光与影的诀别 IV",
+        Name = "零落丘墟",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Nihil.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2101,7 +2101,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090011 = new()
     {
         Rid = 4090011,
-        Name = "深邃浮灭空洞 IV",
+        Name = "碑碣的记录",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_TheAbyssXiuhcoatl.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2116,7 +2116,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090012 = new()
     {
         Rid = 4090012,
-        Name = "与魔女们的赌局 IV",
+        Name = "待解「弈局」",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_GiantChess.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
@@ -2133,7 +2133,7 @@ public static class DungeonConstants
     public static readonly DungeonModel _4090013 = new()
     {
         Rid = 4090013,
-        Name = "异端者的黄昏 IV",
+        Name = "赝月的研究所",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Dotorre_Moon.png",
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,

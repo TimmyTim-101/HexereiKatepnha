@@ -13,6 +13,7 @@
 #### 扫描类项目
 * [Inventory_Kamera](https://github.com/Andrewthe13th/Inventory_Kamera)
 * [yas](https://github.com/wormtql/yas)
+* [irminsul](https://github.com/konkers/irminsul)
 #### 规划配装类项目
 * [圣遗物强化助手](https://ideless.github.io/artifact/)
 * [莫娜占卜铺](https://mona-uranai.com/)
