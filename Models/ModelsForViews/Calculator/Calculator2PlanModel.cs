@@ -32,3 +32,10 @@ public partial class CalculatorPlanBoss60Model : ObservableObject
     [ObservableProperty] private string _info = "";
     [ObservableProperty] private string _color = "";
 }
+
+public partial class CalculatorPlanStatistics : ObservableObject
+{
+    [ObservableProperty] private int _resinNum;
+    [ObservableProperty] private int _mergeResinNum;
+    [ObservableProperty] private int _dayNum;
+}

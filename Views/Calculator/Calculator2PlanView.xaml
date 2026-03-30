@@ -36,7 +36,27 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="合计信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <StackPanel Grid.Row="0" Orientation="Vertical" Margin="20,0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                            <Run Text="预计共消耗原粹树脂约"></Run>
+                            <Run Text="{Binding Statistics.ResinNum}"></Run>
+                        </TextBlock>
+                        <Image Source="{Binding ResinImagePath}" Height="30" Width="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                            <Run Text="如果全部合成为浓缩树脂约"></Run>
+                            <Run Text="{Binding Statistics.MergeResinNum}"></Run>
+                        </TextBlock>
+                        <Image Source="{Binding MergeResinImagePath}" Height="30" Width="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                    </StackPanel>
+                    <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                        <Run Text="预计完成全部任务需花费"></Run>
+                        <Run Text="{Binding Statistics.DayNum}"></Run>
+                        <Run Text="天（不包含粒儿片儿块儿钻儿）"></Run>
+                    </TextBlock>
+                </StackPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                 <TextBlock Grid.Row="2" Text="不消耗树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
                 <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
@@ -197,7 +217,7 @@
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
                                     <Viewbox Grid.Column="1" MaxWidth="130" StretchDirection="DownOnly" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16"></TextBlock>
                                     </Viewbox>
                                     <Grid Grid.Column="2" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Grid.RowDefinitions>

@@ -18,6 +18,8 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [ObservableProperty] private ObservableCollection<ObservableCollection<string>> _resinHintList = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanLackMaterialModel> _lackMaterialList = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
+        [ObservableProperty] private CalculatorPlanStatistics _statistics = new();
+        public string MergeResinImagePath { get; set; } = "/Resources/Icons/UI_ItemIcon_211.png";
 
         public Calculator2PlanViewModel()
         {
@@ -197,6 +199,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
         {
             LackMaterialList = App.GlobalGoalSimulatorServicePart.GetAllLackMaterial();
             Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
+            Statistics = App.GlobalGoalSimulatorServicePart.GetStatistics();
         }
 
         public void Receive(GoalSimulatorChangeMessage message)

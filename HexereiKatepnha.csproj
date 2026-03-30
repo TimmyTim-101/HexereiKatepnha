@@ -6206,6 +6206,8 @@
     <Resource Include="Resources\Images\empty_item.png" />
     <None Remove="Resources\Icons\UI_ItemIcon_106.png" />
     <Resource Include="Resources\Icons\UI_ItemIcon_106.png" />
+    <None Remove="Resources\Icons\UI_ItemIcon_211.png" />
+    <Resource Include="Resources\Icons\UI_ItemIcon_211.png" />
   </ItemGroup>
 
   <ItemGroup>

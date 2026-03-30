@@ -568,4 +568,13 @@ public class GoalSimulatorService
 
         return new ObservableCollection<CalculatorPlanBoss60Model>(res.OrderBy(m => m.Sort));
     }
+
+    public CalculatorPlanStatistics GetStatistics()
+    {
+        CalculatorPlanStatistics res = new();
+        res.ResinNum = _needResinNum;
+        res.MergeResinNum = _needResinNum / 60;
+        res.DayNum = (int)Math.Ceiling((double)_needResinNum / 180);
+        return res;
+    }
 }
