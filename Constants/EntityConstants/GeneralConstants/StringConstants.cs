@@ -63,6 +63,7 @@ public static class StringConstants
     };
 
     public static readonly string ResinImagePath = "/Resources/Images/DungeonAndMonster/UI_ItemIcon_106.png";
+    public static readonly string MergeResinImagePath = "/Resources/Images/DungeonAndMonster/UI_ItemIcon_211.png";
 
     public static readonly Dictionary<Enumeration.Affix, string> AffixString = new()
     {

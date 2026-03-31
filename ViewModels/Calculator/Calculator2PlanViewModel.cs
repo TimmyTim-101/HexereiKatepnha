@@ -1,8 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows.Data;
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
@@ -13,13 +16,15 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [ObservableProperty] private int _hour;
         [ObservableProperty] private int _minute;
         [ObservableProperty] private int _second;
-        public string ResinImagePath { get; set; } = "/Resources/Icons/UI_ItemIcon_106.png";
+        public string ResinImagePath { get; set; } = StringConstants.ResinImagePath;
+        public string MergeResinImagePath { get; set; } = StringConstants.MergeResinImagePath;
         [ObservableProperty] private int _resinNum;
         [ObservableProperty] private ObservableCollection<ObservableCollection<string>> _resinHintList = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanLackMaterialModel> _lackMaterialList = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
         [ObservableProperty] private CalculatorPlanStatistics _statistics = new();
-        public string MergeResinImagePath { get; set; } = "/Resources/Icons/UI_ItemIcon_211.png";
+        [ObservableProperty] private ObservableCollection<CalculatorPlanDungeon> _dungeonList = new();
+        public ICollectionView DungeonView { get; set; }
 
         public Calculator2PlanViewModel()
         {
@@ -177,15 +182,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 res[0].Insert(0, remainTimeString);
                 string localTimeString = startTime.ToLocalTime().ToString("HH:mm");
                 string serverTimeString = startTime.ToOffset(TimeSpan.FromHours(8)).ToString("HH:mm");
-                if (localTimeString == serverTimeString)
-                {
-                    res[1].Insert(0, $"( {serverTimeString} )");
-                }
-                else
-                {
-                    res[1].Insert(0, $"( {localTimeString} / {serverTimeString} )");
-                }
-
+                res[1].Insert(0, localTimeString == serverTimeString ? $"( {serverTimeString} )" : $"( {localTimeString} / {serverTimeString} )");
                 res[2].Add("树脂数达到");
                 res[3].Insert(0, startResinNum.ToString());
                 startTime -= TimeSpan.FromMinutes(8 * 20);
@@ -200,6 +197,9 @@ namespace HexereiKatepnha.ViewModels.Calculator
             LackMaterialList = App.GlobalGoalSimulatorServicePart.GetAllLackMaterial();
             Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
             Statistics = App.GlobalGoalSimulatorServicePart.GetStatistics();
+            DungeonList = App.GlobalGoalSimulatorServicePart.GetDungeon();
+            DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
+            DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
         }
 
         public void Receive(GoalSimulatorChangeMessage message)

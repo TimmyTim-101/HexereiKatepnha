@@ -27,14 +27,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical" Margin="20,0">
                     <StackPanel Orientation="Horizontal">
@@ -58,14 +51,75 @@
                     </TextBlock>
                 </StackPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Grid.Row="2" Text="不消耗树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Grid.Row="4" Text="消耗20树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Grid.Row="6" Text="消耗40树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <Border Grid.Row="7" Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Grid.Row="8" Text="消耗60树脂部分" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                <Border Grid.Row="9" Style="{StaticResource HorizontalDivider}"></Border>
+                <ListBox Grid.Row="2" ItemsSource="{Binding DungeonList}" Style="{StaticResource ModernListBox}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0,0,0"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal" Margin="20,15,20,5">
+                                            <TextBlock Text="{Binding Name}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <Image Source="{Binding DataContext.ResinImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                        </StackPanel>
+                                        <Border Style="{StaticResource HorizontalDivider}"></Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Width="372" Margin="2">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"></TextBlock>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding TimeString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ResinString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                            <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"></Image>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="2" Text="{Binding DayString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                    </Grid>
+                                    <TextBlock Grid.Row="2" Text="材料组件" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                                    <ListBox Grid.Row="3" ItemsSource="{Binding DungeonItemList}" Style="{StaticResource ModernListBox}" MaxHeight="162">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid ToolTipService.InitialShowDelay="100">
+                                                    <Grid.ToolTip>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                    </Grid.ToolTip>
+                                                    <Image Source="{Binding BackgroundImagePath}" Width="58" Height="58" Stretch="UniformToFill" Margin="2"></Image>
+                                                    <Image Source="{Binding ImagePath}" Width="58" Height="58" Stretch="UniformToFill" Margin="2"></Image>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ListBox>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <Grid Grid.Column="2" Width="441">

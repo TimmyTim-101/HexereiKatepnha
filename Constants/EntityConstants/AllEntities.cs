@@ -209,7 +209,7 @@ public static class AllEntities
 
     // 311 - 武器强化素材
     public static readonly List<MaterialModel> AllMaterialWeaponExp = [MaterialConstants._3110001, MaterialConstants._3110002, MaterialConstants._3110003];
-    
+
     public static readonly List<List<MaterialModel>> AllMaterialLists =
     [
         AllMaterialMora, AllMaterialCharacterExp, AllMaterialCharacterWeaponEnhancement1, AllMaterialCharacterWeaponEnhancement2, AllMaterialCharacterLevelUp1,
@@ -285,11 +285,10 @@ public static class AllEntities
         DungeonConstants._4090001, DungeonConstants._4090002, DungeonConstants._4090003, DungeonConstants._4090004, DungeonConstants._4090005, DungeonConstants._4090006, DungeonConstants._4090007, DungeonConstants._4090008,
         DungeonConstants._4090009, DungeonConstants._4090010, DungeonConstants._4090011, DungeonConstants._4090012, DungeonConstants._4090013,
     ];
-    
+
     public static readonly List<List<DungeonModel>> AllDungeonLists =
     [
-        AllEntities.AllDungeonLocalSpecialty, AllEntities.AllDungeonLeyLineOutcrop, AllEntities.AllDungeonEasy, AllEntities.AllDungeonElite, AllEntities.AllDungeonBoss,
-        AllEntities.AllDungeonWeaponAscension, AllEntities.AllDungeonCharacterTalent, AllEntities.AllDungeonTrounce
+        AllDungeonLocalSpecialty, AllDungeonEasy, AllDungeonElite, AllDungeonLeyLineOutcrop, AllDungeonCharacterTalent, AllDungeonWeaponAscension, AllDungeonBoss, AllDungeonTrounce
     ];
 
     // 5 - 圣遗物

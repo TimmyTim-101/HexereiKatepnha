@@ -12,34 +12,36 @@
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="BackpackMaterialItemTemplate" DataType="{x:Type models:Backpack4MaterialModel}">
-            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="106" Height="220">
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="93">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="27"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
                         <Grid.ToolTip>
                             <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
                         </Grid.ToolTip>
-                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
-                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="89" Height="89" Stretch="UniformToFill" Margin="2"></Image>
+                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="89" Height="89" Stretch="UniformToFill" Margin="2"></Image>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                            <Viewbox MaxWidth="70" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Viewbox>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" BorderThickness="0" Background="{Binding Color2}">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewbox MaxWidth="90" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num2String}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
+                        </Viewbox>
                     </Border>
-                    <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
                     </Viewbox>
                     <UniformGrid Grid.Row="4" Rows="1">

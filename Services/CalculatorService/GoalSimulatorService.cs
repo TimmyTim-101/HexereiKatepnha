@@ -633,4 +633,157 @@ public class GoalSimulatorService
 
         return res;
     }
+
+    public ObservableCollection<CalculatorPlanDungeon> GetDungeon()
+    {
+        // 获取涉及规划信息
+        List<BaseEntityModel> itemList = new();
+        Dictionary<int, HashSet<int>> itemMaterialsList = new();
+        foreach (string planId in App.CalculatorPlanSettingConfigManagerInstance!.Configuration.OrderList)
+        {
+            SingleCalculatorPlanConfigModel thisPlan = App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[planId];
+            int thisPlanType = thisPlan.Type;
+            switch (thisPlanType)
+            {
+                case 1:
+                    int thisCharacterId = thisPlan.Rid;
+                    itemMaterialsList[thisCharacterId] = new HashSet<int>();
+                    CharacterModel thisCharacterModel = AutoCalculateConstants.CharacterMap[thisCharacterId];
+                    itemList.Add(thisCharacterModel);
+                    SingleBackpackCharacterConfigModel thisCharacterConfig = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(thisCharacterId);
+                    Enumeration.Level startLevel = thisCharacterConfig.CharacterLevel;
+                    Enumeration.Level endLevel = thisCharacterConfig.CharacterLevelGoal;
+                    int startLevelIndex = SequenceConstants.AllLevels.IndexOf(startLevel);
+                    int endLevelIndex = SequenceConstants.AllLevels.IndexOf(endLevel);
+                    for (int l = startLevelIndex; l < endLevelIndex; l++)
+                    {
+                        foreach (MaterialPairModel mpm in thisCharacterModel.LevelUpMaterials[SequenceConstants.AllLevels[l]])
+                        {
+                            itemMaterialsList[thisCharacterId].Add(mpm.MaterialModel!.Rid);
+                        }
+                    }
+
+                    Enumeration.Level startTalentALevel = thisCharacterConfig.TalentALevel;
+                    Enumeration.Level endTalentALevel = thisCharacterConfig.TalentALevelGoal;
+                    int startTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentALevel);
+                    int endTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentALevel);
+                    for (int l = startTalentALevelIndex; l < endTalentALevelIndex; l++)
+                    {
+                        foreach (MaterialPairModel mpm in thisCharacterModel.Talent1Materials[SequenceConstants.AllLevels[l]])
+                        {
+                            itemMaterialsList[thisCharacterId].Add(mpm.MaterialModel!.Rid);
+                        }
+                    }
+
+                    Enumeration.Level startTalentELevel = thisCharacterConfig.TalentELevel;
+                    Enumeration.Level endTalentELevel = thisCharacterConfig.TalentELevelGoal;
+                    int startTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentELevel);
+                    int endTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentELevel);
+                    for (int l = startTalentELevelIndex; l < endTalentELevelIndex; l++)
+                    {
+                        foreach (MaterialPairModel mpm in thisCharacterModel.Talent2Materials[SequenceConstants.AllLevels[l]])
+                        {
+                            itemMaterialsList[thisCharacterId].Add(mpm.MaterialModel!.Rid);
+                        }
+                    }
+
+                    Enumeration.Level startTalentQLevel = thisCharacterConfig.TalentQLevel;
+                    Enumeration.Level endTalentQLevel = thisCharacterConfig.TalentQLevelGoal;
+                    int startTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentQLevel);
+                    int endTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentQLevel);
+                    for (int l = startTalentQLevelIndex; l < endTalentQLevelIndex; l++)
+                    {
+                        foreach (MaterialPairModel mpm in thisCharacterModel.Talent3Materials[SequenceConstants.AllLevels[l]])
+                        {
+                            itemMaterialsList[thisCharacterId].Add(mpm.MaterialModel!.Rid);
+                        }
+                    }
+
+                    break;
+                case 2:
+                    int thisWeaponId = thisPlan.Rid;
+                    itemMaterialsList[thisWeaponId] = new HashSet<int>();
+                    WeaponModel thisWeaponModel = AutoCalculateConstants.WeaponMap[thisWeaponId];
+                    itemList.Add(thisWeaponModel);
+                    SingleBackpackWeaponConfigModel thisWeaponConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[planId];
+                    Enumeration.Level startWeaponLevel = thisWeaponConfig.Level;
+                    Enumeration.Level endWeaponLevel = thisWeaponConfig.GoalLevel;
+                    int startWeaponLevelIndex = SequenceConstants.AllLevels.IndexOf(startWeaponLevel);
+                    int endWeaponLevelIndex = SequenceConstants.AllLevels.IndexOf(endWeaponLevel);
+                    for (int l = startWeaponLevelIndex; l < endWeaponLevelIndex; l++)
+                    {
+                        foreach (MaterialPairModel mpm in thisWeaponModel.LevelUpMaterials[SequenceConstants.AllLevels[l]])
+                        {
+                            itemMaterialsList[thisWeaponId].Add(mpm.MaterialModel!.Rid);
+                        }
+                    }
+
+                    break;
+            }
+        }
+
+        ObservableCollection<CalculatorPlanDungeon> res = new();
+        foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
+        {
+            foreach (DungeonModel thisDungeonModel in l)
+            {
+                if (_dungeonNumMap.ContainsKey(thisDungeonModel.Rid))
+                {
+                    CalculatorPlanDungeon thisModel = new();
+                    switch (thisDungeonModel.Cost)
+                    {
+                        case 0: thisModel.CategoryName = "不消耗"; break;
+                        case 20: thisModel.CategoryName = "20"; break;
+                        case 40: thisModel.CategoryName = "40"; break;
+                        case 60: thisModel.CategoryName = "60"; break;
+                    }
+
+                    thisModel.Name = thisDungeonModel.Name;
+                    int thisDungeonTime = _dungeonNumMap.GetValueOrDefault(thisDungeonModel.Rid, 0);
+                    if (thisDungeonModel.Cost == 0)
+                    {
+                        thisModel.TimeString = "";
+                        thisModel.ResinString = "";
+                        thisModel.ResinImagePath = "/Resources/Images/empty_item.png";
+                        thisModel.DayString = "";
+                    }
+                    else
+                    {
+                        thisModel.TimeString = $"x{thisDungeonTime}";
+                        thisModel.ResinString = $"{thisDungeonModel.Cost * thisDungeonTime}";
+                        thisModel.ResinImagePath = StringConstants.ResinImagePath;
+                        thisModel.DayString = $"约{(int)Math.Ceiling(thisDungeonModel.Cost * thisDungeonTime / 180.0)}天";
+                    }
+
+                    ObservableCollection<CalculatorPlanMaterial> thisDungeonMaterialList = new();
+                    // todo
+                    thisModel.DungeonMaterialList = thisDungeonMaterialList;
+                    ObservableCollection<CalculatorPlanItem> thisDungeonItemList = new();
+                    foreach (BaseEntityModel item in itemList)
+                    {
+                        HashSet<int> thisItemMaterials = itemMaterialsList[item.Rid];
+                        bool isInvolved = false;
+                        foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
+                        {
+                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid)) isInvolved = true;
+                        }
+
+                        if (isInvolved)
+                        {
+                            CalculatorPlanItem thisItem = new();
+                            thisItem.Name = item.Name;
+                            thisItem.BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star];
+                            thisItem.ImagePath = item.ImagePath;
+                            thisDungeonItemList.Add(thisItem);
+                        }
+                    }
+
+                    thisModel.DungeonItemList = thisDungeonItemList;
+                    res.Add(thisModel);
+                }
+            }
+        }
+
+        return res;
+    }
 }
