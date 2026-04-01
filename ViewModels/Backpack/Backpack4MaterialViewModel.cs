@@ -17,19 +17,21 @@ namespace HexereiKatepnha.ViewModels.Backpack
     {
         public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; }
         private Dictionary<int, Backpack4MaterialModel> MaterialRidMap { get; set; } = new();
-        public ICollectionView MaterialView { get; }
+        private ICollectionView MaterialView { get; }
 
         public Backpack4MaterialViewModel()
         {
             ObservableCollection<Backpack4MaterialModel> tempList = new();
             foreach (MaterialModel e in AutoCalculateConstants.MaterialMap.Values)
             {
-                Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel();
-                thisBackpack4MaterialModel.ImagePath = e.ImagePath;
-                thisBackpack4MaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                thisBackpack4MaterialModel.Name = e.Name;
-                thisBackpack4MaterialModel.Rid = e.Rid;
-                thisBackpack4MaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
+                Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel
+                {
+                    ImagePath = e.ImagePath,
+                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                    Name = e.Name,
+                    Rid = e.Rid,
+                    Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid)
+                };
 
                 switch (e.MaterialType)
                 {
@@ -69,13 +71,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [RelayCommand]
         private void MinusOneMaterial(Backpack4MaterialModel? clickItem)
         {
-            if (clickItem != null)
-            {
-                if (clickItem.Number >= 1)
-                {
-                    clickItem.Number -= 1;
-                }
-            }
+            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
         }
 
         [RelayCommand]

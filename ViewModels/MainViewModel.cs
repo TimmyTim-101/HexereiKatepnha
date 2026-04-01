@@ -76,8 +76,24 @@ namespace HexereiKatepnha.ViewModels
                 {
                     _backpack4MaterialView = new HexereiKatepnha.Views.Backpack.Backpack4MaterialView();
                     _backpack4MaterialView.DataContext = new Backpack4MaterialViewModel();
-                    _backpack4MaterialView.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-                    _backpack4MaterialView.Arrange(new Rect(0, 0, 1720, 1080));
+                    _backpack4MaterialView.Measure(new Size(1706, 1043));
+                    _backpack4MaterialView.Arrange(new Rect(0, 0, 1706, 1043));
+                }
+
+                if (_calculator2PlanView == null)
+                {
+                    _calculator2PlanView = new HexereiKatepnha.Views.Calculator.Calculator2PlanView();
+                    _calculator2PlanView.DataContext = new Calculator2PlanViewModel();
+                    _calculator2PlanView.Measure(new Size(1706, 1043));
+                    _calculator2PlanView.Arrange(new Rect(0, 0, 1706, 1043));
+                }
+
+                if (_calculator3AllView == null)
+                {
+                    _calculator3AllView = new HexereiKatepnha.Views.Calculator.Calculator3AllView();
+                    _calculator3AllView.DataContext = new Calculator3AllViewModel();
+                    _calculator3AllView.Measure(new Size(1706, 1043));
+                    _calculator3AllView.Arrange(new Rect(0, 0, 1706, 1043));
                 }
 
                 if (_database1CharacterView == null)
@@ -111,7 +127,6 @@ namespace HexereiKatepnha.ViewModels
                 }
             }), DispatcherPriority.ApplicationIdle);
         }
-
 
         partial void OnNavigationFlagChanged(int value)
         {

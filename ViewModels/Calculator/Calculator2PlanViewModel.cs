@@ -26,7 +26,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
         [ObservableProperty] private CalculatorPlanStatistics _statistics = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanDungeon> _dungeonList = new();
-        public ICollectionView DungeonView { get; set; } = null!;
+        private ICollectionView DungeonView { get; set; }
         private Dictionary<int, CalculatorPlanMaterial> MaterialRidMap { get; set; } = new();
 
         public Calculator2PlanViewModel()
@@ -40,7 +40,6 @@ namespace HexereiKatepnha.ViewModels.Calculator
             timer.Start();
             WeakReferenceMessenger.Default.Register(this);
             InitializeDungeonList();
-            UpdatePlanForGoal();
             DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
             DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
         }
@@ -198,14 +197,16 @@ namespace HexereiKatepnha.ViewModels.Calculator
             return res;
         }
 
-        private void InitializeDungeonList()
+        private async void InitializeDungeonList()
         {
             foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
             {
                 foreach (DungeonModel m in l)
                 {
-                    CalculatorPlanDungeon thisModel = new CalculatorPlanDungeon();
-                    thisModel.Rid = m.Rid;
+                    CalculatorPlanDungeon thisModel = new CalculatorPlanDungeon
+                    {
+                        Rid = m.Rid
+                    };
                     int thisDungeonCost = m.Cost;
                     thisModel.CategoryName = thisDungeonCost == 0 ? "不消耗" : thisDungeonCost.ToString();
                     thisModel.Name = m.Name;
@@ -213,20 +214,26 @@ namespace HexereiKatepnha.ViewModels.Calculator
                     foreach (MaterialPairModel mpm in m.DropMaterialList)
                     {
                         MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
-                        CalculatorPlanMaterial thisMaterialModel = new CalculatorPlanMaterial();
-                        thisMaterialModel.Rid = thisMaterial.Rid;
-                        thisMaterialModel.Name = thisMaterial.Name;
-                        thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
-                        thisMaterialModel.ImagePath = thisMaterial.ImagePath;
-                        thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
-                        thisMaterialModel.IconPath = StringConstants.CheckCircleIconPath;
+                        CalculatorPlanMaterial thisMaterialModel = new CalculatorPlanMaterial
+                        {
+                            Rid = thisMaterial.Rid,
+                            Name = thisMaterial.Name,
+                            BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star],
+                            ImagePath = thisMaterial.ImagePath,
+                            Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid),
+                            IconPath = StringConstants.CheckCircleIconPath
+                        };
                         materialList.Add(thisMaterialModel);
                     }
 
                     thisModel.DungeonMaterialList = materialList;
                     DungeonList.Add(thisModel);
                 }
+
+                await Dispatcher.Yield(DispatcherPriority.Background);
             }
+
+            UpdatePlanForGoal();
         }
 
         private void UpdatePlanForGoal()
@@ -322,13 +329,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [RelayCommand]
         private void MinusOneMaterial(CalculatorPlanMaterial? clickItem)
         {
-            if (clickItem != null)
-            {
-                if (clickItem.Number >= 1)
-                {
-                    clickItem.Number -= 1;
-                }
-            }
+            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
         }
 
         [RelayCommand]
