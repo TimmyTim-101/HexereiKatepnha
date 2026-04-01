@@ -24,7 +24,8 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
         [ObservableProperty] private CalculatorPlanStatistics _statistics = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanDungeon> _dungeonList = new();
-        public ICollectionView DungeonView { get; set; }
+        public ICollectionView DungeonView { get; set; } = null!;
+        private Dictionary<int, CalculatorPlanMaterial> MaterialRidMap { get; set; } = new();
 
         public Calculator2PlanViewModel()
         {
@@ -198,6 +199,15 @@ namespace HexereiKatepnha.ViewModels.Calculator
             Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
             Statistics = App.GlobalGoalSimulatorServicePart.GetStatistics();
             DungeonList = App.GlobalGoalSimulatorServicePart.GetDungeon();
+            MaterialRidMap.Clear();
+            foreach (CalculatorPlanDungeon d in DungeonList)
+            {
+                foreach (CalculatorPlanMaterial m in d.DungeonMaterialList)
+                {
+                    MaterialRidMap[m.Rid] = m;
+                }
+            }
+
             DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
             DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
         }
@@ -205,6 +215,42 @@ namespace HexereiKatepnha.ViewModels.Calculator
         public void Receive(GoalSimulatorChangeMessage message)
         {
             UpdatePlanForGoal();
+        }
+
+        [RelayCommand]
+        private void AddOneMaterial(CalculatorPlanMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                clickItem.Number += 1;
+            }
+        }
+
+        [RelayCommand]
+        private void MinusOneMaterial(CalculatorPlanMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                if (clickItem.Number >= 1)
+                {
+                    clickItem.Number -= 1;
+                }
+            }
+        }
+
+        [RelayCommand]
+        private void MergeOneMaterial(CalculatorPlanMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                int recipeId = AutoCalculateConstants.MaterialMergeRecipe[clickItem.Rid];
+                CalculatorPlanMaterial recipeMaterial = MaterialRidMap[recipeId];
+                if (recipeMaterial.Number >= 3)
+                {
+                    recipeMaterial.Number -= 3;
+                    clickItem.Number += 1;
+                }
+            }
         }
     }
 }

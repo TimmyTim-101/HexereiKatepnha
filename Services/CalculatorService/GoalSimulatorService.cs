@@ -722,6 +722,7 @@ public class GoalSimulatorService
             }
         }
 
+        Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = GetMaterialExtraInfo();
         ObservableCollection<CalculatorPlanDungeon> res = new();
         foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
         {
@@ -756,7 +757,43 @@ public class GoalSimulatorService
                     }
 
                     ObservableCollection<CalculatorPlanMaterial> thisDungeonMaterialList = new();
-                    // todo
+                    foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
+                    {
+                        MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
+                        int number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
+                        CalculatorPlanMaterial thisMaterialModel = new();
+                        thisMaterialModel.Rid = thisMaterial.Rid;
+                        thisMaterialModel.Name = thisMaterial.Name;
+                        thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
+                        thisMaterialModel.ImagePath = thisMaterial.ImagePath;
+                        thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
+                        CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
+                        thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
+                        if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                        else thisMaterialModel.Color1 = "#Transparent";
+                        thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? "/Resources/Icons/check_circle_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" : "/Resources/Icons/cancel_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
+                        if (thisExtraInfo.IsSatisfy)
+                        {
+                            if (thisExtraInfo.ActionNum > 0)
+                            {
+                                thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                                thisMaterialModel.Color2 = "#B98823";
+                            }
+                            else
+                            {
+                                thisMaterialModel.Num2String = "";
+                                thisMaterialModel.Color2 = "#Transparent";
+                            }
+                        }
+                        else
+                        {
+                            thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                            thisMaterialModel.Color2 = "#FB7185";
+                        }
+
+                        thisDungeonMaterialList.Add(thisMaterialModel);
+                    }
+
                     thisModel.DungeonMaterialList = thisDungeonMaterialList;
                     ObservableCollection<CalculatorPlanItem> thisDungeonItemList = new();
                     foreach (BaseEntityModel item in itemList)

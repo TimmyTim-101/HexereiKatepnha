@@ -18,21 +18,10 @@ public partial class Backpack4MaterialModel : ObservableObject
     [ObservableProperty] private string _num2String = "";
     [ObservableProperty] private string _color2 = "#Transparent";
 
-    public Visibility IsMergeVisible
-    {
-        get
-        {
-            if (AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(Rid))
-            {
-                return Visibility.Visible;
-            }
-
-            return Visibility.Collapsed;
-        }
-    }
+    public Visibility IsMergeVisible => AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(Rid) ? Visibility.Visible : Visibility.Collapsed;
 
     partial void OnNumberChanged(int value)
     {
-        App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(Rid, value);
+        if (value != App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid)) App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
     }
 }

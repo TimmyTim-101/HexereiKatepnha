@@ -105,6 +105,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             {
                 CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[materialRid];
                 Backpack4MaterialModel thisMaterialModel = MaterialRidMap[materialRid];
+                thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialRid);
                 thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
                 if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
                 else thisMaterialModel.Color1 = "#Transparent";

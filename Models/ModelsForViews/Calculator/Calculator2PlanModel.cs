@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
+using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Calculator;
 
@@ -63,12 +65,19 @@ public partial class CalculatorPlanMaterial : ObservableObject
     public string Name { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string ImagePath { get; set; } = "";
-    [ObservableProperty] private int _needNum;
-    [ObservableProperty] private string _color1 = "";
-    [ObservableProperty] private int _actionNum;
-    [ObservableProperty] private string _color2 = "";
-    [ObservableProperty] private int _haveNum;
-    public bool IsMerge { get; set; }
+    [ObservableProperty] private int _number;
+    [ObservableProperty] private int _num1;
+    [ObservableProperty] private string _color1 = "#Transparent";
+    [ObservableProperty] private string _iconPath = "";
+    [ObservableProperty] private string _num2String = "";
+    [ObservableProperty] private string _color2 = "#Transparent";
+
+    public Visibility IsMergeVisible => AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(Rid) ? Visibility.Visible : Visibility.Collapsed;
+
+    partial void OnNumberChanged(int value)
+    {
+        if (value != App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid)) App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
+    }
 }
 
 public class CalculatorPlanItem

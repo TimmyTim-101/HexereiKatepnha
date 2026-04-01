@@ -162,8 +162,9 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LeyLineOutcrop,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3020002, DropNum = 6.5 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3020001, DropNum = 4.5 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3020002, DropNum = 6.5 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3020003, DropNum = 0 },
         ]
     };
 
