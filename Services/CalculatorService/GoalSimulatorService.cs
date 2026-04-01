@@ -449,11 +449,19 @@ public class GoalSimulatorService
             {
                 // 打相应的秘境
                 DungeonModel thisDungeon = AutoCalculateConstants.DungeonMap[AutoCalculateConstants.MaterialDungeonMap[materialRid]];
-                foreach (MaterialPairModel mpm in thisDungeon.DropMaterialList)
+                if (thisDungeon.Cost == 0)
                 {
-                    int thisDropMaterialRid = mpm.MaterialModel!.Rid;
-                    double thisDropNum = mpm.DropNum;
-                    _materialNumMap[thisDropMaterialRid] += thisDropNum;
+                    // 对于cost为0的部分，直接给对应材料+1
+                    _materialNumMap[relativeMaterialList[0]] += 1;
+                }
+                else
+                {
+                    foreach (MaterialPairModel mpm in thisDungeon.DropMaterialList)
+                    {
+                        int thisDropMaterialRid = mpm.MaterialModel!.Rid;
+                        double thisDropNum = mpm.DropNum;
+                        _materialNumMap[thisDropMaterialRid] += thisDropNum;
+                    }
                 }
 
                 _needResinNum += thisDungeon.Cost;
@@ -571,10 +579,12 @@ public class GoalSimulatorService
 
     public CalculatorPlanStatistics GetStatistics()
     {
-        CalculatorPlanStatistics res = new();
-        res.ResinNum = _needResinNum;
-        res.MergeResinNum = _needResinNum / 60;
-        res.DayNum = (int)Math.Ceiling((double)_needResinNum / 180);
+        CalculatorPlanStatistics res = new()
+        {
+            ResinNum = _needResinNum,
+            MergeResinNum = _needResinNum / 60,
+            DayNum = (int)Math.Ceiling((double)_needResinNum / 180)
+        };
         return res;
     }
 
@@ -634,7 +644,7 @@ public class GoalSimulatorService
         return res;
     }
 
-    public ObservableCollection<CalculatorPlanDungeon> GetDungeon()
+    public Dictionary<int, CalculatorPlanDungeon> GetDungeon()
     {
         // 获取涉及规划信息
         List<BaseEntityModel> itemList = new();
@@ -723,11 +733,38 @@ public class GoalSimulatorService
         }
 
         Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = GetMaterialExtraInfo();
-        ObservableCollection<CalculatorPlanDungeon> res = new();
+        Dictionary<int, CalculatorPlanDungeon> res = new();
         foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
         {
             foreach (DungeonModel thisDungeonModel in l)
             {
+                // 判断秘境今天是否可凹
+                DateTimeOffset utcNow = DateTimeOffset.UtcNow;
+                DateTimeOffset serverTime = utcNow.ToOffset(TimeSpan.FromHours(8));
+                DateTimeOffset gameDayTime = serverTime.AddHours(-4);
+                DayOfWeek gameDayOfWeek = gameDayTime.DayOfWeek;
+                int dayNumber = (int)gameDayOfWeek;
+                if (dayNumber == 0) dayNumber = 7;
+                int thisTime = thisDungeonModel.Time;
+                bool isAccessible = true;
+                switch (thisTime)
+                {
+                    case 1:
+                        if (dayNumber != 1 && dayNumber != 4 && dayNumber != 7) isAccessible = false;
+                        break;
+                    case 2:
+                        if (dayNumber != 2 && dayNumber != 5 && dayNumber != 7) isAccessible = false;
+                        break;
+                    case 3:
+                        if (dayNumber != 3 && dayNumber != 6 && dayNumber != 7) isAccessible = false;
+                        break;
+                }
+
+                if (!isAccessible)
+                {
+                    continue;
+                }
+
                 if (_dungeonNumMap.ContainsKey(thisDungeonModel.Rid))
                 {
                     CalculatorPlanDungeon thisModel = new();
@@ -766,12 +803,12 @@ public class GoalSimulatorService
                         thisMaterialModel.Name = thisMaterial.Name;
                         thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
                         thisMaterialModel.ImagePath = thisMaterial.ImagePath;
-                        thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
+                        thisMaterialModel.Number = number;
                         CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
                         thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
                         if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
                         else thisMaterialModel.Color1 = "#Transparent";
-                        thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? "/Resources/Icons/check_circle_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" : "/Resources/Icons/cancel_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
+                        thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
                         if (thisExtraInfo.IsSatisfy)
                         {
                             if (thisExtraInfo.ActionNum > 0)
@@ -802,7 +839,7 @@ public class GoalSimulatorService
                         bool isInvolved = false;
                         foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
                         {
-                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid)) isInvolved = true;
+                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid) && _lackMaterialList.Contains(mpm.MaterialModel.Rid)) isInvolved = true;
                         }
 
                         if (isInvolved)
@@ -816,7 +853,100 @@ public class GoalSimulatorService
                     }
 
                     thisModel.DungeonItemList = thisDungeonItemList;
-                    res.Add(thisModel);
+                    res[thisDungeonModel.Rid] = thisModel;
+                }
+                else
+                {
+                    // 处理只有粒儿片儿块儿钻儿缺失的部分
+                    bool isAdd = false;
+                    foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
+                    {
+                        int thisMaterialRid = mpm.MaterialModel!.Rid;
+                        if (_lackMaterialList.Contains(thisMaterialRid))
+                        {
+                            isAdd = true;
+                            break;
+                        }
+                    }
+
+                    if (isAdd)
+                    {
+                        CalculatorPlanDungeon thisModel = new();
+                        switch (thisDungeonModel.Cost)
+                        {
+                            case 0: thisModel.CategoryName = "不消耗"; break;
+                            case 20: thisModel.CategoryName = "20"; break;
+                            case 40: thisModel.CategoryName = "40"; break;
+                            case 60: thisModel.CategoryName = "60"; break;
+                        }
+
+                        thisModel.Name = thisDungeonModel.Name;
+                        thisModel.TimeString = "";
+                        thisModel.ResinString = "";
+                        thisModel.ResinImagePath = "/Resources/Images/empty_item.png";
+                        thisModel.DayString = "";
+                        ObservableCollection<CalculatorPlanMaterial> thisDungeonMaterialList = new();
+                        foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
+                        {
+                            MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
+                            int number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
+                            CalculatorPlanMaterial thisMaterialModel = new();
+                            thisMaterialModel.Rid = thisMaterial.Rid;
+                            thisMaterialModel.Name = thisMaterial.Name;
+                            thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
+                            thisMaterialModel.ImagePath = thisMaterial.ImagePath;
+                            thisMaterialModel.Number = number;
+                            CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
+                            thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
+                            if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                            else thisMaterialModel.Color1 = "#Transparent";
+                            thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
+                            if (thisExtraInfo.IsSatisfy)
+                            {
+                                if (thisExtraInfo.ActionNum > 0)
+                                {
+                                    thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                                    thisMaterialModel.Color2 = "#B98823";
+                                }
+                                else
+                                {
+                                    thisMaterialModel.Num2String = "";
+                                    thisMaterialModel.Color2 = "#Transparent";
+                                }
+                            }
+                            else
+                            {
+                                thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
+                                thisMaterialModel.Color2 = "#FB7185";
+                            }
+
+                            thisDungeonMaterialList.Add(thisMaterialModel);
+                        }
+
+                        thisModel.DungeonMaterialList = thisDungeonMaterialList;
+                        ObservableCollection<CalculatorPlanItem> thisDungeonItemList = new();
+                        foreach (BaseEntityModel item in itemList)
+                        {
+                            HashSet<int> thisItemMaterials = itemMaterialsList[item.Rid];
+                            bool isInvolved = false;
+                            foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
+                            {
+                                if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid)) isInvolved = true;
+                            }
+
+                            if (isInvolved)
+                            {
+                                CalculatorPlanItem thisItem = new();
+                                thisItem.Name = item.Name;
+                                thisItem.BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star];
+                                thisItem.ImagePath = item.ImagePath;
+                                thisDungeonItemList.Add(thisItem);
+                            }
+                        }
+
+                        thisModel.DungeonItemList = thisDungeonItemList;
+                        res[thisDungeonModel.Rid] = thisModel;
+                    }
                 }
             }
         }

@@ -5,7 +5,9 @@ using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
@@ -37,7 +39,10 @@ namespace HexereiKatepnha.ViewModels.Calculator
             timer.Tick += (_, _) => { UpdateRecoveryCountdown(); };
             timer.Start();
             WeakReferenceMessenger.Default.Register(this);
+            InitializeDungeonList();
             UpdatePlanForGoal();
+            DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
+            DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
         }
 
         private void UpdateRecoveryCountdown()
@@ -193,12 +198,43 @@ namespace HexereiKatepnha.ViewModels.Calculator
             return res;
         }
 
+        private void InitializeDungeonList()
+        {
+            foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
+            {
+                foreach (DungeonModel m in l)
+                {
+                    CalculatorPlanDungeon thisModel = new CalculatorPlanDungeon();
+                    thisModel.Rid = m.Rid;
+                    int thisDungeonCost = m.Cost;
+                    thisModel.CategoryName = thisDungeonCost == 0 ? "不消耗" : thisDungeonCost.ToString();
+                    thisModel.Name = m.Name;
+                    ObservableCollection<CalculatorPlanMaterial> materialList = new();
+                    foreach (MaterialPairModel mpm in m.DropMaterialList)
+                    {
+                        MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
+                        CalculatorPlanMaterial thisMaterialModel = new CalculatorPlanMaterial();
+                        thisMaterialModel.Rid = thisMaterial.Rid;
+                        thisMaterialModel.Name = thisMaterial.Name;
+                        thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
+                        thisMaterialModel.ImagePath = thisMaterial.ImagePath;
+                        thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
+                        thisMaterialModel.IconPath = StringConstants.CheckCircleIconPath;
+                        materialList.Add(thisMaterialModel);
+                    }
+
+                    thisModel.DungeonMaterialList = materialList;
+                    DungeonList.Add(thisModel);
+                }
+            }
+        }
+
         private void UpdatePlanForGoal()
         {
             LackMaterialList = App.GlobalGoalSimulatorServicePart.GetAllLackMaterial();
             Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
             Statistics = App.GlobalGoalSimulatorServicePart.GetStatistics();
-            DungeonList = App.GlobalGoalSimulatorServicePart.GetDungeon();
+            UpdateDungeonList();
             MaterialRidMap.Clear();
             foreach (CalculatorPlanDungeon d in DungeonList)
             {
@@ -207,9 +243,66 @@ namespace HexereiKatepnha.ViewModels.Calculator
                     MaterialRidMap[m.Rid] = m;
                 }
             }
+        }
 
-            DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
-            DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
+        private void UpdateDungeonList()
+        {
+            Dictionary<int, CalculatorPlanDungeon> calculatedMap = App.GlobalGoalSimulatorServicePart.GetDungeon();
+            foreach (CalculatorPlanDungeon cpd in DungeonList)
+            {
+                if (calculatedMap.TryGetValue(cpd.Rid, out var newestCpd))
+                {
+                    if (newestCpd.TimeString != cpd.TimeString) cpd.TimeString = newestCpd.TimeString;
+                    if (newestCpd.ResinString != cpd.ResinString) cpd.ResinString = newestCpd.ResinString;
+                    if (newestCpd.ResinImagePath != cpd.ResinImagePath) cpd.ResinImagePath = newestCpd.ResinImagePath;
+                    if (newestCpd.DayString != cpd.DayString) cpd.DayString = newestCpd.DayString;
+                    Dictionary<int, CalculatorPlanMaterial> newestDungeonMaterialMap = newestCpd.DungeonMaterialList.ToDictionary(m => m.Rid, m => m);
+                    foreach (CalculatorPlanMaterial cpm in cpd.DungeonMaterialList)
+                    {
+                        CalculatorPlanMaterial newestCpm = newestDungeonMaterialMap[cpm.Rid];
+                        if (newestCpm.Number != cpm.Number) cpm.Number = newestCpm.Number;
+                        if (newestCpm.Num1 != cpm.Num1) cpm.Num1 = newestCpm.Num1;
+                        if (newestCpm.Color1 != cpm.Color1) cpm.Color1 = newestCpm.Color1;
+                        if (newestCpm.IconPath != cpm.IconPath) cpm.IconPath = newestCpm.IconPath;
+                        if (newestCpm.Num2String != cpm.Num2String) cpm.Num2String = newestCpm.Num2String;
+                        if (newestCpm.Color2 != cpm.Color2) cpm.Color2 = newestCpm.Color2;
+                    }
+
+                    // 处理DungeonItemList
+                    // 先把现在的部分弄到一样长
+                    if (cpd.DungeonItemList.Count < newestCpd.DungeonItemList.Count)
+                    {
+                        for (int i = cpd.DungeonItemList.Count; i < newestCpd.DungeonItemList.Count; i++)
+                        {
+                            cpd.DungeonItemList.Add(newestCpd.DungeonItemList[i]);
+                        }
+                    }
+
+                    if (cpd.DungeonItemList.Count > newestCpd.DungeonItemList.Count)
+                    {
+                        for (int i = cpd.DungeonItemList.Count - 1; i >= newestCpd.DungeonItemList.Count; i--)
+                        {
+                            cpd.DungeonItemList.RemoveAt(i);
+                        }
+                    }
+
+                    // 再修改内部图片
+                    for (int i = 0; i < cpd.DungeonItemList.Count; i++)
+                    {
+                        CalculatorPlanItem cpi = cpd.DungeonItemList[i];
+                        CalculatorPlanItem newestCpi = newestCpd.DungeonItemList[i];
+                        if (newestCpi.Name != cpi.Name) cpi.Name = newestCpi.Name;
+                        if (newestCpi.BackgroundImagePath != cpi.BackgroundImagePath) cpi.BackgroundImagePath = newestCpi.BackgroundImagePath;
+                        if (newestCpi.ImagePath != cpi.ImagePath) cpi.ImagePath = newestCpi.ImagePath;
+                    }
+
+                    if (!cpd.IsVisible) cpd.IsVisible = true;
+                }
+                else
+                {
+                    if (cpd.IsVisible) cpd.IsVisible = false;
+                }
+            }
         }
 
         public void Receive(GoalSimulatorChangeMessage message)

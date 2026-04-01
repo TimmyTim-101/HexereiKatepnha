@@ -9,6 +9,9 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"></BooleanToVisibilityConverter>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -74,7 +77,7 @@
                     </ListBox.GroupStyle>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Width="362" Margin="2">
+                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Width="362" Margin="2" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"></RowDefinition>
@@ -263,15 +266,15 @@
                     </Grid>
                 </Border>
                 <Border Grid.Row="1" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
-                    <ListBox ItemsSource="{Binding LackMaterialList}" Style="{StaticResource ModernListBox}">
+                    <ListBox ItemsSource="{Binding LackMaterialList}" Style="{StaticResource ModernListBox}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical"></StackPanel>
+                                <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
                             </ItemsPanelTemplate>
                         </ListBox.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Height="54">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="150"></ColumnDefinition>

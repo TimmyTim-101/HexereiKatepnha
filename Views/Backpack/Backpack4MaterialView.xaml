@@ -12,7 +12,7 @@
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="BackpackMaterialItemTemplate" DataType="{x:Type models:Backpack4MaterialModel}">
-            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="93">
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="86">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
