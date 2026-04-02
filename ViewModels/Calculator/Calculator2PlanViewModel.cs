@@ -197,7 +197,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
             return res;
         }
 
-        private async void InitializeDungeonList()
+        private void InitializeDungeonList()
         {
             foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
             {
@@ -229,8 +229,6 @@ namespace HexereiKatepnha.ViewModels.Calculator
                     thisModel.DungeonMaterialList = materialList;
                     DungeonList.Add(thisModel);
                 }
-
-                await Dispatcher.Yield(DispatcherPriority.Background);
             }
 
             UpdatePlanForGoal();
