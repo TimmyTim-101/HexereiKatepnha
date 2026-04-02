@@ -3,15 +3,371 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Calculator"
+             d:DataContext="{d:DesignInstance vm:Calculator3AllViewModel}"
              mc:Ignorable="d"
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"></BooleanToVisibilityConverter>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel>
-                <TextBlock Text="计算器 - 全拉满" Style="{StaticResource TodoTextBlock}" />
-            </StackPanel>
-        </ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="全拉满" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical" Margin="20,0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                            <Run Text="预计共消耗原粹树脂约"></Run>
+                            <Run Text="{Binding Statistics.ResinNum}"></Run>
+                        </TextBlock>
+                        <Image Source="{Binding ResinImagePath}" Height="30" Width="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                            <Run Text="如果全部合成为浓缩树脂约"></Run>
+                            <Run Text="{Binding Statistics.MergeResinNum}"></Run>
+                        </TextBlock>
+                        <Image Source="{Binding MergeResinImagePath}" Height="30" Width="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                    </StackPanel>
+                    <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                        <Run Text="预计完成全部任务需花费"></Run>
+                        <Run Text="{Binding Statistics.DayNum}"></Run>
+                        <Run Text="天（不包含粒儿片儿块儿钻儿）"></Run>
+                    </TextBlock>
+                </StackPanel>
+                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                <ListBox Grid.Row="2" ItemsSource="{Binding DungeonList}" Style="{StaticResource ModernListBox}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Margin="20,0,0,0"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal" Margin="20,15,20,5">
+                                            <TextBlock Text="{Binding Name}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <Image Source="{Binding DataContext.ResinImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                        </StackPanel>
+                                        <Border Style="{StaticResource HorizontalDivider}"></Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Width="362" Margin="2" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"></TextBlock>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding TimeString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding ResinString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                            <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"></Image>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="2" Text="{Binding DayString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2" FontSize="14"></TextBlock>
+                                    </Grid>
+                                    <ListBox Grid.Row="2" ItemsSource="{Binding DungeonMaterialList}" Style="{StaticResource ModernListBox}" PreviewMouseWheel="InnerListBoxPreviewMouseWheel">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="86">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"></RowDefinition>
+                                                            <RowDefinition Height="20"></RowDefinition>
+                                                            <RowDefinition Height="20"></RowDefinition>
+                                                            <RowDefinition Height="27"></RowDefinition>
+                                                            <RowDefinition Height="25"></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
+                                                            <Grid.ToolTip>
+                                                                <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                            </Grid.ToolTip>
+                                                            <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                        </Grid>
+                                                        <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                                                <Viewbox MaxWidth="60" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                                </Viewbox>
+                                                            </StackPanel>
+                                                        </Border>
+                                                        <Border Grid.Row="2" BorderThickness="0" Background="{Binding Color2}">
+                                                            <Viewbox MaxWidth="80" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num2String}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                            </Viewbox>
+                                                        </Border>
+                                                        <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                                                        </Viewbox>
+                                                        <UniformGrid Grid.Row="4" Rows="1">
+                                                            <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                            <Button Content="+" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.AddOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                            <Button Content="合" Style="{StaticResource TextButton}" Margin="0,2" Visibility="{Binding IsMergeVisible}" Command="{Binding DataContext.MergeOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                        </UniformGrid>
+                                                    </Grid>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ListBox>
+                                    <ListBox Grid.Row="3" ItemsSource="{Binding DungeonItemList}" Style="{StaticResource ModernListBox}" MaxHeight="171" PreviewMouseWheel="InnerListBoxPreviewMouseWheel">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid ToolTipService.InitialShowDelay="100">
+                                                    <Grid.ToolTip>
+                                                        <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                    </Grid.ToolTip>
+                                                    <Image Source="{Binding BackgroundImagePath}" Width="53" Height="53" Stretch="UniformToFill" Margin="2"></Image>
+                                                    <Image Source="{Binding ImagePath}" Width="53" Height="53" Stretch="UniformToFill" Margin="2"></Image>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ListBox>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
+            <Grid Grid.Column="2" Width="441">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="324"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="全部恢复" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                            <TextBlock Grid.Column="1" Text=":" Style="{StaticResource MyTextBlock}" Margin="15,2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Hour, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnHourUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnHourDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                            <TextBlock Grid.Column="3" Text=":" Style="{StaticResource MyTextBlock}" Margin="2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="4" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Minute, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnMinuteUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnMinuteDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                            <TextBlock Grid.Column="5" Text=":" Style="{StaticResource MyTextBlock}" Margin="2" VerticalAlignment="Center"></TextBlock>
+                            <StackPanel Grid.Column="6" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Second, StringFormat=\{0:D2\}}" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="2"></TextBlock>
+                                <UniformGrid Rows="2" Columns="1">
+                                    <Button Style="{StaticResource TextButton}" Content="˄" Command="{Binding ClickOnSecondUpCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                    <Button Style="{StaticResource TextButton}" Content="˅" Command="{Binding ClickOnSecondDownCommand}" Padding="5,0" FontSize="10" Foreground="#888888"></Button>
+                                </UniformGrid>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding ResinImagePath}" Width="40" Height="40" Stretch="UniformToFill" Margin="2"></Image>
+                            <TextBlock Grid.Column="1" Text="{Binding ResinNum}" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,2" FontSize="24"></TextBlock>
+                            <TextBlock Grid.Column="2" Text="/" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2" FontSize="24"></TextBlock>
+                            <TextBlock Grid.Column="3" Text="200" Style="{StaticResource MyTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,2" FontSize="24"></TextBlock>
+                        </Grid>
+                        <UniformGrid Grid.Row="2" Rows="1" Columns="5">
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-20" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-20" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-30" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-30" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-40" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-40" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource DeleteFunctionButton}" Content="-60" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="-60" Margin="5,2,0,2" FontSize="16"></Button>
+                            <Button Style="{StaticResource FunctionButton}" Content="+60" Command="{Binding ClickOnResinChangeCommand}" CommandParameter="60" Margin="5,2" FontSize="16"></Button>
+                        </UniformGrid>
+                        <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                        <ListBox Grid.Row="4" ItemsSource="{Binding ResinHintList}" Style="{StaticResource ModernListBox}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5"></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" Style="{StaticResource MyTextBlock}" Margin="8,2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
+                    <ListBox ItemsSource="{Binding LackMaterialList}" Style="{StaticResource ModernListBox}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="54">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Image Source="{Binding BackgroundImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                        <Image Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                    </Grid>
+                                    <Viewbox Grid.Column="1" MaxWidth="130" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="2" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding BackpackNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="3" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding MergeNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="4" MaxWidth="65" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum}" HorizontalAlignment="Center" Margin="5" FontSize="16" Opacity="{Binding IsAccessible}"></TextBlock>
+                                    </Viewbox>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
+                </Border>
+                <Border Grid.Row="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Background="{DynamicResource GlobalFrontColor}">
+                    <ListBox ItemsSource="{Binding Boss60List}" Style="{StaticResource ModernListBox}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding ImagePath}" Width="50" Height="50" Stretch="UniformToFill" Margin="5,2"></Image>
+                                    <Viewbox Grid.Column="1" MaxWidth="130" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+                                    </Viewbox>
+                                    <Grid Grid.Column="2" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum1}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum1}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum2}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum2}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid Grid.Column="4" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="0" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding NeedNum3}" Foreground="#FB7185" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                        <Viewbox Grid.Row="1" MaxWidth="60" StretchDirection="DownOnly" VerticalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding HaveNum3}" Foreground="#12B981" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                    <TextBlock Grid.Column="5" Style="{StaticResource MyTextBlock}" Text="{Binding Info}" Foreground="{Binding Color}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

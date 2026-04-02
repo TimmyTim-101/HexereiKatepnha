@@ -17,9 +17,11 @@ public class GoalSimulatorService
     private List<int> _ignoreMaterial = new();
     private List<MaterialPairModel> _materialNeedNumList = new();
     private Dictionary<string, int> _planSubExpMap = new();
+    private bool _isAll;
 
     public GoalSimulatorService(bool isAll)
     {
+        _isAll = isAll;
         foreach (MaterialModel m in AllEntities.AllMaterialCharacterAscension)
         {
             _ignoreMaterial.Add(m.Rid);
@@ -45,16 +47,16 @@ public class GoalSimulatorService
             _planSubExpMap[weaponId] = thisConfig.SubExp;
         }
 
-        MainSimulationProcess(isAll);
+        MainSimulationProcess();
     }
 
-    private void MainSimulationProcess(bool isAll)
+    private void MainSimulationProcess()
     {
-        SeparateTasks(isAll);
+        SeparateTasks();
         Simulate();
     }
 
-    private void SeparateTasks(bool isAll)
+    private void SeparateTasks()
     {
         // 按照任务顺序分割材料和数量到MaterialNeedNumList
         foreach (string thisPlanId in App.CalculatorPlanSettingConfigManagerInstance!.Configuration.OrderList)
@@ -68,9 +70,105 @@ public class GoalSimulatorService
             }
         }
 
-        if (isAll)
+        if (_isAll)
         {
-            // todo 全拉满
+            // 角色全拉满
+            foreach (CharacterModel thisCharacter in AllEntities.AllCharacter)
+            {
+                int thisCharacterRid = thisCharacter.Rid;
+                string thisCharacterPlanId = thisCharacterRid.ToString();
+                int startLevelIndex = 0;
+                int startTalentAIndex = 0;
+                int startTalentEIndex = 0;
+                int startTalentQIndex = 0;
+                if (App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig.ContainsKey(thisCharacterRid))
+                {
+                    SingleBackpackCharacterConfigModel thisCharacterConfig = App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisCharacterRid];
+                    startLevelIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.CharacterLevelGoal);
+                    startTalentAIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentALevelGoal);
+                    startTalentEIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentELevelGoal);
+                    startTalentQIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentQLevelGoal);
+                }
+
+                int endLevelIndex = startLevelIndex;
+                for (int i = startLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (!thisCharacter.LevelUpMaterials.ContainsKey(thisLevel))
+                    {
+                        break;
+                    }
+
+                    endLevelIndex++;
+                }
+
+                CharacterLevelInterval(startLevelIndex, endLevelIndex, thisCharacter, thisCharacterPlanId);
+                int endTalentAIndex = startTalentAIndex;
+                for (int i = startTalentAIndex; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (!thisCharacter.Talent1Materials.ContainsKey(thisLevel))
+                    {
+                        break;
+                    }
+
+                    endTalentAIndex++;
+                }
+
+                CharacterTalentAInterval(startTalentAIndex, endTalentAIndex, thisCharacter);
+
+                int endTalentEIndex = startTalentEIndex;
+                for (int i = startTalentEIndex; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (!thisCharacter.Talent2Materials.ContainsKey(thisLevel))
+                    {
+                        break;
+                    }
+
+                    endTalentEIndex++;
+                }
+
+                CharacterTalentEInterval(startTalentEIndex, endTalentEIndex, thisCharacter);
+
+                int endTalentQIndex = startTalentQIndex;
+                for (int i = startTalentQIndex; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (!thisCharacter.Talent3Materials.ContainsKey(thisLevel))
+                    {
+                        break;
+                    }
+
+                    endTalentQIndex++;
+                }
+
+                CharacterTalentQInterval(startTalentQIndex, endTalentQIndex, thisCharacter);
+            }
+
+            // 武器全拉满
+            // 只考虑目标大于1级的武器
+            foreach (SingleBackpackWeaponConfigModel thisPlan in App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap.Values)
+            {
+                int thisWeaponId = thisPlan.Rid;
+                WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponId];
+                Enumeration.Level startLevel = thisPlan.GoalLevel;
+                if (startLevel == 0) continue;
+                int startLevelIndex = SequenceConstants.AllLevels.IndexOf(startLevel);
+                int endLevelIndex = startLevelIndex;
+                for (int i = startLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
+                {
+                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
+                    if (!thisWeapon.LevelUpMaterials.ContainsKey(thisLevel))
+                    {
+                        break;
+                    }
+
+                    endLevelIndex++;
+                }
+
+                WeaponLevelInterval(startLevelIndex, endLevelIndex, thisWeapon, thisPlan.Id);
+            }
         }
     }
 
@@ -85,6 +183,32 @@ public class GoalSimulatorService
         Enumeration.Level endLevel = thisCharacterConfig.CharacterLevelGoal;
         int startLevelIndex = SequenceConstants.AllLevels.IndexOf(startLevel);
         int endLevelIndex = SequenceConstants.AllLevels.IndexOf(endLevel);
+        CharacterLevelInterval(startLevelIndex, endLevelIndex, thisCharacter, thisPlanId);
+
+        // 天赋A
+        Enumeration.Level startTalentALevel = thisCharacterConfig.TalentALevel;
+        Enumeration.Level endTalentALevel = thisCharacterConfig.TalentALevelGoal;
+        int startTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentALevel);
+        int endTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentALevel);
+        CharacterTalentAInterval(startTalentALevelIndex, endTalentALevelIndex, thisCharacter);
+
+        // 天赋E
+        Enumeration.Level startTalentELevel = thisCharacterConfig.TalentELevel;
+        Enumeration.Level endTalentELevel = thisCharacterConfig.TalentELevelGoal;
+        int startTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentELevel);
+        int endTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentELevel);
+        CharacterTalentEInterval(startTalentELevelIndex, endTalentELevelIndex, thisCharacter);
+
+        // 天赋Q
+        Enumeration.Level startTalentQLevel = thisCharacterConfig.TalentQLevel;
+        Enumeration.Level endTalentQLevel = thisCharacterConfig.TalentQLevelGoal;
+        int startTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentQLevel);
+        int endTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentQLevel);
+        CharacterTalentQInterval(startTalentQLevelIndex, endTalentQLevelIndex, thisCharacter);
+    }
+
+    private void CharacterLevelInterval(int startLevelIndex, int endLevelIndex, CharacterModel thisCharacter, string thisPlanId)
+    {
         for (int l = startLevelIndex; l < endLevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = thisCharacter.LevelUpMaterials[SequenceConstants.AllLevels[l]];
@@ -120,12 +244,10 @@ public class GoalSimulatorService
                 }
             }
         }
+    }
 
-        // 天赋A
-        Enumeration.Level startTalentALevel = thisCharacterConfig.TalentALevel;
-        Enumeration.Level endTalentALevel = thisCharacterConfig.TalentALevelGoal;
-        int startTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentALevel);
-        int endTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentALevel);
+    private void CharacterTalentAInterval(int startTalentALevelIndex, int endTalentALevelIndex, CharacterModel thisCharacter)
+    {
         for (int l = startTalentALevelIndex; l < endTalentALevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = thisCharacter.Talent1Materials[SequenceConstants.AllLevels[l]];
@@ -134,12 +256,10 @@ public class GoalSimulatorService
                 _materialNeedNumList.Add(mpm);
             }
         }
+    }
 
-        // 天赋E
-        Enumeration.Level startTalentELevel = thisCharacterConfig.TalentELevel;
-        Enumeration.Level endTalentELevel = thisCharacterConfig.TalentELevelGoal;
-        int startTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentELevel);
-        int endTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentELevel);
+    private void CharacterTalentEInterval(int startTalentELevelIndex, int endTalentELevelIndex, CharacterModel thisCharacter)
+    {
         for (int l = startTalentELevelIndex; l < endTalentELevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = thisCharacter.Talent2Materials[SequenceConstants.AllLevels[l]];
@@ -148,12 +268,10 @@ public class GoalSimulatorService
                 _materialNeedNumList.Add(mpm);
             }
         }
+    }
 
-        // 天赋Q
-        Enumeration.Level startTalentQLevel = thisCharacterConfig.TalentQLevel;
-        Enumeration.Level endTalentQLevel = thisCharacterConfig.TalentQLevelGoal;
-        int startTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(startTalentQLevel);
-        int endTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(endTalentQLevel);
+    private void CharacterTalentQInterval(int startTalentQLevelIndex, int endTalentQLevelIndex, CharacterModel thisCharacter)
+    {
         for (int l = startTalentQLevelIndex; l < endTalentQLevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = thisCharacter.Talent3Materials[SequenceConstants.AllLevels[l]];
@@ -174,6 +292,11 @@ public class GoalSimulatorService
         int startLevelIndex = SequenceConstants.AllLevels.IndexOf(startLevel);
         int endLevelIndex = SequenceConstants.AllLevels.IndexOf(endLevel);
         WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponRid];
+        WeaponLevelInterval(startLevelIndex, endLevelIndex, thisWeapon, thisPlanId);
+    }
+
+    private void WeaponLevelInterval(int startLevelIndex, int endLevelIndex, WeaponModel thisWeapon, string thisPlanId)
+    {
         for (int l = startLevelIndex; l < endLevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = thisWeapon.LevelUpMaterials[SequenceConstants.AllLevels[l]];
@@ -507,7 +630,7 @@ public class GoalSimulatorService
             }
 
             double isAccessible = 1.0;
-            if (!_ignoreMaterial.Contains(materialRid))
+            if (!_ignoreMaterial.Contains(materialRid) && !_isAll)
             {
                 DateTimeOffset utcNow = DateTimeOffset.UtcNow;
                 DateTimeOffset serverTime = utcNow.ToOffset(TimeSpan.FromHours(8));
@@ -632,10 +755,12 @@ public class GoalSimulatorService
 
             for (int i = 0; i < relativeMaterialList.Count; i++)
             {
-                CalculatorPlanMaterialExtraInfo thisModel = new CalculatorPlanMaterialExtraInfo();
-                thisModel.Rid = relativeMaterialList[i];
-                thisModel.NeedNum = relativeNeedNumList[i];
-                thisModel.IsSatisfy = relativeAfterMergeNumList[i] >= relativeNeedNumList[i];
+                CalculatorPlanMaterialExtraInfo thisModel = new CalculatorPlanMaterialExtraInfo
+                {
+                    Rid = relativeMaterialList[i],
+                    NeedNum = relativeNeedNumList[i],
+                    IsSatisfy = relativeAfterMergeNumList[i] >= relativeNeedNumList[i]
+                };
                 thisModel.ActionNum = thisModel.IsSatisfy ? relativeActualMergeNumList[i] : relativeNeedNumList[i] - relativeAfterMergeNumList[i];
                 res[relativeMaterialList[i]] = thisModel;
             }
@@ -732,37 +857,47 @@ public class GoalSimulatorService
             }
         }
 
+        // 补充全拉满的部分
+        if (_isAll)
+        {
+            // 角色
+            // 武器
+        }
+
         Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = GetMaterialExtraInfo();
         Dictionary<int, CalculatorPlanDungeon> res = new();
         foreach (List<DungeonModel> l in AllEntities.AllDungeonLists)
         {
             foreach (DungeonModel thisDungeonModel in l)
             {
-                // 判断秘境今天是否可凹
-                DateTimeOffset utcNow = DateTimeOffset.UtcNow;
-                DateTimeOffset serverTime = utcNow.ToOffset(TimeSpan.FromHours(8));
-                DateTimeOffset gameDayTime = serverTime.AddHours(-4);
-                DayOfWeek gameDayOfWeek = gameDayTime.DayOfWeek;
-                int dayNumber = (int)gameDayOfWeek;
-                if (dayNumber == 0) dayNumber = 7;
-                int thisTime = thisDungeonModel.Time;
-                bool isAccessible = true;
-                switch (thisTime)
+                if (!_isAll)
                 {
-                    case 1:
-                        if (dayNumber != 1 && dayNumber != 4 && dayNumber != 7) isAccessible = false;
-                        break;
-                    case 2:
-                        if (dayNumber != 2 && dayNumber != 5 && dayNumber != 7) isAccessible = false;
-                        break;
-                    case 3:
-                        if (dayNumber != 3 && dayNumber != 6 && dayNumber != 7) isAccessible = false;
-                        break;
-                }
+                    // 判断秘境今天是否可凹
+                    DateTimeOffset utcNow = DateTimeOffset.UtcNow;
+                    DateTimeOffset serverTime = utcNow.ToOffset(TimeSpan.FromHours(8));
+                    DateTimeOffset gameDayTime = serverTime.AddHours(-4);
+                    DayOfWeek gameDayOfWeek = gameDayTime.DayOfWeek;
+                    int dayNumber = (int)gameDayOfWeek;
+                    if (dayNumber == 0) dayNumber = 7;
+                    int thisTime = thisDungeonModel.Time;
+                    bool isAccessible = true;
+                    switch (thisTime)
+                    {
+                        case 1:
+                            if (dayNumber != 1 && dayNumber != 4 && dayNumber != 7) isAccessible = false;
+                            break;
+                        case 2:
+                            if (dayNumber != 2 && dayNumber != 5 && dayNumber != 7) isAccessible = false;
+                            break;
+                        case 3:
+                            if (dayNumber != 3 && dayNumber != 6 && dayNumber != 7) isAccessible = false;
+                            break;
+                    }
 
-                if (!isAccessible)
-                {
-                    continue;
+                    if (!isAccessible)
+                    {
+                        continue;
+                    }
                 }
 
                 if (_dungeonNumMap.ContainsKey(thisDungeonModel.Rid))
@@ -798,12 +933,14 @@ public class GoalSimulatorService
                     {
                         MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
                         int number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
-                        CalculatorPlanMaterial thisMaterialModel = new();
-                        thisMaterialModel.Rid = thisMaterial.Rid;
-                        thisMaterialModel.Name = thisMaterial.Name;
-                        thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
-                        thisMaterialModel.ImagePath = thisMaterial.ImagePath;
-                        thisMaterialModel.Number = number;
+                        CalculatorPlanMaterial thisMaterialModel = new()
+                        {
+                            Rid = thisMaterial.Rid,
+                            Name = thisMaterial.Name,
+                            BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star],
+                            ImagePath = thisMaterial.ImagePath,
+                            Number = number
+                        };
                         CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
                         thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
                         if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
@@ -844,10 +981,12 @@ public class GoalSimulatorService
 
                         if (isInvolved)
                         {
-                            CalculatorPlanItem thisItem = new();
-                            thisItem.Name = item.Name;
-                            thisItem.BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star];
-                            thisItem.ImagePath = item.ImagePath;
+                            CalculatorPlanItem thisItem = new()
+                            {
+                                Name = item.Name,
+                                BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star],
+                                ImagePath = item.ImagePath
+                            };
                             thisDungeonItemList.Add(thisItem);
                         }
                     }
@@ -890,12 +1029,14 @@ public class GoalSimulatorService
                         {
                             MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
                             int number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterial.Rid);
-                            CalculatorPlanMaterial thisMaterialModel = new();
-                            thisMaterialModel.Rid = thisMaterial.Rid;
-                            thisMaterialModel.Name = thisMaterial.Name;
-                            thisMaterialModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
-                            thisMaterialModel.ImagePath = thisMaterial.ImagePath;
-                            thisMaterialModel.Number = number;
+                            CalculatorPlanMaterial thisMaterialModel = new()
+                            {
+                                Rid = thisMaterial.Rid,
+                                Name = thisMaterial.Name,
+                                BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star],
+                                ImagePath = thisMaterial.ImagePath,
+                                Number = number
+                            };
                             CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
                             thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
                             if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
@@ -936,10 +1077,12 @@ public class GoalSimulatorService
 
                             if (isInvolved)
                             {
-                                CalculatorPlanItem thisItem = new();
-                                thisItem.Name = item.Name;
-                                thisItem.BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star];
-                                thisItem.ImagePath = item.ImagePath;
+                                CalculatorPlanItem thisItem = new()
+                                {
+                                    Name = item.Name,
+                                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[item.Star],
+                                    ImagePath = item.ImagePath
+                                };
                                 thisDungeonItemList.Add(thisItem);
                             }
                         }
