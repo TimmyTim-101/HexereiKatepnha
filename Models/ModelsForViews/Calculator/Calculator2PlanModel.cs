@@ -84,6 +84,7 @@ public partial class CalculatorPlanMaterial : ObservableObject
 
 public class CalculatorPlanItem
 {
+    public string Id { get; set; } = "";
     public string Name { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string ImagePath { get; set; } = "";
