@@ -236,7 +236,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
 
         private void UpdatePlanForGoal()
         {
-            LackMaterialList = App.GlobalGoalSimulatorServicePart.GetAllLackMaterial();
+            LackMaterialList = App.GlobalGoalSimulatorServicePart!.GetAllLackMaterial();
             Boss60List = App.GlobalGoalSimulatorServicePart.GetBoss60();
             Statistics = App.GlobalGoalSimulatorServicePart.GetStatistics();
             UpdateDungeonList();
@@ -252,7 +252,7 @@ namespace HexereiKatepnha.ViewModels.Calculator
 
         private void UpdateDungeonList()
         {
-            Dictionary<int, CalculatorPlanDungeon> calculatedMap = App.GlobalGoalSimulatorServicePart.GetDungeon();
+            Dictionary<int, CalculatorPlanDungeon> calculatedMap = App.GlobalGoalSimulatorServicePart!.GetDungeon();
             foreach (CalculatorPlanDungeon cpd in DungeonList)
             {
                 if (calculatedMap.TryGetValue(cpd.Rid, out var newestCpd))

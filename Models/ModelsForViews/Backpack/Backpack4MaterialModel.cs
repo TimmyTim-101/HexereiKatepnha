@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 
@@ -6,7 +7,6 @@ namespace HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 public partial class Backpack4MaterialModel : ObservableObject
 {
-    public string CategoryName { get; set; } = "";
     public string ImagePath { get; set; } = "";
     public string BackgroundImagePath { get; set; } = "";
     public string Name { get; set; } = "";
@@ -24,4 +24,10 @@ public partial class Backpack4MaterialModel : ObservableObject
     {
         if (value != App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid)) App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
     }
+}
+
+public partial class Backpack4MaterialGroupModel : ObservableObject
+{
+    public string CategoryName { get; set; } = "";
+    [ObservableProperty] private ObservableCollection<Backpack4MaterialModel> _itemList = [];
 }

@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
-using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
-using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Models.ConfigModels;
 

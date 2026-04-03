@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Backpack"
              d:DataContext="{d:DesignInstance vm:Backpack4MaterialViewModel}"
@@ -52,6 +53,17 @@
                 </Grid>
             </Border>
         </DataTemplate>
+        <DataTemplate x:Key="BackpackMaterialGroupTemplate" DataType="{x:Type models:Backpack4MaterialGroupModel}">
+            <StackPanel>
+                <TextBlock Text="{Binding CategoryName}" Style="{StaticResource MyTextBlock}" Margin="20,15,20,5" />
+                <Border Style="{StaticResource HorizontalDivider}" Margin="0,5" />
+                <ui:ItemsRepeater ItemsSource="{Binding ItemList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" Margin="20,0,0,0">
+                    <ui:ItemsRepeater.Layout>
+                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                    </ui:ItemsRepeater.Layout>
+                </ui:ItemsRepeater>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
@@ -61,24 +73,12 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AllMaterialList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.ScrollUnit="Pixel" Padding="15,0,0,0">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Name}" Style="{StaticResource MyTextBlock}" Margin="20,15,20,5" />
-                                <Border Style="{StaticResource HorizontalDivider}" Margin="0,5" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </ListBox.GroupStyle>
-        </ListBox>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+            <ui:ItemsRepeater ItemsSource="{Binding AllMaterialGroupList}" ItemTemplate="{StaticResource BackpackMaterialGroupTemplate}">
+                <ui:ItemsRepeater.Layout>
+                    <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                </ui:ItemsRepeater.Layout>
+            </ui:ItemsRepeater>
+        </ScrollViewer>
     </Grid>
 </UserControl>

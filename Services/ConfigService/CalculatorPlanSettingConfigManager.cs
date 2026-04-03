@@ -105,12 +105,12 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
     }
 
-    public void DeleteWeapon(string? Id)
+    public void DeleteWeapon(string? id)
     {
-        if (Id == null) return;
-        if (Configuration.OrderList.Remove(Id))
+        if (id == null) return;
+        if (Configuration.OrderList.Remove(id))
         {
-            Configuration.PlanMap.Remove(Id);
+            Configuration.PlanMap.Remove(id);
         }
 
         Save();

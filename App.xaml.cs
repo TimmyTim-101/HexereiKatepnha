@@ -23,8 +23,8 @@ namespace HexereiKatepnha
         public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
         public static BackpackWeaponConfigManager? BackpackWeaponConfigManagerInstance { get; set; }
         public static CalculatorPlanSettingConfigManager? CalculatorPlanSettingConfigManagerInstance { get; set; }
-        public static GoalSimulatorService GlobalGoalSimulatorServicePart { get; set; }
-        public static GoalSimulatorService GlobalGoalSimulatorServiceAll { get; set; }
+        public static GoalSimulatorService? GlobalGoalSimulatorServicePart { get; set; }
+        public static GoalSimulatorService? GlobalGoalSimulatorServiceAll { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
