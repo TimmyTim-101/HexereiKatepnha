@@ -20,9 +20,9 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private bool _isShowOriginalImage = true;
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
-        public ObservableCollection<Database2WeaponModel> AllWeaponList { get; } = new();
+        private ObservableCollection<Database2WeaponModel> AllWeaponList { get; } = [];
         [ObservableProperty] private Database2WeaponModel _selectedWeapon;
-        public ICollectionView WeaponView { get; }
+        [ObservableProperty] private List<Database2WeaponModel> _weaponView = [];
         public string Weapon1ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
         public string Weapon2ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
         public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
@@ -38,27 +38,31 @@ namespace HexereiKatepnha.ViewModels.Database
         {
             foreach (WeaponModel e in AllEntities.AllWeapon)
             {
-                Database2WeaponModel thisDatabase2WeaponModel = new Database2WeaponModel();
-                thisDatabase2WeaponModel.Vid = e.Vid;
-                thisDatabase2WeaponModel.Name = e.Name;
-                thisDatabase2WeaponModel.ImagePath = e.ImagePath;
-                thisDatabase2WeaponModel.AwakenImagePath = e.AwakenImagePath;
-                thisDatabase2WeaponModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                thisDatabase2WeaponModel.Star = e.Star;
-                thisDatabase2WeaponModel.StarImagePath = StringConstants.StarImagePath[e.Star];
-                thisDatabase2WeaponModel.WeaponType = e.WeaponType;
-                thisDatabase2WeaponModel.WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType];
-                thisDatabase2WeaponModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
-                thisDatabase2WeaponModel.SubAffixName = StringConstants.AffixString[e.SubAffix];
-                thisDatabase2WeaponModel.NeedMaterialList = [];
+                Database2WeaponModel thisDatabase2WeaponModel = new Database2WeaponModel
+                {
+                    Vid = e.Vid,
+                    Name = e.Name,
+                    ImagePath = e.ImagePath,
+                    AwakenImagePath = e.AwakenImagePath,
+                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                    Star = e.Star,
+                    StarImagePath = StringConstants.StarImagePath[e.Star],
+                    WeaponType = e.WeaponType,
+                    WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType],
+                    WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType],
+                    SubAffixName = StringConstants.AffixString[e.SubAffix],
+                    NeedMaterialList = []
+                };
                 IEnumerable<MaterialModel> allMaterials = e.LevelUpMaterials.Values.SelectMany(list => list).Select(pair => (MaterialModel)pair.MaterialModel!).Where(_ => true);
                 IEnumerable<MaterialModel> uniqueMaterials = allMaterials.DistinctBy(m => m.Rid).OrderBy(m => m.Rid);
                 foreach (MaterialModel p in uniqueMaterials)
                 {
-                    DungeonDropItemModel thisDropModel = new DungeonDropItemModel();
-                    thisDropModel.MaterialName = p.Name;
-                    thisDropModel.MaterialImagePath = p.ImagePath;
-                    thisDropModel.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star];
+                    DungeonDropItemModel thisDropModel = new DungeonDropItemModel
+                    {
+                        MaterialName = p.Name,
+                        MaterialImagePath = p.ImagePath,
+                        MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star]
+                    };
                     thisDatabase2WeaponModel.NeedMaterialList.Add(thisDropModel);
                 }
 
@@ -85,15 +89,14 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase2WeaponModel.SimpleLevelStatTable.Add(new WeaponLevelStatModel { S1 = "等级", S2 = "攻击力", S3 = StringConstants.AffixString[e.SubAffix] });
                 thisDatabase2WeaponModel.FullLevelStatTable.Clear();
                 thisDatabase2WeaponModel.FullLevelStatTable.Add(new WeaponLevelStatModel { S1 = "等级", S2 = "攻击力", S3 = StringConstants.AffixString[e.SubAffix] });
-                for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
+                foreach (Enumeration.Level thisLevel in SequenceConstants.AllLevels)
                 {
-                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
-                    if (e.MainAffixNumberDictionary.ContainsKey(thisLevel))
+                    if (e.MainAffixNumberDictionary.TryGetValue(thisLevel, out var value))
                     {
                         WeaponLevelStatModel thisWeaponLevelStatModel = new WeaponLevelStatModel
                         {
                             S1 = StringConstants.LevelNumberString[thisLevel],
-                            S2 = e.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
+                            S2 = value.ToString(CultureInfo.InvariantCulture),
                             S3 = e.SubAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture),
                         };
                         if (SequenceConstants.AffixPercentageSymbolList.Contains(e.SubAffix))
@@ -114,8 +117,7 @@ namespace HexereiKatepnha.ViewModels.Database
             }
 
             _selectedWeapon = AllWeaponList[0];
-            WeaponView = CollectionViewSource.GetDefaultView(AllWeaponList);
-            WeaponView.Filter = WeaponsFilter;
+            ApplyFilters();
         }
 
         private bool WeaponsFilter(object item)
@@ -139,11 +141,12 @@ namespace HexereiKatepnha.ViewModels.Database
             return false;
         }
 
-        private void UpdateSelection()
+        private void ApplyFilters()
         {
+            WeaponView = AllWeaponList.Where(WeaponsFilter).ToList();
             if (!WeaponView.Contains(SelectedWeapon))
             {
-                SelectedWeapon = WeaponView.Cast<Database2WeaponModel>().FirstOrDefault()!;
+                SelectedWeapon = WeaponView.FirstOrDefault()!;
             }
         }
 
@@ -159,42 +162,32 @@ namespace HexereiKatepnha.ViewModels.Database
 
         partial void OnWeaponFilterChanged(int value)
         {
-            WeaponView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         partial void OnStarFilterChanged(int value)
         {
-            WeaponView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         [RelayCommand]
         private void ClickOnWeaponFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == WeaponFilter)
-            {
-                WeaponFilter = 0;
-            }
-            else
-            {
-                WeaponFilter = valueInt;
-            }
+            WeaponFilter = valueInt == WeaponFilter ? 0 : valueInt;
         }
 
         [RelayCommand]
         private void ClickOnStarFilter(String value)
         {
             int valueInt = Int32.Parse(value);
-            if (valueInt == StarFilter)
-            {
-                StarFilter = 0;
-            }
-            else
-            {
-                StarFilter = valueInt;
-            }
+            StarFilter = valueInt == StarFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnWeapon(Database2WeaponModel value)
+        {
+            SelectedWeapon = value;
         }
     }
 }

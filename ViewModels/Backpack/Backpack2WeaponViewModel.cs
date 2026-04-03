@@ -1,7 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
+using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
@@ -26,12 +24,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
-        private ObservableCollection<Backpack2WeaponModel> WeaponList { get; }
-        [ObservableProperty] private Backpack2WeaponModel? _selectedWeapon;
+        private ObservableCollection<Backpack2WeaponModel> WeaponList { get; } = [];
+        [ObservableProperty] private Backpack2WeaponModel _selectedWeapon;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
         [ObservableProperty] private bool _isSubExpPopupOpen;
-        public ICollectionView WeaponView { get; }
+        [ObservableProperty] private List<Backpack2WeaponModel> _weaponView = [];
         public string Weapon1ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Sword];
         public string Weapon2ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Claymore];
         public string Weapon3ImagePath { get; set; } = StringConstants.WeaponTypeImagePath[Enumeration.WeaponType.Pole];
@@ -45,14 +43,13 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         private List<AddPanelModel> AddPanelModelList { get; set; } = new();
         [ObservableProperty] private bool _isAddPanelPopupOpen;
-        public ICollectionView AddPanelView { get; }
+        [ObservableProperty] private List<AddPanelModel> _addPanelView = [];
         [ObservableProperty] private int _addWeaponFilter;
         [ObservableProperty] private int _addStarFilter;
 
         public Backpack2WeaponViewModel()
         {
             Dictionary<string, SingleBackpackWeaponConfigModel> currentWeaponConfigList = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap;
-            ObservableCollection<Backpack2WeaponModel> tempWeaponList = new();
             foreach (SingleBackpackWeaponConfigModel cm in currentWeaponConfigList.Values)
             {
                 Backpack2WeaponModel thisBackpack2WeaponModel = new()
@@ -101,26 +98,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 }
 
                 thisBackpack2WeaponModel.Config = cm;
-                tempWeaponList.Add(thisBackpack2WeaponModel);
+                WeaponList.Add(thisBackpack2WeaponModel);
             }
 
-            WeaponList = tempWeaponList;
-            WeaponView = CollectionViewSource.GetDefaultView(WeaponList);
-            WeaponView.Filter = WeaponsFilter;
-            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Star), ListSortDirection.Descending));
-            WeaponView.SortDescriptions.Add(new SortDescription("Config.Level", ListSortDirection.Descending));
-            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Rid), ListSortDirection.Ascending));
-            WeaponView.SortDescriptions.Add(new SortDescription(nameof(Backpack2WeaponModel.Progression), ListSortDirection.Descending));
-            if (WeaponView is ICollectionViewLiveShaping liveView)
-            {
-                liveView.IsLiveSorting = true;
-                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Star));
-                liveView.LiveSortingProperties.Add("Config.Level");
-                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Rid));
-                liveView.LiveSortingProperties.Add(nameof(Backpack2WeaponModel.Progression));
-            }
-
-            SelectedWeapon = WeaponView.Cast<Backpack2WeaponModel>().FirstOrDefault();
+            SelectedWeapon = WeaponList.FirstOrDefault()!;
+            ApplyFilters();
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()
@@ -136,8 +118,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             AddPanelModelList.Sort((w1, w2) => w2.Star.CompareTo(w1.Star));
-            AddPanelView = CollectionViewSource.GetDefaultView(AddPanelModelList);
-            AddPanelView.Filter = AddPanelFilter;
+            ApplyAddPanelFilters();
         }
 
         private bool WeaponsFilter(object item)
@@ -166,30 +147,52 @@ namespace HexereiKatepnha.ViewModels.Backpack
             return isWeapon && isStar;
         }
 
+        private void ApplyFilters()
+        {
+            List<Backpack2WeaponModel> tempList = WeaponList.Where(WeaponsFilter).ToList();
+            tempList.Sort((a, b) =>
+            {
+                int starA = a.Star;
+                int starB = b.Star;
+                if (starA != starB) return starB.CompareTo(starA);
+                int levelA = SequenceConstants.AllLevels.IndexOf(a.Config.Level);
+                int levelB = SequenceConstants.AllLevels.IndexOf(b.Config.Level);
+                if (levelA != levelB) return levelB.CompareTo(levelA);
+                int ridA = a.Rid;
+                int ridB = b.Rid;
+                if (ridA != ridB) return ridA.CompareTo(ridB);
+                int progressionA = a.Progression;
+                int progressionB = b.Progression;
+                if (progressionA != progressionB) return progressionB.CompareTo(progressionA);
+                return string.Compare(a.Id, b.Id, StringComparison.Ordinal);
+            });
+            WeaponView = tempList;
+            if (!WeaponView.Contains(SelectedWeapon))
+            {
+                SelectedWeapon = WeaponView.FirstOrDefault()!;
+            }
+        }
+
+        private void ApplyAddPanelFilters()
+        {
+            List<AddPanelModel> tempList = AddPanelModelList.Where(AddPanelFilter).ToList();
+            AddPanelView = tempList;
+        }
+
         partial void OnSelectedWeaponChanged(Backpack2WeaponModel? value)
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
         }
 
-        private void UpdateSelection()
-        {
-            if (!WeaponView.Contains(SelectedWeapon))
-            {
-                SelectedWeapon = WeaponView.Cast<Backpack2WeaponModel>().FirstOrDefault()!;
-            }
-        }
-
         partial void OnWeaponFilterChanged(int value)
         {
-            WeaponView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         partial void OnStarFilterChanged(int value)
         {
-            WeaponView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         [RelayCommand]
@@ -211,7 +214,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedWeapon!.Config.Level = thisLevel;
+            SelectedWeapon.Config.Level = thisLevel;
             SelectedWeapon.Config.SubExp = 0;
             SelectedWeapon.SubExp = 0;
             SelectedWeapon.LevelNameString = StringConstants.LevelNameString[thisLevel];
@@ -248,13 +251,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             IsLevelPopupOpen = false;
+            ApplyFilters();
         }
 
         private bool CanClickOnLevelSelection(String value)
         {
             if (SelectedWeapon == null) return false;
             int valueInt = Int32.Parse(value) - 1;
-            return AutoCalculateConstants.WeaponMap[SelectedWeapon!.Rid].MainAffixNumberDictionary.ContainsKey(SequenceConstants.AllLevels[valueInt]);
+            return AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].MainAffixNumberDictionary.ContainsKey(SequenceConstants.AllLevels[valueInt]);
         }
 
         [RelayCommand(CanExecute = nameof(CanClickOnLevelGoalSelection))]
@@ -262,7 +266,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedWeapon!.Config.GoalLevel = thisLevel;
+            SelectedWeapon.Config.GoalLevel = thisLevel;
             SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             IsLevelPopupOpen = false;
@@ -272,7 +276,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             if (SelectedWeapon == null) return false;
             int valueInt = Int32.Parse(value) - 1;
-            int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon!.Config.Level);
+            int currentLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon.Config.Level);
             if (!AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].MainAffixNumberDictionary.ContainsKey(SequenceConstants.AllLevels[valueInt])) return false;
             return valueInt >= currentLevel;
         }
@@ -281,11 +285,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnProgressionSelection(String value)
         {
             int valueInt = Int32.Parse(value);
-            SelectedWeapon!.Config.Progression = valueInt;
+            SelectedWeapon.Config.Progression = valueInt;
             App.BackpackWeaponConfigManagerInstance!.UpdateProgression(SelectedWeapon.Id, valueInt);
             SelectedWeapon.Progression = valueInt;
             SelectedWeapon.Description = AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].Progression[valueInt];
             IsProgressionPopupOpen = false;
+            ApplyFilters();
         }
 
         private bool AddPanelFilter(object item)
@@ -316,12 +321,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         partial void OnAddWeaponFilterChanged(int value)
         {
-            AddPanelView.Refresh();
+            ApplyAddPanelFilters();
         }
 
         partial void OnAddStarFilterChanged(int value)
         {
-            AddPanelView.Refresh();
+            ApplyAddPanelFilters();
         }
 
         [RelayCommand]
@@ -390,7 +395,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             thisBackpack2WeaponModel.Config = thisConfig;
             WeaponList.Add(thisBackpack2WeaponModel);
-            SelectedWeapon = WeaponList.FirstOrDefault(w => w.Id == thisConfig.Id);
+            ApplyFilters();
+            SelectedWeapon = WeaponList.FirstOrDefault(w => w.Id == thisConfig.Id)!;
             IsAddPanelPopupOpen = false;
         }
 
@@ -399,7 +405,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             App.BackpackWeaponConfigManagerInstance!.DeleteWeapon(value);
             WeaponList.Remove(WeaponList.First(w => w.Id == value));
-            SelectedWeapon = WeaponView.Cast<Backpack2WeaponModel>().FirstOrDefault();
+            ApplyFilters();
         }
 
         private int GetLevelTotalExp(List<MaterialPairModel> l)
@@ -414,6 +420,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             return res;
+        }
+
+        [RelayCommand]
+        private void ClickOnWeapon(Backpack2WeaponModel value)
+        {
+            SelectedWeapon = value;
         }
     }
 }

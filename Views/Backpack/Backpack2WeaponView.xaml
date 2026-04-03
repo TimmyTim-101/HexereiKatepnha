@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Backpack"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
              d:DataContext="{d:DesignInstance vm:Backpack2WeaponViewModel}"
@@ -10,6 +11,62 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="WeaponCardTemplate" DataType="{x:Type models:Backpack2WeaponModel}">
+            <Button Command="{Binding DataContext.ClickOnWeaponCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Background="Transparent" BorderThickness="0" Margin="2" Padding="0">
+                <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent" Height="174" Width="126">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Image Source="{Binding BackgroundImagePath}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding CharacterImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Image>
+                        </Grid>
+                        <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
+                        </Viewbox>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource MyTextBlock}" Text="{Binding LevelNameString}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCCCCC"></TextBlock>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="R" FontSize="14" Foreground="#333333"></TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Button>
+        </DataTemplate>
+        <DataTemplate x:Key="AddPanelWeaponTemplate" DataType="{x:Type vm:AddPanelModel}">
+            <Button BorderThickness="0" Cursor="Hand" Command="{Binding Tag.ClickOnAddPanelWeaponCommand, RelativeSource={RelativeSource AncestorType={x:Type ui:ItemsRepeater}}}" CommandParameter="{Binding Rid}" Height="102" Width="76" Background="Transparent" Margin="2" Padding="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="White" Background="Transparent">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="{Binding BackgroundImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                        </Grid>
+                        <Viewbox MaxWidth="70" StretchDirection="DownOnly">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5" TextTrimming="CharacterEllipsis" FontSize="12"></TextBlock>
+                        </Viewbox>
+                    </StackPanel>
+                </Border>
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -314,81 +371,25 @@
                                     </Button>
                                 </WrapPanel>
                                 <Border Grid.Row="2" Style="{StaticResource HorizontalDivider}"></Border>
-                                <ListBox Grid.Row="3" Tag="{Binding}" Style="{StaticResource ModernListBox}" ItemsSource="{Binding AddPanelView}" ScrollViewer.CanContentScroll="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.ScrollUnit="Pixel">
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <UniformGrid Columns="6"></UniformGrid>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate DataType="{x:Type vm:AddPanelModel}">
-                                            <Button BorderThickness="0" Cursor="Hand" Margin="2" Command="{Binding Tag.ClickOnAddPanelWeaponCommand, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="{Binding Rid}" Height="102" Width="76">
-                                                <Button.Template>
-                                                    <ControlTemplate TargetType="Button">
-                                                        <Border Background="Transparent">
-                                                            <ContentPresenter />
-                                                        </Border>
-                                                    </ControlTemplate>
-                                                </Button.Template>
-                                                <Border CornerRadius="5" BorderThickness="1" BorderBrush="White">
-                                                    <StackPanel Orientation="Vertical">
-                                                        <Grid>
-                                                            <Image Source="{Binding BackgroundImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
-                                                            <Image Source="{Binding ImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
-                                                        </Grid>
-                                                        <Viewbox MaxWidth="70" StretchDirection="DownOnly">
-                                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5" TextTrimming="CharacterEllipsis" FontSize="12"></TextBlock>
-                                                        </Viewbox>
-                                                    </StackPanel>
-                                                </Border>
-                                            </Button>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
+                                <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" Width="498">
+                                    <ui:ItemsRepeater Tag="{Binding}" ItemsSource="{Binding AddPanelView}" ItemTemplate="{StaticResource AddPanelWeaponTemplate}">
+                                        <ui:ItemsRepeater.Layout>
+                                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                                        </ui:ItemsRepeater.Layout>
+                                    </ui:ItemsRepeater>
+                                </ScrollViewer>
                             </Grid>
                         </Border>
                     </Popup>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ListBox Grid.Row="2" ItemsSource="{Binding WeaponView}" SelectedItem="{Binding SelectedWeapon, Mode=TwoWay}" Style="{StaticResource ModernListBox}" ScrollViewer.CanContentScroll="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.ScrollUnit="Pixel">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate DataType="{x:Type models:Backpack2WeaponModel}">
-                            <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent" Height="174" Width="126">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding CharacterImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Image>
-                                    </Grid>
-                                    <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
-                                    </Viewbox>
-                                    <Grid Grid.Row="2">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Style="{StaticResource MyTextBlock}" Text="{Binding LevelNameString}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCCCCC"></TextBlock>
-                                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="R" FontSize="14" Foreground="#333333"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Progression}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
-                                        </StackPanel>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                    <ui:ItemsRepeater ItemsSource="{Binding WeaponView}" ItemTemplate="{StaticResource WeaponCardTemplate}">
+                        <ui:ItemsRepeater.Layout>
+                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                        </ui:ItemsRepeater.Layout>
+                    </ui:ItemsRepeater>
+                </ScrollViewer>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
@@ -422,7 +423,7 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Image Source="{Binding SelectedWeapon.BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding SelectedWeapon.BackgroundImagePath}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                     <Image Source="{Binding SelectedWeapon.ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                 </Grid>
                                 <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
@@ -624,7 +625,7 @@
                                     <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
                                         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5">
-                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="52" Height="52" Stretch="UniformToFill"></Image>
                                             <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
                                             <Image Source="{Binding SelectedWeapon.CharacterElementImagePath, IsAsync=True}" Width="13" Height="13" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                         </Grid>
@@ -678,7 +679,7 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Image Source="{Binding SelectedWeapon.BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding SelectedWeapon.BackgroundImagePath}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                     <Image Source="{Binding SelectedWeapon.ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                 </Grid>
                                 <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
@@ -733,7 +734,7 @@
                                     <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
                                         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5">
-                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="52" Height="52" Stretch="UniformToFill"></Image>
                                             <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
                                             <Image Source="{Binding SelectedWeapon.CharacterElementImagePath, IsAsync=True}" Width="13" Height="13" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                         </Grid>

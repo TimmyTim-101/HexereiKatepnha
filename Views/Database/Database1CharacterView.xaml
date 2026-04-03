@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database"
              d:DataContext="{d:DesignInstance vm:Database1CharacterViewModel}"
@@ -63,7 +64,7 @@
                             <ItemsControl Grid.Row="4" ItemsSource="{Binding NeedMaterialList}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                        <UniformGrid Columns="4"></UniformGrid>
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
@@ -162,27 +163,43 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <UniformGrid Rows="1"></UniformGrid>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Border BorderThickness="0.5" BorderBrush="#777777">
-                                                        <Viewbox StretchDirection="DownOnly">
-                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" HorizontalAlignment="Center"></TextBlock>
-                                                        </Viewbox>
-                                                    </Border>
-                                                    <DataTemplate.Triggers>
-                                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                                            <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
-                                                        </Trigger>
-                                                    </DataTemplate.Triggers>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
+                                        <UniformGrid Rows="1">
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S2}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S3}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S4}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S5}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S6}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777" Visibility="{Binding HasS7, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S7}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                        </UniformGrid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
@@ -194,27 +211,43 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <ItemsControl ItemsSource="{Binding}" AlternationCount="999">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <UniformGrid Rows="1"></UniformGrid>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Border BorderThickness="0.5" BorderBrush="#777777">
-                                                        <Viewbox StretchDirection="DownOnly">
-                                                            <TextBlock x:Name="CellText" Style="{StaticResource MyTextBlock}" Text="{Binding}" HorizontalAlignment="Center"></TextBlock>
-                                                        </Viewbox>
-                                                    </Border>
-                                                    <DataTemplate.Triggers>
-                                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                                            <Setter TargetName="CellText" Property="Foreground" Value="DarkOrange"></Setter>
-                                                        </Trigger>
-                                                    </DataTemplate.Triggers>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
+                                        <UniformGrid Rows="1">
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S1}" HorizontalAlignment="Center" Foreground="DarkOrange"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S2}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S3}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S4}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S5}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S6}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderThickness="0.5" BorderBrush="#777777" Visibility="{Binding HasS7, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                <Viewbox StretchDirection="DownOnly">
+                                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding S7}" HorizontalAlignment="Center"></TextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                        </UniformGrid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
@@ -222,6 +255,26 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="CharacterCardTemplate" DataType="{x:Type models:Database1CharacterModel}">
+            <Button Command="{Binding DataContext.ClickOnCharacterCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Background="Transparent" BorderThickness="0" Margin="2" Padding="0">
+                <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Background="Transparent" Cursor="Hand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Image Source="{Binding BackgroundImagePath}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ImagePath}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ElementImagePath}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                        </Grid>
+                        <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Border>
+            </Button>
         </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
@@ -475,33 +528,13 @@
                     </Border>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate DataType="{x:Type models:Database1CharacterModel}">
-                            <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
-                                    </Grid>
-                                    <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
-                                    </Viewbox>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                    <ui:ItemsRepeater ItemsSource="{Binding CharacterView}" ItemTemplate="{StaticResource CharacterCardTemplate}" Margin="15,0,0,0">
+                        <ui:ItemsRepeater.Layout>
+                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                        </ui:ItemsRepeater.Layout>
+                    </ui:ItemsRepeater>
+                </ScrollViewer>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <Grid Grid.Column="2">

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Backpack"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Backpack"
              d:DataContext="{d:DesignInstance vm:Backpack1CharacterViewModel}"
@@ -10,6 +11,54 @@
              Background="#FF1E1E1E"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="CharacterCardTemplate" DataType="{x:Type models:Backpack1CharacterModel}">
+            <Button Command="{Binding DataContext.ClickOnCharacterCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Background="Transparent" BorderThickness="0" Margin="2" Padding="0">
+                <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Image Source="{Binding BackgroundImagePath}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ImagePath}" Width="120" Height="120" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ElementImagePath}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                        </Grid>
+                        <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
+                        </Viewbox>
+                        <TextBlock Grid.Row="2" Style="{StaticResource MyTextBlock}" Text="{Binding LevelNameString}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCCCCC"></TextBlock>
+                        <UniformGrid Grid.Row="3" Rows="1">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="A" FontSize="14" Foreground="#333333"></TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentAString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="E" FontSize="14" Foreground="#333333"></TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentEString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="Q" FontSize="14" Foreground="#333333"></TextBlock>
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentQString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
+                            </StackPanel>
+                        </UniformGrid>
+                        <UniformGrid Grid.Row="4" Rows="1">
+                            <Image Source="{Binding AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[1]}"></Image>
+                            <Image Source="{Binding AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[2]}"></Image>
+                            <Image Source="{Binding AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[3]}"></Image>
+                            <Image Source="{Binding AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[4]}"></Image>
+                            <Image Source="{Binding AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[5]}"></Image>
+                            <Image Source="{Binding AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[6]}"></Image>
+                        </UniformGrid>
+                    </Grid>
+                </Border>
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -262,59 +311,13 @@
                     <CheckBox Content="隐藏白板角色" IsChecked="{Binding IsHideLowLevelCharacter}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" Margin="5"></CheckBox>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ListBox Grid.Row="2" ItemsSource="{Binding CharacterView}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}" Style="{StaticResource ModernListBox}">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate DataType="{x:Type models:Backpack1CharacterModel}">
-                            <Border Margin="2" CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
-                                        <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
-                                    </Grid>
-                                    <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
-                                    </Viewbox>
-                                    <TextBlock Grid.Row="2" Style="{StaticResource MyTextBlock}" Text="{Binding LevelNameString}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#CCCCCC"></TextBlock>
-                                    <UniformGrid Grid.Row="3" Rows="1">
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="A" FontSize="14" Foreground="#333333"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentAString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="E" FontSize="14" Foreground="#333333"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentEString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="Q" FontSize="14" Foreground="#333333"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TalentQString}" FontSize="14" Foreground="#CCCCCC"></TextBlock>
-                                        </StackPanel>
-                                    </UniformGrid>
-                                    <UniformGrid Grid.Row="4" Rows="1">
-                                        <Image Source="{Binding AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[1]}"></Image>
-                                        <Image Source="{Binding AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[2]}"></Image>
-                                        <Image Source="{Binding AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[3]}"></Image>
-                                        <Image Source="{Binding AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[4]}"></Image>
-                                        <Image Source="{Binding AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[5]}"></Image>
-                                        <Image Source="{Binding AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[6]}"></Image>
-                                    </UniformGrid>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                    <ui:ItemsRepeater ItemsSource="{Binding CharacterView}" ItemTemplate="{StaticResource CharacterCardTemplate}" Margin="15,0,0,0">
+                        <ui:ItemsRepeater.Layout>
+                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                        </ui:ItemsRepeater.Layout>
+                    </ui:ItemsRepeater>
+                </ScrollViewer>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">
@@ -346,7 +349,7 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Image Source="{Binding SelectedCharacter.BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                    <Image Source="{Binding SelectedCharacter.BackgroundImagePath}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                     <Image Source="{Binding SelectedCharacter.ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
                                     <Image Source="{Binding SelectedCharacter.ElementImagePath, IsAsync=True}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                 </Grid>

@@ -109,7 +109,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         private void UpdateExtraInfo()
         {
-            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart.GetMaterialExtraInfo();
+            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
             foreach (int materialRid in materialExtraInfoMap.Keys)
             {
                 CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[materialRid];

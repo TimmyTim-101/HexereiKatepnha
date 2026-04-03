@@ -1,7 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Globalization;
-using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
@@ -19,9 +17,9 @@ namespace HexereiKatepnha.ViewModels.Database
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
-        public ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = new();
+        private ObservableCollection<Database1CharacterModel> AllCharacterList { get; } = [];
         [ObservableProperty] private Database1CharacterModel _selectedCharacter;
-        public ICollectionView CharacterView { get; }
+        [ObservableProperty] private List<Database1CharacterModel> _characterView = [];
         public string Element1ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Pyro];
         public string Element2ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Hydro];
         public string Element3ImagePath { get; set; } = StringConstants.ElementTypeImagePath[Enumeration.ElementType.Anemo];
@@ -41,20 +39,22 @@ namespace HexereiKatepnha.ViewModels.Database
         {
             foreach (CharacterModel e in AllEntities.AllCharacter)
             {
-                Database1CharacterModel thisDatabase1CharacterModel = new Database1CharacterModel();
-                thisDatabase1CharacterModel.ImagePath = e.ImagePath;
-                thisDatabase1CharacterModel.ElementType = e.ElementType;
-                thisDatabase1CharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType];
-                thisDatabase1CharacterModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                thisDatabase1CharacterModel.Name = e.Name;
-                thisDatabase1CharacterModel.Vid = e.Vid;
-                thisDatabase1CharacterModel.Star = e.Star;
-                thisDatabase1CharacterModel.StarImagePath = StringConstants.StarImagePath[e.Star];
-                thisDatabase1CharacterModel.BirthdayString = "生日：" + e.BirthMonth + " / " + e.BirthDay;
-                thisDatabase1CharacterModel.WeaponType = e.WeaponType;
-                thisDatabase1CharacterModel.WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType];
-                thisDatabase1CharacterModel.WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType];
-                thisDatabase1CharacterModel.NeedMaterialList = [];
+                Database1CharacterModel thisDatabase1CharacterModel = new Database1CharacterModel
+                {
+                    ImagePath = e.ImagePath,
+                    ElementType = e.ElementType,
+                    ElementImagePath = StringConstants.ElementTypeImagePath[e.ElementType],
+                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                    Name = e.Name,
+                    Vid = e.Vid,
+                    Star = e.Star,
+                    StarImagePath = StringConstants.StarImagePath[e.Star],
+                    BirthdayString = "生日：" + e.BirthMonth + " / " + e.BirthDay,
+                    WeaponType = e.WeaponType,
+                    WeaponTypeName = StringConstants.WeaponTypeString[e.WeaponType],
+                    WeaponTypeImagePath = StringConstants.WeaponTypeImagePath[e.WeaponType],
+                    NeedMaterialList = []
+                };
                 IEnumerable<MaterialModel> uniqueMaterials = e.LevelUpMaterials.Values
                     .Concat(e.Talent1Materials.Values)
                     .Concat(e.Talent2Materials.Values)
@@ -66,10 +66,12 @@ namespace HexereiKatepnha.ViewModels.Database
                     .OrderBy(m => m!.Rid)!;
                 foreach (MaterialModel p in uniqueMaterials)
                 {
-                    DungeonDropItemModel thisDropModel = new DungeonDropItemModel();
-                    thisDropModel.MaterialName = p.Name;
-                    thisDropModel.MaterialImagePath = p.ImagePath;
-                    thisDropModel.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star];
+                    DungeonDropItemModel thisDropModel = new DungeonDropItemModel
+                    {
+                        MaterialName = p.Name,
+                        MaterialImagePath = p.ImagePath,
+                        MaterialStarImagePath = StringConstants.StarBackgroundImagePath[p.Star]
+                    };
                     thisDatabase1CharacterModel.NeedMaterialList.Add(thisDropModel);
                 }
 
@@ -105,67 +107,50 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase1CharacterModel.Ascension6ImagePath = e.Ascension[6].ImagePath;
                 thisDatabase1CharacterModel.Ascension6Description = e.Ascension[6].Description;
 
-                List<string> tableBeginning = ["等级", "生命值", "攻击力", "防御力", "暴击率", "暴击伤害"];
+                CharacterStatModel beginningStat = new CharacterStatModel();
+                beginningStat.S1 = "等级";
+                beginningStat.S2 = "生命值";
+                beginningStat.S3 = "攻击力";
+                beginningStat.S4 = "防御力";
+                beginningStat.S5 = "暴击率";
+                beginningStat.S6 = "暴击伤害";
                 foreach (Enumeration.Affix a in e.AffixDictionary[Enumeration.Level.L1].Keys)
                 {
                     if (a != Enumeration.Affix.Health && a != Enumeration.Affix.Attack && a != Enumeration.Affix.Defense && a != Enumeration.Affix.CriticalRate && a != Enumeration.Affix.CriticalDamage)
                     {
-                        tableBeginning.Add(StringConstants.AffixString[a]);
+                        beginningStat.S7 = StringConstants.AffixString[a];
                     }
                 }
 
-                thisDatabase1CharacterModel.SimpleLevelStatTable.Add(tableBeginning);
-                thisDatabase1CharacterModel.FullLevelStatTable.Add(tableBeginning);
-                for (int i = 0; i < SequenceConstants.AllLevels.Count; i++)
+                thisDatabase1CharacterModel.SimpleLevelStatTable.Add(beginningStat);
+                thisDatabase1CharacterModel.FullLevelStatTable.Add(beginningStat);
+                foreach (Enumeration.Level thisLevel in SequenceConstants.AllLevels)
                 {
-                    Enumeration.Level thisLevel = SequenceConstants.AllLevels[i];
-                    if (e.AffixDictionary.ContainsKey(thisLevel))
+                    if (e.AffixDictionary.TryGetValue(thisLevel, out var thisLevelAffixDictionary))
                     {
-                        Dictionary<Enumeration.Affix, double> thisLevelAffixDictionary = e.AffixDictionary[thisLevel];
-                        List<string> thisStatList = [StringConstants.LevelNumberString[thisLevel]];
-                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Health))
+                        CharacterStatModel thisStat = new CharacterStatModel
                         {
-                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Health].ToString(CultureInfo.CurrentCulture));
+                            S1 = StringConstants.LevelNumberString[thisLevel],
+                            S2 = thisLevelAffixDictionary.TryGetValue(Enumeration.Affix.Health, out var value) ? value.ToString(CultureInfo.CurrentCulture) : "0",
+                            S3 = thisLevelAffixDictionary.TryGetValue(Enumeration.Affix.Attack, out var value1) ? value1.ToString(CultureInfo.CurrentCulture) : "0",
+                            S4 = thisLevelAffixDictionary.TryGetValue(Enumeration.Affix.Defense, out var value2) ? value2.ToString(CultureInfo.CurrentCulture) : "0"
+                        };
+                        if (thisLevelAffixDictionary.TryGetValue(Enumeration.Affix.CriticalRate, out var value3))
+                        {
+                            thisStat.S5 = value3.ToString(CultureInfo.CurrentCulture) + "%";
                         }
                         else
                         {
-                            thisStatList.Add("0");
+                            thisStat.S5 = "0%";
                         }
 
-                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Attack))
+                        if (thisLevelAffixDictionary.TryGetValue(Enumeration.Affix.CriticalDamage, out var value4))
                         {
-                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Attack].ToString(CultureInfo.CurrentCulture));
+                            thisStat.S6 = value4.ToString(CultureInfo.CurrentCulture) + "%";
                         }
                         else
                         {
-                            thisStatList.Add("0");
-                        }
-
-                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.Defense))
-                        {
-                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.Defense].ToString(CultureInfo.CurrentCulture));
-                        }
-                        else
-                        {
-                            thisStatList.Add("0");
-                        }
-
-                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.CriticalRate))
-                        {
-                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.CriticalRate].ToString(CultureInfo.CurrentCulture) + "%");
-                        }
-                        else
-                        {
-                            thisStatList.Add("0%");
-                        }
-
-                        if (thisLevelAffixDictionary.ContainsKey(Enumeration.Affix.CriticalDamage))
-                        {
-                            thisStatList.Add(thisLevelAffixDictionary[Enumeration.Affix.CriticalDamage].ToString(CultureInfo.CurrentCulture) + "%");
-                        }
-                        else
-                        {
-                            thisStatList.Add("0%");
+                            thisStat.S6 = "0%";
                         }
 
                         foreach (Enumeration.Affix a in thisLevelAffixDictionary.Keys)
@@ -178,14 +163,14 @@ namespace HexereiKatepnha.ViewModels.Database
                                     thisString += "%";
                                 }
 
-                                thisStatList.Add(thisString);
+                                thisStat.S7 = thisString;
                             }
                         }
 
-                        thisDatabase1CharacterModel.FullLevelStatTable.Add(thisStatList);
+                        thisDatabase1CharacterModel.FullLevelStatTable.Add(thisStat);
                         if (SequenceConstants.ImportantLevels.Contains(thisLevel))
                         {
-                            thisDatabase1CharacterModel.SimpleLevelStatTable.Add(thisStatList);
+                            thisDatabase1CharacterModel.SimpleLevelStatTable.Add(thisStat);
                         }
                     }
                 }
@@ -194,8 +179,7 @@ namespace HexereiKatepnha.ViewModels.Database
             }
 
             _selectedCharacter = AllCharacterList[0];
-            CharacterView = CollectionViewSource.GetDefaultView(AllCharacterList);
-            CharacterView.Filter = CharacterFilter;
+            ApplyFilters();
         }
 
         private bool CharacterFilter(object item)
@@ -237,11 +221,12 @@ namespace HexereiKatepnha.ViewModels.Database
             return false;
         }
 
-        private void UpdateSelection()
+        private void ApplyFilters()
         {
+            CharacterView = AllCharacterList.Where(CharacterFilter).ToList();
             if (!CharacterView.Contains(SelectedCharacter))
             {
-                SelectedCharacter = CharacterView.Cast<Database1CharacterModel>().FirstOrDefault()!;
+                SelectedCharacter = CharacterView.FirstOrDefault()!;
             }
         }
 
@@ -252,20 +237,17 @@ namespace HexereiKatepnha.ViewModels.Database
 
         partial void OnElementFilterChanged(int value)
         {
-            CharacterView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         partial void OnWeaponFilterChanged(int value)
         {
-            CharacterView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         partial void OnStarFilterChanged(int value)
         {
-            CharacterView.Refresh();
-            UpdateSelection();
+            ApplyFilters();
         }
 
         [RelayCommand]
@@ -287,6 +269,12 @@ namespace HexereiKatepnha.ViewModels.Database
         {
             int valueInt = Int32.Parse(value);
             StarFilter = valueInt == StarFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnCharacter(Database1CharacterModel value)
+        {
+            SelectedCharacter = value;
         }
     }
 }

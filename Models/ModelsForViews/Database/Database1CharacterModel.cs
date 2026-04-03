@@ -37,6 +37,18 @@ public class Database1CharacterModel
     public string Ascension6ImagePath { get; set; } = "";
     public string Ascension6Description { get; set; } = "";
 
-    public List<List<string>> SimpleLevelStatTable { get; set; } = [];
-    public List<List<string>> FullLevelStatTable { get; set; } = [];
+    public List<CharacterStatModel> SimpleLevelStatTable { get; set; } = [];
+    public List<CharacterStatModel> FullLevelStatTable { get; set; } = [];
+}
+
+public class CharacterStatModel
+{
+    public string S1 { get; set; } = "";
+    public string S2 { get; set; } = "";
+    public string S3 { get; set; } = "";
+    public string S4 { get; set; } = "";
+    public string S5 { get; set; } = "";
+    public string S6 { get; set; } = "";
+    public string S7 { get; set; } = "";
+    public bool HasS7 => !string.IsNullOrEmpty(S7);
 }

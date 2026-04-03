@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
              d:DataContext="{d:DesignInstance vm:Database4MaterialViewModel}"
@@ -47,6 +48,17 @@
                 </StackPanel>
             </Border>
         </DataTemplate>
+        <DataTemplate x:Key="MaterialGroupTemplate" DataType="{x:Type models:Database4MaterialGroupModel}">
+            <StackPanel>
+                <TextBlock Text="{Binding CategoryName}" Style="{StaticResource MyTextBlock}" Margin="20,15,20,5" />
+                <Border Style="{StaticResource HorizontalDivider}" Margin="0,5" />
+                <ui:ItemsRepeater ItemsSource="{Binding ItemList}" ItemTemplate="{StaticResource MaterialItemTemplate}" Margin="20,0,0,0">
+                    <ui:ItemsRepeater.Layout>
+                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                    </ui:ItemsRepeater.Layout>
+                </ui:ItemsRepeater>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
@@ -56,100 +68,12 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ListBox Grid.Row="2" Style="{StaticResource ModernListBox}">
-            <ListBox.Items>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="基础培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList1}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="角色与武器培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList2}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="角色培养素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList3}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="角色突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList4}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="角色天赋素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList5}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="武器突破素材" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList6}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="地方特产" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                        <ItemsControl ItemsSource="{Binding MaterialList7}" ItemTemplate="{StaticResource MaterialItemTemplate}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" Margin="15,0,0,0"></WrapPanel>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </ListBoxItem>
-            </ListBox.Items>
-        </ListBox>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+            <ui:ItemsRepeater ItemsSource="{Binding AllMaterialGroupList}" ItemTemplate="{StaticResource MaterialGroupTemplate}">
+                <ui:ItemsRepeater.Layout>
+                    <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                </ui:ItemsRepeater.Layout>
+            </ui:ItemsRepeater>
+        </ScrollViewer>
     </Grid>
 </UserControl>

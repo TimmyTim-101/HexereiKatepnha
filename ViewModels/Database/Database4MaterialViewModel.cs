@@ -9,13 +9,7 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public class Database4MaterialViewModel : ObservableObject
     {
-        public ObservableCollection<Database4MaterialModel> MaterialList1 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList2 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList3 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList4 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList5 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList6 { get; } = new();
-        public ObservableCollection<Database4MaterialModel> MaterialList7 { get; } = new();
+        public ObservableCollection<Database4MaterialGroupModel> AllMaterialGroupList { get; set; } = [];
 
         public Database4MaterialViewModel()
         {
@@ -25,29 +19,52 @@ namespace HexereiKatepnha.ViewModels.Database
                 AllEntities.AllMaterialCharacterWeaponEnhancement2, AllEntities.AllMaterialCharacterLevelUp1, AllEntities.AllMaterialCharacterLevelUp2, AllEntities.AllMaterialCharacterAscension,
                 AllEntities.AllMaterialCharacterTalent, AllEntities.AllMaterialWeaponAscension, AllEntities.AllMaterialLocalSpecialty
             ];
-            for (int i = 0; i < sourceList.Count; i++)
+            foreach (List<MaterialModel> l in sourceList)
             {
-                foreach (MaterialModel e in sourceList[i])
+                foreach (MaterialModel e in l)
                 {
-                    Database4MaterialModel thisModel = new Database4MaterialModel();
-                    thisModel.Vid = e.Vid;
-                    thisModel.Name = e.Name;
-                    thisModel.ImagePath = e.ImagePath;
-                    thisModel.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                    thisModel.StarImagePath = StringConstants.StarImagePath[e.Star];
+                    Database4MaterialModel thisModel = new Database4MaterialModel
+                    {
+                        Vid = e.Vid,
+                        Name = e.Name,
+                        ImagePath = e.ImagePath,
+                        BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                        StarImagePath = StringConstants.StarImagePath[e.Star]
+                    };
+                    string thisCategoryName = "";
                     switch (e.MaterialType)
                     {
-                        case Enumeration.MaterialType.Mora: MaterialList1.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterExp: MaterialList1.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: MaterialList2.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: MaterialList2.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterLevelUp1: MaterialList3.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterLevelUp2: MaterialList3.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterAscension: MaterialList4.Add(thisModel); break;
-                        case Enumeration.MaterialType.CharacterTalent: MaterialList5.Add(thisModel); break;
-                        case Enumeration.MaterialType.WeaponAscension: MaterialList6.Add(thisModel); break;
-                        case Enumeration.MaterialType.LocalSpecialty: MaterialList7.Add(thisModel); break;
-                        case Enumeration.MaterialType.WeaponExp: MaterialList1.Add(thisModel); break;
+                        case Enumeration.MaterialType.Mora: thisCategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterExp: thisCategoryName = "基础培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisCategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisCategoryName = "角色与武器培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp1: thisCategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterLevelUp2: thisCategoryName = "角色培养素材"; break;
+                        case Enumeration.MaterialType.CharacterAscension: thisCategoryName = "角色突破素材"; break;
+                        case Enumeration.MaterialType.CharacterTalent: thisCategoryName = "角色天赋素材"; break;
+                        case Enumeration.MaterialType.WeaponAscension: thisCategoryName = "武器突破素材"; break;
+                        case Enumeration.MaterialType.LocalSpecialty: thisCategoryName = "地方特产"; break;
+                        case Enumeration.MaterialType.WeaponExp: thisCategoryName = "基础培养素材"; break;
+                    }
+
+                    bool isNew = true;
+                    foreach (Database4MaterialGroupModel thisGroup in AllMaterialGroupList)
+                    {
+                        if (thisGroup.CategoryName == thisCategoryName)
+                        {
+                            thisGroup.ItemList.Add(thisModel);
+                            isNew = false;
+                        }
+                    }
+
+                    if (isNew)
+                    {
+                        Database4MaterialGroupModel thisGroup = new Database4MaterialGroupModel
+                        {
+                            CategoryName = thisCategoryName
+                        };
+                        thisGroup.ItemList.Add(thisModel);
+                        AllMaterialGroupList.Add(thisGroup);
                     }
                 }
             }
