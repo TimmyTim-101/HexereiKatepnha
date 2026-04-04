@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels.Database"
              d:DataContext="{d:DesignInstance vm:Database5DungeonViewModel}"
              mc:Ignorable="d"
-             Background="#FF1E1E1E"
+             Background="{DynamicResource GlobalBackColor}"
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">

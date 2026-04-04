@@ -7,7 +7,7 @@
              d:DataContext="{d:DesignInstance vm:NavigationViewModel}"
              xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              mc:Ignorable="d"
-             Background="#FF1E1E1E"
+             Background="{DynamicResource GlobalBackColor}"
              d:DesignHeight="1080" d:DesignWidth="200"
              FontFamily="{StaticResource MyFont}">
 

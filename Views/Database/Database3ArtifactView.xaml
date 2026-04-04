@@ -9,7 +9,7 @@
              d:DataContext="{d:DesignInstance vm:Database3ArtifactViewModel}"
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1720"
-             Background="#FF1E1E1E"
+             Background="{DynamicResource GlobalBackColor}"
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="ArtifactEffectTemplate" DataType="{x:Type models:Database3ArtifactEffectModel}">
@@ -99,7 +99,7 @@
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
-                <Expander Margin="20">
+                <Expander Margin="20" ui:ThemeManager.RequestedTheme="Dark">
                     <Expander.Header>
                         <TextBlock Text="圣遗物相关详细信息" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
                     </Expander.Header>
