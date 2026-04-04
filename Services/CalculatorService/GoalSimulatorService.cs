@@ -1043,7 +1043,7 @@ public class GoalSimulatorService
                     {
                         thisModel.TimeString = "";
                         thisModel.ResinString = "";
-                        thisModel.ResinImagePath = "/Resources/Images/empty_item.png";
+                        thisModel.ResinImagePath = StringConstants.EmptyImagePath;
                         thisModel.DayString = "";
                     }
                     else
@@ -1139,7 +1139,7 @@ public class GoalSimulatorService
                         thisModel.Name = thisDungeonModel.Name;
                         thisModel.TimeString = "";
                         thisModel.ResinString = "";
-                        thisModel.ResinImagePath = "/Resources/Images/empty_item.png";
+                        thisModel.ResinImagePath = StringConstants.EmptyImagePath;
                         thisModel.DayString = "";
                         ObservableCollection<CalculatorPlanMaterial> thisDungeonMaterialList = new();
                         foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)

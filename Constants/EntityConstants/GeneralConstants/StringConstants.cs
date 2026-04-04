@@ -62,6 +62,8 @@ public static class StringConstants
         { Enumeration.ElementType.Geo, "/Resources/Images/Element/UI_Buff_Element_Roach.png" },
     };
 
+    public static readonly string EmptyImagePath = "/Resources/Images/empty_item.png";
+
     public static readonly string ResinImagePath = "/Resources/Icons/UI_ItemIcon_106.png";
     public static readonly string MergeResinImagePath = "/Resources/Icons/UI_ItemIcon_211.png";
 

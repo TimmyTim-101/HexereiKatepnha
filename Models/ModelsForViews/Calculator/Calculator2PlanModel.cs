@@ -54,7 +54,7 @@ public partial class CalculatorPlanDungeon : ObservableObject
     public string Name { get; set; } = "";
     [ObservableProperty] private string _timeString = "";
     [ObservableProperty] private string _resinString = "";
-    [ObservableProperty] private string _resinImagePath = "/Resources/Images/empty_item.png";
+    [ObservableProperty] private string _resinImagePath = StringConstants.EmptyImagePath;
     [ObservableProperty] private string _dayString = "";
     [ObservableProperty] private ObservableCollection<CalculatorPlanMaterial> _dungeonMaterialList = new();
     [ObservableProperty] private ObservableCollection<CalculatorPlanItem> _dungeonItemList = new();

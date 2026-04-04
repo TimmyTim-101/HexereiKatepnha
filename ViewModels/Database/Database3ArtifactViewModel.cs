@@ -4,7 +4,6 @@ using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Database;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
@@ -16,38 +15,44 @@ namespace HexereiKatepnha.ViewModels.Database
         {
             foreach (ArtifactSetModel e in AllEntities.AllArtifactSetEntities)
             {
-                Database3ArtifactModel thisDatabase3ArtifactModels = new Database3ArtifactModel();
-                thisDatabase3ArtifactModels.Vid = e.Vid;
-                thisDatabase3ArtifactModels.Name = e.Name;
+                Database3ArtifactModel thisDatabase3ArtifactModels = new Database3ArtifactModel
+                {
+                    Vid = e.Vid,
+                    Name = e.Name
+                };
                 for (int i = 1; i <= 5; i++)
                 {
-                    if (e.PositionNameDict.ContainsKey(i))
+                    Database3ArtifactPositionModel thisPosition = new Database3ArtifactPositionModel();
+                    if (e.PositionNameDict.TryGetValue(i, out var thisName))
                     {
-                        ArtifactTableRowModel thisRow = new ArtifactTableRowModel();
-                        thisRow.ArtifactIconPath = StringConstants.ArtifactIconPath[i];
-                        thisRow.Name = e.PositionNameDict[i];
+                        thisPosition.PositionIconPath = StringConstants.ArtifactIconPath[i];
+                        thisPosition.PositionName = thisName;
                         for (int j = 1; j <= 5; j++)
                         {
                             if (e.RarityList.Contains(j))
                             {
-                                ArtifactImageModel thisImage = new ArtifactImageModel();
-                                thisImage.BackgroundPath = StringConstants.StarBackgroundImagePath[j];
-                                thisImage.ImagePath = e.PositionImagePathDict[i];
-                                thisRow.ImagePathList.Add(thisImage);
+                                Database3ArtifactRarityModel thisRarityModel = new Database3ArtifactRarityModel
+                                {
+                                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[j],
+                                    ImagePath = e.PositionImagePathDict[i]
+                                };
+                                thisPosition.PositionRarityList.Add(thisRarityModel);
                             }
                         }
-
-                        thisDatabase3ArtifactModels.ImageList.Add(thisRow);
                     }
+
+                    thisDatabase3ArtifactModels.PositionList.Add(thisPosition);
                 }
 
                 for (int i = 1; i <= 4; i++)
                 {
-                    if (e.EffectDict.ContainsKey(i))
+                    if (e.EffectDict.TryGetValue(i, out var thisEffectString))
                     {
-                        ArtifactEffectModel thisEffect = new ArtifactEffectModel();
-                        thisEffect.Num = i;
-                        thisEffect.Effect = e.EffectDict[i];
+                        Database3ArtifactEffectModel thisEffect = new Database3ArtifactEffectModel
+                        {
+                            Num = i,
+                            Effect = thisEffectString
+                        };
                         thisDatabase3ArtifactModels.EffectList.Add(thisEffect);
                     }
                 }

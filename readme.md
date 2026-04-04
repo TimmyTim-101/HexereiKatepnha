@@ -27,6 +27,8 @@
 #### 大语言模型相关产品
 * [Gemini](https://gemini.google.com/app)
 * [Antigravity](https://antigravity.google/)
+#### WPF相关库
+* [ModernWpfUI](https://github.com/Kinnara/ModernWpf)
 #### 其它
 * [Studio](https://github.com/RazTools/Studio)
 * [AnimeStudio](https://github.com/Escartem/AnimeStudio)
