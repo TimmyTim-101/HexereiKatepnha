@@ -27,58 +27,54 @@
             </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="DungeonCardTemplate" DataType="{x:Type models:Database5DungeonModel}">
-            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="244">
+            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="290">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="140"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="{Binding ImagePath, IsAsync=True}" Width="244" Stretch="UniformToFill"></Image>
-                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                    <Viewbox Grid.Row="2" MaxWidth="235" StretchDirection="DownOnly" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5" TextTrimming="CharacterEllipsis"></TextBlock>
-                    </Viewbox>
-                    <StackPanel Grid.Row="3" Width="240" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" Visibility="{Binding IsCost,Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Center">
-                            <Grid HorizontalAlignment="Center" Visibility="{Binding IsTimeLimit, Converter={StaticResource BooleanToVisibilityConverter}}" Width="160">
-                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                            </Grid>
-                            <Border Style="{StaticResource VerticalDivider}" Visibility="{Binding IsTimeLimit, Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
-                            <Grid Width="80">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                    <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
-                                </StackPanel>
-                            </Grid>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" ToolTipService.InitialShowDelay="100">
+                            <Grid.ToolTip>
+                                <ToolTip Background="Transparent" BorderThickness="0" Height="250" MaxWidth="500">
+                                    <Image Source="{Binding ImagePath}" Height="250" Stretch="Uniform"></Image>
+                                </ToolTip>
+                            </Grid.ToolTip>
+                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Viewbox MaxWidth="185" StretchDirection="DownOnly" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
+                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                            </Viewbox>
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding IsCost,Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Center" Margin="0,15,0,0">
+                                <Grid HorizontalAlignment="Center" Visibility="{Binding IsTimeLimit, Converter={StaticResource BooleanToVisibilityConverter}}" Width="120">
+                                    <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding TimeString}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Border Style="{StaticResource VerticalDivider}" Visibility="{Binding IsTimeLimit, Converter={StaticResource BooleanToVisibilityConverter}}"></Border>
+                                <Grid Width="60">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Cost}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <Image Source="{Binding ResinImagePath}" Width="20" Height="20" Stretch="UniformToFill"></Image>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <ui:ItemsRepeaterScrollHost Grid.Row="4">
-                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Style="{StaticResource ModernScrollViewer}" Width="236" Height="{Binding DropHeight}" HorizontalAlignment="Center" PreviewMouseWheel="InnerScrollViewerPreviewMouseWheel" Margin="2,0,2,2">
-                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#555555">
-                                <ui:ItemsRepeater ItemsSource="{Binding DropItemList}" ItemTemplate="{StaticResource DungeonDropTemplate}">
-                                    <ui:ItemsRepeater.Layout>
-                                        <ui:UniformGridLayout></ui:UniformGridLayout>
-                                    </ui:ItemsRepeater.Layout>
-                                </ui:ItemsRepeater>
-                            </Border>
-                        </ScrollViewer>
-                    </ui:ItemsRepeaterScrollHost>
+                    </Grid>
+                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                    <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Style="{StaticResource ModernScrollViewer}" PreviewMouseWheel="InnerScrollViewerPreviewMouseWheel">
+                        <ui:ItemsRepeater ItemsSource="{Binding DropItemList}" ItemTemplate="{StaticResource DungeonDropTemplate}">
+                            <ui:ItemsRepeater.Layout>
+                                <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                            </ui:ItemsRepeater.Layout>
+                        </ui:ItemsRepeater>
+                    </ScrollViewer>
                 </Grid>
             </Border>
-        </DataTemplate>
-        <DataTemplate x:Key="DungeonGroupTemplate" DataType="{x:Type models:Database5DungeonGroupModel}">
-            <StackPanel>
-                <TextBlock Text="{Binding CategoryName}" Style="{StaticResource MyTextBlock}" Margin="20,15,20,5" />
-                <Border Style="{StaticResource HorizontalDivider}" Margin="0,5" />
-                <ui:ItemsRepeater ItemsSource="{Binding ItemList}" ItemTemplate="{StaticResource DungeonCardTemplate}" Margin="20,0,0,0">
-                    <ui:ItemsRepeater.Layout>
-                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
-                    </ui:ItemsRepeater.Layout>
-                </ui:ItemsRepeater>
-            </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
@@ -91,9 +87,9 @@
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
         <ui:ItemsRepeaterScrollHost Grid.Row="2">
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-                <ui:ItemsRepeater ItemsSource="{Binding AllDungeonGroupList}" ItemTemplate="{StaticResource DungeonGroupTemplate}">
+                <ui:ItemsRepeater ItemsSource="{Binding AllDungeonList}" ItemTemplate="{StaticResource DungeonCardTemplate}">
                     <ui:ItemsRepeater.Layout>
-                        <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
                     </ui:ItemsRepeater.Layout>
                 </ui:ItemsRepeater>
             </ScrollViewer>

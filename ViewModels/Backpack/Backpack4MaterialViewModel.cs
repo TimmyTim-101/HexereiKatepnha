@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Immutable;
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -13,59 +14,27 @@ namespace HexereiKatepnha.ViewModels.Backpack
 {
     public partial class Backpack4MaterialViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
     {
-        public ObservableCollection<Backpack4MaterialGroupModel> AllMaterialGroupList { get; } = [];
+        public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; } = [];
         private Dictionary<int, Backpack4MaterialModel> MaterialRidMap { get; set; } = new();
 
         public Backpack4MaterialViewModel()
         {
-            foreach (MaterialModel e in AutoCalculateConstants.MaterialMap.Values)
+            foreach (List<MaterialModel> l in AllEntities.AllMaterialLists)
             {
-                Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel
+                foreach (MaterialModel e in l)
                 {
-                    ImagePath = e.ImagePath,
-                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
-                    Name = e.Name,
-                    Rid = e.Rid,
-                    Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid)
-                };
-                string thisCategoryName = "";
-
-                switch (e.MaterialType)
-                {
-                    case Enumeration.MaterialType.Mora: thisCategoryName = "基础培养素材"; break;
-                    case Enumeration.MaterialType.CharacterExp: thisCategoryName = "基础培养素材"; break;
-                    case Enumeration.MaterialType.CharacterWeaponEnhancement1: thisCategoryName = "角色与武器培养素材"; break;
-                    case Enumeration.MaterialType.CharacterWeaponEnhancement2: thisCategoryName = "角色与武器培养素材"; break;
-                    case Enumeration.MaterialType.CharacterLevelUp1: thisCategoryName = "角色培养素材-周本掉落"; break;
-                    case Enumeration.MaterialType.CharacterLevelUp2: thisCategoryName = "角色培养素材-BOSS掉落"; break;
-                    case Enumeration.MaterialType.CharacterAscension: thisCategoryName = "角色突破素材"; break;
-                    case Enumeration.MaterialType.CharacterTalent: thisCategoryName = "角色天赋素材"; break;
-                    case Enumeration.MaterialType.WeaponAscension: thisCategoryName = "武器突破素材"; break;
-                    case Enumeration.MaterialType.LocalSpecialty: thisCategoryName = "地方特产"; break;
-                    case Enumeration.MaterialType.WeaponExp: thisCategoryName = "基础培养素材"; break;
-                }
-
-                bool isNew = true;
-                foreach (Backpack4MaterialGroupModel thisGroup in AllMaterialGroupList)
-                {
-                    if (thisGroup.CategoryName == thisCategoryName)
+                    Backpack4MaterialModel thisBackpack4MaterialModel = new Backpack4MaterialModel
                     {
-                        thisGroup.ItemList.Add(thisBackpack4MaterialModel);
-                        isNew = false;
-                    }
-                }
-
-                if (isNew)
-                {
-                    Backpack4MaterialGroupModel thisGroup = new()
-                    {
-                        CategoryName = thisCategoryName
+                        ImagePath = e.ImagePath,
+                        BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star],
+                        Name = e.Name,
+                        Rid = e.Rid,
+                        Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid)
                     };
-                    thisGroup.ItemList.Add(thisBackpack4MaterialModel);
-                    AllMaterialGroupList.Add(thisGroup);
-                }
 
-                MaterialRidMap[e.Rid] = thisBackpack4MaterialModel;
+                    AllMaterialList.Add(thisBackpack4MaterialModel);
+                    MaterialRidMap[e.Rid] = thisBackpack4MaterialModel;
+                }
             }
 
             UpdateExtraInfo();

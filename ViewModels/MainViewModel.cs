@@ -53,8 +53,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _backpack1CharacterView = new HexereiKatepnha.Views.Backpack.Backpack1CharacterView();
                 _backpack1CharacterView.DataContext = new Backpack1CharacterViewModel();
-                _backpack1CharacterView.Measure(new Size(1706, 1043));
-                _backpack1CharacterView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _backpack1CharacterView.Measure(new Size(1706, 1043));
+                // _backpack1CharacterView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -62,8 +62,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _backpack2WeaponView = new HexereiKatepnha.Views.Backpack.Backpack2WeaponView();
                 _backpack2WeaponView.DataContext = new Backpack2WeaponViewModel();
-                _backpack2WeaponView.Measure(new Size(1706, 1043));
-                _backpack2WeaponView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _backpack2WeaponView.Measure(new Size(1706, 1043));
+                // _backpack2WeaponView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -71,8 +71,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _backpack3ArtifactView = new HexereiKatepnha.Views.Backpack.Backpack3ArtifactView();
                 _backpack3ArtifactView.DataContext = new Backpack3ArtifactViewModel();
-                _backpack3ArtifactView.Measure(new Size(1706, 1043));
-                _backpack3ArtifactView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _backpack3ArtifactView.Measure(new Size(1706, 1043));
+                // _backpack3ArtifactView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -80,8 +80,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _backpack4MaterialView = new HexereiKatepnha.Views.Backpack.Backpack4MaterialView();
                 _backpack4MaterialView.DataContext = new Backpack4MaterialViewModel();
-                _backpack4MaterialView.Measure(new Size(1706, 1043));
-                _backpack4MaterialView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _backpack4MaterialView.Measure(new Size(1706, 1043));
+                // _backpack4MaterialView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -89,8 +89,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator1ScanView = new HexereiKatepnha.Views.Calculator.Calculator1ScanView();
                 _calculator1ScanView.DataContext = new Calculator1ScanViewModel();
-                _calculator1ScanView.Measure(new Size(1706, 1043));
-                _calculator1ScanView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator1ScanView.Measure(new Size(1706, 1043));
+                // _calculator1ScanView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -98,8 +98,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator2PlanView = new HexereiKatepnha.Views.Calculator.Calculator2PlanView();
                 _calculator2PlanView.DataContext = new Calculator2PlanViewModel();
-                _calculator2PlanView.Measure(new Size(1706, 1043));
-                _calculator2PlanView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator2PlanView.Measure(new Size(1706, 1043));
+                // _calculator2PlanView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -107,8 +107,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator3AllView = new HexereiKatepnha.Views.Calculator.Calculator3AllView();
                 _calculator3AllView.DataContext = new Calculator3AllViewModel();
-                _calculator3AllView.Measure(new Size(1706, 1043));
-                _calculator3AllView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator3AllView.Measure(new Size(1706, 1043));
+                // _calculator3AllView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -116,8 +116,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator5PotentialView = new HexereiKatepnha.Views.Calculator.Calculator5PotentialView();
                 _calculator5PotentialView.DataContext = new Calculator5PotentialViewModel();
-                _calculator5PotentialView.Measure(new Size(1706, 1043));
-                _calculator5PotentialView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator5PotentialView.Measure(new Size(1706, 1043));
+                // _calculator5PotentialView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -125,8 +125,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator6MatchView = new HexereiKatepnha.Views.Calculator.Calculator6MatchView();
                 _calculator6MatchView.DataContext = new Calculator6MatchViewModel();
-                _calculator6MatchView.Measure(new Size(1706, 1043));
-                _calculator6MatchView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator6MatchView.Measure(new Size(1706, 1043));
+                // _calculator6MatchView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -134,8 +134,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator7PlanSettingView = new HexereiKatepnha.Views.Calculator.Calculator7PlanSettingView();
                 _calculator7PlanSettingView.DataContext = new Calculator7PlanSettingViewModel();
-                _calculator7PlanSettingView.Measure(new Size(1706, 1043));
-                _calculator7PlanSettingView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator7PlanSettingView.Measure(new Size(1706, 1043));
+                // _calculator7PlanSettingView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -143,8 +143,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _database1CharacterView = new HexereiKatepnha.Views.Database.Database1CharacterView();
                 _database1CharacterView.DataContext = new Database1CharacterViewModel();
-                _database1CharacterView.Measure(new Size(1706, 1043));
-                _database1CharacterView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _database1CharacterView.Measure(new Size(1706, 1043));
+                // _database1CharacterView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -152,8 +152,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _database2WeaponView = new HexereiKatepnha.Views.Database.Database2WeaponView();
                 _database2WeaponView.DataContext = new Database2WeaponViewModel();
-                _database2WeaponView.Measure(new Size(1706, 1043));
-                _database2WeaponView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _database2WeaponView.Measure(new Size(1706, 1043));
+                // _database2WeaponView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -161,8 +161,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _database3ArtifactView = new HexereiKatepnha.Views.Database.Database3ArtifactView();
                 _database3ArtifactView.DataContext = new Database3ArtifactViewModel();
-                _database3ArtifactView.Measure(new Size(1706, 1043));
-                _database3ArtifactView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _database3ArtifactView.Measure(new Size(1706, 1043));
+                // _database3ArtifactView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -170,8 +170,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _database4MaterialView = new HexereiKatepnha.Views.Database.Database4MaterialView();
                 _database4MaterialView.DataContext = new Database4MaterialViewModel();
-                _database4MaterialView.Measure(new Size(1706, 1043));
-                _database4MaterialView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _database4MaterialView.Measure(new Size(1706, 1043));
+                // _database4MaterialView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);
@@ -179,8 +179,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _database5DungeonView = new HexereiKatepnha.Views.Database.Database5DungeonView();
                 _database5DungeonView.DataContext = new Database5DungeonViewModel();
-                _database5DungeonView.Measure(new Size(1706, 1043));
-                _database5DungeonView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _database5DungeonView.Measure(new Size(1706, 1043));
+                // _database5DungeonView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);

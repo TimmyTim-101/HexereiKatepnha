@@ -152,7 +152,13 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
 
     public void UpdateSubExp(int characterId, int subExp)
     {
-        Configuration.CharacterConfig[characterId].SubExp = subExp;
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
+        thisCharacterConfig.SubExp = subExp;
         Save();
         App.RefreshGoalSimulation();
     }

@@ -127,7 +127,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             if (IsHideLowLevelCharacter)
             {
-                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Ascension != 0;
+                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Ascension != 0 || c.SubExp != 0;
                 isNotHide = flag;
             }
 
@@ -142,6 +142,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 int levelA = SequenceConstants.AllLevels.IndexOf(a.CharacterConfigModel.CharacterLevel);
                 int levelB = SequenceConstants.AllLevels.IndexOf(b.CharacterConfigModel.CharacterLevel);
                 if (levelA != levelB) return levelB.CompareTo(levelA);
+                int subExpA = a.SubExp;
+                int subExpB = b.SubExp;
+                if (subExpA != subExpB) return subExpB.CompareTo(subExpA);
                 int starA = a.Rid == 1010037 ? 5 : a.Star;
                 int starB = b.Rid == 1010037 ? 5 : b.Star;
                 if (starA != starB) return starB.CompareTo(starA);

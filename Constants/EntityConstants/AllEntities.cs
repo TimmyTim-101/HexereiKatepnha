@@ -212,9 +212,8 @@ public static class AllEntities
 
     public static readonly List<List<MaterialModel>> AllMaterialLists =
     [
-        AllMaterialMora, AllMaterialCharacterExp, AllMaterialCharacterWeaponEnhancement1, AllMaterialCharacterWeaponEnhancement2, AllMaterialCharacterLevelUp1,
+        AllMaterialMora, AllMaterialCharacterExp, AllMaterialWeaponExp, AllMaterialCharacterWeaponEnhancement1, AllMaterialCharacterWeaponEnhancement2, AllMaterialCharacterLevelUp1,
         AllMaterialCharacterLevelUp2, AllMaterialCharacterAscension, AllMaterialCharacterTalent, AllMaterialWeaponAscension, AllMaterialLocalSpecialty,
-        AllMaterialWeaponExp,
     ];
 
     // 4 - 秘境

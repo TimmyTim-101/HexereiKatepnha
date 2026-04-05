@@ -8,7 +8,7 @@ namespace HexereiKatepnha.ViewModels.Database
 {
     public class Database5DungeonViewModel : ObservableObject
     {
-        public List<Database5DungeonGroupModel> AllDungeonGroupList { get; set; } = [];
+        public List<Database5DungeonModel> AllDungeonList { get; set; } = [];
 
         public Database5DungeonViewModel()
         {
@@ -94,39 +94,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     }
 
                     thisModel.DropItemList = thisDropItemList;
-                    string thisCategoryName = "";
-                    switch (e.DungeonType)
-                    {
-                        case Enumeration.DungeonType.LocalSpecialty: thisCategoryName = "地方特产"; break;
-                        case Enumeration.DungeonType.LeyLineOutcrop: thisCategoryName = "地脉衍出"; break;
-                        case Enumeration.DungeonType.Easy: thisCategoryName = "讨伐 - 普通"; break;
-                        case Enumeration.DungeonType.Elite: thisCategoryName = "讨伐 - 精英"; break;
-                        case Enumeration.DungeonType.Boss: thisCategoryName = "讨伐 - 首领"; break;
-                        case Enumeration.DungeonType.Artifact: thisCategoryName = "秘境·圣遗物"; break;
-                        case Enumeration.DungeonType.WeaponAscension: thisCategoryName = "秘境·武器突破素材"; break;
-                        case Enumeration.DungeonType.CharacterTalent: thisCategoryName = "秘境·天赋突破素材"; break;
-                        case Enumeration.DungeonType.Trounce: thisCategoryName = "征讨领域"; break;
-                    }
-
-                    bool isNew = true;
-                    foreach (Database5DungeonGroupModel thisGroup in AllDungeonGroupList)
-                    {
-                        if (thisGroup.CategoryName == thisCategoryName)
-                        {
-                            thisGroup.ItemList.Add(thisModel);
-                            isNew = false;
-                        }
-                    }
-
-                    if (isNew)
-                    {
-                        Database5DungeonGroupModel thisGroup = new()
-                        {
-                            CategoryName = thisCategoryName
-                        };
-                        thisGroup.ItemList.Add(thisModel);
-                        AllDungeonGroupList.Add(thisGroup);
-                    }
+                    AllDungeonList.Add(thisModel);
                 }
             }
         }

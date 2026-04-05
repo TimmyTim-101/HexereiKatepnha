@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 
@@ -24,10 +23,4 @@ public partial class Backpack4MaterialModel : ObservableObject
     {
         if (value != App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid)) App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
     }
-}
-
-public partial class Backpack4MaterialGroupModel : ObservableObject
-{
-    public string CategoryName { get; set; } = "";
-    [ObservableProperty] private ObservableCollection<Backpack4MaterialModel> _itemList = [];
 }

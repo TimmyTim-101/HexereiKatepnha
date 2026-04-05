@@ -6215,7 +6215,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configs\" />
     <Folder Include="Resources\Icons\ArtifactIcons\" />
     <Folder Include="Resources\Images\Artifacts\" />
     <Folder Include="Resources\Images\Star\" />

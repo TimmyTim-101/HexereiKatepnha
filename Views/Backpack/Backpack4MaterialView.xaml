@@ -26,8 +26,8 @@
                         <Grid.ToolTip>
                             <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
                         </Grid.ToolTip>
-                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
-                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                        <Image Source="{Binding BackgroundImagePath}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                        <Image Source="{Binding ImagePath}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -53,17 +53,6 @@
                 </Grid>
             </Border>
         </DataTemplate>
-        <DataTemplate x:Key="BackpackMaterialGroupTemplate" DataType="{x:Type models:Backpack4MaterialGroupModel}">
-            <StackPanel>
-                <TextBlock Text="{Binding CategoryName}" Style="{StaticResource MyTextBlock}" Margin="20,15,20,5" />
-                <Border Style="{StaticResource HorizontalDivider}" Margin="0,5" />
-                <ui:ItemsRepeater ItemsSource="{Binding ItemList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" Margin="20,0,0,0">
-                    <ui:ItemsRepeater.Layout>
-                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
-                    </ui:ItemsRepeater.Layout>
-                </ui:ItemsRepeater>
-            </StackPanel>
-        </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
@@ -74,10 +63,10 @@
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
         <ui:ItemsRepeaterScrollHost Grid.Row="2">
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-                <ui:ItemsRepeater ItemsSource="{Binding AllMaterialGroupList}" ItemTemplate="{StaticResource BackpackMaterialGroupTemplate}">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Style="{StaticResource ModernScrollViewer}">
+                <ui:ItemsRepeater ItemsSource="{Binding AllMaterialList}" ItemTemplate="{StaticResource BackpackMaterialItemTemplate}" Margin="20,0,0,0">
                     <ui:ItemsRepeater.Layout>
-                        <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                        <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
                     </ui:ItemsRepeater.Layout>
                 </ui:ItemsRepeater>
             </ScrollViewer>

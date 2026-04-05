@@ -2,12 +2,6 @@
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;
 
-public class Database5DungeonGroupModel
-{
-    public string CategoryName { get; set; } = "";
-    public List<Database5DungeonModel> ItemList { get; set; } = [];
-}
-
 public class Database5DungeonModel
 {
     public string Name { get; set; } = "";
