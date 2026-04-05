@@ -50,12 +50,12 @@ public partial class CalculatorPlanMaterialExtraInfo : ObservableObject
 public partial class CalculatorPlanDungeon : ObservableObject
 {
     public int Rid { get; set; }
-    public string CategoryName { get; set; } = "";
     public string Name { get; set; } = "";
     [ObservableProperty] private string _timeString = "";
     [ObservableProperty] private string _resinString = "";
     [ObservableProperty] private string _resinImagePath = StringConstants.EmptyImagePath;
     [ObservableProperty] private string _dayString = "";
+    public bool IsShow => !string.IsNullOrEmpty(TimeString);
     [ObservableProperty] private ObservableCollection<CalculatorPlanMaterial> _dungeonMaterialList = new();
     [ObservableProperty] private ObservableCollection<CalculatorPlanItem> _dungeonItemList = new();
     [ObservableProperty] private bool _isVisible;

@@ -1029,13 +1029,6 @@ public class GoalSimulatorService
                 if (_dungeonNumMap.ContainsKey(thisDungeonModel.Rid))
                 {
                     CalculatorPlanDungeon thisModel = new();
-                    switch (thisDungeonModel.Cost)
-                    {
-                        case 0: thisModel.CategoryName = "不消耗"; break;
-                        case 20: thisModel.CategoryName = "20"; break;
-                        case 40: thisModel.CategoryName = "40"; break;
-                        case 60: thisModel.CategoryName = "60"; break;
-                    }
 
                     thisModel.Name = thisDungeonModel.Name;
                     int thisDungeonTime = _dungeonNumMap.GetValueOrDefault(thisDungeonModel.Rid, 0);
@@ -1128,13 +1121,6 @@ public class GoalSimulatorService
                     if (isAdd)
                     {
                         CalculatorPlanDungeon thisModel = new();
-                        switch (thisDungeonModel.Cost)
-                        {
-                            case 0: thisModel.CategoryName = "不消耗"; break;
-                            case 20: thisModel.CategoryName = "20"; break;
-                            case 40: thisModel.CategoryName = "40"; break;
-                            case 60: thisModel.CategoryName = "60"; break;
-                        }
 
                         thisModel.Name = thisDungeonModel.Name;
                         thisModel.TimeString = "";

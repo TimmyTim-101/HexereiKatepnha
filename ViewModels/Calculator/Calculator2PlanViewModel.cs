@@ -41,7 +41,6 @@ namespace HexereiKatepnha.ViewModels.Calculator
             WeakReferenceMessenger.Default.Register(this);
             InitializeDungeonList();
             DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
-            DungeonView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(CalculatorPlanDungeon.CategoryName)));
         }
 
         private void UpdateRecoveryCountdown()
@@ -208,7 +207,6 @@ namespace HexereiKatepnha.ViewModels.Calculator
                         Rid = m.Rid
                     };
                     int thisDungeonCost = m.Cost;
-                    thisModel.CategoryName = thisDungeonCost == 0 ? "不消耗" : thisDungeonCost.ToString();
                     thisModel.Name = m.Name;
                     ObservableCollection<CalculatorPlanMaterial> materialList = new();
                     foreach (MaterialPairModel mpm in m.DropMaterialList)
