@@ -371,25 +371,29 @@
                                     </Button>
                                 </WrapPanel>
                                 <Border Grid.Row="2" Style="{StaticResource HorizontalDivider}"></Border>
-                                <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" Width="498">
-                                    <ui:ItemsRepeater Tag="{Binding}" ItemsSource="{Binding AddPanelView}" ItemTemplate="{StaticResource AddPanelWeaponTemplate}">
-                                        <ui:ItemsRepeater.Layout>
-                                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
-                                        </ui:ItemsRepeater.Layout>
-                                    </ui:ItemsRepeater>
-                                </ScrollViewer>
+                                <ui:ItemsRepeaterScrollHost Grid.Row="3">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" Width="498">
+                                        <ui:ItemsRepeater Tag="{Binding}" ItemsSource="{Binding AddPanelView}" ItemTemplate="{StaticResource AddPanelWeaponTemplate}">
+                                            <ui:ItemsRepeater.Layout>
+                                                <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                                            </ui:ItemsRepeater.Layout>
+                                        </ui:ItemsRepeater>
+                                    </ScrollViewer>
+                                </ui:ItemsRepeaterScrollHost>
                             </Grid>
                         </Border>
                     </Popup>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-                    <ui:ItemsRepeater ItemsSource="{Binding WeaponView}" ItemTemplate="{StaticResource WeaponCardTemplate}">
-                        <ui:ItemsRepeater.Layout>
-                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
-                        </ui:ItemsRepeater.Layout>
-                    </ui:ItemsRepeater>
-                </ScrollViewer>
+                <ui:ItemsRepeaterScrollHost Grid.Row="2">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                        <ui:ItemsRepeater ItemsSource="{Binding WeaponView}" ItemTemplate="{StaticResource WeaponCardTemplate}">
+                            <ui:ItemsRepeater.Layout>
+                                <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                            </ui:ItemsRepeater.Layout>
+                        </ui:ItemsRepeater>
+                    </ScrollViewer>
+                </ui:ItemsRepeaterScrollHost>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">

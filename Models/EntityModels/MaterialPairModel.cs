@@ -1,4 +1,6 @@
-﻿namespace HexereiKatepnha.Models.EntityModels;
+﻿using HexereiKatepnha.Constants.EntityConstants;
+
+namespace HexereiKatepnha.Models.EntityModels;
 
 public class MaterialPairModel
 {

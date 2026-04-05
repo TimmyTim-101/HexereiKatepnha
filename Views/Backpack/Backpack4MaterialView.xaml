@@ -73,12 +73,14 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="材料" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <ui:ItemsRepeater ItemsSource="{Binding AllMaterialGroupList}" ItemTemplate="{StaticResource BackpackMaterialGroupTemplate}">
-                <ui:ItemsRepeater.Layout>
-                    <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
-                </ui:ItemsRepeater.Layout>
-            </ui:ItemsRepeater>
-        </ScrollViewer>
+        <ui:ItemsRepeaterScrollHost Grid.Row="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                <ui:ItemsRepeater ItemsSource="{Binding AllMaterialGroupList}" ItemTemplate="{StaticResource BackpackMaterialGroupTemplate}">
+                    <ui:ItemsRepeater.Layout>
+                        <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                    </ui:ItemsRepeater.Layout>
+                </ui:ItemsRepeater>
+            </ScrollViewer>
+        </ui:ItemsRepeaterScrollHost>
     </Grid>
 </UserControl>

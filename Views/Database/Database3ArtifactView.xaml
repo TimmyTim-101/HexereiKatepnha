@@ -77,13 +77,15 @@
                         </Grid.ColumnDefinitions>
                         <ItemsControl Grid.Column="0" ItemsSource="{Binding PositionList}" ItemTemplate="{StaticResource ArtifactPositionTemplate}" HorizontalAlignment="Center" VerticalAlignment="Center"></ItemsControl>
                         <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
-                        <ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" HorizontalAlignment="Center" VerticalAlignment="Center" PreviewMouseWheel="InnerScrollViewerPreviewMouseWheel">
-                            <ui:ItemsRepeater ItemsSource="{Binding EffectList}" ItemTemplate="{StaticResource ArtifactEffectTemplate}">
-                                <ui:ItemsRepeater.Layout>
-                                    <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
-                                </ui:ItemsRepeater.Layout>
-                            </ui:ItemsRepeater>
-                        </ScrollViewer>
+                        <ui:ItemsRepeaterScrollHost Grid.Column="2">
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" HorizontalAlignment="Center" VerticalAlignment="Center" PreviewMouseWheel="InnerScrollViewerPreviewMouseWheel">
+                                <ui:ItemsRepeater ItemsSource="{Binding EffectList}" ItemTemplate="{StaticResource ArtifactEffectTemplate}">
+                                    <ui:ItemsRepeater.Layout>
+                                        <ui:StackLayout Orientation="Vertical"></ui:StackLayout>
+                                    </ui:ItemsRepeater.Layout>
+                                </ui:ItemsRepeater>
+                            </ScrollViewer>
+                        </ui:ItemsRepeaterScrollHost>
                     </Grid>
                 </Grid>
             </Border>
@@ -93,28 +95,28 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="圣遗物" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel>
-                <Expander Margin="20" ui:ThemeManager.RequestedTheme="Dark">
-                    <Expander.Header>
-                        <TextBlock Text="圣遗物相关详细信息" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
-                    </Expander.Header>
-                    <StackPanel Orientation="Vertical" Margin="20,5">
-                        <TextBlock Text="具体信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
-                        <Border Style="{StaticResource HorizontalDivider}"></Border>
-                    </StackPanel>
-                </Expander>
+        <Expander Grid.Row="2" Margin="20" ui:ThemeManager.RequestedTheme="Dark" MaxHeight="400">
+            <Expander.Header>
+                <TextBlock Text="圣遗物相关详细信息" Style="{StaticResource MyTextBlock}" Margin="20,0"></TextBlock>
+            </Expander.Header>
+            <StackPanel Orientation="Vertical" Margin="20,5">
+                <TextBlock Text="具体信息" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
+            </StackPanel>
+        </Expander>
+        <ui:ItemsRepeaterScrollHost Grid.Row="3">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
                 <ui:ItemsRepeater ItemsSource="{Binding AllDatabase3ArtifactModelsList}" ItemTemplate="{StaticResource ArtifactCardTemplate}">
                     <ui:ItemsRepeater.Layout>
                         <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
                     </ui:ItemsRepeater.Layout>
                 </ui:ItemsRepeater>
-                <Border Style="{StaticResource HorizontalDivider}"></Border>
-            </StackPanel>
-        </ScrollViewer>
+            </ScrollViewer>
+        </ui:ItemsRepeaterScrollHost>
     </Grid>
 </UserControl>

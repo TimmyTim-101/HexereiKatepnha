@@ -311,13 +311,15 @@
                     <CheckBox Content="隐藏白板角色" IsChecked="{Binding IsHideLowLevelCharacter}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" Margin="5"></CheckBox>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-                    <ui:ItemsRepeater ItemsSource="{Binding CharacterView}" ItemTemplate="{StaticResource CharacterCardTemplate}" Margin="15,0,0,0">
-                        <ui:ItemsRepeater.Layout>
-                            <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
-                        </ui:ItemsRepeater.Layout>
-                    </ui:ItemsRepeater>
-                </ScrollViewer>
+                <ui:ItemsRepeaterScrollHost Grid.Row="2">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+                        <ui:ItemsRepeater ItemsSource="{Binding CharacterView}" ItemTemplate="{StaticResource CharacterCardTemplate}" Margin="15,0,0,0">
+                            <ui:ItemsRepeater.Layout>
+                                <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                            </ui:ItemsRepeater.Layout>
+                        </ui:ItemsRepeater>
+                    </ScrollViewer>
+                </ui:ItemsRepeaterScrollHost>
             </Grid>
             <Border Grid.Column="1" Style="{StaticResource VerticalDivider}"></Border>
             <TabControl Grid.Column="2" ItemContainerStyle="{StaticResource ModernTabItemStyle}" Width="441">

@@ -1,24 +1,14 @@
-﻿using System.Collections.ObjectModel;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Database;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
     public class Database5DungeonViewModel : ObservableObject
     {
-        public ObservableCollection<Database5DungeonModel> List1 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List2 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List3 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List4 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List5 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List6 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List7 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List8 { get; } = new();
-        public ObservableCollection<Database5DungeonModel> List9 { get; } = new();
+        public List<Database5DungeonGroupModel> AllDungeonGroupList { get; set; } = [];
 
         public Database5DungeonViewModel()
         {
@@ -28,18 +18,37 @@ namespace HexereiKatepnha.ViewModels.Database
                 AllEntities.AllDungeonBoss, AllEntities.AllDungeonArtifact, AllEntities.AllDungeonWeaponAscension, AllEntities.AllDungeonCharacterTalent,
                 AllEntities.AllDungeonTrounce
             ];
-            List<ObservableCollection<Database5DungeonModel>> destinationList = [List1, List2, List3, List4, List5, List6, List7, List8, List9];
-            for (int i = 0; i < sourceList.Count; i++)
+            foreach (List<DungeonModel> l in sourceList)
             {
-                foreach (DungeonModel e in sourceList[i])
+                foreach (DungeonModel e in l)
                 {
-                    Database5DungeonModel thisModel = new Database5DungeonModel();
-                    thisModel.Name = e.Name;
-                    thisModel.ImagePath = e.ImagePath;
-                    thisModel.Cost = e.Cost;
-                    thisModel.TimeString = StringConstants.DungeonTimeString[e.Time];
+                    Database5DungeonModel thisModel = new Database5DungeonModel
+                    {
+                        Name = e.Name,
+                        ImagePath = e.ImagePath,
+                        Cost = e.Cost,
+                        TimeString = StringConstants.DungeonTimeString[e.Time],
+                        IsTimeLimit = e.Time != 0
+                    };
                     List<DungeonDropItemModel> thisDropItemList = new List<DungeonDropItemModel>();
-                    foreach (MaterialPairModel ipm in e.DropMaterialList)
+                    List<MaterialPairModel> tempList = new(e.DropMaterialList);
+                    tempList.Sort((a, b) =>
+                    {
+                        if (a.MaterialModel!.EntityType == Enumeration.EntityType.Material && b.MaterialModel!.EntityType == Enumeration.EntityType.Material)
+                        {
+                            MaterialModel modelA = (MaterialModel)a.MaterialModel;
+                            MaterialModel modelB = (MaterialModel)b.MaterialModel;
+                            if (modelA.MaterialType == Enumeration.MaterialType.CharacterAscension && modelB.MaterialType == Enumeration.MaterialType.CharacterAscension)
+                            {
+                                int starA = modelA.Star;
+                                int starB = modelB.Star;
+                                if (starA != starB) return starB.CompareTo(starA);
+                            }
+                        }
+
+                        return e.DropMaterialList.IndexOf(a).CompareTo(e.DropMaterialList.IndexOf(b));
+                    });
+                    foreach (MaterialPairModel ipm in tempList)
                     {
                         DungeonDropItemModel thisDropItem = new DungeonDropItemModel();
                         BaseEntityModel? thisMaterial = ipm.MaterialModel;
@@ -48,9 +57,11 @@ namespace HexereiKatepnha.ViewModels.Database
                             ArtifactSetModel asm = (ArtifactSetModel)thisMaterial;
                             for (int j = 1; j <= 5; j++)
                             {
-                                if (asm.PositionImagePathDict.ContainsKey(j))
+                                if (asm.PositionImagePathDict.TryGetValue(j, out var thisImagePath))
                                 {
-                                    thisDropItem.MaterialImagePath = asm.PositionImagePathDict[j];
+                                    thisDropItem.MaterialImagePath = thisImagePath;
+                                    thisDropItem.IsShow = false;
+                                    thisModel.DropHeight = 110;
                                     break;
                                 }
                             }
@@ -60,6 +71,8 @@ namespace HexereiKatepnha.ViewModels.Database
                                 if (asm.RarityList.Contains(j))
                                 {
                                     thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[j];
+                                    thisDropItem.IsShow = false;
+                                    thisModel.DropHeight = 110;
                                     break;
                                 }
                             }
@@ -68,6 +81,11 @@ namespace HexereiKatepnha.ViewModels.Database
                         {
                             thisDropItem.MaterialImagePath = thisMaterial.ImagePath;
                             thisDropItem.MaterialStarImagePath = StringConstants.StarBackgroundImagePath[thisMaterial.Star];
+                            if (e.Cost == 0)
+                            {
+                                thisDropItem.IsShow = false;
+                                thisModel.DropHeight = 110;
+                            }
                         }
 
                         thisDropItem.MaterialName = thisMaterial.Name;
@@ -76,7 +94,39 @@ namespace HexereiKatepnha.ViewModels.Database
                     }
 
                     thisModel.DropItemList = thisDropItemList;
-                    destinationList[i].Add(thisModel);
+                    string thisCategoryName = "";
+                    switch (e.DungeonType)
+                    {
+                        case Enumeration.DungeonType.LocalSpecialty: thisCategoryName = "地方特产"; break;
+                        case Enumeration.DungeonType.LeyLineOutcrop: thisCategoryName = "地脉衍出"; break;
+                        case Enumeration.DungeonType.Easy: thisCategoryName = "讨伐 - 普通"; break;
+                        case Enumeration.DungeonType.Elite: thisCategoryName = "讨伐 - 精英"; break;
+                        case Enumeration.DungeonType.Boss: thisCategoryName = "讨伐 - 首领"; break;
+                        case Enumeration.DungeonType.Artifact: thisCategoryName = "秘境·圣遗物"; break;
+                        case Enumeration.DungeonType.WeaponAscension: thisCategoryName = "秘境·武器突破素材"; break;
+                        case Enumeration.DungeonType.CharacterTalent: thisCategoryName = "秘境·天赋突破素材"; break;
+                        case Enumeration.DungeonType.Trounce: thisCategoryName = "征讨领域"; break;
+                    }
+
+                    bool isNew = true;
+                    foreach (Database5DungeonGroupModel thisGroup in AllDungeonGroupList)
+                    {
+                        if (thisGroup.CategoryName == thisCategoryName)
+                        {
+                            thisGroup.ItemList.Add(thisModel);
+                            isNew = false;
+                        }
+                    }
+
+                    if (isNew)
+                    {
+                        Database5DungeonGroupModel thisGroup = new()
+                        {
+                            CategoryName = thisCategoryName
+                        };
+                        thisGroup.ItemList.Add(thisModel);
+                        AllDungeonGroupList.Add(thisGroup);
+                    }
                 }
             }
         }
