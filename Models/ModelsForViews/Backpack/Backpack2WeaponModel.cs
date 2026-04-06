@@ -22,10 +22,15 @@ public partial class Backpack2WeaponModel : ObservableObject
     [ObservableProperty] private string _levelNameString = StringConstants.LevelNameString[Enumeration.Level.L1];
     [ObservableProperty] private string _levelGoalNumberString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _description = "";
-    [ObservableProperty] private string _characterName = "";
+
+    [ObservableProperty] [NotifyPropertyChangedFor(nameof(IsCharacter))] [NotifyPropertyChangedFor(nameof(IsEmptyCharacter))]
+    private string _characterName = "";
+
     [ObservableProperty] private string _characterImagePath = StringConstants.EmptyImagePath;
     [ObservableProperty] private string _characterBackgroundImagePath = StringConstants.EmptyImagePath;
     [ObservableProperty] private string _characterElementImagePath = StringConstants.EmptyImagePath;
+    public bool IsCharacter => !String.IsNullOrEmpty(CharacterName);
+    public bool IsEmptyCharacter => String.IsNullOrEmpty(CharacterName);
     [ObservableProperty] private SingleBackpackWeaponConfigModel _config = new();
     [ObservableProperty] private int _subExp;
     [ObservableProperty] private int _levelTotalExp = 1;

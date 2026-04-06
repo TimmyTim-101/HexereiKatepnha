@@ -69,4 +69,10 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         App.RefreshGoalSimulation();
     }
+
+    public void UpdateCharacter(string weaponId, int characterRid)
+    {
+        Configuration.WeaponConfigMap[weaponId].CharacterRid = characterRid;
+        Save();
+    }
 }

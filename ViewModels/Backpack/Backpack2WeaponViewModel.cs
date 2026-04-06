@@ -20,6 +20,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public int Rid { get; init; }
     }
 
+    public class SelectCharacterPanelModel
+    {
+        public string BackgroundImagePath { get; init; } = "";
+        public string ImagePath { get; set; } = "";
+        public string Name { get; set; } = "";
+        public Enumeration.WeaponType WeaponType { get; init; } = Enumeration.WeaponType.Unknown;
+        public int Star { get; init; }
+        public int Rid { get; init; }
+    }
+
     public partial class Backpack2WeaponViewModel : ObservableObject
     {
         [ObservableProperty] private int _weaponFilter;
@@ -46,6 +56,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private List<AddPanelModel> _addPanelView = [];
         [ObservableProperty] private int _addWeaponFilter;
         [ObservableProperty] private int _addStarFilter;
+
+        [ObservableProperty] private bool _isSelectCharacterPopupOpen;
+        [ObservableProperty] private bool _isSelectCharacterWithCharacterPopupOpen;
+        private List<SelectCharacterPanelModel> SelectCharacterPanelModelList { get; set; } = new();
+        [ObservableProperty] private List<SelectCharacterPanelModel> _selectCharacterPanelView = [];
+        [ObservableProperty] private int _selectCharacterStarFilter;
 
         public Backpack2WeaponViewModel()
         {
@@ -117,8 +133,37 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 AddPanelModelList.Add(thisAddPanelModel);
             }
 
-            AddPanelModelList.Sort((w1, w2) => w2.Star.CompareTo(w1.Star));
+            AddPanelModelList.Sort((a, b) =>
+            {
+                int starA = a.Star;
+                int starB = b.Star;
+                if (starA != starB) return starB.CompareTo(starA);
+                return b.Rid.CompareTo(a.Rid);
+            });
             ApplyAddPanelFilters();
+
+            foreach (CharacterModel cm in AllEntities.AllCharacter)
+            {
+                SelectCharacterPanelModel thisSelectCharacterPanelModel = new()
+                {
+                    BackgroundImagePath = StringConstants.StarBackgroundImagePath[cm.Star],
+                    ImagePath = cm.ImagePath,
+                    Name = cm.Name,
+                    WeaponType = cm.WeaponType,
+                    Star = cm.Star,
+                    Rid = cm.Rid
+                };
+                SelectCharacterPanelModelList.Add(thisSelectCharacterPanelModel);
+            }
+
+            SelectCharacterPanelModelList.Sort((a, b) =>
+            {
+                int starA = a.Star;
+                int starB = b.Star;
+                if (starA != starB) return starB.CompareTo(starA);
+                return b.Rid.CompareTo(a.Rid);
+            });
+            ApplySelectCharacterFilters();
         }
 
         private bool WeaponsFilter(object item)
@@ -183,6 +228,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
+            ApplySelectCharacterFilters();
         }
 
         partial void OnWeaponFilterChanged(int value)
@@ -426,6 +472,84 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnWeapon(Backpack2WeaponModel value)
         {
             SelectedWeapon = value;
+        }
+
+        private bool SelectCharacterFilter(object item)
+        {
+            if (item is not SelectCharacterPanelModel m) return false;
+            bool isWeapon = true;
+            bool isStar = true;
+            if (SelectedWeapon != null)
+            {
+                isWeapon = m.WeaponType == SelectedWeapon.WeaponType;
+            }
+
+            switch (SelectCharacterStarFilter)
+            {
+                case 4: isStar = m.Star == 4; break;
+                case 5: isStar = m.Star >= 5; break;
+            }
+
+            return isWeapon && isStar;
+        }
+
+        partial void OnSelectCharacterStarFilterChanged(int value)
+        {
+            ApplySelectCharacterFilters();
+        }
+
+        private void ApplySelectCharacterFilters()
+        {
+            SelectCharacterPanelView = SelectCharacterPanelModelList.Where(SelectCharacterFilter).ToList();
+        }
+
+        [RelayCommand]
+        private void ClickOnSelectCharacterStarFilter(String value)
+        {
+            int valueInt = Int32.Parse(value);
+            SelectCharacterStarFilter = valueInt == SelectCharacterStarFilter ? 0 : valueInt;
+        }
+
+        [RelayCommand]
+        private void ClickOnEraseSelectCharacter(string value)
+        {
+            SelectedWeapon.CharacterBackgroundImagePath = StringConstants.EmptyImagePath;
+            SelectedWeapon.CharacterElementImagePath = StringConstants.EmptyImagePath;
+            SelectedWeapon.CharacterImagePath = StringConstants.EmptyImagePath;
+            SelectedWeapon.CharacterName = "";
+            App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(value, 0);
+            IsSelectCharacterPopupOpen = false;
+            IsSelectCharacterWithCharacterPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnSelectCharacter(int value)
+        {
+            int thisCharacterRid = value;
+            CharacterModel thisCharacter = AutoCalculateConstants.CharacterMap[thisCharacterRid];
+            // 遍历所有武器看是否已有武器分配给这个角色
+            foreach (Backpack2WeaponModel wm in WeaponList)
+            {
+                if (wm.Config.CharacterRid == thisCharacterRid)
+                {
+                    // 如果有，进行交换
+                    wm.CharacterName = SelectedWeapon.CharacterName;
+                    wm.CharacterBackgroundImagePath = SelectedWeapon.CharacterBackgroundImagePath;
+                    wm.CharacterElementImagePath = SelectedWeapon.CharacterElementImagePath;
+                    wm.CharacterImagePath = SelectedWeapon.CharacterImagePath;
+                    App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(wm.Id, SelectedWeapon.Config.CharacterRid);
+                    break;
+                }
+            }
+
+            SelectedWeapon.CharacterName = thisCharacter.Name;
+            SelectedWeapon.CharacterBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisCharacter.Star];
+            SelectedWeapon.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacter.ElementType];
+            SelectedWeapon.CharacterImagePath = thisCharacter.ImagePath;
+            App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(SelectedWeapon.Id, thisCharacterRid);
+            // todo 角色配置也相应改变
+            IsSelectCharacterPopupOpen = false;
+            IsSelectCharacterWithCharacterPopupOpen = false;
         }
     }
 }

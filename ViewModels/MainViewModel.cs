@@ -107,8 +107,8 @@ namespace HexereiKatepnha.ViewModels
             {
                 _calculator3AllView = new HexereiKatepnha.Views.Calculator.Calculator3AllView();
                 _calculator3AllView.DataContext = new Calculator3AllViewModel();
-                _calculator3AllView.Measure(new Size(1706, 1043));
-                _calculator3AllView.Arrange(new Rect(0, 0, 1706, 1043));
+                // _calculator3AllView.Measure(new Size(1706, 1043));
+                // _calculator3AllView.Arrange(new Rect(0, 0, 1706, 1043));
             }
 
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.ApplicationIdle);

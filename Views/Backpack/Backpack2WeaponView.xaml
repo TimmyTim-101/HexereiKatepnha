@@ -66,6 +66,28 @@
                 </Border>
             </Button>
         </DataTemplate>
+        <DataTemplate x:Key="SelectCharacterPanelTemplate" DataType="{x:Type vm:SelectCharacterPanelModel}">
+            <Button BorderThickness="0" Cursor="Hand" Command="{Binding Tag.ClickOnSelectCharacterCommand, RelativeSource={RelativeSource AncestorType={x:Type ui:ItemsRepeater}}}" CommandParameter="{Binding Rid}" Height="102" Width="76" Background="Transparent" Margin="2" Padding="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="White" Background="Transparent">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="{Binding BackgroundImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                            <Image Source="{Binding ImagePath}" Height="70" Width="70" Stretch="UniformToFill"></Image>
+                        </Grid>
+                        <Viewbox MaxWidth="70" StretchDirection="DownOnly">
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5" TextTrimming="CharacterEllipsis" FontSize="12"></TextBlock>
+                        </Viewbox>
+                    </StackPanel>
+                </Border>
+            </Button>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid Background="{DynamicResource GlobalBackColor}">
         <Grid.RowDefinitions>
@@ -385,7 +407,7 @@
                     </Popup>
                 </WrapPanel>
                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                <ui:ItemsRepeaterScrollHost Grid.Row="2">
+                <ui:ItemsRepeaterScrollHost Grid.Row="2" Margin="15,0,0,0">
                     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
                         <ui:ItemsRepeater ItemsSource="{Binding WeaponView}" ItemTemplate="{StaticResource WeaponCardTemplate}">
                             <ui:ItemsRepeater.Layout>
@@ -440,7 +462,7 @@
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>
                                         <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="60"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Image Source="{Binding SelectedWeapon.WeaponTypeImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5"></Image>
@@ -627,13 +649,128 @@
                                         </Border>
                                     </Popup>
                                     <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
-                                    <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
-                                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5">
-                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="52" Height="52" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding SelectedWeapon.CharacterElementImagePath, IsAsync=True}" Width="13" Height="13" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
-                                        </Grid>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.CharacterName}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                    <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" Visibility="{Binding SelectedWeapon.IsCharacter, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <ToggleButton x:Name="SelectCharacterToggleButtonWithCharacter" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsSelectCharacterWithCharacterPopupOpen, Mode=TwoWay}">
+                                            <ToggleButton.Template>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="Transparent">
+                                                        <ContentPresenter></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </ToggleButton.Template>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5">
+                                                    <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="50" Height="50" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding SelectedWeapon.CharacterElementImagePath, IsAsync=True}" Width="13" Height="13" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                                </Grid>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.CharacterName}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                            </StackPanel>
+                                        </ToggleButton>
+                                        <Popup IsOpen="{Binding IsSelectCharacterWithCharacterPopupOpen}" PlacementTarget="{Binding ElementName=SelectCharacterToggleButtonWithCharacter}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" MaxHeight="500">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                                            <Button Command="{Binding ClickOnSelectCharacterStarFilterCommand}" CommandParameter="4" Margin="2">
+                                                                <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="45" Height="12" Margin="5,16"></Image>
+                                                                <Button.Style>
+                                                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger Binding="{Binding SelectCharacterStarFilter}" Value="4">
+                                                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Button.Style>
+                                                            </Button>
+                                                            <Button Command="{Binding ClickOnSelectCharacterStarFilterCommand}" CommandParameter="5" Margin="2">
+                                                                <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="45" Height="12" Margin="5,16"></Image>
+                                                                <Button.Style>
+                                                                    <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger Binding="{Binding SelectCharacterStarFilter}" Value="5">
+                                                                                <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Button.Style>
+                                                            </Button>
+                                                        </StackPanel>
+                                                        <Button Grid.Column="1" Style="{StaticResource FunctionButton}" Content="清除" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="10" Command="{Binding ClickOnEraseSelectCharacterCommand}" CommandParameter="{Binding SelectedWeapon.Id}"></Button>
+                                                    </Grid>
+                                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                                    <ui:ItemsRepeaterScrollHost Grid.Row="2">
+                                                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" Width="498">
+                                                            <ui:ItemsRepeater Tag="{Binding}" ItemsSource="{Binding SelectCharacterPanelView}" ItemTemplate="{StaticResource SelectCharacterPanelTemplate}">
+                                                                <ui:ItemsRepeater.Layout>
+                                                                    <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                                                                </ui:ItemsRepeater.Layout>
+                                                            </ui:ItemsRepeater>
+                                                        </ScrollViewer>
+                                                    </ui:ItemsRepeaterScrollHost>
+                                                </Grid>
+                                            </Border>
+                                        </Popup>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" Visibility="{Binding SelectedWeapon.IsEmptyCharacter, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <ToggleButton x:Name="SelectCharacterToggleButton" Style="{StaticResource FunctionToggleButton}" Content="分配角色" Margin="10" IsChecked="{Binding IsSelectCharacterPopupOpen, Mode=TwoWay}"></ToggleButton>
+                                        <Popup IsOpen="{Binding IsSelectCharacterPopupOpen}" PlacementTarget="{Binding ElementName=SelectCharacterToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" MaxHeight="500">
+                                            <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                                        <Button Command="{Binding ClickOnSelectCharacterStarFilterCommand}" CommandParameter="4" Margin="2">
+                                                            <Image Source="{Binding Star4ImagePath}" Stretch="Uniform" Width="45" Height="12" Margin="5,16"></Image>
+                                                            <Button.Style>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding SelectCharacterStarFilter}" Value="4">
+                                                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Button.Style>
+                                                        </Button>
+                                                        <Button Command="{Binding ClickOnSelectCharacterStarFilterCommand}" CommandParameter="5" Margin="2">
+                                                            <Image Source="{Binding Star5ImagePath}" Stretch="Uniform" Width="45" Height="12" Margin="5,16"></Image>
+                                                            <Button.Style>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource ImageButton}">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding SelectCharacterStarFilter}" Value="5">
+                                                                            <Setter Property="Background" Value="{DynamicResource GlobalSelectedColor}"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Button.Style>
+                                                        </Button>
+                                                    </StackPanel>
+                                                    <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                                    <ui:ItemsRepeaterScrollHost Grid.Row="2">
+                                                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}" Width="498">
+                                                            <ui:ItemsRepeater Tag="{Binding}" ItemsSource="{Binding SelectCharacterPanelView}" ItemTemplate="{StaticResource SelectCharacterPanelTemplate}">
+                                                                <ui:ItemsRepeater.Layout>
+                                                                    <ui:UniformGridLayout Orientation="Horizontal"></ui:UniformGridLayout>
+                                                                </ui:ItemsRepeater.Layout>
+                                                            </ui:ItemsRepeater>
+                                                        </ScrollViewer>
+                                                    </ui:ItemsRepeaterScrollHost>
+                                                </Grid>
+                                            </Border>
+                                        </Popup>
                                     </StackPanel>
                                 </Grid>
                             </Grid>
