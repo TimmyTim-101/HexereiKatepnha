@@ -101,7 +101,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 {
                     thisBackpack2WeaponModel.AffixStringList[0].Add(StringConstants.AffixString[thisWeaponModel.SubAffix]);
                     thisBackpack2WeaponModel.AffixStringList[1].Add(":");
-                    thisBackpack2WeaponModel.AffixStringList[2].Add(thisWeaponModel.SubAffixNumberDictionary[cm.Level] + ((SequenceConstants.AffixPercentageSymbolList.Contains(thisWeaponModel.SubAffix)) ? "%" : ""));
+                    thisBackpack2WeaponModel.AffixStringList[2].Add(thisWeaponModel.SubAffixNumberDictionary[cm.Level] + (SequenceConstants.AffixPercentageSymbolList.Contains(thisWeaponModel.SubAffix) ? "%" : ""));
                 }
 
                 if (cm.CharacterRid != 0)
@@ -203,6 +203,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 int levelA = SequenceConstants.AllLevels.IndexOf(a.Config.Level);
                 int levelB = SequenceConstants.AllLevels.IndexOf(b.Config.Level);
                 if (levelA != levelB) return levelB.CompareTo(levelA);
+                int subExpA = a.SubExp;
+                int subExpB = b.SubExp;
+                if (subExpA != subExpB) return subExpB.CompareTo(subExpA);
                 int ridA = a.Rid;
                 int ridB = b.Rid;
                 if (ridA != ridB) return ridA.CompareTo(ridB);
@@ -517,7 +520,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedWeapon.CharacterElementImagePath = StringConstants.EmptyImagePath;
             SelectedWeapon.CharacterImagePath = StringConstants.EmptyImagePath;
             SelectedWeapon.CharacterName = "";
+            int oldCharacterId = SelectedWeapon.Config.CharacterRid;
             App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(value, 0);
+            App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, "");
             IsSelectCharacterPopupOpen = false;
             IsSelectCharacterWithCharacterPopupOpen = false;
         }
@@ -527,6 +532,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int thisCharacterRid = value;
             CharacterModel thisCharacter = AutoCalculateConstants.CharacterMap[thisCharacterRid];
+            int oldCharacterId = SelectedWeapon.Config.CharacterRid;
+            App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, "");
             // 遍历所有武器看是否已有武器分配给这个角色
             foreach (Backpack2WeaponModel wm in WeaponList)
             {
@@ -537,7 +544,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     wm.CharacterBackgroundImagePath = SelectedWeapon.CharacterBackgroundImagePath;
                     wm.CharacterElementImagePath = SelectedWeapon.CharacterElementImagePath;
                     wm.CharacterImagePath = SelectedWeapon.CharacterImagePath;
-                    App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(wm.Id, SelectedWeapon.Config.CharacterRid);
+                    App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(wm.Id, oldCharacterId);
+                    App.BackpackCharacterConfigManagerInstance.UpdateWeapon(oldCharacterId, wm.Id);
                     break;
                 }
             }
@@ -547,7 +555,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedWeapon.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacter.ElementType];
             SelectedWeapon.CharacterImagePath = thisCharacter.ImagePath;
             App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(SelectedWeapon.Id, thisCharacterRid);
-            // todo 角色配置也相应改变
+            App.BackpackCharacterConfigManagerInstance.UpdateWeapon(thisCharacterRid, SelectedWeapon.Id);
             IsSelectCharacterPopupOpen = false;
             IsSelectCharacterWithCharacterPopupOpen = false;
         }

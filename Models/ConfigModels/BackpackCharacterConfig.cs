@@ -19,5 +19,6 @@ public partial class SingleBackpackCharacterConfigModel : ObservableObject
     [ObservableProperty] private Enumeration.Level _talentALevelGoal = Enumeration.Level.L1;
     [ObservableProperty] private Enumeration.Level _talentELevelGoal = Enumeration.Level.L1;
     [ObservableProperty] private Enumeration.Level _talentQLevelGoal = Enumeration.Level.L1;
+    [ObservableProperty] private string _weaponId = "";
     public int SubExp { get; set; }
 }

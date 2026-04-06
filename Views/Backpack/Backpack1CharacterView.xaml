@@ -711,7 +711,73 @@
                                 </Grid>
                             </Grid>
                             <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
-                            <TextBlock Grid.Row="2" Style="{StaticResource TodoTextBlock}" Text="武器 &amp; 圣遗物 &amp; 评分"></TextBlock>
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Visibility="{Binding SelectedCharacter.IsWeapon, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <UniformGrid Grid.Column="0" Rows="2" Columns="1" Margin="5,0,0,0">
+                                        <Grid Background="Transparent">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <Image Source="{Binding SelectedCharacter.WeaponBackgroundImagePath}" Height="50" Width="50" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding SelectedCharacter.WeaponImagePath}" Height="50" Width="50" Stretch="UniformToFill"></Image>
+                                            </Grid>
+                                            <Viewbox Grid.Column="1" MaxWidth="142" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0">
+                                                <TextBlock Text="{Binding SelectedCharacter.WeaponName}" Style="{StaticResource MyTextBlock}"></TextBlock>
+                                            </Viewbox>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding SelectedCharacter.WeaponLevelString}" Style="{StaticResource MyTextBlock}" Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text="{Binding SelectedCharacter.WeaponProgression}" Style="{StaticResource MyTextBlock}" Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
+                                                <TextBlock.ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}">
+                                                        <TextBlock Text="{Binding SelectedCharacter.WeaponDescription}" TextWrapping="Wrap" MaxWidth="250"></TextBlock>
+                                                    </ToolTip>
+                                                </TextBlock.ToolTip>
+                                            </TextBlock>
+                                        </Grid>
+                                    </UniformGrid>
+                                    <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedCharacter.WeaponAffixStringList}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <ItemsControl ItemsSource="{Binding}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid Height="40" Margin="10,5">
+                                                                <TextBlock Text="{Binding}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" />
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Grid>
+                                <StackPanel Grid.Row="0" Visibility="{Binding SelectedCharacter.IsEmptyWeapon, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <TextBlock Text="没有武器" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                                </StackPanel>
+                                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                <TextBlock Grid.Row="2" Style="{StaticResource TodoTextBlock}" Text="圣遗物 &amp; 评分"></TextBlock>
+                            </Grid>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
                             <TextBlock Grid.Row="4" Style="{StaticResource TodoTextBlock}" Text="面板详细信息"></TextBlock>
                             <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>

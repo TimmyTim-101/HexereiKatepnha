@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
+using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
@@ -83,6 +85,32 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 for (int i = 1; i <= 6; i++)
                 {
                     thisBackpack1CharacterModel.AscensionOpacityList[i] = i <= thisBackpack1CharacterModel.CharacterConfigModel.Ascension ? 1.0 : 0.1;
+                }
+
+                if (thisBackpack1CharacterModel.CharacterConfigModel.WeaponId != "")
+                {
+                    string thisWeaponId = thisBackpack1CharacterModel.CharacterConfigModel.WeaponId;
+                    SingleBackpackWeaponConfigModel thisWeaponConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisWeaponId];
+                    int thisWeaponRid = thisWeaponConfig.Rid;
+                    WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponRid];
+                    thisBackpack1CharacterModel.WeaponBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisWeapon.Star];
+                    thisBackpack1CharacterModel.WeaponImagePath = thisWeapon.AwakenImagePath;
+                    thisBackpack1CharacterModel.WeaponName = thisWeapon.Name;
+                    thisBackpack1CharacterModel.WeaponProgression = $"C{thisWeaponConfig.Progression}";
+                    thisBackpack1CharacterModel.WeaponLevelString = StringConstants.LevelNameString[thisWeaponConfig.Level];
+                    thisBackpack1CharacterModel.WeaponDescription = thisWeapon.Progression[thisWeaponConfig.Progression];
+                    thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                    thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                    thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                    thisBackpack1CharacterModel.WeaponAffixStringList[0].Add(StringConstants.AffixString[Enumeration.Affix.Attack]);
+                    thisBackpack1CharacterModel.WeaponAffixStringList[1].Add(":");
+                    thisBackpack1CharacterModel.WeaponAffixStringList[2].Add(thisWeapon.MainAffixNumberDictionary[thisWeaponConfig.Level].ToString(CultureInfo.InvariantCulture));
+                    if (thisWeapon.SubAffix != Enumeration.Affix.Empty)
+                    {
+                        thisBackpack1CharacterModel.WeaponAffixStringList[0].Add(StringConstants.AffixString[thisWeapon.SubAffix]);
+                        thisBackpack1CharacterModel.WeaponAffixStringList[1].Add(":");
+                        thisBackpack1CharacterModel.WeaponAffixStringList[2].Add(thisWeapon.SubAffixNumberDictionary[thisWeaponConfig.Level] + (SequenceConstants.AffixPercentageSymbolList.Contains(thisWeapon.SubAffix) ? "%" : ""));
+                    }
                 }
 
                 AllCharacterList.Add(thisBackpack1CharacterModel);

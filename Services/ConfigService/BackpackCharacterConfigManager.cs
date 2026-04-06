@@ -162,4 +162,15 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         Save();
         App.RefreshGoalSimulation();
     }
+
+    public void UpdateWeapon(int characterId, string weaponId)
+    {
+        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        {
+            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+        }
+
+        Configuration.CharacterConfig[characterId].WeaponId = weaponId;
+        Save();
+    }
 }

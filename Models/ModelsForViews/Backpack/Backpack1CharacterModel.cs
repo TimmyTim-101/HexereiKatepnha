@@ -33,6 +33,18 @@ public partial class Backpack1CharacterModel : ObservableObject
     [ObservableProperty] private int _subExp;
     [ObservableProperty] private int _levelTotalExp = 1;
     [ObservableProperty] private bool _isShowProgress = true;
+    [ObservableProperty] private string _weaponBackgroundImagePath = StringConstants.EmptyImagePath;
+    [ObservableProperty] private string _weaponImagePath = StringConstants.EmptyImagePath;
+
+    [ObservableProperty] [NotifyPropertyChangedFor(nameof(IsWeapon))] [NotifyPropertyChangedFor(nameof(IsEmptyWeapon))]
+    private string _weaponName = "";
+
+    [ObservableProperty] private string _weaponProgression = "";
+    [ObservableProperty] private string _weaponLevelString = "";
+    [ObservableProperty] private string _weaponDescription = "";
+    [ObservableProperty] private ObservableCollection<ObservableCollection<string>> _weaponAffixStringList = [];
+    public bool IsWeapon => !String.IsNullOrEmpty(WeaponName);
+    public bool IsEmptyWeapon => String.IsNullOrEmpty(WeaponName);
 
     partial void OnSubExpChanged(int value)
     {
