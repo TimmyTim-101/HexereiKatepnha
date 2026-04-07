@@ -22,3 +22,10 @@ public class BackpackWeaponDeleteMessage : ValueChangedMessage<string>
     {
     }
 }
+
+public class BackpackWeaponChangeCharacterMessage : ValueChangedMessage<int>
+{
+    public BackpackWeaponChangeCharacterMessage(int value) : base(value)
+    {
+    }
+}

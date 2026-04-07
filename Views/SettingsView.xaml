@@ -10,7 +10,7 @@
              d:DesignHeight="1080" d:DesignWidth="1720"
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
@@ -18,7 +18,7 @@
                     <TextBlock Text="当前主题：" Style="{StaticResource MyTextBlock}"></TextBlock>
                     <TextBlock Text="{Binding CurrentThemeName}" Foreground="{Binding CurrentThemeColor}" Style="{StaticResource MyTextBlock}"></TextBlock>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <WrapPanel Orientation="Horizontal">
                     <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="0" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
                         <Image Source="/Resources/Themes/UI_ItemIcon_305.png" Stretch="Uniform"></Image>
                     </Button>
@@ -49,7 +49,7 @@
                     <Button Command="{Binding ClickOnThemeCommand}" CommandParameter="9" Style="{StaticResource ImageButton}" Height="100" Margin="30,30,0,30">
                         <Image Source="/Resources/Themes/AllBlack.png" Stretch="Uniform"></Image>
                     </Button>
-                </StackPanel>
+                </WrapPanel>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>

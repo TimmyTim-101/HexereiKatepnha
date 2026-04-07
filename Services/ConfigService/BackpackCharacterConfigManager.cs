@@ -172,5 +172,6 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
 
         Configuration.CharacterConfig[characterId].WeaponId = weaponId;
         Save();
+        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(characterId));
     }
 }

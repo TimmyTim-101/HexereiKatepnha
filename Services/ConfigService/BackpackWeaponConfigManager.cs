@@ -22,6 +22,10 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
         WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
         App.RefreshGoalSimulation();
+        if (Configuration.WeaponConfigMap[weaponStringId].CharacterRid != 0)
+        {
+            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(Configuration.WeaponConfigMap[weaponStringId].CharacterRid));
+        }
     }
 
     public void UpdateLevelGoal(string weaponStringId, Enumeration.Level l)
@@ -38,6 +42,10 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
     {
         Configuration.WeaponConfigMap[weaponStringId].Progression = i;
         Save();
+        if (Configuration.WeaponConfigMap[weaponStringId].CharacterRid != 0)
+        {
+            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(Configuration.WeaponConfigMap[weaponStringId].CharacterRid));
+        }
     }
 
     public SingleBackpackWeaponConfigModel AddWeapon(int rid)
@@ -56,6 +64,11 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
     public void DeleteWeapon(string? id)
     {
         if (id == null) return;
+        if (Configuration.WeaponConfigMap[id].CharacterRid != 0)
+        {
+            App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(Configuration.WeaponConfigMap[id].CharacterRid, "");
+        }
+
         Configuration.WeaponConfigMap.Remove(id);
         Save();
         App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
