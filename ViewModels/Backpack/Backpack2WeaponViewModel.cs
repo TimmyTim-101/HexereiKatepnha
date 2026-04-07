@@ -34,6 +34,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
+        [ObservableProperty] private bool _isOnlyOccupied;
         private ObservableCollection<Backpack2WeaponModel> WeaponList { get; } = [];
         [ObservableProperty] private Backpack2WeaponModel _selectedWeapon;
         [ObservableProperty] private bool _isLevelPopupOpen;
@@ -171,6 +172,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             if (item is not Backpack2WeaponModel w) return false;
             bool isWeapon = true;
             bool isStar = true;
+            bool isOccupied = true;
             switch (WeaponFilter)
             {
                 case 1: isWeapon = w.WeaponType == Enumeration.WeaponType.Sword; break;
@@ -189,7 +191,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 case 5: isStar = w.Star == 5; break;
             }
 
-            return isWeapon && isStar;
+            if (IsOnlyOccupied)
+            {
+                isOccupied = w.Config.CharacterRid != 0;
+            }
+
+            return isWeapon && isStar && isOccupied;
         }
 
         private void ApplyFilters()
@@ -240,6 +247,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
         }
 
         partial void OnStarFilterChanged(int value)
+        {
+            ApplyFilters();
+        }
+
+        partial void OnIsOnlyOccupiedChanged(bool value)
         {
             ApplyFilters();
         }

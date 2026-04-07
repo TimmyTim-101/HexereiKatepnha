@@ -258,6 +258,7 @@
                             </Button>
                         </WrapPanel>
                     </Border>
+                    <CheckBox Content="已装备" IsChecked="{Binding IsOnlyOccupied}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ModernCheckBoxStyle}" Margin="5"></CheckBox>
                     <ToggleButton x:Name="AddPanelToggleButton" Style="{StaticResource FunctionToggleButton}" Content="添加武器" Margin="10" IsChecked="{Binding IsAddPanelPopupOpen,Mode=TwoWay}"></ToggleButton>
                     <Popup x:Name="AddWeaponPopup" IsOpen="{Binding IsAddPanelPopupOpen}" PlacementTarget="{Binding ElementName=AddPanelToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" MaxHeight="700">
                         <Border Background="#FF2D2D30" BorderBrush="#555555" BorderThickness="1" CornerRadius="5" Padding="5" Margin="0,5,0,0">
