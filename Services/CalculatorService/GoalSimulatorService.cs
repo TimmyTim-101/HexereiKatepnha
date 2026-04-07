@@ -653,7 +653,35 @@ public class GoalSimulatorService
 
     public ObservableCollection<CalculatorPlanBoss60Model> GetBoss60()
     {
+        // 策略：假设异梦溶媒无限，“要打”秘境按需要顺序排序，“佛系”秘境按材料总数倒排序
         ObservableCollection<CalculatorPlanBoss60Model> res = [];
+        Dictionary<int, int> DungeonMaterialNumMap = new();
+        Dictionary<int, int> MaterialDungeonMap = new();
+        List<int> LackDungeonList = new();
+        foreach (DungeonModel thisDungeon in AllEntities.AllDungeonTrounce)
+        {
+            MaterialModel material1 = (thisDungeon.DropMaterialList[0].MaterialModel as MaterialModel)!;
+            MaterialModel material2 = (thisDungeon.DropMaterialList[1].MaterialModel as MaterialModel)!;
+            MaterialModel material3 = (thisDungeon.DropMaterialList[2].MaterialModel as MaterialModel)!;
+            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material1.Rid);
+            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material2.Rid);
+            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material3.Rid);
+            MaterialDungeonMap[material1.Rid] = thisDungeon.Rid;
+            MaterialDungeonMap[material2.Rid] = thisDungeon.Rid;
+            MaterialDungeonMap[material3.Rid] = thisDungeon.Rid;
+        }
+
+        foreach (MaterialPairModel mpm in _materialNeedNumList)
+        {
+            MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
+            if (!MaterialDungeonMap.TryGetValue(thisMaterial.Rid, out var thisDungeonRid)) continue;
+            DungeonMaterialNumMap[thisDungeonRid] -= (int)mpm.DropNum;
+            if (DungeonMaterialNumMap[thisDungeonRid] < 0)
+            {
+                if (!LackDungeonList.Contains(thisDungeonRid)) LackDungeonList.Add(thisDungeonRid);
+            }
+        }
+
         foreach (DungeonModel thisDungeon in AllEntities.AllDungeonTrounce)
         {
             MaterialModel material1 = (thisDungeon.DropMaterialList[0].MaterialModel as MaterialModel)!;
@@ -674,10 +702,11 @@ public class GoalSimulatorService
             thisModel.Sort = thisModel.HaveNum1 + thisModel.HaveNum2 + thisModel.HaveNum3 - thisModel.NeedNum1 - thisModel.NeedNum2 - thisModel.NeedNum3;
             thisModel.Info = thisModel.Sort >= 0 ? "佛系" : "要打";
             thisModel.Color = thisModel.Sort >= 0 ? "#12B981" : "#FB7185";
+            thisModel.LackIndex = LackDungeonList.Contains(thisDungeon.Rid) ? LackDungeonList.IndexOf(thisDungeon.Rid) : AllEntities.AllDungeonTrounce.Count;
             res.Add(thisModel);
         }
 
-        return new ObservableCollection<CalculatorPlanBoss60Model>(res.OrderBy(m => m.Sort));
+        return new ObservableCollection<CalculatorPlanBoss60Model>(res.OrderBy(m => m.LackIndex).ThenBy(m => m.Sort));
     }
 
     public CalculatorPlanStatistics GetStatistics()

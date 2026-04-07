@@ -30,6 +30,7 @@ public partial class CalculatorPlanBoss60Model : ObservableObject
     [ObservableProperty] private int _sort;
     [ObservableProperty] private string _info = "";
     [ObservableProperty] private string _color = "";
+    [ObservableProperty] private int _lackIndex;
 }
 
 public partial class CalculatorPlanStatistics : ObservableObject
