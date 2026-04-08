@@ -4388,6 +4388,16 @@ public static class MaterialConstants
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_100057.png"
     };
 
+    public static readonly MaterialModel _3100109 = new()
+    {
+        Rid = 3100109,
+        Vid = 101272,
+        Name = "空羽蛾",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101272.png"
+    };
+
     public static readonly MaterialModel _3100201 = new()
     {
         Rid = 3100201,
@@ -4866,16 +4876,6 @@ public static class MaterialConstants
         Star = 1,
         MaterialType = Enumeration.MaterialType.LocalSpecialty,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101269.png"
-    };
-
-    public static readonly MaterialModel _3100706 = new()
-    {
-        Rid = 3100706,
-        Vid = 101272,
-        Name = "空羽蛾",
-        Star = 1,
-        MaterialType = Enumeration.MaterialType.LocalSpecialty,
-        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101272.png"
     };
 
     // 311 - 武器强化素材

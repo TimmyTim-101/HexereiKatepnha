@@ -22,6 +22,7 @@ public static class DungeonConstants
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100106, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100107, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100108, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3100109, DropNum = 1 },
         ]
     };
 
@@ -136,7 +137,6 @@ public static class DungeonConstants
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100703, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100704, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100705, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100706, DropNum = 1 },
         ]
     };
 

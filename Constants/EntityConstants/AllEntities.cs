@@ -193,7 +193,7 @@ public static class AllEntities
     public static readonly List<MaterialModel> AllMaterialLocalSpecialty =
     [
         // 31001 - 蒙德地方特产
-        MaterialConstants._3100101, MaterialConstants._3100102, MaterialConstants._3100103, MaterialConstants._3100104, MaterialConstants._3100105, MaterialConstants._3100106, MaterialConstants._3100107, MaterialConstants._3100108,
+        MaterialConstants._3100101, MaterialConstants._3100102, MaterialConstants._3100103, MaterialConstants._3100104, MaterialConstants._3100105, MaterialConstants._3100106, MaterialConstants._3100107, MaterialConstants._3100108, MaterialConstants._3100109,
         // 31002 - 璃月地方特产
         MaterialConstants._3100201, MaterialConstants._3100202, MaterialConstants._3100203, MaterialConstants._3100204, MaterialConstants._3100205, MaterialConstants._3100206, MaterialConstants._3100207, MaterialConstants._3100208, MaterialConstants._3100209,
         // 31003 - 稻妻地方特产
@@ -205,7 +205,7 @@ public static class AllEntities
         // 31006 - 纳塔地方特产
         MaterialConstants._3100601, MaterialConstants._3100602, MaterialConstants._3100603, MaterialConstants._3100604, MaterialConstants._3100605, MaterialConstants._3100606, MaterialConstants._3100607, MaterialConstants._3100608,
         // 31007 - 挪德卡莱地方特产
-        MaterialConstants._3100701, MaterialConstants._3100702, MaterialConstants._3100703, MaterialConstants._3100704, MaterialConstants._3100705, MaterialConstants._3100706,
+        MaterialConstants._3100701, MaterialConstants._3100702, MaterialConstants._3100703, MaterialConstants._3100704, MaterialConstants._3100705,
     ];
 
     // 311 - 武器强化素材
