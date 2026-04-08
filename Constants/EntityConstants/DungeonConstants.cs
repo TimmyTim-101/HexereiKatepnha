@@ -136,6 +136,7 @@ public static class DungeonConstants
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100703, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100704, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants._3100705, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants._3100706, DropNum = 1 },
         ]
     };
 
@@ -627,6 +628,15 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Lloigor_Sub.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030085, [1, 1, 1])
+    };
+
+    public static readonly DungeonModel _4040033 = new()
+    {
+        Rid = 4040033,
+        Name = "辖域守护者",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Watcher_Normal_01.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030088, [1, 1, 1])
     };
 
     // 405 - 40体力BOSS
@@ -1206,6 +1216,19 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060044, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
+    public static readonly DungeonModel _4050044 = new()
+    {
+        Rid = 4050044,
+        Name = "守望者·堕天",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Watcher_Primo_01.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060045, 3.003),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };

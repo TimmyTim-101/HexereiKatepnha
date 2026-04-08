@@ -27,29 +27,15 @@ public class GoodJsonParseService
 
     private void ParseMainProcess()
     {
-        try
-        {
-            ParseJsonStringToObject();
-            BuildInnerObject();
-            GiveValueToConfigs();
-        }
-        catch (Exception e)
-        {
-            throw e;
-        }
+        ParseJsonStringToObject();
+        BuildInnerObject();
+        GiveValueToConfigs();
     }
 
     private void ParseJsonStringToObject()
     {
-        try
-        {
-            GoodModel? thisGoodModel = JsonSerializer.Deserialize<GoodModel>(_jsonString);
-            Console.WriteLine(thisGoodModel!.format);
-        }
-        catch (Exception e)
-        {
-            throw e;
-        }
+        GoodModel? thisGoodModel = JsonSerializer.Deserialize<GoodModel>(_jsonString);
+        Console.WriteLine(thisGoodModel!.format);
     }
 
     private void BuildInnerObject()

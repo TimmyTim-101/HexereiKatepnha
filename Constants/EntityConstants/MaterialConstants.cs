@@ -975,6 +975,38 @@ public static class MaterialConstants
 
     public static readonly MaterialGroupModel G3030085 = new([_3030085, _3030086, _3030087]);
 
+    public static readonly MaterialModel _3030088 = new()
+    {
+        Rid = 3030088,
+        Vid = 112142,
+        Name = "宝饰的焰剑",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112142.png"
+    };
+
+    public static readonly MaterialModel _3030089 = new()
+    {
+        Rid = 3030089,
+        Vid = 112141,
+        Name = "残失的焰剑",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112141.png"
+    };
+
+    public static readonly MaterialModel _3030090 = new()
+    {
+        Rid = 3030090,
+        Vid = 112140,
+        Name = "失色的焰剑",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112140.png"
+    };
+
+    public static readonly MaterialGroupModel G3030088 = new([_3030088, _3030089, _3030090]);
+
     // 304 - 角色与武器培养素材_123
     public static readonly MaterialModel _3040001 = new()
     {
@@ -2360,6 +2392,16 @@ public static class MaterialConstants
         Star = 4,
         MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113085.png"
+    };
+
+    public static readonly MaterialModel _3060045 = new()
+    {
+        Rid = 3060045,
+        Vid = 113086,
+        Name = "堕天的落羽",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113086.png"
     };
 
     // 307 - 角色突破素材_钻儿块儿片儿粒儿
@@ -4824,6 +4866,16 @@ public static class MaterialConstants
         Star = 1,
         MaterialType = Enumeration.MaterialType.LocalSpecialty,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101269.png"
+    };
+
+    public static readonly MaterialModel _3100706 = new()
+    {
+        Rid = 3100706,
+        Vid = 101272,
+        Name = "空羽蛾",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101272.png"
     };
 
     // 311 - 武器强化素材
