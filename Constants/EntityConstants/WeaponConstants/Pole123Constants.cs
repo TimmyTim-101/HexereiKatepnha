@@ -1,4 +1,5 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants.WeaponConstants;
@@ -53,7 +54,7 @@ public class Pole123Constants
             { Enumeration.Level.L61, 0 }, { Enumeration.Level.L62, 0 }, { Enumeration.Level.L63, 0 }, { Enumeration.Level.L64, 0 }, { Enumeration.Level.L65, 0 },
             { Enumeration.Level.L66, 0 }, { Enumeration.Level.L67, 0 }, { Enumeration.Level.L68, 0 }, { Enumeration.Level.L69, 0 }, { Enumeration.Level.L70, 0 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon1LevelUpMaterial(MaterialConstants.G3040007, MaterialConstants.G3030007, MaterialConstants.G3090009),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon1LevelUpMaterial(MaterialConstants04.G3040007, MaterialConstants03.G3030007, MaterialConstants09.G3090009),
     };
 
     // 20302 - 长柄武器2星
@@ -103,7 +104,7 @@ public class Pole123Constants
             { Enumeration.Level.L61, 0 }, { Enumeration.Level.L62, 0 }, { Enumeration.Level.L63, 0 }, { Enumeration.Level.L64, 0 }, { Enumeration.Level.L65, 0 },
             { Enumeration.Level.L66, 0 }, { Enumeration.Level.L67, 0 }, { Enumeration.Level.L68, 0 }, { Enumeration.Level.L69, 0 }, { Enumeration.Level.L70, 0 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon2LevelUpMaterial(MaterialConstants.G3040007, MaterialConstants.G3030007, MaterialConstants.G3090009),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon2LevelUpMaterial(MaterialConstants04.G3040007, MaterialConstants03.G3030007, MaterialConstants09.G3090009),
     };
 
     // 20303 - 长柄武器3星
@@ -168,7 +169,7 @@ public class Pole123Constants
             { Enumeration.Level.L81, 21.4 }, { Enumeration.Level.L82, 21.4 }, { Enumeration.Level.L83, 21.4 }, { Enumeration.Level.L84, 21.4 }, { Enumeration.Level.L85, 22.4 },
             { Enumeration.Level.L86, 22.4 }, { Enumeration.Level.L87, 22.4 }, { Enumeration.Level.L88, 22.4 }, { Enumeration.Level.L89, 22.4 }, { Enumeration.Level.L90, 23.4 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040013, MaterialConstants.G3030013, MaterialConstants.G3090013),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040013, MaterialConstants03.G3030013, MaterialConstants09.G3090013),
     };
 
     public static readonly WeaponModel _2030302 = new()
@@ -232,7 +233,7 @@ public class Pole123Constants
             { Enumeration.Level.L81, 21.4 }, { Enumeration.Level.L82, 21.4 }, { Enumeration.Level.L83, 21.4 }, { Enumeration.Level.L84, 21.4 }, { Enumeration.Level.L85, 22.4 },
             { Enumeration.Level.L86, 22.4 }, { Enumeration.Level.L87, 22.4 }, { Enumeration.Level.L88, 22.4 }, { Enumeration.Level.L89, 22.4 }, { Enumeration.Level.L90, 23.5 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040019, MaterialConstants.G3030010, MaterialConstants.G3090017),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040019, MaterialConstants03.G3030010, MaterialConstants09.G3090017),
     };
 
     public static readonly WeaponModel _2030303 = new()
@@ -296,6 +297,6 @@ public class Pole123Constants
             { Enumeration.Level.L81, 42.8 }, { Enumeration.Level.L82, 42.8 }, { Enumeration.Level.L83, 42.8 }, { Enumeration.Level.L84, 42.8 }, { Enumeration.Level.L85, 44.9 },
             { Enumeration.Level.L86, 44.9 }, { Enumeration.Level.L87, 44.9 }, { Enumeration.Level.L88, 44.9 }, { Enumeration.Level.L89, 44.9 }, { Enumeration.Level.L90, 46.9 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040010, MaterialConstants.G3030016, MaterialConstants.G3090021),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040010, MaterialConstants03.G3030016, MaterialConstants09.G3090021),
     };
 }

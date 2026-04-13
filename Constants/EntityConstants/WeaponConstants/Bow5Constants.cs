@@ -1,4 +1,5 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants.WeaponConstants;
@@ -67,7 +68,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 20.1 }, { Enumeration.Level.L82, 20.1 }, { Enumeration.Level.L83, 20.1 }, { Enumeration.Level.L84, 20.1 }, { Enumeration.Level.L85, 21.1 },
             { Enumeration.Level.L86, 21.1 }, { Enumeration.Level.L87, 21.1 }, { Enumeration.Level.L88, 21.1 }, { Enumeration.Level.L89, 21.1 }, { Enumeration.Level.L90, 22.1 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040010, MaterialConstants.G3030004, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040010, MaterialConstants03.G3030004, MaterialConstants09.G3090005),
     };
 
     public static readonly WeaponModel _2050502 = new()
@@ -131,7 +132,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 45.3 }, { Enumeration.Level.L82, 45.3 }, { Enumeration.Level.L83, 45.3 }, { Enumeration.Level.L84, 45.3 }, { Enumeration.Level.L85, 47.4 },
             { Enumeration.Level.L86, 47.4 }, { Enumeration.Level.L87, 47.4 }, { Enumeration.Level.L88, 47.4 }, { Enumeration.Level.L89, 47.4 }, { Enumeration.Level.L90, 49.6 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040001, MaterialConstants.G3030007, MaterialConstants.G3090009),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040001, MaterialConstants03.G3030007, MaterialConstants09.G3090009),
     };
 
     public static readonly WeaponModel _2050503 = new()
@@ -195,7 +196,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 50.3 }, { Enumeration.Level.L82, 50.3 }, { Enumeration.Level.L83, 50.3 }, { Enumeration.Level.L84, 50.3 }, { Enumeration.Level.L85, 52.7 },
             { Enumeration.Level.L86, 52.7 }, { Enumeration.Level.L87, 52.7 }, { Enumeration.Level.L88, 52.7 }, { Enumeration.Level.L89, 52.7 }, { Enumeration.Level.L90, 55.1 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040013, MaterialConstants.G3030001, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040013, MaterialConstants03.G3030001, MaterialConstants09.G3090005),
     };
 
     public static readonly WeaponModel _2050504 = new()
@@ -259,7 +260,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 60.3 }, { Enumeration.Level.L82, 60.3 }, { Enumeration.Level.L83, 60.3 }, { Enumeration.Level.L84, 60.3 }, { Enumeration.Level.L85, 63.2 },
             { Enumeration.Level.L86, 63.2 }, { Enumeration.Level.L87, 63.2 }, { Enumeration.Level.L88, 63.2 }, { Enumeration.Level.L89, 63.2 }, { Enumeration.Level.L90, 66.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040010, MaterialConstants.G3030022, MaterialConstants.G3090029),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040010, MaterialConstants03.G3030022, MaterialConstants09.G3090029),
     };
 
     public static readonly WeaponModel _2050505 = new()
@@ -323,7 +324,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 30.2 }, { Enumeration.Level.L82, 30.2 }, { Enumeration.Level.L83, 30.2 }, { Enumeration.Level.L84, 30.2 }, { Enumeration.Level.L85, 31.6 },
             { Enumeration.Level.L86, 31.6 }, { Enumeration.Level.L87, 31.6 }, { Enumeration.Level.L88, 31.6 }, { Enumeration.Level.L89, 31.6 }, { Enumeration.Level.L90, 33.1 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040025, MaterialConstants.G3030025, MaterialConstants.G3090033),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040025, MaterialConstants03.G3030025, MaterialConstants09.G3090033),
     };
 
     public static readonly WeaponModel _2050506 = new()
@@ -387,7 +388,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 80.4 }, { Enumeration.Level.L82, 80.4 }, { Enumeration.Level.L83, 80.4 }, { Enumeration.Level.L84, 80.4 }, { Enumeration.Level.L85, 84.3 },
             { Enumeration.Level.L86, 84.3 }, { Enumeration.Level.L87, 84.3 }, { Enumeration.Level.L88, 84.3 }, { Enumeration.Level.L89, 84.3 }, { Enumeration.Level.L90, 88.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040025, MaterialConstants.G3030028, MaterialConstants.G3090013),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040025, MaterialConstants03.G3030028, MaterialConstants09.G3090013),
     };
 
     public static readonly WeaponModel _2050507 = new()
@@ -451,7 +452,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 40.2 }, { Enumeration.Level.L82, 40.2 }, { Enumeration.Level.L83, 40.2 }, { Enumeration.Level.L84, 40.2 }, { Enumeration.Level.L85, 42.2 },
             { Enumeration.Level.L86, 42.2 }, { Enumeration.Level.L87, 42.2 }, { Enumeration.Level.L88, 42.2 }, { Enumeration.Level.L89, 42.2 }, { Enumeration.Level.L90, 44.1 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040031, MaterialConstants.G3030031, MaterialConstants.G3090045),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040031, MaterialConstants03.G3030031, MaterialConstants09.G3090045),
     };
 
     public static readonly WeaponModel _2050508 = new()
@@ -515,7 +516,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 60.3 }, { Enumeration.Level.L82, 60.3 }, { Enumeration.Level.L83, 60.3 }, { Enumeration.Level.L84, 60.3 }, { Enumeration.Level.L85, 63.2 },
             { Enumeration.Level.L86, 63.2 }, { Enumeration.Level.L87, 63.2 }, { Enumeration.Level.L88, 63.2 }, { Enumeration.Level.L89, 63.2 }, { Enumeration.Level.L90, 66.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040034, MaterialConstants.G3030046, MaterialConstants.G3090049),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040034, MaterialConstants03.G3030046, MaterialConstants09.G3090049),
     };
 
     public static readonly WeaponModel _2050509 = new()
@@ -579,7 +580,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 60.3 }, { Enumeration.Level.L82, 60.3 }, { Enumeration.Level.L83, 60.3 }, { Enumeration.Level.L84, 60.3 }, { Enumeration.Level.L85, 63.2 },
             { Enumeration.Level.L86, 63.2 }, { Enumeration.Level.L87, 63.2 }, { Enumeration.Level.L88, 63.2 }, { Enumeration.Level.L89, 63.2 }, { Enumeration.Level.L90, 66.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040034, MaterialConstants.G3030055, MaterialConstants.G3090053),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040034, MaterialConstants03.G3030055, MaterialConstants09.G3090053),
     };
 
     public static readonly WeaponModel _2050510 = new()
@@ -643,7 +644,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 60.3 }, { Enumeration.Level.L82, 60.3 }, { Enumeration.Level.L83, 60.3 }, { Enumeration.Level.L84, 60.3 }, { Enumeration.Level.L85, 63.2 },
             { Enumeration.Level.L86, 63.2 }, { Enumeration.Level.L87, 63.2 }, { Enumeration.Level.L88, 63.2 }, { Enumeration.Level.L89, 63.2 }, { Enumeration.Level.L90, 66.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040043, MaterialConstants.G3030070, MaterialConstants.G3090069),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040043, MaterialConstants03.G3030070, MaterialConstants09.G3090069),
     };
 
     public static readonly WeaponModel _2050511 = new()
@@ -707,7 +708,7 @@ public class Bow5Constants
             { Enumeration.Level.L81, 40.2 }, { Enumeration.Level.L82, 40.2 }, { Enumeration.Level.L83, 40.2 }, { Enumeration.Level.L84, 40.2 }, { Enumeration.Level.L85, 42.2 },
             { Enumeration.Level.L86, 42.2 }, { Enumeration.Level.L87, 42.2 }, { Enumeration.Level.L88, 42.2 }, { Enumeration.Level.L89, 42.2 }, { Enumeration.Level.L90, 44.1 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040016, MaterialConstants.G3030001, MaterialConstants.G3090009),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040016, MaterialConstants03.G3030001, MaterialConstants09.G3090009),
     };
 
     public static readonly WeaponModel _2050512 = new()
@@ -771,6 +772,6 @@ public class Bow5Constants
             { Enumeration.Level.L81, 80.4 }, { Enumeration.Level.L82, 80.4 }, { Enumeration.Level.L83, 80.4 }, { Enumeration.Level.L84, 80.4 }, { Enumeration.Level.L85, 84.3 },
             { Enumeration.Level.L86, 84.3 }, { Enumeration.Level.L87, 84.3 }, { Enumeration.Level.L88, 84.3 }, { Enumeration.Level.L89, 84.3 }, { Enumeration.Level.L90, 88.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants.G3040049, MaterialConstants.G3030088, MaterialConstants.G3090077),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040049, MaterialConstants03.G3030088, MaterialConstants09.G3090077),
     };
 }

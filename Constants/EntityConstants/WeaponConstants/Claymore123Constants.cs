@@ -1,4 +1,5 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants.WeaponConstants;
@@ -53,7 +54,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L61, 0 }, { Enumeration.Level.L62, 0 }, { Enumeration.Level.L63, 0 }, { Enumeration.Level.L64, 0 }, { Enumeration.Level.L65, 0 },
             { Enumeration.Level.L66, 0 }, { Enumeration.Level.L67, 0 }, { Enumeration.Level.L68, 0 }, { Enumeration.Level.L69, 0 }, { Enumeration.Level.L70, 0 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon1LevelUpMaterial(MaterialConstants.G3040001, MaterialConstants.G3030004, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon1LevelUpMaterial(MaterialConstants04.G3040001, MaterialConstants03.G3030004, MaterialConstants09.G3090005),
     };
 
     // 20202 - 双手剑2星
@@ -103,7 +104,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L61, 0 }, { Enumeration.Level.L62, 0 }, { Enumeration.Level.L63, 0 }, { Enumeration.Level.L64, 0 }, { Enumeration.Level.L65, 0 },
             { Enumeration.Level.L66, 0 }, { Enumeration.Level.L67, 0 }, { Enumeration.Level.L68, 0 }, { Enumeration.Level.L69, 0 }, { Enumeration.Level.L70, 0 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon2LevelUpMaterial(MaterialConstants.G3040001, MaterialConstants.G3030004, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon2LevelUpMaterial(MaterialConstants04.G3040001, MaterialConstants03.G3030004, MaterialConstants09.G3090005),
     };
 
     // 20203 - 双手剑3星
@@ -168,7 +169,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L81, 32.1 }, { Enumeration.Level.L82, 32.1 }, { Enumeration.Level.L83, 32.1 }, { Enumeration.Level.L84, 32.1 }, { Enumeration.Level.L85, 33.6 },
             { Enumeration.Level.L86, 33.6 }, { Enumeration.Level.L87, 33.6 }, { Enumeration.Level.L88, 33.6 }, { Enumeration.Level.L89, 33.6 }, { Enumeration.Level.L90, 35.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040019, MaterialConstants.G3030001, MaterialConstants.G3090001),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040019, MaterialConstants03.G3030001, MaterialConstants09.G3090001),
     };
 
     public static readonly WeaponModel _2020302 = new()
@@ -232,7 +233,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L81, 171 }, { Enumeration.Level.L82, 171 }, { Enumeration.Level.L83, 171 }, { Enumeration.Level.L84, 171 }, { Enumeration.Level.L85, 179 },
             { Enumeration.Level.L86, 179 }, { Enumeration.Level.L87, 179 }, { Enumeration.Level.L88, 179 }, { Enumeration.Level.L89, 179 }, { Enumeration.Level.L90, 187 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040010, MaterialConstants.G3030004, MaterialConstants.G3090005),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040010, MaterialConstants03.G3030004, MaterialConstants09.G3090005),
     };
 
     public static readonly WeaponModel _2020303 = new()
@@ -296,7 +297,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L81, 40.1 }, { Enumeration.Level.L82, 40.1 }, { Enumeration.Level.L83, 40.1 }, { Enumeration.Level.L84, 40.1 }, { Enumeration.Level.L85, 42.0 },
             { Enumeration.Level.L86, 42.0 }, { Enumeration.Level.L87, 42.0 }, { Enumeration.Level.L88, 42.0 }, { Enumeration.Level.L89, 42.0 }, { Enumeration.Level.L90, 43.9 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040001, MaterialConstants.G3030007, MaterialConstants.G3090009),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040001, MaterialConstants03.G3030007, MaterialConstants09.G3090009),
     };
 
     public static readonly WeaponModel _2020304 = new()
@@ -360,7 +361,7 @@ public static class Claymore123Constants
             { Enumeration.Level.L81, 32.1 }, { Enumeration.Level.L82, 32.1 }, { Enumeration.Level.L83, 32.1 }, { Enumeration.Level.L84, 32.1 }, { Enumeration.Level.L85, 33.6 },
             { Enumeration.Level.L86, 33.6 }, { Enumeration.Level.L87, 33.6 }, { Enumeration.Level.L88, 33.6 }, { Enumeration.Level.L89, 33.6 }, { Enumeration.Level.L90, 35.2 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040004, MaterialConstants.G3030010, MaterialConstants.G3090017),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040004, MaterialConstants03.G3030010, MaterialConstants09.G3090017),
     };
 
     public static readonly WeaponModel _2020305 = new()
@@ -424,6 +425,6 @@ public static class Claymore123Constants
             { Enumeration.Level.L81, 40.1 }, { Enumeration.Level.L82, 40.1 }, { Enumeration.Level.L83, 40.1 }, { Enumeration.Level.L84, 40.1 }, { Enumeration.Level.L85, 42.0 },
             { Enumeration.Level.L86, 42.0 }, { Enumeration.Level.L87, 42.0 }, { Enumeration.Level.L88, 42.0 }, { Enumeration.Level.L89, 42.0 }, { Enumeration.Level.L90, 43.9 },
         },
-        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants.G3040016, MaterialConstants.G3030016, MaterialConstants.G3090021),
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon3LevelUpMaterial(MaterialConstants04.G3040016, MaterialConstants03.G3030016, MaterialConstants09.G3090021),
     };
 }

@@ -1,4 +1,5 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants;
@@ -14,15 +15,15 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100101, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100102, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100103, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100104, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100105, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100106, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100107, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100108, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100109, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100101, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100102, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100103, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100104, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100105, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100106, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100107, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100108, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100109, DropNum = 1 },
         ]
     };
 
@@ -34,15 +35,15 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100201, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100202, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100203, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100204, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100205, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100206, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100207, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100208, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100209, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100201, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100202, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100203, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100204, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100205, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100206, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100207, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100208, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100209, DropNum = 1 },
         ]
     };
 
@@ -54,15 +55,15 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100301, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100302, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100303, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100304, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100305, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100306, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100307, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100308, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100309, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100301, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100302, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100303, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100304, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100305, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100306, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100307, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100308, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100309, DropNum = 1 },
         ]
     };
 
@@ -74,15 +75,15 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100401, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100402, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100403, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100404, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100405, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100406, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100407, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100408, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100409, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100401, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100402, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100403, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100404, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100405, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100406, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100407, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100408, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100409, DropNum = 1 },
         ]
     };
 
@@ -94,14 +95,14 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100501, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100502, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100503, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100504, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100505, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100506, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100507, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100508, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100501, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100502, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100503, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100504, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100505, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100506, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100507, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100508, DropNum = 1 },
         ]
     };
 
@@ -113,14 +114,14 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100601, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100602, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100603, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100604, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100605, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100606, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100607, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100608, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100601, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100602, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100603, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100604, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100605, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100606, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100607, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100608, DropNum = 1 },
         ]
     };
 
@@ -132,11 +133,11 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100701, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100702, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100703, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100704, DropNum = 1 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3100705, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100701, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100702, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100703, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100704, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100705, DropNum = 1 },
         ]
     };
 
@@ -150,7 +151,7 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LeyLineOutcrop,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3010001, DropNum = 60000 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 60000 },
         ]
     };
 
@@ -163,9 +164,9 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LeyLineOutcrop,
         DropMaterialList =
         [
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3020001, DropNum = 4.5 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3020002, DropNum = 6.5 },
-            new MaterialPairModel() { MaterialModel = MaterialConstants._3020003, DropNum = 0 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants02._3020001, DropNum = 4.5 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants02._3020002, DropNum = 6.5 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants02._3020003, DropNum = 0 },
         ]
     };
 
@@ -176,7 +177,7 @@ public static class DungeonConstants
         Name = "愚人众·先遣队",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Skirmisher_Male_Standard_Rifle_Fire_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040013, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040013, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030002 = new()
@@ -185,7 +186,7 @@ public static class DungeonConstants
         Name = "骗骗花",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Mimik_Ice.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040019, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040019, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030003 = new()
@@ -195,8 +196,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Hili_Electric_Range.png",
         DungeonType = Enumeration.DungeonType.Easy,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040010, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040004, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040010, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040004, [1, 1, 1]),
         ])
     };
 
@@ -206,7 +207,7 @@ public static class DungeonConstants
         Name = "丘丘人",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Hili_None_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040004, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040004, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030005 = new()
@@ -216,8 +217,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Shaman_Wind_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040007, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040004, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040007, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040004, [1, 1, 1]),
         ])
     };
 
@@ -227,7 +228,7 @@ public static class DungeonConstants
         Name = "史莱姆",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Slime_Water_03.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040001, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040001, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030007 = new()
@@ -236,7 +237,7 @@ public static class DungeonConstants
         Name = "盗宝团",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Thoarder_Male_Rogue_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040016, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040016, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030008 = new()
@@ -245,7 +246,7 @@ public static class DungeonConstants
         Name = "野伏众",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Samurai_Kairagi_02.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040022, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040022, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030009 = new()
@@ -254,7 +255,7 @@ public static class DungeonConstants
         Name = "飘浮灵",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Sylph_Wind_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040025, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040025, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030010 = new()
@@ -263,7 +264,7 @@ public static class DungeonConstants
         Name = "镀金旅团",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Eremite_Male_Standard_Glaive.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040031, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040031, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030011 = new()
@@ -273,8 +274,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fungus_Un_Gamma_Water.png",
         DungeonType = Enumeration.DungeonType.Easy,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030031, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040028, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030031, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040028, [1, 1, 1]),
         ])
     };
 
@@ -284,7 +285,7 @@ public static class DungeonConstants
         Name = "发条机关",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_MachinaIustitia_Ruggiero_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040037, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040037, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030013 = new()
@@ -293,7 +294,7 @@ public static class DungeonConstants
         Name = "原海异种",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_HermitCrab_Larva_01.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040034, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040034, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030014 = new()
@@ -302,7 +303,7 @@ public static class DungeonConstants
         Name = "纳塔龙众",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Natsaurus_Drillhead_Normal.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040040, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040040, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030015 = new()
@@ -311,7 +312,7 @@ public static class DungeonConstants
         Name = "部族龙形战士",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Tribalwarrior_Powermaul_Drillhead.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040043, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040043, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030016 = new()
@@ -320,7 +321,7 @@ public static class DungeonConstants
         Name = "愚人众特辖队",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_NodKrai_Oprichnik_Male.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040049, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040049, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4030017 = new()
@@ -329,7 +330,7 @@ public static class DungeonConstants
         Name = "巡陆艇",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuimecha_CoreA_MoveB_AttackA_Fire.png",
         DungeonType = Enumeration.DungeonType.Easy,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040046, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040046, [1, 1, 1])
     };
 
     // 404 - 精英怪物
@@ -340,8 +341,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuus_Summoner_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030010, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040013, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030010, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040013, [1, 1, 1]),
         ])
     };
 
@@ -351,7 +352,7 @@ public static class DungeonConstants
         Name = "深渊法师",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Abyss_Water_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030004, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030004, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040003 = new()
@@ -360,7 +361,7 @@ public static class DungeonConstants
         Name = "遗迹守卫",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Defender_Noner_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030007, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030007, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040004 = new()
@@ -370,8 +371,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Brute_None_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030001, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040004, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030001, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040004, [1, 1, 1]),
         ])
     };
 
@@ -382,8 +383,8 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuus_Fire_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030013, [1, 1, 1]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3040013, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030013, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040013, [1, 1, 1]),
         ])
     };
 
@@ -393,7 +394,7 @@ public static class DungeonConstants
         Name = "遗迹猎者",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Formathr_None.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030007, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030007, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040007 = new()
@@ -402,7 +403,7 @@ public static class DungeonConstants
         Name = "幼岩龙蜥",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Wyrm_Rock.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030016, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030016, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040008 = new()
@@ -411,7 +412,7 @@ public static class DungeonConstants
         Name = "丘丘王",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Brute_Rock_None.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030001, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030001, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040009 = new()
@@ -420,7 +421,7 @@ public static class DungeonConstants
         Name = "岩龙蜥",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Drake_Rock.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030016, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030016, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040010 = new()
@@ -429,7 +430,7 @@ public static class DungeonConstants
         Name = "愚人众·冬国仕女",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuus_Maiden_Water.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030022, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030022, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040011 = new()
@@ -438,7 +439,7 @@ public static class DungeonConstants
         Name = "遗迹机兵",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Apparatus_Enigma_BionicInsecta.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030019, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030019, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040012 = new()
@@ -447,7 +448,7 @@ public static class DungeonConstants
         Name = "兽境之狼",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Hound_Riftstalker_Rock.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030025, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030025, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040013 = new()
@@ -456,7 +457,7 @@ public static class DungeonConstants
         Name = "深海龙蜥",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Drake_Deepsea_Water.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030016, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030016, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040014 = new()
@@ -465,7 +466,7 @@ public static class DungeonConstants
         Name = "黑蛇众",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_ForlornVessel_Strong_Warbanner_Fire.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030028, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030028, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040015 = new()
@@ -474,7 +475,7 @@ public static class DungeonConstants
         Name = "遗迹龙兽",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Gargoyle.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030034, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030034, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040016 = new()
@@ -483,7 +484,7 @@ public static class DungeonConstants
         Name = "元能构装体",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Monolith_Ordinator.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030037, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030037, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040017 = new()
@@ -492,7 +493,7 @@ public static class DungeonConstants
         Name = "圣骸兽",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Vulture_Sacred_Fire.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030040, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030040, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040018 = new()
@@ -501,7 +502,7 @@ public static class DungeonConstants
         Name = "丘丘游侠",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Hilistray_Wind.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030043, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030043, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040019 = new()
@@ -510,7 +511,7 @@ public static class DungeonConstants
         Name = "浊水幻灵",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Necalevia_Normal.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030046, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030046, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040020 = new()
@@ -519,7 +520,7 @@ public static class DungeonConstants
         Name = "隙境原体",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Ovacua_Order_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030049, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030049, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040021 = new()
@@ -528,7 +529,7 @@ public static class DungeonConstants
         Name = "愚人众·役人",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuus_Escadron_Ice.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030052, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030052, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040022 = new()
@@ -537,7 +538,7 @@ public static class DungeonConstants
         Name = "玄文兽",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Striped.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030055, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030055, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040023 = new()
@@ -546,7 +547,7 @@ public static class DungeonConstants
         Name = "魔像禁卫",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Golem_Legion.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030058, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030058, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040024 = new()
@@ -555,7 +556,7 @@ public static class DungeonConstants
         Name = "大灵显化身",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Wayob_Drillhead.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030061, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030061, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040025 = new()
@@ -564,7 +565,7 @@ public static class DungeonConstants
         Name = "熔岩游像",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Lava_Liquid.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030064, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030064, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040026 = new()
@@ -573,7 +574,7 @@ public static class DungeonConstants
         Name = "秘源机兵·寻捕械",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_ToothTrap.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030067, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030067, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040027 = new()
@@ -582,7 +583,7 @@ public static class DungeonConstants
         Name = "深邃拟覆叶",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_TheAbyss_Rhizome.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030070, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030070, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040028 = new()
@@ -591,7 +592,7 @@ public static class DungeonConstants
         Name = "炉壳山鼬",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_VolcanoWeasel.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030073, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030073, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040029 = new()
@@ -600,7 +601,7 @@ public static class DungeonConstants
         Name = "霜夜灵嗣",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Moonbeast_Electric.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030076, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030076, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040030 = new()
@@ -609,7 +610,7 @@ public static class DungeonConstants
         Name = "荒野狂猎",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_WildHunt.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030082, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030082, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040031 = new()
@@ -618,7 +619,7 @@ public static class DungeonConstants
         Name = "蕴光异兽",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Magbeast_Argali.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030079, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030079, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040032 = new()
@@ -627,7 +628,7 @@ public static class DungeonConstants
         Name = "深黯钓客",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Lloigor_Sub.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030085, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030085, [1, 1, 1])
     };
 
     public static readonly DungeonModel _4040033 = new()
@@ -636,7 +637,7 @@ public static class DungeonConstants
         Name = "辖域守护者",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Watcher_Normal_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3030088, [1, 1, 1])
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030088, [1, 1, 1])
     };
 
     // 405 - 40体力BOSS
@@ -648,8 +649,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060002, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060002, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -661,8 +662,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060001, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060001, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -674,8 +675,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060004, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060004, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -687,8 +688,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060003, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060003, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -700,8 +701,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060006, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060006, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -713,8 +714,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060005, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060005, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -726,12 +727,12 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060007, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060007, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[5]),
         ])
     };
 
@@ -743,8 +744,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060008, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060008, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -756,9 +757,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060009, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060009, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -770,8 +771,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060011, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060011, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -783,9 +784,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060010, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060010, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -797,8 +798,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060012, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060012, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -810,8 +811,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060013, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060013, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -823,8 +824,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060014, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060014, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -836,9 +837,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060015, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060015, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -850,8 +851,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060016, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060016, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -863,8 +864,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060018, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060018, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -876,8 +877,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060017, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060017, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -889,9 +890,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060019, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060019, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -903,9 +904,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060020, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060020, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -917,8 +918,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060021, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060021, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -930,8 +931,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060022, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060022, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -943,11 +944,11 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060023, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[4]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[4]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[4]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[4]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060023, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[4]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[4]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[4]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[4]),
         ])
     };
 
@@ -959,10 +960,10 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060024, 1.501),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060025, 1.501),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060024, 1.501),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060025, 1.501),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -974,8 +975,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060026, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060026, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -987,8 +988,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060027, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060027, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1000,8 +1001,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060028, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060028, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1013,8 +1014,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060029, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060029, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1026,9 +1027,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060030, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060030, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -1040,9 +1041,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060031, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060031, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -1054,8 +1055,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060033, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060033, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070401, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1067,8 +1068,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060032, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060032, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1080,8 +1081,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060034, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060034, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1093,10 +1094,10 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060035, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterAscensionRate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060035, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[3]),
         ])
     };
 
@@ -1108,8 +1109,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060036, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060036, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1121,8 +1122,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060037, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060037, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1134,8 +1135,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060038, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060038, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1147,8 +1148,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060039, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060039, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1160,9 +1161,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060040, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070401, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060040, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070401, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -1174,9 +1175,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060041, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060041, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -1188,9 +1189,9 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060042, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060042, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[2]),
         ])
     };
 
@@ -1202,8 +1203,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060043, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060043, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1215,8 +1216,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060044, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060044, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1228,8 +1229,8 @@ public static class DungeonConstants
         Cost = 40,
         DungeonType = Enumeration.DungeonType.Boss,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3060045, 3.003),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060045, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 
@@ -1503,7 +1504,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090001, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090001, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070002 = new()
@@ -1514,7 +1515,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090005, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090005, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070003 = new()
@@ -1525,7 +1526,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090009, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090009, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070004 = new()
@@ -1536,7 +1537,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090013, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090013, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070005 = new()
@@ -1547,7 +1548,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090017, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090017, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070006 = new()
@@ -1558,7 +1559,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090021, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090021, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070007 = new()
@@ -1569,7 +1570,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090025, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090025, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070008 = new()
@@ -1580,7 +1581,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090029, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090029, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070009 = new()
@@ -1591,7 +1592,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090033, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090033, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070010 = new()
@@ -1602,7 +1603,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090037, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090037, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070011 = new()
@@ -1613,7 +1614,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090041, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090041, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070012 = new()
@@ -1624,7 +1625,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090045, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090045, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070013 = new()
@@ -1635,7 +1636,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090049, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090049, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070014 = new()
@@ -1646,7 +1647,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090053, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090053, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070015 = new()
@@ -1657,7 +1658,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090057, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090057, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070016 = new()
@@ -1668,7 +1669,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090061, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090061, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070017 = new()
@@ -1679,7 +1680,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090065, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090065, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070018 = new()
@@ -1690,7 +1691,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090069, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090069, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070019 = new()
@@ -1701,7 +1702,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090073, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090073, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070020 = new()
@@ -1712,7 +1713,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090077, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090077, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     public static readonly DungeonModel _4070021 = new()
@@ -1723,7 +1724,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.WeaponAscension,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3090081, FigureConstants.MaterialWeaponAscensionRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090081, FigureConstants.MaterialWeaponAscensionRate)
     };
 
     // 408 - 天赋
@@ -1735,7 +1736,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080001, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080001, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080002 = new()
@@ -1746,7 +1747,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080004, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080004, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080003 = new()
@@ -1757,7 +1758,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080007, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080007, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080004 = new()
@@ -1768,7 +1769,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080010, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080010, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080005 = new()
@@ -1779,7 +1780,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080013, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080013, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080006 = new()
@@ -1790,7 +1791,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080016, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080016, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080007 = new()
@@ -1801,7 +1802,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080019, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080019, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080008 = new()
@@ -1812,7 +1813,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080022, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080022, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080009 = new()
@@ -1823,7 +1824,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080025, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080025, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080010 = new()
@@ -1834,7 +1835,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080028, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080028, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080011 = new()
@@ -1845,7 +1846,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080031, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080031, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080012 = new()
@@ -1856,7 +1857,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080034, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080034, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080013 = new()
@@ -1867,7 +1868,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080037, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080037, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080014 = new()
@@ -1878,7 +1879,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080040, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080040, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080015 = new()
@@ -1889,7 +1890,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080043, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080043, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080016 = new()
@@ -1900,7 +1901,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080046, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080046, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080017 = new()
@@ -1911,7 +1912,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080049, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080049, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080018 = new()
@@ -1922,7 +1923,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080052, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080052, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080019 = new()
@@ -1933,7 +1934,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 1,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080055, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080055, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080020 = new()
@@ -1944,7 +1945,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 2,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080058, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080058, FigureConstants.MaterialCharacterTalentRate)
     };
 
     public static readonly DungeonModel _4080021 = new()
@@ -1955,7 +1956,7 @@ public static class DungeonConstants
         Cost = 20,
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
-        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3080061, FigureConstants.MaterialCharacterTalentRate)
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080061, FigureConstants.MaterialCharacterTalentRate)
     };
 
     // 409 - 60体力BOSS
@@ -1967,12 +1968,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050001, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050002, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050003, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050001, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050002, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050003, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 
@@ -1984,12 +1985,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050004, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050005, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050006, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050004, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050005, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050006, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 
@@ -2001,12 +2002,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050007, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050008, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050009, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050007, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050008, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050009, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 
@@ -2018,14 +2019,14 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050010, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050011, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050012, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070801, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050010, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050011, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050012, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070801, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[5]),
         ])
     };
 
@@ -2037,11 +2038,11 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050013, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050014, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050015, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[2]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050013, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050014, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050015, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[2]),
         ])
     };
 
@@ -2053,10 +2054,10 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050016, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050017, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050018, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050016, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050017, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050018, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
         ])
     };
 
@@ -2068,12 +2069,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050019, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050020, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050021, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070601, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050019, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050020, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050021, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 
@@ -2085,10 +2086,10 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050022, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050023, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050024, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070401, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050022, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050023, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050024, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070401, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
         ])
     };
 
@@ -2100,10 +2101,10 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050025, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050026, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050027, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050025, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050026, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050027, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
         ])
     };
 
@@ -2115,10 +2116,10 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050028, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050029, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050030, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050028, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050029, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050030, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
         ])
     };
 
@@ -2130,10 +2131,10 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050032, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050033, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050034, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050032, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050033, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050034, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[1]),
         ])
     };
 
@@ -2145,12 +2146,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050035, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050036, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050037, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050035, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050036, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050037, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 
@@ -2162,12 +2163,12 @@ public static class DungeonConstants
         Cost = 60,
         DungeonType = Enumeration.DungeonType.Trounce,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050038, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050039, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants._3050040, 0.8),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050038, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050039, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050040, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };
 }

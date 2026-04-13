@@ -1,4 +1,5 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
+using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.EntityModels;
 
 namespace HexereiKatepnha.Constants.EntityConstants.CharacterConstants;
@@ -142,10 +143,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13170 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 819 }, { Enumeration.Affix.EnergyRecharge, 26.7 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13255 }, { Enumeration.Affix.Attack, 240 }, { Enumeration.Affix.Defense, 825 }, { Enumeration.Affix.EnergyRecharge, 26.7 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100104, MaterialConstants._3060005, MaterialConstants.G3070201, MaterialConstants.G3040016),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040016, MaterialConstants.G3080004),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040016, MaterialConstants.G3080004),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040016, MaterialConstants.G3080004),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100104, MaterialConstants06._3060005, MaterialConstants07.G3070201, MaterialConstants04.G3040016),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040016, MaterialConstants08.G3080004),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040016, MaterialConstants08.G3080004),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040016, MaterialConstants08.G3080004),
     };
 
     public static CharacterModel _1010012 = new()
@@ -285,10 +286,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12823 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 848 }, { Enumeration.Affix.DefensePercent, 30.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12906 }, { Enumeration.Affix.Attack, 240 }, { Enumeration.Affix.Defense, 854 }, { Enumeration.Affix.DefensePercent, 30.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100102, MaterialConstants._3060003, MaterialConstants.G3070801, MaterialConstants.G3040004),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050002, MaterialConstants.G3040004, MaterialConstants.G3080004),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050002, MaterialConstants.G3040004, MaterialConstants.G3080004),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050002, MaterialConstants.G3040004, MaterialConstants.G3080004),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100102, MaterialConstants06._3060003, MaterialConstants07.G3070801, MaterialConstants04.G3040004),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050002, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050002, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050002, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
     };
 
     public static CharacterModel _1010013 = new()
@@ -428,10 +429,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11668 }, { Enumeration.Affix.Attack, 274 }, { Enumeration.Affix.Defense, 689 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11743 }, { Enumeration.Affix.Attack, 280 }, { Enumeration.Affix.Defense, 693 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100208, MaterialConstants._3060004, MaterialConstants.G3070701, MaterialConstants.G3040004),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050003, MaterialConstants.G3040004, MaterialConstants.G3080013),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050003, MaterialConstants.G3040004, MaterialConstants.G3080013),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050003, MaterialConstants.G3040004, MaterialConstants.G3080013),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100208, MaterialConstants06._3060004, MaterialConstants07.G3070701, MaterialConstants04.G3040004),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050003, MaterialConstants04.G3040004, MaterialConstants08.G3080013),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050003, MaterialConstants04.G3040004, MaterialConstants08.G3080013),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050003, MaterialConstants04.G3040004, MaterialConstants08.G3080013),
     };
 
     public static CharacterModel _1010014 = new()
@@ -571,10 +572,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9820 }, { Enumeration.Affix.Attack, 209 }, { Enumeration.Affix.Defense, 747 }, { Enumeration.Affix.AnemoDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9883 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 752 }, { Enumeration.Affix.AnemoDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100104, MaterialConstants._3060001, MaterialConstants.G3070601, MaterialConstants.G3040019),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050006, MaterialConstants.G3040019, MaterialConstants.G3080001),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050006, MaterialConstants.G3040019, MaterialConstants.G3080001),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050006, MaterialConstants.G3040019, MaterialConstants.G3080001),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100104, MaterialConstants06._3060001, MaterialConstants07.G3070601, MaterialConstants04.G3040019),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050006, MaterialConstants04.G3040019, MaterialConstants08.G3080001),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050006, MaterialConstants04.G3040019, MaterialConstants08.G3080001),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050006, MaterialConstants04.G3040019, MaterialConstants08.G3080001),
     };
 
     public static CharacterModel _1010015 = new()
@@ -714,10 +715,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 15634 }, { Enumeration.Affix.Attack, 288 }, { Enumeration.Affix.Defense, 818 }, { Enumeration.Affix.AdditionalHealing, 22.1 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 15740 }, { Enumeration.Affix.Attack, 293 }, { Enumeration.Affix.Defense, 823 }, { Enumeration.Affix.AdditionalHealing, 22.1 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100108, MaterialConstants._3060001, MaterialConstants.G3070601, MaterialConstants.G3040004),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040004, MaterialConstants.G3080004),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040004, MaterialConstants.G3080004),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040004, MaterialConstants.G3080004),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100108, MaterialConstants06._3060001, MaterialConstants07.G3070601, MaterialConstants04.G3040004),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040004, MaterialConstants08.G3080004),
     };
 
     public static CharacterModel _1010016 = new()
@@ -857,10 +858,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13810 }, { Enumeration.Affix.Attack, 403 }, { Enumeration.Affix.Defense, 834 }, { Enumeration.Affix.CriticalRate, 24.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13903 }, { Enumeration.Affix.Attack, 410 }, { Enumeration.Affix.Defense, 840 }, { Enumeration.Affix.CriticalRate, 24.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100106, MaterialConstants._3060005, MaterialConstants.G3070201, MaterialConstants.G3040013),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040013, MaterialConstants.G3080004),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040013, MaterialConstants.G3080004),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050001, MaterialConstants.G3040013, MaterialConstants.G3080004),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100106, MaterialConstants06._3060005, MaterialConstants07.G3070201, MaterialConstants04.G3040013),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040013, MaterialConstants08.G3080004),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040013, MaterialConstants08.G3080004),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050001, MaterialConstants04.G3040013, MaterialConstants08.G3080004),
     };
 
     public static CharacterModel _1010017 = new()
@@ -1000,10 +1001,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13159 }, { Enumeration.Affix.Attack, 345 }, { Enumeration.Affix.Defense, 981 }, { Enumeration.Affix.AdditionalHealing, 22.1 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13247 }, { Enumeration.Affix.Attack, 352 }, { Enumeration.Affix.Defense, 988 }, { Enumeration.Affix.AdditionalHealing, 22.1 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100207, MaterialConstants._3060004, MaterialConstants.G3070701, MaterialConstants.G3040007),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040007, MaterialConstants.G3080010),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040007, MaterialConstants.G3080010),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040007, MaterialConstants.G3080010),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100207, MaterialConstants06._3060004, MaterialConstants07.G3070701, MaterialConstants04.G3040007),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040007, MaterialConstants08.G3080010),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040007, MaterialConstants08.G3080010),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040007, MaterialConstants08.G3080010),
     };
 
     public static CharacterModel _1010018 = new()
@@ -1143,10 +1144,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11074 }, { Enumeration.Affix.Attack, 345 }, { Enumeration.Affix.Defense, 695 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11149 }, { Enumeration.Affix.Attack, 352 }, { Enumeration.Affix.Defense, 700 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100105, MaterialConstants._3060006, MaterialConstants.G3070301, MaterialConstants.G3040019),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080004),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080004),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080004),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100105, MaterialConstants06._3060006, MaterialConstants07.G3070301, MaterialConstants04.G3040019),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080004),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080004),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080004),
     };
 
     public static CharacterModel _1010019 = new()
@@ -1286,10 +1287,10 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13941 }, { Enumeration.Affix.Attack, 388 }, { Enumeration.Affix.Defense, 850 }, { Enumeration.Affix.CriticalDamage, 88.4 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 14034 }, { Enumeration.Affix.Attack, 396 }, { Enumeration.Affix.Defense, 856 }, { Enumeration.Affix.CriticalDamage, 88.4 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100208, MaterialConstants._3060002, MaterialConstants.G3070501, MaterialConstants.G3040019),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080010),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080010),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050005, MaterialConstants.G3040019, MaterialConstants.G3080010),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100208, MaterialConstants06._3060002, MaterialConstants07.G3070501, MaterialConstants04.G3040019),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080010),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080010),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050005, MaterialConstants04.G3040019, MaterialConstants08.G3080010),
     };
 
     public static CharacterModel _1010020 = new()
@@ -1429,9 +1430,9 @@ public class CharacterConstantsPage02
             { Enumeration.Level.L99, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11205 }, { Enumeration.Affix.Attack, 316 }, { Enumeration.Affix.Defense, 711 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
             { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11280 }, { Enumeration.Affix.Attack, 322 }, { Enumeration.Affix.Defense, 716 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
         },
-        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._3100103, MaterialConstants._3060001, MaterialConstants.G3070601, MaterialConstants.G3040001),
-        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040001, MaterialConstants.G3080007),
-        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040001, MaterialConstants.G3080007),
-        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._3050004, MaterialConstants.G3040001, MaterialConstants.G3080007),
+        LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100103, MaterialConstants06._3060001, MaterialConstants07.G3070601, MaterialConstants04.G3040001),
+        Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040001, MaterialConstants08.G3080007),
+        Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040001, MaterialConstants08.G3080007),
+        Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050004, MaterialConstants04.G3040001, MaterialConstants08.G3080007),
     };
 }
