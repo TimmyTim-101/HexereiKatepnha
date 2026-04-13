@@ -191,7 +191,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
         }
 
-        partial void OnSelectedCharacterChanged(Backpack1CharacterModel? value)
+        partial void OnSelectedCharacterChanged(Backpack1CharacterModel value)
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();

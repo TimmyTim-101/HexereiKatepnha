@@ -47,12 +47,12 @@
                             </StackPanel>
                         </UniformGrid>
                         <UniformGrid Grid.Row="4" Rows="1">
-                            <Image Source="{Binding AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[1]}"></Image>
-                            <Image Source="{Binding AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[2]}"></Image>
-                            <Image Source="{Binding AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[3]}"></Image>
-                            <Image Source="{Binding AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[4]}"></Image>
-                            <Image Source="{Binding AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[5]}"></Image>
-                            <Image Source="{Binding AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[6]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[1].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[1]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[2].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[2]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[3].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[3]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[4].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[4]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[5].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[5]}"></Image>
+                            <Image Source="{Binding ConstellationPropertyDictionary[6].ImagePath, IsAsync=True}" Width="18" Height="18" Stretch="UniformToFill" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding AscensionOpacityList[6]}"></Image>
                         </UniformGrid>
                     </Grid>
                 </Border>
@@ -659,7 +659,7 @@
                                             </ToggleButton.Template>
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
                                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="命之座：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Ascension}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Constellation}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                             </StackPanel>
                                         </ToggleButton>
                                         <Popup Grid.Row="0" IsOpen="{Binding IsAscensionPopupOpen}" PlacementTarget="{Binding ElementName=AscensionToggleButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
@@ -676,34 +676,34 @@
                                             </Border>
                                         </Popup>
                                         <UniformGrid Grid.Row="1" Rows="1">
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[1].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[1].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[2]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[2]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[2].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[2].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[3]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[3]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[3].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[3].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[4]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[4].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[4]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[4].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[4].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[5]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[5].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[5]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[5].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[5].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[6]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[6].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[6]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[6].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[6].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
                                         </UniformGrid>
@@ -888,37 +888,37 @@
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <TextBlock Style="{StaticResource MyTextBlock}" Text="命之座：" Foreground="#AAAAAA" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Ascension}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedCharacter.CharacterConfigModel.Constellation}" Margin="2,5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                         </StackPanel>
                                         <UniformGrid Grid.Row="1" Rows="1">
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[1].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[1]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[1].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[1].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[2]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[2].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[2]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[2].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[2].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[3]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[3].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[3]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[3].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[3].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[4].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[4]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[4].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[4]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[4].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[4].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[5].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[5]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[5].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[5]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[5].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[5].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
-                                            <Image Source="{Binding SelectedCharacter.AscensionPropertyDictionary[6].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[6]}">
+                                            <Image Source="{Binding SelectedCharacter.ConstellationPropertyDictionary[6].ImagePath, IsAsync=True}" Width="30" Height="30" Stretch="UniformToFill" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Opacity="{Binding SelectedCharacter.AscensionOpacityList[6]}">
                                                 <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.AscensionPropertyDictionary[6].Description}"></ToolTip>
+                                                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding SelectedCharacter.ConstellationPropertyDictionary[6].Description}"></ToolTip>
                                                 </Image.ToolTip>
                                             </Image>
                                         </UniformGrid>

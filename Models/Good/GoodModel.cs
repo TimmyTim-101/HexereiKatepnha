@@ -18,7 +18,7 @@ public class GoodCharacter
     public int level { get; set; }
     public int constellation { get; set; }
     public int ascension { get; set; }
-    public GoodCharacterTalent talent { get; set; }
+    public required GoodCharacterTalent talent { get; set; }
 }
 
 public class GoodCharacterTalent

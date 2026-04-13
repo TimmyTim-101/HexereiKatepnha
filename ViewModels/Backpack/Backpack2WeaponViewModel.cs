@@ -234,7 +234,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             AddPanelView = tempList;
         }
 
-        partial void OnSelectedWeaponChanged(Backpack2WeaponModel? value)
+        partial void OnSelectedWeaponChanged(Backpack2WeaponModel value)
         {
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
