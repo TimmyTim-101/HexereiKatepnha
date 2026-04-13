@@ -7,9 +7,9 @@ public class GoodModel
     public string format { get; set; } = "";
     public int version { get; set; }
     public string source { get; set; } = "";
-    public List<GoodCharacter> characters = new();
-    public List<GoodWeapon> weapons = new();
-    public Dictionary<string, int> materials = new();
+    public List<GoodCharacter> characters { get; set; } = new();
+    public List<GoodWeapon> weapons { get; set; } = new();
+    public Dictionary<string, int> materials { get; set; } = new();
 }
 
 public class GoodCharacter

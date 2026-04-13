@@ -54,7 +54,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         {
             Rid = rid
         };
-        string randomUniqueSign = Guid.NewGuid().ToString("N").Substring(0, 8);
+        string randomUniqueSign = Guid.NewGuid().ToString("N");
         thisConfig.Id = $"{rid}${randomUniqueSign}";
         Configuration.WeaponConfigMap[thisConfig.Id] = thisConfig;
         Save();

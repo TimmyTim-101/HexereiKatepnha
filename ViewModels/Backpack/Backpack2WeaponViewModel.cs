@@ -87,7 +87,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack2WeaponModel.Progression = cm.Progression;
                 thisBackpack2WeaponModel.LevelNumberString = StringConstants.LevelNumberString[cm.Level];
                 thisBackpack2WeaponModel.LevelNameString = StringConstants.LevelNameString[cm.Level];
-                thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[cm.Level]);
+                thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials.GetValueOrDefault(cm.Level, []));
                 thisBackpack2WeaponModel.SubExp = cm.SubExp;
                 thisBackpack2WeaponModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(cm.Level);
                 thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[cm.GoalLevel];
@@ -427,7 +427,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             thisBackpack2WeaponModel.Progression = thisConfig.Progression;
             thisBackpack2WeaponModel.LevelNumberString = StringConstants.LevelNumberString[thisConfig.Level];
             thisBackpack2WeaponModel.LevelNameString = StringConstants.LevelNameString[thisConfig.Level];
-            thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[thisConfig.Level]);
+            thisBackpack2WeaponModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials.GetValueOrDefault(thisConfig.Level, []));
             thisBackpack2WeaponModel.SubExp = thisConfig.SubExp;
             thisBackpack2WeaponModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisConfig.Level);
             thisBackpack2WeaponModel.LevelGoalNumberString = StringConstants.LevelNumberString[thisConfig.GoalLevel];
