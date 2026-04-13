@@ -397,7 +397,7 @@ public class GoalSimulatorService
         }
 
         int mora = largeUseNum * 4000 + mediumUseNum * 1000 + smallUseNum * 200;
-        while (((int)_materialNumMap[3010001]) < mora)
+        while ((int)_materialNumMap[3010001] < mora)
         {
             if (!_lackMaterialList.Contains(3010001))
             {
@@ -484,7 +484,7 @@ public class GoalSimulatorService
         }
 
         int mora = largeUseNum * 1000 + mediumUseNum * 200 + smallUseNum * 40;
-        while (((int)_materialNumMap[3010001]) < mora)
+        while ((int)_materialNumMap[3010001] < mora)
         {
             if (!_lackMaterialList.Contains(3010001))
             {
@@ -655,30 +655,30 @@ public class GoalSimulatorService
     {
         // 策略：假设异梦溶媒无限，“要打”秘境按需要顺序排序，“佛系”秘境按材料总数倒排序
         ObservableCollection<CalculatorPlanBoss60Model> res = [];
-        Dictionary<int, int> DungeonMaterialNumMap = new();
-        Dictionary<int, int> MaterialDungeonMap = new();
-        List<int> LackDungeonList = new();
+        Dictionary<int, int> dungeonMaterialNumMap = new();
+        Dictionary<int, int> materialDungeonMap = new();
+        List<int> lackDungeonList = [];
         foreach (DungeonModel thisDungeon in AllEntities.AllDungeonTrounce)
         {
             MaterialModel material1 = (thisDungeon.DropMaterialList[0].MaterialModel as MaterialModel)!;
             MaterialModel material2 = (thisDungeon.DropMaterialList[1].MaterialModel as MaterialModel)!;
             MaterialModel material3 = (thisDungeon.DropMaterialList[2].MaterialModel as MaterialModel)!;
-            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material1.Rid);
-            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material2.Rid);
-            DungeonMaterialNumMap[thisDungeon.Rid] = DungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material3.Rid);
-            MaterialDungeonMap[material1.Rid] = thisDungeon.Rid;
-            MaterialDungeonMap[material2.Rid] = thisDungeon.Rid;
-            MaterialDungeonMap[material3.Rid] = thisDungeon.Rid;
+            dungeonMaterialNumMap[thisDungeon.Rid] = dungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(material1.Rid);
+            dungeonMaterialNumMap[thisDungeon.Rid] = dungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance.GetMaterialNumber(material2.Rid);
+            dungeonMaterialNumMap[thisDungeon.Rid] = dungeonMaterialNumMap.GetValueOrDefault(thisDungeon.Rid, 0) + App.BackpackMaterialConfigManagerInstance.GetMaterialNumber(material3.Rid);
+            materialDungeonMap[material1.Rid] = thisDungeon.Rid;
+            materialDungeonMap[material2.Rid] = thisDungeon.Rid;
+            materialDungeonMap[material3.Rid] = thisDungeon.Rid;
         }
 
         foreach (MaterialPairModel mpm in _materialNeedNumList)
         {
             MaterialModel thisMaterial = (mpm.MaterialModel as MaterialModel)!;
-            if (!MaterialDungeonMap.TryGetValue(thisMaterial.Rid, out var thisDungeonRid)) continue;
-            DungeonMaterialNumMap[thisDungeonRid] -= (int)mpm.DropNum;
-            if (DungeonMaterialNumMap[thisDungeonRid] < 0)
+            if (!materialDungeonMap.TryGetValue(thisMaterial.Rid, out var thisDungeonRid)) continue;
+            dungeonMaterialNumMap[thisDungeonRid] -= (int)mpm.DropNum;
+            if (dungeonMaterialNumMap[thisDungeonRid] < 0)
             {
-                if (!LackDungeonList.Contains(thisDungeonRid)) LackDungeonList.Add(thisDungeonRid);
+                if (!lackDungeonList.Contains(thisDungeonRid)) lackDungeonList.Add(thisDungeonRid);
             }
         }
 
@@ -702,7 +702,7 @@ public class GoalSimulatorService
             thisModel.Sort = thisModel.HaveNum1 + thisModel.HaveNum2 + thisModel.HaveNum3 - thisModel.NeedNum1 - thisModel.NeedNum2 - thisModel.NeedNum3;
             thisModel.Info = thisModel.Sort >= 0 ? "佛系" : "要打";
             thisModel.Color = thisModel.Sort >= 0 ? "#12B981" : "#FB7185";
-            thisModel.LackIndex = LackDungeonList.Contains(thisDungeon.Rid) ? LackDungeonList.IndexOf(thisDungeon.Rid) : AllEntities.AllDungeonTrounce.Count;
+            thisModel.LackIndex = lackDungeonList.Contains(thisDungeon.Rid) ? lackDungeonList.IndexOf(thisDungeon.Rid) : AllEntities.AllDungeonTrounce.Count;
             res.Add(thisModel);
         }
 
@@ -1058,7 +1058,6 @@ public class GoalSimulatorService
                 if (_dungeonNumMap.ContainsKey(thisDungeonModel.Rid))
                 {
                     CalculatorPlanDungeon thisModel = new();
-
                     thisModel.Name = thisDungeonModel.Name;
                     int thisDungeonTime = _dungeonNumMap.GetValueOrDefault(thisDungeonModel.Rid, 0);
                     if (thisDungeonModel.Cost == 0)
@@ -1124,7 +1123,7 @@ public class GoalSimulatorService
                         bool isInvolved = false;
                         foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
                         {
-                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid) && _lackMaterialList.Contains(mpm.MaterialModel.Rid)) isInvolved = true;
+                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid) && !materialExtraInfoMap[mpm.MaterialModel.Rid].IsSatisfy) isInvolved = true;
                         }
 
                         if (isInvolved) thisDungeonItemList.Add(item);
@@ -1150,7 +1149,6 @@ public class GoalSimulatorService
                     if (isAdd)
                     {
                         CalculatorPlanDungeon thisModel = new();
-
                         thisModel.Name = thisDungeonModel.Name;
                         thisModel.TimeString = "";
                         thisModel.ResinString = "";
