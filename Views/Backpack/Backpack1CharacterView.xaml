@@ -13,7 +13,7 @@
              FontFamily="{StaticResource MyFont}">
     <UserControl.Resources>
         <DataTemplate x:Key="CharacterCardTemplate" DataType="{x:Type models:Backpack1CharacterModel}">
-            <Button Command="{Binding DataContext.ClickOnCharacterCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Background="Transparent" BorderThickness="0" Margin="2" Padding="0">
+            <Button Command="{Binding DataContext.ClickOnCharacterCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Background="Transparent" BorderThickness="0" Margin="2" Padding="0" Height="208" Width="122">
                 <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Cursor="Hand" Background="Transparent">
                     <Grid>
                         <Grid.RowDefinitions>

@@ -170,8 +170,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             List<Backpack1CharacterModel> tempList = AllCharacterList.Where(CharacterFilter).ToList();
             tempList.Sort((a, b) =>
             {
-                int levelA = SequenceConstants.AllLevels.IndexOf(a.CharacterConfigModel.CharacterLevel);
-                int levelB = SequenceConstants.AllLevels.IndexOf(b.CharacterConfigModel.CharacterLevel);
+                int levelA = int.Parse(StringConstants.LevelNameString[a.CharacterConfigModel.CharacterLevel].Split('/')[0].Trim());
+                int levelB = int.Parse(StringConstants.LevelNameString[b.CharacterConfigModel.CharacterLevel].Split('/')[0].Trim());
                 if (levelA != levelB) return levelB.CompareTo(levelA);
                 int subExpA = a.SubExp;
                 int subExpB = b.SubExp;

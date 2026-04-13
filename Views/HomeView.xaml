@@ -185,7 +185,19 @@
                     </ItemsControl>
                 </ScrollViewer>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
-                <TextBlock Style="{StaticResource TodoTextBlock}" Text="更新日志"></TextBlock>
+                <TextBlock Style="{StaticResource MyTextBlock}" Text="更新日志" Margin="30,5"></TextBlock>
+                <ListBox ItemsSource="{Binding InfoList}" Style="{StaticResource ModernListBox}" Margin="30,5" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Info}" Foreground="{Binding Color}" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>

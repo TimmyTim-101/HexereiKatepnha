@@ -8,6 +8,7 @@ using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
+using HexereiKatepnha.Models.ModelsForViews;
 using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 using HexereiKatepnha.Services.ConfigService;
 
@@ -290,5 +291,10 @@ namespace HexereiKatepnha.ViewModels
             App.BackpackWeaponConfigManagerInstance!.Load();
             App.CalculatorPlanSettingConfigManagerInstance!.Load();
         }
+
+        public List<BaseUpdateInfoModel> InfoList { get; set; } =
+        [
+            new MileStoneUpdateInfoModel("26-04-13：V1.0.0发布。"), // todo 填入实际日期
+        ];
     }
 }

@@ -52,6 +52,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public string Star4ImagePath { get; set; } = StringConstants.StarImagePath[4];
         public string Star5ImagePath { get; set; } = StringConstants.StarImagePath[5];
 
+        public List<Enumeration.WeaponType> WeaponTypeSortList =
+        [
+            Enumeration.WeaponType.Bow, Enumeration.WeaponType.Catalyst, Enumeration.WeaponType.Pole, Enumeration.WeaponType.Claymore, Enumeration.WeaponType.Sword
+        ];
+
         private List<AddPanelModel> AddPanelModelList { get; set; } = new();
         [ObservableProperty] private bool _isAddPanelPopupOpen;
         [ObservableProperty] private List<AddPanelModel> _addPanelView = [];
@@ -207,15 +212,18 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 int starA = a.Star;
                 int starB = b.Star;
                 if (starA != starB) return starB.CompareTo(starA);
-                int levelA = SequenceConstants.AllLevels.IndexOf(a.Config.Level);
-                int levelB = SequenceConstants.AllLevels.IndexOf(b.Config.Level);
+                int levelA = int.Parse(StringConstants.LevelNameString[a.Config.Level].Split('/')[0].Trim());
+                int levelB = int.Parse(StringConstants.LevelNameString[b.Config.Level].Split('/')[0].Trim());
                 if (levelA != levelB) return levelB.CompareTo(levelA);
                 int subExpA = a.SubExp;
                 int subExpB = b.SubExp;
                 if (subExpA != subExpB) return subExpB.CompareTo(subExpA);
+                int weaponTypeSortIndexA = WeaponTypeSortList.IndexOf(a.WeaponType);
+                int weaponTypeSortIndexB = WeaponTypeSortList.IndexOf(b.WeaponType);
+                if (weaponTypeSortIndexA != weaponTypeSortIndexB) return weaponTypeSortIndexA.CompareTo(weaponTypeSortIndexB);
                 int ridA = a.Rid;
                 int ridB = b.Rid;
-                if (ridA != ridB) return ridA.CompareTo(ridB);
+                if (ridA != ridB) return ridB.CompareTo(ridA);
                 int progressionA = a.Progression;
                 int progressionB = b.Progression;
                 if (progressionA != progressionB) return progressionB.CompareTo(progressionA);

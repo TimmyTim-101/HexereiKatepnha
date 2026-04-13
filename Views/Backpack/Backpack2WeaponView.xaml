@@ -26,7 +26,7 @@
                             <Image Source="{Binding ImagePath, IsAsync=True}" Width="120" Height="120" Stretch="UniformToFill"></Image>
                             <Image Source="{Binding CharacterImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Image>
                         </Grid>
-                        <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2">
+                        <Viewbox Grid.Row="1" MaxWidth="115" StretchDirection="DownOnly" Margin="0,2" Height="26" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
                         </Viewbox>
                         <Grid Grid.Row="2">
@@ -467,7 +467,9 @@
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Image Source="{Binding SelectedWeapon.WeaponTypeImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5"></Image>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                        <Viewbox StretchDirection="DownOnly" MaxWidth="135" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                        </Viewbox>
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <ToggleButton Grid.Row="2" x:Name="LevelToggleButton" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsLevelPopupOpen, Mode=TwoWay}">
@@ -840,7 +842,9 @@
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Image Source="{Binding SelectedWeapon.WeaponTypeImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5"></Image>
-                                        <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                        <Viewbox StretchDirection="DownOnly" MaxWidth="135" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
+                                        </Viewbox>
                                     </StackPanel>
                                     <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
@@ -878,8 +882,8 @@
                                     <Border Grid.Row="6" Style="{StaticResource HorizontalDivider}"></Border>
                                     <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
                                         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5">
-                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="52" Height="52" Stretch="UniformToFill"></Image>
-                                            <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="52" Height="52" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding SelectedWeapon.CharacterBackgroundImagePath}" Width="50" Height="50" Stretch="UniformToFill"></Image>
+                                            <Image Source="{Binding SelectedWeapon.CharacterImagePath, IsAsync=True}" Width="50" Height="50" Stretch="UniformToFill"></Image>
                                             <Image Source="{Binding SelectedWeapon.CharacterElementImagePath, IsAsync=True}" Width="13" Height="13" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                         </Grid>
                                         <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding SelectedWeapon.CharacterName}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,5" FontSize="18"></TextBlock>
