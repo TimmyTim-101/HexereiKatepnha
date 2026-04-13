@@ -1,5 +1,4 @@
 ﻿using HexereiKatepnha.Constants.EntityConstants;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.Models.ModelsForViews.Database;
 
@@ -24,4 +23,11 @@ public class Database2WeaponModel
     public string Progression5 { get; set; } = "";
     public List<WeaponLevelStatModel> SimpleLevelStatTable { get; set; } = [];
     public List<WeaponLevelStatModel> FullLevelStatTable { get; set; } = [];
+}
+
+public class WeaponLevelStatModel
+{
+    public string S1 { get; set; } = "";
+    public string S2 { get; set; } = "";
+    public string S3 { get; set; } = "";
 }

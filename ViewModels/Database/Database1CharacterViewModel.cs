@@ -6,7 +6,6 @@ using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Database;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 
 namespace HexereiKatepnha.ViewModels.Database
 {

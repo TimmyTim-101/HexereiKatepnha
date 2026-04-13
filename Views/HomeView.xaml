@@ -4,10 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:models="clr-namespace:HexereiKatepnha.Models.ModelsForViews.Database.SubModels"
              xmlns:vm="clr-namespace:HexereiKatepnha.ViewModels"
              xmlns:constants="clr-namespace:HexereiKatepnha.Constants"
              xmlns:wpf="clr-namespace:LottieSharp.WPF;assembly=LottieSharp"
+             xmlns:modelsForViews="clr-namespace:HexereiKatepnha.Models.ModelsForViews"
              d:DataContext="{d:DesignInstance vm:HomeViewModel}"
              mc:Ignorable="d"
              Background="{DynamicResource GlobalBackColor}"
@@ -131,7 +131,7 @@
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type models:BirthdayCharacterModel}">
+                            <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Margin="5,5,0,5" CornerRadius="5" BorderBrush="White" BorderThickness="1" Visibility="{Binding IsNotTodayBirthday, Converter={StaticResource BooleanToVisibilityConverter}}">
                                         <Grid>

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -9,7 +10,6 @@ using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews;
-using HexereiKatepnha.Models.ModelsForViews.Database.SubModels;
 using HexereiKatepnha.Services.ConfigService;
 
 namespace HexereiKatepnha.ViewModels
@@ -162,6 +162,7 @@ namespace HexereiKatepnha.ViewModels
             }
 
             WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(account));
+            Restart();
         }
 
         [RelayCommand]
@@ -203,7 +204,21 @@ namespace HexereiKatepnha.ViewModels
                     }
                 }
 
-                SwitchAccount(nextAccount);
+                App.AccountConfigManagerInstance.Save();
+                AccountConfigSave();
+                App.AccountConfigManagerInstance.Configuration.CurrentAccount = nextAccount;
+                App.AccountConfigManagerInstance.Save();
+                Guid nextAccountGuid = AccountConfig.CalculateMd5(nextAccount);
+                AccountConfigCreate(nextAccountGuid);
+                AccountConfigLoad();
+                CurrentAccount = nextAccount;
+                AllAccountList.Clear();
+                for (int i = 0; i < App.AccountConfigManagerInstance.Configuration.AccountList.Count; i++)
+                {
+                    AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
+                }
+
+                WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(account));
                 // 删除原账号
                 if (Directory.Exists(accountConfigFolder))
                 {
@@ -218,6 +233,8 @@ namespace HexereiKatepnha.ViewModels
                     AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
                 }
             }
+
+            Restart();
         }
 
         [RelayCommand]
@@ -260,6 +277,7 @@ namespace HexereiKatepnha.ViewModels
             }
 
             AccountConfigLoad();
+            Restart();
         }
 
         private void AccountConfigSave()
@@ -290,6 +308,16 @@ namespace HexereiKatepnha.ViewModels
             App.BackpackCharacterConfigManagerInstance!.Load();
             App.BackpackWeaponConfigManagerInstance!.Load();
             App.CalculatorPlanSettingConfigManagerInstance!.Load();
+        }
+
+        private void Restart()
+        {
+            string? currentAppPath = Environment.ProcessPath;
+            if (!string.IsNullOrEmpty(currentAppPath))
+            {
+                Process.Start(currentAppPath);
+                Environment.Exit(0);
+            }
         }
 
         public List<BaseUpdateInfoModel> InfoList { get; set; } =
