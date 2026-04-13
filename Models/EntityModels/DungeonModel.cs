@@ -12,7 +12,7 @@ public class DungeonModel : BaseEntityModel
     public override Enumeration.EntityType EntityType { get; set; } = Enumeration.EntityType.Dungeon;
     public override string ImagePath { get; set; } = "";
     public Enumeration.DungeonType DungeonType = Enumeration.DungeonType.Unknown;
-    public int Cost { get; set; }
-    public int Time { get; set; }
+    public int Cost { get; init; }
+    public int Time { get; init; }
     public List<MaterialPairModel> DropMaterialList = [];
 }

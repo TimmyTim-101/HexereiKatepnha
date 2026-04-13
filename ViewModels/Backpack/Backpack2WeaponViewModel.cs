@@ -118,8 +118,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 WeaponList.Add(thisBackpack2WeaponModel);
             }
 
-            SelectedWeapon = WeaponList.FirstOrDefault()!;
             ApplyFilters();
+            SelectedWeapon = WeaponView.FirstOrDefault()!;
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()

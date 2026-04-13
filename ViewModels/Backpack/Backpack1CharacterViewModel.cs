@@ -83,10 +83,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisBackpack1CharacterModel.TalentEGoalString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentELevelGoal];
                 thisBackpack1CharacterModel.TalentQGoalString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentQLevelGoal];
                 thisBackpack1CharacterModel.TalentPropertyDictionary = e.Talent;
-                thisBackpack1CharacterModel.AscensionPropertyDictionary = e.Ascension;
+                thisBackpack1CharacterModel.ConstellationPropertyDictionary = e.Constellation;
                 for (int i = 1; i <= 6; i++)
                 {
-                    thisBackpack1CharacterModel.AscensionOpacityList[i] = i <= thisBackpack1CharacterModel.CharacterConfigModel.Ascension ? 1.0 : 0.1;
+                    thisBackpack1CharacterModel.AscensionOpacityList[i] = i <= thisBackpack1CharacterModel.CharacterConfigModel.Constellation ? 1.0 : 0.1;
                 }
 
                 if (thisBackpack1CharacterModel.CharacterConfigModel.WeaponId != "")
@@ -118,8 +118,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 AllCharacterList.Add(thisBackpack1CharacterModel);
             }
 
-            _selectedCharacter = AllCharacterList.FirstOrDefault()!;
             ApplyFilters();
+            _selectedCharacter = CharacterView.FirstOrDefault()!;
             WeakReferenceMessenger.Default.Register(this);
         }
 
@@ -158,7 +158,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             if (IsHideLowLevelCharacter)
             {
-                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Ascension != 0 || c.SubExp != 0;
+                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Constellation != 0 || c.SubExp != 0;
                 isNotHide = flag;
             }
 
@@ -334,10 +334,10 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnAscensionSelection(String value)
         {
             int valueInt = Int32.Parse(value);
-            SelectedCharacter.CharacterConfigModel.Ascension = valueInt;
+            SelectedCharacter.CharacterConfigModel.Constellation = valueInt;
             for (int i = 1; i <= 6; i++)
             {
-                SelectedCharacter.AscensionOpacityList[i] = i <= SelectedCharacter.CharacterConfigModel.Ascension ? 1.0 : 0.1;
+                SelectedCharacter.AscensionOpacityList[i] = i <= SelectedCharacter.CharacterConfigModel.Constellation ? 1.0 : 0.1;
             }
 
             App.BackpackCharacterConfigManagerInstance!.UpdateAscension(SelectedCharacter.Rid, valueInt);

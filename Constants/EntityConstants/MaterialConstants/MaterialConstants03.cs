@@ -2,7 +2,7 @@
 
 namespace HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 
-public class MaterialConstants03
+public static class MaterialConstants03
 {
     // 303 - 角色与武器培养素材_234
     public static readonly MaterialModel _3030001 = new()

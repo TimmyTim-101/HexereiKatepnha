@@ -24,7 +24,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Bennett_01.png", Description = "热情过载" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Bennett_01.png", Description = "美妙旅程" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Bennett_01.png", Description = "冒险憧憬" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Bennett_02.png", Description = "踏破绝境" } },
@@ -167,7 +167,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Noel_01.png", Description = "护心铠" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Noel_01.png", Description = "大扫除" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Noel_01.png", Description = "支援就交给我吧" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Noel_02.png", Description = "旋风女仆" } },
@@ -310,7 +310,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Chongyun_01.png", Description = "灵刃·重华叠霜" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Chongyun_01.png", Description = "灵刃·云开星落" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Chongyun_01.png", Description = "释凌咏冰" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Chongyun_02.png", Description = "周天运转" } },
@@ -453,7 +453,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Sucrose_01.png", Description = "风灵作成·陆叁零捌" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Sucrose_01.png", Description = "禁·风灵作成·柒伍同构贰型" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Sucrose_01.png", Description = "堆叠真空域" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Sucrose_02.png", Description = "不羁型贝特" } },
@@ -596,7 +596,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Qin_02.png", Description = "风压剑" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Qin_01.png", Description = "蒲公英之风" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Qin_01.png", Description = "流转剑脊的暴风" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Qin_02.png", Description = "守护众人的坚盾" } },
@@ -739,7 +739,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Diluc_01_01.png", Description = "逆焰之刃" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Diluc_01.png", Description = "黎明" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Diluc_01.png", Description = "罪罚裁断" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Diluc_02.png", Description = "炙热余烬" } },
@@ -882,7 +882,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Qiqi_01.png", Description = "仙法·寒病鬼差" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Qiqi_01.png", Description = "仙法·救苦度厄" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Qiqi_01.png", Description = "寒苦回向" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Qiqi_02.png", Description = "冰寒蚀骨" } },
@@ -1025,7 +1025,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Mona_01.png", Description = "水中幻愿" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Mona_01.png", Description = "星命定轨" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Mona_01.png", Description = "沉没的预言" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Mona_02.png", Description = "星月的连珠" } },
@@ -1168,7 +1168,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Keqing_01.png", Description = "星斗归位" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Keqing_01.png", Description = "天街巡游" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Keqing_01.png", Description = "雷厉" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Keqing_02.png", Description = "苛捐" } },
@@ -1311,7 +1311,7 @@ public class CharacterConstantsPage02
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_S_Venti_01.png", Description = "高天之歌" } },
             { 3, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/Skill_E_Venti_01.png", Description = "风神之诗" } },
         },
-        Ascension = new Dictionary<int, ImageDescriptionPairModel>()
+        Constellation = new Dictionary<int, ImageDescriptionPairModel>()
         {
             { 1, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Venti_01.png", Description = "弦发的苍风" } },
             { 2, new ImageDescriptionPairModel() { ImagePath = "/Resources/Images/CharacterSkillTalent/UI_Talent_S_Venti_02.png", Description = "眷恋的泠风" } },

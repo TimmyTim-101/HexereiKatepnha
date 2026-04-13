@@ -94,18 +94,18 @@ namespace HexereiKatepnha.ViewModels.Database
                 thisDatabase1CharacterModel.Talent3ImagePath = e.Talent[3].ImagePath;
                 thisDatabase1CharacterModel.Talent3Description = e.Talent[3].Description;
 
-                thisDatabase1CharacterModel.Ascension1ImagePath = e.Ascension[1].ImagePath;
-                thisDatabase1CharacterModel.Ascension1Description = e.Ascension[1].Description;
-                thisDatabase1CharacterModel.Ascension2ImagePath = e.Ascension[2].ImagePath;
-                thisDatabase1CharacterModel.Ascension2Description = e.Ascension[2].Description;
-                thisDatabase1CharacterModel.Ascension3ImagePath = e.Ascension[3].ImagePath;
-                thisDatabase1CharacterModel.Ascension3Description = e.Ascension[3].Description;
-                thisDatabase1CharacterModel.Ascension4ImagePath = e.Ascension[4].ImagePath;
-                thisDatabase1CharacterModel.Ascension4Description = e.Ascension[4].Description;
-                thisDatabase1CharacterModel.Ascension5ImagePath = e.Ascension[5].ImagePath;
-                thisDatabase1CharacterModel.Ascension5Description = e.Ascension[5].Description;
-                thisDatabase1CharacterModel.Ascension6ImagePath = e.Ascension[6].ImagePath;
-                thisDatabase1CharacterModel.Ascension6Description = e.Ascension[6].Description;
+                thisDatabase1CharacterModel.Ascension1ImagePath = e.Constellation[1].ImagePath;
+                thisDatabase1CharacterModel.Ascension1Description = e.Constellation[1].Description;
+                thisDatabase1CharacterModel.Ascension2ImagePath = e.Constellation[2].ImagePath;
+                thisDatabase1CharacterModel.Ascension2Description = e.Constellation[2].Description;
+                thisDatabase1CharacterModel.Ascension3ImagePath = e.Constellation[3].ImagePath;
+                thisDatabase1CharacterModel.Ascension3Description = e.Constellation[3].Description;
+                thisDatabase1CharacterModel.Ascension4ImagePath = e.Constellation[4].ImagePath;
+                thisDatabase1CharacterModel.Ascension4Description = e.Constellation[4].Description;
+                thisDatabase1CharacterModel.Ascension5ImagePath = e.Constellation[5].ImagePath;
+                thisDatabase1CharacterModel.Ascension5Description = e.Constellation[5].Description;
+                thisDatabase1CharacterModel.Ascension6ImagePath = e.Constellation[6].ImagePath;
+                thisDatabase1CharacterModel.Ascension6Description = e.Constellation[6].Description;
 
                 CharacterStatModel beginningStat = new CharacterStatModel();
                 beginningStat.S1 = "等级";

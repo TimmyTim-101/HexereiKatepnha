@@ -743,7 +743,7 @@
                                             </Grid.ColumnDefinitions>
                                             <TextBlock Grid.Column="0" Text="{Binding SelectedCharacter.WeaponLevelString}" Style="{StaticResource MyTextBlock}" Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                             <TextBlock Grid.Column="1" Style="{StaticResource MyTextBlock}" Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100">
-                                                <Run Text="C" Foreground="#333333"></Run><Run Text="{Binding SelectedCharacter.WeaponProgression}"></Run>
+                                                <Run Text="R" Foreground="#333333"></Run><Run Text="{Binding SelectedCharacter.WeaponProgression}"></Run>
                                                 <TextBlock.ToolTip>
                                                     <ToolTip Style="{StaticResource FlutterStyleToolTip}">
                                                         <TextBlock Text="{Binding SelectedCharacter.WeaponDescription}" TextWrapping="Wrap" MaxWidth="250"></TextBlock>

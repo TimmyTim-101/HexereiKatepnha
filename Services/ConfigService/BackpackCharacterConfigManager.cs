@@ -86,7 +86,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
             Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
         }
 
-        Configuration.CharacterConfig[characterId].Ascension = num;
+        Configuration.CharacterConfig[characterId].Constellation = num;
         Save();
     }
 

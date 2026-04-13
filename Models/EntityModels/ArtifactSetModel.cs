@@ -11,8 +11,8 @@ public class ArtifactSetModel : BaseEntityModel
     public override int Star { get; set; }
     public override Enumeration.EntityType EntityType { get; set; } = Enumeration.EntityType.Artifact;
     public override string ImagePath { get; set; } = "";
-    public List<int> RarityList { get; set; } = [];
-    public Dictionary<int, string> PositionNameDict { get; set; } = [];
-    public Dictionary<int, string> PositionImagePathDict { get; set; } = [];
-    public Dictionary<int, string> EffectDict { get; set; } = [];
+    public List<int> RarityList { get; init; } = [];
+    public Dictionary<int, string> PositionNameDict { get; init; } = [];
+    public Dictionary<int, string> PositionImagePathDict { get; init; } = [];
+    public Dictionary<int, string> EffectDict { get; init; } = [];
 }

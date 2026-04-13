@@ -10,17 +10,17 @@ namespace HexereiKatepnha.Services.JsonService;
 
 public class GoodJsonParseService
 {
-    private string _jsonFilePath;
-    private string _jsonString = "{}";
-    private int _status = 1;
-    private string _errorMessage = "未知错误";
+    private readonly string _jsonFilePath;
+    private readonly string _jsonString = "{}";
+    private readonly int _status = 1;
+    private readonly string _errorMessage = "未知错误";
     private GoodModel _goodModel = new();
 
     private List<string> _oldOrderList = [];
     private Dictionary<string, SingleCalculatorPlanConfigModel> _oldPlanMap = new();
-    private Dictionary<int, SingleBackpackCharacterConfigModel> _oldCharacterConfigMap = new();
-    private Dictionary<string, SingleBackpackWeaponConfigModel> _oldWeaponConfigMap = new();
-    private Dictionary<string, string> _oldNewWeaponIdMap = new();
+    private readonly Dictionary<int, SingleBackpackCharacterConfigModel> _oldCharacterConfigMap = new();
+    private readonly Dictionary<string, SingleBackpackWeaponConfigModel> _oldWeaponConfigMap = new();
+    private readonly Dictionary<string, string> _oldNewWeaponIdMap = new();
 
     public GoodJsonParseService(string filePath)
     {
@@ -59,31 +59,35 @@ public class GoodJsonParseService
                 case 1:
                     int thisCharacterRid = scpcm.Rid;
                     SingleBackpackCharacterConfigModel oldCharacterConfig = App.BackpackCharacterConfigManagerInstance!.GetBackpackCharacterConfig(thisCharacterRid);
-                    SingleBackpackCharacterConfigModel thisCharacterConfig = new();
-                    thisCharacterConfig.CharacterLevel = oldCharacterConfig.CharacterLevel;
-                    thisCharacterConfig.TalentALevel = oldCharacterConfig.TalentALevel;
-                    thisCharacterConfig.TalentELevel = oldCharacterConfig.TalentELevel;
-                    thisCharacterConfig.TalentQLevel = oldCharacterConfig.TalentQLevel;
-                    thisCharacterConfig.Ascension = oldCharacterConfig.Ascension;
-                    thisCharacterConfig.CharacterLevelGoal = oldCharacterConfig.CharacterLevelGoal;
-                    thisCharacterConfig.TalentALevelGoal = oldCharacterConfig.TalentALevelGoal;
-                    thisCharacterConfig.TalentELevelGoal = oldCharacterConfig.TalentELevelGoal;
-                    thisCharacterConfig.TalentQLevelGoal = oldCharacterConfig.TalentQLevelGoal;
-                    thisCharacterConfig.WeaponId = oldCharacterConfig.WeaponId;
-                    thisCharacterConfig.SubExp = oldCharacterConfig.SubExp;
+                    SingleBackpackCharacterConfigModel thisCharacterConfig = new()
+                    {
+                        CharacterLevel = oldCharacterConfig.CharacterLevel,
+                        TalentALevel = oldCharacterConfig.TalentALevel,
+                        TalentELevel = oldCharacterConfig.TalentELevel,
+                        TalentQLevel = oldCharacterConfig.TalentQLevel,
+                        Constellation = oldCharacterConfig.Constellation,
+                        CharacterLevelGoal = oldCharacterConfig.CharacterLevelGoal,
+                        TalentALevelGoal = oldCharacterConfig.TalentALevelGoal,
+                        TalentELevelGoal = oldCharacterConfig.TalentELevelGoal,
+                        TalentQLevelGoal = oldCharacterConfig.TalentQLevelGoal,
+                        WeaponId = oldCharacterConfig.WeaponId,
+                        SubExp = oldCharacterConfig.SubExp
+                    };
                     _oldCharacterConfigMap[thisCharacterRid] = thisCharacterConfig;
                     break;
                 case 2:
                     string thisWeaponId = scpcm.Id;
                     SingleBackpackWeaponConfigModel oldWeaponConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisWeaponId];
-                    SingleBackpackWeaponConfigModel thisWeaponConfig = new();
-                    thisWeaponConfig.Id = oldWeaponConfig.Id;
-                    thisWeaponConfig.Rid = oldWeaponConfig.Rid;
-                    thisWeaponConfig.Progression = oldWeaponConfig.Progression;
-                    thisWeaponConfig.Level = oldWeaponConfig.Level;
-                    thisWeaponConfig.GoalLevel = oldWeaponConfig.GoalLevel;
-                    thisWeaponConfig.CharacterRid = oldWeaponConfig.CharacterRid;
-                    thisWeaponConfig.SubExp = oldWeaponConfig.SubExp;
+                    SingleBackpackWeaponConfigModel thisWeaponConfig = new()
+                    {
+                        Id = oldWeaponConfig.Id,
+                        Rid = oldWeaponConfig.Rid,
+                        Progression = oldWeaponConfig.Progression,
+                        Level = oldWeaponConfig.Level,
+                        GoalLevel = oldWeaponConfig.GoalLevel,
+                        CharacterRid = oldWeaponConfig.CharacterRid,
+                        SubExp = oldWeaponConfig.SubExp
+                    };
                     _oldWeaponConfigMap[thisWeaponId] = thisWeaponConfig;
                     break;
             }
@@ -131,18 +135,20 @@ public class GoodJsonParseService
             string thisKey = goodCharacter.key;
             if (characterGoodKeyModelMap.TryGetValue(thisKey, out var thisCharacterModel))
             {
-                SingleBackpackCharacterConfigModel thisConfig = new SingleBackpackCharacterConfigModel();
-                thisConfig.CharacterLevel = GetLevel(goodCharacter.level, goodCharacter.ascension);
-                thisConfig.TalentALevel = GetLevel(goodCharacter.talent.auto, 0);
-                thisConfig.TalentELevel = GetLevel(goodCharacter.talent.skill, 0);
-                thisConfig.TalentQLevel = GetLevel(goodCharacter.talent.burst, 0);
-                thisConfig.Ascension = goodCharacter.constellation;
-                thisConfig.CharacterLevelGoal = GetLevel(goodCharacter.level, goodCharacter.ascension);
-                thisConfig.TalentALevelGoal = GetLevel(goodCharacter.talent.auto, 0);
-                thisConfig.TalentELevelGoal = GetLevel(goodCharacter.talent.skill, 0);
-                thisConfig.TalentQLevelGoal = GetLevel(goodCharacter.talent.burst, 0);
-                thisConfig.WeaponId = "";
-                thisConfig.SubExp = 0;
+                SingleBackpackCharacterConfigModel thisConfig = new SingleBackpackCharacterConfigModel
+                {
+                    CharacterLevel = GetLevel(goodCharacter.level, goodCharacter.ascension),
+                    TalentALevel = GetLevel(goodCharacter.talent.auto, 0),
+                    TalentELevel = GetLevel(goodCharacter.talent.skill, 0),
+                    TalentQLevel = GetLevel(goodCharacter.talent.burst, 0),
+                    Constellation = goodCharacter.constellation,
+                    CharacterLevelGoal = GetLevel(goodCharacter.level, goodCharacter.ascension),
+                    TalentALevelGoal = GetLevel(goodCharacter.talent.auto, 0),
+                    TalentELevelGoal = GetLevel(goodCharacter.talent.skill, 0),
+                    TalentQLevelGoal = GetLevel(goodCharacter.talent.burst, 0),
+                    WeaponId = "",
+                    SubExp = 0
+                };
                 App.BackpackCharacterConfigManagerInstance.Configuration.CharacterConfig[thisCharacterModel.Rid] = thisConfig;
             }
         }
@@ -151,17 +157,16 @@ public class GoodJsonParseService
     private void BuildWeapon()
     {
         App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap.Clear();
-        Dictionary<string, CharacterModel> characterGoodKeyModelMap = AllEntities.AllCharacter.ToDictionary(m => m.GoodKey, m => m);
-        Dictionary<string, WeaponModel> weaponGoodKeyModelMap = AllEntities.AllWeapon.ToDictionary(m => m.GoodKey, m => m);
+        Dictionary<string, CharacterModel?> characterGoodKeyModelMap = AllEntities.AllCharacter.ToDictionary(m => m.GoodKey, m => m)!;
+        Dictionary<string, WeaponModel?> weaponGoodKeyModelMap = AllEntities.AllWeapon.ToDictionary(m => m.GoodKey, m => m)!;
         foreach (GoodWeapon goodWeapon in _goodModel.weapons)
         {
             string thisKey = goodWeapon.key;
-            if (weaponGoodKeyModelMap.ContainsKey(thisKey))
+            if (weaponGoodKeyModelMap.TryGetValue(thisKey, out WeaponModel? thisWeaponModel))
             {
-                WeaponModel thisWeaponModel = weaponGoodKeyModelMap[thisKey];
                 SingleBackpackWeaponConfigModel thisConfig = new SingleBackpackWeaponConfigModel();
                 string randomUniqueSign = Guid.NewGuid().ToString("N");
-                string thisWeaponId = $"{thisWeaponModel.Rid}${randomUniqueSign}";
+                string thisWeaponId = $"{thisWeaponModel!.Rid}${randomUniqueSign}";
                 thisConfig.Id = thisWeaponId;
                 thisConfig.Rid = thisWeaponModel.Rid;
                 thisConfig.Progression = goodWeapon.refinement;
@@ -171,9 +176,9 @@ public class GoodJsonParseService
                 string thisCharacterGoodKey = goodWeapon.location;
                 if (!string.IsNullOrEmpty(thisCharacterGoodKey))
                 {
-                    if (characterGoodKeyModelMap.ContainsKey(thisCharacterGoodKey))
+                    if (characterGoodKeyModelMap.TryGetValue(thisCharacterGoodKey, out CharacterModel? thisCharacterModel))
                     {
-                        int thisCharacterRid = characterGoodKeyModelMap[thisCharacterGoodKey].Rid;
+                        int thisCharacterRid = thisCharacterModel!.Rid;
                         thisConfig.CharacterRid = thisCharacterRid;
                         App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisCharacterRid].WeaponId = thisWeaponId;
                     }
@@ -256,10 +261,12 @@ public class GoodJsonParseService
                     bool isTalentQ = thisCharacterConfig.TalentQLevel != thisCharacterConfig.TalentQLevelGoal;
                     if (isCharacterLevel || isTalentA || isTalentE || isTalentQ)
                     {
-                        SingleCalculatorPlanConfigModel newPlan = new SingleCalculatorPlanConfigModel();
-                        newPlan.Id = thisCharacterRid.ToString();
-                        newPlan.Type = 1;
-                        newPlan.Rid = thisCharacterRid;
+                        SingleCalculatorPlanConfigModel newPlan = new SingleCalculatorPlanConfigModel
+                        {
+                            Id = thisCharacterRid.ToString(),
+                            Type = 1,
+                            Rid = thisCharacterRid
+                        };
                         App.CalculatorPlanSettingConfigManagerInstance.Configuration.OrderList.Add(newPlan.Id);
                         App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[newPlan.Id] = newPlan;
                     }
@@ -273,10 +280,12 @@ public class GoodJsonParseService
                         bool isWeaponLevel = thisWeaponConfig.Level != thisWeaponConfig.GoalLevel;
                         if (isWeaponLevel)
                         {
-                            SingleCalculatorPlanConfigModel newPlan = new SingleCalculatorPlanConfigModel();
-                            newPlan.Id = thisNewWeaponId;
-                            newPlan.Type = 2;
-                            newPlan.Rid = thisWeaponConfig.Rid;
+                            SingleCalculatorPlanConfigModel newPlan = new SingleCalculatorPlanConfigModel
+                            {
+                                Id = thisNewWeaponId,
+                                Type = 2,
+                                Rid = thisWeaponConfig.Rid
+                            };
                             App.CalculatorPlanSettingConfigManagerInstance.Configuration.OrderList.Add(newPlan.Id);
                             App.CalculatorPlanSettingConfigManagerInstance.Configuration.PlanMap[newPlan.Id] = newPlan;
                         }

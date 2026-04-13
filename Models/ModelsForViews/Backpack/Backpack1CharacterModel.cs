@@ -28,7 +28,7 @@ public partial class Backpack1CharacterModel : ObservableObject
     [ObservableProperty] private string _talentEGoalString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     [ObservableProperty] private string _talentQGoalString = StringConstants.LevelNumberString[Enumeration.Level.L1];
     public Dictionary<int, ImageDescriptionPairModel> TalentPropertyDictionary { get; set; } = new();
-    public Dictionary<int, ImageDescriptionPairModel> AscensionPropertyDictionary { get; set; } = new();
+    public Dictionary<int, ImageDescriptionPairModel> ConstellationPropertyDictionary { get; set; } = new();
     [ObservableProperty] private ObservableCollection<double> _ascensionOpacityList = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0];
     [ObservableProperty] private int _subExp;
     [ObservableProperty] private int _levelTotalExp = 1;

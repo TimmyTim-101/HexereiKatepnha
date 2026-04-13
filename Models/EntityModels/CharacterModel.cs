@@ -12,12 +12,12 @@ public class CharacterModel : BaseEntityModel
     public override Enumeration.EntityType EntityType { get; set; } = Enumeration.EntityType.Character;
     public override string ImagePath { get; set; } = "";
 
-    public Enumeration.ElementType ElementType { get; set; }
-    public Enumeration.WeaponType WeaponType { get; set; }
-    public int BirthMonth { get; set; }
-    public int BirthDay { get; set; }
+    public Enumeration.ElementType ElementType { get; init; }
+    public Enumeration.WeaponType WeaponType { get; init; }
+    public int BirthMonth { get; init; }
+    public int BirthDay { get; init; }
     public Dictionary<int, ImageDescriptionPairModel> Talent = new(); // 天赋信息
-    public Dictionary<int, ImageDescriptionPairModel> Ascension = new(); // 命座信息
+    public Dictionary<int, ImageDescriptionPairModel> Constellation = new(); // 命座信息
     public Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>> AffixDictionary = new(); // 各等级各属性数值
     public Dictionary<Enumeration.Level, List<MaterialPairModel>> LevelUpMaterials = new(); // 各等级升级需要材料
     public Dictionary<Enumeration.Level, List<MaterialPairModel>> Talent1Materials = new(); // 天赋1升级需要材料
