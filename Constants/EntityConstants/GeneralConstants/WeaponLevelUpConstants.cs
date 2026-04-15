@@ -57,10 +57,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L39, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 9625 }] },
             {
                 Enumeration.Level.L40, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 2 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 1 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L40P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 10025 }] },
@@ -75,10 +75,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L49, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 14800 }] },
             {
                 Enumeration.Level.L50, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 2 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 2 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 2 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L50P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 15300 }] },
@@ -93,10 +93,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L59, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 21300 }] },
             {
                 Enumeration.Level.L60, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 3 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 1 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                 ]
             },
             { Enumeration.Level.L60P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 21925 }] },
@@ -137,10 +137,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L19, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 4375 }] },
             {
                 Enumeration.Level.L20, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 1 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 1 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[3], DropNum = 1 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L20P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 4725 }] },
@@ -165,10 +165,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L39, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 14425 }] },
             {
                 Enumeration.Level.L40, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 5 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 1 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L40P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 15050 }] },
@@ -183,10 +183,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L49, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 22175 }] },
             {
                 Enumeration.Level.L50, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 3 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 3 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 3 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                 ]
             },
             { Enumeration.Level.L50P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 22950 }] },
@@ -201,10 +201,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L59, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 31950 }] },
             {
                 Enumeration.Level.L60, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 5 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 1 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                 ]
             },
             { Enumeration.Level.L60P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 32875 }] },
@@ -245,10 +245,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L19, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 6425 }] },
             {
                 Enumeration.Level.L20, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 1 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 2 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[3], DropNum = 2 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L20P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 6925 }] },
@@ -273,10 +273,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L39, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 21175 }] },
             {
                 Enumeration.Level.L40, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 5 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 8 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 2 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                 ]
             },
             { Enumeration.Level.L40P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 22050 }] },
@@ -291,10 +291,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L49, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 32550 }] },
             {
                 Enumeration.Level.L50, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 4 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                 ]
             },
             { Enumeration.Level.L50P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 33650 }] },
@@ -309,10 +309,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L59, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 46850 }] },
             {
                 Enumeration.Level.L60, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 6 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 8 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 2 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                 ]
             },
             { Enumeration.Level.L60P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 48225 }] },
@@ -327,10 +327,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L69, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 64400 }] },
             {
                 Enumeration.Level.L70, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 25000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 4 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 6 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 4 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 25000 },
                 ]
             },
             { Enumeration.Level.L70P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 66025 }] },
@@ -345,10 +345,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L79, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 85575 }] },
             {
                 Enumeration.Level.L80, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 8 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 12 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[0], DropNum = 3 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                 ]
             },
             { Enumeration.Level.L80P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 87500 }] },
@@ -389,10 +389,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L19, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 9725 }] },
             {
                 Enumeration.Level.L20, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 2 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 3 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[3], DropNum = 3 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 5000 },
                 ]
             },
             { Enumeration.Level.L20P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 10500 }] },
@@ -417,10 +417,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L39, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 32075 }] },
             {
                 Enumeration.Level.L40, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 8 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 12 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 3 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 15000 },
                 ]
             },
             { Enumeration.Level.L40P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 33425 }] },
@@ -435,10 +435,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L49, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 49300 }] },
             {
                 Enumeration.Level.L50, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 6 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 6 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 6 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                 ]
             },
             { Enumeration.Level.L50P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 51000 }] },
@@ -453,10 +453,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L59, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 70975 }] },
             {
                 Enumeration.Level.L60, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 9 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 12 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 3 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                 ]
             },
             { Enumeration.Level.L60P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 73050 }] },
@@ -471,10 +471,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L69, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 97575 }] },
             {
                 Enumeration.Level.L70, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 35000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 6 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 9 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 6 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 35000 },
                 ]
             },
             { Enumeration.Level.L70P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 100050 }] },
@@ -489,10 +489,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L79, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 129675 }] },
             {
                 Enumeration.Level.L80, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 45000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 12 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 18 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[0], DropNum = 4 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 45000 },
                 ]
             },
             { Enumeration.Level.L80P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 132575 }] },
@@ -533,10 +533,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L19, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 14600 }] },
             {
                 Enumeration.Level.L20, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 3 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 5 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[3], DropNum = 5 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 10000 },
                 ]
             },
             { Enumeration.Level.L20P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 15750 }] },
@@ -561,10 +561,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L39, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 48125 }] },
             {
                 Enumeration.Level.L40, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[2], DropNum = 12 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[2], DropNum = 18 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 5 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 20000 },
                 ]
             },
             { Enumeration.Level.L40P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 50150 }] },
@@ -579,10 +579,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L49, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 73950 }] },
             {
                 Enumeration.Level.L50, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 9 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 9 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[2], DropNum = 9 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 30000 },
                 ]
             },
             { Enumeration.Level.L50P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 76500 }] },
@@ -597,10 +597,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L59, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 106475 }] },
             {
                 Enumeration.Level.L60, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 45000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[1], DropNum = 14 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[1], DropNum = 18 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 5 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 45000 },
                 ]
             },
             { Enumeration.Level.L60P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 109575 }] },
@@ -615,10 +615,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L69, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 146375 }] },
             {
                 Enumeration.Level.L70, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 55000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 9 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 14 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[1], DropNum = 9 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 55000 },
                 ]
             },
             { Enumeration.Level.L70P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 150075 }] },
@@ -633,10 +633,10 @@ public class WeaponLevelUpConstants
             { Enumeration.Level.L79, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 194525 }] },
             {
                 Enumeration.Level.L80, [
+                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 65000 },
                     new MaterialPairModel() { MaterialModel = g304.MaterialList[0], DropNum = 18 },
                     new MaterialPairModel() { MaterialModel = g303.MaterialList[0], DropNum = 27 },
                     new MaterialPairModel() { MaterialModel = g309.MaterialList[0], DropNum = 6 },
-                    new MaterialPairModel() { MaterialModel = MaterialConstants01._3010001, DropNum = 65000 },
                 ]
             },
             { Enumeration.Level.L80P, [new MaterialPairModel() { MaterialModel = MaterialConstants11._3110001, DropNum = 198875 }] },

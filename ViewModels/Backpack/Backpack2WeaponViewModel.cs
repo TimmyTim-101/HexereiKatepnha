@@ -7,6 +7,7 @@ using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Services.CalculatorService;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
@@ -37,6 +38,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isOnlyOccupied;
         private ObservableCollection<Backpack2WeaponModel> WeaponList { get; } = [];
         [ObservableProperty] private Backpack2WeaponModel _selectedWeapon;
+        [ObservableProperty] private BackpackWeaponPlanInfo _selectedWeaponPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
         [ObservableProperty] private bool _isSubExpPopupOpen;
@@ -125,6 +127,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedWeapon = WeaponView.FirstOrDefault()!;
+            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()
@@ -247,6 +250,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
             ApplySelectCharacterFilters();
+            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
         }
 
         partial void OnWeaponFilterChanged(int value)
@@ -578,6 +582,26 @@ namespace HexereiKatepnha.ViewModels.Backpack
             App.BackpackCharacterConfigManagerInstance.UpdateWeapon(thisCharacterRid, SelectedWeapon.Id);
             IsSelectCharacterPopupOpen = false;
             IsSelectCharacterWithCharacterPopupOpen = false;
+        }
+
+        [RelayCommand]
+        private void ClickOnSubPlanFinish(BackpackWeaponPlanInfoSubPlan value)
+        {
+            Console.WriteLine(value.Index);
+            Console.WriteLine(value.ActionTypeString);
+            Console.WriteLine(value.ActionDescriptionString);
+            foreach (BackpackWeaponPlanInfoNeedMaterial v in value.NeedMaterialList)
+            {
+                Console.WriteLine($"--------------------------------------------");
+                Console.WriteLine($"    {v.BackgroundImagePath}");
+                Console.WriteLine($"    {v.ImagePath}");
+                Console.WriteLine($"    {v.Name}");
+                Console.WriteLine($"    {v.NeedNum}");
+                Console.WriteLine($"    {v.Color}");
+                Console.WriteLine($"--------------------------------------------");
+            }
+
+            Console.WriteLine(value.IsCheckAble);
         }
     }
 }

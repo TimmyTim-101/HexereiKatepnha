@@ -6259,6 +6259,10 @@
         <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_Linnea_01.png" />
         <None Remove="Resources\Images\CharacterSkillTalent\Skill_S_Linnea_02.png" />
         <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_Linnea_02.png" />
+        <None Remove="Resources\Icons\check_box_30dp_DDDDDD_FILL1_wght400_GRAD0_opsz24.png" />
+        <Resource Include="Resources\Icons\check_box_30dp_DDDDDD_FILL1_wght400_GRAD0_opsz24.png" />
+        <None Remove="Resources\Icons\check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png" />
+        <Resource Include="Resources\Icons\check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png" />
     </ItemGroup>
 
     <ItemGroup>

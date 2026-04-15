@@ -43,3 +43,33 @@ public partial class Backpack2WeaponModel : ObservableObject
         App.BackpackWeaponConfigManagerInstance!.UpdateSubExp(Id, SubExp);
     }
 }
+
+public partial class BackpackWeaponPlanInfo : ObservableObject
+{
+    [ObservableProperty] private ObservableCollection<BackpackWeaponPlanInfoMaterial> _weaponPlanMaterialList = [];
+    [ObservableProperty] private ObservableCollection<BackpackWeaponPlanInfoSubPlan> _weaponPlanSubPlanList = [];
+    [ObservableProperty] private bool _isShowSubPlan;
+    [ObservableProperty] private bool _isAllComplete;
+}
+
+public partial class BackpackWeaponPlanInfoMaterial : ObservableObject
+{
+}
+
+public partial class BackpackWeaponPlanInfoSubPlan : ObservableObject
+{
+    [ObservableProperty] private int _index;
+    [ObservableProperty] private string _actionTypeString = "";
+    [ObservableProperty] private string _actionDescriptionString = "";
+    [ObservableProperty] private ObservableCollection<BackpackWeaponPlanInfoNeedMaterial> _needMaterialList = [];
+    [ObservableProperty] private bool _isCheckAble;
+}
+
+public partial class BackpackWeaponPlanInfoNeedMaterial : ObservableObject
+{
+    [ObservableProperty] private string _backgroundImagePath = "";
+    [ObservableProperty] private string _imagePath = "";
+    [ObservableProperty] private string _name = "";
+    [ObservableProperty] private int _needNum;
+    [ObservableProperty] private string _color = StringConstants.GreenColorString;
+}

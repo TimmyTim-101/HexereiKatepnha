@@ -701,7 +701,7 @@ public class GoalSimulatorService
             };
             thisModel.Sort = thisModel.HaveNum1 + thisModel.HaveNum2 + thisModel.HaveNum3 - thisModel.NeedNum1 - thisModel.NeedNum2 - thisModel.NeedNum3;
             thisModel.Info = thisModel.Sort >= 0 ? "佛系" : "要打";
-            thisModel.Color = thisModel.Sort >= 0 ? "#12B981" : "#FB7185";
+            thisModel.Color = thisModel.Sort >= 0 ? StringConstants.GreenColorString : StringConstants.RedColorString;
             thisModel.LackIndex = lackDungeonList.Contains(thisDungeon.Rid) ? lackDungeonList.IndexOf(thisDungeon.Rid) : AllEntities.AllDungeonTrounce.Count;
             res.Add(thisModel);
         }
@@ -1090,7 +1090,7 @@ public class GoalSimulatorService
                         };
                         CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
                         thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
-                        if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                        if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
                         else thisMaterialModel.Color1 = "#Transparent";
                         thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
                         if (thisExtraInfo.IsSatisfy)
@@ -1098,7 +1098,7 @@ public class GoalSimulatorService
                             if (thisExtraInfo.ActionNum > 0)
                             {
                                 thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                                thisMaterialModel.Color2 = "#B98823";
+                                thisMaterialModel.Color2 = StringConstants.YellowColorString;
                             }
                             else
                             {
@@ -1109,7 +1109,7 @@ public class GoalSimulatorService
                         else
                         {
                             thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                            thisMaterialModel.Color2 = "#FB7185";
+                            thisMaterialModel.Color2 = StringConstants.RedColorString;
                         }
 
                         thisDungeonMaterialList.Add(thisMaterialModel);
@@ -1169,7 +1169,7 @@ public class GoalSimulatorService
                             };
                             CalculatorPlanMaterialExtraInfo thisExtraInfo = materialExtraInfoMap[thisMaterial.Rid];
                             thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
-                            if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                            if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
                             else thisMaterialModel.Color1 = "#Transparent";
                             thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
                             if (thisExtraInfo.IsSatisfy)
@@ -1177,7 +1177,7 @@ public class GoalSimulatorService
                                 if (thisExtraInfo.ActionNum > 0)
                                 {
                                     thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                                    thisMaterialModel.Color2 = "#B98823";
+                                    thisMaterialModel.Color2 = StringConstants.YellowColorString;
                                 }
                                 else
                                 {
@@ -1188,7 +1188,7 @@ public class GoalSimulatorService
                             else
                             {
                                 thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                                thisMaterialModel.Color2 = "#FB7185";
+                                thisMaterialModel.Color2 = StringConstants.RedColorString;
                             }
 
                             thisDungeonMaterialList.Add(thisMaterialModel);

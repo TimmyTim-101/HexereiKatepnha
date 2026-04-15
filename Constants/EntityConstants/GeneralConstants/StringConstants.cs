@@ -70,6 +70,10 @@ public static class StringConstants
     public static readonly string CheckCircleIconPath = "/Resources/Icons/check_circle_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
     public static readonly string CancelIconPath = "/Resources/Icons/cancel_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
 
+    public static readonly string RedColorString = "#FB7185";
+    public static readonly string GreenColorString = "#12B981";
+    public static readonly string YellowColorString = "#B98823";
+
     public static readonly Dictionary<Enumeration.Affix, string> AffixString = new()
     {
         { Enumeration.Affix.Empty, "（无）" },

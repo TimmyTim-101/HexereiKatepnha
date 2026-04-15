@@ -84,7 +84,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 Backpack4MaterialModel thisMaterialModel = MaterialRidMap[materialRid];
                 thisMaterialModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialRid);
                 thisMaterialModel.Num1 = thisExtraInfo.NeedNum;
-                if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? "#12B981" : "#FB7185";
+                if (thisExtraInfo.NeedNum > 0) thisMaterialModel.Color1 = thisExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
                 else thisMaterialModel.Color1 = "#Transparent";
                 thisMaterialModel.IconPath = thisExtraInfo.IsSatisfy ? "/Resources/Icons/check_circle_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" : "/Resources/Icons/cancel_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png";
                 if (thisExtraInfo.IsSatisfy)
@@ -92,7 +92,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     if (thisExtraInfo.ActionNum > 0)
                     {
                         thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                        thisMaterialModel.Color2 = "#B98823";
+                        thisMaterialModel.Color2 = StringConstants.YellowColorString;
                     }
                     else
                     {
@@ -103,7 +103,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 else
                 {
                     thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
-                    thisMaterialModel.Color2 = "#FB7185";
+                    thisMaterialModel.Color2 = StringConstants.RedColorString;
                 }
             }
         }

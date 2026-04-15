@@ -817,6 +817,7 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
@@ -1021,7 +1022,84 @@
                                 </Grid>
                             </StackPanel>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
-                            <StackPanel Grid.Row="5">
+                            <TextBlock Grid.Row="4" Text="已经升到顶级了" Style="{StaticResource MyTextBlock}" Foreground="{DynamicResource GlobalFrontColor}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="30" Visibility="{Binding SelectedWeaponPlanInfo.IsAllComplete, Converter={StaticResource BooleanToVisibilityConverter}}"></TextBlock>
+                            <Grid Grid.Row="4" Visibility="{Binding SelectedWeaponPlanInfo.IsShowSubPlan, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="材料罗列" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                <ListBox Grid.Row="2" ItemsSource="{Binding SelectedWeaponPlanInfo.WeaponPlanSubPlanList}" Style="{StaticResource ModernListBox}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="60" Margin="5">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="45"></ColumnDefinition>
+                                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="{Binding Index}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                    <UniformGrid Grid.Column="1" Rows="2" Columns="1">
+                                                        <TextBlock Text="{Binding ActionTypeString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                                        <TextBlock Text="{Binding ActionDescriptionString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                                    </UniformGrid>
+                                                    <ListBox Grid.Column="2" ItemsSource="{Binding NeedMaterialList}" Style="{StaticResource ModernListBox}">
+                                                        <ListBox.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Horizontal"></StackPanel>
+                                                            </ItemsPanelTemplate>
+                                                        </ListBox.ItemsPanel>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid Background="{Binding Color}" Margin="2">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                                        <RowDefinition Height="*"></RowDefinition>
+                                                                    </Grid.RowDefinitions>
+                                                                    <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
+                                                                        <Grid.ToolTip>
+                                                                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                                        </Grid.ToolTip>
+                                                                        <Image Source="{Binding BackgroundImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
+                                                                        <Image Source="{Binding ImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
+                                                                    </Grid>
+                                                                    <TextBlock Grid.Row="1" Text="{Binding NeedNum}" Style="{StaticResource MyTextBlock}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ListBox>
+                                                    <Button Grid.Column="3" IsEnabled="{Binding IsCheckAble}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DataContext.ClickOnSubPlanFinishCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Padding="0">
+                                                        <Image Height="30" Width="30" Stretch="UniformToFill">
+                                                            <Image.Style>
+                                                                <Style TargetType="Image">
+                                                                    <Setter Property="Source" Value="/Resources/Icons/check_box_30dp_DDDDDD_FILL1_wght400_GRAD0_opsz24.png"></Setter>
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding IsCheckAble}" Value="True">
+                                                                            <Setter Property="Source" Value="/Resources/Icons/check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png"></Setter>
+                                                                            <Setter Property="Cursor" Value="Hand"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                    </Button>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                            <Border Grid.Row="5" Style="{StaticResource HorizontalDivider}"></Border>
+                            <StackPanel Grid.Row="6">
                                 <Button Style="{StaticResource DeleteFunctionButton}" Content="删除该武器" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10" Command="{Binding ClickOnDeleteWeaponCommand}" CommandParameter="{Binding SelectedWeapon.Id}"></Button>
                             </StackPanel>
                         </Grid>
