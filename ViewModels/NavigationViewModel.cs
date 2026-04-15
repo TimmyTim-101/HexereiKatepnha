@@ -5,7 +5,7 @@ using HexereiKatepnha.Models.Messages;
 
 namespace HexereiKatepnha.ViewModels
 {
-    public partial class NavigationViewModel : ObservableObject, IRecipient<CurrentAccountChangesMessage>
+    public partial class NavigationViewModel : ObservableObject, IRecipient<CurrentAccountChangeMessage>
     {
         [ObservableProperty] private int _position = 1;
         [ObservableProperty] private string _currentAccount = "";
@@ -28,12 +28,7 @@ namespace HexereiKatepnha.ViewModels
             _updateNavigationFlagAction(valueInt);
         }
 
-        public void ChangeCurrentAccount(string account)
-        {
-            CurrentAccount = account;
-        }
-
-        public void Receive(CurrentAccountChangesMessage message)
+        public void Receive(CurrentAccountChangeMessage message)
         {
             CurrentAccount = message.Value;
         }

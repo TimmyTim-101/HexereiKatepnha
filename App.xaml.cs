@@ -18,7 +18,6 @@ namespace HexereiKatepnha
     {
         public static ThemeConfigManager? ThemeConfigManagerInstance { get; set; }
         public static AccountConfigManager? AccountConfigManagerInstance { get; private set; }
-        public static PrivateAccountConfigManager? PrivateAccountConfigManagerInstance { get; set; }
         public static BackpackMaterialConfigManager? BackpackMaterialConfigManagerInstance { get; set; }
         public static BackpackCharacterConfigManager? BackpackCharacterConfigManagerInstance { get; set; }
         public static BackpackWeaponConfigManager? BackpackWeaponConfigManagerInstance { get; set; }
@@ -37,8 +36,6 @@ namespace HexereiKatepnha
             Guid currentAccountGuid = AccountConfig.CalculateMd5(AccountConfigManagerInstance.Configuration.CurrentAccount);
             ThemeConfigManagerInstance = new ThemeConfigManager(currentAccountGuid);
             ThemeConfigManagerInstance.Load();
-            PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(currentAccountGuid);
-            PrivateAccountConfigManagerInstance.Load();
             BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(currentAccountGuid);
             BackpackMaterialConfigManagerInstance.Load();
             BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(currentAccountGuid);
@@ -54,7 +51,6 @@ namespace HexereiKatepnha
         {
             AccountConfigManagerInstance?.Save();
             ThemeConfigManagerInstance?.Save();
-            PrivateAccountConfigManagerInstance?.Save();
             BackpackMaterialConfigManagerInstance?.Save();
             BackpackCharacterConfigManagerInstance?.Save();
             BackpackWeaponConfigManagerInstance?.Save();

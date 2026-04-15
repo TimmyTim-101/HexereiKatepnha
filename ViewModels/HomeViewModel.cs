@@ -148,7 +148,7 @@ namespace HexereiKatepnha.ViewModels
 
             // 切换账号
             App.AccountConfigManagerInstance.Configuration.CurrentAccount = account;
-            App.AccountConfigManagerInstance.Save();
+            App.AccountConfigManagerInstance.UpdateCurrentAccount(account);
             Guid currentAccountGuid = AccountConfig.CalculateMd5(account);
             AccountConfigCreate(currentAccountGuid);
             // 重新加载配置
@@ -161,7 +161,6 @@ namespace HexereiKatepnha.ViewModels
                 AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
             }
 
-            WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(account));
             Restart();
         }
 
@@ -206,8 +205,7 @@ namespace HexereiKatepnha.ViewModels
 
                 App.AccountConfigManagerInstance.Save();
                 AccountConfigSave();
-                App.AccountConfigManagerInstance.Configuration.CurrentAccount = nextAccount;
-                App.AccountConfigManagerInstance.Save();
+                App.AccountConfigManagerInstance.UpdateCurrentAccount(nextAccount);
                 Guid nextAccountGuid = AccountConfig.CalculateMd5(nextAccount);
                 AccountConfigCreate(nextAccountGuid);
                 AccountConfigLoad();
@@ -218,7 +216,6 @@ namespace HexereiKatepnha.ViewModels
                     AllAccountList.Add(App.AccountConfigManagerInstance.Configuration.AccountList[i]);
                 }
 
-                WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(account));
                 // 删除原账号
                 if (Directory.Exists(accountConfigFolder))
                 {
@@ -264,12 +261,9 @@ namespace HexereiKatepnha.ViewModels
                 }
             }
 
-            App.AccountConfigManagerInstance.Configuration.CurrentAccount = RenameAccountName;
-
-            App.AccountConfigManagerInstance.Save();
+            App.AccountConfigManagerInstance.UpdateCurrentAccount(RenameAccountName);
             AccountConfigCreate(newAccountGuid);
             CurrentAccount = RenameAccountName;
-            WeakReferenceMessenger.Default.Send(new CurrentAccountChangesMessage(RenameAccountName));
             AllAccountList.Clear();
             for (int i = 0; i < App.AccountConfigManagerInstance.Configuration.AccountList.Count; i++)
             {
@@ -283,7 +277,6 @@ namespace HexereiKatepnha.ViewModels
         private void AccountConfigSave()
         {
             App.ThemeConfigManagerInstance!.Save();
-            App.PrivateAccountConfigManagerInstance!.Save();
             App.BackpackMaterialConfigManagerInstance!.Save();
             App.BackpackCharacterConfigManagerInstance!.Save();
             App.BackpackWeaponConfigManagerInstance!.Save();
@@ -293,7 +286,6 @@ namespace HexereiKatepnha.ViewModels
         private void AccountConfigCreate(Guid guid)
         {
             App.ThemeConfigManagerInstance = new ThemeConfigManager(guid);
-            App.PrivateAccountConfigManagerInstance = new PrivateAccountConfigManager(guid);
             App.BackpackMaterialConfigManagerInstance = new BackpackMaterialConfigManager(guid);
             App.BackpackCharacterConfigManagerInstance = new BackpackCharacterConfigManager(guid);
             App.BackpackWeaponConfigManagerInstance = new BackpackWeaponConfigManager(guid);
@@ -303,7 +295,6 @@ namespace HexereiKatepnha.ViewModels
         private void AccountConfigLoad()
         {
             App.ThemeConfigManagerInstance!.Load();
-            App.PrivateAccountConfigManagerInstance!.Load();
             App.BackpackMaterialConfigManagerInstance!.Load();
             App.BackpackCharacterConfigManagerInstance!.Load();
             App.BackpackWeaponConfigManagerInstance!.Load();
