@@ -1029,7 +1029,56 @@
                                     <RowDefinition Height="Auto"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="材料罗列" Style="{StaticResource TodoTextBlock}"></TextBlock>
+                                <ListBox Grid.Row="0" ItemsSource="{Binding SelectedWeaponPlanInfo.WeaponPlanMaterialList}" Style="{StaticResource ModernListBox}">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="86">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="20"></RowDefinition>
+                                                        <RowDefinition Height="20"></RowDefinition>
+                                                        <RowDefinition Height="27"></RowDefinition>
+                                                        <RowDefinition Height="25"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
+                                                        <Grid.ToolTip>
+                                                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                        </Grid.ToolTip>
+                                                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                    </Grid>
+                                                    <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                                            <Viewbox MaxWidth="60" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                            </Viewbox>
+                                                        </StackPanel>
+                                                    </Border>
+                                                    <Border Grid.Row="2" BorderThickness="0" Background="{Binding Color2}">
+                                                        <Viewbox MaxWidth="80" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num2String}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                        </Viewbox>
+                                                    </Border>
+                                                    <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                                                    </Viewbox>
+                                                    <UniformGrid Grid.Row="4" Rows="1">
+                                                        <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                        <Button Content="+" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.AddOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                        <Button Content="合" Style="{StaticResource TextButton}" Margin="0,2" Visibility="{Binding IsMergeVisible}" Command="{Binding DataContext.MergeOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                    </UniformGrid>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ListBox>
                                 <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                                 <ListBox Grid.Row="2" ItemsSource="{Binding SelectedWeaponPlanInfo.WeaponPlanSubPlanList}" Style="{StaticResource ModernListBox}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
                                     <ListBox.ItemsPanel>

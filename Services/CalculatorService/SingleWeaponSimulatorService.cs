@@ -1,9 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Constants.EntityConstants.MaterialConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.Services.CalculatorService;
 
@@ -22,6 +24,62 @@ public class SingleWeaponSimulatorService
     {
         BackpackWeaponPlanInfo res = new BackpackWeaponPlanInfo();
         // 分离材料
+        List<int> involvedMaterialRidList = [];
+        foreach (List<MaterialPairModel> mpmList in _weaponModel.LevelUpMaterials.Values)
+        {
+            foreach (MaterialPairModel mpm in mpmList)
+            {
+                if (!involvedMaterialRidList.Contains(mpm.MaterialModel!.Rid)) involvedMaterialRidList.Add(mpm.MaterialModel.Rid);
+                if (mpm.MaterialModel.Rid == 3110001)
+                {
+                    if (!involvedMaterialRidList.Contains(3110002)) involvedMaterialRidList.Add(3110002);
+                    if (!involvedMaterialRidList.Contains(3110003)) involvedMaterialRidList.Add(3110003);
+                }
+            }
+        }
+
+        Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
+        foreach (List<MaterialModel> l in AllEntities.AllMaterialLists)
+        {
+            foreach (MaterialModel e in l)
+            {
+                if (involvedMaterialRidList.Contains(e.Rid))
+                {
+                    BackpackWeaponPlanInfoMaterial thisMaterial = new BackpackWeaponPlanInfoMaterial();
+                    thisMaterial.Rid = e.Rid;
+                    thisMaterial.Name = e.Name;
+                    thisMaterial.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                    thisMaterial.ImagePath = e.ImagePath;
+                    thisMaterial.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
+                    CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[e.Rid];
+                    thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
+                    if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
+                    else thisMaterial.Color1 = "#Transparent";
+                    thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
+                    if (thisMaterialExtraInfo.IsSatisfy)
+                    {
+                        if (thisMaterialExtraInfo.ActionNum > 0)
+                        {
+                            thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                            thisMaterial.Color2 = StringConstants.YellowColorString;
+                        }
+                        else
+                        {
+                            thisMaterial.Num2String = "";
+                            thisMaterial.Color2 = "#Transparent";
+                        }
+                    }
+                    else
+                    {
+                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                        thisMaterial.Color2 = StringConstants.RedColorString;
+                    }
+
+                    res.WeaponPlanMaterialList.Add(thisMaterial);
+                }
+            }
+        }
+
         // 分离任务
         int startLevelIndex = SequenceConstants.AllLevels.IndexOf(_weaponConfig.Level);
         int endLevelIndex = startLevelIndex;

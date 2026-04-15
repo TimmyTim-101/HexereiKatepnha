@@ -585,6 +585,36 @@ namespace HexereiKatepnha.ViewModels.Backpack
         }
 
         [RelayCommand]
+        private void AddOneMaterial(BackpackWeaponPlanInfoMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                clickItem.Number += 1;
+            }
+        }
+
+        [RelayCommand]
+        private void MinusOneMaterial(BackpackWeaponPlanInfoMaterial? clickItem)
+        {
+            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
+        }
+
+        [RelayCommand]
+        private void MergeOneMaterial(BackpackWeaponPlanInfoMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                int recipeId = AutoCalculateConstants.MaterialMergeRecipe[clickItem.Rid];
+                BackpackWeaponPlanInfoMaterial recipeMaterial = SelectedWeaponPlanInfo.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == recipeId)!;
+                if (recipeMaterial.Number >= 3)
+                {
+                    recipeMaterial.Number -= 3;
+                    clickItem.Number += 1;
+                }
+            }
+        }
+
+        [RelayCommand]
         private void ClickOnSubPlanFinish(BackpackWeaponPlanInfoSubPlan value)
         {
             Console.WriteLine(value.Index);
