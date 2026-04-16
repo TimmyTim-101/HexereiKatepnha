@@ -33,7 +33,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public int Rid { get; init; }
     }
 
-    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>
+    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
@@ -175,7 +175,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 return b.Rid.CompareTo(a.Rid);
             });
             ApplySelectCharacterFilters();
-            WeakReferenceMessenger.Default.Register(this);
+            WeakReferenceMessenger.Default.Register<WeaponCharacterChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
         }
 
         private bool WeaponsFilter(object item)
@@ -583,14 +584,17 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             if (clickItem != null)
             {
-                clickItem.Number += 1;
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid,clickItem.Number+1);
             }
         }
 
         [RelayCommand]
         private void MinusOneMaterial(BackpackWeaponPlanInfoMaterial? clickItem)
         {
-            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
+            if (clickItem is { Number: >= 1 })
+            {
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number-1);
+            }
         }
 
         [RelayCommand]
@@ -602,8 +606,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 BackpackWeaponPlanInfoMaterial recipeMaterial = SelectedWeaponPlanInfo.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == recipeId)!;
                 if (recipeMaterial.Number >= 3)
                 {
-                    recipeMaterial.Number -= 3;
-                    clickItem.Number += 1;
+                    App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber([recipeMaterial.Rid, clickItem.Rid], [recipeMaterial.Number - 3, clickItem.Number + 1]);
                 }
             }
         }
@@ -647,6 +650,19 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 thisWeaponModel.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacterModel.ElementType];
                 thisWeaponModel.CharacterImagePath = thisCharacterModel.ImagePath;
                 thisWeaponModel.CharacterName = thisCharacterModel.Name;
+            }
+        }
+
+        public void Receive(BackpackMaterialConfigChangeMessage message)
+        {
+            List<int> thisMaterialRidList = message.Value;
+            foreach (int thisMaterialRid in thisMaterialRidList)
+            {
+                BackpackWeaponPlanInfoMaterial thisViewModel = SelectedWeaponPlanInfo.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == thisMaterialRid, null);
+                if (thisViewModel != null)
+                {
+                    thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                }
             }
         }
     }
