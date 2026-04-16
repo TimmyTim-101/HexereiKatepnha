@@ -14,7 +14,7 @@ namespace HexereiKatepnha
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App
+    public partial class App : IRecipient<BackpackMaterialConfigChangeMessage>, IRecipient<PlanChangeMessage>
     {
         public static ThemeConfigManager? ThemeConfigManagerInstance { get; set; }
         public static AccountConfigManager? AccountConfigManagerInstance { get; private set; }
@@ -44,7 +44,9 @@ namespace HexereiKatepnha
             BackpackWeaponConfigManagerInstance.Load();
             CalculatorPlanSettingConfigManagerInstance = new CalculatorPlanSettingConfigManager(currentAccountGuid);
             CalculatorPlanSettingConfigManagerInstance.Load();
-            RefreshGoalSimulation();
+            RefreshGlobalGoalSimulation();
+            WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<PlanChangeMessage>(this);
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -102,11 +104,21 @@ namespace HexereiKatepnha
             }
         }
 
-        public static void RefreshGoalSimulation()
+        public static void RefreshGlobalGoalSimulation()
         {
             GlobalGoalSimulatorServicePart = new GoalSimulatorService(false);
             GlobalGoalSimulatorServiceAll = new GoalSimulatorService(true);
             WeakReferenceMessenger.Default.Send(new GoalSimulatorChangeMessage());
+        }
+
+        public void Receive(BackpackMaterialConfigChangeMessage message)
+        {
+            RefreshGlobalGoalSimulation();
+        }
+
+        public void Receive(PlanChangeMessage message)
+        {
+            RefreshGlobalGoalSimulation();
         }
     }
 }

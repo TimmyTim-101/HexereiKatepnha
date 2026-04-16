@@ -1,38 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Messaging.Messages;
-using HexereiKatepnha.Constants.EntityConstants;
 
 namespace HexereiKatepnha.Models.Messages;
 
-public record BackpackCharacterChangeRecord(
-    string PlanId,
-    Enumeration.Level Level,
-    Enumeration.Level GoalLevel
-);
+public class CharacterInfoChangeMessage(int characterRid) : ValueChangedMessage<int>(characterRid); // 角色基本信息变动，通知规划设置config响应
 
-public class BackpackCharacterLevelChangeMessage : ValueChangedMessage<BackpackCharacterChangeRecord>
-{
-    public BackpackCharacterLevelChangeMessage(BackpackCharacterChangeRecord value) : base(value)
-    {
-    }
-}
-
-public class BackpackCharacterTalentAChangeMessage : ValueChangedMessage<BackpackCharacterChangeRecord>
-{
-    public BackpackCharacterTalentAChangeMessage(BackpackCharacterChangeRecord value) : base(value)
-    {
-    }
-}
-
-public class BackpackCharacterTalentEChangeMessage : ValueChangedMessage<BackpackCharacterChangeRecord>
-{
-    public BackpackCharacterTalentEChangeMessage(BackpackCharacterChangeRecord value) : base(value)
-    {
-    }
-}
-
-public class BackpackCharacterTalentQChangeMessage : ValueChangedMessage<BackpackCharacterChangeRecord>
-{
-    public BackpackCharacterTalentQChangeMessage(BackpackCharacterChangeRecord value) : base(value)
-    {
-    }
-}
+public class CharacterWeaponChangeMessage(int characterRid) : ValueChangedMessage<int>(characterRid); // 角色武器分配变动，通知角色view model响应

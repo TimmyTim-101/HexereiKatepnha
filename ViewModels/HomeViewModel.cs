@@ -4,11 +4,9 @@ using System.IO;
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
-using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews;
 using HexereiKatepnha.Services.ConfigService;
 
@@ -147,7 +145,6 @@ namespace HexereiKatepnha.ViewModels
             AccountConfigSave();
 
             // 切换账号
-            App.AccountConfigManagerInstance.Configuration.CurrentAccount = account;
             App.AccountConfigManagerInstance.UpdateCurrentAccount(account);
             Guid currentAccountGuid = AccountConfig.CalculateMd5(account);
             AccountConfigCreate(currentAccountGuid);

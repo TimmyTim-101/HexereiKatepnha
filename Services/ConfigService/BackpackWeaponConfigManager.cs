@@ -19,12 +19,10 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
         thisWeaponConfig.Level = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
-        App.RefreshGoalSimulation();
-        if (Configuration.WeaponConfigMap[weaponStringId].CharacterRid != 0)
+        WeakReferenceMessenger.Default.Send(new WeaponInfoChangeMessage(weaponStringId));
+        if (thisWeaponConfig.CharacterRid != 0)
         {
-            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(Configuration.WeaponConfigMap[weaponStringId].CharacterRid));
+            WeakReferenceMessenger.Default.Send(new WeaponInfoUpdateToCharacterMessage(thisWeaponConfig.CharacterRid));
         }
     }
 
@@ -33,9 +31,11 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
         thisWeaponConfig.GoalLevel = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateWeaponPlanSetting(weaponStringId);
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeMessage(new BackpackWeaponChangeRecord(weaponStringId, thisWeaponConfig.Level, thisWeaponConfig.GoalLevel)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new WeaponInfoChangeMessage(weaponStringId));
+        if (thisWeaponConfig.CharacterRid != 0)
+        {
+            WeakReferenceMessenger.Default.Send(new WeaponInfoUpdateToCharacterMessage(thisWeaponConfig.CharacterRid));
+        }
     }
 
     public void UpdateProgression(string weaponStringId, int i)
@@ -44,7 +44,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Save();
         if (Configuration.WeaponConfigMap[weaponStringId].CharacterRid != 0)
         {
-            WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(Configuration.WeaponConfigMap[weaponStringId].CharacterRid));
+            WeakReferenceMessenger.Default.Send(new WeaponInfoUpdateToCharacterMessage(Configuration.WeaponConfigMap[weaponStringId].CharacterRid));
         }
     }
 
@@ -67,25 +67,23 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         if (Configuration.WeaponConfigMap[id].CharacterRid != 0)
         {
             App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(Configuration.WeaponConfigMap[id].CharacterRid, "");
+            Configuration.WeaponConfigMap.Remove(id);
+            Save();
+            WeakReferenceMessenger.Default.Send(new WeaponDeleteMessage(id));
         }
-
-        Configuration.WeaponConfigMap.Remove(id);
-        Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.DeleteWeapon(id);
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponDeleteMessage(id));
-        App.RefreshGoalSimulation();
     }
 
     public void UpdateSubExp(string planId, int subExp)
     {
         Configuration.WeaponConfigMap[planId].SubExp = subExp;
         Save();
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
     }
 
     public void UpdateCharacter(string weaponId, int characterRid)
     {
         Configuration.WeaponConfigMap[weaponId].CharacterRid = characterRid;
         Save();
+        WeakReferenceMessenger.Default.Send(new WeaponCharacterChangeMessage(weaponId));
     }
 }

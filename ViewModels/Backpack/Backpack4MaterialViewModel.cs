@@ -11,7 +11,7 @@ using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack4MaterialViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
+    public partial class Backpack4MaterialViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
     {
         public ObservableCollection<Backpack4MaterialModel> AllMaterialList { get; } = [];
         private Dictionary<int, Backpack4MaterialModel> MaterialRidMap { get; set; } = new();
@@ -37,7 +37,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             UpdateExtraInfo();
-            WeakReferenceMessenger.Default.Register(this);
+            WeakReferenceMessenger.Default.Register<GoalSimulatorChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
         }
 
         [RelayCommand]
@@ -45,14 +46,17 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             if (clickItem != null)
             {
-                clickItem.Number += 1;
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number + 1);
             }
         }
 
         [RelayCommand]
         private void MinusOneMaterial(Backpack4MaterialModel? clickItem)
         {
-            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
+            if (clickItem is { Number: >= 1 })
+            {
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number - 1);
+            }
         }
 
         [RelayCommand]
@@ -64,8 +68,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 Backpack4MaterialModel recipeMaterial = MaterialRidMap[recipeId];
                 if (recipeMaterial.Number >= 3)
                 {
-                    recipeMaterial.Number -= 3;
-                    clickItem.Number += 1;
+                    App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber([recipeMaterial.Rid, clickItem.Rid], [recipeMaterial.Number - 3, clickItem.Number + 1]);
                 }
             }
         }
@@ -105,6 +108,15 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
                     thisMaterialModel.Color2 = StringConstants.RedColorString;
                 }
+            }
+        }
+
+        public void Receive(BackpackMaterialConfigChangeMessage message)
+        {
+            List<int> materialRidList = message.Value;
+            foreach (int materialRid in materialRidList)
+            {
+                MaterialRidMap[materialRid].Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialRid);
             }
         }
     }

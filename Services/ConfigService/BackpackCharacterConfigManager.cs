@@ -29,9 +29,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.CharacterLevel = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterLevelChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.CharacterLevel, thisCharacterConfig.CharacterLevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentA(int characterId, Enumeration.Level l)
@@ -44,9 +42,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentALevel = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentAChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentALevel, thisCharacterConfig.TalentALevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentE(int characterId, Enumeration.Level l)
@@ -59,9 +55,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentELevel = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentEChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentELevel, thisCharacterConfig.TalentELevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentQ(int characterId, Enumeration.Level l)
@@ -74,9 +68,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentQLevel = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentQChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentQLevel, thisCharacterConfig.TalentQLevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateAscension(int characterId, int num)
@@ -100,9 +92,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.CharacterLevelGoal = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterLevelChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.CharacterLevel, thisCharacterConfig.CharacterLevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentAGoal(int characterId, Enumeration.Level l)
@@ -115,9 +105,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentALevelGoal = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentAChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentALevel, thisCharacterConfig.TalentALevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentEGoal(int characterId, Enumeration.Level l)
@@ -130,9 +118,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentELevelGoal = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentEChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentELevel, thisCharacterConfig.TalentELevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateTalentQGoal(int characterId, Enumeration.Level l)
@@ -145,9 +131,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.TalentQLevelGoal = l;
         Save();
-        App.CalculatorPlanSettingConfigManagerInstance!.UpdateCharacterPlanSetting(characterId);
-        WeakReferenceMessenger.Default.Send(new BackpackCharacterTalentQChangeMessage(new BackpackCharacterChangeRecord(characterId.ToString(), thisCharacterConfig.TalentQLevel, thisCharacterConfig.TalentQLevelGoal)));
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateSubExp(int characterId, int subExp)
@@ -160,18 +144,18 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.SubExp = subExp;
         Save();
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
     }
 
-    public void UpdateWeapon(int characterId, string weaponId)
+    public void UpdateWeapon(int characterRid, string weaponId)
     {
-        if (!Configuration.CharacterConfig.ContainsKey(characterId))
+        if (!Configuration.CharacterConfig.ContainsKey(characterRid))
         {
-            Configuration.CharacterConfig[characterId] = new SingleBackpackCharacterConfigModel();
+            Configuration.CharacterConfig[characterRid] = new SingleBackpackCharacterConfigModel();
         }
 
-        Configuration.CharacterConfig[characterId].WeaponId = weaponId;
+        Configuration.CharacterConfig[characterRid].WeaponId = weaponId;
         Save();
-        WeakReferenceMessenger.Default.Send(new BackpackWeaponChangeCharacterMessage(characterId));
+        WeakReferenceMessenger.Default.Send(new CharacterWeaponChangeMessage(characterRid));
     }
 }

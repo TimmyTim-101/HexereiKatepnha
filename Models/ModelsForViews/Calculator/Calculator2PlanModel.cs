@@ -76,11 +76,6 @@ public partial class CalculatorPlanMaterial : ObservableObject
     [ObservableProperty] private string _color2 = "#Transparent";
 
     public Visibility IsMergeVisible => AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(Rid) ? Visibility.Visible : Visibility.Collapsed;
-
-    partial void OnNumberChanged(int value)
-    {
-        if (value != App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid)) App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
-    }
 }
 
 public class CalculatorPlanItem

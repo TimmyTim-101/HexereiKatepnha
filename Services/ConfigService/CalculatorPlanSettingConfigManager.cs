@@ -1,14 +1,19 @@
-﻿using HexereiKatepnha.Models.ConfigModels;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using HexereiKatepnha.Models.ConfigModels;
+using HexereiKatepnha.Models.Messages;
 
 namespace HexereiKatepnha.Services.ConfigService;
 
-public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPlanSettingConfig>
+public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPlanSettingConfig>, IRecipient<CharacterInfoChangeMessage>, IRecipient<WeaponInfoChangeMessage>, IRecipient<WeaponDeleteMessage>
 {
-    protected override string ConfigFileName { get; set; }
+    protected sealed override string ConfigFileName { get; set; }
 
     public CalculatorPlanSettingConfigManager(Guid accountGuid)
     {
         ConfigFileName = "Configs/" + accountGuid + "/CalculatorPlanSetting.json";
+        WeakReferenceMessenger.Default.Register<CharacterInfoChangeMessage>(this);
+        WeakReferenceMessenger.Default.Register<WeaponInfoChangeMessage>(this);
+        WeakReferenceMessenger.Default.Register<WeaponDeleteMessage>(this);
     }
 
     public void UpdateCharacterPlanSetting(int rid)
@@ -42,7 +47,8 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
 
         Save();
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new ItemGoalChangeMessage(rid.ToString()));
+        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
     }
 
     public void UpdateWeaponPlanSetting(string planId)
@@ -70,7 +76,8 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         }
 
         Save();
-        App.RefreshGoalSimulation();
+        WeakReferenceMessenger.Default.Send(new ItemGoalChangeMessage(planId));
+        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
     }
 
     public void UpdateTop(string planId)
@@ -79,7 +86,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Insert(0, planId);
             Save();
-            App.RefreshGoalSimulation();
+            WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
         }
     }
 
@@ -90,7 +97,7 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Move(index, index - 1);
             Save();
-            App.RefreshGoalSimulation();
+            WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
         }
     }
 
@@ -101,25 +108,37 @@ public class CalculatorPlanSettingConfigManager : ConfigManagerBase<CalculatorPl
         {
             Configuration.OrderList.Move(index, index + 1);
             Save();
-            App.RefreshGoalSimulation();
+            WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
         }
-    }
-
-    public void DeleteWeapon(string? id)
-    {
-        if (id == null) return;
-        if (Configuration.OrderList.Remove(id))
-        {
-            Configuration.PlanMap.Remove(id);
-        }
-
-        Save();
-        App.RefreshGoalSimulation();
     }
 
     public void UpdateRecoveryTime(DateTimeOffset t)
     {
         Configuration.RecoveryTime = t;
         Save();
+    }
+
+    public void Receive(CharacterInfoChangeMessage message)
+    {
+        int characterRid = message.Value;
+        UpdateCharacterPlanSetting(characterRid);
+    }
+
+    public void Receive(WeaponInfoChangeMessage message)
+    {
+        string weaponId = message.Value;
+        UpdateWeaponPlanSetting(weaponId);
+    }
+
+    public void Receive(WeaponDeleteMessage message)
+    {
+        string weaponId = message.Value;
+        if (Configuration.OrderList.Remove(weaponId))
+        {
+            Configuration.PlanMap.Remove(weaponId);
+            Save();
+            WeakReferenceMessenger.Default.Send(new ItemDeleteMessage(weaponId));
+            WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
+        }
     }
 }

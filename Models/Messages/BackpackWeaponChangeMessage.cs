@@ -1,31 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.Messaging.Messages;
-using HexereiKatepnha.Constants.EntityConstants;
 
 namespace HexereiKatepnha.Models.Messages;
 
-public record BackpackWeaponChangeRecord(
-    string PlanId,
-    Enumeration.Level Level,
-    Enumeration.Level GoalLevel
-);
+public class WeaponInfoChangeMessage(string weaponId) : ValueChangedMessage<string>(weaponId); // 武器基本信息变动，通知规划设置config响应
 
-public class BackpackWeaponChangeMessage : ValueChangedMessage<BackpackWeaponChangeRecord>
-{
-    public BackpackWeaponChangeMessage(BackpackWeaponChangeRecord value) : base(value)
-    {
-    }
-}
+public class WeaponInfoUpdateToCharacterMessage(int characterRid) : ValueChangedMessage<int>(characterRid); // 武器基本信息变动，通知持有此武器的角色view model响应
 
-public class BackpackWeaponDeleteMessage : ValueChangedMessage<string>
-{
-    public BackpackWeaponDeleteMessage(string value) : base(value)
-    {
-    }
-}
+public class WeaponCharacterChangeMessage(string weaponId) : ValueChangedMessage<string>(weaponId); // 武器归属变动，通知武器view model响应
 
-public class BackpackWeaponChangeCharacterMessage : ValueChangedMessage<int>
-{
-    public BackpackWeaponChangeCharacterMessage(int value) : base(value)
-    {
-    }
-}
+public class WeaponDeleteMessage(string weaponId) : ValueChangedMessage<string>(weaponId); // 武器被删除，通知规划设置config响应

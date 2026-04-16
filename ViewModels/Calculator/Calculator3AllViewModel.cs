@@ -13,7 +13,7 @@ using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.ViewModels.Calculator
 {
-    public partial class Calculator3AllViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>
+    public partial class Calculator3AllViewModel : ObservableObject, IRecipient<GoalSimulatorChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
     {
         [ObservableProperty] private int _hour;
         [ObservableProperty] private int _minute;
@@ -26,7 +26,6 @@ namespace HexereiKatepnha.ViewModels.Calculator
         [ObservableProperty] private ObservableCollection<CalculatorPlanBoss60Model> _boss60List = new();
         [ObservableProperty] private CalculatorPlanStatistics _statistics = new();
         [ObservableProperty] private ObservableCollection<CalculatorPlanDungeon> _dungeonList = new();
-        private ICollectionView DungeonView { get; set; }
         private Dictionary<int, CalculatorPlanMaterial> MaterialRidMap { get; set; } = new();
 
         public Calculator3AllViewModel()
@@ -38,9 +37,9 @@ namespace HexereiKatepnha.ViewModels.Calculator
             };
             timer.Tick += (_, _) => { UpdateRecoveryCountdown(); };
             timer.Start();
-            WeakReferenceMessenger.Default.Register(this);
+            WeakReferenceMessenger.Default.Register<GoalSimulatorChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
             InitializeDungeonList();
-            DungeonView = CollectionViewSource.GetDefaultView(DungeonList);
         }
 
         private void UpdateRecoveryCountdown()
@@ -204,10 +203,9 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 {
                     CalculatorPlanDungeon thisModel = new CalculatorPlanDungeon
                     {
-                        Rid = m.Rid
+                        Rid = m.Rid,
+                        Name = m.Name
                     };
-                    int thisDungeonCost = m.Cost;
-                    thisModel.Name = m.Name;
                     ObservableCollection<CalculatorPlanMaterial> materialList = new();
                     foreach (MaterialPairModel mpm in m.DropMaterialList)
                     {
@@ -318,14 +316,17 @@ namespace HexereiKatepnha.ViewModels.Calculator
         {
             if (clickItem != null)
             {
-                clickItem.Number += 1;
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number + 1);
             }
         }
 
         [RelayCommand]
         private void MinusOneMaterial(CalculatorPlanMaterial? clickItem)
         {
-            if (clickItem is { Number: >= 1 }) clickItem.Number -= 1;
+            if (clickItem is { Number: >= 1 })
+            {
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number - 1);
+            }
         }
 
         [RelayCommand]
@@ -337,8 +338,19 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 CalculatorPlanMaterial recipeMaterial = MaterialRidMap[recipeId];
                 if (recipeMaterial.Number >= 3)
                 {
-                    recipeMaterial.Number -= 3;
-                    clickItem.Number += 1;
+                    App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber([recipeMaterial.Rid, clickItem.Rid], [recipeMaterial.Number - 3, clickItem.Number + 1]);
+                }
+            }
+        }
+
+        public void Receive(BackpackMaterialConfigChangeMessage message)
+        {
+            List<int> materialRidList = message.Value;
+            foreach (int materialRid in materialRidList)
+            {
+                if (MaterialRidMap.TryGetValue(materialRid, out CalculatorPlanMaterial? thisMaterialItem))
+                {
+                    thisMaterialItem.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialRid);
                 }
             }
         }

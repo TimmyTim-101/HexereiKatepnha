@@ -2,10 +2,12 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
+using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
 using HexereiKatepnha.Services.CalculatorService;
 
@@ -31,7 +33,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public int Rid { get; init; }
     }
 
-    public partial class Backpack2WeaponViewModel : ObservableObject
+    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
@@ -173,6 +175,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 return b.Rid.CompareTo(a.Rid);
             });
             ApplySelectCharacterFilters();
+            WeakReferenceMessenger.Default.Register(this);
         }
 
         private bool WeaponsFilter(object item)
@@ -540,10 +543,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [RelayCommand]
         private void ClickOnEraseSelectCharacter(string value)
         {
-            SelectedWeapon.CharacterBackgroundImagePath = StringConstants.EmptyImagePath;
-            SelectedWeapon.CharacterElementImagePath = StringConstants.EmptyImagePath;
-            SelectedWeapon.CharacterImagePath = StringConstants.EmptyImagePath;
-            SelectedWeapon.CharacterName = "";
             int oldCharacterId = SelectedWeapon.Config.CharacterRid;
             App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(value, 0);
             App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, "");
@@ -555,31 +554,26 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnSelectCharacter(int value)
         {
             int thisCharacterRid = value;
-            CharacterModel thisCharacter = AutoCalculateConstants.CharacterMap[thisCharacterRid];
             int oldCharacterId = SelectedWeapon.Config.CharacterRid;
-            App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, "");
+            if (oldCharacterId != 0)
+            {
+                App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, "");
+            }
+
             // 遍历所有武器看是否已有武器分配给这个角色
             foreach (Backpack2WeaponModel wm in WeaponList)
             {
                 if (wm.Config.CharacterRid == thisCharacterRid)
                 {
                     // 如果有，进行交换
-                    wm.CharacterName = SelectedWeapon.CharacterName;
-                    wm.CharacterBackgroundImagePath = SelectedWeapon.CharacterBackgroundImagePath;
-                    wm.CharacterElementImagePath = SelectedWeapon.CharacterElementImagePath;
-                    wm.CharacterImagePath = SelectedWeapon.CharacterImagePath;
                     App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(wm.Id, oldCharacterId);
-                    App.BackpackCharacterConfigManagerInstance.UpdateWeapon(oldCharacterId, wm.Id);
+                    App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(oldCharacterId, wm.Id);
                     break;
                 }
             }
 
-            SelectedWeapon.CharacterName = thisCharacter.Name;
-            SelectedWeapon.CharacterBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisCharacter.Star];
-            SelectedWeapon.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacter.ElementType];
-            SelectedWeapon.CharacterImagePath = thisCharacter.ImagePath;
             App.BackpackWeaponConfigManagerInstance!.UpdateCharacter(SelectedWeapon.Id, thisCharacterRid);
-            App.BackpackCharacterConfigManagerInstance.UpdateWeapon(thisCharacterRid, SelectedWeapon.Id);
+            App.BackpackCharacterConfigManagerInstance!.UpdateWeapon(thisCharacterRid, SelectedWeapon.Id);
             IsSelectCharacterPopupOpen = false;
             IsSelectCharacterWithCharacterPopupOpen = false;
         }
@@ -632,6 +626,28 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             Console.WriteLine(value.IsCheckAble);
+        }
+
+        public void Receive(WeaponCharacterChangeMessage message)
+        {
+            string thisWeaponId = message.Value;
+            int thisCharacterRid = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisWeaponId].CharacterRid;
+            Backpack2WeaponModel thisWeaponModel = WeaponList.FirstOrDefault(w => w.Id == thisWeaponId)!;
+            if (thisCharacterRid == 0)
+            {
+                thisWeaponModel.CharacterBackgroundImagePath = StringConstants.EmptyImagePath;
+                thisWeaponModel.CharacterElementImagePath = StringConstants.EmptyImagePath;
+                thisWeaponModel.CharacterImagePath = StringConstants.EmptyImagePath;
+                thisWeaponModel.CharacterName = "";
+            }
+            else
+            {
+                CharacterModel thisCharacterModel = AutoCalculateConstants.CharacterMap[thisCharacterRid];
+                thisWeaponModel.CharacterBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisCharacterModel.Star];
+                thisWeaponModel.CharacterElementImagePath = StringConstants.ElementTypeImagePath[thisCharacterModel.ElementType];
+                thisWeaponModel.CharacterImagePath = thisCharacterModel.ImagePath;
+                thisWeaponModel.CharacterName = thisCharacterModel.Name;
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ using HexereiKatepnha.Models.ModelsForViews.Backpack;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<BackpackWeaponChangeCharacterMessage>
+    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<WeaponInfoUpdateToCharacterMessage>, IRecipient<CharacterWeaponChangeMessage>
     {
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
@@ -120,7 +120,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             _selectedCharacter = CharacterView.FirstOrDefault()!;
-            WeakReferenceMessenger.Default.Register(this);
+            WeakReferenceMessenger.Default.Register<WeaponInfoUpdateToCharacterMessage>(this);
+            WeakReferenceMessenger.Default.Register<CharacterWeaponChangeMessage>(this);
         }
 
         private bool CharacterFilter(object item)
@@ -460,17 +461,16 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter = value;
         }
 
-        public void Receive(BackpackWeaponChangeCharacterMessage message)
+        public void Receive(CharacterWeaponChangeMessage message)
         {
             int thisCharacterId = message.Value;
-            // 在武器分配角色发生变化以及武器本身发生变化时调用
-            // 按照新的character配置以及weapon配置刷新对应信息
+            // 在角色持有武器变化时更新
             foreach (Backpack1CharacterModel thisBackpack1CharacterModel in AllCharacterList)
             {
                 if (thisBackpack1CharacterModel.Rid != thisCharacterId) continue;
-                if (thisBackpack1CharacterModel.CharacterConfigModel.WeaponId != "")
+                string thisWeaponId = App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig[thisCharacterId].WeaponId;
+                if (thisWeaponId != "")
                 {
-                    string thisWeaponId = thisBackpack1CharacterModel.CharacterConfigModel.WeaponId;
                     SingleBackpackWeaponConfigModel thisWeaponConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisWeaponId];
                     int thisWeaponRid = thisWeaponConfig.Rid;
                     WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponRid];
@@ -503,6 +503,39 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisBackpack1CharacterModel.WeaponLevelString = "";
                     thisBackpack1CharacterModel.WeaponDescription = "";
                     thisBackpack1CharacterModel.WeaponAffixStringList = [];
+                }
+            }
+        }
+
+        public void Receive(WeaponInfoUpdateToCharacterMessage message)
+        {
+            // 角色持有武器属性发生变化
+            int thisCharacterRid = message.Value;
+            foreach (Backpack1CharacterModel thisBackpack1CharacterModel in AllCharacterList)
+            {
+                if (thisBackpack1CharacterModel.Rid != thisCharacterRid) continue;
+                string thisWeaponId = thisBackpack1CharacterModel.CharacterConfigModel.WeaponId;
+                SingleBackpackWeaponConfigModel thisWeaponConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[thisWeaponId];
+                int thisWeaponRid = thisWeaponConfig.Rid;
+                WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponRid];
+                thisBackpack1CharacterModel.WeaponBackgroundImagePath = StringConstants.StarBackgroundImagePath[thisWeapon.Star];
+                thisBackpack1CharacterModel.WeaponImagePath = thisWeapon.AwakenImagePath;
+                thisBackpack1CharacterModel.WeaponName = thisWeapon.Name;
+                thisBackpack1CharacterModel.WeaponProgression = thisWeaponConfig.Progression;
+                thisBackpack1CharacterModel.WeaponLevelString = StringConstants.LevelNameString[thisWeaponConfig.Level];
+                thisBackpack1CharacterModel.WeaponDescription = thisWeapon.Progression[thisWeaponConfig.Progression];
+                thisBackpack1CharacterModel.WeaponAffixStringList.Clear();
+                thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                thisBackpack1CharacterModel.WeaponAffixStringList.Add(new ObservableCollection<string>());
+                thisBackpack1CharacterModel.WeaponAffixStringList[0].Add(StringConstants.AffixString[Enumeration.Affix.Attack]);
+                thisBackpack1CharacterModel.WeaponAffixStringList[1].Add(":");
+                thisBackpack1CharacterModel.WeaponAffixStringList[2].Add(thisWeapon.MainAffixNumberDictionary[thisWeaponConfig.Level].ToString(CultureInfo.InvariantCulture));
+                if (thisWeapon.SubAffix != Enumeration.Affix.Empty)
+                {
+                    thisBackpack1CharacterModel.WeaponAffixStringList[0].Add(StringConstants.AffixString[thisWeapon.SubAffix]);
+                    thisBackpack1CharacterModel.WeaponAffixStringList[1].Add(":");
+                    thisBackpack1CharacterModel.WeaponAffixStringList[2].Add(thisWeapon.SubAffixNumberDictionary[thisWeaponConfig.Level] + (SequenceConstants.AffixPercentageSymbolList.Contains(thisWeapon.SubAffix) ? "%" : ""));
                 }
             }
         }
