@@ -18,6 +18,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
     {
         SingleBackpackWeaponConfigModel thisWeaponConfig = Configuration.WeaponConfigMap[weaponStringId];
         thisWeaponConfig.Level = l;
+        thisWeaponConfig.SubExp = 0;
         Save();
         WeakReferenceMessenger.Default.Send(new WeaponInfoChangeMessage(weaponStringId));
         if (thisWeaponConfig.CharacterRid != 0)

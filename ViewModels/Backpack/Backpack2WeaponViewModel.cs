@@ -33,7 +33,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public int Rid { get; init; }
     }
 
-    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
+    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>, IRecipient<WeaponInfoChangeMessage>
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
@@ -177,6 +177,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ApplySelectCharacterFilters();
             WeakReferenceMessenger.Default.Register<WeaponCharacterChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<WeaponInfoChangeMessage>(this);
         }
 
         private bool WeaponsFilter(object item)
@@ -291,38 +292,11 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedWeapon.Config.Level = thisLevel;
-            SelectedWeapon.Config.SubExp = 0;
-            SelectedWeapon.SubExp = 0;
-            SelectedWeapon.LevelNameString = StringConstants.LevelNameString[thisLevel];
-            SelectedWeapon.LevelNumberString = StringConstants.LevelNumberString[thisLevel];
-            SelectedWeapon.LevelTotalExp = GetLevelTotalExp(AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].LevelUpMaterials[thisLevel]);
-            SelectedWeapon.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisLevel);
             App.BackpackWeaponConfigManagerInstance!.UpdateLevel(SelectedWeapon.Id, thisLevel);
             int currentLevel = SequenceConstants.AllLevels.IndexOf(thisLevel);
             int currentGoalLevel = SequenceConstants.AllLevels.IndexOf(SelectedWeapon.Config.GoalLevel);
-            int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
-            bool isAwaken = currentLevel > biasLevelIndex;
-            WeaponModel thisWeaponModel = AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid];
-            SelectedWeapon.ImagePath = isAwaken ? thisWeaponModel.AwakenImagePath : thisWeaponModel.ImagePath;
-            SelectedWeapon.AffixStringList.Clear();
-            SelectedWeapon.AffixStringList.Add([]);
-            SelectedWeapon.AffixStringList.Add([]);
-            SelectedWeapon.AffixStringList.Add([]);
-            SelectedWeapon.AffixStringList[0].Add(StringConstants.AffixString[Enumeration.Affix.Attack]);
-            SelectedWeapon.AffixStringList[1].Add(":");
-            SelectedWeapon.AffixStringList[2].Add(thisWeaponModel.MainAffixNumberDictionary[thisLevel].ToString(CultureInfo.InvariantCulture));
-            if (thisWeaponModel.SubAffix != Enumeration.Affix.Empty)
-            {
-                SelectedWeapon.AffixStringList[0].Add(StringConstants.AffixString[thisWeaponModel.SubAffix]);
-                SelectedWeapon.AffixStringList[1].Add(":");
-                SelectedWeapon.AffixStringList[2].Add(thisWeaponModel.SubAffixNumberDictionary[thisLevel] + ((SequenceConstants.AffixPercentageSymbolList.Contains(thisWeaponModel.SubAffix)) ? "%" : ""));
-            }
-
             if (currentLevel > currentGoalLevel)
             {
-                SelectedWeapon.Config.GoalLevel = thisLevel;
-                SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
                 App.BackpackWeaponConfigManagerInstance.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             }
 
@@ -343,8 +317,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             int valueInt = Int32.Parse(value);
             Enumeration.Level thisLevel = SequenceConstants.AllLevels[valueInt - 1];
-            SelectedWeapon.Config.GoalLevel = thisLevel;
-            SelectedWeapon.LevelGoalNumberString = StringConstants.LevelNumberString[thisLevel];
             App.BackpackWeaponConfigManagerInstance!.UpdateLevelGoal(SelectedWeapon.Id, thisLevel);
             IsLevelPopupOpen = false;
         }
@@ -362,10 +334,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         private void ClickOnProgressionSelection(String value)
         {
             int valueInt = Int32.Parse(value);
-            SelectedWeapon.Config.Progression = valueInt;
             App.BackpackWeaponConfigManagerInstance!.UpdateProgression(SelectedWeapon.Id, valueInt);
-            SelectedWeapon.Progression = valueInt;
-            SelectedWeapon.Description = AutoCalculateConstants.WeaponMap[SelectedWeapon.Rid].Progression[valueInt];
             IsProgressionPopupOpen = false;
             ApplyFilters();
         }
@@ -584,7 +553,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             if (clickItem != null)
             {
-                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid,clickItem.Number+1);
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number + 1);
             }
         }
 
@@ -593,7 +562,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         {
             if (clickItem is { Number: >= 1 })
             {
-                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number-1);
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number - 1);
             }
         }
 
@@ -662,6 +631,61 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 if (thisViewModel != null)
                 {
                     thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                }
+            }
+        }
+
+        public void Receive(WeaponInfoChangeMessage message)
+        {
+            string weaponId = message.Value;
+            Backpack2WeaponModel thisModel = WeaponList.FirstOrDefault(m => m.Id == weaponId, null);
+            if (thisModel != null)
+            {
+                SingleBackpackWeaponConfigModel thisConfig = App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap[weaponId];
+                WeaponModel thisWeaponModel = AutoCalculateConstants.WeaponMap[thisConfig.Rid];
+                if (thisModel.LevelNameString != StringConstants.LevelNameString[thisConfig.Level])
+                {
+                    // level发生改变
+                    thisModel.SubExp = 0;
+                    thisModel.LevelNameString = StringConstants.LevelNameString[thisConfig.Level];
+                    thisModel.LevelNumberString = StringConstants.LevelNumberString[thisConfig.Level];
+                    thisModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[thisConfig.Level]);
+                    thisModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisConfig.Level);
+                    int currentLevel = SequenceConstants.AllLevels.IndexOf(thisConfig.Level);
+                    int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);
+                    bool isAwaken = currentLevel > biasLevelIndex;
+                    thisModel.ImagePath = isAwaken ? thisWeaponModel.AwakenImagePath : thisWeaponModel.ImagePath;
+                    thisModel.AffixStringList.Clear();
+                    thisModel.AffixStringList.Add([]);
+                    thisModel.AffixStringList.Add([]);
+                    thisModel.AffixStringList.Add([]);
+                    thisModel.AffixStringList[0].Add(StringConstants.AffixString[Enumeration.Affix.Attack]);
+                    thisModel.AffixStringList[1].Add(":");
+                    thisModel.AffixStringList[2].Add(thisWeaponModel.MainAffixNumberDictionary[thisConfig.Level].ToString(CultureInfo.InvariantCulture));
+                    if (thisWeaponModel.SubAffix != Enumeration.Affix.Empty)
+                    {
+                        thisModel.AffixStringList[0].Add(StringConstants.AffixString[thisWeaponModel.SubAffix]);
+                        thisModel.AffixStringList[1].Add(":");
+                        thisModel.AffixStringList[2].Add(thisWeaponModel.SubAffixNumberDictionary[thisConfig.Level] + (SequenceConstants.AffixPercentageSymbolList.Contains(thisWeaponModel.SubAffix) ? "%" : ""));
+                    }
+                }
+
+                if (thisModel.LevelGoalNumberString != StringConstants.LevelNumberString[thisConfig.GoalLevel])
+                {
+                    // goal level发生改变
+                    thisModel.LevelGoalNumberString = StringConstants.LevelNumberString[thisConfig.GoalLevel];
+                }
+
+                if (thisModel.Progression != thisConfig.Progression)
+                {
+                    // 精炼发生改变
+                    thisModel.Progression = thisConfig.Progression;
+                    thisModel.Description = thisWeaponModel.Progression[thisModel.Progression];
+                }
+
+                if (SelectedWeapon.Id == weaponId)
+                {
+                    SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(thisConfig).GetWeaponPlanInfo();
                 }
             }
         }
