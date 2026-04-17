@@ -187,16 +187,7 @@ public static class Enumeration
         L88,
         L89,
         L90,
-        L90P,
-        L91,
-        L92,
-        L93,
-        L94,
         L95,
-        L96,
-        L97,
-        L98,
-        L99,
         L100
     }
 }

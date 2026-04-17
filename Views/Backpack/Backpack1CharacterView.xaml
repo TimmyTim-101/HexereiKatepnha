@@ -486,17 +486,17 @@
                                                 <Button Style="{StaticResource TextButton}" Content="88" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="94"></Button>
                                                 <Button Style="{StaticResource TextButton}" Content="89" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="95"></Button>
                                                 <Button Style="{StaticResource TextButton}" Content="90" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="96"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="90+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="97"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="91" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="98"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="92" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="99"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="93" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="100"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="94" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="101"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="95" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="102"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="96" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="103"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="97" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="104"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="98" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="105"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="99" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="106"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="100" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="107"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="95" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="97"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="100" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelSelectionCommand}" CommandParameter="98"></Button>
                                             </UniformGrid>
                                         </Border>
                                     </Popup>
@@ -793,6 +793,7 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
@@ -1050,17 +1051,17 @@
                                                 <Button Style="{StaticResource TextButton}" Content="88" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="94"></Button>
                                                 <Button Style="{StaticResource TextButton}" Content="89" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="95"></Button>
                                                 <Button Style="{StaticResource TextButton}" Content="90" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="96"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="90+" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="97"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="91" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="98"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="92" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="99"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="93" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="100"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="94" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="101"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="95" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="102"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="96" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="103"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="97" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="104"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="98" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="105"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="99" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="106"></Button>
-                                                <Button Style="{StaticResource TextButton}" Content="100" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="107"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="95" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="97"></Button>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Border Background="Transparent" Width="30" Height="30" Margin="2"></Border>
+                                                <Button Style="{StaticResource TextButton}" Content="100" Width="30" Height="30" Margin="2" Command="{Binding ClickOnLevelGoalSelectionCommand}" CommandParameter="98"></Button>
                                             </UniformGrid>
                                         </Border>
                                     </Popup>
@@ -1184,6 +1185,131 @@
                                 </Grid>
                             </StackPanel>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
+                            <TextBlock Grid.Row="4" Text="已经升到顶级了" Style="{StaticResource MyTextBlock}" Foreground="{DynamicResource GlobalFrontColor}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="30" Visibility="{Binding SelectedCharacterPlanInfo.IsAllComplete, Converter={StaticResource BooleanToVisibilityConverter}}"></TextBlock>
+                            <Grid Grid.Row="4" Visibility="{Binding SelectedCharacterPlanInfo.IsShowSubPlan, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <ListBox Grid.Row="0" ItemsSource="{Binding SelectedCharacterPlanInfo.CharacterPlanMaterialList}" Style="{StaticResource ModernListBox}">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Margin="2" Width="86">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                        <RowDefinition Height="20"></RowDefinition>
+                                                        <RowDefinition Height="20"></RowDefinition>
+                                                        <RowDefinition Height="27"></RowDefinition>
+                                                        <RowDefinition Height="25"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
+                                                        <Grid.ToolTip>
+                                                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                        </Grid.ToolTip>
+                                                        <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                        <Image Source="{Binding ImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                                    </Grid>
+                                                    <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="{Binding IconPath}" Width="15" Height="15" Stretch="UniformToFill" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                                            <Viewbox MaxWidth="60" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num1}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                            </Viewbox>
+                                                        </StackPanel>
+                                                    </Border>
+                                                    <Border Grid.Row="2" BorderThickness="0" Background="{Binding Color2}">
+                                                        <Viewbox MaxWidth="80" StretchDirection="DownOnly" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Num2String}" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                        </Viewbox>
+                                                    </Border>
+                                                    <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                                                    </Viewbox>
+                                                    <UniformGrid Grid.Row="4" Rows="1">
+                                                        <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                        <Button Content="+" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.AddOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                        <Button Content="合" Style="{StaticResource TextButton}" Margin="0,2" Visibility="{Binding IsMergeVisible}" Command="{Binding DataContext.MergeOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>
+                                                    </UniformGrid>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ListBox>
+                                <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
+                                <ListBox Grid.Row="2" ItemsSource="{Binding SelectedCharacterPlanInfo.CharacterPlanSubPlanList}" Style="{StaticResource ModernListBox}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="60" Margin="5">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="45"></ColumnDefinition>
+                                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="{Binding Index}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                    <UniformGrid Grid.Column="1" Rows="2" Columns="1">
+                                                        <TextBlock Text="{Binding ActionTypeString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                                        <TextBlock Text="{Binding ActionDescriptionString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
+                                                    </UniformGrid>
+                                                    <ListBox Grid.Column="2" ItemsSource="{Binding NeedMaterialList}" Style="{StaticResource ModernListBox}">
+                                                        <ListBox.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Horizontal"></StackPanel>
+                                                            </ItemsPanelTemplate>
+                                                        </ListBox.ItemsPanel>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid Background="{Binding Color}" Margin="2">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="Auto"></RowDefinition>
+                                                                        <RowDefinition Height="*"></RowDefinition>
+                                                                    </Grid.RowDefinitions>
+                                                                    <Grid Grid.Row="0" ToolTipService.InitialShowDelay="100">
+                                                                        <Grid.ToolTip>
+                                                                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
+                                                                        </Grid.ToolTip>
+                                                                        <Image Source="{Binding BackgroundImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
+                                                                        <Image Source="{Binding ImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
+                                                                    </Grid>
+                                                                    <TextBlock Grid.Row="1" Text="{Binding NeedNum}" Style="{StaticResource MyTextBlock}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ListBox>
+                                                    <Button Grid.Column="3" IsEnabled="{Binding IsCheckAble}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DataContext.ClickOnSubPlanFinishCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Padding="0">
+                                                        <Image Height="30" Width="30" Stretch="UniformToFill">
+                                                            <Image.Style>
+                                                                <Style TargetType="Image">
+                                                                    <Setter Property="Source" Value="/Resources/Icons/check_box_30dp_DDDDDD_FILL1_wght400_GRAD0_opsz24.png"></Setter>
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding IsCheckAble}" Value="True">
+                                                                            <Setter Property="Source" Value="/Resources/Icons/check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png"></Setter>
+                                                                            <Setter Property="Cursor" Value="Hand"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                    </Button>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ListBox>
+                            </Grid>
                         </Grid>
                     </Border>
                 </TabItem>

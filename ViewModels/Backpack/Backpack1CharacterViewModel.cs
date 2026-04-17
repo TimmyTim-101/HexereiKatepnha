@@ -9,10 +9,11 @@ using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Services.CalculatorService;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<WeaponInfoUpdateToCharacterMessage>, IRecipient<CharacterWeaponChangeMessage>, IRecipient<CharacterInfoChangeMessage>
+    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<WeaponInfoUpdateToCharacterMessage>, IRecipient<CharacterWeaponChangeMessage>, IRecipient<CharacterInfoChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
     {
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
@@ -20,6 +21,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isHideLowLevelCharacter;
         private ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = [];
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
+        [ObservableProperty] private BackpackCharacterPlanInfo _selectedCharacterPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isTalentAPopupOpen;
         [ObservableProperty] private bool _isTalentEPopupOpen;
@@ -72,7 +74,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 };
                 thisBackpack1CharacterModel.LevelNameString = StringConstants.LevelNameString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
                 thisBackpack1CharacterModel.LevelNumberString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel];
-                thisBackpack1CharacterModel.LevelTotalExp = GetLevelTotalExp(e.LevelUpMaterials[thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel]);
+                thisBackpack1CharacterModel.LevelTotalExp = GetLevelTotalExp(e.LevelUpMaterials.GetValueOrDefault(thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel, []));
                 thisBackpack1CharacterModel.SubExp = thisBackpack1CharacterModel.CharacterConfigModel.SubExp;
                 thisBackpack1CharacterModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisBackpack1CharacterModel.CharacterConfigModel.CharacterLevel);
                 thisBackpack1CharacterModel.TalentAString = StringConstants.LevelNumberString[thisBackpack1CharacterModel.CharacterConfigModel.TalentALevel];
@@ -119,10 +121,12 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
 
             ApplyFilters();
-            _selectedCharacter = CharacterView.FirstOrDefault()!;
+            SelectedCharacter = CharacterView.FirstOrDefault()!;
+            SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
             WeakReferenceMessenger.Default.Register<WeaponInfoUpdateToCharacterMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterWeaponChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterInfoChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
         }
 
         private bool CharacterFilter(object item)
@@ -199,6 +203,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentEGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentQGoalSelectionCommand.NotifyCanExecuteChanged();
+            SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
         }
 
         partial void OnElementFilterChanged(int value)
@@ -433,6 +438,123 @@ namespace HexereiKatepnha.ViewModels.Backpack
             SelectedCharacter = value;
         }
 
+        [RelayCommand]
+        private void AddOneMaterial(BackpackCharacterPlanInfoMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number + 1);
+            }
+        }
+
+        [RelayCommand]
+        private void MinusOneMaterial(BackpackCharacterPlanInfoMaterial? clickItem)
+        {
+            if (clickItem is { Number: >= 1 })
+            {
+                App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(clickItem.Rid, clickItem.Number - 1);
+            }
+        }
+
+        [RelayCommand]
+        private void MergeOneMaterial(BackpackCharacterPlanInfoMaterial? clickItem)
+        {
+            if (clickItem != null)
+            {
+                int recipeId = AutoCalculateConstants.MaterialMergeRecipe[clickItem.Rid];
+                BackpackCharacterPlanInfoMaterial recipeMaterial = SelectedCharacterPlanInfo.CharacterPlanMaterialList.FirstOrDefault(m => m.Rid == recipeId)!;
+                if (recipeMaterial.Number >= 3)
+                {
+                    App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber([recipeMaterial.Rid, clickItem.Rid], [recipeMaterial.Number - 3, clickItem.Number + 1]);
+                }
+            }
+        }
+
+        [RelayCommand]
+        private void ClickOnSubPlanFinish(BackpackCharacterPlanInfoSubPlan value)
+        {
+            // 消耗当前所有材料，注意不够时用0兜底
+            List<int> materialRidList = [];
+            List<int> materialNumList = [];
+            foreach (BackpackCharacterPlanInfoNeedMaterial m in value.NeedMaterialList)
+            {
+                materialRidList.Add(m.Rid);
+                materialNumList.Add(Math.Max(App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(m.Rid) - m.NeedNum, 0));
+            }
+
+            App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(materialRidList, materialNumList);
+            // 更改相应等级
+            SingleBackpackCharacterConfigModel thisCharacterConfig = new SingleBackpackCharacterConfigModel();
+            if (App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig.TryGetValue(value.CharacterRid, out SingleBackpackCharacterConfigModel? thisConfig))
+            {
+                thisCharacterConfig = thisConfig;
+            }
+
+            switch (value.Type)
+            {
+                case 1:
+                    App.BackpackCharacterConfigManagerInstance.UpdateLevel(value.CharacterRid, value.FinishLevel);
+                    int goalCharacterLevelIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.CharacterLevelGoal);
+                    int finishCharacterLevelIndex = SequenceConstants.AllLevels.IndexOf(value.FinishLevel);
+                    if (goalCharacterLevelIndex < finishCharacterLevelIndex)
+                    {
+                        App.BackpackCharacterConfigManagerInstance.UpdateLevelGoal(value.CharacterRid, value.FinishLevel);
+                    }
+
+                    if (SelectedCharacter.Rid == value.CharacterRid)
+                    {
+                        ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
+                    }
+
+                    break;
+                case 2:
+                    App.BackpackCharacterConfigManagerInstance.UpdateTalentA(value.CharacterRid, value.FinishLevel);
+                    int goalTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentALevelGoal);
+                    int finishTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(value.FinishLevel);
+                    if (goalTalentALevelIndex < finishTalentALevelIndex)
+                    {
+                        App.BackpackCharacterConfigManagerInstance.UpdateTalentAGoal(value.CharacterRid, value.FinishLevel);
+                    }
+
+                    if (SelectedCharacter.Rid == value.CharacterRid)
+                    {
+                        ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
+                    }
+
+                    break;
+                case 3:
+                    App.BackpackCharacterConfigManagerInstance.UpdateTalentE(value.CharacterRid, value.FinishLevel);
+                    int goalTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentELevelGoal);
+                    int finishTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(value.FinishLevel);
+                    if (goalTalentELevelIndex < finishTalentELevelIndex)
+                    {
+                        App.BackpackCharacterConfigManagerInstance.UpdateTalentEGoal(value.CharacterRid, value.FinishLevel);
+                    }
+
+                    if (SelectedCharacter.Rid == value.CharacterRid)
+                    {
+                        ClickOnTalentEGoalSelectionCommand.NotifyCanExecuteChanged();
+                    }
+
+                    break;
+                case 4:
+                    App.BackpackCharacterConfigManagerInstance.UpdateTalentQ(value.CharacterRid, value.FinishLevel);
+                    int goalTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(thisCharacterConfig.TalentQLevelGoal);
+                    int finishTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(value.FinishLevel);
+                    if (goalTalentQLevelIndex < finishTalentQLevelIndex)
+                    {
+                        App.BackpackCharacterConfigManagerInstance.UpdateTalentQGoal(value.CharacterRid, value.FinishLevel);
+                    }
+
+                    if (SelectedCharacter.Rid == value.CharacterRid)
+                    {
+                        ClickOnTalentQGoalSelectionCommand.NotifyCanExecuteChanged();
+                    }
+
+                    break;
+            }
+        }
+
         public void Receive(CharacterWeaponChangeMessage message)
         {
             int thisCharacterId = message.Value;
@@ -512,6 +634,19 @@ namespace HexereiKatepnha.ViewModels.Backpack
             }
         }
 
+        public void Receive(BackpackMaterialConfigChangeMessage message)
+        {
+            List<int> thisMaterialRidList = message.Value;
+            foreach (int thisMaterialRid in thisMaterialRidList)
+            {
+                BackpackCharacterPlanInfoMaterial thisViewModel = SelectedCharacterPlanInfo.CharacterPlanMaterialList.FirstOrDefault(m => m.Rid == thisMaterialRid, null);
+                if (thisViewModel != null)
+                {
+                    thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                }
+            }
+        }
+
         public void Receive(CharacterInfoChangeMessage message)
         {
             int thisCharacterRid = message.Value;
@@ -526,7 +661,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisModel.SubExp = 0;
                     thisModel.LevelNameString = StringConstants.LevelNameString[thisConfig.CharacterLevel];
                     thisModel.LevelNumberString = StringConstants.LevelNumberString[thisConfig.CharacterLevel];
-                    thisModel.LevelTotalExp = GetLevelTotalExp(thisCharacterModel.LevelUpMaterials[thisConfig.CharacterLevel]);
+                    thisModel.LevelTotalExp = GetLevelTotalExp(thisCharacterModel.LevelUpMaterials.GetValueOrDefault(thisConfig.CharacterLevel, []));
                     thisModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisConfig.CharacterLevel);
                 }
 
@@ -574,7 +709,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
                 if (SelectedCharacter.Rid == thisCharacterRid)
                 {
-                    // todo
+                    SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
                 }
             }
         }

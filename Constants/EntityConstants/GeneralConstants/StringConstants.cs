@@ -135,10 +135,8 @@ public static class StringConstants
         { Enumeration.Level.L71, "71" }, { Enumeration.Level.L72, "72" }, { Enumeration.Level.L73, "73" }, { Enumeration.Level.L74, "74" }, { Enumeration.Level.L75, "75" },
         { Enumeration.Level.L76, "76" }, { Enumeration.Level.L77, "77" }, { Enumeration.Level.L78, "78" }, { Enumeration.Level.L79, "79" }, { Enumeration.Level.L80, "80" }, { Enumeration.Level.L80P, "80+" },
         { Enumeration.Level.L81, "81" }, { Enumeration.Level.L82, "82" }, { Enumeration.Level.L83, "83" }, { Enumeration.Level.L84, "84" }, { Enumeration.Level.L85, "85" },
-        { Enumeration.Level.L86, "86" }, { Enumeration.Level.L87, "87" }, { Enumeration.Level.L88, "88" }, { Enumeration.Level.L89, "89" }, { Enumeration.Level.L90, "90" }, { Enumeration.Level.L90P, "90+" },
-        { Enumeration.Level.L91, "91" }, { Enumeration.Level.L92, "92" }, { Enumeration.Level.L93, "93" }, { Enumeration.Level.L94, "94" }, { Enumeration.Level.L95, "95" },
-        { Enumeration.Level.L96, "96" }, { Enumeration.Level.L97, "97" }, { Enumeration.Level.L98, "98" }, { Enumeration.Level.L99, "99" }, { Enumeration.Level.L100, "100" },
-        // { Enumeration.Level.L95, "95" },{ Enumeration.L100, "100" },
+        { Enumeration.Level.L86, "86" }, { Enumeration.Level.L87, "87" }, { Enumeration.Level.L88, "88" }, { Enumeration.Level.L89, "89" }, { Enumeration.Level.L90, "90" },
+        { Enumeration.Level.L95, "95" }, { Enumeration.Level.L100, "100" },
     };
 
     public static readonly Dictionary<Enumeration.Level, string> LevelNameString = new()
@@ -160,8 +158,7 @@ public static class StringConstants
         { Enumeration.Level.L71, "71 / 80" }, { Enumeration.Level.L72, "72 / 80" }, { Enumeration.Level.L73, "73 / 80" }, { Enumeration.Level.L74, "74 / 80" }, { Enumeration.Level.L75, "75 / 80" },
         { Enumeration.Level.L76, "76 / 80" }, { Enumeration.Level.L77, "77 / 80" }, { Enumeration.Level.L78, "78 / 80" }, { Enumeration.Level.L79, "79 / 80" }, { Enumeration.Level.L80, "80 / 80" }, { Enumeration.Level.L80P, "80 / 90" },
         { Enumeration.Level.L81, "81 / 90" }, { Enumeration.Level.L82, "82 / 90" }, { Enumeration.Level.L83, "83 / 90" }, { Enumeration.Level.L84, "84 / 90" }, { Enumeration.Level.L85, "85 / 90" },
-        { Enumeration.Level.L86, "86 / 90" }, { Enumeration.Level.L87, "87 / 90" }, { Enumeration.Level.L88, "88 / 90" }, { Enumeration.Level.L89, "89 / 90" }, { Enumeration.Level.L90, "90 / 90" }, { Enumeration.Level.L90P, "90 / 100" },
-        { Enumeration.Level.L91, "91 / 100" }, { Enumeration.Level.L92, "92 / 100" }, { Enumeration.Level.L93, "93 / 100" }, { Enumeration.Level.L94, "94 / 100" }, { Enumeration.Level.L95, "95 / 100" },
-        { Enumeration.Level.L96, "96 / 100" }, { Enumeration.Level.L97, "97 / 100" }, { Enumeration.Level.L98, "98 / 100" }, { Enumeration.Level.L99, "99 / 100" }, { Enumeration.Level.L100, "100 / 100" },
+        { Enumeration.Level.L86, "86 / 90" }, { Enumeration.Level.L87, "87 / 90" }, { Enumeration.Level.L88, "88 / 90" }, { Enumeration.Level.L89, "89 / 90" }, { Enumeration.Level.L90, "90 / 90" },
+        { Enumeration.Level.L95, "95 / 95" }, { Enumeration.Level.L100, "100 / 100" },
     };
 }

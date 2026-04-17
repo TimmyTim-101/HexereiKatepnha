@@ -9,31 +9,24 @@ using HexereiKatepnha.Models.ModelsForViews.Calculator;
 
 namespace HexereiKatepnha.Services.CalculatorService;
 
-public class SingleWeaponSimulatorService
+public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weaponConfig)
 {
-    private SingleBackpackWeaponConfigModel _weaponConfig;
-    private WeaponModel _weaponModel;
-
-    public SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weaponConfig)
-    {
-        _weaponConfig = weaponConfig;
-        _weaponModel = AutoCalculateConstants.WeaponMap[weaponConfig.Rid];
-    }
+    private readonly WeaponModel _weaponModel = AutoCalculateConstants.WeaponMap[weaponConfig.Rid];
 
     public BackpackWeaponPlanInfo GetWeaponPlanInfo()
     {
         BackpackWeaponPlanInfo res = new BackpackWeaponPlanInfo();
         // 分离材料
-        List<int> involvedMaterialRidList = [];
+        HashSet<int> involvedMaterialRidList = [];
         foreach (List<MaterialPairModel> mpmList in _weaponModel.LevelUpMaterials.Values)
         {
             foreach (MaterialPairModel mpm in mpmList)
             {
-                if (!involvedMaterialRidList.Contains(mpm.MaterialModel!.Rid)) involvedMaterialRidList.Add(mpm.MaterialModel.Rid);
+                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
                 if (mpm.MaterialModel.Rid == 3110001)
                 {
-                    if (!involvedMaterialRidList.Contains(3110002)) involvedMaterialRidList.Add(3110002);
-                    if (!involvedMaterialRidList.Contains(3110003)) involvedMaterialRidList.Add(3110003);
+                    involvedMaterialRidList.Add(3110002);
+                    involvedMaterialRidList.Add(3110003);
                 }
             }
         }
@@ -81,7 +74,7 @@ public class SingleWeaponSimulatorService
         }
 
         // 分离任务
-        int startLevelIndex = SequenceConstants.AllLevels.IndexOf(_weaponConfig.Level);
+        int startLevelIndex = SequenceConstants.AllLevels.IndexOf(weaponConfig.Level);
         int endLevelIndex = startLevelIndex;
         for (int i = startLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
         {
@@ -90,7 +83,7 @@ public class SingleWeaponSimulatorService
         }
 
         bool isLevelCheckAble = true;
-        int tempExp = -_weaponConfig.SubExp;
+        int tempExp = -weaponConfig.SubExp;
         string tempStartLevelString = "";
         bool tempIsLevel = false;
         for (int l = startLevelIndex; l < endLevelIndex; l++)
@@ -116,7 +109,7 @@ public class SingleWeaponSimulatorService
                 if (tempIsLevel)
                 {
                     BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
-                    thisLevelSubPlan.WeaponId = _weaponConfig.Id;
+                    thisLevelSubPlan.WeaponId = weaponConfig.Id;
                     thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
                     thisLevelSubPlan.ActionTypeString = "武器等级";
                     thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]}";
@@ -168,7 +161,7 @@ public class SingleWeaponSimulatorService
 
                 // 处理突破部分
                 BackpackWeaponPlanInfoSubPlan thisSubPlan = new BackpackWeaponPlanInfoSubPlan();
-                thisSubPlan.WeaponId = _weaponConfig.Id;
+                thisSubPlan.WeaponId = weaponConfig.Id;
                 thisSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
                 thisSubPlan.ActionTypeString = "武器突破";
                 thisSubPlan.ActionDescriptionString = $"{StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]} ↑";
@@ -216,7 +209,7 @@ public class SingleWeaponSimulatorService
         if (tempIsLevel)
         {
             BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
-            thisLevelSubPlan.WeaponId = _weaponConfig.Id;
+            thisLevelSubPlan.WeaponId = weaponConfig.Id;
             thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
             thisLevelSubPlan.ActionTypeString = "武器等级";
             thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endLevelIndex]]}";
