@@ -28,6 +28,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
 
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.CharacterLevel = l;
+        thisCharacterConfig.SubExp = 0;
         Save();
         WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
