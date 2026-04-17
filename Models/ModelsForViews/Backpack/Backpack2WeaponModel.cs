@@ -70,18 +70,22 @@ public partial class BackpackWeaponPlanInfoMaterial : ObservableObject
 
 public partial class BackpackWeaponPlanInfoSubPlan : ObservableObject
 {
+    [ObservableProperty] private string _weaponId = "";
     [ObservableProperty] private int _index;
     [ObservableProperty] private string _actionTypeString = "";
     [ObservableProperty] private string _actionDescriptionString = "";
     [ObservableProperty] private ObservableCollection<BackpackWeaponPlanInfoNeedMaterial> _needMaterialList = [];
     [ObservableProperty] private bool _isCheckAble;
+    [ObservableProperty] private Enumeration.Level _finishLevel;
 }
 
 public partial class BackpackWeaponPlanInfoNeedMaterial : ObservableObject
 {
+    [ObservableProperty] private int _rid;
     [ObservableProperty] private string _backgroundImagePath = "";
     [ObservableProperty] private string _imagePath = "";
     [ObservableProperty] private string _name = "";
+    [ObservableProperty] private int _showNum;
     [ObservableProperty] private int _needNum;
     [ObservableProperty] private string _color = StringConstants.GreenColorString;
 }

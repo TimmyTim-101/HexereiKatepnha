@@ -583,21 +583,29 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [RelayCommand]
         private void ClickOnSubPlanFinish(BackpackWeaponPlanInfoSubPlan value)
         {
-            Console.WriteLine(value.Index);
-            Console.WriteLine(value.ActionTypeString);
-            Console.WriteLine(value.ActionDescriptionString);
-            foreach (BackpackWeaponPlanInfoNeedMaterial v in value.NeedMaterialList)
+            // 消耗当前所有材料，注意不够时用0兜底
+            List<int> materialRidList = [];
+            List<int> materialNumList = [];
+            foreach (BackpackWeaponPlanInfoNeedMaterial m in value.NeedMaterialList)
             {
-                Console.WriteLine($"--------------------------------------------");
-                Console.WriteLine($"    {v.BackgroundImagePath}");
-                Console.WriteLine($"    {v.ImagePath}");
-                Console.WriteLine($"    {v.Name}");
-                Console.WriteLine($"    {v.NeedNum}");
-                Console.WriteLine($"    {v.Color}");
-                Console.WriteLine($"--------------------------------------------");
+                materialRidList.Add(m.Rid);
+                materialNumList.Add(Math.Max(App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(m.Rid) - m.NeedNum, 0));
             }
 
-            Console.WriteLine(value.IsCheckAble);
+            App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber(materialRidList, materialNumList);
+            // 更改武器等级
+            App.BackpackWeaponConfigManagerInstance!.UpdateLevel(value.WeaponId, value.FinishLevel);
+            int goalLevelIndex = SequenceConstants.AllLevels.IndexOf(App.BackpackWeaponConfigManagerInstance.Configuration.WeaponConfigMap[value.WeaponId].GoalLevel);
+            int finishLevelIndex = SequenceConstants.AllLevels.IndexOf(value.FinishLevel);
+            if (goalLevelIndex < finishLevelIndex)
+            {
+                App.BackpackWeaponConfigManagerInstance.UpdateLevelGoal(value.WeaponId, value.FinishLevel);
+            }
+
+            if (SelectedWeapon.Id == value.WeaponId)
+            {
+                ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
+            }
         }
 
         public void Receive(WeaponCharacterChangeMessage message)
@@ -649,7 +657,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisModel.SubExp = 0;
                     thisModel.LevelNameString = StringConstants.LevelNameString[thisConfig.Level];
                     thisModel.LevelNumberString = StringConstants.LevelNumberString[thisConfig.Level];
-                    thisModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials[thisConfig.Level]);
+                    thisModel.LevelTotalExp = GetLevelTotalExp(thisWeaponModel.LevelUpMaterials.GetValueOrDefault(thisConfig.Level, []));
                     thisModel.IsShowProgress = !SequenceConstants.NoExpLevels.Contains(thisConfig.Level);
                     int currentLevel = SequenceConstants.AllLevels.IndexOf(thisConfig.Level);
                     int biasLevelIndex = SequenceConstants.AllLevels.IndexOf(Enumeration.Level.L40);

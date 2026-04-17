@@ -116,9 +116,11 @@ public class SingleWeaponSimulatorService
                 if (tempIsLevel)
                 {
                     BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
+                    thisLevelSubPlan.WeaponId = _weaponConfig.Id;
                     thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
                     thisLevelSubPlan.ActionTypeString = "武器等级";
                     thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]}";
+                    thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[l];
                     int[] resultOfMaterial = CalculateWeaponExp(tempExp);
                     MaterialModel[] materialModels =
                     [
@@ -129,18 +131,20 @@ public class SingleWeaponSimulatorService
                         if (resultOfMaterial[i] > 0)
                         {
                             BackpackWeaponPlanInfoNeedMaterial m = new();
+                            m.Rid = materialModels[i].Rid;
                             m.BackgroundImagePath = StringConstants.StarBackgroundImagePath[materialModels[i].Star];
                             m.ImagePath = materialModels[i].ImagePath;
                             m.Name = materialModels[i].Name;
+                            m.NeedNum = resultOfMaterial[i];
                             int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialModels[i].Rid);
                             if (haveNum >= resultOfMaterial[i])
                             {
-                                m.NeedNum = resultOfMaterial[i];
+                                m.ShowNum = resultOfMaterial[i];
                                 m.Color = StringConstants.GreenColorString;
                             }
                             else
                             {
-                                m.NeedNum = resultOfMaterial[i] - haveNum;
+                                m.ShowNum = resultOfMaterial[i] - haveNum;
                                 m.Color = StringConstants.RedColorString;
                             }
 
@@ -164,28 +168,32 @@ public class SingleWeaponSimulatorService
 
                 // 处理突破部分
                 BackpackWeaponPlanInfoSubPlan thisSubPlan = new BackpackWeaponPlanInfoSubPlan();
+                thisSubPlan.WeaponId = _weaponConfig.Id;
                 thisSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
                 thisSubPlan.ActionTypeString = "武器突破";
                 thisSubPlan.ActionDescriptionString = $"{StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]} ↑";
+                thisSubPlan.FinishLevel = SequenceConstants.AllLevels[l + 1];
                 ObservableCollection<BackpackWeaponPlanInfoNeedMaterial> thisNeedMaterialList = new();
                 foreach (MaterialPairModel mpm in thisLevelMaterialList)
                 {
                     int thisMaterialRid = mpm.MaterialModel!.Rid;
                     MaterialModel thisMaterialModel = AutoCalculateConstants.MaterialMap[thisMaterialRid];
                     BackpackWeaponPlanInfoNeedMaterial thisMaterialNeedInfo = new BackpackWeaponPlanInfoNeedMaterial();
+                    thisMaterialNeedInfo.Rid = thisMaterialRid;
                     thisMaterialNeedInfo.BackgroundImagePath = StringConstants.StarBackgroundImagePath[thisMaterialModel.Star];
                     thisMaterialNeedInfo.ImagePath = thisMaterialModel.ImagePath;
                     thisMaterialNeedInfo.Name = thisMaterialModel.Name;
+                    thisMaterialNeedInfo.NeedNum = (int)mpm.DropNum;
                     int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
                     int needNum = (int)mpm.DropNum;
                     if (haveNum >= needNum)
                     {
-                        thisMaterialNeedInfo.NeedNum = needNum;
+                        thisMaterialNeedInfo.ShowNum = needNum;
                         thisMaterialNeedInfo.Color = StringConstants.GreenColorString;
                     }
                     else
                     {
-                        thisMaterialNeedInfo.NeedNum = needNum - haveNum;
+                        thisMaterialNeedInfo.ShowNum = needNum - haveNum;
                         thisMaterialNeedInfo.Color = StringConstants.RedColorString;
                     }
 
@@ -208,9 +216,11 @@ public class SingleWeaponSimulatorService
         if (tempIsLevel)
         {
             BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
+            thisLevelSubPlan.WeaponId = _weaponConfig.Id;
             thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
             thisLevelSubPlan.ActionTypeString = "武器等级";
             thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endLevelIndex]]}";
+            thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[endLevelIndex];
             int[] resultOfMaterial = CalculateWeaponExp(tempExp);
             MaterialModel[] materialModels =
             [
@@ -221,18 +231,20 @@ public class SingleWeaponSimulatorService
                 if (resultOfMaterial[i] > 0)
                 {
                     BackpackWeaponPlanInfoNeedMaterial m = new();
+                    m.Rid = materialModels[i].Rid;
                     m.BackgroundImagePath = StringConstants.StarBackgroundImagePath[materialModels[i].Star];
                     m.ImagePath = materialModels[i].ImagePath;
                     m.Name = materialModels[i].Name;
+                    m.NeedNum = resultOfMaterial[i];
                     int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialModels[i].Rid);
                     if (haveNum >= resultOfMaterial[i])
                     {
-                        m.NeedNum = resultOfMaterial[i];
+                        m.ShowNum = resultOfMaterial[i];
                         m.Color = StringConstants.GreenColorString;
                     }
                     else
                     {
-                        m.NeedNum = resultOfMaterial[i] - haveNum;
+                        m.ShowNum = resultOfMaterial[i] - haveNum;
                         m.Color = StringConstants.RedColorString;
                     }
 

@@ -150,6 +150,14 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 PlanList.Add(thisPlan);
             }
 
+            // 判断是否为旧plan已完成
+            if (!App.CalculatorPlanSettingConfigManagerInstance!.Configuration.PlanMap.ContainsKey(planId))
+            {
+                PlanList.Remove(thisPlan);
+                RefreshIndex();
+                return;
+            }
+
             SingleCalculatorPlanConfigModel thisPlanModel = App.CalculatorPlanSettingConfigManagerInstance!.Configuration.PlanMap[planId];
             int thisPlanType = thisPlanModel.Type;
             int thisPlanItemRid = thisPlanModel.Rid;
