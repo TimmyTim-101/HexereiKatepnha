@@ -1264,7 +1264,7 @@
                                                         <TextBlock Text="{Binding ActionTypeString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
                                                         <TextBlock Text="{Binding ActionDescriptionString}" Style="{StaticResource MyTextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
                                                     </UniformGrid>
-                                                    <ListBox Grid.Column="2" ItemsSource="{Binding NeedMaterialList}" Style="{StaticResource ModernListBox}">
+                                                    <ListBox Grid.Column="2" ItemsSource="{Binding NeedMaterialList}" Style="{StaticResource ModernListBox}" PreviewMouseWheel="InnerListBoxPreviewMouseWheel">
                                                         <ListBox.ItemsPanel>
                                                             <ItemsPanelTemplate>
                                                                 <StackPanel Orientation="Horizontal"></StackPanel>
