@@ -145,7 +145,7 @@ public class BackpackCharacterConfigManager : ConfigManagerBase<BackpackCharacte
         SingleBackpackCharacterConfigModel thisCharacterConfig = Configuration.CharacterConfig[characterId];
         thisCharacterConfig.SubExp = subExp;
         Save();
-        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
+        WeakReferenceMessenger.Default.Send(new CharacterInfoChangeMessage(characterId));
     }
 
     public void UpdateWeapon(int characterRid, string weaponId)

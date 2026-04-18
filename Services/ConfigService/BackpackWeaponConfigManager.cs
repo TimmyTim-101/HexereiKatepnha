@@ -78,7 +78,7 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
     {
         Configuration.WeaponConfigMap[planId].SubExp = subExp;
         Save();
-        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
+        WeakReferenceMessenger.Default.Send(new WeaponInfoChangeMessage(planId));
     }
 
     public void UpdateCharacter(string weaponId, int characterRid)
