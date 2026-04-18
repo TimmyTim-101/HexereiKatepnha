@@ -6266,6 +6266,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="External\ScreenShots\" />
         <Folder Include="Resources\Icons\ArtifactIcons\" />
         <Folder Include="Resources\Images\Artifacts\" />
         <Folder Include="Resources\Images\Star\" />
