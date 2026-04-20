@@ -9,11 +9,12 @@ using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Models.ModelsForViews.Calculator;
 using HexereiKatepnha.Services.CalculatorService;
 
 namespace HexereiKatepnha.ViewModels.Backpack
 {
-    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<WeaponInfoUpdateToCharacterMessage>, IRecipient<CharacterWeaponChangeMessage>, IRecipient<CharacterInfoChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>
+    public partial class Backpack1CharacterViewModel : ObservableObject, IRecipient<WeaponInfoUpdateToCharacterMessage>, IRecipient<CharacterWeaponChangeMessage>, IRecipient<CharacterInfoChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>, IRecipient<GoalSimulatorChangeMessage>
     {
         [ObservableProperty] private int _elementFilter;
         [ObservableProperty] private int _weaponFilter;
@@ -21,6 +22,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isHideLowLevelCharacter;
         private ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = [];
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
+        [ObservableProperty] private SingleCharacterSimulatorService _selectedCharacterSimulatorService;
         [ObservableProperty] private BackpackCharacterPlanInfo _selectedCharacterPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isTalentAPopupOpen;
@@ -122,11 +124,13 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedCharacter = CharacterView.FirstOrDefault()!;
-            SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
+            SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
+            SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
             WeakReferenceMessenger.Default.Register<WeaponInfoUpdateToCharacterMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterWeaponChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterInfoChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<GoalSimulatorChangeMessage>(this);
         }
 
         private bool CharacterFilter(object item)
@@ -203,7 +207,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentEGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentQGoalSelectionCommand.NotifyCanExecuteChanged();
-            SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
+            SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
+            SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
         }
 
         partial void OnElementFilterChanged(int value)
@@ -645,6 +650,40 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
                 }
             }
+
+            SelectedCharacterSimulatorService.UpdateSubPlan();
+        }
+
+        public void Receive(GoalSimulatorChangeMessage message)
+        {
+            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
+            foreach (BackpackCharacterPlanInfoMaterial thisMaterial in SelectedCharacterPlanInfo.CharacterPlanMaterialList)
+            {
+                int thisMaterialRid = thisMaterial.Rid;
+                CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[thisMaterialRid];
+                thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
+                if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
+                else thisMaterial.Color1 = "#Transparent";
+                thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
+                if (thisMaterialExtraInfo.IsSatisfy)
+                {
+                    if (thisMaterialExtraInfo.ActionNum > 0)
+                    {
+                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                        thisMaterial.Color2 = StringConstants.YellowColorString;
+                    }
+                    else
+                    {
+                        thisMaterial.Num2String = "";
+                        thisMaterial.Color2 = "#Transparent";
+                    }
+                }
+                else
+                {
+                    thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                    thisMaterial.Color2 = StringConstants.RedColorString;
+                }
+            }
         }
 
         public void Receive(CharacterInfoChangeMessage message)
@@ -709,7 +748,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
                 if (SelectedCharacter.Rid == thisCharacterRid)
                 {
-                    SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
+                    SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
+                    SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
                 }
             }
         }

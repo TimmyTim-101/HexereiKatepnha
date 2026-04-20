@@ -76,6 +76,14 @@ public partial class BackpackCharacterPlanInfoMaterial : ObservableObject
     [ObservableProperty] private string _num2String = "";
     [ObservableProperty] private string _color2 = "#Transparent";
     public Visibility IsMergeVisible => AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(Rid) ? Visibility.Visible : Visibility.Collapsed;
+
+    partial void OnNumberChanged(int value)
+    {
+        if (App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(Rid) != value)
+        {
+            App.BackpackMaterialConfigManagerInstance.UpdateMaterialNumber(Rid, value);
+        }
+    }
 }
 
 public partial class BackpackCharacterPlanInfoSubPlan : ObservableObject

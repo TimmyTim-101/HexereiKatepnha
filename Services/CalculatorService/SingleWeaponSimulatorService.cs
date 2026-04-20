@@ -12,10 +12,11 @@ namespace HexereiKatepnha.Services.CalculatorService;
 public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weaponConfig)
 {
     private readonly WeaponModel _weaponModel = AutoCalculateConstants.WeaponMap[weaponConfig.Rid];
+    private BackpackWeaponPlanInfo _res = new();
 
-    public BackpackWeaponPlanInfo GetWeaponPlanInfo()
+    private void UpdateMaterial()
     {
-        BackpackWeaponPlanInfo res = new BackpackWeaponPlanInfo();
+        _res.WeaponPlanMaterialList.Clear();
         // 分离材料
         HashSet<int> involvedMaterialRidList = [];
         foreach (List<MaterialPairModel> mpmList in _weaponModel.LevelUpMaterials.Values)
@@ -68,11 +69,15 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
                         thisMaterial.Color2 = StringConstants.RedColorString;
                     }
 
-                    res.WeaponPlanMaterialList.Add(thisMaterial);
+                    _res.WeaponPlanMaterialList.Add(thisMaterial);
                 }
             }
         }
+    }
 
+    public void UpdateSubPlan()
+    {
+        _res.WeaponPlanSubPlanList.Clear();
         // 分离任务
         int startLevelIndex = SequenceConstants.AllLevels.IndexOf(weaponConfig.Level);
         int endLevelIndex = startLevelIndex;
@@ -110,7 +115,7 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
                 {
                     BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
                     thisLevelSubPlan.WeaponId = weaponConfig.Id;
-                    thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
+                    thisLevelSubPlan.Index = _res.WeaponPlanSubPlanList.Count + 1;
                     thisLevelSubPlan.ActionTypeString = "武器等级";
                     thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]}";
                     thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[l];
@@ -152,7 +157,7 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
                     }
                     else thisLevelSubPlan.IsCheckAble = false;
 
-                    res.WeaponPlanSubPlanList.Add(thisLevelSubPlan);
+                    _res.WeaponPlanSubPlanList.Add(thisLevelSubPlan);
                     // 还原暂存信息
                     tempIsLevel = false;
                     tempExp = 0;
@@ -162,7 +167,7 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
                 // 处理突破部分
                 BackpackWeaponPlanInfoSubPlan thisSubPlan = new BackpackWeaponPlanInfoSubPlan();
                 thisSubPlan.WeaponId = weaponConfig.Id;
-                thisSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
+                thisSubPlan.Index = _res.WeaponPlanSubPlanList.Count + 1;
                 thisSubPlan.ActionTypeString = "武器突破";
                 thisSubPlan.ActionDescriptionString = $"{StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]} ↑";
                 thisSubPlan.FinishLevel = SequenceConstants.AllLevels[l + 1];
@@ -201,7 +206,7 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
                 }
                 else thisSubPlan.IsCheckAble = false;
 
-                res.WeaponPlanSubPlanList.Add(thisSubPlan);
+                _res.WeaponPlanSubPlanList.Add(thisSubPlan);
             }
         }
 
@@ -210,7 +215,7 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
         {
             BackpackWeaponPlanInfoSubPlan thisLevelSubPlan = new BackpackWeaponPlanInfoSubPlan();
             thisLevelSubPlan.WeaponId = weaponConfig.Id;
-            thisLevelSubPlan.Index = res.WeaponPlanSubPlanList.Count + 1;
+            thisLevelSubPlan.Index = _res.WeaponPlanSubPlanList.Count + 1;
             thisLevelSubPlan.ActionTypeString = "武器等级";
             thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endLevelIndex]]}";
             thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[endLevelIndex];
@@ -246,12 +251,18 @@ public class SingleWeaponSimulatorService(SingleBackpackWeaponConfigModel weapon
             }
 
             thisLevelSubPlan.IsCheckAble = isLevelCheckAble;
-            res.WeaponPlanSubPlanList.Add(thisLevelSubPlan);
+            _res.WeaponPlanSubPlanList.Add(thisLevelSubPlan);
         }
 
-        res.IsShowSubPlan = res.WeaponPlanSubPlanList.Count > 0;
-        res.IsAllComplete = res.WeaponPlanSubPlanList.Count == 0;
-        return res;
+        _res.IsShowSubPlan = _res.WeaponPlanSubPlanList.Count > 0;
+        _res.IsAllComplete = _res.WeaponPlanSubPlanList.Count == 0;
+    }
+
+    public BackpackWeaponPlanInfo GetWeaponPlanInfo()
+    {
+        UpdateMaterial();
+        UpdateSubPlan();
+        return _res;
     }
 
     // 计算具体武器经验花费

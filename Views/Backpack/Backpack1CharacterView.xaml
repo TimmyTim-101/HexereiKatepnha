@@ -1284,7 +1284,7 @@
                                                                         <Image Source="{Binding BackgroundImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
                                                                         <Image Source="{Binding ImagePath}" Width="40" Height="40" Stretch="UniformToFill"></Image>
                                                                     </Grid>
-                                                                    <TextBlock Grid.Row="1" Text="{Binding NeedNum}" Style="{StaticResource MyTextBlock}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                                    <TextBlock Grid.Row="1" Text="{Binding ShowNum}" Style="{StaticResource MyTextBlock}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                                                                 </Grid>
                                                             </DataTemplate>
                                                         </ItemsControl.ItemTemplate>

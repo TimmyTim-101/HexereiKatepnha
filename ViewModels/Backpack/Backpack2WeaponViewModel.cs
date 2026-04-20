@@ -9,6 +9,7 @@ using HexereiKatepnha.Models.ConfigModels;
 using HexereiKatepnha.Models.EntityModels;
 using HexereiKatepnha.Models.Messages;
 using HexereiKatepnha.Models.ModelsForViews.Backpack;
+using HexereiKatepnha.Models.ModelsForViews.Calculator;
 using HexereiKatepnha.Services.CalculatorService;
 
 namespace HexereiKatepnha.ViewModels.Backpack
@@ -33,13 +34,14 @@ namespace HexereiKatepnha.ViewModels.Backpack
         public int Rid { get; init; }
     }
 
-    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>, IRecipient<WeaponInfoChangeMessage>
+    public partial class Backpack2WeaponViewModel : ObservableObject, IRecipient<WeaponCharacterChangeMessage>, IRecipient<BackpackMaterialConfigChangeMessage>, IRecipient<WeaponInfoChangeMessage>, IRecipient<GoalSimulatorChangeMessage>
     {
         [ObservableProperty] private int _weaponFilter;
         [ObservableProperty] private int _starFilter;
         [ObservableProperty] private bool _isOnlyOccupied;
         private ObservableCollection<Backpack2WeaponModel> WeaponList { get; } = [];
         [ObservableProperty] private Backpack2WeaponModel _selectedWeapon;
+        [ObservableProperty] private SingleWeaponSimulatorService _selectedWeaponSimulatorService;
         [ObservableProperty] private BackpackWeaponPlanInfo _selectedWeaponPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
@@ -129,7 +131,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedWeapon = WeaponView.FirstOrDefault()!;
-            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+            SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(SelectedWeapon.Config);
+            SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()
@@ -178,6 +181,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
             WeakReferenceMessenger.Default.Register<WeaponCharacterChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<BackpackMaterialConfigChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<WeaponInfoChangeMessage>(this);
+            WeakReferenceMessenger.Default.Register<GoalSimulatorChangeMessage>(this);
         }
 
         private bool WeaponsFilter(object item)
@@ -255,7 +259,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
             ApplySelectCharacterFilters();
-            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+            SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(SelectedWeapon.Config);
+            SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
         }
 
         partial void OnWeaponFilterChanged(int value)
@@ -641,6 +646,40 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
                 }
             }
+
+            SelectedWeaponSimulatorService.UpdateSubPlan();
+        }
+
+        public void Receive(GoalSimulatorChangeMessage message)
+        {
+            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
+            foreach (BackpackWeaponPlanInfoMaterial thisMaterial in SelectedWeaponPlanInfo.WeaponPlanMaterialList)
+            {
+                int thisMaterialRid = thisMaterial.Rid;
+                CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[thisMaterialRid];
+                thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
+                if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
+                else thisMaterial.Color1 = "#Transparent";
+                thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
+                if (thisMaterialExtraInfo.IsSatisfy)
+                {
+                    if (thisMaterialExtraInfo.ActionNum > 0)
+                    {
+                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                        thisMaterial.Color2 = StringConstants.YellowColorString;
+                    }
+                    else
+                    {
+                        thisMaterial.Num2String = "";
+                        thisMaterial.Color2 = "#Transparent";
+                    }
+                }
+                else
+                {
+                    thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                    thisMaterial.Color2 = StringConstants.RedColorString;
+                }
+            }
         }
 
         public void Receive(WeaponInfoChangeMessage message)
@@ -693,7 +732,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
                 if (SelectedWeapon.Id == weaponId)
                 {
-                    SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(thisConfig).GetWeaponPlanInfo();
+                    SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(thisConfig);
+                    SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
                 }
             }
         }

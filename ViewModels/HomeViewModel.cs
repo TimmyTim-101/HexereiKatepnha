@@ -24,12 +24,14 @@ namespace HexereiKatepnha.ViewModels
         [ObservableProperty] private string _renameAccountName = "";
         [ObservableProperty] private ObservableCollection<string> _allAccountList = [];
         public ObservableCollection<BirthdayCharacterModel> BirthdayList { get; set; } = [];
+        private DateTime _lastCheckDate;
 
         public HomeViewModel()
         {
             LocalCurrentTime = DateTime.Now.ToString("HH:mm:ss");
             ServerCurrentTime = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).ToString("HH:mm:ss");
             Birthday = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Month * 100 + DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Day;
+            _lastCheckDate = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Date;
             IsServerTimeSame = LocalCurrentTime == ServerCurrentTime;
             IsServerTimeDifferent = !IsServerTimeSame;
 
@@ -44,6 +46,12 @@ namespace HexereiKatepnha.ViewModels
                 Birthday = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Month * 100 + DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Day;
                 IsServerTimeSame = LocalCurrentTime == ServerCurrentTime;
                 IsServerTimeDifferent = !IsServerTimeSame;
+                DateTime currentDate = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Date;
+                if (currentDate != _lastCheckDate)
+                {
+                    _lastCheckDate = currentDate;
+                    UpdateBirthdayList();
+                }
             };
             timer.Start();
 
@@ -77,7 +85,7 @@ namespace HexereiKatepnha.ViewModels
                         if (currentBirthday == 229)
                         {
                             int currentYear = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Year;
-                            if (currentYear % 4 == 0 && currentYear % 100 != 0)
+                            if (DateTime.IsLeapYear(currentYear))
                             {
                                 thisBirthdayCharacterModel.IsTodayBirthday = Birthday == cm.BirthMonth * 100 + cm.BirthDay;
                                 thisBirthdayCharacterModel.IsNotTodayBirthday = Birthday != cm.BirthMonth * 100 + cm.BirthDay;

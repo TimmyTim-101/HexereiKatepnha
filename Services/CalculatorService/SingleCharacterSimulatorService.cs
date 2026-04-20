@@ -11,8 +11,9 @@ namespace HexereiKatepnha.Services.CalculatorService;
 
 public class SingleCharacterSimulatorService
 {
-    private SingleBackpackCharacterConfigModel _characterConfig = new SingleBackpackCharacterConfigModel();
+    private SingleBackpackCharacterConfigModel _characterConfig = new();
     private CharacterModel _characterModel;
+    private BackpackCharacterPlanInfo _res = new();
 
     public SingleCharacterSimulatorService(int characterRid)
     {
@@ -24,9 +25,9 @@ public class SingleCharacterSimulatorService
         _characterModel = AutoCalculateConstants.CharacterMap[characterRid];
     }
 
-    public BackpackCharacterPlanInfo GetCharacterPlanInfo()
+    private void UpdateMaterial()
     {
-        BackpackCharacterPlanInfo res = new BackpackCharacterPlanInfo();
+        _res.CharacterPlanMaterialList.Clear();
         // 分离材料
         HashSet<int> involvedMaterialRidList = [];
         foreach (List<MaterialPairModel> mpmList in _characterModel.LevelUpMaterials.Values)
@@ -103,11 +104,15 @@ public class SingleCharacterSimulatorService
                         thisMaterial.Color2 = StringConstants.RedColorString;
                     }
 
-                    res.CharacterPlanMaterialList.Add(thisMaterial);
+                    _res.CharacterPlanMaterialList.Add(thisMaterial);
                 }
             }
         }
+    }
 
+    public void UpdateSubPlan()
+    {
+        _res.CharacterPlanSubPlanList.Clear();
         // 分离任务
         // 角色等级
         int startCharacterLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.CharacterLevel);
@@ -146,7 +151,7 @@ public class SingleCharacterSimulatorService
                 {
                     BackpackCharacterPlanInfoSubPlan thisCharacterLevelSubPlan = new BackpackCharacterPlanInfoSubPlan();
                     thisCharacterLevelSubPlan.CharacterRid = _characterModel.Rid;
-                    thisCharacterLevelSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+                    thisCharacterLevelSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
                     thisCharacterLevelSubPlan.Type = 1;
                     thisCharacterLevelSubPlan.ActionTypeString = "角色等级";
                     thisCharacterLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]}";
@@ -189,7 +194,7 @@ public class SingleCharacterSimulatorService
                     }
                     else thisCharacterLevelSubPlan.IsCheckAble = false;
 
-                    res.CharacterPlanSubPlanList.Add(thisCharacterLevelSubPlan);
+                    _res.CharacterPlanSubPlanList.Add(thisCharacterLevelSubPlan);
                     // 还原暂存信息
                     tempIsLevel = false;
                     tempExp = 0;
@@ -199,7 +204,7 @@ public class SingleCharacterSimulatorService
                 // 处理突破部分
                 BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
                 thisSubPlan.CharacterRid = _characterModel.Rid;
-                thisSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+                thisSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
                 thisSubPlan.Type = 1;
                 thisSubPlan.ActionTypeString = "角色突破";
                 thisSubPlan.ActionDescriptionString = $"{StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]]} ↑";
@@ -239,7 +244,7 @@ public class SingleCharacterSimulatorService
                 }
                 else thisSubPlan.IsCheckAble = false;
 
-                res.CharacterPlanSubPlanList.Add(thisSubPlan);
+                _res.CharacterPlanSubPlanList.Add(thisSubPlan);
             }
         }
 
@@ -248,7 +253,7 @@ public class SingleCharacterSimulatorService
         {
             BackpackCharacterPlanInfoSubPlan thisLevelSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisLevelSubPlan.CharacterRid = _characterModel.Rid;
-            thisLevelSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+            thisLevelSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
             thisLevelSubPlan.Type = 1;
             thisLevelSubPlan.ActionTypeString = "角色等级";
             thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endCharacterLevelIndex]]}";
@@ -285,7 +290,7 @@ public class SingleCharacterSimulatorService
             }
 
             thisLevelSubPlan.IsCheckAble = isCharacterLevelCheckAble;
-            res.CharacterPlanSubPlanList.Add(thisLevelSubPlan);
+            _res.CharacterPlanSubPlanList.Add(thisLevelSubPlan);
         }
 
         // 天赋A
@@ -302,7 +307,7 @@ public class SingleCharacterSimulatorService
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
-            thisSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+            thisSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
             thisSubPlan.Type = 2;
             thisSubPlan.ActionTypeString = "普通攻击";
             string startLevelString = StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]];
@@ -344,7 +349,7 @@ public class SingleCharacterSimulatorService
             }
             else thisSubPlan.IsCheckAble = false;
 
-            res.CharacterPlanSubPlanList.Add(thisSubPlan);
+            _res.CharacterPlanSubPlanList.Add(thisSubPlan);
         }
 
         // 天赋E
@@ -361,7 +366,7 @@ public class SingleCharacterSimulatorService
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
-            thisSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+            thisSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
             thisSubPlan.Type = 3;
             thisSubPlan.ActionTypeString = "元素战技";
             string startLevelString = StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]];
@@ -403,7 +408,7 @@ public class SingleCharacterSimulatorService
             }
             else thisSubPlan.IsCheckAble = false;
 
-            res.CharacterPlanSubPlanList.Add(thisSubPlan);
+            _res.CharacterPlanSubPlanList.Add(thisSubPlan);
         }
 
         // 天赋Q
@@ -420,7 +425,7 @@ public class SingleCharacterSimulatorService
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
-            thisSubPlan.Index = res.CharacterPlanSubPlanList.Count + 1;
+            thisSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
             thisSubPlan.Type = 4;
             thisSubPlan.ActionTypeString = "元素爆发";
             string startLevelString = StringConstants.LevelNumberString[SequenceConstants.AllLevels[l]];
@@ -462,12 +467,18 @@ public class SingleCharacterSimulatorService
             }
             else thisSubPlan.IsCheckAble = false;
 
-            res.CharacterPlanSubPlanList.Add(thisSubPlan);
+            _res.CharacterPlanSubPlanList.Add(thisSubPlan);
         }
 
-        res.IsShowSubPlan = res.CharacterPlanSubPlanList.Count > 0;
-        res.IsAllComplete = res.CharacterPlanSubPlanList.Count == 0;
-        return res;
+        _res.IsShowSubPlan = _res.CharacterPlanSubPlanList.Count > 0;
+        _res.IsAllComplete = _res.CharacterPlanSubPlanList.Count == 0;
+    }
+
+    public BackpackCharacterPlanInfo GetCharacterPlanInfo()
+    {
+        UpdateMaterial();
+        UpdateSubPlan();
+        return _res;
     }
 
     // 计算具体角色经验花费
