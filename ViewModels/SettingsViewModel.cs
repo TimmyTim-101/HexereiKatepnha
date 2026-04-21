@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -52,6 +53,24 @@ namespace HexereiKatepnha.ViewModels
                 UploadJsonStatusSign = "导入出现错误";
                 UploadJsonStatusMessage = parseService.GetErrorMessage();
                 IsShowDetail = true;
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E8%AE%BE%E7%BD%AE";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }

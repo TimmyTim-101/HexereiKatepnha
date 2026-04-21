@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -185,6 +186,24 @@ namespace HexereiKatepnha.ViewModels.Database
         private void ClickOnWeapon(Database2WeaponModel value)
         {
             SelectedWeapon = value;
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93-%E2%80%90-%E6%AD%A6%E5%99%A8";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

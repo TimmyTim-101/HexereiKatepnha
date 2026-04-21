@@ -6263,6 +6263,8 @@
         <Resource Include="Resources\Icons\check_box_30dp_DDDDDD_FILL1_wght400_GRAD0_opsz24.png" />
         <None Remove="Resources\Icons\check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png" />
         <Resource Include="Resources\Icons\check_box_30dp_12B981_FILL1_wght400_GRAD0_opsz24.png" />
+        <None Remove="Resources\Icons\help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
+        <Resource Include="Resources\Icons\help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" />
     </ItemGroup>
 
     <ItemGroup>

@@ -12,7 +12,15 @@
     <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+                <StackPanel Orientation="Horizontal" Margin="30,20,30,5">
+                    <TextBlock Text="设置" Style="{StaticResource MyTextBlock}" FontSize="30"></TextBlock>
+                    <Button Style="{StaticResource ImageButton}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Margin="10,0,0,0" Command="{Binding OpenHelpWebPageCommand}">
+                        <Image Source="/Resources/Icons/help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Height="30" Width="30" Stretch="UniformToFill"></Image>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="帮助"></ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="White" Margin="30,20,30,20">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">

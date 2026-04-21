@@ -33,6 +33,16 @@
     <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="30,20,30,5">
+                    <TextBlock Text="主页" Style="{StaticResource MyTextBlock}" FontSize="30"></TextBlock>
+                    <Button Style="{StaticResource ImageButton}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Margin="10,0,0,0" Command="{Binding OpenHelpWebPageCommand}">
+                        <Image Source="/Resources/Icons/help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Height="30" Width="30" Stretch="UniformToFill"></Image>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="帮助"></ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Grid Margin="30,30,30,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"></ColumnDefinition>
@@ -51,7 +61,7 @@
                                     <Run Text="，一个原神养成小助手。"></Run>
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
-                                    <Run Text="不知道该干点啥？有一堆角色武器要养？材料我该合成多少打多少？要多久才能攒够材料？"></Run>
+                                    <Run Text="不知道该干点啥？有一堆角色武器要养？材料我该合成多少打多少？要多久才能攒够材料？圣遗物都是什么鬼？"></Run>
                                     <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
                                     <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
                                     <Run Text="帮您忙！"></Run>

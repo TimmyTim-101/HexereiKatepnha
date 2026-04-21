@@ -316,9 +316,27 @@ namespace HexereiKatepnha.ViewModels
             }
         }
 
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki#%E4%B8%BB%E9%A1%B5";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         public List<BaseUpdateInfoModel> InfoList { get; set; } =
         [
-            new MileStoneUpdateInfoModel("26-04-13：V1.0.0发布。"), // todo 填入实际日期
+            new MileStoneUpdateInfoModel("26-04-21：V6.5.0发布。"),
         ];
     }
 }

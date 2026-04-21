@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -126,6 +127,24 @@ namespace HexereiKatepnha.ViewModels.Calculator
             for (int i = 0; i < PlanList.Count; i++)
             {
                 PlanList[i].Index = i + 1;
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E8%AE%A1%E7%AE%97%E5%99%A8-%E2%80%90-%E8%A7%84%E5%88%92%E8%AE%BE%E7%BD%AE";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

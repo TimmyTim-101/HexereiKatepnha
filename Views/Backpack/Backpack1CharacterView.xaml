@@ -65,7 +65,15 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="角色" Style="{StaticResource MyTextBlock}" FontSize="30" Margin="30,20,30,5" />
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="30,20,30,5">
+            <TextBlock Text="角色" Style="{StaticResource MyTextBlock}" FontSize="30"></TextBlock>
+            <Button Style="{StaticResource ImageButton}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Margin="10,0,0,0" Command="{Binding OpenHelpWebPageCommand}">
+                <Image Source="/Resources/Icons/help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Height="30" Width="30" Stretch="UniformToFill"></Image>
+                <Button.ToolTip>
+                    <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="帮助"></ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
         <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

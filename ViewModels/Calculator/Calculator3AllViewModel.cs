@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Data;
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -340,6 +341,24 @@ namespace HexereiKatepnha.ViewModels.Calculator
                 {
                     App.BackpackMaterialConfigManagerInstance!.UpdateMaterialNumber([recipeMaterial.Rid, clickItem.Rid], [recipeMaterial.Number - 3, clickItem.Number + 1]);
                 }
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E8%AE%A1%E7%AE%97%E5%99%A8-%E2%80%90-%E5%85%A8%E6%8B%89%E6%BB%A1";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

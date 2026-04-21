@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
@@ -7,7 +9,7 @@ using HexereiKatepnha.Models.ModelsForViews.Database;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
-    public class Database3ArtifactViewModel : ObservableObject
+    public partial class Database3ArtifactViewModel : ObservableObject
     {
         public ObservableCollection<Database3ArtifactModel> AllDatabase3ArtifactModelsList { get; } = new();
 
@@ -58,6 +60,24 @@ namespace HexereiKatepnha.ViewModels.Database
                 }
 
                 AllDatabase3ArtifactModelsList.Add(thisDatabase3ArtifactModels);
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93-%E2%80%90-%E5%9C%A3%E9%81%97%E7%89%A9";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }

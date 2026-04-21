@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -108,6 +109,24 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisMaterialModel.Num2String = thisExtraInfo.ActionNum.ToString();
                     thisMaterialModel.Color2 = StringConstants.RedColorString;
                 }
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E8%83%8C%E5%8C%85-%E2%80%90-%E6%9D%90%E6%96%99";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

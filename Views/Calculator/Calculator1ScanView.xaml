@@ -9,8 +9,17 @@
              FontFamily="{StaticResource MyFont}">
     <Grid Background="{DynamicResource GlobalBackColor}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
-            <StackPanel>
-                <TextBlock Text="计算器 - 自动扫描" Style="{StaticResource TodoTextBlock}" />
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="30,20,30,5">
+                    <TextBlock Text="计算器 - 自动扫描" Style="{StaticResource TodoTextBlock}" />
+                    <Button Style="{StaticResource ImageButton}" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.InitialShowDelay="100" Margin="10,0,0,0" Command="{Binding OpenHelpWebPageCommand}">
+                        <Image Source="/Resources/Icons/help_30dp_DDDDDD_FILL0_wght400_GRAD0_opsz24.png" Height="30" Width="30" Stretch="UniformToFill"></Image>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="帮助"></ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+                <Border Style="{StaticResource HorizontalDivider}"></Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

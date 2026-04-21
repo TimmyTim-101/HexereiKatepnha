@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -610,6 +611,24 @@ namespace HexereiKatepnha.ViewModels.Backpack
             if (SelectedWeapon.Id == value.WeaponId)
             {
                 ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E8%83%8C%E5%8C%85-%E2%80%90-%E6%AD%A6%E5%99%A8";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

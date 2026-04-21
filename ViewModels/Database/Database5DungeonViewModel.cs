@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using HexereiKatepnha.Constants.EntityConstants;
 using HexereiKatepnha.Constants.EntityConstants.GeneralConstants;
 using HexereiKatepnha.Models.EntityModels;
@@ -6,7 +8,7 @@ using HexereiKatepnha.Models.ModelsForViews.Database;
 
 namespace HexereiKatepnha.ViewModels.Database
 {
-    public class Database5DungeonViewModel : ObservableObject
+    public partial class Database5DungeonViewModel : ObservableObject
     {
         public List<Database5DungeonModel> AllDungeonList { get; set; } = [];
 
@@ -96,6 +98,24 @@ namespace HexereiKatepnha.ViewModels.Database
                     thisModel.DropItemList = thisDropItemList;
                     AllDungeonList.Add(thisModel);
                 }
+            }
+        }
+
+        [RelayCommand]
+        public void OpenHelpWebPage()
+        {
+            string url = "https://github.com/TimmyTim-101/HexereiKatepnha/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93-%E2%80%90-%E7%A7%98%E5%A2%83-&-%E9%AD%94%E7%89%A9";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }
