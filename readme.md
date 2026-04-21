@@ -57,5 +57,8 @@
 
 再次感谢以上项目对本项目提供的帮助，作为本项目的管理者的我深知每一个项目背后都是个人或团队智慧、行动与时间的结晶，如有侵权或其他问题，请与我联系，感谢!
 
+## 许可证
+![GPL-v3](https://www.gnu.org/graphics/gplv3-127x51.png)
+
 ## 问题反馈与建议
 请提[Issues](https://github.com/TimmyTim-101/HexereiKatepnha/issues)
