@@ -85,8 +85,8 @@
                                             <Grid.ToolTip>
                                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Name}"></ToolTip>
                                             </Grid.ToolTip>
-                                            <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
-                                            <Image Source="{Binding ImagePath, IsAsync=True}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                            <Image Source="{Binding BackgroundImagePath}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
+                                            <Image Source="{Binding ImagePath}" Width="82" Height="82" Stretch="UniformToFill" Margin="2"></Image>
                                         </Grid>
                                         <Border Grid.Row="1" BorderThickness="0" Background="{Binding Color1}">
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

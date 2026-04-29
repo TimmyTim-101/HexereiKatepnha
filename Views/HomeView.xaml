@@ -152,11 +152,11 @@
                                                 <RowDefinition Height="Auto"></RowDefinition>
                                             </Grid.RowDefinitions>
                                             <Grid Grid.Row="0">
-                                                <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                                <Image Source="{Binding BackgroundPath}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding ImagePath}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                <Image Source="{Binding ElementImagePath}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                             </Grid>
-                                            <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                                            <Image Grid.Row="1" Source="{Binding StarImagePath}" Height="20" HorizontalAlignment="Center"></Image>
                                             <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
                                             <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
                                         </Grid>
@@ -171,11 +171,11 @@
                                                     <RowDefinition Height="Auto"></RowDefinition>
                                                 </Grid.RowDefinitions>
                                                 <Grid Grid.Row="0">
-                                                    <Image Source="{Binding BackgroundPath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                                    <Image Source="{Binding ImagePath, IsAsync=True}" Width="150" Height="150" Stretch="UniformToFill"></Image>
-                                                    <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                                    <Image Source="{Binding BackgroundPath}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding ImagePath}" Width="150" Height="150" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding ElementImagePath}" Width="40" Height="40" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                                                 </Grid>
-                                                <Image Grid.Row="1" Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                                                <Image Grid.Row="1" Source="{Binding StarImagePath}" Height="20" HorizontalAlignment="Center"></Image>
                                                 <TextBlock Grid.Row="2" Text="{Binding Name}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
                                                 <TextBlock Grid.Row="3" Text="{Binding BirthdayString}" Style="{StaticResource MyTextBlock}" TextAlignment="Center"></TextBlock>
                                             </Grid>

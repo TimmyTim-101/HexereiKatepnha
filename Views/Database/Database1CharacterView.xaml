@@ -32,11 +32,11 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Orientation="Vertical">
                             <Grid>
-                                <Image Source="{Binding BackgroundImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
-                                <Image Source="{Binding ImagePath, IsAsync=True}" Width="240" Height="240" Stretch="UniformToFill"></Image>
-                                <Image Source="{Binding ElementImagePath, IsAsync=True}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                                <Image Source="{Binding BackgroundImagePath}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ImagePath}" Width="240" Height="240" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding ElementImagePath}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
                             </Grid>
-                            <Image Source="{Binding StarImagePath, IsAsync=True}" Height="20" HorizontalAlignment="Center"></Image>
+                            <Image Source="{Binding StarImagePath}" Height="20" HorizontalAlignment="Center"></Image>
                             <Viewbox MaxWidth="150" StretchDirection="DownOnly" Margin="0,0,0,0">
                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"></TextBlock>
                             </Viewbox>
@@ -57,7 +57,7 @@
                             <TextBlock Grid.Row="0" Style="{StaticResource MyTextBlock}" Text="{Binding BirthdayString}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></TextBlock>
                             <Border Grid.Row="1" Style="{StaticResource HorizontalDivider}"></Border>
                             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <Image Source="{Binding WeaponTypeImagePath, IsAsync=True}" Height="25" Width="25" Stretch="UniformToFill" Margin="10,0,10,0"></Image>
+                                <Image Source="{Binding WeaponTypeImagePath}" Height="25" Width="25" Stretch="UniformToFill" Margin="10,0,10,0"></Image>
                                 <TextBlock Style="{StaticResource MyTextBlock}" Text="{Binding WeaponTypeName}" Margin="0,0,0,0"></TextBlock>
                             </StackPanel>
                             <Border Grid.Row="3" Style="{StaticResource HorizontalDivider}"></Border>
@@ -78,8 +78,8 @@
                                                     <Grid.ToolTip>
                                                         <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding MaterialName}"></ToolTip>
                                                     </Grid.ToolTip>
-                                                    <Image Source="{Binding MaterialStarImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
-                                                    <Image Source="{Binding MaterialImagePath, IsAsync=True}" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding MaterialStarImagePath}" Stretch="UniformToFill"></Image>
+                                                    <Image Source="{Binding MaterialImagePath}" Stretch="UniformToFill"></Image>
                                                 </Grid>
                                             </StackPanel>
                                         </Grid>
@@ -95,17 +95,17 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="{Binding Talent1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="0" Source="{Binding Talent1ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Talent1Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="1" Source="{Binding Talent2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="1" Source="{Binding Talent2ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Talent2Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="2" Source="{Binding Talent3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="2" Source="{Binding Talent3ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Talent3Description}"></ToolTip>
                             </Image.ToolTip>
@@ -121,32 +121,32 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="{Binding Ascension1ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="0" Source="{Binding Ascension1ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension1Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="1" Source="{Binding Ascension2ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="1" Source="{Binding Ascension2ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension2Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="2" Source="{Binding Ascension3ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="2" Source="{Binding Ascension3ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension3Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="3" Source="{Binding Ascension4ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="3" Source="{Binding Ascension4ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension4Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="4" Source="{Binding Ascension5ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="4" Source="{Binding Ascension5ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension5Description}"></ToolTip>
                             </Image.ToolTip>
                         </Image>
-                        <Image Grid.Column="5" Source="{Binding Ascension6ImagePath, IsAsync=True}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
+                        <Image Grid.Column="5" Source="{Binding Ascension6ImagePath}" Height="50" Width="50" Stretch="UniformToFill" ToolTipService.InitialShowDelay="100">
                             <Image.ToolTip>
                                 <ToolTip Style="{StaticResource FlutterStyleToolTip}" Content="{Binding Ascension6Description}"></ToolTip>
                             </Image.ToolTip>
