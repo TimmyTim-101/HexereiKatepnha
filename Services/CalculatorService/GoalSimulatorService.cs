@@ -131,13 +131,13 @@ public class GoalSimulatorService
             }
 
             // 武器全拉满
-            // 只考虑目标大于1级的武器
+            // 只考虑目标大于1级的武器或者已被某个角色装备的武器
             foreach (SingleBackpackWeaponConfigModel thisPlan in App.BackpackWeaponConfigManagerInstance!.Configuration.WeaponConfigMap.Values)
             {
                 int thisWeaponId = thisPlan.Rid;
                 WeaponModel thisWeapon = AutoCalculateConstants.WeaponMap[thisWeaponId];
                 Enumeration.Level startLevel = thisPlan.GoalLevel;
-                if (startLevel == 0) continue;
+                if (startLevel == 0 && thisPlan.CharacterRid == 0) continue;
                 int startLevelIndex = SequenceConstants.AllLevels.IndexOf(startLevel);
                 int endLevelIndex = startLevelIndex;
                 for (int i = startLevelIndex; i < SequenceConstants.AllLevels.Count; i++)

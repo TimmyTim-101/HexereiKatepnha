@@ -86,5 +86,6 @@ public class BackpackWeaponConfigManager : ConfigManagerBase<BackpackWeaponConfi
         Configuration.WeaponConfigMap[weaponId].CharacterRid = characterRid;
         Save();
         WeakReferenceMessenger.Default.Send(new WeaponCharacterChangeMessage(weaponId));
+        WeakReferenceMessenger.Default.Send(new PlanChangeMessage());
     }
 }

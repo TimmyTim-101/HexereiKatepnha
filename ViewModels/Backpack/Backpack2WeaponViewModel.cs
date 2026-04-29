@@ -663,7 +663,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 for (int i = 0; i < SelectedWeaponPlanInfo.WeaponPlanMaterialList.Count; i++)
                 {
                     BackpackWeaponPlanInfoMaterial oldM = SelectedWeaponPlanInfo.WeaponPlanMaterialList[i];
-                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList[i];
+                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == oldM.Rid)!;
+                    if (newM == null) continue;
                     if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
                     if (oldM.Name != newM.Name) oldM.Name = newM.Name;
                     if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
@@ -689,7 +690,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
                 for (int i = 0; i < SelectedWeaponPlanInfo.WeaponPlanMaterialList.Count; i++)
                 {
                     BackpackWeaponPlanInfoMaterial oldM = SelectedWeaponPlanInfo.WeaponPlanMaterialList[i];
-                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList[i];
+                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == oldM.Rid)!;
+                    if (newM == null) continue;
                     if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
                     if (oldM.Name != newM.Name) oldM.Name = newM.Name;
                     if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
