@@ -42,7 +42,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isOnlyOccupied;
         private ObservableCollection<Backpack2WeaponModel> WeaponList { get; } = [];
         [ObservableProperty] private Backpack2WeaponModel _selectedWeapon;
-        [ObservableProperty] private SingleWeaponSimulatorService _selectedWeaponSimulatorService;
         [ObservableProperty] private BackpackWeaponPlanInfo _selectedWeaponPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isProgressionPopupOpen;
@@ -132,8 +131,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedWeapon = WeaponView.FirstOrDefault()!;
-            SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(SelectedWeapon.Config);
-            SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
+            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()
@@ -260,8 +258,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnLevelGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnLevelSelectionCommand.NotifyCanExecuteChanged();
             ApplySelectCharacterFilters();
-            SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(SelectedWeapon.Config);
-            SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
+            if (SelectedWeapon != null) SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+            else SelectedWeaponPlanInfo = new BackpackWeaponPlanInfo();
         }
 
         partial void OnWeaponFilterChanged(int value)
@@ -656,47 +654,52 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public void Receive(BackpackMaterialConfigChangeMessage message)
         {
-            List<int> thisMaterialRidList = message.Value;
-            foreach (int thisMaterialRid in thisMaterialRidList)
+            if (SelectedWeapon != null)
             {
-                BackpackWeaponPlanInfoMaterial thisViewModel = SelectedWeaponPlanInfo.WeaponPlanMaterialList.FirstOrDefault(m => m.Rid == thisMaterialRid, null);
-                if (thisViewModel != null)
+                BackpackWeaponPlanInfo newRes = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+                SelectedWeaponPlanInfo.WeaponPlanSubPlanList = newRes.WeaponPlanSubPlanList;
+                SelectedWeaponPlanInfo.IsShowSubPlan = newRes.IsShowSubPlan;
+                SelectedWeaponPlanInfo.IsAllComplete = newRes.IsAllComplete;
+                for (int i = 0; i < SelectedWeaponPlanInfo.WeaponPlanMaterialList.Count; i++)
                 {
-                    thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                    BackpackWeaponPlanInfoMaterial oldM = SelectedWeaponPlanInfo.WeaponPlanMaterialList[i];
+                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList[i];
+                    if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
+                    if (oldM.Name != newM.Name) oldM.Name = newM.Name;
+                    if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
+                    if (oldM.ImagePath != newM.ImagePath) oldM.ImagePath = newM.ImagePath;
+                    if (oldM.Number != newM.Number) oldM.Number = newM.Number;
+                    if (oldM.Num1 != newM.Num1) oldM.Num1 = newM.Num1;
+                    if (oldM.Color1 != newM.Color1) oldM.Color1 = newM.Color1;
+                    if (oldM.IconPath != newM.IconPath) oldM.IconPath = newM.IconPath;
+                    if (oldM.Num2String != newM.Num2String) oldM.Num2String = newM.Num2String;
+                    if (oldM.Color2 != newM.Color2) oldM.Color2 = newM.Color2;
                 }
             }
-
-            SelectedWeaponSimulatorService.UpdateSubPlan();
         }
 
         public void Receive(GoalSimulatorChangeMessage message)
         {
-            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
-            foreach (BackpackWeaponPlanInfoMaterial thisMaterial in SelectedWeaponPlanInfo.WeaponPlanMaterialList)
+            if (SelectedWeapon != null)
             {
-                int thisMaterialRid = thisMaterial.Rid;
-                CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[thisMaterialRid];
-                thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
-                if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
-                else thisMaterial.Color1 = "#Transparent";
-                thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
-                if (thisMaterialExtraInfo.IsSatisfy)
+                BackpackWeaponPlanInfo newRes = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+                SelectedWeaponPlanInfo.WeaponPlanSubPlanList = newRes.WeaponPlanSubPlanList;
+                SelectedWeaponPlanInfo.IsShowSubPlan = newRes.IsShowSubPlan;
+                SelectedWeaponPlanInfo.IsAllComplete = newRes.IsAllComplete;
+                for (int i = 0; i < SelectedWeaponPlanInfo.WeaponPlanMaterialList.Count; i++)
                 {
-                    if (thisMaterialExtraInfo.ActionNum > 0)
-                    {
-                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                        thisMaterial.Color2 = StringConstants.YellowColorString;
-                    }
-                    else
-                    {
-                        thisMaterial.Num2String = "";
-                        thisMaterial.Color2 = "#Transparent";
-                    }
-                }
-                else
-                {
-                    thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                    thisMaterial.Color2 = StringConstants.RedColorString;
+                    BackpackWeaponPlanInfoMaterial oldM = SelectedWeaponPlanInfo.WeaponPlanMaterialList[i];
+                    BackpackWeaponPlanInfoMaterial newM = newRes.WeaponPlanMaterialList[i];
+                    if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
+                    if (oldM.Name != newM.Name) oldM.Name = newM.Name;
+                    if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
+                    if (oldM.ImagePath != newM.ImagePath) oldM.ImagePath = newM.ImagePath;
+                    if (oldM.Number != newM.Number) oldM.Number = newM.Number;
+                    if (oldM.Num1 != newM.Num1) oldM.Num1 = newM.Num1;
+                    if (oldM.Color1 != newM.Color1) oldM.Color1 = newM.Color1;
+                    if (oldM.IconPath != newM.IconPath) oldM.IconPath = newM.IconPath;
+                    if (oldM.Num2String != newM.Num2String) oldM.Num2String = newM.Num2String;
+                    if (oldM.Color2 != newM.Color2) oldM.Color2 = newM.Color2;
                 }
             }
         }
@@ -749,10 +752,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisModel.Description = thisWeaponModel.Progression[thisModel.Progression];
                 }
 
-                if (SelectedWeapon.Id == weaponId)
+                if (SelectedWeapon != null && SelectedWeapon.Id == weaponId)
                 {
-                    SelectedWeaponSimulatorService = new SingleWeaponSimulatorService(thisConfig);
-                    SelectedWeaponPlanInfo = SelectedWeaponSimulatorService.GetWeaponPlanInfo();
+                    SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(thisConfig).GetWeaponPlanInfo();
                 }
             }
         }

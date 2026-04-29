@@ -23,7 +23,6 @@ namespace HexereiKatepnha.ViewModels.Backpack
         [ObservableProperty] private bool _isHideLowLevelCharacter;
         private ObservableCollection<Backpack1CharacterModel> AllCharacterList { get; } = [];
         [ObservableProperty] private Backpack1CharacterModel _selectedCharacter;
-        [ObservableProperty] private SingleCharacterSimulatorService _selectedCharacterSimulatorService;
         [ObservableProperty] private BackpackCharacterPlanInfo _selectedCharacterPlanInfo;
         [ObservableProperty] private bool _isLevelPopupOpen;
         [ObservableProperty] private bool _isTalentAPopupOpen;
@@ -125,8 +124,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedCharacter = CharacterView.FirstOrDefault()!;
-            SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
-            SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
+            SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
             WeakReferenceMessenger.Default.Register<WeaponInfoUpdateToCharacterMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterWeaponChangeMessage>(this);
             WeakReferenceMessenger.Default.Register<CharacterInfoChangeMessage>(this);
@@ -208,8 +206,8 @@ namespace HexereiKatepnha.ViewModels.Backpack
             ClickOnTalentAGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentEGoalSelectionCommand.NotifyCanExecuteChanged();
             ClickOnTalentQGoalSelectionCommand.NotifyCanExecuteChanged();
-            SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
-            SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
+            if (SelectedCharacter == null) SelectedCharacterPlanInfo = new BackpackCharacterPlanInfo();
+            else SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
         }
 
         partial void OnElementFilterChanged(int value)
@@ -660,47 +658,52 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
         public void Receive(BackpackMaterialConfigChangeMessage message)
         {
-            List<int> thisMaterialRidList = message.Value;
-            foreach (int thisMaterialRid in thisMaterialRidList)
+            if (SelectedCharacter != null)
             {
-                BackpackCharacterPlanInfoMaterial thisViewModel = SelectedCharacterPlanInfo.CharacterPlanMaterialList.FirstOrDefault(m => m.Rid == thisMaterialRid, null);
-                if (thisViewModel != null)
+                BackpackCharacterPlanInfo newRes = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
+                SelectedCharacterPlanInfo.CharacterPlanSubPlanList = newRes.CharacterPlanSubPlanList;
+                SelectedCharacterPlanInfo.IsShowSubPlan = newRes.IsShowSubPlan;
+                SelectedCharacterPlanInfo.IsAllComplete = newRes.IsAllComplete;
+                for (int i = 0; i < SelectedCharacterPlanInfo.CharacterPlanMaterialList.Count; i++)
                 {
-                    thisViewModel.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                    BackpackCharacterPlanInfoMaterial oldM = SelectedCharacterPlanInfo.CharacterPlanMaterialList[i];
+                    BackpackCharacterPlanInfoMaterial newM = newRes.CharacterPlanMaterialList[i];
+                    if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
+                    if (oldM.Name != newM.Name) oldM.Name = newM.Name;
+                    if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
+                    if (oldM.ImagePath != newM.ImagePath) oldM.ImagePath = newM.ImagePath;
+                    if (oldM.Number != newM.Number) oldM.Number = newM.Number;
+                    if (oldM.Num1 != newM.Num1) oldM.Num1 = newM.Num1;
+                    if (oldM.Color1 != newM.Color1) oldM.Color1 = newM.Color1;
+                    if (oldM.IconPath != newM.IconPath) oldM.IconPath = newM.IconPath;
+                    if (oldM.Num2String != newM.Num2String) oldM.Num2String = newM.Num2String;
+                    if (oldM.Color2 != newM.Color2) oldM.Color2 = newM.Color2;
                 }
             }
-
-            SelectedCharacterSimulatorService.UpdateSubPlan();
         }
 
         public void Receive(GoalSimulatorChangeMessage message)
         {
-            Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
-            foreach (BackpackCharacterPlanInfoMaterial thisMaterial in SelectedCharacterPlanInfo.CharacterPlanMaterialList)
+            if (SelectedCharacter != null)
             {
-                int thisMaterialRid = thisMaterial.Rid;
-                CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[thisMaterialRid];
-                thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
-                if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
-                else thisMaterial.Color1 = "#Transparent";
-                thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
-                if (thisMaterialExtraInfo.IsSatisfy)
+                BackpackCharacterPlanInfo newRes = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
+                SelectedCharacterPlanInfo.CharacterPlanSubPlanList = newRes.CharacterPlanSubPlanList;
+                SelectedCharacterPlanInfo.IsShowSubPlan = newRes.IsShowSubPlan;
+                SelectedCharacterPlanInfo.IsAllComplete = newRes.IsAllComplete;
+                for (int i = 0; i < SelectedCharacterPlanInfo.CharacterPlanMaterialList.Count; i++)
                 {
-                    if (thisMaterialExtraInfo.ActionNum > 0)
-                    {
-                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                        thisMaterial.Color2 = StringConstants.YellowColorString;
-                    }
-                    else
-                    {
-                        thisMaterial.Num2String = "";
-                        thisMaterial.Color2 = "#Transparent";
-                    }
-                }
-                else
-                {
-                    thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                    thisMaterial.Color2 = StringConstants.RedColorString;
+                    BackpackCharacterPlanInfoMaterial oldM = SelectedCharacterPlanInfo.CharacterPlanMaterialList[i];
+                    BackpackCharacterPlanInfoMaterial newM = newRes.CharacterPlanMaterialList[i];
+                    if (oldM.Rid != newM.Rid) oldM.Rid = newM.Rid;
+                    if (oldM.Name != newM.Name) oldM.Name = newM.Name;
+                    if (oldM.BackgroundImagePath != newM.BackgroundImagePath) oldM.BackgroundImagePath = newM.BackgroundImagePath;
+                    if (oldM.ImagePath != newM.ImagePath) oldM.ImagePath = newM.ImagePath;
+                    if (oldM.Number != newM.Number) oldM.Number = newM.Number;
+                    if (oldM.Num1 != newM.Num1) oldM.Num1 = newM.Num1;
+                    if (oldM.Color1 != newM.Color1) oldM.Color1 = newM.Color1;
+                    if (oldM.IconPath != newM.IconPath) oldM.IconPath = newM.IconPath;
+                    if (oldM.Num2String != newM.Num2String) oldM.Num2String = newM.Num2String;
+                    if (oldM.Color2 != newM.Color2) oldM.Color2 = newM.Color2;
                 }
             }
         }
@@ -765,10 +768,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
                     thisModel.TalentQGoalString = StringConstants.LevelNumberString[thisConfig.TalentQLevelGoal];
                 }
 
-                if (SelectedCharacter.Rid == thisCharacterRid)
+                if (SelectedCharacter != null && SelectedCharacter.Rid == thisCharacterRid)
                 {
-                    SelectedCharacterSimulatorService = new SingleCharacterSimulatorService(SelectedCharacter.Rid);
-                    SelectedCharacterPlanInfo = SelectedCharacterSimulatorService.GetCharacterPlanInfo();
+                    SelectedCharacterPlanInfo = new SingleCharacterSimulatorService(SelectedCharacter.Rid).GetCharacterPlanInfo();
                 }
             }
         }

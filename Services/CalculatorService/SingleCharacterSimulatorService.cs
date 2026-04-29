@@ -14,6 +14,8 @@ public class SingleCharacterSimulatorService
     private SingleBackpackCharacterConfigModel _characterConfig = new();
     private CharacterModel _characterModel;
     private BackpackCharacterPlanInfo _res = new();
+    private Dictionary<int, int> _materialHaveNumMap = new();
+    private Dictionary<int, int> _materialNeedNumMap = new();
 
     public SingleCharacterSimulatorService(int characterRid)
     {
@@ -25,109 +27,79 @@ public class SingleCharacterSimulatorService
         _characterModel = AutoCalculateConstants.CharacterMap[characterRid];
     }
 
-    private void UpdateMaterial()
+    public BackpackCharacterPlanInfo GetCharacterPlanInfo()
     {
-        _res.CharacterPlanMaterialList.Clear();
-        // 分离材料
-        HashSet<int> involvedMaterialRidList = [];
-        foreach (List<MaterialPairModel> mpmList in _characterModel.LevelUpMaterials.Values)
-        {
-            foreach (MaterialPairModel mpm in mpmList)
-            {
-                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
-                if (mpm.MaterialModel.Rid == 3020001)
-                {
-                    involvedMaterialRidList.Add(3020002);
-                    involvedMaterialRidList.Add(3020003);
-                }
-            }
-        }
-
-        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent1Materials.Values)
-        {
-            foreach (MaterialPairModel mpm in mpmList)
-            {
-                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
-            }
-        }
-
-        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent2Materials.Values)
-        {
-            foreach (MaterialPairModel mpm in mpmList)
-            {
-                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
-            }
-        }
-
-        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent3Materials.Values)
-        {
-            foreach (MaterialPairModel mpm in mpmList)
-            {
-                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
-            }
-        }
-
-        Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = App.GlobalGoalSimulatorServicePart!.GetMaterialExtraInfo();
-        foreach (List<MaterialModel> l in AllEntities.AllMaterialLists)
-        {
-            foreach (MaterialModel e in l)
-            {
-                if (involvedMaterialRidList.Contains(e.Rid))
-                {
-                    BackpackCharacterPlanInfoMaterial thisMaterial = new BackpackCharacterPlanInfoMaterial();
-                    thisMaterial.Rid = e.Rid;
-                    thisMaterial.Name = e.Name;
-                    thisMaterial.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
-                    thisMaterial.ImagePath = e.ImagePath;
-                    thisMaterial.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
-                    CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap[e.Rid];
-                    thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
-                    if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
-                    else thisMaterial.Color1 = "#Transparent";
-                    thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
-                    if (thisMaterialExtraInfo.IsSatisfy)
-                    {
-                        if (thisMaterialExtraInfo.ActionNum > 0)
-                        {
-                            thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                            thisMaterial.Color2 = StringConstants.YellowColorString;
-                        }
-                        else
-                        {
-                            thisMaterial.Num2String = "";
-                            thisMaterial.Color2 = "#Transparent";
-                        }
-                    }
-                    else
-                    {
-                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
-                        thisMaterial.Color2 = StringConstants.RedColorString;
-                    }
-
-                    _res.CharacterPlanMaterialList.Add(thisMaterial);
-                }
-            }
-        }
+        _materialHaveNumMap = new Dictionary<int, int>(App.BackpackMaterialConfigManagerInstance!.Configuration.MaterialNumberMap);
+        CalculateSubPlan();
+        CalculateMaterial();
+        return _res;
     }
 
-    public void UpdateSubPlan()
+    private void CalculateSubPlan()
     {
-        _res.CharacterPlanSubPlanList.Clear();
-        // 分离任务
-        // 角色等级
-        int startCharacterLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.CharacterLevel);
-        int endCharacterLevelIndex = startCharacterLevelIndex;
-        for (int i = startCharacterLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
+        bool isLevelDone = _characterConfig.CharacterLevel == _characterConfig.CharacterLevelGoal;
+        bool isTalentADone = _characterConfig.TalentALevel == _characterConfig.TalentALevelGoal;
+        bool isTalentEDone = _characterConfig.TalentELevel == _characterConfig.TalentELevelGoal;
+        bool isTalentQDone = _characterConfig.TalentQLevel == _characterConfig.TalentQLevelGoal;
+        int startLevelIndex, endLevelIndex;
+        int startTalentAIndex, endTalentAIndex;
+        int startTalentEIndex, endTalentEIndex;
+        int startTalentQIndex, endTalentQIndex;
+        bool isAllDone = isLevelDone && isTalentADone && isTalentEDone && isTalentQDone;
+        if (isAllDone)
         {
-            if (!_characterModel.LevelUpMaterials.ContainsKey(SequenceConstants.AllLevels[i])) break;
-            endCharacterLevelIndex++;
+            // 考虑goal后面的部分
+            startLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.CharacterLevelGoal);
+            endLevelIndex = startLevelIndex;
+            for (int i = startLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
+            {
+                if (!_characterModel.LevelUpMaterials.ContainsKey(SequenceConstants.AllLevels[i])) break;
+                endLevelIndex++;
+            }
+
+            startTalentAIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentALevelGoal);
+            endTalentAIndex = startTalentAIndex;
+            for (int i = startTalentAIndex; i < SequenceConstants.AllLevels.Count; i++)
+            {
+                if (!_characterModel.Talent1Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
+                endTalentAIndex++;
+            }
+
+            startTalentEIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentELevelGoal);
+            endTalentEIndex = startTalentEIndex;
+            for (int i = startTalentEIndex; i < SequenceConstants.AllLevels.Count; i++)
+            {
+                if (!_characterModel.Talent2Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
+                endTalentEIndex++;
+            }
+
+            startTalentQIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentQLevelGoal);
+            endTalentQIndex = startTalentQIndex;
+            for (int i = startTalentQIndex; i < SequenceConstants.AllLevels.Count; i++)
+            {
+                if (!_characterModel.Talent3Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
+                endTalentQIndex++;
+            }
+        }
+        else
+        {
+            // 只考虑规划的部分
+            startLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.CharacterLevel);
+            endLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.CharacterLevelGoal);
+            startTalentAIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentALevel);
+            endTalentAIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentALevelGoal);
+            startTalentEIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentELevel);
+            endTalentEIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentELevelGoal);
+            startTalentQIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentQLevel);
+            endTalentQIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentQLevelGoal);
         }
 
+        // 等级
         bool isCharacterLevelCheckAble = true;
         int tempExp = -_characterConfig.SubExp;
         string tempStartLevelString = "";
         bool tempIsLevel = false;
-        for (int l = startCharacterLevelIndex; l < endCharacterLevelIndex; l++)
+        for (int l = startLevelIndex; l < endLevelIndex; l++)
         {
             List<MaterialPairModel> thisLevelMaterialList = _characterModel.LevelUpMaterials[SequenceConstants.AllLevels[l]];
             if (thisLevelMaterialList.Count == 1 && thisLevelMaterialList[0].MaterialModel!.Rid == 3020001)
@@ -171,7 +143,7 @@ public class SingleCharacterSimulatorService
                             m.ImagePath = materialModels[i].ImagePath;
                             m.Name = materialModels[i].Name;
                             m.NeedNum = resultOfMaterial[i];
-                            int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialModels[i].Rid);
+                            int haveNum = _materialHaveNumMap.GetValueOrDefault(materialModels[i].Rid, 0);
                             if (haveNum >= resultOfMaterial[i])
                             {
                                 m.ShowNum = resultOfMaterial[i];
@@ -184,6 +156,8 @@ public class SingleCharacterSimulatorService
                             }
 
                             thisCharacterLevelSubPlan.NeedMaterialList.Add(m);
+                            _materialHaveNumMap[materialModels[i].Rid] = Math.Max(0, haveNum - resultOfMaterial[i]);
+                            _materialNeedNumMap[materialModels[i].Rid] = _materialNeedNumMap.GetValueOrDefault(materialModels[i].Rid, 0) + resultOfMaterial[i];
                         }
                     }
 
@@ -220,7 +194,7 @@ public class SingleCharacterSimulatorService
                     thisMaterialNeedInfo.ImagePath = thisMaterialModel.ImagePath;
                     thisMaterialNeedInfo.Name = thisMaterialModel.Name;
                     thisMaterialNeedInfo.NeedNum = (int)mpm.DropNum;
-                    int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                    int haveNum = _materialHaveNumMap.GetValueOrDefault(thisMaterialRid, 0);
                     int needNum = (int)mpm.DropNum;
                     if (haveNum >= needNum)
                     {
@@ -234,6 +208,8 @@ public class SingleCharacterSimulatorService
                     }
 
                     thisNeedMaterialList.Add(thisMaterialNeedInfo);
+                    _materialHaveNumMap[thisMaterialRid] = Math.Max(0, haveNum - needNum);
+                    _materialNeedNumMap[thisMaterialRid] = _materialNeedNumMap.GetValueOrDefault(thisMaterialRid, 0) + needNum;
                 }
 
                 thisSubPlan.NeedMaterialList = thisNeedMaterialList;
@@ -256,8 +232,8 @@ public class SingleCharacterSimulatorService
             thisLevelSubPlan.Index = _res.CharacterPlanSubPlanList.Count + 1;
             thisLevelSubPlan.Type = 1;
             thisLevelSubPlan.ActionTypeString = "角色等级";
-            thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endCharacterLevelIndex]]}";
-            thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[endCharacterLevelIndex];
+            thisLevelSubPlan.ActionDescriptionString = $"{tempStartLevelString} → {StringConstants.LevelNumberString[SequenceConstants.AllLevels[endLevelIndex]]}";
+            thisLevelSubPlan.FinishLevel = SequenceConstants.AllLevels[endLevelIndex];
             int[] resultOfMaterial = CalculateCharacterExp(tempExp);
             MaterialModel[] materialModels =
             [
@@ -273,7 +249,7 @@ public class SingleCharacterSimulatorService
                     m.ImagePath = materialModels[i].ImagePath;
                     m.Name = materialModels[i].Name;
                     m.NeedNum = resultOfMaterial[i];
-                    int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(materialModels[i].Rid);
+                    int haveNum = _materialHaveNumMap.GetValueOrDefault(materialModels[i].Rid, 0);
                     if (haveNum >= resultOfMaterial[i])
                     {
                         m.ShowNum = resultOfMaterial[i];
@@ -286,6 +262,8 @@ public class SingleCharacterSimulatorService
                     }
 
                     thisLevelSubPlan.NeedMaterialList.Add(m);
+                    _materialHaveNumMap[materialModels[i].Rid] = Math.Max(0, haveNum - resultOfMaterial[i]);
+                    _materialNeedNumMap[materialModels[i].Rid] = _materialNeedNumMap.GetValueOrDefault(materialModels[i].Rid, 0) + resultOfMaterial[i];
                 }
             }
 
@@ -294,16 +272,8 @@ public class SingleCharacterSimulatorService
         }
 
         // 天赋A
-        int startTalentALevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentALevel);
-        int endTalentALevelIndex = startTalentALevelIndex;
-        for (int i = startTalentALevelIndex; i < SequenceConstants.AllLevels.Count; i++)
-        {
-            if (!_characterModel.Talent1Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
-            endTalentALevelIndex++;
-        }
-
         bool isTalentACheckable = true;
-        for (int l = startTalentALevelIndex; l < endTalentALevelIndex; l++)
+        for (int l = startTalentAIndex; l < endTalentAIndex; l++)
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
@@ -325,7 +295,7 @@ public class SingleCharacterSimulatorService
                 thisMaterialNeedInfo.ImagePath = thisMaterialModel.ImagePath;
                 thisMaterialNeedInfo.Name = thisMaterialModel.Name;
                 thisMaterialNeedInfo.NeedNum = (int)mpm.DropNum;
-                int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                int haveNum = _materialHaveNumMap.GetValueOrDefault(thisMaterialRid, 0);
                 int needNum = (int)mpm.DropNum;
                 if (haveNum >= needNum)
                 {
@@ -339,6 +309,8 @@ public class SingleCharacterSimulatorService
                 }
 
                 thisNeedMaterialList.Add(thisMaterialNeedInfo);
+                _materialHaveNumMap[thisMaterialRid] = Math.Max(0, haveNum - needNum);
+                _materialNeedNumMap[thisMaterialRid] = _materialNeedNumMap.GetValueOrDefault(thisMaterialRid, 0) + needNum;
             }
 
             thisSubPlan.NeedMaterialList = thisNeedMaterialList;
@@ -353,16 +325,8 @@ public class SingleCharacterSimulatorService
         }
 
         // 天赋E
-        int startTalentELevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentELevel);
-        int endTalentELevelIndex = startTalentELevelIndex;
-        for (int i = startTalentELevelIndex; i < SequenceConstants.AllLevels.Count; i++)
-        {
-            if (!_characterModel.Talent2Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
-            endTalentELevelIndex++;
-        }
-
         bool isTalentECheckable = true;
-        for (int l = startTalentELevelIndex; l < endTalentELevelIndex; l++)
+        for (int l = startTalentEIndex; l < endTalentEIndex; l++)
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
@@ -384,7 +348,7 @@ public class SingleCharacterSimulatorService
                 thisMaterialNeedInfo.ImagePath = thisMaterialModel.ImagePath;
                 thisMaterialNeedInfo.Name = thisMaterialModel.Name;
                 thisMaterialNeedInfo.NeedNum = (int)mpm.DropNum;
-                int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                int haveNum = _materialHaveNumMap.GetValueOrDefault(thisMaterialRid, 0);
                 int needNum = (int)mpm.DropNum;
                 if (haveNum >= needNum)
                 {
@@ -398,6 +362,8 @@ public class SingleCharacterSimulatorService
                 }
 
                 thisNeedMaterialList.Add(thisMaterialNeedInfo);
+                _materialHaveNumMap[thisMaterialRid] = Math.Max(0, haveNum - needNum);
+                _materialNeedNumMap[thisMaterialRid] = _materialNeedNumMap.GetValueOrDefault(thisMaterialRid, 0) + needNum;
             }
 
             thisSubPlan.NeedMaterialList = thisNeedMaterialList;
@@ -412,16 +378,8 @@ public class SingleCharacterSimulatorService
         }
 
         // 天赋Q
-        int startTalentQLevelIndex = SequenceConstants.AllLevels.IndexOf(_characterConfig.TalentQLevel);
-        int endTalentQLevelIndex = startTalentQLevelIndex;
-        for (int i = startTalentQLevelIndex; i < SequenceConstants.AllLevels.Count; i++)
-        {
-            if (!_characterModel.Talent3Materials.ContainsKey(SequenceConstants.AllLevels[i])) break;
-            endTalentQLevelIndex++;
-        }
-
         bool isTalentQCheckable = true;
-        for (int l = startTalentQLevelIndex; l < endTalentQLevelIndex; l++)
+        for (int l = startTalentQIndex; l < endTalentQIndex; l++)
         {
             BackpackCharacterPlanInfoSubPlan thisSubPlan = new BackpackCharacterPlanInfoSubPlan();
             thisSubPlan.CharacterRid = _characterModel.Rid;
@@ -443,7 +401,7 @@ public class SingleCharacterSimulatorService
                 thisMaterialNeedInfo.ImagePath = thisMaterialModel.ImagePath;
                 thisMaterialNeedInfo.Name = thisMaterialModel.Name;
                 thisMaterialNeedInfo.NeedNum = (int)mpm.DropNum;
-                int haveNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(thisMaterialRid);
+                int haveNum = _materialHaveNumMap.GetValueOrDefault(thisMaterialRid, 0);
                 int needNum = (int)mpm.DropNum;
                 if (haveNum >= needNum)
                 {
@@ -457,6 +415,8 @@ public class SingleCharacterSimulatorService
                 }
 
                 thisNeedMaterialList.Add(thisMaterialNeedInfo);
+                _materialHaveNumMap[thisMaterialRid] = Math.Max(0, haveNum - needNum);
+                _materialNeedNumMap[thisMaterialRid] = _materialNeedNumMap.GetValueOrDefault(thisMaterialRid, 0) + needNum;
             }
 
             thisSubPlan.NeedMaterialList = thisNeedMaterialList;
@@ -474,25 +434,159 @@ public class SingleCharacterSimulatorService
         _res.IsAllComplete = _res.CharacterPlanSubPlanList.Count == 0;
     }
 
-    public BackpackCharacterPlanInfo GetCharacterPlanInfo()
+    private void CalculateMaterial()
     {
-        UpdateMaterial();
-        UpdateSubPlan();
-        return _res;
+        if (_res.IsAllComplete) return;
+        // 分离材料
+        HashSet<int> involvedMaterialRidList = [];
+        foreach (List<MaterialPairModel> mpmList in _characterModel.LevelUpMaterials.Values)
+        {
+            foreach (MaterialPairModel mpm in mpmList)
+            {
+                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
+                if (mpm.MaterialModel.Rid == 3020001)
+                {
+                    involvedMaterialRidList.Add(3020002);
+                    involvedMaterialRidList.Add(3020003);
+                }
+            }
+        }
+
+        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent1Materials.Values)
+        {
+            foreach (MaterialPairModel mpm in mpmList)
+            {
+                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
+            }
+        }
+
+        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent2Materials.Values)
+        {
+            foreach (MaterialPairModel mpm in mpmList)
+            {
+                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
+            }
+        }
+
+        foreach (List<MaterialPairModel> mpmList in _characterModel.Talent3Materials.Values)
+        {
+            foreach (MaterialPairModel mpm in mpmList)
+            {
+                involvedMaterialRidList.Add(mpm.MaterialModel!.Rid);
+            }
+        }
+
+        // 确定合并后数量
+        Dictionary<int, CalculatorPlanMaterialExtraInfo> materialExtraInfoMap = new();
+        foreach (List<MaterialModel> l in AllEntities.AllMaterialLists)
+        {
+            foreach (MaterialModel e in l)
+            {
+                if (_materialNeedNumMap.ContainsKey(e.Rid))
+                {
+                    if (materialExtraInfoMap.ContainsKey(e.Rid)) continue;
+                    List<int> relativeMaterialList = [e.Rid];
+                    while (AutoCalculateConstants.MaterialMergeRecipe.ContainsKey(relativeMaterialList[^1]))
+                    {
+                        relativeMaterialList.Add(AutoCalculateConstants.MaterialMergeRecipe[relativeMaterialList[^1]]);
+                    }
+
+                    int[] relativeHaveNumList = new int[relativeMaterialList.Count];
+                    int[] relativeNeedNumList = new int[relativeMaterialList.Count];
+                    for (int i = 0; i < relativeMaterialList.Count; i++)
+                    {
+                        relativeHaveNumList[i] = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(relativeMaterialList[i]);
+                        relativeNeedNumList[i] = _materialNeedNumMap.GetValueOrDefault(relativeMaterialList[i], 0);
+                    }
+
+                    int[] relativeDemandMergeNumList = new int[relativeMaterialList.Count];
+                    int[] relativeCanMergeNumList = new int[relativeMaterialList.Count];
+                    int[] relativeActualMergeNumList = new int[relativeMaterialList.Count];
+                    for (int i = 0; i < relativeMaterialList.Count - 1; i++)
+                    {
+                        relativeDemandMergeNumList[i] = Math.Max(0, relativeNeedNumList[i] - relativeHaveNumList[i] + 3 * (i == 0 ? 0 : relativeDemandMergeNumList[i - 1]));
+                    }
+
+                    for (int i = relativeMaterialList.Count - 1; i > 0; i--)
+                    {
+                        relativeCanMergeNumList[i] = Math.Min(3 * relativeDemandMergeNumList[i - 1], Math.Max(0, relativeHaveNumList[i] - relativeNeedNumList[i] + relativeActualMergeNumList[i]));
+                        relativeActualMergeNumList[i - 1] = relativeCanMergeNumList[i] / 3;
+                    }
+
+                    int[] relativeAfterMergeNumList = new int[relativeMaterialList.Count];
+                    for (int i = 0; i < relativeMaterialList.Count; i++)
+                    {
+                        relativeAfterMergeNumList[i] = relativeHaveNumList[i] + relativeActualMergeNumList[i] - (i == 0 ? 0 : 3 * relativeActualMergeNumList[i - 1]);
+                    }
+
+                    for (int i = 0; i < relativeMaterialList.Count; i++)
+                    {
+                        CalculatorPlanMaterialExtraInfo thisModel = new CalculatorPlanMaterialExtraInfo
+                        {
+                            Rid = relativeMaterialList[i],
+                            NeedNum = relativeNeedNumList[i],
+                            IsSatisfy = relativeAfterMergeNumList[i] >= relativeNeedNumList[i]
+                        };
+                        thisModel.ActionNum = thisModel.IsSatisfy ? relativeActualMergeNumList[i] : relativeNeedNumList[i] - relativeAfterMergeNumList[i];
+                        materialExtraInfoMap[relativeMaterialList[i]] = thisModel;
+                    }
+                }
+            }
+        }
+
+        // 拼装数据
+        foreach (List<MaterialModel> l in AllEntities.AllMaterialLists)
+        {
+            foreach (MaterialModel e in l)
+            {
+                if (involvedMaterialRidList.Contains(e.Rid))
+                {
+                    BackpackCharacterPlanInfoMaterial thisMaterial = new BackpackCharacterPlanInfoMaterial();
+                    thisMaterial.Rid = e.Rid;
+                    thisMaterial.Name = e.Name;
+                    thisMaterial.BackgroundImagePath = StringConstants.StarBackgroundImagePath[e.Star];
+                    thisMaterial.ImagePath = e.ImagePath;
+                    thisMaterial.Number = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(e.Rid);
+                    CalculatorPlanMaterialExtraInfo thisMaterialExtraInfo = materialExtraInfoMap.GetValueOrDefault(e.Rid, new CalculatorPlanMaterialExtraInfo { Rid = e.Rid, NeedNum = 0, ActionNum = 0, IsSatisfy = true });
+                    thisMaterial.Num1 = thisMaterialExtraInfo.NeedNum;
+                    if (thisMaterialExtraInfo.NeedNum > 0) thisMaterial.Color1 = thisMaterialExtraInfo.IsSatisfy ? StringConstants.GreenColorString : StringConstants.RedColorString;
+                    else thisMaterial.Color1 = "#Transparent";
+                    thisMaterial.IconPath = thisMaterialExtraInfo.IsSatisfy ? StringConstants.CheckCircleIconPath : StringConstants.CancelIconPath;
+                    if (thisMaterialExtraInfo.IsSatisfy)
+                    {
+                        if (thisMaterialExtraInfo.ActionNum > 0)
+                        {
+                            thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                            thisMaterial.Color2 = StringConstants.YellowColorString;
+                        }
+                        else
+                        {
+                            thisMaterial.Num2String = "";
+                            thisMaterial.Color2 = "#Transparent";
+                        }
+                    }
+                    else
+                    {
+                        thisMaterial.Num2String = thisMaterialExtraInfo.ActionNum.ToString();
+                        thisMaterial.Color2 = StringConstants.RedColorString;
+                    }
+
+                    _res.CharacterPlanMaterialList.Add(thisMaterial);
+                }
+            }
+        }
     }
 
     // 计算具体角色经验花费
     private int[] CalculateCharacterExp(int t)
     {
         int[] res = [0, 0, 0, 0]; // [摩拉，大经验书，中经验书，小经验书]
-        int largeExpNum = App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(3020001);
-        int mediumExpNum = App.BackpackMaterialConfigManagerInstance.GetMaterialNumber(3020002);
-        int smallExpNum = App.BackpackMaterialConfigManagerInstance.GetMaterialNumber(3020003);
+        int largeExpNum = _materialHaveNumMap.GetValueOrDefault(3020001, 0);
+        int mediumExpNum = _materialHaveNumMap.GetValueOrDefault(3020002, 0);
+        int smallExpNum = _materialHaveNumMap.GetValueOrDefault(3020003, 0);
         if (20000 * largeExpNum + 5000 * mediumExpNum + 1000 * smallExpNum >= t)
         {
             // 现有经验书足够，按照现有经验书数量进行分配
-            // 可能bug点是说虽然一个大经验书溢出很多，但是一个就足够不需要耗费其它材料，现在的代码输出会把所有小经验书都用了
-            // 但是这种情况出现概率不高，同时解决方法是结尾再加一个找回的动作就行。
             int largeUseNum = Math.Min(largeExpNum, t / 20000);
             t -= 20000 * largeUseNum;
             largeExpNum -= largeUseNum;
@@ -531,10 +625,39 @@ public class SingleCharacterSimulatorService
             res[1] = largeUseNum;
             res[2] = mediumUseNum;
             res[3] = smallUseNum;
+            // 尝试找回
+            bool isNeedPutBack = true;
+            while (isNeedPutBack)
+            {
+                isNeedPutBack = false;
+                if (t + 20000 < 0 && res[1] > 0)
+                {
+                    isNeedPutBack = true;
+                    res[1] -= 1;
+                    t += 20000;
+                    continue;
+                }
+
+                if (t + 5000 < 0 && res[2] > 0)
+                {
+                    isNeedPutBack = true;
+                    res[2] -= 1;
+                    t += 5000;
+                    continue;
+                }
+
+                if (t + 1000 < 0 && res[3] > 0)
+                {
+                    isNeedPutBack = true;
+                    res[3] -= 1;
+                    t += 1000;
+                }
+            }
         }
         else
         {
             // 现有经验书不足，按照最小数量进行分配
+            t -= 20000 * largeExpNum + 5000 * mediumExpNum + 1000 * smallExpNum;
             res[1] = t / 20000;
             t -= 20000 * res[1];
             res[2] = t / 5000;
@@ -542,6 +665,9 @@ public class SingleCharacterSimulatorService
             res[3] = t / 1000;
             t -= 1000 * res[3];
             if (t > 0) res[3]++;
+            res[1] += largeExpNum;
+            res[2] += mediumExpNum;
+            res[3] += smallExpNum;
         }
 
         res[0] = 4000 * res[1] + 1000 * res[2] + 200 * res[3];
