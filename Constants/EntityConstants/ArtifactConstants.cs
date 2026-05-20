@@ -1458,4 +1458,54 @@ public static class ArtifactConstants
             { 4, "普通攻击、重击、元素战技或元素爆发命中敌人后，将获得持续6秒的「风与牧歌的眷怜」：攻击力提高25%。若装备者已经完成了「魔女的课业」，则「风与牧歌的眷怜」将会升级为「风与牧歌的决意」，额外使通过考验的装备者的暴击率提升20%。装备者处于队伍后台时，也能触发上述效果。" }
         }
     };
+
+    public static readonly ArtifactSetModel _560 = new()
+    {
+        Rid = 560,
+        Vid = 15045,
+        Name = "天之美赐",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "天授之冕" }, { 2, "天授之殁" }, { 1, "天授之馨" }, { 3, "天授之令" }, { 4, "天授之禄" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15045_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15045_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15045_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15045_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15045_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "元素充能效率提高20%。" },
+            { 4, "若装备者已经完成了魔女的课业，则施放元素战技后，会获得「天光之引」效果：依据装备者的元素类型，使队伍中附近的所有角色获得20%对应元素伤害加成，持续20秒。装备者处于后台时也能触发上述效果，同名圣遗物套装产生的伤害加成效果无法叠加。\n·队伍拥有「魔导·秘仪」效果时，「天光之引」效果将会升级为「凡世颂歌」，除装备者的元素类型外，还会依据队伍中自己的当前场上角色的元素类型，使队伍中附近的所有角色获得对应元素伤害加成，且上述两种元素伤害加成提升至40%，同元素类型的元素伤害加成效果无法叠加。" }
+        }
+    };
+
+    public static readonly ArtifactSetModel _561 = new()
+    {
+        Rid = 561,
+        Vid = 15046,
+        Name = "影中沉凝的幻灭",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "止于阔步跌坠的灵摆" }, { 2, "止于妙想成型的锋毫" }, { 1, "止于荣礼的缎彩" }, { 3, "止于宏伟梦醒的时刻" }, { 4, "止于祝庆的喝礼" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15046_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15046_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15046_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15046_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15046_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "攻击力提高18%。" },
+            { 4, "超导反应造成的伤害提升80%，星超导反应造成的伤害提升40%；装备者攻击受到超导或星超导反应影响的敌人时，本次攻击的暴击率提高16%。" }
+        }
+    };
 }

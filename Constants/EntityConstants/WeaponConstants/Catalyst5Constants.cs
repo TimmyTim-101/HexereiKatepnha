@@ -1158,4 +1158,68 @@ public class Catalyst5Constants
         },
         LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040049, MaterialConstants03.G3030085, MaterialConstants09.G3090081),
     };
+
+    public static readonly WeaponModel _2040519 = new()
+    {
+        Rid = 2040519,
+        Vid = 14523,
+        Name = "尘光七谕",
+        GoodKey = "AngelosHeptades",
+        Star = 5,
+        ImagePath = "/Resources/Images/Weapon/UI_EquipIcon_Catalyst_FairyGarden.png",
+        AwakenImagePath = "/Resources/Images/Weapon/UI_EquipIcon_Catalyst_FairyGarden_Awaken.png",
+        WeaponType = Enumeration.WeaponType.Catalyst,
+        SubAffix = Enumeration.Affix.AttackPercent,
+        Progression =
+        {
+            { 1, "攻击力提升12%。装备者创造护盾后的20秒内，获得「先导之光」效果：依据装备者的攻击力，每1000点攻击力都会使队伍中自己的当前场上角色造成的伤害提升10%，至多提升26%。此外，装备者创造护盾时，还会获得「指引者的餍足」效果，使装备者恢复14点元素能量，该效果每14秒至多触发一次；在不处于战斗状态下开启各类宝箱时，也会获得该效果。装备者处于队伍后台时，依然能触发上述效果。魔导·秘仪：队伍中自己的魔导角色位于队伍后台时，也能获得「先导之光」中50%的伤害提升效果。" },
+            { 2, "攻击力提升15%。装备者创造护盾后的20秒内，获得「先导之光」效果：依据装备者的攻击力，每1000点攻击力都会使队伍中自己的当前场上角色造成的伤害提升13%，至多提升34%。此外，装备者创造护盾时，还会获得「指引者的餍足」效果，使装备者恢复15点元素能量，该效果每14秒至多触发一次；在不处于战斗状态下开启各类宝箱时，也会获得该效果。装备者处于队伍后台时，依然能触发上述效果。魔导·秘仪：队伍中自己的魔导角色位于队伍后台时，也能获得「先导之光」中50%的伤害提升效果。" },
+            { 3, "攻击力提升18%。装备者创造护盾后的20秒内，获得「先导之光」效果：依据装备者的攻击力，每1000点攻击力都会使队伍中自己的当前场上角色造成的伤害提升16%，至多提升42%。此外，装备者创造护盾时，还会获得「指引者的餍足」效果，使装备者恢复16点元素能量，该效果每14秒至多触发一次；在不处于战斗状态下开启各类宝箱时，也会获得该效果。装备者处于队伍后台时，依然能触发上述效果。魔导·秘仪：队伍中自己的魔导角色位于队伍后台时，也能获得「先导之光」中50%的伤害提升效果。" },
+            { 4, "攻击力提升21%。装备者创造护盾后的20秒内，获得「先导之光」效果：依据装备者的攻击力，每1000点攻击力都会使队伍中自己的当前场上角色造成的伤害提升19%，至多提升50%。此外，装备者创造护盾时，还会获得「指引者的餍足」效果，使装备者恢复17点元素能量，该效果每14秒至多触发一次；在不处于战斗状态下开启各类宝箱时，也会获得该效果。装备者处于队伍后台时，依然能触发上述效果。魔导·秘仪：队伍中自己的魔导角色位于队伍后台时，也能获得「先导之光」中50%的伤害提升效果。" },
+            { 5, "攻击力提升24%。装备者创造护盾后的20秒内，获得「先导之光」效果：依据装备者的攻击力，每1000点攻击力都会使队伍中自己的当前场上角色造成的伤害提升22%，至多提升58%。此外，装备者创造护盾时，还会获得「指引者的餍足」效果，使装备者恢复18点元素能量，该效果每14秒至多触发一次；在不处于战斗状态下开启各类宝箱时，也会获得该效果。装备者处于队伍后台时，依然能触发上述效果。魔导·秘仪：队伍中自己的魔导角色位于队伍后台时，也能获得「先导之光」中50%的伤害提升效果。" },
+        },
+        MainAffixNumberDictionary = new Dictionary<Enumeration.Level, double>()
+        {
+            { Enumeration.Level.L1, 49 }, { Enumeration.Level.L2, 54 }, { Enumeration.Level.L3, 59 }, { Enumeration.Level.L4, 63 }, { Enumeration.Level.L5, 68 },
+            { Enumeration.Level.L6, 73 }, { Enumeration.Level.L7, 78 }, { Enumeration.Level.L8, 83 }, { Enumeration.Level.L9, 88 }, { Enumeration.Level.L10, 93 },
+            { Enumeration.Level.L11, 98 }, { Enumeration.Level.L12, 103 }, { Enumeration.Level.L13, 108 }, { Enumeration.Level.L14, 114 }, { Enumeration.Level.L15, 119 },
+            { Enumeration.Level.L16, 124 }, { Enumeration.Level.L17, 129 }, { Enumeration.Level.L18, 134 }, { Enumeration.Level.L19, 140 }, { Enumeration.Level.L20, 145 }, { Enumeration.Level.L20P, 176 },
+            { Enumeration.Level.L21, 181 }, { Enumeration.Level.L22, 187 }, { Enumeration.Level.L23, 192 }, { Enumeration.Level.L24, 197 }, { Enumeration.Level.L25, 203 },
+            { Enumeration.Level.L26, 208 }, { Enumeration.Level.L27, 214 }, { Enumeration.Level.L28, 219 }, { Enumeration.Level.L29, 225 }, { Enumeration.Level.L30, 230 },
+            { Enumeration.Level.L31, 236 }, { Enumeration.Level.L32, 241 }, { Enumeration.Level.L33, 247 }, { Enumeration.Level.L34, 252 }, { Enumeration.Level.L35, 258 },
+            { Enumeration.Level.L36, 263 }, { Enumeration.Level.L37, 269 }, { Enumeration.Level.L38, 275 }, { Enumeration.Level.L39, 280 }, { Enumeration.Level.L40, 286 }, { Enumeration.Level.L40P, 317 },
+            { Enumeration.Level.L41, 323 }, { Enumeration.Level.L42, 328 }, { Enumeration.Level.L43, 334 }, { Enumeration.Level.L44, 340 }, { Enumeration.Level.L45, 346 },
+            { Enumeration.Level.L46, 351 }, { Enumeration.Level.L47, 357 }, { Enumeration.Level.L48, 363 }, { Enumeration.Level.L49, 369 }, { Enumeration.Level.L50, 374 }, { Enumeration.Level.L50P, 406 },
+            { Enumeration.Level.L51, 411 }, { Enumeration.Level.L52, 417 }, { Enumeration.Level.L53, 423 }, { Enumeration.Level.L54, 429 }, { Enumeration.Level.L55, 435 },
+            { Enumeration.Level.L56, 441 }, { Enumeration.Level.L57, 447 }, { Enumeration.Level.L58, 453 }, { Enumeration.Level.L59, 458 }, { Enumeration.Level.L60, 464 }, { Enumeration.Level.L60P, 495 },
+            { Enumeration.Level.L61, 501 }, { Enumeration.Level.L62, 507 }, { Enumeration.Level.L63, 513 }, { Enumeration.Level.L64, 519 }, { Enumeration.Level.L65, 525 },
+            { Enumeration.Level.L66, 531 }, { Enumeration.Level.L67, 537 }, { Enumeration.Level.L68, 543 }, { Enumeration.Level.L69, 549 }, { Enumeration.Level.L70, 555 }, { Enumeration.Level.L70P, 586 },
+            { Enumeration.Level.L71, 593 }, { Enumeration.Level.L72, 599 }, { Enumeration.Level.L73, 605 }, { Enumeration.Level.L74, 611 }, { Enumeration.Level.L75, 617 },
+            { Enumeration.Level.L76, 623 }, { Enumeration.Level.L77, 629 }, { Enumeration.Level.L78, 635 }, { Enumeration.Level.L79, 641 }, { Enumeration.Level.L80, 648 }, { Enumeration.Level.L80P, 679 },
+            { Enumeration.Level.L81, 685 }, { Enumeration.Level.L82, 691 }, { Enumeration.Level.L83, 697 }, { Enumeration.Level.L84, 703 }, { Enumeration.Level.L85, 709 },
+            { Enumeration.Level.L86, 716 }, { Enumeration.Level.L87, 722 }, { Enumeration.Level.L88, 728 }, { Enumeration.Level.L89, 734 }, { Enumeration.Level.L90, 741 },
+        },
+        SubAffixNumberDictionary = new Dictionary<Enumeration.Level, double>()
+        {
+            { Enumeration.Level.L1, 3.6 }, { Enumeration.Level.L2, 3.6 }, { Enumeration.Level.L3, 3.6 }, { Enumeration.Level.L4, 3.6 }, { Enumeration.Level.L5, 4.2 },
+            { Enumeration.Level.L6, 4.2 }, { Enumeration.Level.L7, 4.2 }, { Enumeration.Level.L8, 4.2 }, { Enumeration.Level.L9, 4.2 }, { Enumeration.Level.L10, 4.9 },
+            { Enumeration.Level.L11, 4.9 }, { Enumeration.Level.L12, 4.9 }, { Enumeration.Level.L13, 4.9 }, { Enumeration.Level.L14, 4.9 }, { Enumeration.Level.L15, 5.6 },
+            { Enumeration.Level.L16, 5.6 }, { Enumeration.Level.L17, 5.6 }, { Enumeration.Level.L18, 5.6 }, { Enumeration.Level.L19, 5.6 }, { Enumeration.Level.L20, 6.4 }, { Enumeration.Level.L20P, 6.4 },
+            { Enumeration.Level.L21, 6.4 }, { Enumeration.Level.L22, 6.4 }, { Enumeration.Level.L23, 6.4 }, { Enumeration.Level.L24, 6.4 }, { Enumeration.Level.L25, 7.1 },
+            { Enumeration.Level.L26, 7.1 }, { Enumeration.Level.L27, 7.1 }, { Enumeration.Level.L28, 7.1 }, { Enumeration.Level.L29, 7.1 }, { Enumeration.Level.L30, 7.8 },
+            { Enumeration.Level.L31, 7.8 }, { Enumeration.Level.L32, 7.8 }, { Enumeration.Level.L33, 7.8 }, { Enumeration.Level.L34, 7.8 }, { Enumeration.Level.L35, 8.5 },
+            { Enumeration.Level.L36, 8.5 }, { Enumeration.Level.L37, 8.5 }, { Enumeration.Level.L38, 8.5 }, { Enumeration.Level.L39, 8.5 }, { Enumeration.Level.L40, 9.3 }, { Enumeration.Level.L40P, 9.3 },
+            { Enumeration.Level.L41, 9.3 }, { Enumeration.Level.L42, 9.3 }, { Enumeration.Level.L43, 9.3 }, { Enumeration.Level.L44, 9.3 }, { Enumeration.Level.L45, 10.0 },
+            { Enumeration.Level.L46, 10.0 }, { Enumeration.Level.L47, 10.0 }, { Enumeration.Level.L48, 10.0 }, { Enumeration.Level.L49, 10.0 }, { Enumeration.Level.L50, 10.7 }, { Enumeration.Level.L50P, 10.7 },
+            { Enumeration.Level.L51, 10.7 }, { Enumeration.Level.L52, 10.7 }, { Enumeration.Level.L53, 10.7 }, { Enumeration.Level.L54, 10.7 }, { Enumeration.Level.L55, 11.5 },
+            { Enumeration.Level.L56, 11.5 }, { Enumeration.Level.L57, 11.5 }, { Enumeration.Level.L58, 11.5 }, { Enumeration.Level.L59, 11.5 }, { Enumeration.Level.L60, 12.2 }, { Enumeration.Level.L60P, 12.2 },
+            { Enumeration.Level.L61, 12.2 }, { Enumeration.Level.L62, 12.2 }, { Enumeration.Level.L63, 12.2 }, { Enumeration.Level.L64, 12.2 }, { Enumeration.Level.L65, 12.9 },
+            { Enumeration.Level.L66, 12.9 }, { Enumeration.Level.L67, 12.9 }, { Enumeration.Level.L68, 12.9 }, { Enumeration.Level.L69, 12.9 }, { Enumeration.Level.L70, 13.6 }, { Enumeration.Level.L70P, 13.6 },
+            { Enumeration.Level.L71, 13.6 }, { Enumeration.Level.L72, 13.6 }, { Enumeration.Level.L73, 13.6 }, { Enumeration.Level.L74, 13.6 }, { Enumeration.Level.L75, 14.4 },
+            { Enumeration.Level.L76, 14.4 }, { Enumeration.Level.L77, 14.4 }, { Enumeration.Level.L78, 14.4 }, { Enumeration.Level.L79, 14.4 }, { Enumeration.Level.L80, 15.1 }, { Enumeration.Level.L80P, 15.1 },
+            { Enumeration.Level.L81, 15.1 }, { Enumeration.Level.L82, 15.1 }, { Enumeration.Level.L83, 15.1 }, { Enumeration.Level.L84, 15.1 }, { Enumeration.Level.L85, 15.8 },
+            { Enumeration.Level.L86, 15.8 }, { Enumeration.Level.L87, 15.8 }, { Enumeration.Level.L88, 15.8 }, { Enumeration.Level.L89, 15.8 }, { Enumeration.Level.L90, 16.5 },
+        },
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon5LevelUpMaterial(MaterialConstants04.G3040046, MaterialConstants03.G3030088, MaterialConstants09.G3090073),
+    };
 }

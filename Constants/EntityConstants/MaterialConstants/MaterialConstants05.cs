@@ -444,4 +444,37 @@ public class MaterialConstants05
         MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113083.png"
     };
+
+    public static readonly MaterialModel _3050041 = new()
+    {
+        Rid = 3050041,
+        Vid = 113087,
+        Name = "赝作的树脂",
+        GoodKey = "CounterfeitResin",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113087.png"
+    };
+
+    public static readonly MaterialModel _3050042 = new()
+    {
+        Rid = 3050042,
+        Vid = 113088,
+        Name = "扭曲的枯枝",
+        GoodKey = "TwistedWitheredBranch",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113088.png"
+    };
+
+    public static readonly MaterialModel _3050043 = new()
+    {
+        Rid = 3050043,
+        Vid = 113089,
+        Name = "亵渎的新芽",
+        GoodKey = "ProfanedSprout",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113089.png"
+    };
 }

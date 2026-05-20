@@ -1495,6 +1495,19 @@ public static class DungeonConstants
         ])
     };
 
+    public static readonly DungeonModel _4060021 = new()
+    {
+        Rid = 4060020,
+        Name = "山风的荆冕",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_MDDungeon_Cycle05.png",
+        Cost = 20,
+        DungeonType = Enumeration.DungeonType.Artifact,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._560),
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._561),
+        ])
+    };
+
     // 407 - 武器
     public static readonly DungeonModel _4070001 = new()
     {
@@ -2166,6 +2179,23 @@ public static class DungeonConstants
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050038, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050039, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050040, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+        ])
+    };
+
+    public static readonly DungeonModel _4090014 = new()
+    {
+        Rid = 4090014,
+        Name = "万有涅槃缚境",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_DrData.png",
+        Cost = 60,
+        DungeonType = Enumeration.DungeonType.Trounce,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050041, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050042, 0.8),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050043, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),

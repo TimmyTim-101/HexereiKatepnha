@@ -10,7 +10,7 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
-        CharacterConstantsPage12._1010112, CharacterConstantsPage12._1010111,
+        CharacterConstantsPage12._1010115, CharacterConstantsPage12._1010114, CharacterConstantsPage12._1010113, CharacterConstantsPage12._1010112, CharacterConstantsPage12._1010111,
         CharacterConstantsPage11._1010110, CharacterConstantsPage11._1010109, CharacterConstantsPage11._1010108, CharacterConstantsPage11._1010107, CharacterConstantsPage11._1010106,
         CharacterConstantsPage11._1010105, CharacterConstantsPage11._1010104, CharacterConstantsPage11._1010103, CharacterConstantsPage11._1010102, CharacterConstantsPage11._1010101,
         CharacterConstantsPage10._1010100, CharacterConstantsPage10._1010099, CharacterConstantsPage10._1010098, CharacterConstantsPage10._1010097, CharacterConstantsPage10._1010096,
@@ -66,7 +66,7 @@ public static class AllEntities
         Pole4Constants._2030409, Pole4Constants._2030410, Pole4Constants._2030411, Pole4Constants._2030412, Pole4Constants._2030413, Pole4Constants._2030414, Pole4Constants._2030415, Pole4Constants._2030416,
         Pole4Constants._2030417, Pole4Constants._2030418, Pole4Constants._2030419, Pole4Constants._2030420, Pole4Constants._2030421, Pole4Constants._2030422, Pole4Constants._2030423,
         Pole5Constants._2030501, Pole5Constants._2030502, Pole5Constants._2030503, Pole5Constants._2030504, Pole5Constants._2030505, Pole5Constants._2030506, Pole5Constants._2030507, Pole5Constants._2030508,
-        Pole5Constants._2030509, Pole5Constants._2030510, Pole5Constants._2030511, Pole5Constants._2030512,
+        Pole5Constants._2030509, Pole5Constants._2030510, Pole5Constants._2030511, Pole5Constants._2030512, Pole5Constants._2030513,
         // 204 - 法器
         Catalyst123Constants._2040101,
         Catalyst123Constants._2040201,
@@ -77,7 +77,7 @@ public static class AllEntities
         Catalyst4Constants._2040425,
         Catalyst5Constants._2040501, Catalyst5Constants._2040502, Catalyst5Constants._2040503, Catalyst5Constants._2040504, Catalyst5Constants._2040505, Catalyst5Constants._2040506, Catalyst5Constants._2040507, Catalyst5Constants._2040508,
         Catalyst5Constants._2040509, Catalyst5Constants._2040510, Catalyst5Constants._2040511, Catalyst5Constants._2040512, Catalyst5Constants._2040513, Catalyst5Constants._2040514, Catalyst5Constants._2040515, Catalyst5Constants._2040516,
-        Catalyst5Constants._2040517, Catalyst5Constants._2040518,
+        Catalyst5Constants._2040517, Catalyst5Constants._2040518, Catalyst5Constants._2040519,
         // 205 - 弓
         Bow123Constants._2050101,
         Bow123Constants._2050201,
@@ -134,6 +134,7 @@ public static class AllEntities
         MaterialConstants05._3050017, MaterialConstants05._3050018, MaterialConstants05._3050019, MaterialConstants05._3050020, MaterialConstants05._3050021, MaterialConstants05._3050022, MaterialConstants05._3050023, MaterialConstants05._3050024,
         MaterialConstants05._3050025, MaterialConstants05._3050026, MaterialConstants05._3050027, MaterialConstants05._3050028, MaterialConstants05._3050029, MaterialConstants05._3050030, MaterialConstants05._3050031, MaterialConstants05._3050032,
         MaterialConstants05._3050033, MaterialConstants05._3050034, MaterialConstants05._3050035, MaterialConstants05._3050036, MaterialConstants05._3050037, MaterialConstants05._3050038, MaterialConstants05._3050039, MaterialConstants05._3050040,
+        MaterialConstants05._3050041, MaterialConstants05._3050042, MaterialConstants05._3050043,
     ];
 
     // 306 - 角色培养素材_40体力BOSS
@@ -260,9 +261,9 @@ public static class AllEntities
     // 406 - 圣遗物
     public static readonly List<DungeonModel> AllDungeonArtifact =
     [
-        DungeonConstants._4060001, DungeonConstants._4060002, DungeonConstants._4060003, DungeonConstants._4060004, DungeonConstants._4060005, DungeonConstants._4060006, DungeonConstants._4060007, DungeonConstants._4060008,
-        DungeonConstants._4060009, DungeonConstants._4060010, DungeonConstants._4060011, DungeonConstants._4060012, DungeonConstants._4060013, DungeonConstants._4060014, DungeonConstants._4060015, DungeonConstants._4060016,
-        DungeonConstants._4060017, DungeonConstants._4060018, DungeonConstants._4060019, DungeonConstants._4060020,
+        DungeonConstants._4060001, DungeonConstants._4060002, DungeonConstants._4060003, DungeonConstants._4060004, DungeonConstants._4060021, DungeonConstants._4060005, DungeonConstants._4060006, DungeonConstants._4060007,
+        DungeonConstants._4060008, DungeonConstants._4060009, DungeonConstants._4060010, DungeonConstants._4060011, DungeonConstants._4060012, DungeonConstants._4060013, DungeonConstants._4060014, DungeonConstants._4060015,
+        DungeonConstants._4060016, DungeonConstants._4060017, DungeonConstants._4060018, DungeonConstants._4060019, DungeonConstants._4060020,
     ];
 
     // 407 - 武器
@@ -285,7 +286,7 @@ public static class AllEntities
     public static readonly List<DungeonModel> AllDungeonTrounce =
     [
         DungeonConstants._4090001, DungeonConstants._4090002, DungeonConstants._4090003, DungeonConstants._4090004, DungeonConstants._4090005, DungeonConstants._4090006, DungeonConstants._4090007, DungeonConstants._4090008,
-        DungeonConstants._4090009, DungeonConstants._4090010, DungeonConstants._4090011, DungeonConstants._4090012, DungeonConstants._4090013,
+        DungeonConstants._4090009, DungeonConstants._4090010, DungeonConstants._4090011, DungeonConstants._4090012, DungeonConstants._4090013, DungeonConstants._4090014,
     ];
 
     public static readonly List<List<DungeonModel>> AllDungeonLists =
@@ -303,7 +304,7 @@ public static class AllEntities
         ArtifactConstants._533, ArtifactConstants._534, ArtifactConstants._535, ArtifactConstants._536, ArtifactConstants._537, ArtifactConstants._538, ArtifactConstants._539, ArtifactConstants._540,
         ArtifactConstants._541, ArtifactConstants._542, ArtifactConstants._543, ArtifactConstants._544, ArtifactConstants._545, ArtifactConstants._546, ArtifactConstants._547, ArtifactConstants._548,
         ArtifactConstants._549, ArtifactConstants._550, ArtifactConstants._551, ArtifactConstants._552, ArtifactConstants._553, ArtifactConstants._554, ArtifactConstants._555, ArtifactConstants._556,
-        ArtifactConstants._557, ArtifactConstants._558, ArtifactConstants._559,
+        ArtifactConstants._557, ArtifactConstants._558, ArtifactConstants._559, ArtifactConstants._560, ArtifactConstants._561,
     ];
 
     // 所有group
