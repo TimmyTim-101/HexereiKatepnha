@@ -131,7 +131,7 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             ApplyFilters();
             SelectedWeapon = WeaponView.FirstOrDefault()!;
-            SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
+            if (SelectedWeapon != null) SelectedWeaponPlanInfo = new SingleWeaponSimulatorService(SelectedWeapon.Config).GetWeaponPlanInfo();
             foreach (WeaponModel wm in AllEntities.AllWeapon)
             {
                 AddPanelModel thisAddPanelModel = new()

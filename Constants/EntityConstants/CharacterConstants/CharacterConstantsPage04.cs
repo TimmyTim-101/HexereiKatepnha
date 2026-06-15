@@ -35,104 +35,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 784 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 49 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 849 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 914 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 979 }, { Enumeration.Affix.Attack, 25 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1043 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 65 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1108 }, { Enumeration.Affix.Attack, 28 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1172 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 74 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1237 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 78 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1302 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 82 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1367 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 86 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1432 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 90 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1496 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1561 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 98 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1626 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1691 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 106 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1756 }, { Enumeration.Affix.Attack, 45 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1820 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1885 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1949 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 122 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2014 }, { Enumeration.Affix.Attack, 52 }, { Enumeration.Affix.Defense, 126 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2600 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 163 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2665 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 167 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2730 }, { Enumeration.Affix.Attack, 70 }, { Enumeration.Affix.Defense, 171 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2795 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 175 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2859 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 179 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2924 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 184 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2988 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 188 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3053 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 192 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3118 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 196 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3183 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 200 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3247 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 204 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3312 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 208 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3377 }, { Enumeration.Affix.Attack, 87 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3442 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 216 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3507 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 220 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3571 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 224 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3636 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3700 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 232 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3765 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 236 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3831 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3895 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4311 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 271 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4376 }, { Enumeration.Affix.Attack, 112 }, { Enumeration.Affix.Defense, 275 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4440 }, { Enumeration.Affix.Attack, 114 }, { Enumeration.Affix.Defense, 279 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4506 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 283 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4570 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 287 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4635 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 291 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4700 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4764 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 299 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4829 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4894 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4959 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 311 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5514 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 346 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5578 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 350 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5643 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 354 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5708 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 358 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5773 }, { Enumeration.Affix.Attack, 148 }, { Enumeration.Affix.Defense, 362 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5838 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 366 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5902 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 370 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5967 }, { Enumeration.Affix.Attack, 153 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6031 }, { Enumeration.Affix.Attack, 155 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6096 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 383 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6161 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 387 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6578 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 413 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6642 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6707 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 421 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6771 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 425 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6836 }, { Enumeration.Affix.Attack, 175 }, { Enumeration.Affix.Defense, 429 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6901 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 433 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6966 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 437 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7031 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 441 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7095 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 445 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7160 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 449 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7225 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 453 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7641 }, { Enumeration.Affix.Attack, 196 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7706 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 484 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7770 }, { Enumeration.Affix.Attack, 199 }, { Enumeration.Affix.Defense, 488 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7835 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 492 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7900 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7965 }, { Enumeration.Affix.Attack, 204 }, { Enumeration.Affix.Defense, 500 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8030 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 504 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8094 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 508 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8159 }, { Enumeration.Affix.Attack, 209 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8223 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 516 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8289 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 520 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8705 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 546 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8770 }, { Enumeration.Affix.Attack, 225 }, { Enumeration.Affix.Defense, 550 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8834 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 554 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8899 }, { Enumeration.Affix.Attack, 228 }, { Enumeration.Affix.Defense, 559 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8963 }, { Enumeration.Affix.Attack, 230 }, { Enumeration.Affix.Defense, 563 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9029 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 567 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9093 }, { Enumeration.Affix.Attack, 233 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9158 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9222 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 579 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9287 }, { Enumeration.Affix.Attack, 238 }, { Enumeration.Affix.Defense, 583 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9352 }, { Enumeration.Affix.Attack, 240 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9675 }, { Enumeration.Affix.Attack, 271 }, { Enumeration.Affix.Defense, 607 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9999 }, { Enumeration.Affix.Attack, 301 }, { Enumeration.Affix.Defense, 628 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 784 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 49 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 849 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 914 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 979 }, { Enumeration.Affix.Attack, 25 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1043 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 65 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1108 }, { Enumeration.Affix.Attack, 28 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1172 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 74 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1237 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 78 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1302 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 82 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1367 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 86 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1432 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 90 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1496 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1561 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 98 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1626 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1691 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 106 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1756 }, { Enumeration.Affix.Attack, 45 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1820 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1885 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1949 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 122 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2014 }, { Enumeration.Affix.Attack, 52 }, { Enumeration.Affix.Defense, 126 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2600 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 163 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2665 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 167 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2730 }, { Enumeration.Affix.Attack, 70 }, { Enumeration.Affix.Defense, 171 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2795 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 175 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2859 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 179 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2924 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 184 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2988 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 188 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3053 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 192 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3118 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 196 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3183 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 200 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3247 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 204 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3312 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 208 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3377 }, { Enumeration.Affix.Attack, 87 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3442 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 216 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3507 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 220 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3571 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 224 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3636 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3700 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 232 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3765 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 236 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3831 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3895 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.PyroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4311 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 271 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4376 }, { Enumeration.Affix.Attack, 112 }, { Enumeration.Affix.Defense, 275 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4440 }, { Enumeration.Affix.Attack, 114 }, { Enumeration.Affix.Defense, 279 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4506 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 283 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4570 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 287 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4635 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 291 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4700 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4764 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 299 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4829 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4894 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4959 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 311 }, { Enumeration.Affix.PyroDamage, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5514 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 346 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5578 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 350 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5643 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 354 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5708 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 358 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5773 }, { Enumeration.Affix.Attack, 148 }, { Enumeration.Affix.Defense, 362 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5838 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 366 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5902 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 370 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5967 }, { Enumeration.Affix.Attack, 153 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6031 }, { Enumeration.Affix.Attack, 155 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6096 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 383 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6161 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 387 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6578 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 413 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6642 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6707 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 421 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6771 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 425 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6836 }, { Enumeration.Affix.Attack, 175 }, { Enumeration.Affix.Defense, 429 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6901 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 433 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6966 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 437 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7031 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 441 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7095 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 445 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7160 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 449 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7225 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 453 }, { Enumeration.Affix.PyroDamage, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7641 }, { Enumeration.Affix.Attack, 196 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7706 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 484 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7770 }, { Enumeration.Affix.Attack, 199 }, { Enumeration.Affix.Defense, 488 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7835 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 492 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7900 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7965 }, { Enumeration.Affix.Attack, 204 }, { Enumeration.Affix.Defense, 500 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8030 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 504 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8094 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 508 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8159 }, { Enumeration.Affix.Attack, 209 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8223 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 516 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8289 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 520 }, { Enumeration.Affix.PyroDamage, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8705 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 546 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8770 }, { Enumeration.Affix.Attack, 225 }, { Enumeration.Affix.Defense, 550 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8834 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 554 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8899 }, { Enumeration.Affix.Attack, 228 }, { Enumeration.Affix.Defense, 559 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8963 }, { Enumeration.Affix.Attack, 230 }, { Enumeration.Affix.Defense, 563 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9029 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 567 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9093 }, { Enumeration.Affix.Attack, 233 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9158 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9222 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 579 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9287 }, { Enumeration.Affix.Attack, 238 }, { Enumeration.Affix.Defense, 583 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9352 }, { Enumeration.Affix.Attack, 240 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9675 }, { Enumeration.Affix.Attack, 271 }, { Enumeration.Affix.Defense, 607 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9999 }, { Enumeration.Affix.Attack, 301 }, { Enumeration.Affix.Defense, 628 }, { Enumeration.Affix.PyroDamage, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100202, MaterialConstants06._3060007, MaterialConstants07.G3070201, MaterialConstants04.G3040016),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050011, MaterialConstants04.G3040016, MaterialConstants08.G3080016),
@@ -303,104 +597,411 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1039 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 63 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1125 }, { Enumeration.Affix.Attack, 25 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1212 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 73 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1299 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1385 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 84 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1472 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 89 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1559 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1646 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 100 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1733 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1819 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1907 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 115 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1994 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 121 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2081 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 126 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2170 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 131 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2257 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 136 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2344 }, { Enumeration.Affix.Attack, 52 }, { Enumeration.Affix.Defense, 142 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2433 }, { Enumeration.Affix.Attack, 54 }, { Enumeration.Affix.Defense, 147 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2520 }, { Enumeration.Affix.Attack, 56 }, { Enumeration.Affix.Defense, 152 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2608 }, { Enumeration.Affix.Attack, 58 }, { Enumeration.Affix.Defense, 158 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2695 }, { Enumeration.Affix.Attack, 60 }, { Enumeration.Affix.Defense, 163 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3586 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3675 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3763 }, { Enumeration.Affix.Attack, 84 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3851 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3940 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4028 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4117 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4206 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4294 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 260 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4383 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 265 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4472 }, { Enumeration.Affix.Attack, 99 }, { Enumeration.Affix.Defense, 270 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4561 }, { Enumeration.Affix.Attack, 101 }, { Enumeration.Affix.Defense, 276 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4650 }, { Enumeration.Affix.Attack, 103 }, { Enumeration.Affix.Defense, 281 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4740 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 287 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4828 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 292 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4918 }, { Enumeration.Affix.Attack, 109 }, { Enumeration.Affix.Defense, 297 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5008 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5097 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 308 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5187 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 314 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5276 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 319 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5366 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 324 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5999 }, { Enumeration.Affix.Attack, 133 }, { Enumeration.Affix.Defense, 363 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6089 }, { Enumeration.Affix.Attack, 135 }, { Enumeration.Affix.Defense, 368 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6179 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6270 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6359 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 384 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6449 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6540 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6630 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 401 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6721 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 406 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6812 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 412 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6902 }, { Enumeration.Affix.Attack, 153 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7747 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 468 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7837 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 474 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7928 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 479 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8019 }, { Enumeration.Affix.Attack, 178 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8110 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 490 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8202 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8293 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 501 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8385 }, { Enumeration.Affix.Attack, 186 }, { Enumeration.Affix.Defense, 507 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8476 }, { Enumeration.Affix.Attack, 188 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8567 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 518 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8659 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 523 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9292 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 562 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9383 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 567 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9475 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 573 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9567 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 578 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9659 }, { Enumeration.Affix.Attack, 215 }, { Enumeration.Affix.Defense, 584 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9751 }, { Enumeration.Affix.Attack, 217 }, { Enumeration.Affix.Defense, 590 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9844 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 595 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9935 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 601 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10028 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 606 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10120 }, { Enumeration.Affix.Attack, 225 }, { Enumeration.Affix.Defense, 612 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10213 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 617 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10846 }, { Enumeration.Affix.Attack, 241 }, { Enumeration.Affix.Defense, 656 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10938 }, { Enumeration.Affix.Attack, 243 }, { Enumeration.Affix.Defense, 661 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11032 }, { Enumeration.Affix.Attack, 245 }, { Enumeration.Affix.Defense, 667 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11124 }, { Enumeration.Affix.Attack, 247 }, { Enumeration.Affix.Defense, 673 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11217 }, { Enumeration.Affix.Attack, 249 }, { Enumeration.Affix.Defense, 678 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11310 }, { Enumeration.Affix.Attack, 251 }, { Enumeration.Affix.Defense, 684 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11403 }, { Enumeration.Affix.Attack, 253 }, { Enumeration.Affix.Defense, 689 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11496 }, { Enumeration.Affix.Attack, 255 }, { Enumeration.Affix.Defense, 695 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11590 }, { Enumeration.Affix.Attack, 258 }, { Enumeration.Affix.Defense, 701 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11683 }, { Enumeration.Affix.Attack, 260 }, { Enumeration.Affix.Defense, 706 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11777 }, { Enumeration.Affix.Attack, 262 }, { Enumeration.Affix.Defense, 712 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12410 }, { Enumeration.Affix.Attack, 276 }, { Enumeration.Affix.Defense, 750 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12503 }, { Enumeration.Affix.Attack, 278 }, { Enumeration.Affix.Defense, 756 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12597 }, { Enumeration.Affix.Attack, 280 }, { Enumeration.Affix.Defense, 762 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12690 }, { Enumeration.Affix.Attack, 282 }, { Enumeration.Affix.Defense, 767 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12784 }, { Enumeration.Affix.Attack, 284 }, { Enumeration.Affix.Defense, 773 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12877 }, { Enumeration.Affix.Attack, 286 }, { Enumeration.Affix.Defense, 779 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12972 }, { Enumeration.Affix.Attack, 288 }, { Enumeration.Affix.Defense, 784 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13065 }, { Enumeration.Affix.Attack, 290 }, { Enumeration.Affix.Defense, 790 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13160 }, { Enumeration.Affix.Attack, 292 }, { Enumeration.Affix.Defense, 796 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13255 }, { Enumeration.Affix.Attack, 295 }, { Enumeration.Affix.Defense, 801 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13348 }, { Enumeration.Affix.Attack, 297 }, { Enumeration.Affix.Defense, 807 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13822 }, { Enumeration.Affix.Attack, 330 }, { Enumeration.Affix.Defense, 836 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 14297 }, { Enumeration.Affix.Attack, 363 }, { Enumeration.Affix.Defense, 864 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1039 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 63 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1125 }, { Enumeration.Affix.Attack, 25 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1212 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 73 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1299 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1385 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 84 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1472 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 89 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1559 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1646 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 100 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1733 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1819 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1907 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 115 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1994 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 121 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2081 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 126 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2170 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 131 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2257 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 136 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2344 }, { Enumeration.Affix.Attack, 52 }, { Enumeration.Affix.Defense, 142 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2433 }, { Enumeration.Affix.Attack, 54 }, { Enumeration.Affix.Defense, 147 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2520 }, { Enumeration.Affix.Attack, 56 }, { Enumeration.Affix.Defense, 152 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2608 }, { Enumeration.Affix.Attack, 58 }, { Enumeration.Affix.Defense, 158 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2695 }, { Enumeration.Affix.Attack, 60 }, { Enumeration.Affix.Defense, 163 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3586 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3675 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3763 }, { Enumeration.Affix.Attack, 84 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3851 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3940 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4028 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4117 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4206 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4294 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 260 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4383 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 265 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4472 }, { Enumeration.Affix.Attack, 99 }, { Enumeration.Affix.Defense, 270 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4561 }, { Enumeration.Affix.Attack, 101 }, { Enumeration.Affix.Defense, 276 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4650 }, { Enumeration.Affix.Attack, 103 }, { Enumeration.Affix.Defense, 281 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4740 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 287 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4828 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 292 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4918 }, { Enumeration.Affix.Attack, 109 }, { Enumeration.Affix.Defense, 297 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5008 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5097 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 308 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5187 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 314 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5276 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 319 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5366 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 324 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5999 }, { Enumeration.Affix.Attack, 133 }, { Enumeration.Affix.Defense, 363 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6089 }, { Enumeration.Affix.Attack, 135 }, { Enumeration.Affix.Defense, 368 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6179 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6270 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6359 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 384 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6449 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6540 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6630 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 401 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6721 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 406 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6812 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 412 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6902 }, { Enumeration.Affix.Attack, 153 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.ElementalMastery, 29 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7747 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 468 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7837 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 474 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7928 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 479 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8019 }, { Enumeration.Affix.Attack, 178 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8110 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 490 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8202 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8293 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 501 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8385 }, { Enumeration.Affix.Attack, 186 }, { Enumeration.Affix.Defense, 507 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8476 }, { Enumeration.Affix.Attack, 188 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8567 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 518 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8659 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 523 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9292 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 562 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9383 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 567 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9475 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 573 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9567 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 578 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9659 }, { Enumeration.Affix.Attack, 215 }, { Enumeration.Affix.Defense, 584 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9751 }, { Enumeration.Affix.Attack, 217 }, { Enumeration.Affix.Defense, 590 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9844 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 595 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9935 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 601 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10028 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 606 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10120 }, { Enumeration.Affix.Attack, 225 }, { Enumeration.Affix.Defense, 612 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10213 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 617 }, { Enumeration.Affix.ElementalMastery, 58 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10846 }, { Enumeration.Affix.Attack, 241 }, { Enumeration.Affix.Defense, 656 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10938 }, { Enumeration.Affix.Attack, 243 }, { Enumeration.Affix.Defense, 661 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11032 }, { Enumeration.Affix.Attack, 245 }, { Enumeration.Affix.Defense, 667 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11124 }, { Enumeration.Affix.Attack, 247 }, { Enumeration.Affix.Defense, 673 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11217 }, { Enumeration.Affix.Attack, 249 }, { Enumeration.Affix.Defense, 678 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11310 }, { Enumeration.Affix.Attack, 251 }, { Enumeration.Affix.Defense, 684 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11403 }, { Enumeration.Affix.Attack, 253 }, { Enumeration.Affix.Defense, 689 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11496 }, { Enumeration.Affix.Attack, 255 }, { Enumeration.Affix.Defense, 695 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11590 }, { Enumeration.Affix.Attack, 258 }, { Enumeration.Affix.Defense, 701 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11683 }, { Enumeration.Affix.Attack, 260 }, { Enumeration.Affix.Defense, 706 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11777 }, { Enumeration.Affix.Attack, 262 }, { Enumeration.Affix.Defense, 712 }, { Enumeration.Affix.ElementalMastery, 86 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12410 }, { Enumeration.Affix.Attack, 276 }, { Enumeration.Affix.Defense, 750 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12503 }, { Enumeration.Affix.Attack, 278 }, { Enumeration.Affix.Defense, 756 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12597 }, { Enumeration.Affix.Attack, 280 }, { Enumeration.Affix.Defense, 762 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12690 }, { Enumeration.Affix.Attack, 282 }, { Enumeration.Affix.Defense, 767 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12784 }, { Enumeration.Affix.Attack, 284 }, { Enumeration.Affix.Defense, 773 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12877 }, { Enumeration.Affix.Attack, 286 }, { Enumeration.Affix.Defense, 779 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 12972 }, { Enumeration.Affix.Attack, 288 }, { Enumeration.Affix.Defense, 784 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 13065 }, { Enumeration.Affix.Attack, 290 }, { Enumeration.Affix.Defense, 790 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 13160 }, { Enumeration.Affix.Attack, 292 }, { Enumeration.Affix.Defense, 796 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 13255 }, { Enumeration.Affix.Attack, 295 }, { Enumeration.Affix.Defense, 801 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 13348 }, { Enumeration.Affix.Attack, 297 }, { Enumeration.Affix.Defense, 807 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 13822 }, { Enumeration.Affix.Attack, 330 }, { Enumeration.Affix.Defense, 836 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>()
+                    { { Enumeration.Affix.Health, 14297 }, { Enumeration.Affix.Attack, 363 }, { Enumeration.Affix.Defense, 864 }, { Enumeration.Affix.ElementalMastery, 115 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100306, MaterialConstants06._3060009, MaterialConstants07.G3070601, MaterialConstants04.G3040016),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050012, MaterialConstants04.G3040016, MaterialConstants08.G3080013),
@@ -571,104 +1172,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 994 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 62 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1076 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1158 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 73 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1240 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 78 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1322 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1404 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 88 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 93 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1568 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 99 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1651 }, { Enumeration.Affix.Attack, 34 }, { Enumeration.Affix.Defense, 104 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1732 }, { Enumeration.Affix.Attack, 36 }, { Enumeration.Affix.Defense, 109 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1815 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1896 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 119 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1979 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 124 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2060 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 129 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2143 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 135 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2225 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 140 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2307 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 145 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2389 }, { Enumeration.Affix.Attack, 49 }, { Enumeration.Affix.Defense, 150 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2471 }, { Enumeration.Affix.Attack, 51 }, { Enumeration.Affix.Defense, 155 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2553 }, { Enumeration.Affix.Attack, 53 }, { Enumeration.Affix.Defense, 160 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3296 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 207 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3377 }, { Enumeration.Affix.Attack, 70 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3460 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3542 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 223 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3624 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3706 }, { Enumeration.Affix.Attack, 76 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3788 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3870 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 243 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3952 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 248 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4034 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 253 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4116 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 259 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4198 }, { Enumeration.Affix.Attack, 87 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4281 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 269 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4362 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 274 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4445 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 279 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4526 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 284 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4609 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 290 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4690 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4773 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 300 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4855 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 305 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4937 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 310 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5464 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 343 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5547 }, { Enumeration.Affix.Attack, 114 }, { Enumeration.Affix.Defense, 348 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5628 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 354 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5711 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 359 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5792 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 364 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5875 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 369 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5957 }, { Enumeration.Affix.Attack, 123 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6038 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6121 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 385 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6202 }, { Enumeration.Affix.Attack, 128 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6285 }, { Enumeration.Affix.Attack, 130 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6988 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 439 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7070 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 444 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7152 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 449 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7235 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 454 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7316 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 460 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7399 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 465 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7480 }, { Enumeration.Affix.Attack, 154 }, { Enumeration.Affix.Defense, 470 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7563 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7644 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7727 }, { Enumeration.Affix.Attack, 159 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7809 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 491 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8337 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 524 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8418 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 529 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8501 }, { Enumeration.Affix.Attack, 175 }, { Enumeration.Affix.Defense, 534 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8582 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 539 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8665 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 544 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8746 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 549 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8829 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 555 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8911 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 560 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8993 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 565 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9075 }, { Enumeration.Affix.Attack, 187 }, { Enumeration.Affix.Defense, 570 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9157 }, { Enumeration.Affix.Attack, 189 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9684 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 608 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9767 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 614 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9848 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 619 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9931 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 624 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10013 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10095 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10177 }, { Enumeration.Affix.Attack, 210 }, { Enumeration.Affix.Defense, 639 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10259 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 644 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10341 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 650 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10423 }, { Enumeration.Affix.Attack, 215 }, { Enumeration.Affix.Defense, 655 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10505 }, { Enumeration.Affix.Attack, 216 }, { Enumeration.Affix.Defense, 660 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11033 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 693 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11115 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 698 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11197 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 703 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11279 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 709 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11361 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 714 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11443 }, { Enumeration.Affix.Attack, 236 }, { Enumeration.Affix.Defense, 719 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11525 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 724 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11607 }, { Enumeration.Affix.Attack, 239 }, { Enumeration.Affix.Defense, 729 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11689 }, { Enumeration.Affix.Attack, 241 }, { Enumeration.Affix.Defense, 734 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11771 }, { Enumeration.Affix.Attack, 243 }, { Enumeration.Affix.Defense, 739 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11854 }, { Enumeration.Affix.Attack, 244 }, { Enumeration.Affix.Defense, 745 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12263 }, { Enumeration.Affix.Attack, 275 }, { Enumeration.Affix.Defense, 770 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12674 }, { Enumeration.Affix.Attack, 307 }, { Enumeration.Affix.Defense, 796 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 994 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 62 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1076 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1158 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 73 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1240 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 78 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1322 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1404 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 88 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 93 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1568 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 99 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1651 }, { Enumeration.Affix.Attack, 34 }, { Enumeration.Affix.Defense, 104 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1732 }, { Enumeration.Affix.Attack, 36 }, { Enumeration.Affix.Defense, 109 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1815 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1896 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 119 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1979 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 124 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2060 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 129 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2143 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 135 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2225 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 140 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2307 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 145 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2389 }, { Enumeration.Affix.Attack, 49 }, { Enumeration.Affix.Defense, 150 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2471 }, { Enumeration.Affix.Attack, 51 }, { Enumeration.Affix.Defense, 155 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2553 }, { Enumeration.Affix.Attack, 53 }, { Enumeration.Affix.Defense, 160 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3296 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 207 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3377 }, { Enumeration.Affix.Attack, 70 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3460 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3542 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 223 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3624 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3706 }, { Enumeration.Affix.Attack, 76 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3788 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3870 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 243 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3952 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 248 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4034 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 253 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4116 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 259 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4198 }, { Enumeration.Affix.Attack, 87 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4281 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 269 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4362 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 274 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4445 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 279 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4526 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 284 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4609 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 290 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4690 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4773 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 300 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4855 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 305 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4937 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 310 }, { Enumeration.Affix.ElementalMastery, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5464 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 343 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5547 }, { Enumeration.Affix.Attack, 114 }, { Enumeration.Affix.Defense, 348 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5628 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 354 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5711 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 359 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5792 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 364 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5875 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 369 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5957 }, { Enumeration.Affix.Attack, 123 }, { Enumeration.Affix.Defense, 374 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6038 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6121 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 385 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6202 }, { Enumeration.Affix.Attack, 128 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6285 }, { Enumeration.Affix.Attack, 130 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.ElementalMastery, 24 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6988 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 439 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7070 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 444 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7152 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 449 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7235 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 454 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7316 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 460 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7399 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 465 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7480 }, { Enumeration.Affix.Attack, 154 }, { Enumeration.Affix.Defense, 470 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7563 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7644 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7727 }, { Enumeration.Affix.Attack, 159 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7809 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 491 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8337 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 524 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8418 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 529 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8501 }, { Enumeration.Affix.Attack, 175 }, { Enumeration.Affix.Defense, 534 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8582 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 539 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8665 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 544 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8746 }, { Enumeration.Affix.Attack, 180 }, { Enumeration.Affix.Defense, 549 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8829 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 555 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8911 }, { Enumeration.Affix.Attack, 184 }, { Enumeration.Affix.Defense, 560 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8993 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 565 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9075 }, { Enumeration.Affix.Attack, 187 }, { Enumeration.Affix.Defense, 570 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9157 }, { Enumeration.Affix.Attack, 189 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.ElementalMastery, 48 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9684 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 608 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9767 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 614 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9848 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 619 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9931 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 624 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10013 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10095 }, { Enumeration.Affix.Attack, 208 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10177 }, { Enumeration.Affix.Attack, 210 }, { Enumeration.Affix.Defense, 639 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10259 }, { Enumeration.Affix.Attack, 211 }, { Enumeration.Affix.Defense, 644 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10341 }, { Enumeration.Affix.Attack, 213 }, { Enumeration.Affix.Defense, 650 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10423 }, { Enumeration.Affix.Attack, 215 }, { Enumeration.Affix.Defense, 655 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10505 }, { Enumeration.Affix.Attack, 216 }, { Enumeration.Affix.Defense, 660 }, { Enumeration.Affix.ElementalMastery, 72 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11033 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 693 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11115 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 698 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11197 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 703 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11279 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 709 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11361 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 714 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11443 }, { Enumeration.Affix.Attack, 236 }, { Enumeration.Affix.Defense, 719 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11525 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 724 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11607 }, { Enumeration.Affix.Attack, 239 }, { Enumeration.Affix.Defense, 729 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11689 }, { Enumeration.Affix.Attack, 241 }, { Enumeration.Affix.Defense, 734 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11771 }, { Enumeration.Affix.Attack, 243 }, { Enumeration.Affix.Defense, 739 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11854 }, { Enumeration.Affix.Attack, 244 }, { Enumeration.Affix.Defense, 745 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12263 }, { Enumeration.Affix.Attack, 275 }, { Enumeration.Affix.Defense, 770 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12674 }, { Enumeration.Affix.Attack, 307 }, { Enumeration.Affix.Defense, 796 }, { Enumeration.Affix.ElementalMastery, 96 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100303, MaterialConstants06._3060009, MaterialConstants07.G3070601, MaterialConstants04.G3040019),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050012, MaterialConstants04.G3040019, MaterialConstants08.G3080025),
@@ -839,104 +1734,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 848 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 919 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 989 }, { Enumeration.Affix.Attack, 21 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1061 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 66 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1131 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1202 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 75 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1273 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1344 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1415 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 88 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1557 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 97 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1628 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 101 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1699 }, { Enumeration.Affix.Attack, 36 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1772 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1843 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1914 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 119 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1986 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 123 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2058 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2130 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 132 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2201 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 137 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2928 }, { Enumeration.Affix.Attack, 63 }, { Enumeration.Affix.Defense, 182 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3000 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 186 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3073 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 191 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3145 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 195 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3217 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 200 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3289 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 204 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3362 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 209 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3434 }, { Enumeration.Affix.Attack, 74 }, { Enumeration.Affix.Defense, 213 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3506 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 218 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3579 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3651 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 227 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3724 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 231 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3797 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 236 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3870 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3942 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 245 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4015 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4089 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4162 }, { Enumeration.Affix.Attack, 89 }, { Enumeration.Affix.Defense, 258 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4235 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 263 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4308 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 267 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4382 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 272 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4899 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 304 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4972 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 309 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5045 }, { Enumeration.Affix.Attack, 108 }, { Enumeration.Affix.Defense, 313 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5119 }, { Enumeration.Affix.Attack, 110 }, { Enumeration.Affix.Defense, 318 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5192 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 322 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5266 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 327 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5340 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 331 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5414 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 336 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5487 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 341 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5562 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 345 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5636 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 350 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6325 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 393 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6399 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 397 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6474 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 402 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6547 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 406 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6622 }, { Enumeration.Affix.Attack, 142 }, { Enumeration.Affix.Defense, 411 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6697 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 416 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6771 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 420 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6846 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 425 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6921 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 429 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6995 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 434 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7070 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 439 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7587 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 471 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7662 }, { Enumeration.Affix.Attack, 164 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7736 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7812 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7886 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 489 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7962 }, { Enumeration.Affix.Attack, 171 }, { Enumeration.Affix.Defense, 494 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8038 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 499 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8112 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 503 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8188 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 508 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8263 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 513 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8339 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 517 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8856 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 550 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8931 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 554 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9007 }, { Enumeration.Affix.Attack, 193 }, { Enumeration.Affix.Defense, 559 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9083 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 564 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9158 }, { Enumeration.Affix.Attack, 197 }, { Enumeration.Affix.Defense, 568 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9235 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 573 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9310 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 578 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9387 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 582 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9463 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9539 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 592 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9616 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 597 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10133 }, { Enumeration.Affix.Attack, 217 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10209 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10285 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 638 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10362 }, { Enumeration.Affix.Attack, 222 }, { Enumeration.Affix.Defense, 643 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10438 }, { Enumeration.Affix.Attack, 224 }, { Enumeration.Affix.Defense, 648 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10515 }, { Enumeration.Affix.Attack, 226 }, { Enumeration.Affix.Defense, 652 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10592 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 657 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10668 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 662 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10745 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 667 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10822 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 672 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10899 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 676 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11286 }, { Enumeration.Affix.Attack, 260 }, { Enumeration.Affix.Defense, 700 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11673 }, { Enumeration.Affix.Attack, 287 }, { Enumeration.Affix.Defense, 724 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 848 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 919 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 989 }, { Enumeration.Affix.Attack, 21 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1061 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 66 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1131 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1202 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 75 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1273 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1344 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1415 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 88 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1557 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 97 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1628 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 101 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1699 }, { Enumeration.Affix.Attack, 36 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1772 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 110 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1843 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1914 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 119 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1986 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 123 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2058 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2130 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 132 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2201 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 137 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2928 }, { Enumeration.Affix.Attack, 63 }, { Enumeration.Affix.Defense, 182 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3000 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 186 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3073 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 191 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3145 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 195 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3217 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 200 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3289 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 204 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3362 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 209 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3434 }, { Enumeration.Affix.Attack, 74 }, { Enumeration.Affix.Defense, 213 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3506 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 218 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3579 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3651 }, { Enumeration.Affix.Attack, 78 }, { Enumeration.Affix.Defense, 227 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3724 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 231 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3797 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 236 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3870 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3942 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 245 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4015 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4089 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4162 }, { Enumeration.Affix.Attack, 89 }, { Enumeration.Affix.Defense, 258 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4235 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 263 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4308 }, { Enumeration.Affix.Attack, 92 }, { Enumeration.Affix.Defense, 267 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4382 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 272 }, { Enumeration.Affix.CryoDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4899 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 304 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4972 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 309 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5045 }, { Enumeration.Affix.Attack, 108 }, { Enumeration.Affix.Defense, 313 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5119 }, { Enumeration.Affix.Attack, 110 }, { Enumeration.Affix.Defense, 318 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5192 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 322 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5266 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 327 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5340 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 331 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5414 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 336 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5487 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 341 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5562 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 345 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5636 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 350 }, { Enumeration.Affix.CryoDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6325 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 393 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6399 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 397 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6474 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 402 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6547 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 406 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6622 }, { Enumeration.Affix.Attack, 142 }, { Enumeration.Affix.Defense, 411 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6697 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 416 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6771 }, { Enumeration.Affix.Attack, 145 }, { Enumeration.Affix.Defense, 420 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6846 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 425 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6921 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 429 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6995 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 434 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7070 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 439 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7587 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 471 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7662 }, { Enumeration.Affix.Attack, 164 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7736 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7812 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7886 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 489 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7962 }, { Enumeration.Affix.Attack, 171 }, { Enumeration.Affix.Defense, 494 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8038 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 499 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8112 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 503 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8188 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 508 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8263 }, { Enumeration.Affix.Attack, 177 }, { Enumeration.Affix.Defense, 513 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8339 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 517 }, { Enumeration.Affix.CryoDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8856 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 550 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8931 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 554 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9007 }, { Enumeration.Affix.Attack, 193 }, { Enumeration.Affix.Defense, 559 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9083 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 564 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9158 }, { Enumeration.Affix.Attack, 197 }, { Enumeration.Affix.Defense, 568 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9235 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 573 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9310 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 578 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9387 }, { Enumeration.Affix.Attack, 201 }, { Enumeration.Affix.Defense, 582 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9463 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9539 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 592 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9616 }, { Enumeration.Affix.Attack, 206 }, { Enumeration.Affix.Defense, 597 }, { Enumeration.Affix.CryoDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10133 }, { Enumeration.Affix.Attack, 217 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10209 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10285 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 638 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10362 }, { Enumeration.Affix.Attack, 222 }, { Enumeration.Affix.Defense, 643 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10438 }, { Enumeration.Affix.Attack, 224 }, { Enumeration.Affix.Defense, 648 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10515 }, { Enumeration.Affix.Attack, 226 }, { Enumeration.Affix.Defense, 652 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10592 }, { Enumeration.Affix.Attack, 227 }, { Enumeration.Affix.Defense, 657 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10668 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 662 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10745 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 667 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10822 }, { Enumeration.Affix.Attack, 232 }, { Enumeration.Affix.Defense, 672 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10899 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 676 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11286 }, { Enumeration.Affix.Attack, 260 }, { Enumeration.Affix.Defense, 700 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11673 }, { Enumeration.Affix.Attack, 287 }, { Enumeration.Affix.Defense, 724 }, { Enumeration.Affix.CryoDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100303, MaterialConstants06._3060008, MaterialConstants07.G3070701, MaterialConstants04.G3040025),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050013, MaterialConstants04.G3040025, MaterialConstants08.G3080001),
@@ -973,104 +2162,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 802 }, { Enumeration.Affix.Attack, 16 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 869 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 935 }, { Enumeration.Affix.Attack, 19 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1001 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 66 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1067 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1134 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 74 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1200 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1266 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1333 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 87 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1399 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1465 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 96 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1531 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 100 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1598 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1663 }, { Enumeration.Affix.Attack, 34 }, { Enumeration.Affix.Defense, 109 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1730 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1797 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1862 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 122 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1929 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 127 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1995 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 131 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2061 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 135 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2661 }, { Enumeration.Affix.Attack, 54 }, { Enumeration.Affix.Defense, 175 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2727 }, { Enumeration.Affix.Attack, 56 }, { Enumeration.Affix.Defense, 179 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2793 }, { Enumeration.Affix.Attack, 57 }, { Enumeration.Affix.Defense, 183 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2860 }, { Enumeration.Affix.Attack, 58 }, { Enumeration.Affix.Defense, 188 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2926 }, { Enumeration.Affix.Attack, 60 }, { Enumeration.Affix.Defense, 192 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2992 }, { Enumeration.Affix.Attack, 61 }, { Enumeration.Affix.Defense, 196 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3058 }, { Enumeration.Affix.Attack, 62 }, { Enumeration.Affix.Defense, 201 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3124 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 205 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3190 }, { Enumeration.Affix.Attack, 65 }, { Enumeration.Affix.Defense, 209 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3257 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 214 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3323 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 218 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3389 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3456 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 227 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3522 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 231 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3588 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 235 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3654 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3721 }, { Enumeration.Affix.Attack, 76 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3786 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 248 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3853 }, { Enumeration.Affix.Attack, 79 }, { Enumeration.Affix.Defense, 253 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3920 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 257 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3985 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 262 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4411 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 289 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4478 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 294 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4544 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 298 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4610 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4676 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4743 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 311 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4809 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 316 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4875 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 320 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4942 }, { Enumeration.Affix.Attack, 101 }, { Enumeration.Affix.Defense, 324 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5008 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 329 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5074 }, { Enumeration.Affix.Attack, 104 }, { Enumeration.Affix.Defense, 333 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5642 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 370 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5708 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 375 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5774 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5841 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 383 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5907 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 388 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5973 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 392 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6039 }, { Enumeration.Affix.Attack, 123 }, { Enumeration.Affix.Defense, 396 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6106 }, { Enumeration.Affix.Attack, 125 }, { Enumeration.Affix.Defense, 401 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6172 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 405 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6238 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 409 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6305 }, { Enumeration.Affix.Attack, 129 }, { Enumeration.Affix.Defense, 414 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6731 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 442 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6796 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 446 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6863 }, { Enumeration.Affix.Attack, 140 }, { Enumeration.Affix.Defense, 450 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6929 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 455 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6995 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 459 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7061 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 463 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7128 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 468 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7194 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 472 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7260 }, { Enumeration.Affix.Attack, 148 }, { Enumeration.Affix.Defense, 476 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7327 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 481 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7393 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7818 }, { Enumeration.Affix.Attack, 160 }, { Enumeration.Affix.Defense, 513 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7885 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 517 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7951 }, { Enumeration.Affix.Attack, 162 }, { Enumeration.Affix.Defense, 522 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8017 }, { Enumeration.Affix.Attack, 164 }, { Enumeration.Affix.Defense, 526 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8084 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 530 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8150 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 535 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8216 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 539 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8282 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 543 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8349 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 548 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8415 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 552 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8481 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 556 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8907 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 584 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8974 }, { Enumeration.Affix.Attack, 183 }, { Enumeration.Affix.Defense, 589 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9040 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 593 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9106 }, { Enumeration.Affix.Attack, 186 }, { Enumeration.Affix.Defense, 597 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9172 }, { Enumeration.Affix.Attack, 187 }, { Enumeration.Affix.Defense, 602 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9239 }, { Enumeration.Affix.Attack, 189 }, { Enumeration.Affix.Defense, 606 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9304 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 610 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9371 }, { Enumeration.Affix.Attack, 191 }, { Enumeration.Affix.Defense, 615 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9437 }, { Enumeration.Affix.Attack, 193 }, { Enumeration.Affix.Defense, 619 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9503 }, { Enumeration.Affix.Attack, 194 }, { Enumeration.Affix.Defense, 624 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9570 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 628 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9901 }, { Enumeration.Affix.Attack, 220 }, { Enumeration.Affix.Defense, 650 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10232 }, { Enumeration.Affix.Attack, 245 }, { Enumeration.Affix.Defense, 671 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 802 }, { Enumeration.Affix.Attack, 16 }, { Enumeration.Affix.Defense, 53 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 869 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 57 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 935 }, { Enumeration.Affix.Attack, 19 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1001 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 66 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1067 }, { Enumeration.Affix.Attack, 22 }, { Enumeration.Affix.Defense, 70 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1134 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 74 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1200 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 79 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1266 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 83 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1333 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 87 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1399 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1465 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 96 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1531 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 100 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1598 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 105 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1663 }, { Enumeration.Affix.Attack, 34 }, { Enumeration.Affix.Defense, 109 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1730 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 114 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1797 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1862 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 122 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1929 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 127 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1995 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 131 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2061 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 135 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2661 }, { Enumeration.Affix.Attack, 54 }, { Enumeration.Affix.Defense, 175 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2727 }, { Enumeration.Affix.Attack, 56 }, { Enumeration.Affix.Defense, 179 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2793 }, { Enumeration.Affix.Attack, 57 }, { Enumeration.Affix.Defense, 183 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2860 }, { Enumeration.Affix.Attack, 58 }, { Enumeration.Affix.Defense, 188 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2926 }, { Enumeration.Affix.Attack, 60 }, { Enumeration.Affix.Defense, 192 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2992 }, { Enumeration.Affix.Attack, 61 }, { Enumeration.Affix.Defense, 196 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3058 }, { Enumeration.Affix.Attack, 62 }, { Enumeration.Affix.Defense, 201 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3124 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 205 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3190 }, { Enumeration.Affix.Attack, 65 }, { Enumeration.Affix.Defense, 209 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3257 }, { Enumeration.Affix.Attack, 67 }, { Enumeration.Affix.Defense, 214 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3323 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 218 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3389 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 222 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3456 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 227 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3522 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 231 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3588 }, { Enumeration.Affix.Attack, 73 }, { Enumeration.Affix.Defense, 235 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3654 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 240 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3721 }, { Enumeration.Affix.Attack, 76 }, { Enumeration.Affix.Defense, 244 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3786 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 248 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3853 }, { Enumeration.Affix.Attack, 79 }, { Enumeration.Affix.Defense, 253 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3920 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 257 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3985 }, { Enumeration.Affix.Attack, 81 }, { Enumeration.Affix.Defense, 262 }, { Enumeration.Affix.AttackPercent, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4411 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 289 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4478 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 294 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4544 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 298 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4610 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 303 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4676 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4743 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 311 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4809 }, { Enumeration.Affix.Attack, 98 }, { Enumeration.Affix.Defense, 316 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4875 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 320 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4942 }, { Enumeration.Affix.Attack, 101 }, { Enumeration.Affix.Defense, 324 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5008 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 329 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5074 }, { Enumeration.Affix.Attack, 104 }, { Enumeration.Affix.Defense, 333 }, { Enumeration.Affix.AttackPercent, 6.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5642 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 370 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5708 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 375 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5774 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 379 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5841 }, { Enumeration.Affix.Attack, 119 }, { Enumeration.Affix.Defense, 383 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5907 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 388 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5973 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 392 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6039 }, { Enumeration.Affix.Attack, 123 }, { Enumeration.Affix.Defense, 396 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6106 }, { Enumeration.Affix.Attack, 125 }, { Enumeration.Affix.Defense, 401 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6172 }, { Enumeration.Affix.Attack, 126 }, { Enumeration.Affix.Defense, 405 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6238 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 409 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6305 }, { Enumeration.Affix.Attack, 129 }, { Enumeration.Affix.Defense, 414 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6731 }, { Enumeration.Affix.Attack, 137 }, { Enumeration.Affix.Defense, 442 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6796 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 446 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6863 }, { Enumeration.Affix.Attack, 140 }, { Enumeration.Affix.Defense, 450 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6929 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 455 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6995 }, { Enumeration.Affix.Attack, 143 }, { Enumeration.Affix.Defense, 459 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7061 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 463 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7128 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 468 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7194 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 472 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7260 }, { Enumeration.Affix.Attack, 148 }, { Enumeration.Affix.Defense, 476 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7327 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 481 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7393 }, { Enumeration.Affix.Attack, 151 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.AttackPercent, 12.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7818 }, { Enumeration.Affix.Attack, 160 }, { Enumeration.Affix.Defense, 513 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7885 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 517 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7951 }, { Enumeration.Affix.Attack, 162 }, { Enumeration.Affix.Defense, 522 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8017 }, { Enumeration.Affix.Attack, 164 }, { Enumeration.Affix.Defense, 526 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8084 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 530 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8150 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 535 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8216 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 539 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8282 }, { Enumeration.Affix.Attack, 169 }, { Enumeration.Affix.Defense, 543 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8349 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 548 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8415 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 552 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8481 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 556 }, { Enumeration.Affix.AttackPercent, 18.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8907 }, { Enumeration.Affix.Attack, 182 }, { Enumeration.Affix.Defense, 584 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8974 }, { Enumeration.Affix.Attack, 183 }, { Enumeration.Affix.Defense, 589 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9040 }, { Enumeration.Affix.Attack, 185 }, { Enumeration.Affix.Defense, 593 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9106 }, { Enumeration.Affix.Attack, 186 }, { Enumeration.Affix.Defense, 597 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9172 }, { Enumeration.Affix.Attack, 187 }, { Enumeration.Affix.Defense, 602 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9239 }, { Enumeration.Affix.Attack, 189 }, { Enumeration.Affix.Defense, 606 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9304 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 610 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9371 }, { Enumeration.Affix.Attack, 191 }, { Enumeration.Affix.Defense, 615 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9437 }, { Enumeration.Affix.Attack, 193 }, { Enumeration.Affix.Defense, 619 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9503 }, { Enumeration.Affix.Attack, 194 }, { Enumeration.Affix.Defense, 624 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9570 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 628 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9901 }, { Enumeration.Affix.Attack, 220 }, { Enumeration.Affix.Defense, 650 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10232 }, { Enumeration.Affix.Attack, 245 }, { Enumeration.Affix.Defense, 671 }, { Enumeration.Affix.AttackPercent, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100304, MaterialConstants06._3060013, MaterialConstants07.G3070501, MaterialConstants04.G3040004),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050015, MaterialConstants04.G3040004, MaterialConstants08.G3080022),
@@ -1107,104 +2590,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1005 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1088 }, { Enumeration.Affix.Attack, 28 }, { Enumeration.Affix.Defense, 67 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1172 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 72 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1256 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 77 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1339 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 82 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1424 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 87 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1507 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1592 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 97 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1676 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1759 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 108 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1844 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 113 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1928 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2013 }, { Enumeration.Affix.Attack, 53 }, { Enumeration.Affix.Defense, 123 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2098 }, { Enumeration.Affix.Attack, 55 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2182 }, { Enumeration.Affix.Attack, 57 }, { Enumeration.Affix.Defense, 133 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2267 }, { Enumeration.Affix.Attack, 59 }, { Enumeration.Affix.Defense, 139 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2352 }, { Enumeration.Affix.Attack, 61 }, { Enumeration.Affix.Defense, 144 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2437 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 149 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2522 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 154 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2606 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 159 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3468 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3553 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3639 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 223 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3724 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3810 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3895 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3981 }, { Enumeration.Affix.Attack, 104 }, { Enumeration.Affix.Defense, 243 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4067 }, { Enumeration.Affix.Attack, 106 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4152 }, { Enumeration.Affix.Attack, 108 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4239 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 259 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4324 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4410 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 270 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4497 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 275 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4583 }, { Enumeration.Affix.Attack, 120 }, { Enumeration.Affix.Defense, 280 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4669 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 286 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4755 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 291 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4843 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 296 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4929 }, { Enumeration.Affix.Attack, 129 }, { Enumeration.Affix.Defense, 301 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5015 }, { Enumeration.Affix.Attack, 131 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5102 }, { Enumeration.Affix.Attack, 133 }, { Enumeration.Affix.Defense, 312 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5189 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 317 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5801 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 355 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5888 }, { Enumeration.Affix.Attack, 154 }, { Enumeration.Affix.Defense, 360 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5975 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 365 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6063 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 371 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6149 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 376 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6236 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 381 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6324 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 387 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6411 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 392 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6499 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 397 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6587 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 403 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6675 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 408 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7491 }, { Enumeration.Affix.Attack, 196 }, { Enumeration.Affix.Defense, 458 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7578 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 463 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7667 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 469 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7754 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 474 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7842 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7931 }, { Enumeration.Affix.Attack, 207 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8019 }, { Enumeration.Affix.Attack, 210 }, { Enumeration.Affix.Defense, 490 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8108 }, { Enumeration.Affix.Attack, 212 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8196 }, { Enumeration.Affix.Attack, 214 }, { Enumeration.Affix.Defense, 501 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8284 }, { Enumeration.Affix.Attack, 216 }, { Enumeration.Affix.Defense, 507 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8373 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8985 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 549 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9073 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 555 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9162 }, { Enumeration.Affix.Attack, 239 }, { Enumeration.Affix.Defense, 560 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9251 }, { Enumeration.Affix.Attack, 242 }, { Enumeration.Affix.Defense, 566 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9340 }, { Enumeration.Affix.Attack, 244 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9429 }, { Enumeration.Affix.Attack, 246 }, { Enumeration.Affix.Defense, 577 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9519 }, { Enumeration.Affix.Attack, 249 }, { Enumeration.Affix.Defense, 582 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9607 }, { Enumeration.Affix.Attack, 251 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9696 }, { Enumeration.Affix.Attack, 253 }, { Enumeration.Affix.Defense, 593 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9786 }, { Enumeration.Affix.Attack, 256 }, { Enumeration.Affix.Defense, 598 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9875 }, { Enumeration.Affix.Attack, 258 }, { Enumeration.Affix.Defense, 604 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10487 }, { Enumeration.Affix.Attack, 274 }, { Enumeration.Affix.Defense, 641 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10577 }, { Enumeration.Affix.Attack, 276 }, { Enumeration.Affix.Defense, 647 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10667 }, { Enumeration.Affix.Attack, 279 }, { Enumeration.Affix.Defense, 652 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10757 }, { Enumeration.Affix.Attack, 281 }, { Enumeration.Affix.Defense, 658 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10846 }, { Enumeration.Affix.Attack, 283 }, { Enumeration.Affix.Defense, 663 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10937 }, { Enumeration.Affix.Attack, 286 }, { Enumeration.Affix.Defense, 669 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11026 }, { Enumeration.Affix.Attack, 288 }, { Enumeration.Affix.Defense, 674 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11116 }, { Enumeration.Affix.Attack, 290 }, { Enumeration.Affix.Defense, 680 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11207 }, { Enumeration.Affix.Attack, 293 }, { Enumeration.Affix.Defense, 685 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11297 }, { Enumeration.Affix.Attack, 295 }, { Enumeration.Affix.Defense, 691 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11388 }, { Enumeration.Affix.Attack, 298 }, { Enumeration.Affix.Defense, 696 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12000 }, { Enumeration.Affix.Attack, 314 }, { Enumeration.Affix.Defense, 734 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12090 }, { Enumeration.Affix.Attack, 316 }, { Enumeration.Affix.Defense, 739 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12181 }, { Enumeration.Affix.Attack, 318 }, { Enumeration.Affix.Defense, 745 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12271 }, { Enumeration.Affix.Attack, 321 }, { Enumeration.Affix.Defense, 750 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12362 }, { Enumeration.Affix.Attack, 323 }, { Enumeration.Affix.Defense, 756 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12452 }, { Enumeration.Affix.Attack, 325 }, { Enumeration.Affix.Defense, 761 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12543 }, { Enumeration.Affix.Attack, 328 }, { Enumeration.Affix.Defense, 767 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12634 }, { Enumeration.Affix.Attack, 330 }, { Enumeration.Affix.Defense, 773 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12725 }, { Enumeration.Affix.Attack, 332 }, { Enumeration.Affix.Defense, 778 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12817 }, { Enumeration.Affix.Attack, 335 }, { Enumeration.Affix.Defense, 784 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12907 }, { Enumeration.Affix.Attack, 337 }, { Enumeration.Affix.Defense, 789 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13365 }, { Enumeration.Affix.Attack, 375 }, { Enumeration.Affix.Defense, 817 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13825 }, { Enumeration.Affix.Attack, 413 }, { Enumeration.Affix.Defense, 845 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1005 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 61 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1088 }, { Enumeration.Affix.Attack, 28 }, { Enumeration.Affix.Defense, 67 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1172 }, { Enumeration.Affix.Attack, 31 }, { Enumeration.Affix.Defense, 72 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1256 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 77 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1339 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 82 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1424 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 87 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1507 }, { Enumeration.Affix.Attack, 39 }, { Enumeration.Affix.Defense, 92 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1592 }, { Enumeration.Affix.Attack, 42 }, { Enumeration.Affix.Defense, 97 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1676 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1759 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 108 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1844 }, { Enumeration.Affix.Attack, 48 }, { Enumeration.Affix.Defense, 113 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1928 }, { Enumeration.Affix.Attack, 50 }, { Enumeration.Affix.Defense, 118 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2013 }, { Enumeration.Affix.Attack, 53 }, { Enumeration.Affix.Defense, 123 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2098 }, { Enumeration.Affix.Attack, 55 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2182 }, { Enumeration.Affix.Attack, 57 }, { Enumeration.Affix.Defense, 133 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2267 }, { Enumeration.Affix.Attack, 59 }, { Enumeration.Affix.Defense, 139 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2352 }, { Enumeration.Affix.Attack, 61 }, { Enumeration.Affix.Defense, 144 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2437 }, { Enumeration.Affix.Attack, 64 }, { Enumeration.Affix.Defense, 149 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2522 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 154 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2606 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 159 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3468 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 212 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3553 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 217 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3639 }, { Enumeration.Affix.Attack, 95 }, { Enumeration.Affix.Defense, 223 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3724 }, { Enumeration.Affix.Attack, 97 }, { Enumeration.Affix.Defense, 228 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3810 }, { Enumeration.Affix.Attack, 100 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3895 }, { Enumeration.Affix.Attack, 102 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3981 }, { Enumeration.Affix.Attack, 104 }, { Enumeration.Affix.Defense, 243 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4067 }, { Enumeration.Affix.Attack, 106 }, { Enumeration.Affix.Defense, 249 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4152 }, { Enumeration.Affix.Attack, 108 }, { Enumeration.Affix.Defense, 254 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4239 }, { Enumeration.Affix.Attack, 111 }, { Enumeration.Affix.Defense, 259 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4324 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4410 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 270 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4497 }, { Enumeration.Affix.Attack, 117 }, { Enumeration.Affix.Defense, 275 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4583 }, { Enumeration.Affix.Attack, 120 }, { Enumeration.Affix.Defense, 280 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4669 }, { Enumeration.Affix.Attack, 122 }, { Enumeration.Affix.Defense, 286 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4755 }, { Enumeration.Affix.Attack, 124 }, { Enumeration.Affix.Defense, 291 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4843 }, { Enumeration.Affix.Attack, 127 }, { Enumeration.Affix.Defense, 296 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4929 }, { Enumeration.Affix.Attack, 129 }, { Enumeration.Affix.Defense, 301 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5015 }, { Enumeration.Affix.Attack, 131 }, { Enumeration.Affix.Defense, 307 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5102 }, { Enumeration.Affix.Attack, 133 }, { Enumeration.Affix.Defense, 312 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5189 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 317 }, { Enumeration.Affix.EnergyRecharge, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5801 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 355 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5888 }, { Enumeration.Affix.Attack, 154 }, { Enumeration.Affix.Defense, 360 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5975 }, { Enumeration.Affix.Attack, 156 }, { Enumeration.Affix.Defense, 365 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6063 }, { Enumeration.Affix.Attack, 158 }, { Enumeration.Affix.Defense, 371 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6149 }, { Enumeration.Affix.Attack, 161 }, { Enumeration.Affix.Defense, 376 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6236 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 381 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6324 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 387 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6411 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 392 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6499 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 397 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6587 }, { Enumeration.Affix.Attack, 172 }, { Enumeration.Affix.Defense, 403 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6675 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 408 }, { Enumeration.Affix.EnergyRecharge, 8.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7491 }, { Enumeration.Affix.Attack, 196 }, { Enumeration.Affix.Defense, 458 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7578 }, { Enumeration.Affix.Attack, 198 }, { Enumeration.Affix.Defense, 463 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7667 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 469 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7754 }, { Enumeration.Affix.Attack, 203 }, { Enumeration.Affix.Defense, 474 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7842 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7931 }, { Enumeration.Affix.Attack, 207 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8019 }, { Enumeration.Affix.Attack, 210 }, { Enumeration.Affix.Defense, 490 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8108 }, { Enumeration.Affix.Attack, 212 }, { Enumeration.Affix.Defense, 496 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8196 }, { Enumeration.Affix.Attack, 214 }, { Enumeration.Affix.Defense, 501 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8284 }, { Enumeration.Affix.Attack, 216 }, { Enumeration.Affix.Defense, 507 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8373 }, { Enumeration.Affix.Attack, 219 }, { Enumeration.Affix.Defense, 512 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8985 }, { Enumeration.Affix.Attack, 235 }, { Enumeration.Affix.Defense, 549 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9073 }, { Enumeration.Affix.Attack, 237 }, { Enumeration.Affix.Defense, 555 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9162 }, { Enumeration.Affix.Attack, 239 }, { Enumeration.Affix.Defense, 560 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9251 }, { Enumeration.Affix.Attack, 242 }, { Enumeration.Affix.Defense, 566 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9340 }, { Enumeration.Affix.Attack, 244 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9429 }, { Enumeration.Affix.Attack, 246 }, { Enumeration.Affix.Defense, 577 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9519 }, { Enumeration.Affix.Attack, 249 }, { Enumeration.Affix.Defense, 582 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9607 }, { Enumeration.Affix.Attack, 251 }, { Enumeration.Affix.Defense, 587 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9696 }, { Enumeration.Affix.Attack, 253 }, { Enumeration.Affix.Defense, 593 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9786 }, { Enumeration.Affix.Attack, 256 }, { Enumeration.Affix.Defense, 598 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9875 }, { Enumeration.Affix.Attack, 258 }, { Enumeration.Affix.Defense, 604 }, { Enumeration.Affix.EnergyRecharge, 16.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10487 }, { Enumeration.Affix.Attack, 274 }, { Enumeration.Affix.Defense, 641 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10577 }, { Enumeration.Affix.Attack, 276 }, { Enumeration.Affix.Defense, 647 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10667 }, { Enumeration.Affix.Attack, 279 }, { Enumeration.Affix.Defense, 652 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10757 }, { Enumeration.Affix.Attack, 281 }, { Enumeration.Affix.Defense, 658 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10846 }, { Enumeration.Affix.Attack, 283 }, { Enumeration.Affix.Defense, 663 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10937 }, { Enumeration.Affix.Attack, 286 }, { Enumeration.Affix.Defense, 669 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11026 }, { Enumeration.Affix.Attack, 288 }, { Enumeration.Affix.Defense, 674 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11116 }, { Enumeration.Affix.Attack, 290 }, { Enumeration.Affix.Defense, 680 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11207 }, { Enumeration.Affix.Attack, 293 }, { Enumeration.Affix.Defense, 685 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11297 }, { Enumeration.Affix.Attack, 295 }, { Enumeration.Affix.Defense, 691 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11388 }, { Enumeration.Affix.Attack, 298 }, { Enumeration.Affix.Defense, 696 }, { Enumeration.Affix.EnergyRecharge, 24.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12000 }, { Enumeration.Affix.Attack, 314 }, { Enumeration.Affix.Defense, 734 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12090 }, { Enumeration.Affix.Attack, 316 }, { Enumeration.Affix.Defense, 739 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12181 }, { Enumeration.Affix.Attack, 318 }, { Enumeration.Affix.Defense, 745 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12271 }, { Enumeration.Affix.Attack, 321 }, { Enumeration.Affix.Defense, 750 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12362 }, { Enumeration.Affix.Attack, 323 }, { Enumeration.Affix.Defense, 756 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12452 }, { Enumeration.Affix.Attack, 325 }, { Enumeration.Affix.Defense, 761 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12543 }, { Enumeration.Affix.Attack, 328 }, { Enumeration.Affix.Defense, 767 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12634 }, { Enumeration.Affix.Attack, 330 }, { Enumeration.Affix.Defense, 773 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12725 }, { Enumeration.Affix.Attack, 332 }, { Enumeration.Affix.Defense, 778 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12817 }, { Enumeration.Affix.Attack, 335 }, { Enumeration.Affix.Defense, 784 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12907 }, { Enumeration.Affix.Attack, 337 }, { Enumeration.Affix.Defense, 789 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13365 }, { Enumeration.Affix.Attack, 375 }, { Enumeration.Affix.Defense, 817 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13825 }, { Enumeration.Affix.Attack, 413 }, { Enumeration.Affix.Defense, 845 }, { Enumeration.Affix.EnergyRecharge, 32.0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100308, MaterialConstants06._3060013, MaterialConstants07.G3070501, MaterialConstants04.G3040022),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050013, MaterialConstants04.G3040022, MaterialConstants08.G3080025),
@@ -1242,104 +3019,398 @@ public class CharacterConstantsPage04
         },
         AffixDictionary = new Dictionary<Enumeration.Level, Dictionary<Enumeration.Affix, double>>()
         {
-            { Enumeration.Level.L1, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1049 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 51 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L2, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1136 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 55 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L3, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1223 }, { Enumeration.Affix.Attack, 21 }, { Enumeration.Affix.Defense, 60 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L4, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1311 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 64 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L5, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1398 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L6, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 72 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L7, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1573 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 77 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L8, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1661 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 81 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L9, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1749 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 85 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L10, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1836 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 90 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L11, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1924 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L12, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2012 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 98 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L13, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2100 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L14, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2190 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 107 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L15, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2278 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 111 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L16, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2366 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 115 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L17, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2455 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 120 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L18, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2543 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 124 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L19, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2632 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2720 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 133 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L20P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3619 }, { Enumeration.Affix.Attack, 63 }, { Enumeration.Affix.Defense, 177 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L21, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3708 }, { Enumeration.Affix.Attack, 65 }, { Enumeration.Affix.Defense, 181 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L22, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3798 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 185 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L23, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3887 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 190 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L24, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3976 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 194 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L25, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4065 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 198 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L26, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4155 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 203 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L27, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4244 }, { Enumeration.Affix.Attack, 74 }, { Enumeration.Affix.Defense, 207 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L28, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4333 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 211 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L29, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4424 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 216 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L30, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4513 }, { Enumeration.Affix.Attack, 79 }, { Enumeration.Affix.Defense, 220 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L31, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4603 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 225 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L32, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4693 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 229 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L33, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4783 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L34, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4872 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L35, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4963 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 242 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L36, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5054 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 247 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L37, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5144 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 251 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L38, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5234 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 255 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L39, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5324 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 260 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5416 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L40P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6055 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L41, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6145 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 300 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L42, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6236 }, { Enumeration.Affix.Attack, 109 }, { Enumeration.Affix.Defense, 304 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L43, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6327 }, { Enumeration.Affix.Attack, 110 }, { Enumeration.Affix.Defense, 309 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L44, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6417 }, { Enumeration.Affix.Attack, 112 }, { Enumeration.Affix.Defense, 313 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L45, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6509 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 317 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L46, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6600 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 322 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L47, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6691 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 326 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L48, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6782 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 331 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L49, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6875 }, { Enumeration.Affix.Attack, 120 }, { Enumeration.Affix.Defense, 335 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6966 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 340 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L50P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7818 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 381 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L51, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7909 }, { Enumeration.Affix.Attack, 138 }, { Enumeration.Affix.Defense, 386 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L52, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8001 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L53, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8092 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L54, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8185 }, { Enumeration.Affix.Attack, 142 }, { Enumeration.Affix.Defense, 399 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L55, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8277 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 404 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L56, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8369 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 408 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L57, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8461 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 413 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L58, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8554 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L59, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8646 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 422 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8738 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 426 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L60P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9377 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 457 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L61, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9469 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 462 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L62, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9562 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 466 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L63, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9655 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 471 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L64, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9747 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L65, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9841 }, { Enumeration.Affix.Attack, 171 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L66, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9934 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L67, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10026 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 489 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L68, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10120 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 494 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L69, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10213 }, { Enumeration.Affix.Attack, 178 }, { Enumeration.Affix.Defense, 498 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10306 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 503 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L70P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10945 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 534 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L71, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11038 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 538 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L72, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11133 }, { Enumeration.Affix.Attack, 194 }, { Enumeration.Affix.Defense, 543 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L73, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11226 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 548 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L74, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11319 }, { Enumeration.Affix.Attack, 197 }, { Enumeration.Affix.Defense, 552 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L75, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11414 }, { Enumeration.Affix.Attack, 199 }, { Enumeration.Affix.Defense, 557 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L76, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11507 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 561 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L77, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11602 }, { Enumeration.Affix.Attack, 202 }, { Enumeration.Affix.Defense, 566 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L78, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11696 }, { Enumeration.Affix.Attack, 204 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L79, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11790 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11885 }, { Enumeration.Affix.Attack, 207 }, { Enumeration.Affix.Defense, 580 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L80P, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12524 }, { Enumeration.Affix.Attack, 218 }, { Enumeration.Affix.Defense, 611 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L81, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12618 }, { Enumeration.Affix.Attack, 220 }, { Enumeration.Affix.Defense, 616 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L82, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12712 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 620 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L83, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12807 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 625 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L84, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12901 }, { Enumeration.Affix.Attack, 224 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L85, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12995 }, { Enumeration.Affix.Attack, 226 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L86, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13091 }, { Enumeration.Affix.Attack, 228 }, { Enumeration.Affix.Defense, 639 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L87, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13185 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 643 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L88, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13281 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 648 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L89, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13376 }, { Enumeration.Affix.Attack, 233 }, { Enumeration.Affix.Defense, 653 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L90, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13471 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 657 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L95, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13949 }, { Enumeration.Affix.Attack, 261 }, { Enumeration.Affix.Defense, 680 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
-            { Enumeration.Level.L100, new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 14428 }, { Enumeration.Affix.Attack, 287 }, { Enumeration.Affix.Defense, 704 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, } },
+            {
+                Enumeration.Level.L1,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1049 }, { Enumeration.Affix.Attack, 18 }, { Enumeration.Affix.Defense, 51 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L2,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1136 }, { Enumeration.Affix.Attack, 20 }, { Enumeration.Affix.Defense, 55 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L3,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1223 }, { Enumeration.Affix.Attack, 21 }, { Enumeration.Affix.Defense, 60 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L4,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1311 }, { Enumeration.Affix.Attack, 23 }, { Enumeration.Affix.Defense, 64 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L5,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1398 }, { Enumeration.Affix.Attack, 24 }, { Enumeration.Affix.Defense, 68 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L6,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1486 }, { Enumeration.Affix.Attack, 26 }, { Enumeration.Affix.Defense, 72 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L7,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1573 }, { Enumeration.Affix.Attack, 27 }, { Enumeration.Affix.Defense, 77 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L8,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1661 }, { Enumeration.Affix.Attack, 29 }, { Enumeration.Affix.Defense, 81 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L9,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1749 }, { Enumeration.Affix.Attack, 30 }, { Enumeration.Affix.Defense, 85 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L10,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1836 }, { Enumeration.Affix.Attack, 32 }, { Enumeration.Affix.Defense, 90 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L11,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 1924 }, { Enumeration.Affix.Attack, 33 }, { Enumeration.Affix.Defense, 94 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L12,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2012 }, { Enumeration.Affix.Attack, 35 }, { Enumeration.Affix.Defense, 98 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L13,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2100 }, { Enumeration.Affix.Attack, 37 }, { Enumeration.Affix.Defense, 102 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L14,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2190 }, { Enumeration.Affix.Attack, 38 }, { Enumeration.Affix.Defense, 107 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L15,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2278 }, { Enumeration.Affix.Attack, 40 }, { Enumeration.Affix.Defense, 111 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L16,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2366 }, { Enumeration.Affix.Attack, 41 }, { Enumeration.Affix.Defense, 115 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L17,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2455 }, { Enumeration.Affix.Attack, 43 }, { Enumeration.Affix.Defense, 120 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L18,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2543 }, { Enumeration.Affix.Attack, 44 }, { Enumeration.Affix.Defense, 124 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L19,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2632 }, { Enumeration.Affix.Attack, 46 }, { Enumeration.Affix.Defense, 128 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 2720 }, { Enumeration.Affix.Attack, 47 }, { Enumeration.Affix.Defense, 133 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L20P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3619 }, { Enumeration.Affix.Attack, 63 }, { Enumeration.Affix.Defense, 177 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L21,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3708 }, { Enumeration.Affix.Attack, 65 }, { Enumeration.Affix.Defense, 181 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L22,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3798 }, { Enumeration.Affix.Attack, 66 }, { Enumeration.Affix.Defense, 185 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L23,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3887 }, { Enumeration.Affix.Attack, 68 }, { Enumeration.Affix.Defense, 190 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L24,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 3976 }, { Enumeration.Affix.Attack, 69 }, { Enumeration.Affix.Defense, 194 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L25,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4065 }, { Enumeration.Affix.Attack, 71 }, { Enumeration.Affix.Defense, 198 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L26,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4155 }, { Enumeration.Affix.Attack, 72 }, { Enumeration.Affix.Defense, 203 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L27,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4244 }, { Enumeration.Affix.Attack, 74 }, { Enumeration.Affix.Defense, 207 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L28,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4333 }, { Enumeration.Affix.Attack, 75 }, { Enumeration.Affix.Defense, 211 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L29,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4424 }, { Enumeration.Affix.Attack, 77 }, { Enumeration.Affix.Defense, 216 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L30,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4513 }, { Enumeration.Affix.Attack, 79 }, { Enumeration.Affix.Defense, 220 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L31,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4603 }, { Enumeration.Affix.Attack, 80 }, { Enumeration.Affix.Defense, 225 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L32,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4693 }, { Enumeration.Affix.Attack, 82 }, { Enumeration.Affix.Defense, 229 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L33,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4783 }, { Enumeration.Affix.Attack, 83 }, { Enumeration.Affix.Defense, 233 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L34,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4872 }, { Enumeration.Affix.Attack, 85 }, { Enumeration.Affix.Defense, 238 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L35,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 4963 }, { Enumeration.Affix.Attack, 86 }, { Enumeration.Affix.Defense, 242 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L36,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5054 }, { Enumeration.Affix.Attack, 88 }, { Enumeration.Affix.Defense, 247 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L37,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5144 }, { Enumeration.Affix.Attack, 90 }, { Enumeration.Affix.Defense, 251 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L38,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5234 }, { Enumeration.Affix.Attack, 91 }, { Enumeration.Affix.Defense, 255 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L39,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5324 }, { Enumeration.Affix.Attack, 93 }, { Enumeration.Affix.Defense, 260 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 5416 }, { Enumeration.Affix.Attack, 94 }, { Enumeration.Affix.Defense, 264 }, { Enumeration.Affix.HydroDamage, 0 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L40P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6055 }, { Enumeration.Affix.Attack, 105 }, { Enumeration.Affix.Defense, 295 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L41,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6145 }, { Enumeration.Affix.Attack, 107 }, { Enumeration.Affix.Defense, 300 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L42,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6236 }, { Enumeration.Affix.Attack, 109 }, { Enumeration.Affix.Defense, 304 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L43,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6327 }, { Enumeration.Affix.Attack, 110 }, { Enumeration.Affix.Defense, 309 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L44,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6417 }, { Enumeration.Affix.Attack, 112 }, { Enumeration.Affix.Defense, 313 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L45,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6509 }, { Enumeration.Affix.Attack, 113 }, { Enumeration.Affix.Defense, 317 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L46,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6600 }, { Enumeration.Affix.Attack, 115 }, { Enumeration.Affix.Defense, 322 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L47,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6691 }, { Enumeration.Affix.Attack, 116 }, { Enumeration.Affix.Defense, 326 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L48,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6782 }, { Enumeration.Affix.Attack, 118 }, { Enumeration.Affix.Defense, 331 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L49,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6875 }, { Enumeration.Affix.Attack, 120 }, { Enumeration.Affix.Defense, 335 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 6966 }, { Enumeration.Affix.Attack, 121 }, { Enumeration.Affix.Defense, 340 }, { Enumeration.Affix.HydroDamage, 7.2 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L50P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7818 }, { Enumeration.Affix.Attack, 136 }, { Enumeration.Affix.Defense, 381 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L51,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 7909 }, { Enumeration.Affix.Attack, 138 }, { Enumeration.Affix.Defense, 386 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L52,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8001 }, { Enumeration.Affix.Attack, 139 }, { Enumeration.Affix.Defense, 390 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L53,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8092 }, { Enumeration.Affix.Attack, 141 }, { Enumeration.Affix.Defense, 395 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L54,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8185 }, { Enumeration.Affix.Attack, 142 }, { Enumeration.Affix.Defense, 399 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L55,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8277 }, { Enumeration.Affix.Attack, 144 }, { Enumeration.Affix.Defense, 404 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L56,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8369 }, { Enumeration.Affix.Attack, 146 }, { Enumeration.Affix.Defense, 408 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L57,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8461 }, { Enumeration.Affix.Attack, 147 }, { Enumeration.Affix.Defense, 413 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L58,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8554 }, { Enumeration.Affix.Attack, 149 }, { Enumeration.Affix.Defense, 417 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L59,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8646 }, { Enumeration.Affix.Attack, 150 }, { Enumeration.Affix.Defense, 422 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 8738 }, { Enumeration.Affix.Attack, 152 }, { Enumeration.Affix.Defense, 426 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L60P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9377 }, { Enumeration.Affix.Attack, 163 }, { Enumeration.Affix.Defense, 457 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L61,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9469 }, { Enumeration.Affix.Attack, 165 }, { Enumeration.Affix.Defense, 462 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L62,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9562 }, { Enumeration.Affix.Attack, 166 }, { Enumeration.Affix.Defense, 466 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L63,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9655 }, { Enumeration.Affix.Attack, 168 }, { Enumeration.Affix.Defense, 471 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L64,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9747 }, { Enumeration.Affix.Attack, 170 }, { Enumeration.Affix.Defense, 475 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L65,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9841 }, { Enumeration.Affix.Attack, 171 }, { Enumeration.Affix.Defense, 480 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L66,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 9934 }, { Enumeration.Affix.Attack, 173 }, { Enumeration.Affix.Defense, 485 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L67,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10026 }, { Enumeration.Affix.Attack, 174 }, { Enumeration.Affix.Defense, 489 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L68,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10120 }, { Enumeration.Affix.Attack, 176 }, { Enumeration.Affix.Defense, 494 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L69,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10213 }, { Enumeration.Affix.Attack, 178 }, { Enumeration.Affix.Defense, 498 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10306 }, { Enumeration.Affix.Attack, 179 }, { Enumeration.Affix.Defense, 503 }, { Enumeration.Affix.HydroDamage, 14.4 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L70P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 10945 }, { Enumeration.Affix.Attack, 190 }, { Enumeration.Affix.Defense, 534 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L71,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11038 }, { Enumeration.Affix.Attack, 192 }, { Enumeration.Affix.Defense, 538 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L72,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11133 }, { Enumeration.Affix.Attack, 194 }, { Enumeration.Affix.Defense, 543 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L73,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11226 }, { Enumeration.Affix.Attack, 195 }, { Enumeration.Affix.Defense, 548 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L74,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11319 }, { Enumeration.Affix.Attack, 197 }, { Enumeration.Affix.Defense, 552 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L75,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11414 }, { Enumeration.Affix.Attack, 199 }, { Enumeration.Affix.Defense, 557 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L76,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11507 }, { Enumeration.Affix.Attack, 200 }, { Enumeration.Affix.Defense, 561 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L77,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11602 }, { Enumeration.Affix.Attack, 202 }, { Enumeration.Affix.Defense, 566 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L78,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11696 }, { Enumeration.Affix.Attack, 204 }, { Enumeration.Affix.Defense, 571 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L79,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11790 }, { Enumeration.Affix.Attack, 205 }, { Enumeration.Affix.Defense, 575 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 11885 }, { Enumeration.Affix.Attack, 207 }, { Enumeration.Affix.Defense, 580 }, { Enumeration.Affix.HydroDamage, 21.6 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L80P,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12524 }, { Enumeration.Affix.Attack, 218 }, { Enumeration.Affix.Defense, 611 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L81,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12618 }, { Enumeration.Affix.Attack, 220 }, { Enumeration.Affix.Defense, 616 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L82,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12712 }, { Enumeration.Affix.Attack, 221 }, { Enumeration.Affix.Defense, 620 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L83,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12807 }, { Enumeration.Affix.Attack, 223 }, { Enumeration.Affix.Defense, 625 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L84,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12901 }, { Enumeration.Affix.Attack, 224 }, { Enumeration.Affix.Defense, 629 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L85,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 12995 }, { Enumeration.Affix.Attack, 226 }, { Enumeration.Affix.Defense, 634 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L86,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13091 }, { Enumeration.Affix.Attack, 228 }, { Enumeration.Affix.Defense, 639 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L87,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13185 }, { Enumeration.Affix.Attack, 229 }, { Enumeration.Affix.Defense, 643 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L88,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13281 }, { Enumeration.Affix.Attack, 231 }, { Enumeration.Affix.Defense, 648 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L89,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13376 }, { Enumeration.Affix.Attack, 233 }, { Enumeration.Affix.Defense, 653 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L90,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13471 }, { Enumeration.Affix.Attack, 234 }, { Enumeration.Affix.Defense, 657 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L95,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 13949 }, { Enumeration.Affix.Attack, 261 }, { Enumeration.Affix.Defense, 680 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
+            {
+                Enumeration.Level.L100,
+                new Dictionary<Enumeration.Affix, double>() { { Enumeration.Affix.Health, 14428 }, { Enumeration.Affix.Attack, 287 }, { Enumeration.Affix.Defense, 704 }, { Enumeration.Affix.HydroDamage, 28.8 }, { Enumeration.Affix.CriticalDamage, 50.0 }, { Enumeration.Affix.CriticalRate, 5.0 }, }
+            },
         },
         LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._3100307, MaterialConstants06._3060012, MaterialConstants07.G3070301, MaterialConstants04.G3040025),
         Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._3050014, MaterialConstants04.G3040025, MaterialConstants08.G3080019),

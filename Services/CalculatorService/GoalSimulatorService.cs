@@ -33,6 +33,7 @@ public class GoalSimulatorService
         }
 
         _ignoreMaterial.Add(3080000);
+        _ignoreMaterial.Add(3020004);
 
         _materialNumMap = AutoCalculateConstants.MaterialMap.Values.ToDictionary(m => m.Rid, m => (double)App.BackpackMaterialConfigManagerInstance!.GetMaterialNumber(m.Rid));
         foreach (int characterId in App.BackpackCharacterConfigManagerInstance!.Configuration.CharacterConfig.Keys)
@@ -541,7 +542,14 @@ public class GoalSimulatorService
         while (mergedNum < num)
         {
             // 记录缺的材料
-            if (!_lackMaterialList.Contains(materialRid)) _lackMaterialList.Add(materialRid);
+            if (!_lackMaterialList.Contains(materialRid))
+            {
+                foreach (int m in relativeMaterialList)
+                {
+                    if (!_lackMaterialList.Contains(m)) _lackMaterialList.Add(m);
+                }
+            }
+
             // 尝试打相应秘境直到满足
             if (_ignoreMaterial.Contains(materialRid))
             {
@@ -1123,7 +1131,7 @@ public class GoalSimulatorService
                         bool isInvolved = false;
                         foreach (MaterialPairModel mpm in thisDungeonModel.DropMaterialList)
                         {
-                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid) && !materialExtraInfoMap[mpm.MaterialModel.Rid].IsSatisfy) isInvolved = true;
+                            if (thisItemMaterials.Contains(mpm.MaterialModel!.Rid)) isInvolved = true;
                         }
 
                         if (isInvolved) thisDungeonItemList.Add(item);

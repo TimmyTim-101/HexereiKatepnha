@@ -2197,7 +2197,7 @@ public static class DungeonConstants
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050042, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants05._3050043, 0.8),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
-            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterLevelUp1Rate[3]),
         ])
     };

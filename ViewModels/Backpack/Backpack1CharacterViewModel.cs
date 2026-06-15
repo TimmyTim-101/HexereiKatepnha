@@ -167,7 +167,9 @@ namespace HexereiKatepnha.ViewModels.Backpack
 
             if (IsHideLowLevelCharacter)
             {
-                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.Constellation != 0 || c.SubExp != 0;
+                bool flag = c.CharacterConfigModel.CharacterLevel != Enumeration.Level.L1 || c.CharacterConfigModel.CharacterLevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentALevelGoal != Enumeration.Level.L1 ||
+                            c.CharacterConfigModel.TalentELevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentELevelGoal != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevel != Enumeration.Level.L1 || c.CharacterConfigModel.TalentQLevelGoal != Enumeration.Level.L1 ||
+                            c.CharacterConfigModel.Constellation != 0 || c.SubExp != 0;
                 isNotHide = flag;
             }
 

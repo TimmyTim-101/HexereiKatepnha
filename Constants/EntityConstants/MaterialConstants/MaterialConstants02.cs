@@ -37,4 +37,15 @@ public static class MaterialConstants02
         MaterialType = Enumeration.MaterialType.CharacterExp,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104001.png"
     };
+
+    public static readonly MaterialModel _3020004 = new()
+    {
+        Rid = 3020004,
+        Vid = 104300,
+        Name = "无主的命星",
+        GoodKey = "MasterlessStellaFortuna",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.Constellation,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104300.png"
+    };
 }

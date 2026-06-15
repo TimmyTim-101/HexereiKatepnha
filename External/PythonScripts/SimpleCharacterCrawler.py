@@ -277,7 +277,7 @@ def print_to_code(data):
     print('Rid = xxxx,')
     print('Vid = {},'.format(data['Vid']))
     print('Name = "{}",'.format(data['name']))
-    print('GoodName = xxxx,')
+    print('GoodKey = xxxx,')
     print('Star = {},'.format(data['rarity']))
     print('ImagePath = \"/Resources/Images/Character/UI_AvatarIcon_{}.png\",'.format(data['ename']))
     print('ElementType = Enumeration.ElementType.', end='')
@@ -310,7 +310,7 @@ def print_to_code(data):
     print('{{2, new ImageDescriptionPairModel() {{ ImagePath = \"/Resources/Images/CharacterSkillTalent/{}\", Description = \"{}\" }} }},'.format(data['skill_s_img'], data['skill_s']))
     print('{{3, new ImageDescriptionPairModel() {{ ImagePath = \"/Resources/Images/CharacterSkillTalent/{}\", Description = \"{}\" }} }},'.format(data['skill_e_img'], data['skill_e']))
     print('},')
-    print('Ascension = new Dictionary<int, ImageDescriptionPairModel>(){')
+    print('Constellation = new Dictionary<int, ImageDescriptionPairModel>(){')
     print('{{1, new ImageDescriptionPairModel() {{ ImagePath = \"/Resources/Images/CharacterSkillTalent/{}\", Description = \"{}\" }} }},'.format(data['a1_img'], data['a1_str']))
     print('{{2, new ImageDescriptionPairModel() {{ ImagePath = \"/Resources/Images/CharacterSkillTalent/{}\", Description = \"{}\" }} }},'.format(data['a2_img'], data['a2_str']))
     print('{{3, new ImageDescriptionPairModel() {{ ImagePath = \"/Resources/Images/CharacterSkillTalent/{}\", Description = \"{}\" }} }},'.format(data['a3_img'], data['a3_str']))
@@ -343,10 +343,10 @@ def print_to_code(data):
         print(this_str)
         pass
     print('},')
-    print('LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants._310xxxx, MaterialConstants._306xxxx, MaterialConstants.{}, MaterialConstants.G304xxxx),'.format(element_material_group_name[data['element']]))
-    print('Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._305xxxx, MaterialConstants.G304xxxx, MaterialConstants.G308xxxx),')
-    print('Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._305xxxx, MaterialConstants.G304xxxx, MaterialConstants.G308xxxx),')
-    print('Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants._305xxxx, MaterialConstants.G304xxxx, MaterialConstants.G308xxxx),')
+    print('LevelUpMaterials = CharacterLevelUpConstants.GetCharacterLevelUpMaterial(MaterialConstants10._310xxxx, MaterialConstants06._306xxxx, MaterialConstants07.{}, MaterialConstants04.G304xxxx),'.format(element_material_group_name[data['element']]))
+    print('Talent1Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._305xxxx, MaterialConstants04.G304xxxx, MaterialConstants08.G308xxxx),')
+    print('Talent2Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._305xxxx, MaterialConstants04.G304xxxx, MaterialConstants08.G308xxxx),')
+    print('Talent3Materials = CharacterLevelUpConstants.GetCharacterTalentMaterial(MaterialConstants05._305xxxx, MaterialConstants04.G304xxxx, MaterialConstants08.G308xxxx),')
     print('};')
     pass
 
@@ -375,7 +375,7 @@ def process_one_character(cid):
 if __name__ == '__main__':
     print()
     print()
-    for cid in range(10000130, 10000131):
+    for cid in range(10000129, 10000132):
         if cid == 10000117:
             continue
             pass

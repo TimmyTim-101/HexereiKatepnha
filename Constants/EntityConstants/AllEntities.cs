@@ -95,7 +95,7 @@ public static class AllEntities
     public static readonly List<MaterialModel> AllMaterialMora = [MaterialConstants01._3010001];
 
     // 302 - 角色经验素材
-    public static readonly List<MaterialModel> AllMaterialCharacterExp = [MaterialConstants02._3020001, MaterialConstants02._3020002, MaterialConstants02._3020003];
+    public static readonly List<MaterialModel> AllMaterialCharacterExp = [MaterialConstants02._3020001, MaterialConstants02._3020002, MaterialConstants02._3020003, MaterialConstants02._3020004];
 
     // 303 - 角色与武器培养素材_234
     public static readonly List<MaterialModel> AllMaterialCharacterWeaponEnhancement1 =

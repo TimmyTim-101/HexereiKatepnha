@@ -57,25 +57,29 @@
                                 <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
                                     <Run Text="向着星辰与深渊～我不是凯瑟琳，我是"></Run>
                                     <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
-                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run>
+                                    <Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
                                     <Run Text="，一个原神养成小助手。"></Run>
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
                                     <Run Text="不知道该干点啥？有一堆角色武器要养？材料我该合成多少打多少？要多久才能攒够材料？圣遗物都是什么鬼？"></Run>
                                     <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
-                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run>
+                                    <Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
                                     <Run Text="帮您忙！"></Run>
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
                                     <Run Text="在这里，把你的要养的角色武器还有背包里的东西都告诉我，"></Run>
                                     <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
-                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run>
+                                    <Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
                                     <Run Text="就会自动帮你计算出所缺材料数量，还可以给出养成顺序。"></Run>
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource MyTextBlock}" TextWrapping="Wrap" Margin="5">
                                     <Run Text="有了"></Run>
                                     <Run Text="魔" Foreground="#548DC7"></Run><Run Text="导" Foreground="#658EC3"></Run>
-                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run><Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
+                                    <Run Text="K" Foreground="#768FBF"></Run><Run Text="a" Foreground="#8790BB"></Run><Run Text="t" Foreground="#9891B7"></Run><Run Text="e" Foreground="#A992B3"></Run><Run Text="p" Foreground="#BA93AF"></Run><Run Text="и" Foreground="#CB94AB"></Run>
+                                    <Run Text="H" Foreground="#DC95A7"></Run><Run Text="a" Foreground="#ED96A3"></Run>
                                     <Run Text="，你可有事干了！"></Run>
                                 </TextBlock>
                             </StackPanel>

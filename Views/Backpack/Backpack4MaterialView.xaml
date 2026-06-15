@@ -43,7 +43,9 @@
                         </Viewbox>
                     </Border>
                     <Viewbox Grid.Row="3" Stretch="Uniform" StretchDirection="DownOnly" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox" TextChanged="NumberTextChanged"></TextBox>
+                        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}" FontSize="20" TextAlignment="Center" MinWidth="95" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewTextInput="NumberOnlyTextBox"
+                                 TextChanged="NumberTextChanged">
+                        </TextBox>
                     </Viewbox>
                     <UniformGrid Grid.Row="4" Rows="1">
                         <Button Content="-" Style="{StaticResource TextButton}" Margin="0,2" Command="{Binding DataContext.MinusOneMaterialCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"></Button>

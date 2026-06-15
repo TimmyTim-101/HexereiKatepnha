@@ -6389,6 +6389,8 @@
         <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Prune_01.png" />
         <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_Prune_02.png" />
         <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Prune_02.png" />
+        <None Remove="Resources\Images\Materials\UI_ItemIcon_104300.png" />
+        <Resource Include="Resources\Images\Materials\UI_ItemIcon_104300.png" />
     </ItemGroup>
 
     <ItemGroup>

@@ -156,8 +156,8 @@ public static class CharacterLevelUpConstants
             { Enumeration.Level.L87, [new MaterialPairModel() { MaterialModel = MaterialConstants02._3020001, DropNum = 434425 }] },
             { Enumeration.Level.L88, [new MaterialPairModel() { MaterialModel = MaterialConstants02._3020001, DropNum = 487625 }] },
             { Enumeration.Level.L89, [new MaterialPairModel() { MaterialModel = MaterialConstants02._3020001, DropNum = 547200 }] },
-            { Enumeration.Level.L90, [] }, // todo 无主的命星材料
-            { Enumeration.Level.L95, [] },
+            { Enumeration.Level.L90, [new MaterialPairModel() { MaterialModel = MaterialConstants02._3020004, DropNum = 1 }] },
+            { Enumeration.Level.L95, [new MaterialPairModel() { MaterialModel = MaterialConstants02._3020004, DropNum = 2 }] },
         };
     }
 
