@@ -10,6 +10,7 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
+        CharacterConstantsPage12._1010116,
         CharacterConstantsPage12._1010115, CharacterConstantsPage12._1010114, CharacterConstantsPage12._1010113, CharacterConstantsPage12._1010112, CharacterConstantsPage12._1010111,
         CharacterConstantsPage11._1010110, CharacterConstantsPage11._1010109, CharacterConstantsPage11._1010108, CharacterConstantsPage11._1010107, CharacterConstantsPage11._1010106,
         CharacterConstantsPage11._1010105, CharacterConstantsPage11._1010104, CharacterConstantsPage11._1010103, CharacterConstantsPage11._1010102, CharacterConstantsPage11._1010101,
@@ -57,7 +58,7 @@ public static class AllEntities
         Claymore4Constants._2020417, Claymore4Constants._2020418, Claymore4Constants._2020419, Claymore4Constants._2020420, Claymore4Constants._2020421, Claymore4Constants._2020422, Claymore4Constants._2020423, Claymore4Constants._2020424,
         Claymore4Constants._2020425,
         Claymore5Constants._2020501, Claymore5Constants._2020502, Claymore5Constants._2020503, Claymore5Constants._2020504, Claymore5Constants._2020505, Claymore5Constants._2020506, Claymore5Constants._2020507, Claymore5Constants._2020508,
-        Claymore5Constants._2020509, Claymore5Constants._2020510,
+        Claymore5Constants._2020509, Claymore5Constants._2020510, Claymore5Constants._2020511, 
         // 203 - 长柄武器
         Pole123Constants._2030101,
         Pole123Constants._2030201,
@@ -111,7 +112,7 @@ public static class AllEntities
         MaterialConstants03._3030065, MaterialConstants03._3030066, MaterialConstants03._3030067, MaterialConstants03._3030068, MaterialConstants03._3030069, MaterialConstants03._3030070, MaterialConstants03._3030071, MaterialConstants03._3030072,
         MaterialConstants03._3030073, MaterialConstants03._3030074, MaterialConstants03._3030075, MaterialConstants03._3030076, MaterialConstants03._3030077, MaterialConstants03._3030078, MaterialConstants03._3030079, MaterialConstants03._3030080,
         MaterialConstants03._3030081, MaterialConstants03._3030082, MaterialConstants03._3030083, MaterialConstants03._3030084, MaterialConstants03._3030085, MaterialConstants03._3030086, MaterialConstants03._3030087, MaterialConstants03._3030088,
-        MaterialConstants03._3030089, MaterialConstants03._3030090,
+        MaterialConstants03._3030089, MaterialConstants03._3030090, MaterialConstants03._3030091, MaterialConstants03._3030092, MaterialConstants03._3030093, 
     ];
 
     // 304 - 角色与武器培养素材_123
@@ -244,7 +245,7 @@ public static class AllEntities
         DungeonConstants._4040009, DungeonConstants._4040010, DungeonConstants._4040011, DungeonConstants._4040012, DungeonConstants._4040013, DungeonConstants._4040014, DungeonConstants._4040015, DungeonConstants._4040016,
         DungeonConstants._4040017, DungeonConstants._4040018, DungeonConstants._4040019, DungeonConstants._4040020, DungeonConstants._4040021, DungeonConstants._4040022, DungeonConstants._4040023, DungeonConstants._4040024,
         DungeonConstants._4040025, DungeonConstants._4040026, DungeonConstants._4040027, DungeonConstants._4040028, DungeonConstants._4040029, DungeonConstants._4040030, DungeonConstants._4040031, DungeonConstants._4040032,
-        DungeonConstants._4040033,
+        DungeonConstants._4040033, DungeonConstants._4040034, 
     ];
 
     // 405 - 40体力BOSS
@@ -314,7 +315,7 @@ public static class AllEntities
         MaterialConstants03.G3030001, MaterialConstants03.G3030004, MaterialConstants03.G3030007, MaterialConstants03.G3030010, MaterialConstants03.G3030013, MaterialConstants03.G3030016, MaterialConstants03.G3030019, MaterialConstants03.G3030022,
         MaterialConstants03.G3030025, MaterialConstants03.G3030028, MaterialConstants03.G3030031, MaterialConstants03.G3030034, MaterialConstants03.G3030037, MaterialConstants03.G3030040, MaterialConstants03.G3030043, MaterialConstants03.G3030046,
         MaterialConstants03.G3030049, MaterialConstants03.G3030052, MaterialConstants03.G3030055, MaterialConstants03.G3030058, MaterialConstants03.G3030061, MaterialConstants03.G3030064, MaterialConstants03.G3030067, MaterialConstants03.G3030070,
-        MaterialConstants03.G3030073, MaterialConstants03.G3030076, MaterialConstants03.G3030079, MaterialConstants03.G3030082, MaterialConstants03.G3030085, MaterialConstants03.G3030088,
+        MaterialConstants03.G3030073, MaterialConstants03.G3030076, MaterialConstants03.G3030079, MaterialConstants03.G3030082, MaterialConstants03.G3030085, MaterialConstants03.G3030088, MaterialConstants03.G3030091, 
         // 304 - 角色与武器培养素材_123
         MaterialConstants04.G3040001, MaterialConstants04.G3040004, MaterialConstants04.G3040007, MaterialConstants04.G3040010, MaterialConstants04.G3040013, MaterialConstants04.G3040016, MaterialConstants04.G3040019, MaterialConstants04.G3040022,
         MaterialConstants04.G3040025, MaterialConstants04.G3040028, MaterialConstants04.G3040031, MaterialConstants04.G3040034, MaterialConstants04.G3040037, MaterialConstants04.G3040040, MaterialConstants04.G3040043, MaterialConstants04.G3040046,

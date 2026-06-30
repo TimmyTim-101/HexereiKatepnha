@@ -1054,4 +1054,39 @@ public static class MaterialConstants03
     };
 
     public static readonly MaterialGroupModel G3030088 = new([_3030088, _3030089, _3030090]);
+
+    public static readonly MaterialModel _3030091 = new()
+    {
+        Rid = 3030091,
+        Vid = 112145,
+        Name = "无秽的月铁",
+        GoodKey = "UnblemishedLunarIron",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112145.png"
+    };
+
+    public static readonly MaterialModel _3030092 = new()
+    {
+        Rid = 3030092,
+        Vid = 112144,
+        Name = "空竭的月铁",
+        GoodKey = "DepletedLunarIron",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112144.png"
+    };
+
+    public static readonly MaterialModel _3030093 = new()
+    {
+        Rid = 3030093,
+        Vid = 112143,
+        Name = "残损的月铁",
+        GoodKey = "FracturedLunarIron",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112143.png"
+    };
+
+    public static readonly MaterialGroupModel G3030091 = new([_3030091, _3030092, _3030093]);
 }

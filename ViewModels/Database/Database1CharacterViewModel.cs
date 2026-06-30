@@ -66,6 +66,7 @@ namespace HexereiKatepnha.ViewModels.Database
                     .OrderBy(m => m!.Rid)!;
                 foreach (MaterialModel p in uniqueMaterials)
                 {
+                    if (p.Rid == 3020004) continue;
                     DungeonDropItemModel thisDropModel = new DungeonDropItemModel
                     {
                         MaterialName = p.Name,

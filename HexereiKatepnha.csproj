@@ -6,6 +6,9 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <PublishSingleFile>true</PublishSingleFile>
+        <SelfContained>true</SelfContained>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <ApplicationIcon>Resources\Icons\icon-512.ico</ApplicationIcon>
     </PropertyGroup>
 
@@ -6391,6 +6394,44 @@
         <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_Prune_02.png" />
         <None Remove="Resources\Images\Materials\UI_ItemIcon_104300.png" />
         <Resource Include="Resources\Images\Materials\UI_ItemIcon_104300.png" />
+        <None Remove="Resources\Images\Materials\UI_ItemIcon_112143.png" />
+        <Resource Include="Resources\Images\Materials\UI_ItemIcon_112143.png" />
+        <None Remove="Resources\Images\Materials\UI_ItemIcon_112144.png" />
+        <Resource Include="Resources\Images\Materials\UI_ItemIcon_112144.png" />
+        <None Remove="Resources\Images\Materials\UI_ItemIcon_112145.png" />
+        <Resource Include="Resources\Images\Materials\UI_ItemIcon_112145.png" />
+        <None Remove="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Monitor_01.png" />
+        <Resource Include="Resources\Images\DungeonAndMonster\UI_MonsterIcon_Monitor_01.png" />
+        <None Remove="Resources\Images\Character\UI_AvatarIcon_MarionetteNew.png" />
+        <Resource Include="Resources\Images\Character\UI_AvatarIcon_MarionetteNew.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\Skill_E_MarionetteNew_01.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\Skill_E_MarionetteNew_01.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\Skill_S_MarionetteNew_01.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\Skill_S_MarionetteNew_01.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_01.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_01.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_02.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_02.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_03.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_03.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_04.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_04.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_05.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_05.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_06.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_06.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_07.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_07.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_08.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_S_MarionetteNew_08.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_MarionetteNew_01.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_MarionetteNew_01.png" />
+        <None Remove="Resources\Images\CharacterSkillTalent\UI_Talent_U_MarionetteNew_02.png" />
+        <Resource Include="Resources\Images\CharacterSkillTalent\UI_Talent_U_MarionetteNew_02.png" />
+        <None Remove="Resources\Images\Weapon\UI_EquipIcon_Claymore_CrystallineSword.png" />
+        <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_CrystallineSword.png" />
+        <None Remove="Resources\Images\Weapon\UI_EquipIcon_Claymore_CrystallineSword_Awaken.png" />
+        <Resource Include="Resources\Images\Weapon\UI_EquipIcon_Claymore_CrystallineSword_Awaken.png" />
     </ItemGroup>
 
     <ItemGroup>

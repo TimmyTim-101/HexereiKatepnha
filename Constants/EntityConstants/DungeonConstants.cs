@@ -640,6 +640,15 @@ public static class DungeonConstants
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030088, [1, 1, 1])
     };
 
+    public static readonly DungeonModel _4040034 = new()
+    {
+        Rid = 4040034,
+        Name = "先驱秘源统辖阵列",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Monitor_01.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030091, [1, 1, 1])
+    };
+
     // 405 - 40体力BOSS
     public static readonly DungeonModel _4050001 = new()
     {

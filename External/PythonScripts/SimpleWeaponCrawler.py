@@ -345,7 +345,7 @@ def print_to_code(data):
 
 
 if __name__ == '__main__':
-    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/13517/disaster-and-remorse"
+    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/12516/a-teaspoon-of-transcendence"
     table = crawl_for_one_weapon(source_webpage)
     for k in table.keys():
         print(k, end=" -- ")
