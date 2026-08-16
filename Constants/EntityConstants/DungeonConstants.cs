@@ -138,6 +138,21 @@ public static class DungeonConstants
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100703, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100704, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100705, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100706, DropNum = 1 },
+        ]
+    };
+
+    public static readonly DungeonModel _4010008 = new()
+    {
+        Rid = 4010008,
+        Name = "至冬区域特产",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_LoadingPic_Snezhnaya.png",
+        DungeonType = Enumeration.DungeonType.LocalSpecialty,
+        DropMaterialList =
+        [
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100801, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100802, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100803, DropNum = 1 },
         ]
     };
 
@@ -331,6 +346,24 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Fatuimecha_CoreA_MoveB_AttackA_Fire.png",
         DungeonType = Enumeration.DungeonType.Easy,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040046, [1, 1, 1])
+    };
+
+    public static readonly DungeonModel _4030018 = new()
+    {
+        Rid = 4030018,
+        Name = "肌生晶石的妖精",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Human_Girl_Vila_Glaive.png",
+        DungeonType = Enumeration.DungeonType.Easy,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040052, [1, 1, 1])
+    };
+
+    public static readonly DungeonModel _4030019 = new()
+    {
+        Rid = 4030019,
+        Name = "异种合成魔兽",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Chimera_BeetleLion.png",
+        DungeonType = Enumeration.DungeonType.Easy,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040055, [1, 1, 1])
     };
 
     // 404 - 精英怪物
@@ -647,6 +680,30 @@ public static class DungeonConstants
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Monitor_01.png",
         DungeonType = Enumeration.DungeonType.Elite,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030091, [1, 1, 1])
+    };
+
+    public static readonly DungeonModel _4040035 = new()
+    {
+        Rid = 4040035,
+        Name = "兽怪暴徒",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Vukodlak_Strong_NoWeapon.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030094, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040052, [1, 1, 1]),
+        ])
+    };
+
+    public static readonly DungeonModel _4040036 = new()
+    {
+        Rid = 4040036,
+        Name = "荒野树妖",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Leshy_Mature_01.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030097, [1, 1, 1]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040052, [1, 1, 1]),
+        ])
     };
 
     // 405 - 40体力BOSS
@@ -1243,6 +1300,33 @@ public static class DungeonConstants
         ])
     };
 
+    public static readonly DungeonModel _4050045 = new()
+    {
+        Rid = 4050045,
+        Name = "不灭衍生造物",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Zharptitsa_02.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060046, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070201, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
+    public static readonly DungeonModel _4050046 = new()
+    {
+        Rid = 4050046,
+        Name = "嵌合翼骏狮",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Chimera_Manticore.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060047, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070601, FigureConstants.MaterialCharacterAscensionRate[2]),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070501, FigureConstants.MaterialCharacterAscensionRate[2]),
+        ])
+    };
+
     // 406 - 圣遗物
     public static readonly DungeonModel _4060001 = new()
     {
@@ -1506,7 +1590,7 @@ public static class DungeonConstants
 
     public static readonly DungeonModel _4060021 = new()
     {
-        Rid = 4060020,
+        Rid = 4060021,
         Name = "山风的荆冕",
         ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_MDDungeon_Cycle05.png",
         Cost = 20,
@@ -1514,6 +1598,19 @@ public static class DungeonConstants
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
             MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._560),
             MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._561),
+        ])
+    };
+
+    public static readonly DungeonModel _4060022 = new()
+    {
+        Rid = 4060022,
+        Name = "逆悬的冰河",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_01.png",
+        Cost = 20,
+        DungeonType = Enumeration.DungeonType.Artifact,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._562),
+            MaterialPairModelTools.GetMaterialPairList(ArtifactConstants._563),
         ])
     };
 
@@ -1749,6 +1846,39 @@ public static class DungeonConstants
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090081, FigureConstants.MaterialWeaponAscensionRate)
     };
 
+    public static readonly DungeonModel _4070022 = new()
+    {
+        Rid = 4070022,
+        Name = "妄念的创痕·铸铁 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_02.png",
+        Cost = 20,
+        Time = 1,
+        DungeonType = Enumeration.DungeonType.WeaponAscension,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090085, FigureConstants.MaterialWeaponAscensionRate)
+    };
+
+    public static readonly DungeonModel _4070023 = new()
+    {
+        Rid = 4070023,
+        Name = "妄念的创痕·链轨 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_02.png",
+        Cost = 20,
+        Time = 2,
+        DungeonType = Enumeration.DungeonType.WeaponAscension,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090089, FigureConstants.MaterialWeaponAscensionRate)
+    };
+
+    public static readonly DungeonModel _4070024 = new()
+    {
+        Rid = 4070024,
+        Name = "妄念的创痕·断钢 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_02.png",
+        Cost = 20,
+        Time = 3,
+        DungeonType = Enumeration.DungeonType.WeaponAscension,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants09.G3090093, FigureConstants.MaterialWeaponAscensionRate)
+    };
+
     // 408 - 天赋
     public static readonly DungeonModel _4080001 = new()
     {
@@ -1979,6 +2109,39 @@ public static class DungeonConstants
         Time = 3,
         DungeonType = Enumeration.DungeonType.CharacterTalent,
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080061, FigureConstants.MaterialCharacterTalentRate)
+    };
+
+    public static readonly DungeonModel _4080022 = new()
+    {
+        Rid = 4080022,
+        Name = "荒坠的圣迹·默想 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_03.png",
+        Cost = 20,
+        Time = 1,
+        DungeonType = Enumeration.DungeonType.CharacterTalent,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080064, FigureConstants.MaterialCharacterTalentRate)
+    };
+
+    public static readonly DungeonModel _4080023 = new()
+    {
+        Rid = 4080023,
+        Name = "荒坠的圣迹·隐修 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_03.png",
+        Cost = 20,
+        Time = 2,
+        DungeonType = Enumeration.DungeonType.CharacterTalent,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080067, FigureConstants.MaterialCharacterTalentRate)
+    };
+
+    public static readonly DungeonModel _4080024 = new()
+    {
+        Rid = 4080024,
+        Name = "荒坠的圣迹·共观 IV",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_DungeonPic_ZDCircle_03.png",
+        Cost = 20,
+        Time = 3,
+        DungeonType = Enumeration.DungeonType.CharacterTalent,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants08.G3080070, FigureConstants.MaterialCharacterTalentRate)
     };
 
     // 409 - 60体力BOSS

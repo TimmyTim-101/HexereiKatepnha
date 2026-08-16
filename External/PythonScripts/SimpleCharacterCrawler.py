@@ -375,7 +375,7 @@ def process_one_character(cid):
 if __name__ == '__main__':
     print()
     print()
-    for cid in range(10000133, 10000134):
+    for cid in range(10000148, 10000151):
         if cid == 10000117:
             continue
             pass

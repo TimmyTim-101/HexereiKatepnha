@@ -631,4 +631,48 @@ public class MaterialConstants10
         MaterialType = Enumeration.MaterialType.LocalSpecialty,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101269.png"
     };
+
+    public static readonly MaterialModel _3100706 = new()
+    {
+        Rid = 3100706,
+        Vid = 101270,
+        Name = "凝月泪滴",
+        GoodKey = "TeardropOfTheMoon",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101270.png"
+    };
+
+    public static readonly MaterialModel _3100801 = new()
+    {
+        Rid = 3100801,
+        Vid = 101275,
+        Name = "霜仙花",
+        GoodKey = "FrostfairyFlower",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101275.png"
+    };
+
+    public static readonly MaterialModel _3100802 = new()
+    {
+        Rid = 3100802,
+        Vid = 101276,
+        Name = "植绒草",
+        GoodKey = "Flockingweed",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101276.png"
+    };
+
+    public static readonly MaterialModel _3100803 = new()
+    {
+        Rid = 3100803,
+        Vid = 101277,
+        Name = "金蕨",
+        GoodKey = "GoldenFern",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101277.png"
+    };
 }

@@ -599,4 +599,74 @@ public class MaterialConstants04
     };
 
     public static readonly MaterialGroupModel G3040049 = new([_3040049, _3040050, _3040051]);
+
+    public static readonly MaterialModel _3040052 = new()
+    {
+        Rid = 3040052,
+        Vid = 112148,
+        Name = "幻造晶鳞石",
+        GoodKey = "EtherealCrystalscaleStone",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112148.png"
+    };
+
+    public static readonly MaterialModel _3040053 = new()
+    {
+        Rid = 3040053,
+        Vid = 112147,
+        Name = "幻造裂晶",
+        GoodKey = "EtherealCrystal",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112147.png"
+    };
+
+    public static readonly MaterialModel _3040054 = new()
+    {
+        Rid = 3040054,
+        Vid = 112146,
+        Name = "幻造萤屑",
+        GoodKey = "EtherealGlimmershard",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112146.png"
+    };
+
+    public static readonly MaterialGroupModel G3040052 = new([_3040052, _3040053, _3040054]);
+
+    public static readonly MaterialModel _3040055 = new()
+    {
+        Rid = 3040055,
+        Vid = 112151,
+        Name = "源生嵌合体",
+        GoodKey = "PrimeChimericNexus",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112151.png"
+    };
+
+    public static readonly MaterialModel _3040056 = new()
+    {
+        Rid = 3040056,
+        Vid = 112150,
+        Name = "并生嵌合胞",
+        GoodKey = "SymbioticChimericNucleus",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112150.png"
+    };
+
+    public static readonly MaterialModel _3040057 = new()
+    {
+        Rid = 3040057,
+        Vid = 112149,
+        Name = "嵌合种",
+        GoodKey = "ChimericCore",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112149.png"
+    };
+
+    public static readonly MaterialGroupModel G3040055 = new([_3040055, _3040056, _3040057]);
 }

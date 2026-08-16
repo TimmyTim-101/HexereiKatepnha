@@ -1089,4 +1089,74 @@ public static class MaterialConstants03
     };
 
     public static readonly MaterialGroupModel G3030091 = new([_3030091, _3030092, _3030093]);
+
+    public static readonly MaterialModel _3030094 = new()
+    {
+        Rid = 3030094,
+        Vid = 112154,
+        Name = "沉积增生物",
+        GoodKey = "AccretedGrowth",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112154.png"
+    };
+
+    public static readonly MaterialModel _3030095 = new()
+    {
+        Rid = 3030095,
+        Vid = 112153,
+        Name = "沉积结块",
+        GoodKey = "AccretedMass",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112153.png"
+    };
+
+    public static readonly MaterialModel _3030096 = new()
+    {
+        Rid = 3030096,
+        Vid = 112152,
+        Name = "沉积残片",
+        GoodKey = "AccretedFragment",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112152.png"
+    };
+
+    public static readonly MaterialGroupModel G3030094 = new([_3030094, _3030095, _3030096]);
+
+    public static readonly MaterialModel _3030097 = new()
+    {
+        Rid = 3030097,
+        Vid = 112157,
+        Name = "灵生盘枝心",
+        GoodKey = "CoiledCoreOfLife",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112157.png"
+    };
+
+    public static readonly MaterialModel _3030098 = new()
+    {
+        Rid = 3030098,
+        Vid = 112156,
+        Name = "灵生分蘖节",
+        GoodKey = "SproutNodeOfLife",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112156.png"
+    };
+
+    public static readonly MaterialModel _3030099 = new()
+    {
+        Rid = 3030099,
+        Vid = 112155,
+        Name = "灵生空根",
+        GoodKey = "HollowRootOfLife",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112155.png"
+    };
+
+    public static readonly MaterialGroupModel G3030097 = new([_3030097, _3030098, _3030099]);
 }

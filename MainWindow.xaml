@@ -9,7 +9,7 @@
         Title="魔导Katep&#x438;Ha" Height="1080" Width="1920"
         Background="{DynamicResource GlobalBackColor}"
         WindowStartupLocation="CenterScreen"
-        Icon="Resources/Icons/Icon-maskable-512.png"
+        Icon="/Resources/Icons/icon-512.png"
         FontFamily="{StaticResource MyFont}">
     <Grid>
         <Grid.ColumnDefinitions>

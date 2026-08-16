@@ -750,4 +750,109 @@ public class MaterialConstants08
     };
 
     public static readonly MaterialGroupModel G3080061 = new([_3080061, _3080062, _3080063]);
+
+    public static readonly MaterialModel _3080064 = new()
+    {
+        Rid = 3080064,
+        Vid = 104367,
+        Name = "「慈爱」的哲学",
+        GoodKey = "PhilosophiesOfCharity",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104367.png"
+    };
+
+    public static readonly MaterialModel _3080065 = new()
+    {
+        Rid = 3080065,
+        Vid = 104366,
+        Name = "「慈爱」的指引",
+        GoodKey = "GuideToCharity",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104366.png"
+    };
+
+    public static readonly MaterialModel _3080066 = new()
+    {
+        Rid = 3080066,
+        Vid = 104365,
+        Name = "「慈爱」的教导",
+        GoodKey = "TeachingsOfCharity",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104365.png"
+    };
+
+    public static readonly MaterialGroupModel G3080064 = new([_3080064, _3080065, _3080066]);
+
+    public static readonly MaterialModel _3080067 = new()
+    {
+        Rid = 3080067,
+        Vid = 104370,
+        Name = "「坚忍」的哲学",
+        GoodKey = "PhilosophiesOfFortitude",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104370.png"
+    };
+
+    public static readonly MaterialModel _3080068 = new()
+    {
+        Rid = 3080068,
+        Vid = 104369,
+        Name = "「坚忍」的指引",
+        GoodKey = "GuideToFortitude",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104369.png"
+    };
+
+    public static readonly MaterialModel _3080069 = new()
+    {
+        Rid = 3080069,
+        Vid = 104368,
+        Name = "「坚忍」的教导",
+        GoodKey = "TeachingsOfFortitude",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104368.png"
+    };
+
+    public static readonly MaterialGroupModel G3080067 = new([_3080067, _3080068, _3080069]);
+
+    public static readonly MaterialModel _3080070 = new()
+    {
+        Rid = 3080070,
+        Vid = 104373,
+        Name = "「荣光」的哲学",
+        GoodKey = "PhilosophiesOfGlory",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104373.png"
+    };
+
+    public static readonly MaterialModel _3080071 = new()
+    {
+        Rid = 3080071,
+        Vid = 104372,
+        Name = "「荣光」的指引",
+        GoodKey = "GuideToGlory",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104372.png"
+    };
+
+    public static readonly MaterialModel _3080072 = new()
+    {
+        Rid = 3080072,
+        Vid = 104371,
+        Name = "「荣光」的教导",
+        GoodKey = "TeachingsOfGlory",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterTalent,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_104371.png"
+    };
+
+    public static readonly MaterialGroupModel G3080070 = new([_3080070, _3080071, _3080072]);
 }

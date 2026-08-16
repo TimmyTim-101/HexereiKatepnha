@@ -970,4 +970,142 @@ public class MaterialConstants09
     };
 
     public static readonly MaterialGroupModel G3090081 = new([_3090081, _3090082, _3090083, _3090084]);
+
+    public static readonly MaterialModel _3090085 = new()
+    {
+        Rid = 3090085,
+        Vid = 114088,
+        Name = "苍星军势的征服",
+        GoodKey = "TriumphOfThePaleStarArmy",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114088.png"
+    };
+
+    public static readonly MaterialModel _3090086 = new()
+    {
+        Rid = 3090086,
+        Vid = 114087,
+        Name = "苍星军势的鸣令",
+        GoodKey = "ClarionOfThePaleStarArmy",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114087.png"
+    };
+
+    public static readonly MaterialModel _3090087 = new()
+    {
+        Rid = 3090087,
+        Vid = 114086,
+        Name = "苍星军势的集结",
+        GoodKey = "MusterOfThePaleStarArmy",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114086.png"
+    };
+
+    public static readonly MaterialModel _3090088 = new()
+    {
+        Rid = 3090088,
+        Vid = 114085,
+        Name = "苍星军势的始动",
+        GoodKey = "RiseOfThePaleStarArmy",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114085.png"
+    };
+
+    public static readonly MaterialGroupModel G3090085 = new([_3090085, _3090086, _3090087, _3090088]);
+
+    public static readonly MaterialModel _3090089 = new()
+    {
+        Rid = 3090089,
+        Vid = 114092,
+        Name = "藏窖灵浆的恣意",
+        GoodKey = "RevelryOfTheCellaredSpiritualNectar",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114092.png"
+    };
+
+    public static readonly MaterialModel _3090090 = new()
+    {
+        Rid = 3090090,
+        Vid = 114091,
+        Name = "藏窖灵浆的酣畅",
+        GoodKey = "ExhilarationOfTheCellaredSpiritualNectar",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114091.png"
+    };
+
+    public static readonly MaterialModel _3090091 = new()
+    {
+        Rid = 3090091,
+        Vid = 114090,
+        Name = "藏窖灵浆的酩酊",
+        GoodKey = "IntoxicationOfTheCellaredSpiritualNectar",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114090.png"
+    };
+
+    public static readonly MaterialModel _3090092 = new()
+    {
+        Rid = 3090092,
+        Vid = 114089,
+        Name = "藏窖灵浆的斟酌",
+        GoodKey = "MeasuredPourOfTheCellaredSpiritualNectar",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114089.png"
+    };
+
+    public static readonly MaterialGroupModel G3090089 = new([_3090089, _3090090, _3090091, _3090092]);
+
+    public static readonly MaterialModel _3090093 = new()
+    {
+        Rid = 3090093,
+        Vid = 114096,
+        Name = "凛雪帝皇的辞决",
+        GoodKey = "TheFrostEmperorsFarewell",
+        Star = 5,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114096.png"
+    };
+
+    public static readonly MaterialModel _3090094 = new()
+    {
+        Rid = 3090094,
+        Vid = 114095,
+        Name = "凛雪帝皇的悲恤",
+        GoodKey = "TheFrostEmperorsLament",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114095.png"
+    };
+
+    public static readonly MaterialModel _3090095 = new()
+    {
+        Rid = 3090095,
+        Vid = 114094,
+        Name = "凛雪帝皇的庆仪",
+        GoodKey = "TheFrostEmperorsCeremony",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114094.png"
+    };
+
+    public static readonly MaterialModel _3090096 = new()
+    {
+        Rid = 3090096,
+        Vid = 114093,
+        Name = "凛雪帝皇的复生",
+        GoodKey = "TheFrostEmperorsRevival",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.WeaponAscension,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_114093.png"
+    };
+
+    public static readonly MaterialGroupModel G3090093 = new([_3090093, _3090094, _3090095, _3090096]);
 }

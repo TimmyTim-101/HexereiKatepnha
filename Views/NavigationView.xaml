@@ -26,7 +26,7 @@
         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource ModernScrollViewer}">
             <StackPanel>
                 <Button Command="{Binding ClickOnNavigationCommand}" CommandParameter="1" Style="{StaticResource ImageButton}" Height="55">
-                    <Image Source="../Resources/Images/KatepиHa_title.png" Stretch="Uniform"></Image>
+                    <Image Source="/Resources/Images/KatepnHa_title.png" Stretch="Uniform"></Image>
                 </Button>
                 <Border Style="{StaticResource HorizontalDivider}"></Border>
                 <Border HorizontalAlignment="Stretch" CornerRadius="10" BorderThickness="1" BorderBrush="#aaaaaa" Margin="5">

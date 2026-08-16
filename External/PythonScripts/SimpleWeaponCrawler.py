@@ -206,7 +206,7 @@ def print_to_code(data):
     print('Rid = 2xxxxxxx,')
     print('Vid = {},'.format(data['Vid']))
     print('Name = \"{}\",'.format(data['name']))
-    print('GoodKey = xxxx,')
+    print('GoodKey = \"xxxx\"\",')
     print('Star = {},'.format(data['rarity']))
     print('ImagePath = \"/Resources/Images/Weapon/{}\",'.format(data['icon']))
     print('AwakenImagePath = \"/Resources/Images/Weapon/{}_Awaken.png\",'.format(data['icon'][:-4]))
@@ -345,7 +345,7 @@ def print_to_code(data):
 
 
 if __name__ == '__main__':
-    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/12516/a-teaspoon-of-transcendence"
+    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/11521/exaiphanes-blade"
     table = crawl_for_one_weapon(source_webpage)
     for k in table.keys():
         print(k, end=" -- ")

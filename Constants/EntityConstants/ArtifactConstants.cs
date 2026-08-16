@@ -1508,4 +1508,54 @@ public static class ArtifactConstants
             { 4, "超导反应造成的伤害提升80%，星超导反应造成的伤害提升40%；装备者攻击受到超导或星超导反应影响的敌人时，本次攻击的暴击率提高16%。" }
         }
     };
+
+    public static readonly ArtifactSetModel _562 = new()
+    {
+        Rid = 562,
+        Vid = 15047,
+        Name = "血红之证",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "缅怀你的信仰" }, { 2, "铭记你的功勋" }, { 1, "感谢你的奉献" }, { 3, "授予你的年华" }, { 4, "饮尽你的血泪" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15047_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15047_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15047_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15047_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15047_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "攻击力提高18%。" },
+            { 4, "装备者触发星扩散反应后的10秒内，暴击率提升16%，星扩散反应伤害提升40%。" }
+        }
+    };
+
+    public static readonly ArtifactSetModel _563 = new()
+    {
+        Rid = 563,
+        Vid = 15048,
+        Name = "炉火融炼之心",
+        RarityList = [4, 5],
+        PositionNameDict = new Dictionary<int, string>
+        {
+            { 5, "熔铸者的继志" }, { 2, "熔铸者的观测" }, { 1, "熔铸者的揣度" }, { 3, "熔铸者的计算" }, { 4, "熔铸者的雅量" },
+        },
+        PositionImagePathDict = new Dictionary<int, string>
+        {
+            { 1, "/Resources/Images/Artifacts/UI_RelicIcon_15048_4.png" },
+            { 2, "/Resources/Images/Artifacts/UI_RelicIcon_15048_2.png" },
+            { 3, "/Resources/Images/Artifacts/UI_RelicIcon_15048_5.png" },
+            { 4, "/Resources/Images/Artifacts/UI_RelicIcon_15048_1.png" },
+            { 5, "/Resources/Images/Artifacts/UI_RelicIcon_15048_3.png" },
+        },
+        EffectDict = new Dictionary<int, string>
+        {
+            { 2, "攻击力提高18%。" },
+            { 4, "装备者触发星烁反应或造成星烁反应伤害后的12秒内，攻击力提升12%，队伍中附近的所有角色造成的星烁反应伤害提升50%。装备者处于后台时也能触发上述效果。同名圣遗物套装产生的伤害加成效果无法叠加。" }
+        }
+    };
 }

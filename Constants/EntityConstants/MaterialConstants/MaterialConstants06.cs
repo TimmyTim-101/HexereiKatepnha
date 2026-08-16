@@ -499,4 +499,26 @@ public class MaterialConstants06
         MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113086.png"
     };
+
+    public static readonly MaterialModel _3060046 = new()
+    {
+        Rid = 3060046,
+        Vid = 113090,
+        Name = "焰中不灭花枝",
+        GoodKey = "UnscorchedBlossomBranch",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113090.png"
+    };
+
+    public static readonly MaterialModel _3060047 = new()
+    {
+        Rid = 3060047,
+        Vid = 113091,
+        Name = "游空之物的断尾",
+        GoodKey = "SeveredTailOfTheSky-Roamer",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113091.png"
+    };
 }
