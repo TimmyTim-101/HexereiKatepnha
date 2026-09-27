@@ -516,9 +516,20 @@ public class MaterialConstants06
         Rid = 3060047,
         Vid = 113091,
         Name = "游空之物的断尾",
-        GoodKey = "SeveredTailOfTheSky-Roamer",
+        GoodKey = "SeveredTailOfTheSkyRoamer",
         Star = 4,
         MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113091.png"
+    };
+
+    public static readonly MaterialModel _3060048 = new()
+    {
+        Rid = 3060048,
+        Vid = 113092,
+        Name = "游离者的裂甲",
+        GoodKey = "VagabondsCrackedArmor",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113092.png"
     };
 }

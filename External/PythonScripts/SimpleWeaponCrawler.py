@@ -345,7 +345,7 @@ def print_to_code(data):
 
 
 if __name__ == '__main__':
-    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/11521/exaiphanes-blade"
+    source_webpage = "https://gi.yatta.moe/chs/archive/weapon/11438/silver-light"
     table = crawl_for_one_weapon(source_webpage)
     for k in table.keys():
         print(k, end=" -- ")

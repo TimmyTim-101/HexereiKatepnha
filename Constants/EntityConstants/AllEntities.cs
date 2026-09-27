@@ -10,7 +10,7 @@ public static class AllEntities
     // 1 - 角色
     public static readonly List<CharacterModel> AllCharacter =
     [
-        CharacterConstantsPage12._1010118, CharacterConstantsPage12._1010117, CharacterConstantsPage12._1010116,
+        CharacterConstantsPage12._1010120, CharacterConstantsPage12._1010119, CharacterConstantsPage12._1010118, CharacterConstantsPage12._1010117, CharacterConstantsPage12._1010116,
         CharacterConstantsPage12._1010115, CharacterConstantsPage12._1010114, CharacterConstantsPage12._1010113, CharacterConstantsPage12._1010112, CharacterConstantsPage12._1010111,
         CharacterConstantsPage11._1010110, CharacterConstantsPage11._1010109, CharacterConstantsPage11._1010108, CharacterConstantsPage11._1010107, CharacterConstantsPage11._1010106,
         CharacterConstantsPage11._1010105, CharacterConstantsPage11._1010104, CharacterConstantsPage11._1010103, CharacterConstantsPage11._1010102, CharacterConstantsPage11._1010101,
@@ -46,10 +46,10 @@ public static class AllEntities
         Sword4Constants._2010401, Sword4Constants._2010402, Sword4Constants._2010403, Sword4Constants._2010404, Sword4Constants._2010405, Sword4Constants._2010406, Sword4Constants._2010407, Sword4Constants._2010408,
         Sword4Constants._2010409, Sword4Constants._2010410, Sword4Constants._2010411, Sword4Constants._2010412, Sword4Constants._2010413, Sword4Constants._2010414, Sword4Constants._2010415, Sword4Constants._2010416,
         Sword4Constants._2010417, Sword4Constants._2010418, Sword4Constants._2010419, Sword4Constants._2010420, Sword4Constants._2010421, Sword4Constants._2010422, Sword4Constants._2010423, Sword4Constants._2010424,
-        Sword4Constants._2010425, Sword4Constants._2010426, Sword4Constants._2010427, Sword4Constants._2010428, Sword4Constants._2010429, Sword4Constants._2010430,
+        Sword4Constants._2010425, Sword4Constants._2010426, Sword4Constants._2010427, Sword4Constants._2010428, Sword4Constants._2010429, Sword4Constants._2010430, Sword4Constants._2010431, Sword4Constants._2010432,
         Sword5Constants._2010501, Sword5Constants._2010502, Sword5Constants._2010503, Sword5Constants._2010504, Sword5Constants._2010505, Sword5Constants._2010506, Sword5Constants._2010507, Sword5Constants._2010508,
         Sword5Constants._2010509, Sword5Constants._2010510, Sword5Constants._2010511, Sword5Constants._2010512, Sword5Constants._2010513, Sword5Constants._2010514, Sword5Constants._2010515, Sword5Constants._2010516,
-        Sword5Constants._2010517, Sword5Constants._2010518,
+        Sword5Constants._2010517, Sword5Constants._2010518, Sword5Constants._2010519,
         // 202 - 双手剑
         Claymore123Constants._2020101,
         Claymore123Constants._2020201,
@@ -77,10 +77,10 @@ public static class AllEntities
         Catalyst4Constants._2040401, Catalyst4Constants._2040402, Catalyst4Constants._2040403, Catalyst4Constants._2040404, Catalyst4Constants._2040405, Catalyst4Constants._2040406, Catalyst4Constants._2040407, Catalyst4Constants._2040408,
         Catalyst4Constants._2040409, Catalyst4Constants._2040410, Catalyst4Constants._2040411, Catalyst4Constants._2040412, Catalyst4Constants._2040413, Catalyst4Constants._2040414, Catalyst4Constants._2040415, Catalyst4Constants._2040416,
         Catalyst4Constants._2040417, Catalyst4Constants._2040418, Catalyst4Constants._2040419, Catalyst4Constants._2040420, Catalyst4Constants._2040421, Catalyst4Constants._2040422, Catalyst4Constants._2040423, Catalyst4Constants._2040424,
-        Catalyst4Constants._2040425, Catalyst4Constants._2040426, Catalyst4Constants._2040427,
+        Catalyst4Constants._2040425, Catalyst4Constants._2040426, Catalyst4Constants._2040427, Catalyst4Constants._2040428,
         Catalyst5Constants._2040501, Catalyst5Constants._2040502, Catalyst5Constants._2040503, Catalyst5Constants._2040504, Catalyst5Constants._2040505, Catalyst5Constants._2040506, Catalyst5Constants._2040507, Catalyst5Constants._2040508,
         Catalyst5Constants._2040509, Catalyst5Constants._2040510, Catalyst5Constants._2040511, Catalyst5Constants._2040512, Catalyst5Constants._2040513, Catalyst5Constants._2040514, Catalyst5Constants._2040515, Catalyst5Constants._2040516,
-        Catalyst5Constants._2040517, Catalyst5Constants._2040518, Catalyst5Constants._2040519,
+        Catalyst5Constants._2040517, Catalyst5Constants._2040518, Catalyst5Constants._2040519, Catalyst5Constants._2040520,
         // 205 - 弓
         Bow123Constants._2050101,
         Bow123Constants._2050201,
@@ -88,7 +88,7 @@ public static class AllEntities
         Bow4Constants._2050401, Bow4Constants._2050402, Bow4Constants._2050403, Bow4Constants._2050404, Bow4Constants._2050405, Bow4Constants._2050406, Bow4Constants._2050407, Bow4Constants._2050408,
         Bow4Constants._2050409, Bow4Constants._2050410, Bow4Constants._2050411, Bow4Constants._2050412, Bow4Constants._2050413, Bow4Constants._2050414, Bow4Constants._2050415, Bow4Constants._2050416,
         Bow4Constants._2050417, Bow4Constants._2050418, Bow4Constants._2050419, Bow4Constants._2050420, Bow4Constants._2050421, Bow4Constants._2050422, Bow4Constants._2050423, Bow4Constants._2050424,
-        Bow4Constants._2050425, Bow4Constants._2050426, Bow4Constants._2050427, Bow4Constants._2050428, Bow4Constants._2050429, Bow4Constants._2050430,
+        Bow4Constants._2050425, Bow4Constants._2050426, Bow4Constants._2050427, Bow4Constants._2050428, Bow4Constants._2050429, Bow4Constants._2050430, Bow4Constants._2050431,
         Bow5Constants._2050501, Bow5Constants._2050502, Bow5Constants._2050503, Bow5Constants._2050504, Bow5Constants._2050505, Bow5Constants._2050506, Bow5Constants._2050507, Bow5Constants._2050508,
         Bow5Constants._2050509, Bow5Constants._2050510, Bow5Constants._2050511, Bow5Constants._2050512,
     ];
@@ -150,7 +150,7 @@ public static class AllEntities
         MaterialConstants06._3060017, MaterialConstants06._3060018, MaterialConstants06._3060019, MaterialConstants06._3060020, MaterialConstants06._3060021, MaterialConstants06._3060022, MaterialConstants06._3060023, MaterialConstants06._3060024,
         MaterialConstants06._3060025, MaterialConstants06._3060026, MaterialConstants06._3060027, MaterialConstants06._3060028, MaterialConstants06._3060029, MaterialConstants06._3060030, MaterialConstants06._3060031, MaterialConstants06._3060032,
         MaterialConstants06._3060033, MaterialConstants06._3060034, MaterialConstants06._3060035, MaterialConstants06._3060036, MaterialConstants06._3060037, MaterialConstants06._3060038, MaterialConstants06._3060039, MaterialConstants06._3060040,
-        MaterialConstants06._3060041, MaterialConstants06._3060042, MaterialConstants06._3060043, MaterialConstants06._3060044, MaterialConstants06._3060045, MaterialConstants06._3060046, MaterialConstants06._3060047,
+        MaterialConstants06._3060041, MaterialConstants06._3060042, MaterialConstants06._3060043, MaterialConstants06._3060044, MaterialConstants06._3060045, MaterialConstants06._3060046, MaterialConstants06._3060047, MaterialConstants06._3060048,
     ];
 
     // 307 - 角色突破素材_钻儿块儿片儿粒儿
@@ -264,7 +264,7 @@ public static class AllEntities
         DungeonConstants._4050017, DungeonConstants._4050018, DungeonConstants._4050019, DungeonConstants._4050020, DungeonConstants._4050021, DungeonConstants._4050022, DungeonConstants._4050023, DungeonConstants._4050024,
         DungeonConstants._4050025, DungeonConstants._4050026, DungeonConstants._4050027, DungeonConstants._4050028, DungeonConstants._4050029, DungeonConstants._4050030, DungeonConstants._4050031, DungeonConstants._4050032,
         DungeonConstants._4050033, DungeonConstants._4050034, DungeonConstants._4050035, DungeonConstants._4050036, DungeonConstants._4050037, DungeonConstants._4050038, DungeonConstants._4050039, DungeonConstants._4050040,
-        DungeonConstants._4050041, DungeonConstants._4050042, DungeonConstants._4050043, DungeonConstants._4050044, DungeonConstants._4050045, DungeonConstants._4050046,
+        DungeonConstants._4050041, DungeonConstants._4050042, DungeonConstants._4050043, DungeonConstants._4050044, DungeonConstants._4050045, DungeonConstants._4050046, DungeonConstants._4050047,
     ];
 
     // 406 - 圣遗物

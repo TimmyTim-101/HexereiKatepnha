@@ -336,6 +336,7 @@ namespace HexereiKatepnha.ViewModels
 
         public List<BaseUpdateInfoModel> InfoList { get; set; } =
         [
+            new RegularUpdateInfoModel("26-09-28：适配7.1版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-08-16：适配7.0版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-07-01：适配6.7版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-05-21：适配6.6版本数据并修复若干bug。"),

@@ -1734,4 +1734,68 @@ public class Catalyst4Constants
         },
         LevelUpMaterials = WeaponLevelUpConstants.GetWeapon4LevelUpMaterial(MaterialConstants04.G3040052, MaterialConstants03.G3030094, MaterialConstants09.G3090085),
     };
+
+    public static readonly WeaponModel _2040428 = new()
+    {
+        Rid = 2040428,
+        Vid = 14437,
+        Name = "凝雪沉心",
+        GoodKey = "WintersHeavyHeart",
+        Star = 4,
+        ImagePath = "/Resources/Images/Weapon/UI_EquipIcon_Catalyst_FrostScepter.png",
+        AwakenImagePath = "/Resources/Images/Weapon/UI_EquipIcon_Catalyst_FrostScepter_Awaken.png",
+        WeaponType = Enumeration.WeaponType.Catalyst,
+        SubAffix = Enumeration.Affix.CriticalDamage,
+        Progression =
+        {
+            { 1, "装备者获得「银染的血契」：队伍中每存在一位冰元素类型的角色，装备者的元素精通提升24点；队伍中每存在一位雷元素类型的角色，装备者的攻击力提升4.8%。至多4位冰元素类型或雷元素类型的角色可以提供上述效果。辉映·星烁：「银染的血契」效果改为：队伍中每存在一位冰元素类型或雷元素类型的角色，装备者的元素精通提升20点，造成的星烁反应伤害提升6%。" },
+            { 2, "装备者获得「银染的血契」：队伍中每存在一位冰元素类型的角色，装备者的元素精通提升30点；队伍中每存在一位雷元素类型的角色，装备者的攻击力提升6%。至多4位冰元素类型或雷元素类型的角色可以提供上述效果。辉映·星烁：「银染的血契」效果改为：队伍中每存在一位冰元素类型或雷元素类型的角色，装备者的元素精通提升25点，造成的星烁反应伤害提升7.5%。" },
+            { 3, "装备者获得「银染的血契」：队伍中每存在一位冰元素类型的角色，装备者的元素精通提升36点；队伍中每存在一位雷元素类型的角色，装备者的攻击力提升7.2%。至多4位冰元素类型或雷元素类型的角色可以提供上述效果。辉映·星烁：「银染的血契」效果改为：队伍中每存在一位冰元素类型或雷元素类型的角色，装备者的元素精通提升30点，造成的星烁反应伤害提升9%。" },
+            { 4, "装备者获得「银染的血契」：队伍中每存在一位冰元素类型的角色，装备者的元素精通提升42点；队伍中每存在一位雷元素类型的角色，装备者的攻击力提升8.4%。至多4位冰元素类型或雷元素类型的角色可以提供上述效果。辉映·星烁：「银染的血契」效果改为：队伍中每存在一位冰元素类型或雷元素类型的角色，装备者的元素精通提升35点，造成的星烁反应伤害提升10.5%。" },
+            { 5, "装备者获得「银染的血契」：队伍中每存在一位冰元素类型的角色，装备者的元素精通提升48点；队伍中每存在一位雷元素类型的角色，装备者的攻击力提升9.6%。至多4位冰元素类型或雷元素类型的角色可以提供上述效果。辉映·星烁：「银染的血契」效果改为：队伍中每存在一位冰元素类型或雷元素类型的角色，装备者的元素精通提升40点，造成的星烁反应伤害提升12%。" },
+        },
+        MainAffixNumberDictionary = new Dictionary<Enumeration.Level, double>()
+        {
+            { Enumeration.Level.L1, 42 }, { Enumeration.Level.L2, 46 }, { Enumeration.Level.L3, 49 }, { Enumeration.Level.L4, 53 }, { Enumeration.Level.L5, 56 },
+            { Enumeration.Level.L6, 60 }, { Enumeration.Level.L7, 63 }, { Enumeration.Level.L8, 67 }, { Enumeration.Level.L9, 70 }, { Enumeration.Level.L10, 74 },
+            { Enumeration.Level.L11, 77 }, { Enumeration.Level.L12, 81 }, { Enumeration.Level.L13, 84 }, { Enumeration.Level.L14, 88 }, { Enumeration.Level.L15, 91 },
+            { Enumeration.Level.L16, 95 }, { Enumeration.Level.L17, 98 }, { Enumeration.Level.L18, 102 }, { Enumeration.Level.L19, 105 }, { Enumeration.Level.L20, 109 }, { Enumeration.Level.L20P, 135 },
+            { Enumeration.Level.L21, 138 }, { Enumeration.Level.L22, 142 }, { Enumeration.Level.L23, 145 }, { Enumeration.Level.L24, 149 }, { Enumeration.Level.L25, 152 },
+            { Enumeration.Level.L26, 156 }, { Enumeration.Level.L27, 159 }, { Enumeration.Level.L28, 163 }, { Enumeration.Level.L29, 166 }, { Enumeration.Level.L30, 170 },
+            { Enumeration.Level.L31, 173 }, { Enumeration.Level.L32, 177 }, { Enumeration.Level.L33, 180 }, { Enumeration.Level.L34, 184 }, { Enumeration.Level.L35, 187 },
+            { Enumeration.Level.L36, 191 }, { Enumeration.Level.L37, 194 }, { Enumeration.Level.L38, 198 }, { Enumeration.Level.L39, 201 }, { Enumeration.Level.L40, 205 }, { Enumeration.Level.L40P, 231 },
+            { Enumeration.Level.L41, 234 }, { Enumeration.Level.L42, 238 }, { Enumeration.Level.L43, 241 }, { Enumeration.Level.L44, 245 }, { Enumeration.Level.L45, 248 },
+            { Enumeration.Level.L46, 252 }, { Enumeration.Level.L47, 255 }, { Enumeration.Level.L48, 259 }, { Enumeration.Level.L49, 262 }, { Enumeration.Level.L50, 266 }, { Enumeration.Level.L50P, 292 },
+            { Enumeration.Level.L51, 295 }, { Enumeration.Level.L52, 299 }, { Enumeration.Level.L53, 302 }, { Enumeration.Level.L54, 306 }, { Enumeration.Level.L55, 309 },
+            { Enumeration.Level.L56, 313 }, { Enumeration.Level.L57, 316 }, { Enumeration.Level.L58, 320 }, { Enumeration.Level.L59, 323 }, { Enumeration.Level.L60, 327 }, { Enumeration.Level.L60P, 353 },
+            { Enumeration.Level.L61, 356 }, { Enumeration.Level.L62, 360 }, { Enumeration.Level.L63, 363 }, { Enumeration.Level.L64, 367 }, { Enumeration.Level.L65, 370 },
+            { Enumeration.Level.L66, 374 }, { Enumeration.Level.L67, 377 }, { Enumeration.Level.L68, 381 }, { Enumeration.Level.L69, 384 }, { Enumeration.Level.L70, 388 }, { Enumeration.Level.L70P, 414 },
+            { Enumeration.Level.L71, 417 }, { Enumeration.Level.L72, 421 }, { Enumeration.Level.L73, 424 }, { Enumeration.Level.L74, 428 }, { Enumeration.Level.L75, 431 },
+            { Enumeration.Level.L76, 435 }, { Enumeration.Level.L77, 438 }, { Enumeration.Level.L78, 442 }, { Enumeration.Level.L79, 445 }, { Enumeration.Level.L80, 449 }, { Enumeration.Level.L80P, 475 },
+            { Enumeration.Level.L81, 478 }, { Enumeration.Level.L82, 482 }, { Enumeration.Level.L83, 485 }, { Enumeration.Level.L84, 489 }, { Enumeration.Level.L85, 492 },
+            { Enumeration.Level.L86, 496 }, { Enumeration.Level.L87, 499 }, { Enumeration.Level.L88, 503 }, { Enumeration.Level.L89, 506 }, { Enumeration.Level.L90, 510 },
+        },
+        SubAffixNumberDictionary = new Dictionary<Enumeration.Level, double>()
+        {
+            { Enumeration.Level.L1, 12.0 }, { Enumeration.Level.L2, 12.0 }, { Enumeration.Level.L3, 12.0 }, { Enumeration.Level.L4, 12.0 }, { Enumeration.Level.L5, 13.9 },
+            { Enumeration.Level.L6, 13.9 }, { Enumeration.Level.L7, 13.9 }, { Enumeration.Level.L8, 13.9 }, { Enumeration.Level.L9, 13.9 }, { Enumeration.Level.L10, 16.4 },
+            { Enumeration.Level.L11, 16.4 }, { Enumeration.Level.L12, 16.4 }, { Enumeration.Level.L13, 16.4 }, { Enumeration.Level.L14, 16.4 }, { Enumeration.Level.L15, 18.8 },
+            { Enumeration.Level.L16, 18.8 }, { Enumeration.Level.L17, 18.8 }, { Enumeration.Level.L18, 18.8 }, { Enumeration.Level.L19, 18.8 }, { Enumeration.Level.L20, 21.2 }, { Enumeration.Level.L20P, 21.2 },
+            { Enumeration.Level.L21, 21.2 }, { Enumeration.Level.L22, 21.2 }, { Enumeration.Level.L23, 21.2 }, { Enumeration.Level.L24, 21.2 }, { Enumeration.Level.L25, 23.6 },
+            { Enumeration.Level.L26, 23.6 }, { Enumeration.Level.L27, 23.6 }, { Enumeration.Level.L28, 23.6 }, { Enumeration.Level.L29, 23.6 }, { Enumeration.Level.L30, 26.1 },
+            { Enumeration.Level.L31, 26.1 }, { Enumeration.Level.L32, 26.1 }, { Enumeration.Level.L33, 26.1 }, { Enumeration.Level.L34, 26.1 }, { Enumeration.Level.L35, 28.5 },
+            { Enumeration.Level.L36, 28.5 }, { Enumeration.Level.L37, 28.5 }, { Enumeration.Level.L38, 28.5 }, { Enumeration.Level.L39, 28.5 }, { Enumeration.Level.L40, 30.9 }, { Enumeration.Level.L40P, 30.9 },
+            { Enumeration.Level.L41, 30.9 }, { Enumeration.Level.L42, 30.9 }, { Enumeration.Level.L43, 30.9 }, { Enumeration.Level.L44, 30.9 }, { Enumeration.Level.L45, 33.3 },
+            { Enumeration.Level.L46, 33.3 }, { Enumeration.Level.L47, 33.3 }, { Enumeration.Level.L48, 33.3 }, { Enumeration.Level.L49, 33.3 }, { Enumeration.Level.L50, 35.7 }, { Enumeration.Level.L50P, 35.7 },
+            { Enumeration.Level.L51, 35.7 }, { Enumeration.Level.L52, 35.7 }, { Enumeration.Level.L53, 35.7 }, { Enumeration.Level.L54, 35.7 }, { Enumeration.Level.L55, 38.2 },
+            { Enumeration.Level.L56, 38.2 }, { Enumeration.Level.L57, 38.2 }, { Enumeration.Level.L58, 38.2 }, { Enumeration.Level.L59, 38.2 }, { Enumeration.Level.L60, 40.6 }, { Enumeration.Level.L60P, 40.6 },
+            { Enumeration.Level.L61, 40.6 }, { Enumeration.Level.L62, 40.6 }, { Enumeration.Level.L63, 40.6 }, { Enumeration.Level.L64, 40.6 }, { Enumeration.Level.L65, 43.0 },
+            { Enumeration.Level.L66, 43.0 }, { Enumeration.Level.L67, 43.0 }, { Enumeration.Level.L68, 43.0 }, { Enumeration.Level.L69, 43.0 }, { Enumeration.Level.L70, 45.4 }, { Enumeration.Level.L70P, 45.4 },
+            { Enumeration.Level.L71, 45.4 }, { Enumeration.Level.L72, 45.4 }, { Enumeration.Level.L73, 45.4 }, { Enumeration.Level.L74, 45.4 }, { Enumeration.Level.L75, 47.9 },
+            { Enumeration.Level.L76, 47.9 }, { Enumeration.Level.L77, 47.9 }, { Enumeration.Level.L78, 47.9 }, { Enumeration.Level.L79, 47.9 }, { Enumeration.Level.L80, 50.3 }, { Enumeration.Level.L80P, 50.3 },
+            { Enumeration.Level.L81, 50.3 }, { Enumeration.Level.L82, 50.3 }, { Enumeration.Level.L83, 50.3 }, { Enumeration.Level.L84, 50.3 }, { Enumeration.Level.L85, 52.7 },
+            { Enumeration.Level.L86, 52.7 }, { Enumeration.Level.L87, 52.7 }, { Enumeration.Level.L88, 52.7 }, { Enumeration.Level.L89, 52.7 }, { Enumeration.Level.L90, 55.1 },
+        },
+        LevelUpMaterials = WeaponLevelUpConstants.GetWeapon4LevelUpMaterial(MaterialConstants04.G3040052, MaterialConstants03.G3030097, MaterialConstants09.G3090093),
+    };
 }

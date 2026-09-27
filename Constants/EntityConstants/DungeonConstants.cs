@@ -1327,6 +1327,19 @@ public static class DungeonConstants
         ])
     };
 
+    public static readonly DungeonModel _4050047 = new()
+    {
+        Rid = 4050047,
+        Name = "游雪的护刃",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Snegurochka_Contessa_02.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060048, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
     // 406 - 圣遗物
     public static readonly DungeonModel _4060001 = new()
     {
