@@ -150,6 +150,8 @@ public static class DungeonConstants
         DungeonType = Enumeration.DungeonType.LocalSpecialty,
         DropMaterialList =
         [
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100804, DropNum = 1 },
+            new MaterialPairModel() { MaterialModel = MaterialConstants10._3100805, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100801, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100802, DropNum = 1 },
             new MaterialPairModel() { MaterialModel = MaterialConstants10._3100803, DropNum = 1 },
@@ -704,6 +706,15 @@ public static class DungeonConstants
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030097, [1, 1, 1]),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants04.G3040052, [1, 1, 1]),
         ])
+    };
+
+    public static readonly DungeonModel _4040037 = new()
+    {
+        Rid = 4040037,
+        Name = "无智的凝冰体",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Crystalian_01.png",
+        DungeonType = Enumeration.DungeonType.Elite,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList(MaterialConstants03.G3030100, [1, 1, 1])
     };
 
     // 405 - 40体力BOSS
@@ -1337,6 +1348,19 @@ public static class DungeonConstants
         DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060048, 3.003),
             MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070701, FigureConstants.MaterialCharacterAscensionRate[1]),
+        ])
+    };
+
+    public static readonly DungeonModel _4050048 = new()
+    {
+        Rid = 4050048,
+        Name = "浪涛锚定者",
+        ImagePath = "/Resources/Images/DungeonAndMonster/UI_MonsterIcon_Volkodlak_Whale.png",
+        Cost = 40,
+        DungeonType = Enumeration.DungeonType.Boss,
+        DropMaterialList = MaterialPairModelTools.GetMaterialPairList([
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants06._3060049, 3.003),
+            MaterialPairModelTools.GetMaterialPairList(MaterialConstants07.G3070301, FigureConstants.MaterialCharacterAscensionRate[1]),
         ])
     };
 

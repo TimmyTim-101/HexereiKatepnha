@@ -675,4 +675,26 @@ public class MaterialConstants10
         MaterialType = Enumeration.MaterialType.LocalSpecialty,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101277.png"
     };
+
+    public static readonly MaterialModel _3100804 = new()
+    {
+        Rid = 3100804,
+        Vid = 101273,
+        Name = "妖精绿艾",
+        GoodKey = "FairyWormwood",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101273.png"
+    };
+
+    public static readonly MaterialModel _3100805 = new()
+    {
+        Rid = 3100805,
+        Vid = 101274,
+        Name = "析晶褶伞",
+        GoodKey = "Kristallfold",
+        Star = 1,
+        MaterialType = Enumeration.MaterialType.LocalSpecialty,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_101274.png"
+    };
 }

@@ -1159,4 +1159,39 @@ public static class MaterialConstants03
     };
 
     public static readonly MaterialGroupModel G3030097 = new([_3030097, _3030098, _3030099]);
+
+    public static readonly MaterialModel _3030100 = new()
+    {
+        Rid = 3030100,
+        Vid = 112160,
+        Name = "雪结无明心",
+        GoodKey = "SnowbornHeartOfIgnorance",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112160.png"
+    };
+
+    public static readonly MaterialModel _3030101 = new()
+    {
+        Rid = 3030101,
+        Vid = 112159,
+        Name = "雪结镜心",
+        GoodKey = "SnowbornMirrorheart",
+        Star = 3,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112159.png"
+    };
+
+    public static readonly MaterialModel _3030102 = new()
+    {
+        Rid = 3030102,
+        Vid = 112158,
+        Name = "雪结片心",
+        GoodKey = "SnowbornHeartshard",
+        Star = 2,
+        MaterialType = Enumeration.MaterialType.CharacterWeaponEnhancement1,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_112158.png"
+    };
+
+    public static readonly MaterialGroupModel G3030100 = new([_3030100, _3030101, _3030102]);
 }

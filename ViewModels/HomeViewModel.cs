@@ -81,7 +81,7 @@ namespace HexereiKatepnha.ViewModels
                         thisBirthdayCharacterModel.StarImagePath = StringConstants.StarImagePath[cm.Star];
                         thisBirthdayCharacterModel.ElementImagePath = StringConstants.ElementTypeImagePath[cm.ElementType];
                         thisBirthdayCharacterModel.Name = cm.Name;
-                        thisBirthdayCharacterModel.BirthdayString = cm.BirthMonth + "/" + cm.BirthDay;
+                        thisBirthdayCharacterModel.BirthdayString = cm.BirthMonth + " 月 " + cm.BirthDay + " 日";
                         if (currentBirthday == 229)
                         {
                             int currentYear = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(8)).Year;
@@ -336,6 +336,7 @@ namespace HexereiKatepnha.ViewModels
 
         public List<BaseUpdateInfoModel> InfoList { get; set; } =
         [
+            new RegularUpdateInfoModel("26-11-05：适配7.2版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-09-28：适配7.1版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-08-16：适配7.0版本数据并修复若干bug。"),
             new RegularUpdateInfoModel("26-07-01：适配6.7版本数据并修复若干bug。"),

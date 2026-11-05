@@ -532,4 +532,15 @@ public class MaterialConstants06
         MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
         ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113092.png"
     };
+
+    public static readonly MaterialModel _3060049 = new()
+    {
+        Rid = 3060049,
+        Vid = 113093,
+        Name = "破碎的稳定锚",
+        GoodKey = "ShatteredStabilityAnchor",
+        Star = 4,
+        MaterialType = Enumeration.MaterialType.CharacterLevelUp2,
+        ImagePath = "/Resources/Images/Materials/UI_ItemIcon_113093.png"
+    };
 }
